@@ -1,0 +1,214 @@
+/* ============================================================================
+ * DiscoverEU Companion — Leaflet Map Overrides
+ * Country polygons, labels, route polylines, popups, controls
+ * ========================================================================= */
+
+.leaflet-container {
+  background: var(--bg-sunken);
+  font-family: var(--font-sans);
+  outline: none;
+}
+
+.country-polygon {
+  fill: var(--bg-surface);
+  stroke: var(--border-default);
+  stroke-width: 0.75;
+  stroke-linejoin: round;
+  cursor: pointer;
+  transition: fill var(--duration-fast) var(--ease-out),
+              stroke var(--duration-fast) var(--ease-out);
+}
+
+.country-polygon:hover {
+  fill: var(--accent-soft);
+  stroke: var(--accent-primary);
+  stroke-width: 1.5;
+}
+
+.country-polygon.selected {
+  fill: var(--accent-primary);
+  fill-opacity: 0.2;
+  stroke: var(--accent-primary);
+  stroke-width: 2;
+}
+
+.country-polygon.non-participating {
+  fill: var(--bg-sunken);
+  fill-opacity: 0.4;
+  stroke: var(--border-subtle);
+  stroke-dasharray: 3 3;
+  cursor: not-allowed;
+}
+
+.country-polygon.filter-match {
+  fill: var(--eu-green-300);
+  fill-opacity: 0.4;
+  stroke: var(--eu-green-500);
+}
+
+.country-polygon.in-route {
+  fill: var(--eu-gold-300);
+  fill-opacity: 0.5;
+  stroke: var(--eu-gold-500);
+  stroke-width: 1.5;
+}
+
+[data-theme="dark"] .country-polygon {
+  fill: var(--eu-gray-800);
+  stroke: var(--eu-gray-600);
+}
+
+[data-theme="dark"] .country-polygon:hover {
+  fill: rgba(90, 130, 245, 0.2);
+}
+
+[data-theme="dark"] .country-polygon.selected {
+  fill: rgba(90, 130, 245, 0.35);
+  stroke: var(--eu-blue-300);
+}
+
+[data-theme="dark"] .country-polygon.non-participating {
+  fill: var(--eu-gray-900);
+  stroke: var(--eu-gray-700);
+}
+
+.country-label {
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  color: var(--text-secondary);
+  font-size: 11px;
+  font-weight: var(--weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-shadow:
+    -1px -1px 0 var(--bg-surface),
+     1px -1px 0 var(--bg-surface),
+    -1px  1px 0 var(--bg-surface),
+     1px  1px 0 var(--bg-surface);
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.country-label::before { display: none !important; }
+
+.country-label.hidden {
+  opacity: 0;
+  transition: opacity var(--duration-fast);
+}
+
+.city-marker {
+  background: var(--accent-primary);
+  border: 2px solid var(--bg-surface);
+  border-radius: var(--radius-full);
+  width: 12px !important;
+  height: 12px !important;
+  box-shadow: var(--shadow-sm);
+}
+
+.city-marker.in-route {
+  background: var(--eu-gold-500);
+  width: 16px !important;
+  height: 16px !important;
+}
+
+.route-line {
+  stroke: var(--accent-primary);
+  stroke-width: 3;
+  stroke-linecap: round;
+  fill: none;
+  opacity: 0.85;
+}
+
+.route-line.night { stroke-dasharray: 8 6; }
+
+.leaflet-popup-content-wrapper {
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  padding: 0;
+}
+
+.leaflet-popup-content {
+  margin: var(--space-4);
+  font-size: var(--text-sm);
+  line-height: var(--leading-normal);
+}
+
+.leaflet-popup-tip { background: var(--bg-elevated); }
+
+.leaflet-popup-close-button {
+  color: var(--text-tertiary) !important;
+  font-size: 20px !important;
+}
+
+.leaflet-popup-close-button:hover { color: var(--text-primary) !important; }
+
+.leaflet-control-zoom a {
+  background: var(--bg-elevated) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border-subtle) !important;
+  width: 36px !important;
+  height: 36px !important;
+  line-height: 34px !important;
+  font-size: 18px !important;
+  font-weight: var(--weight-semibold) !important;
+}
+
+.leaflet-control-zoom a:hover { background: var(--bg-hover) !important; }
+
+.leaflet-control-zoom {
+  box-shadow: var(--shadow-md);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: none !important;
+}
+
+.leaflet-control-attribution {
+  background: var(--bg-surface) !important;
+  color: var(--text-tertiary) !important;
+  font-size: 10px !important;
+  padding: 2px var(--space-2) !important;
+  border-radius: var(--radius-sm) !important;
+  border: 1px solid var(--border-subtle) !important;
+}
+
+.leaflet-control-attribution a { color: var(--text-secondary) !important; }
+
+.map-legend {
+  position: absolute;
+  bottom: var(--space-4);
+  left: var(--space-4);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+  box-shadow: var(--shadow-md);
+  font-size: var(--text-xs);
+  z-index: var(--z-sticky);
+  max-width: 200px;
+}
+
+.map-legend-title {
+  font-weight: var(--weight-semibold);
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-2);
+}
+
+.map-legend-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--text-primary);
+  margin-top: var(--space-1);
+}
+
+.map-legend-swatch {
+  width: 14px;
+  height: 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-default);
+}

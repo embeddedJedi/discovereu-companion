@@ -1,0 +1,157 @@
+{
+  "brand": {
+    "tagline": "Katıl · Bağlan · Güçlen"
+  },
+  "header": {
+    "aiAssistant": "AI asistanını aç",
+    "toggleTheme": "Açık ve karanlık tema arasında geçiş yap",
+    "share": "Rotanı paylaş",
+    "language": "Dil"
+  },
+  "nav": {
+    "map": "Harita",
+    "route": "Rota",
+    "budget": "Bütçe",
+    "filters": "Filtre",
+    "compare": "Karşılaştır",
+    "prep": "Hazırlık"
+  },
+  "panel": {
+    "tab": {
+      "detail": "Detay",
+      "route": "Rota",
+      "budget": "Bütçe",
+      "filters": "Filtre",
+      "compare": "Karşılaştır",
+      "prep": "Hazırlık"
+    },
+    "empty": {
+      "message": "Başlamak için haritadan bir ülke seç"
+    }
+  },
+  "map": {
+    "legend": {
+      "title": "Harita anahtarı",
+      "participating": "Katılımcı",
+      "inRoute": "Rotanda",
+      "nonParticipating": "DiscoverEU'da değil"
+    }
+  },
+  "filters": {
+    "title": "Filtreler",
+    "categories": {
+      "title": "Nelere ilgin var?",
+      "nature": "Doğa",
+      "culture": "Kültür",
+      "nightlife": "Gece hayatı",
+      "food": "Yemek",
+      "beach": "Plaj",
+      "history": "Tarih",
+      "budget": "Bütçe dostu"
+    },
+    "inclusion": {
+      "title": "Kapsayıcılık",
+      "accessibility": "Tekerlekli sandalye erişimi",
+      "lgbtqSafe": "LGBTQ+ güvenli",
+      "lowBudget": "Düşük bütçe modu"
+    },
+    "green": {
+      "title": "Sürdürülebilirlik",
+      "greenRoute": "Sadece yeşil rota"
+    },
+    "interrail": {
+      "title": "Interrail",
+      "only": "Sadece DiscoverEU kapsamı"
+    }
+  },
+  "route": {
+    "title": "Rotan",
+    "empty": "Henüz durak yok — eklemek için haritadan bir ülkeye dokun",
+    "addStop": "Durak ekle",
+    "removeStop": "Kaldır",
+    "daysUsed": "{used} / {limit} seyahat günü kullanıldı",
+    "seatCredits": "{used} / {limit} koltuk rezervasyon kredisi kullanıldı",
+    "totalDistance": "Toplam mesafe: {km}",
+    "totalCO2": "Uçağa göre tasarruf: {kg}",
+    "warnings": {
+      "exceedDays": "Bu, 7 günlük DiscoverEU seyahat sınırını aşıyor",
+      "nonParticipating": "{country} DiscoverEU kapsamında değil — paso orada geçmez",
+      "mandatoryReservation": "Rezervasyon zorunlu: bu etapta ücretli koltuk rezervasyonu gerekiyor",
+      "seatCreditsExhausted": "4 ücretsiz DiscoverEU koltuk kredini harcadın"
+    }
+  },
+  "budget": {
+    "title": "Bütçe hesaplayıcı",
+    "groupSize": "Grup büyüklüğü",
+    "nights": "Gece",
+    "accommodation": {
+      "title": "Konaklama",
+      "hostel": "Hostel",
+      "airbnb": "Airbnb",
+      "camp": "Kamp",
+      "couchsurf": "Couchsurfing"
+    },
+    "food": {
+      "title": "Yemek tarzı",
+      "budget": "Ekonomik",
+      "moderate": "Orta",
+      "comfort": "Rahat"
+    },
+    "totals": {
+      "perPerson": "Kişi başı",
+      "group": "Grup toplamı",
+      "accommodation": "Konaklama",
+      "food": "Yemek",
+      "transport": "Ulaşım",
+      "activities": "Aktiviteler"
+    }
+  },
+  "compare": {
+    "title": "Ülkeleri karşılaştır",
+    "hint": "Haritadan 2–4 ülke seç",
+    "axes": {
+      "nature": "Doğa",
+      "culture": "Kültür",
+      "nightlife": "Gece hayatı",
+      "food": "Yemek",
+      "budget": "Uygun fiyat",
+      "accessibility": "Erişilebilirlik"
+    }
+  },
+  "prep": {
+    "title": "Yolculuğa hazırlık",
+    "countdown": {
+      "application": "Başvuru son tarihi: {date}",
+      "departure": "Yola çıkış: {date}"
+    },
+    "quiz": "Başvuru quiz hazırlığı",
+    "checklist": "Kalkış öncesi liste",
+    "packing": "Akıllı paketleme listesi"
+  },
+  "ai": {
+    "modal": {
+      "title": "AI yolculuk asistanı",
+      "placeholder": "ör. 10 gün, müze + plaj, 800€ altında",
+      "send": "Rota öner",
+      "keyLabel": "Groq API anahtarı",
+      "keyHint": "Anahtarın sadece tarayıcıda saklanır, sunucumuza gitmez (zaten sunucumuz yok).",
+      "getKey": "Ücretsiz Groq anahtarı al"
+    },
+    "thinking": "Düşünüyor…"
+  },
+  "error": {
+    "weatherUnavailable": "Hava durumu verisi alınamadı",
+    "countriesLoad": "Ülke verisi yüklenemedi",
+    "mapLoad": "Harita yüklenemedi",
+    "aiFailed": "AI isteği başarısız — anahtarını kontrol edip tekrar dene"
+  },
+  "share": {
+    "modal": {
+      "title": "Rotanı paylaş",
+      "copyLink": "Bağlantıyı kopyala",
+      "copied": "Bağlantı kopyalandı",
+      "exportPdf": "PDF olarak dışa aktar",
+      "wrapped": "Wrapped kartı olarak paylaş"
+    }
+  }
+}

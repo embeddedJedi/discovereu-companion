@@ -1,0 +1,157 @@
+{
+  "brand": {
+    "tagline": "Engage · Connect · Empower"
+  },
+  "header": {
+    "aiAssistant": "Open AI assistant",
+    "toggleTheme": "Toggle light and dark theme",
+    "share": "Share your route",
+    "language": "Language"
+  },
+  "nav": {
+    "map": "Map",
+    "route": "Route",
+    "budget": "Budget",
+    "filters": "Filters",
+    "compare": "Compare",
+    "prep": "Prep"
+  },
+  "panel": {
+    "tab": {
+      "detail": "Detail",
+      "route": "Route",
+      "budget": "Budget",
+      "filters": "Filters",
+      "compare": "Compare",
+      "prep": "Prep"
+    },
+    "empty": {
+      "message": "Select a country on the map to begin"
+    }
+  },
+  "map": {
+    "legend": {
+      "title": "Map key",
+      "participating": "Participating",
+      "inRoute": "In your route",
+      "nonParticipating": "Not in DiscoverEU"
+    }
+  },
+  "filters": {
+    "title": "Filters",
+    "categories": {
+      "title": "What are you into?",
+      "nature": "Nature",
+      "culture": "Culture",
+      "nightlife": "Nightlife",
+      "food": "Food",
+      "beach": "Beach",
+      "history": "History",
+      "budget": "Budget-friendly"
+    },
+    "inclusion": {
+      "title": "Inclusion",
+      "accessibility": "Wheelchair accessible",
+      "lgbtqSafe": "LGBTQ+ safe",
+      "lowBudget": "Low budget mode"
+    },
+    "green": {
+      "title": "Sustainability",
+      "greenRoute": "Green route only"
+    },
+    "interrail": {
+      "title": "Interrail",
+      "only": "DiscoverEU-eligible only"
+    }
+  },
+  "route": {
+    "title": "Your route",
+    "empty": "No stops yet — tap a country on the map to add it",
+    "addStop": "Add stop",
+    "removeStop": "Remove",
+    "daysUsed": "{used} / {limit} travel days used",
+    "seatCredits": "{used} / {limit} seat credits used",
+    "totalDistance": "Total distance: {km}",
+    "totalCO2": "CO₂ saved vs flying: {kg}",
+    "warnings": {
+      "exceedDays": "This exceeds your 7 DiscoverEU travel days",
+      "nonParticipating": "{country} is not part of DiscoverEU — the pass won't work there",
+      "mandatoryReservation": "Reservation required: this leg needs a paid seat reservation",
+      "seatCreditsExhausted": "You've used your 4 free DiscoverEU seat credits"
+    }
+  },
+  "budget": {
+    "title": "Budget calculator",
+    "groupSize": "Group size",
+    "nights": "Nights",
+    "accommodation": {
+      "title": "Accommodation",
+      "hostel": "Hostel",
+      "airbnb": "Airbnb",
+      "camp": "Camping",
+      "couchsurf": "Couchsurfing"
+    },
+    "food": {
+      "title": "Food style",
+      "budget": "Budget",
+      "moderate": "Moderate",
+      "comfort": "Comfort"
+    },
+    "totals": {
+      "perPerson": "Per person",
+      "group": "Group total",
+      "accommodation": "Accommodation",
+      "food": "Food",
+      "transport": "Transport",
+      "activities": "Activities"
+    }
+  },
+  "compare": {
+    "title": "Compare countries",
+    "hint": "Pick 2–4 countries from the map",
+    "axes": {
+      "nature": "Nature",
+      "culture": "Culture",
+      "nightlife": "Nightlife",
+      "food": "Food",
+      "budget": "Affordability",
+      "accessibility": "Accessibility"
+    }
+  },
+  "prep": {
+    "title": "Prepare for your trip",
+    "countdown": {
+      "application": "Application deadline: {date}",
+      "departure": "Departure: {date}"
+    },
+    "quiz": "Application quiz prep",
+    "checklist": "Pre-departure checklist",
+    "packing": "Smart packing list"
+  },
+  "ai": {
+    "modal": {
+      "title": "AI trip assistant",
+      "placeholder": "e.g. 10 days, museums + beach, under €800",
+      "send": "Suggest a route",
+      "keyLabel": "Groq API key",
+      "keyHint": "Your key is stored only in your browser, never sent to our servers (we have none).",
+      "getKey": "Get a free Groq key"
+    },
+    "thinking": "Thinking…"
+  },
+  "error": {
+    "weatherUnavailable": "Weather data unavailable",
+    "countriesLoad": "Couldn't load country data",
+    "mapLoad": "Couldn't load the map",
+    "aiFailed": "AI request failed — check your key and try again"
+  },
+  "share": {
+    "modal": {
+      "title": "Share your route",
+      "copyLink": "Copy link",
+      "copied": "Link copied",
+      "exportPdf": "Export as PDF",
+      "wrapped": "Share as Wrapped card"
+    }
+  }
+}

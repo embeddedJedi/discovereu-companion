@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#2a47c2" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0d1a54" media="(prefers-color-scheme: dark)">
+  <meta name="description" content="An accessible, green, and inclusive trip-planning companion for DiscoverEU participants across 33 European countries.">
+  <meta name="keywords" content="DiscoverEU, Interrail, Eurail, trip planner, Europe, youth travel, EU, accessible travel">
+  <meta name="author" content="DiscoverEU Companion contributors">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="DiscoverEU Companion">
+  <meta property="og:description" content="Engage · Connect · Empower — an accessible, green, and inclusive trip-planning companion for all European youth.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://embeddedjedi.github.io/discovereu-companion/">
+
+  <title>DiscoverEU Companion — Plan your European journey</title>
+
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+
+  <!-- App styles -->
+  <link rel="stylesheet" href="css/design-system.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/map.css">
+
+  <!-- PWA manifest (added in Phase 2) -->
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+
+  <!-- Inline early theme script — prevents flash of wrong theme -->
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('discoveru:theme');
+        var theme = saved || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) { /* localStorage blocked */ }
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- Loading shell -->
+  <div class="app-loading" id="appLoading">
+    <div class="spinner" aria-label="Loading"></div>
+  </div>
+
+  <div class="app" id="app">
+
+    <!-- ═══════ Header ═══════ -->
+    <header class="app-header" role="banner">
+      <a href="#" class="brand" aria-label="DiscoverEU Companion home">
+        <span class="brand-mark" aria-hidden="true">★</span>
+        <span class="brand-text">
+          <strong class="brand-title">DiscoverEU Companion</strong>
+          <span class="brand-sub" data-i18n="brand.tagline">Engage · Connect · Empower</span>
+        </span>
+      </a>
+
+      <div class="header-actions">
+        <!-- Language switcher -->
+        <div class="lang-switch" role="group" aria-label="Language">
+          <select id="langSelect" aria-label="Select language">
+            <option value="en">EN</option>
+            <option value="tr">TR</option>
+            <option value="de">DE</option>
+            <option value="fr">FR</option>
+            <option value="es">ES</option>
+            <option value="it">IT</option>
+          </select>
+        </div>
+
+        <!-- AI assistant trigger -->
+        <button class="icon-btn" id="btnAI" aria-label="Open AI assistant"
+                data-i18n-aria="header.aiAssistant">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 2a4 4 0 0 0-4 4v1a4 4 0 0 0-4 4v1a4 4 0 0 0 4 4v1a4 4 0 0 0 8 0v-1a4 4 0 0 0 4-4v-1a4 4 0 0 0-4-4V6a4 4 0 0 0-4-4Z"/>
+            <path d="M9 10h.01M15 10h.01M9 14s1 1.5 3 1.5S15 14 15 14"/>
+          </svg>
+        </button>
+
+        <!-- Theme toggle -->
+        <button class="icon-btn" id="btnTheme" aria-label="Toggle theme"
+                data-i18n-aria="header.toggleTheme">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+          </svg>
+        </button>
+
+        <!-- Share -->
+        <button class="icon-btn" id="btnShare" aria-label="Share route"
+                data-i18n-aria="header.share">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="18" cy="5" r="3"/>
+            <circle cx="6" cy="12" r="3"/>
+            <circle cx="18" cy="19" r="3"/>
+            <path d="m8.59 13.51 6.83 3.98M15.41 6.51l-6.82 3.98"/>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- ═══════ Main grid ═══════ -->
+    <main class="app-main">
+
+      <!-- Map -->
+      <div class="map-container">
+        <div id="map" role="region" aria-label="Interactive map of Europe"></div>
+
+        <!-- Map legend -->
+        <div class="map-legend" id="mapLegend" hidden>
+          <div class="map-legend-title" data-i18n="map.legend.title">Map key</div>
+          <div class="map-legend-item">
+            <span class="map-legend-swatch" style="background: var(--accent-soft)"></span>
+            <span data-i18n="map.legend.participating">Participating</span>
+          </div>
+          <div class="map-legend-item">
+            <span class="map-legend-swatch" style="background: var(--eu-gold-300)"></span>
+            <span data-i18n="map.legend.inRoute">In your route</span>
+          </div>
+          <div class="map-legend-item">
+            <span class="map-legend-swatch" style="background: var(--bg-sunken); opacity: 0.4; border-style: dashed"></span>
+            <span data-i18n="map.legend.nonParticipating">Not in DiscoverEU</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Side panel -->
+      <aside class="side-panel" id="sidePanel" data-open="false" aria-label="Details panel">
+        <nav class="panel-tabs" role="tablist" aria-label="Panel sections">
+          <button class="panel-tab" role="tab" data-tab="detail" aria-selected="true"
+                  data-i18n="panel.tab.detail">Detail</button>
+          <button class="panel-tab" role="tab" data-tab="route"
+                  data-i18n="panel.tab.route">Route</button>
+          <button class="panel-tab" role="tab" data-tab="budget"
+                  data-i18n="panel.tab.budget">Budget</button>
+          <button class="panel-tab" role="tab" data-tab="filters"
+                  data-i18n="panel.tab.filters">Filters</button>
+          <button class="panel-tab" role="tab" data-tab="compare"
+                  data-i18n="panel.tab.compare">Compare</button>
+          <button class="panel-tab" role="tab" data-tab="prep"
+                  data-i18n="panel.tab.prep">Prep</button>
+        </nav>
+
+        <div class="panel-body" id="panelBody" role="tabpanel">
+          <div class="panel-empty">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                 stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 2a10 10 0 1 0 10 10"/>
+              <path d="M21 3 12 12"/>
+              <path d="M15 3h6v6"/>
+            </svg>
+            <p data-i18n="panel.empty.message">Select a country on the map to begin</p>
+          </div>
+        </div>
+      </aside>
+
+    </main>
+
+    <!-- ═══════ Mobile bottom nav ═══════ -->
+    <nav class="bottom-nav" role="navigation" aria-label="Main sections">
+      <button class="bottom-nav-item" data-tab="detail" aria-selected="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+          <circle cx="12" cy="10" r="3"/>
+        </svg>
+        <span data-i18n="nav.map">Map</span>
+      </button>
+      <button class="bottom-nav-item" data-tab="route">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M4 19h16M4 15h16M8 11l4-4 4 4M12 7v12"/>
+        </svg>
+        <span data-i18n="nav.route">Route</span>
+      </button>
+      <button class="bottom-nav-item" data-tab="budget">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M12 6v12M15 9.5c-.5-1-2-1.5-3-1.5s-3 .5-3 2c0 3 6 1.5 6 4.5 0 1.5-2 2-3 2s-2.5-.5-3-1.5"/>
+        </svg>
+        <span data-i18n="nav.budget">Budget</span>
+      </button>
+      <button class="bottom-nav-item" data-tab="filters">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M22 3H2l8 9.46V19l4 2v-8.54L22 3z"/>
+        </svg>
+        <span data-i18n="nav.filters">Filters</span>
+      </button>
+    </nav>
+
+  </div>
+
+  <!-- CDN dependencies -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+  <!-- App entry (ES module) -->
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

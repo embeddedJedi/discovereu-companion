@@ -291,27 +291,44 @@ All loaded with SRI hashes (to add in Phase 1).
 ## 5. Progress tracker
 
 ### ✅ Done
-- Git repository initialized (local)
+- Git repository initialized + pushed to `github.com/embeddedJedi/discovereu-companion`
+- GitHub Pages enabled → `https://embeddedjedi.github.io/discovereu-companion/`
 - Project directory structure created
-- `.gitignore`, `LICENSE`, `README.md` written
-- `css/design-system.css` — full CSS custom property system, dark/light themes, typography, spacing, radii, motion
-- `css/main.css` — app shell grid, header, side panel layout, responsive bottom nav, loading state
-- Project infrastructure: `CLAUDE.md`, `PROGRESS.md`, 8 agent definitions
+- `.gitignore`, `.gitattributes`, `LICENSE` (MIT), `README.md`
+- `CLAUDE.md` project instructions (web-app context override)
+- `PROGRESS.md` architecture + roadmap + tracker
+- 8 agent definitions in `.claude/agents/`
+- `css/design-system.css` — full CSS custom property system, dark/light themes, typography, spacing, shadows, motion
+- `css/main.css` — app shell grid, header, side panel, responsive bottom nav, loading state
+- `css/components.css` — buttons, badges, chips, cards, forms, alerts, modals, toasts, stats, route-stop cards
+- `css/map.css` — Leaflet overrides, country polygons, labels, route polylines, popups, controls, legend
+- `index.html` — full SPA shell with CDN imports, header, panel tabs, mobile bottom nav, early theme script
+- `js/utils/dom.js` — qs/qsa/h/on/empty/escape helpers
+- `js/utils/storage.js` — namespaced LocalStorage + TTL cache
+- `js/utils/format.js` — currency/date/duration/distance/weight/percent formatters (locale-aware)
+- `js/state.js` — reactive store with persistence, subscribe/update API, shape documented
+- `js/i18n/i18n.js` — translation engine with fallback, `data-i18n` attribute application
+- `i18n/en.json` + `i18n/tr.json` — full translation baseline for all current UI strings
+- `js/ui/theme.js` — dark/light toggle + system preference + themechange event
+- `js/main.js` — app bootstrap, panel tab wiring, mobile nav wiring, lazy map import
+- `js/map/map.js` — minimal Leaflet init with European bounds
 
 ### 🚧 In progress
 - *(nothing — ready to continue)*
 
 ### ⏭ Next up (in order)
-1. `css/components.css` + `css/map.css`
-2. `index.html` app shell
-3. `js/utils/dom.js`, `js/utils/storage.js`, `js/utils/format.js`
-4. `js/state.js` reactive store
-5. `js/i18n/i18n.js` + `i18n/en.json` + `i18n/tr.json`
-6. `js/ui/theme.js`
-7. `data/geojson/europe.geojson` download (Natural Earth)
-8. `js/map/map.js` + `js/map/countries-layer.js` + `js/map/labels.js`
-9. `data/countries.json` schema + first 15 countries
-10. `js/main.js` bootstrap wiring
+1. `data/geojson/europe.geojson` — download Natural Earth + preprocess (Europe only, simplify)
+2. `js/map/countries-layer.js` — render country polygons with click/hover/focus
+3. `js/map/labels.js` — zoom-aware country labels
+4. `js/data/loader.js` — fetch-and-cache JSON data files
+5. `data/countries.json` schema + first 15 countries (data-curator)
+6. `js/ui/country-detail.js` — side panel Detail tab
+7. `js/ui/filters-ui.js` + `js/map/filters.js` — filter controls + map coloring
+8. `data/route-templates.json` + `js/ui/templates.js`
+9. `js/ui/route-builder.js` — drag-drop stops, 7-day progress
+10. `js/features/reservations.js` ⭐ — mandatory reservation warnings
+11. `js/features/seat-credits.js` ⭐ — 4 free credit tracker
+12. `js/ui/budget.js` — budget calculator
 
 ### 🛑 Blocked
 - *(none)*
