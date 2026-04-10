@@ -1,0 +1,67 @@
+// sw.js — DiscoverEU Companion service worker
+// Strategy:
+//   • Pre-cache the CSS + HTML app shell on install
+//   • On fetch (GET, same-origin): cache-first with a silent network
+//     refresh so the next visit picks up new code, but offline still
+//     works from the cache
+//   • On activate: wipe any older cache buckets so version bumps roll
+//     out cleanly
+
+const CACHE_VERSION = 'discovereu-v2';
+const APP_SHELL = [
+  './',
+  './index.html',
+  './css/design-system.css',
+  './css/main.css',
+  './css/components.css',
+  './css/map.css',
+  './assets/icons/favicon.svg',
+  './assets/icons/icon.svg',
+  './assets/manifest.json'
+];
+
+self.addEventListener('install', (event) => {
+  event.waitUntil(
+    caches.open(CACHE_VERSION)
+      .then(cache => cache.addAll(APP_SHELL))
+      .catch(err => console.warn('[sw] precache partial', err))
+  );
+  self.skipWaiting();
+});
+
+self.addEventListener('activate', (event) => {
+  event.waitUntil(
+    caches.keys().then(keys => Promise.all(
+      keys.filter(k => k !== CACHE_VERSION).map(k => caches.delete(k))
+    )).then(() => self.clients.claim())
+  );
+});
+
+self.addEventListener('fetch', (event) => {
+  const request = event.request;
+  if (request.method !== 'GET') return;
+
+  const url = new URL(request.url);
+
+  // Only handle same-origin requests. CDN assets (Leaflet, Chart.js,
+  // LZ-string) are served with their own long-lived cache headers.
+  if (url.origin !== location.origin) return;
+
+  event.respondWith(staleWhileRevalidate(request));
+});
+
+async function staleWhileRevalidate(request) {
+  const cache = await caches.open(CACHE_VERSION);
+  const cached = await cache.match(request);
+
+  const networkFetch = fetch(request)
+    .then(response => {
+      if (response && response.status === 200 && response.type === 'basic') {
+        cache.put(request, response.clone()).catch(() => {});
+      }
+      return response;
+    })
+    .catch(() => cached);
+
+  return cached || networkFetch;
+}

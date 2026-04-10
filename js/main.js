@@ -1,11 +1,16 @@
 // js/main.js
-// Application bootstrap — wires state, i18n, theme, panel, map.
+// Application bootstrap — wires state, i18n, theme, panel, map, data.
 // Kept deliberately lean: everything interesting lives in its own module.
 
 import { state } from './state.js';
 import { i18n } from './i18n/i18n.js';
 import { initTheme } from './ui/theme.js';
-import { qs, on } from './utils/dom.js';
+import { qs, on, setOpen } from './utils/dom.js';
+import { loadCoreData } from './data/loader.js';
+import { hydrateRouteFromHash, copyCurrentURL } from './utils/share.js';
+import { showToast } from './ui/toast.js';
+import { t } from './i18n/i18n.js';
+import { initWrappedTrigger } from './features/wrapped.js';
 
 async function boot() {
   try {
@@ -25,18 +30,68 @@ async function boot() {
       });
     }
 
-    // 4. Wire panel tabs
+    // 4. Wire panel tabs + mobile bottom nav + panel open/close reaction
     initPanelTabs();
-
-    // 5. Wire mobile bottom nav
     initBottomNav();
+    initPanelOpenState();
 
-    // 6. Dynamic modules — loaded lazily so the shell appears fast
-    await import('./map/map.js').then(m => m.initMap()).catch(err => {
-      console.error('[main] map init failed', err);
-    });
+    // 5. Core data bundle — countries / trains / reservations / templates
+    //    Fire-and-await: we want the map layer to see the countries slice.
+    await loadCoreData();
 
-    // 7. Hide loading shell
+    // 5a. Shareable URL — hydrate the route slice from location.hash
+    //     *after* countries load so the UI has names to render.
+    hydrateRouteFromHash();
+
+    // 5b. Wire the header share button
+    const shareBtn = qs('#btnShare');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        const route = state.getSlice('route');
+        if (!route?.stops?.length) {
+          showToast(t('share.empty'), 'warning');
+          return;
+        }
+        const ok = await copyCurrentURL();
+        showToast(ok ? t('share.copied') : t('share.failed'), ok ? 'success' : 'danger');
+      });
+    }
+
+    // 6. Side-panel tab modules — each owns its own tab and subscribes to
+    //    panelTab, re-rendering #panelBody when its tab becomes active.
+    await Promise.all([
+      import('./ui/country-detail.js').then(m => m.initCountryDetail()),
+      import('./ui/filters-ui.js').then(m => m.initFiltersUI()),
+      import('./ui/route-builder.js').then(m => m.initRouteBuilder()),
+      import('./ui/budget.js').then(m => m.initBudget()),
+      import('./ui/compare.js').then(m => m.initCompare()),
+      import('./ui/prep.js').then(m => m.initPrep())
+    ]);
+
+    // 7. Map — init base, then layer polygons + labels on top
+    const { initMap } = await import('./map/map.js');
+    const map = initMap();
+
+    if (map) {
+      const [{ initCountriesLayer }, { initLabelsLayer }] = await Promise.all([
+        import('./map/countries-layer.js'),
+        import('./map/labels.js')
+      ]);
+      await initCountriesLayer(map);
+      await initLabelsLayer(map);
+      // Reveal the legend now that polygons are drawn
+      const legend = qs('#mapLegend');
+      if (legend) legend.hidden = false;
+    }
+
+    // 7a. Register the service worker (PWA offline support). Non-blocking:
+    //     failure logs a warning but the app keeps running online-only.
+    registerServiceWorker();
+
+    // 7b. Wire Wrapped card trigger (delegates to any [data-wrapped-trigger])
+    initWrappedTrigger();
+
+    // 8. Hide loading shell
     const loader = qs('#appLoading');
     if (loader) {
       loader.setAttribute('data-hidden', 'true');
@@ -51,19 +106,40 @@ async function boot() {
   }
 }
 
+function initPanelOpenState() {
+  const panel = qs('#sidePanel');
+  if (!panel) return;
+
+  // Keep panel DOM + state in sync
+  state.subscribe('panelOpen', (open) => setOpen(panel, open));
+  setOpen(panel, state.getSlice('panelOpen') === true);
+
+  // Auto-open the panel and jump to the Detail tab when a country is picked.
+  state.subscribe('selectedCountry', (id) => {
+    if (!id) return;
+    state.set('panelOpen', true);
+    state.set('panelTab', 'detail');
+  });
+}
+
 function initPanelTabs() {
   const tabs = qs('.panel-tabs');
   if (!tabs) return;
 
+  // Click → state
   on(tabs, 'click', '.panel-tab', (_ev, target) => {
     const tab = target.dataset.tab;
-    if (!tab) return;
-    // Update tab state
-    tabs.querySelectorAll('.panel-tab').forEach(t => {
-      t.setAttribute('aria-selected', t === target ? 'true' : 'false');
-    });
-    state.set('panelTab', tab);
+    if (tab) state.set('panelTab', tab);
   });
+
+  // State → DOM (single source of truth)
+  const sync = (tab) => {
+    tabs.querySelectorAll('.panel-tab').forEach(t => {
+      t.setAttribute('aria-selected', t.dataset.tab === tab ? 'true' : 'false');
+    });
+  };
+  state.subscribe('panelTab', sync);
+  sync(state.getSlice('panelTab') || 'detail');
 }
 
 function initBottomNav() {
@@ -73,13 +149,23 @@ function initBottomNav() {
   on(nav, 'click', '.bottom-nav-item', (_ev, target) => {
     const tab = target.dataset.tab;
     if (!tab) return;
-    nav.querySelectorAll('.bottom-nav-item').forEach(item => {
-      item.setAttribute('aria-selected', item === target ? 'true' : 'false');
-    });
-    // Open the side panel if closed
-    const panel = qs('#sidePanel');
-    if (panel) panel.setAttribute('data-open', 'true');
+    state.set('panelOpen', true);
     state.set('panelTab', tab);
+  });
+
+  state.subscribe('panelTab', (tab) => {
+    nav.querySelectorAll('.bottom-nav-item').forEach(item => {
+      item.setAttribute('aria-selected', item.dataset.tab === tab ? 'true' : 'false');
+    });
+  });
+}
+
+function registerServiceWorker() {
+  if (!('serviceWorker' in navigator)) return;
+  // Only register when served over HTTP(S); file:// cannot host a SW.
+  if (!location.protocol.startsWith('http')) return;
+  navigator.serviceWorker.register('./sw.js').catch(err => {
+    console.warn('[sw] registration failed', err);
   });
 }
 

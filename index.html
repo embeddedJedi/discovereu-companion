@@ -27,8 +27,10 @@
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/map.css">
 
-  <!-- PWA manifest (added in Phase 2) -->
+  <!-- PWA manifest + icons -->
+  <link rel="manifest" href="assets/manifest.json">
   <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+  <link rel="apple-touch-icon" href="assets/icons/icon.svg">
 
   <!-- Inline early theme script — prevents flash of wrong theme -->
   <script>
@@ -203,6 +205,10 @@
   <!-- CDN dependencies -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
           integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/lz-string@1.5.0/libs/lz-string.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js" defer></script>
 
   <!-- App entry (ES module) -->
   <script type="module" src="js/main.js"></script>

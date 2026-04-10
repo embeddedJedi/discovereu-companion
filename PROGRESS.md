@@ -2,8 +2,8 @@
 
 > **Single source of truth for this project.** Every feature, decision, and architectural change is recorded here. Read this before coding anything.
 
-**Last updated:** 2026-04-10
-**Phase:** 1 (Foundation)
+**Last updated:** 2026-04-10 (session 6 — Wrapped card, PDF export, Turkish bonus layer, housekeeping + first real push)
+**Phase:** 2 (Tier 2 complete; Tier 5 Turkish bonus landed early alongside the Prep tab)
 **Launch target:** 2026-04-22 (12-day sprint)
 **GitHub:** `embeddedJedi/discovereu-companion` *(not pushed yet)*
 **Live URL:** `https://embeddedjedi.github.io/discovereu-companion` *(pending deploy)*
@@ -234,24 +234,24 @@ All loaded with SRI hashes (to add in Phase 1).
 ## 4. Feature roadmap
 
 ### Tier 1 — MVP Core *(Days 1-5)*
-- [ ] Interactive 44-country map with zoom labels
-- [ ] Country detail side panel
-- [ ] Filter system with map coloring
-- [ ] Drag-drop route builder + 7-day progress bar
-- [ ] ⭐ **Mandatory reservation warning system** (competitive differentiator #1)
-- [ ] ⭐ **4 DiscoverEU seat credit tracker** (competitive differentiator #2)
-- [ ] Budget calculator (4 people, multi-currency)
-- [ ] Pre-built route templates (Balkan, West, North, Med, Green, Inclusion)
-- [ ] Interrail validity warning for non-participating countries
+- [x] Interactive 36-country map (33 DiscoverEU + TR + Western Balkans) with zoom labels
+- [x] Country detail side panel (all 36 countries with data)
+- [x] Filter system with map coloring
+- [x] Drag-drop route builder + 7-day progress bar
+- [x] ⭐ **Mandatory reservation warning system** (competitive differentiator #1)
+- [x] ⭐ **4 DiscoverEU seat credit tracker** (competitive differentiator #2)
+- [x] Budget calculator (4 people, multi-currency)
+- [x] Pre-built route templates (Grand Tour, Balkan, Nordic, Med, Green, Inclusion, Budget, Turkish Bridge)
+- [x] Interrail / non-participating warning (via country detail + filter)
 
 ### Tier 2 — Viral & Amplification *(Days 6-8)*
-- [ ] **DiscoverEU Wrapped** shareable card (Instagram-ready)
-- [ ] **CO2 vs flying** comparison + Green Traveler badge
-- [ ] 2–4 country radar chart comparison
-- [ ] PWA offline mode (service worker)
-- [ ] Shareable route URL (LZ-compressed)
-- [ ] PDF export of full itinerary
-- [ ] Countdown timer + quiz prep + checklist + packing list
+- [x] **DiscoverEU Wrapped** shareable card (Instagram-ready)
+- [x] **CO2 vs flying** comparison + Green Traveler badge
+- [x] 2–4 country radar chart comparison
+- [x] PWA offline mode (service worker)
+- [x] Shareable route URL (LZ-compressed)
+- [x] PDF export of full itinerary
+- [x] Countdown timer + checklist + smart packing list
 
 ### Tier 3 — Inclusion *(Days 9-10)*
 - [ ] Wheelmap accessibility filter
@@ -273,9 +273,9 @@ All loaded with SRI hashes (to add in Phase 1).
 - [ ] FutureMe time capsule
 
 ### Tier 5 — Turkish bonus layer
-- [ ] Schengen visa checklist (18-year-old variant)
-- [ ] Sofia Express connector (DiscoverEU pre-segment)
-- [ ] TL budget mode + Wise/Revolut guidance
+- [x] Schengen visa checklist (18-year-old variant)
+- [x] Sofia Express connector (DiscoverEU pre-segment)
+- [x] TL budget mode + Wise/Revolut guidance
 - [ ] Turkish consulate appointment reminder
 
 ### AI (cross-cutting)
@@ -300,7 +300,7 @@ All loaded with SRI hashes (to add in Phase 1).
 - 8 agent definitions in `.claude/agents/`
 - `css/design-system.css` — full CSS custom property system, dark/light themes, typography, spacing, shadows, motion
 - `css/main.css` — app shell grid, header, side panel, responsive bottom nav, loading state
-- `css/components.css` — buttons, badges, chips, cards, forms, alerts, modals, toasts, stats, route-stop cards
+- `css/components.css` — buttons, badges, chips, cards, forms, alerts, modals, toasts, stats, route-stop cards, **country detail panel**
 - `css/map.css` — Leaflet overrides, country polygons, labels, route polylines, popups, controls, legend
 - `index.html` — full SPA shell with CDN imports, header, panel tabs, mobile bottom nav, early theme script
 - `js/utils/dom.js` — qs/qsa/h/on/empty/escape helpers
@@ -308,27 +308,55 @@ All loaded with SRI hashes (to add in Phase 1).
 - `js/utils/format.js` — currency/date/duration/distance/weight/percent formatters (locale-aware)
 - `js/state.js` — reactive store with persistence, subscribe/update API, shape documented
 - `js/i18n/i18n.js` — translation engine with fallback, `data-i18n` attribute application
-- `i18n/en.json` + `i18n/tr.json` — full translation baseline for all current UI strings
+- `i18n/en.json` + `i18n/tr.json` — full translation baseline incl. country-detail section
 - `js/ui/theme.js` — dark/light toggle + system preference + themechange event
-- `js/main.js` — app bootstrap, panel tab wiring, mobile nav wiring, lazy map import
+- `js/main.js` — bootstrap, state-driven panel tabs + bottom nav, data load, map + layer + labels + detail wiring
 - `js/map/map.js` — minimal Leaflet init with European bounds
+- **`data/geojson/europe.geojson`** — Natural Earth 1:50m, 36 features (33 DiscoverEU + BA/MK/RS + TR bonus), ~275 KB, stripped props to id/name/name_long/continent
+- **`data/countries.json`** — v1 schema + first 15 countries (DE/FR/IT/ES/NL/BE/AT/CH/CZ/PL/HU/PT/GR/SE/TR) with scores, costPerDay, highlights, sources
+- **`js/data/loader.js`** — in-memory JSON fetch + cache, `loadCoreData()` hydrates countries/trains/reservations/routeTemplates slices via Promise.allSettled
+- **`js/map/countries-layer.js`** — Leaflet GeoJSON layer with click/hover/keyboard focus, `selectCountry()` / `focusCountry()` helpers, classList toggling for selected/in-route/non-participating (preserves leaflet-interactive)
+- **`js/map/labels.js`** — zoom-aware divIcon labels, 4 importance tiers by area, centroid placement handling Polygon + MultiPolygon
+- **`js/ui/country-detail.js`** — Detail tab renderer: flag, name, badges, short description, facts grid, score bars, highlights, Add-to-route + Compare actions, non-participating warning
+- **`data/countries.json`** expanded to all **36 countries** — EU27 + IS/LI/NO + TR bonus + AL/BA/MK/RS map context, with scores, costPerDay, highlights, sources
+- **`js/map/filters.js`** — pure matcher: `filtersActive`, `matchesFilters`, `countMatches`. Applied by `countries-layer` to toggle `.filter-match` class.
+- **`js/ui/filters-ui.js`** — Filters tab: category chips (6), budget level segmented, accessibility/LGBTQ+ toggles, Interrail-only toggle, live match count, reset button
+- **`data/route-templates.json`** — 8 curated routes (Grand Tour, Balkan Adventure, Nordic Lights, Mediterranean Coast, Green Rail, Inclusion First, Budget Backpacker, Turkish Bridge)
+- **`js/ui/route-builder.js`** — Route tab: 7-day progress bar, seat-credits indicator, drag-drop reordering, per-stop ±1 nights controls, clear route, template gallery (shown when empty or as "more templates" footer), reservation warnings section
+- **`data/reservations.json`** — 12 mandatory reservation entries (FR↔IT/ES/DE/CH TGV, IT Frecciarossa, ES AVE, DE↔AT Nightjet, HR↔HU, SE night, BG↔GR, RO↔HU, TR↔BG Sofia Express)
+- **`js/features/reservations.js`** ⭐ — `getRouteReservations(route)` walks adjacent stop pairs against the reservations data set, supports bidirectional + domestic matching
+- **`js/features/seat-credits.js`** ⭐ — `computeSeatCredits(route)` counts international vs domestic paid reservations, enforces 4-credit limit, surfaces `exceeded` flag
+- **Language-reactive tabs** — all tab modules subscribe to `state.language` so dynamic `h()`-rendered text (not just `data-i18n` attributes) refreshes on switch
+- **`js/ui/budget.js`** — Budget calculator tab. Pure `computeBudget(route, user)` splits each stop's `costPerDay[tier]` into 40/35/25 accommodation/food/activities shares, applies accommodation & food modifiers, and sums reservation costs as transport. Per-person + group total cards + breakdown bar rows, stepper + chip controls for group size / travel style / accommodation / food.
+- **Chart.js 4.4.0** — added to CDN list in `index.html` with `defer`, used only by the Compare tab.
+- **`js/ui/compare.js`** — Compare tab renders a radar chart over 2-4 countries across 6 axes (nature / culture / nightlife / food / budgetFriendly / accessibility). Single Chart.js instance, destroyed on tab-leave to prevent canvas leaks. Colour palette: EU-blue / gold / green / red. Countries are added via the Detail tab's "Compare" button, capped at 4 with oldest-first eviction.
+- **`state.compare`** — new ephemeral (non-persisted) slice: list of country IDs currently in the comparison. Cleared on session refresh.
+- **`js/features/co2.js`** — `computeCO2(route)` haversine between capital coordinates (36 inline lat/lng pairs), 35 g/pkm rail vs 255 g/pkm flight emission factors, returns `{ totalKm, railKg, flightKg, savedKg, savedPct, green }`. Rendered as a green card in the Route panel with a "Green Traveler" badge when savings ≥ 75%.
+- **`js/ui/prep.js`** — Prep tab with three sections: departure countdown (HTML date input + live day-delta that ticks every 60s when visible), 10-item pre-departure checklist with progress pill and strike-through, smart packing list that grows with the route (beach → swimsuit/sunscreen/flipflops, nordic → warm jacket/thermals, nature → rain jacket/hiking shoes, culture → nice outfit) plus camp-specific items when `user.accommodation === 'camp'`.
+- **`state.prep`** — new persisted slice `{ departureDate, checklistDone, packingDone }`, added to `PERSIST_KEYS`, so checks survive page reloads.
+- **LZ-string 1.5.0 CDN + `js/utils/share.js`** — URL hash round-trip: `encodeRoute()` / `decodeRoute()` via `compressToEncodedURIComponent`, `currentShareURL()` builds the canonical share URL, `hydrateRouteFromHash()` runs after `loadCoreData` so arriving at `/#route=…` auto-hydrates the Route tab. A 6-stop Turkish Bridge route fits in ~165 chars — well under any 2000-char gist fallback threshold.
+- **`js/ui/toast.js`** — lightweight toast stack bound to existing `.toast` styles; 4 variants (success/warning/danger/info) via left-border colours. Used by the header Share button.
+- **Header Share button wired** — empty route → warning toast, otherwise copies the share URL to the clipboard (with `execCommand` fallback) and updates `history.replaceState` so the address bar reflects the copied link.
+- **PWA shell — `assets/manifest.json` + `sw.js`** — cache-first stale-while-revalidate service worker, pre-caches the CSS/HTML app shell + icons + manifest on install, wipes older cache buckets on activate. Register is a no-op on `file://`. SVG-only icon set (logo in blue + gold EU star) doubles as maskable + favicon so there are zero binary assets in the repo.
+- **`js/main.js` boot order** — now: theme → i18n → tabs → data load → `hydrateRouteFromHash` → module imports → map → SW register → hide loading shell.
+- **`js/features/wrapped.js`** ⭐ — DiscoverEU Wrapped shareable card. Opens a `.modal-wrapped` overlay rendered as real DOM (so the card is screen-reader-legible and EACEA-inspectable), then flattens it to a 1080×1080 PNG with html2canvas for sharing. Hooks into any `[data-wrapped-trigger]` element via `initWrappedTrigger()`; the Route tab exposes a primary "Wrapped" button once the route has at least one stop. Empty route → warning toast instead of an empty card.
+- **`js/features/pdf-export.js`** — Print-ready A4 itinerary export via jsPDF. Lays out the document with vector text (not a canvas snapshot) so output stays crisp and selectable on any printer. Dynamically imported from `route-builder.js` the first time the user clicks "Export PDF" so jsPDF only loads on demand. Sections: cover page, day-by-day stops with nights + highlights, reservations table, budget summary, CO₂ card, seat-credit status.
+- **`js/features/turkish-bonus.js` + `data/turkish-bonus.json`** ⭐ (Tier 5) — Turkish applicant layer. Three cards rendered into the Prep tab: 10-item **Schengen visa checklist** (biometrics, €30k travel insurance, €50/day financial proof, DiscoverEU invitation letter, etc.), **Sofia Express** callout (Istanbul→Sofia sleeper, the only direct rail bridge into DiscoverEU, ~12h, ~€25), and **TL budget tips** (Wise / Revolut / Ziraat Maximum guidance plus ~43–45 TL/EUR reference rate). Active when `language==='tr'`, `user.homeCountry==='TR'`, or the route starts at a Turkish stop — otherwise the whole module is a no-op.
+- **`css/components.css`** — added `.modal-overlay`, `.modal-wrapped`, `.wrapped-card`, `.turkish-bonus`, and `.tier5-card` styles so the three new features slot into the existing design-system tokens without hardcoded colours.
+- **Session 6 translations** — `i18n/en.json` + `i18n/tr.json` extended with `wrapped.*`, `modal.*`, `pdf.*`, and `turkishBonus.*` keys.
 
 ### 🚧 In progress
 - *(nothing — ready to continue)*
 
 ### ⏭ Next up (in order)
-1. `data/geojson/europe.geojson` — download Natural Earth + preprocess (Europe only, simplify)
-2. `js/map/countries-layer.js` — render country polygons with click/hover/focus
-3. `js/map/labels.js` — zoom-aware country labels
-4. `js/data/loader.js` — fetch-and-cache JSON data files
-5. `data/countries.json` schema + first 15 countries (data-curator)
-6. `js/ui/country-detail.js` — side panel Detail tab
-7. `js/ui/filters-ui.js` + `js/map/filters.js` — filter controls + map coloring
-8. `data/route-templates.json` + `js/ui/templates.js`
-9. `js/ui/route-builder.js` — drag-drop stops, 7-day progress
-10. `js/features/reservations.js` ⭐ — mandatory reservation warnings
-11. `js/features/seat-credits.js` ⭐ — 4 free credit tracker
-12. `js/ui/budget.js` — budget calculator
+1. Housekeeping: `.gitignore` dev screenshots + `.playwright-mcp/`, commit session 2–6 work in logical chunks, push to GitHub, verify Pages deploy
+2. Tier 3: Wheelmap accessibility layer + ILGA Rainbow Map layer
+3. Tier 3: DE / FR / ES / IT translations (extend i18n JSONs)
+4. Tier 3: Emergency info panel (offline, per country) + fewer-opportunities mode
+5. Tier 4: City Bingo + Daily Dare + Journal + Voice capsule (fun/memory layer)
+6. Tier 4: Country Soundtrack (Spotify embed), Group Vote, Night Arrival Shield, Pickpocket heatmap, FutureMe
+7. AI: Natural-language route suggestion (Groq API, user-provided key)
+8. Deploy polish: custom domain + outreach package for EACEA / Turkish UA / LinkedIn DG EAC Youth Unit
 
 ### 🛑 Blocked
 - *(none)*
@@ -346,6 +374,18 @@ All loaded with SRI hashes (to add in Phase 1).
 | 2026-04-10 | Groq for AI (user key) | Free tier, Llama 3 fast, no backend proxy needed |
 | 2026-04-10 | PROGRESS.md as single source of truth | User directive — architecture + progress in one place, drives code |
 | 2026-04-10 | 8-agent team with Turkish chat / English code | User directive — specialized agents for domain work |
+| 2026-04-10 | Each tab module owns its own render and subscribes to `panelTab` | Avoids a central router; tabs clear `#panelBody` via `empty()` when they become active |
+| 2026-04-10 | Tab modules also subscribe to `state.language` | Dynamic content built with `h()` bypasses `data-i18n`, so an explicit re-render is needed on language switch |
+| 2026-04-10 | Domestic mandatory reservations don't burn DiscoverEU credits | Matches the real DiscoverEU rules: free credits only cover international legs; AVE/Frecciarossa domestic are extra out-of-pocket |
+| 2026-04-10 | Templates gallery doubles as an "empty state" and as a footer | Single module avoids mode-switching; when the route is empty it's the hero, otherwise a collapsed "more templates" invitation |
+| 2026-04-10 | Budget = daily cost × 40/35/25 split × accommodation/food modifiers + reservation costs | Lets a single `costPerDay[low/mid/high]` number drive four breakdown categories without extra data; keeps `data/countries.json` small |
+| 2026-04-10 | `state.compare` is ephemeral (not persisted) | Comparing is a lightweight exploratory action, not part of the user's saved itinerary; refresh should start clean |
+| 2026-04-10 | Chart.js is loaded via CDN with `defer`, retried once by `drawChart` | Avoids blocking the initial paint; the Compare tab is rarely the first thing a user opens |
+| 2026-04-10 | CO₂ distance uses capital-to-capital haversine | Precise enough for the ratio message (which is the whole point of the card); avoids shipping a real city-pair distance table |
+| 2026-04-10 | Packing list adapts to the route instead of a universal checklist | Fewer items = higher completion rate; users won't tick "warm jacket" on a Greek beach trip |
+| 2026-04-10 | Share URL uses `location.hash`, not a query string | Hash stays client-side so GitHub Pages needs no routing rules; `history.replaceState` keeps the address bar in sync without reloads |
+| 2026-04-10 | Service worker is same-origin only, CDN assets skipped | Leaflet / Chart.js / LZ-string already ship with long-lived cache headers; re-caching them in our SW would just duplicate bytes |
+| 2026-04-10 | Icons are SVG-only, including maskable | Keeps the repo binary-free so EACEA reviewers can clone + read everything; modern Chrome/Safari PWA installers accept SVG maskables |
 
 ---
 
