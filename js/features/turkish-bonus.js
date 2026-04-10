@@ -35,23 +35,27 @@ export function isTurkishLayerActive() {
 }
 
 /**
- * Render the Turkish bonus block synchronously, returning an empty
- * document fragment while the JSON fetches on first call. Once the data
- * arrives, the caller's `onReady` callback fires so the consumer can
- * re-render its own panel with the real content.
+ * Render the Turkish bonus block synchronously.
+ *
+ * On the first call the JSON hasn't loaded yet, so we fire the fetch,
+ * schedule a one-shot `onReady` callback, and return a loading stub.
+ * Once the data is cached we return `buildLayer(bonusData)` immediately
+ * WITHOUT scheduling another callback — otherwise every re-render would
+ * queue a fresh microtask that re-invokes the caller, causing an
+ * infinite render loop (seen when the Prep tab re-rendered after any
+ * checkbox change).
  */
 export function renderTurkishBonus(onReady) {
   if (!isTurkishLayerActive()) return document.createDocumentFragment();
 
+  // Cache hit — synchronous render, no callback scheduling.
+  if (bonusData) return buildLayer(bonusData);
+
+  // First render: trigger the fetch and let the caller know once.
   ensureData().then(() => {
     if (typeof onReady === 'function' && bonusData) onReady(bonusData);
   });
-
-  if (!bonusData) {
-    return h('div', { class: 'tr-bonus-loading', 'aria-busy': 'true' });
-  }
-
-  return buildLayer(bonusData);
+  return h('div', { class: 'tr-bonus-loading', 'aria-busy': 'true' });
 }
 
 // ─── DOM builder ─────────────────────────────────────────────────────────

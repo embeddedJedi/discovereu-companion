@@ -139,21 +139,25 @@
   display: flex;
   border-bottom: 1px solid var(--border-subtle);
   background: var(--bg-sunken);
-  padding: 0 var(--space-2);
-  gap: var(--space-1);
-  overflow-x: auto;
-  scrollbar-width: none;
+  padding: 0;
+  gap: 0;
 }
 
-.panel-tabs::-webkit-scrollbar { display: none; }
-
 .panel-tab {
-  padding: var(--space-3) var(--space-4);
+  /* Equal-width distribution: six tabs always fit the 420 px side panel
+     (and the mobile full-width panel) without horizontal scrolling.
+     Horizontal padding is tight so "Hazırlık" / "Karşılaştır" survive. */
+  flex: 1 1 0;
+  min-width: 0;
+  padding: var(--space-3) var(--space-1);
   font-size: var(--text-sm);
   font-weight: var(--weight-medium);
   color: var(--text-secondary);
   border-bottom: 2px solid transparent;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
   transition: color var(--duration-fast), border-color var(--duration-fast);
 }
 
