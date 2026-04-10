@@ -11,3 +11,8 @@ build/
 *.swp
 *.swo
 .claude/settings.local.json
+
+# Dev artifacts — Playwright MCP session state + local QA screenshots.
+# Brand assets live under assets/images/ and are committed.
+.playwright-mcp/
+/*.png
