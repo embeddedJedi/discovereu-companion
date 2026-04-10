@@ -1,0 +1,13 @@
+.DS_Store
+Thumbs.db
+*.log
+.vscode/
+.idea/
+node_modules/
+dist/
+build/
+.env
+.env.local
+*.swp
+*.swo
+.claude/settings.local.json
