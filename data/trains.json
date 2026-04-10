@@ -1,0 +1,6 @@
+{
+  "version": 1,
+  "generated": "2026-04-11",
+  "note": "City-pair travel-time dataset. Populated in Tier 3+ from seat61.com, Eurostat, and Interrail timetable PDFs. Schema (per entry): { fromCountry, fromCity, toCountry, toCity, duration, reservationRequired, notes }. Keep the array empty until real data is researched — loadCoreData tolerates an empty trains slice.",
+  "trains": []
+}
