@@ -4,7 +4,7 @@
 
 import { storage } from './utils/storage.js';
 
-const PERSIST_KEYS = ['theme', 'language', 'user', 'route', 'filters'];
+const PERSIST_KEYS = ['theme', 'language', 'user', 'route', 'filters', 'prep'];
 
 const initialState = {
   theme: 'light',
@@ -33,6 +33,12 @@ const initialState = {
   selectedCountry: null,
   panelTab: 'detail',
   panelOpen: false,
+  compare: [],                 // list of country ids (max 4) — ephemeral
+  prep: {
+    departureDate: null,       // ISO "YYYY-MM-DD" or null
+    checklistDone: {},         // { itemId: true }
+    packingDone:   {}          // { itemId: true }
+  },
   countries: [],               // loaded from data/countries.json
   trains: [],                  // loaded from data/trains.json
   reservations: [],            // loaded from data/reservations.json

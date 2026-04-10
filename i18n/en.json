@@ -29,6 +29,41 @@
       "message": "Select a country on the map to begin"
     }
   },
+  "detail": {
+    "badge": {
+      "discoverEU": "DiscoverEU"
+    },
+    "facts": {
+      "capital": "Capital",
+      "currency": "Currency",
+      "languages": "Languages",
+      "population": "Population",
+      "calling": "Calling code",
+      "emergency": "Emergency"
+    },
+    "scores": {
+      "title": "At a glance"
+    },
+    "score": {
+      "nature": "Nature",
+      "culture": "Culture",
+      "nightlife": "Nightlife",
+      "food": "Food",
+      "history": "History",
+      "safety": "Safety"
+    },
+    "highlights": {
+      "title": "Highlights"
+    },
+    "action": {
+      "addToRoute": "Add to route",
+      "compare": "Compare"
+    },
+    "missing": {
+      "message": "We're still writing the guide for this country. Want to help fill it in?",
+      "contribute": "Contribute on GitHub →"
+    }
+  },
   "map": {
     "legend": {
       "title": "Map key",
@@ -39,6 +74,9 @@
   },
   "filters": {
     "title": "Filters",
+    "reset": "Reset filters",
+    "countAll": "{n} countries shown",
+    "countFiltered": "{n} countries match",
     "categories": {
       "title": "What are you into?",
       "nature": "Nature",
@@ -48,6 +86,15 @@
       "beach": "Beach",
       "history": "History",
       "budget": "Budget-friendly"
+    },
+    "budget": {
+      "title": "Daily budget"
+    },
+    "budgetLevel": {
+      "all": "Any",
+      "low": "Low",
+      "mid": "Mid",
+      "high": "High"
     },
     "inclusion": {
       "title": "Inclusion",
@@ -66,13 +113,35 @@
   },
   "route": {
     "title": "Your route",
-    "empty": "No stops yet — tap a country on the map to add it",
+    "empty": "No stops yet — tap a country on the map, or start from a template below.",
     "addStop": "Add stop",
     "removeStop": "Remove",
+    "clear": "Clear route",
+    "stopNights": "{n} nights",
     "daysUsed": "{used} / {limit} travel days used",
     "seatCredits": "{used} / {limit} seat credits used",
     "totalDistance": "Total distance: {km}",
     "totalCO2": "CO₂ saved vs flying: {kg}",
+    "templates": {
+      "title": "Start from a template",
+      "more": "Replace with a template",
+      "sub": "Curated routes for every travel style — one tap to begin.",
+      "use": "Use this route",
+      "days": "{n} days",
+      "countries": "{n} countries"
+    },
+    "shareActions": {
+      "wrap": "Create Wrapped card",
+      "pdf": "Export itinerary PDF"
+    },
+    "reservations": {
+      "title": "Reservation warnings",
+      "sub": "Legs on this route where a paid seat reservation is mandatory — even with your DiscoverEU pass.",
+      "none": "Great — no mandatory reservations on this route.",
+      "domestic": "Domestic high-speed",
+      "international": "International leg"
+    },
+    "domesticPaid": "+{n} paid domestic",
     "warnings": {
       "exceedDays": "This exceeds your 7 DiscoverEU travel days",
       "nonParticipating": "{country} is not part of DiscoverEU — the pass won't work there",
@@ -84,6 +153,14 @@
     "title": "Budget calculator",
     "groupSize": "Group size",
     "nights": "Nights",
+    "emptyHint": "Add stops to your route to see a real budget. For now we show zero.",
+    "breakdown": "Where your money goes",
+    "level": {
+      "title": "Travel style",
+      "budget": "Budget",
+      "moderate": "Moderate",
+      "comfort": "Comfort"
+    },
     "accommodation": {
       "title": "Accommodation",
       "hostel": "Hostel",
@@ -99,7 +176,8 @@
     },
     "totals": {
       "perPerson": "Per person",
-      "group": "Group total",
+      "perTrip": "whole trip",
+      "group": "Group total ({n} people)",
       "accommodation": "Accommodation",
       "food": "Food",
       "transport": "Transport",
@@ -108,25 +186,112 @@
   },
   "compare": {
     "title": "Compare countries",
-    "hint": "Pick 2–4 countries from the map",
+    "hint": "Open a country and tap \"Compare\" — up to 4 at once.",
+    "empty": "No countries selected yet. Pick one on the map, open its detail panel, and press Compare.",
+    "clear": "Clear comparison",
+    "remove": "Remove {country}",
     "axes": {
       "nature": "Nature",
       "culture": "Culture",
       "nightlife": "Nightlife",
       "food": "Food",
-      "budget": "Affordability",
+      "budgetFriendly": "Affordability",
       "accessibility": "Accessibility"
     }
   },
   "prep": {
     "title": "Prepare for your trip",
-    "countdown": {
-      "application": "Application deadline: {date}",
-      "departure": "Departure: {date}"
+    "sub": "Your pre-departure cockpit. Pick a date, tick things off, and start packing.",
+    "countdownTitle": "Countdown",
+    "checklistTitle": "Pre-departure checklist",
+    "packingTitle": "Smart packing list",
+    "packingSub": "This list adapts to the countries on your route and your accommodation choice.",
+    "departureDate": "Departure date",
+    "pickDate": "Pick a departure date to start the countdown.",
+    "daysLeft": "days to go",
+    "checklist": {
+      "passportValid": "Passport valid for 6+ months",
+      "idCard": "National ID or backup ID in hand",
+      "travelInsurance": "Travel insurance active",
+      "ehicCard": "European Health Insurance Card (EHIC)",
+      "discoverEUPass": "DiscoverEU pass saved offline + printed",
+      "reservationsBooked": "Mandatory reservations booked",
+      "bankNotified": "Bank notified of travel dates",
+      "emergencyContacts": "Emergency contacts saved offline",
+      "offlineMaps": "Offline maps downloaded",
+      "firstNight": "First night's accommodation confirmed"
     },
-    "quiz": "Application quiz prep",
-    "checklist": "Pre-departure checklist",
-    "packing": "Smart packing list"
+    "packing": {
+      "daypack": "Daypack (25L)",
+      "comfyShoes": "Comfortable walking shoes",
+      "waterBottle": "Reusable water bottle",
+      "powerBank": "Power bank",
+      "adapter": "EU plug adapter",
+      "basicMeds": "Basic medicines",
+      "toiletries": "Toiletries kit",
+      "phoneCharger": "Phone charger",
+      "cashCard": "Travel card + some cash",
+      "swimsuit": "Swimsuit",
+      "sunscreen": "Sunscreen (SPF 30+)",
+      "flipFlops": "Flip-flops",
+      "sunglasses": "Sunglasses",
+      "warmJacket": "Warm jacket",
+      "thermals": "Thermal base layers",
+      "beanieGloves": "Beanie + gloves",
+      "rainJacket": "Rain jacket",
+      "hikingShoes": "Hiking shoes",
+      "niceOutfit": "One nice outfit",
+      "sleepingBag": "Sleeping bag",
+      "headlamp": "Headlamp",
+      "dryBag": "Dry bag"
+    }
+  },
+  "modal": {
+    "close": "Close",
+    "cancel": "Close"
+  },
+  "pdf": {
+    "saved": "PDF saved to your downloads",
+    "generated": "Generated {date}",
+    "co2Saved": "Saved vs flying",
+    "seatCredits": "Seat credits used",
+    "section": {
+      "stops": "Itinerary",
+      "reservations": "Mandatory reservations",
+      "impact": "Environmental impact",
+      "budget": "Budget estimate"
+    }
+  },
+  "wrapped": {
+    "modalTitle": "DiscoverEU Wrapped",
+    "eyebrow": "My DiscoverEU trip",
+    "defaultName": "My European adventure",
+    "tag": "Companion",
+    "hint": "Download and share on Instagram, TikTok or your group chat.",
+    "download": "Download PNG",
+    "downloaded": "Wrapped card saved",
+    "exportFailed": "Couldn't export the card — try again",
+    "libMissing": "Export library is still loading — try again in a second",
+    "empty": "Add at least one stop before wrapping your trip",
+    "stat": {
+      "countries": "Countries",
+      "nights": "Nights",
+      "km": "km by rail",
+      "co2": "CO₂ saved"
+    },
+    "highlight": {
+      "credits": "Used {used} of {limit} free seat credits",
+      "green": "Green Traveler — {pct}% less CO₂ than flying"
+    }
+  },
+  "co2": {
+    "title": "Your green footprint",
+    "savedLine": "You save {kg} kg of CO₂ ({pct}% less) by taking the train.",
+    "distance": "Distance",
+    "byRail": "By rail",
+    "ifFlew": "If you flew",
+    "km": "{km} km",
+    "greenTraveler": "Green Traveler"
   },
   "ai": {
     "modal": {
@@ -146,6 +311,9 @@
     "aiFailed": "AI request failed — check your key and try again"
   },
   "share": {
+    "copied": "Link copied to clipboard",
+    "failed": "Couldn't copy — try long-pressing the address bar",
+    "empty": "Add stops to your route before sharing",
     "modal": {
       "title": "Share your route",
       "copyLink": "Copy link",

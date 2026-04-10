@@ -29,6 +29,41 @@
       "message": "Başlamak için haritadan bir ülke seç"
     }
   },
+  "detail": {
+    "badge": {
+      "discoverEU": "DiscoverEU"
+    },
+    "facts": {
+      "capital": "Başkent",
+      "currency": "Para birimi",
+      "languages": "Diller",
+      "population": "Nüfus",
+      "calling": "Ülke kodu",
+      "emergency": "Acil"
+    },
+    "scores": {
+      "title": "Kısaca"
+    },
+    "score": {
+      "nature": "Doğa",
+      "culture": "Kültür",
+      "nightlife": "Gece hayatı",
+      "food": "Yemek",
+      "history": "Tarih",
+      "safety": "Güvenlik"
+    },
+    "highlights": {
+      "title": "Öne çıkanlar"
+    },
+    "action": {
+      "addToRoute": "Rotaya ekle",
+      "compare": "Karşılaştır"
+    },
+    "missing": {
+      "message": "Bu ülkenin rehberini henüz yazmadık. Katkı vermek ister misin?",
+      "contribute": "GitHub'da katkı ver →"
+    }
+  },
   "map": {
     "legend": {
       "title": "Harita anahtarı",
@@ -39,6 +74,9 @@
   },
   "filters": {
     "title": "Filtreler",
+    "reset": "Filtreleri sıfırla",
+    "countAll": "{n} ülke gösteriliyor",
+    "countFiltered": "{n} ülke eşleşti",
     "categories": {
       "title": "Nelere ilgin var?",
       "nature": "Doğa",
@@ -48,6 +86,15 @@
       "beach": "Plaj",
       "history": "Tarih",
       "budget": "Bütçe dostu"
+    },
+    "budget": {
+      "title": "Günlük bütçe"
+    },
+    "budgetLevel": {
+      "all": "Hepsi",
+      "low": "Düşük",
+      "mid": "Orta",
+      "high": "Yüksek"
     },
     "inclusion": {
       "title": "Kapsayıcılık",
@@ -66,13 +113,35 @@
   },
   "route": {
     "title": "Rotan",
-    "empty": "Henüz durak yok — eklemek için haritadan bir ülkeye dokun",
+    "empty": "Henüz durak yok — haritadan bir ülkeye dokun ya da aşağıdaki şablonlardan birini seç.",
     "addStop": "Durak ekle",
     "removeStop": "Kaldır",
+    "clear": "Rotayı temizle",
+    "stopNights": "{n} gece",
     "daysUsed": "{used} / {limit} seyahat günü kullanıldı",
     "seatCredits": "{used} / {limit} koltuk rezervasyon kredisi kullanıldı",
     "totalDistance": "Toplam mesafe: {km}",
     "totalCO2": "Uçağa göre tasarruf: {kg}",
+    "templates": {
+      "title": "Hazır bir rota ile başla",
+      "more": "Şablonla değiştir",
+      "sub": "Her gezgin tarzına göre özenle seçilmiş rotalar — tek dokunuşla başla.",
+      "use": "Bu rotayı kullan",
+      "days": "{n} gün",
+      "countries": "{n} ülke"
+    },
+    "shareActions": {
+      "wrap": "Wrapped kartı oluştur",
+      "pdf": "Rotayı PDF olarak dışa aktar"
+    },
+    "reservations": {
+      "title": "Rezervasyon uyarıları",
+      "sub": "Bu rotada DiscoverEU pasonla bile ücretli koltuk rezervasyonu gerektiren etaplar.",
+      "none": "Harika — bu rotada zorunlu rezervasyon yok.",
+      "domestic": "Yurt içi yüksek hız",
+      "international": "Uluslararası etap"
+    },
+    "domesticPaid": "+{n} ücretli yurt içi",
     "warnings": {
       "exceedDays": "Bu, 7 günlük DiscoverEU seyahat sınırını aşıyor",
       "nonParticipating": "{country} DiscoverEU kapsamında değil — paso orada geçmez",
@@ -84,6 +153,14 @@
     "title": "Bütçe hesaplayıcı",
     "groupSize": "Grup büyüklüğü",
     "nights": "Gece",
+    "emptyHint": "Gerçek bütçeyi görmek için rotaya durak ekle. Şimdilik sıfır gösteriyoruz.",
+    "breakdown": "Paran nereye gidiyor",
+    "level": {
+      "title": "Seyahat tarzı",
+      "budget": "Ekonomik",
+      "moderate": "Orta",
+      "comfort": "Rahat"
+    },
     "accommodation": {
       "title": "Konaklama",
       "hostel": "Hostel",
@@ -99,7 +176,8 @@
     },
     "totals": {
       "perPerson": "Kişi başı",
-      "group": "Grup toplamı",
+      "perTrip": "tüm gezi",
+      "group": "Grup toplamı ({n} kişi)",
       "accommodation": "Konaklama",
       "food": "Yemek",
       "transport": "Ulaşım",
@@ -108,25 +186,112 @@
   },
   "compare": {
     "title": "Ülkeleri karşılaştır",
-    "hint": "Haritadan 2–4 ülke seç",
+    "hint": "Bir ülkeyi aç ve \"Karşılaştır\"a dokun — en fazla 4 ülke.",
+    "empty": "Henüz ülke seçilmedi. Haritadan bir ülkeye tıkla, detay panelini aç ve Karşılaştır'a bas.",
+    "clear": "Karşılaştırmayı temizle",
+    "remove": "{country} çıkar",
     "axes": {
       "nature": "Doğa",
       "culture": "Kültür",
       "nightlife": "Gece hayatı",
       "food": "Yemek",
-      "budget": "Uygun fiyat",
+      "budgetFriendly": "Uygun fiyat",
       "accessibility": "Erişilebilirlik"
     }
   },
   "prep": {
     "title": "Yolculuğa hazırlık",
-    "countdown": {
-      "application": "Başvuru son tarihi: {date}",
-      "departure": "Yola çıkış: {date}"
+    "sub": "Yola çıkmadan önceki kontrol paneli. Tarih seç, maddeleri işaretle ve çantanı topla.",
+    "countdownTitle": "Geri sayım",
+    "checklistTitle": "Kalkış öncesi kontrol listesi",
+    "packingTitle": "Akıllı paketleme listesi",
+    "packingSub": "Bu liste rotandaki ülkelere ve konaklama tercihine göre otomatik güncellenir.",
+    "departureDate": "Kalkış tarihi",
+    "pickDate": "Geri sayımı başlatmak için bir kalkış tarihi seç.",
+    "daysLeft": "gün kaldı",
+    "checklist": {
+      "passportValid": "Pasaport 6+ ay geçerli",
+      "idCard": "Kimlik / yedek kimlik yanında",
+      "travelInsurance": "Seyahat sigortası aktif",
+      "ehicCard": "Avrupa Sağlık Sigortası Kartı (EHIC)",
+      "discoverEUPass": "DiscoverEU pasosu çevrimdışı + basılı kaydedildi",
+      "reservationsBooked": "Zorunlu rezervasyonlar yapıldı",
+      "bankNotified": "Banka seyahat tarihlerinden haberdar",
+      "emergencyContacts": "Acil kişiler çevrimdışı kaydedildi",
+      "offlineMaps": "Çevrimdışı haritalar indirildi",
+      "firstNight": "İlk gece konaklaması onaylandı"
     },
-    "quiz": "Başvuru quiz hazırlığı",
-    "checklist": "Kalkış öncesi liste",
-    "packing": "Akıllı paketleme listesi"
+    "packing": {
+      "daypack": "Sırt çantası (25L)",
+      "comfyShoes": "Rahat yürüyüş ayakkabısı",
+      "waterBottle": "Tekrar kullanılabilir matara",
+      "powerBank": "Powerbank",
+      "adapter": "AB prizi adaptörü",
+      "basicMeds": "Temel ilaçlar",
+      "toiletries": "Kişisel bakım kiti",
+      "phoneCharger": "Telefon şarj aleti",
+      "cashCard": "Seyahat kartı + biraz nakit",
+      "swimsuit": "Mayo",
+      "sunscreen": "Güneş kremi (SPF 30+)",
+      "flipFlops": "Parmak arası terlik",
+      "sunglasses": "Güneş gözlüğü",
+      "warmJacket": "Sıcak mont",
+      "thermals": "Termal alt katman",
+      "beanieGloves": "Bere + eldiven",
+      "rainJacket": "Yağmurluk",
+      "hikingShoes": "Trekking ayakkabısı",
+      "niceOutfit": "Bir şık kıyafet",
+      "sleepingBag": "Uyku tulumu",
+      "headlamp": "Kafa lambası",
+      "dryBag": "Kuru torba"
+    }
+  },
+  "modal": {
+    "close": "Kapat",
+    "cancel": "Kapat"
+  },
+  "pdf": {
+    "saved": "PDF indirilenlere kaydedildi",
+    "generated": "{date} tarihinde oluşturuldu",
+    "co2Saved": "Uçağa göre tasarruf",
+    "seatCredits": "Kullanılan koltuk kredisi",
+    "section": {
+      "stops": "Güzergah",
+      "reservations": "Zorunlu rezervasyonlar",
+      "impact": "Çevresel etki",
+      "budget": "Bütçe tahmini"
+    }
+  },
+  "wrapped": {
+    "modalTitle": "DiscoverEU Wrapped",
+    "eyebrow": "DiscoverEU maceram",
+    "defaultName": "Avrupa maceram",
+    "tag": "Companion",
+    "hint": "İndir ve Instagram, TikTok ya da grup sohbetinde paylaş.",
+    "download": "PNG indir",
+    "downloaded": "Wrapped kart kaydedildi",
+    "exportFailed": "Kart dışa aktarılamadı — tekrar dene",
+    "libMissing": "Dışa aktarma kütüphanesi hâlâ yükleniyor — biraz sonra dene",
+    "empty": "Rotayı sarmadan önce en az bir durak ekle",
+    "stat": {
+      "countries": "Ülke",
+      "nights": "Gece",
+      "km": "trenle km",
+      "co2": "CO₂ tasarrufu"
+    },
+    "highlight": {
+      "credits": "{limit} krediden {used} kullanıldı",
+      "green": "Yeşil Gezgin — uçağa göre %{pct} daha az CO₂"
+    }
+  },
+  "co2": {
+    "title": "Yeşil ayak izin",
+    "savedLine": "Treni tercih ederek {kg} kg CO₂ tasarruf ediyorsun (%{pct} daha az).",
+    "distance": "Mesafe",
+    "byRail": "Trenle",
+    "ifFlew": "Uçsaydın",
+    "km": "{km} km",
+    "greenTraveler": "Yeşil Gezgin"
   },
   "ai": {
     "modal": {
@@ -146,6 +311,9 @@
     "aiFailed": "AI isteği başarısız — anahtarını kontrol edip tekrar dene"
   },
   "share": {
+    "copied": "Bağlantı panoya kopyalandı",
+    "failed": "Kopyalanamadı — adres çubuğuna uzun basmayı dene",
+    "empty": "Paylaşmadan önce rotaya durak ekle",
     "modal": {
       "title": "Rotanı paylaş",
       "copyLink": "Bağlantıyı kopyala",
