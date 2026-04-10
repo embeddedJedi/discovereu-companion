@@ -4,15 +4,15 @@
  * ========================================================================= */
 
 .leaflet-container {
-  background: var(--bg-sunken);
+  background: var(--eu-blue-50);
   font-family: var(--font-sans);
   outline: none;
 }
 
 .country-polygon {
-  fill: var(--bg-surface);
-  stroke: var(--border-default);
-  stroke-width: 0.75;
+  fill: var(--eu-gray-0);
+  stroke: var(--eu-gray-400);
+  stroke-width: 1;
   stroke-linejoin: round;
   cursor: pointer;
   transition: fill var(--duration-fast) var(--ease-out),
@@ -20,9 +20,9 @@
 }
 
 .country-polygon:hover {
-  fill: var(--accent-soft);
+  fill: var(--eu-blue-100);
   stroke: var(--accent-primary);
-  stroke-width: 1.5;
+  stroke-width: 2;
 }
 
 .country-polygon.selected {
@@ -53,13 +53,20 @@
   stroke-width: 1.5;
 }
 
+[data-theme="dark"] .leaflet-container {
+  background: #000814;
+}
+
 [data-theme="dark"] .country-polygon {
   fill: var(--eu-gray-800);
-  stroke: var(--eu-gray-600);
+  stroke: var(--eu-gray-500);
+  stroke-width: 1;
 }
 
 [data-theme="dark"] .country-polygon:hover {
-  fill: rgba(90, 130, 245, 0.2);
+  fill: rgba(90, 130, 245, 0.25);
+  stroke: var(--eu-blue-300);
+  stroke-width: 2;
 }
 
 [data-theme="dark"] .country-polygon.selected {

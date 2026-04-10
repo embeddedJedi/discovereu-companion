@@ -1,0 +1,106 @@
+{
+  "version": 1,
+  "generated": "2026-04-10",
+  "templates": [
+    {
+      "id": "grand-tour",
+      "name": "The Grand Tour",
+      "tagline": "The classic western circuit",
+      "theme": "culture",
+      "days": 12,
+      "emoji": "🗺",
+      "countries": ["DE", "FR", "IT", "AT", "CZ"],
+      "description": "Berlin → Paris → Rome → Vienna → Prague. The historical heart of Europe in one long week, each stop a world capital.",
+      "highlights": ["Brandenburg Gate", "Eiffel Tower", "Colosseum", "Schönbrunn Palace", "Charles Bridge"],
+      "reservationHeavy": true
+    },
+    {
+      "id": "balkan-adventure",
+      "name": "Balkan Adventure",
+      "tagline": "Ljubljana to Athens the long way",
+      "theme": "nature",
+      "days": 14,
+      "emoji": "🏔",
+      "countries": ["SI", "HR", "BA", "RS", "MK", "BG", "GR"],
+      "description": "A wild, affordable arc through the Balkans — Alpine lakes, Ottoman bazaars, Orthodox monasteries and ancient Greece. Includes non-DiscoverEU side trips.",
+      "highlights": ["Lake Bled", "Plitvice Lakes", "Mostar Old Bridge", "Belgrade nightlife", "Lake Ohrid", "Meteora"],
+      "reservationHeavy": false,
+      "warnings": ["balkan-extended-pass"]
+    },
+    {
+      "id": "nordic-lights",
+      "name": "Nordic Lights",
+      "tagline": "Scandinavia from south to north",
+      "theme": "nature",
+      "days": 10,
+      "emoji": "✨",
+      "countries": ["DK", "SE", "NO", "FI"],
+      "description": "Copenhagen → Stockholm → Oslo → Helsinki. Design cities, fjord trains and midnight sun. The most expensive route on the list, but unforgettable.",
+      "highlights": ["Copenhagen Nyhavn", "Stockholm Gamla Stan", "Geirangerfjord", "Suomenlinna fortress"],
+      "reservationHeavy": true,
+      "warnings": ["expensive"]
+    },
+    {
+      "id": "mediterranean-coast",
+      "name": "Mediterranean Coast",
+      "tagline": "Beach, sun and ancient stones",
+      "theme": "beach",
+      "days": 12,
+      "emoji": "🏖",
+      "countries": ["ES", "FR", "IT", "HR", "GR"],
+      "description": "Barcelona → French Riviera → Cinque Terre → Dubrovnik → Athens. Follow the coast, swim every day, eat your weight in tomatoes.",
+      "highlights": ["Sagrada Família", "Nice promenade", "Cinque Terre", "Dubrovnik old town", "Santorini"],
+      "reservationHeavy": true
+    },
+    {
+      "id": "green-rail",
+      "name": "Green Rail",
+      "tagline": "Europe's best train routes, zero flights",
+      "theme": "green",
+      "days": 10,
+      "emoji": "🌱",
+      "countries": ["NL", "DE", "CH", "AT", "SI"],
+      "description": "Amsterdam → Berlin → Zurich → Vienna → Ljubljana. Entirely on rail, through Europe's most scenic corridors. Lowest CO₂ footprint on the list.",
+      "highlights": ["Amsterdam canals", "Rhine Valley", "Glacier Express", "Vienna coffee houses", "Lake Bled"],
+      "reservationHeavy": false,
+      "warnings": ["ch-non-discovereu"]
+    },
+    {
+      "id": "inclusion-first",
+      "name": "Inclusion First",
+      "tagline": "High accessibility, LGBTQ+ safe, level streets",
+      "theme": "inclusion",
+      "days": 10,
+      "emoji": "♿",
+      "countries": ["NL", "DE", "DK", "SE", "FI"],
+      "description": "Amsterdam → Berlin → Copenhagen → Stockholm → Helsinki. Five of Europe's most wheelchair-friendly and rainbow-safe capitals, connected by step-free trains and ferries.",
+      "highlights": ["Amsterdam step-free canals", "Berlin Pride venues", "Copenhagen CPH:PIX", "Stockholm Pride", "Helsinki design district"],
+      "reservationHeavy": false
+    },
+    {
+      "id": "budget-backpacker",
+      "name": "Budget Backpacker",
+      "tagline": "Stretch €25/day to the limit",
+      "theme": "budget",
+      "days": 14,
+      "emoji": "🎒",
+      "countries": ["PL", "SK", "HU", "RO", "BG", "GR"],
+      "description": "Kraków → Bratislava → Budapest → Bucharest → Sofia → Athens. The cheapest corridor in the EU: hostel beds under €15, full meals under €8.",
+      "highlights": ["Kraków old town", "Budapest ruin bars", "Bran Castle", "Rila Monastery", "Acropolis"],
+      "reservationHeavy": false
+    },
+    {
+      "id": "turkish-bridge",
+      "name": "Turkish Bridge",
+      "tagline": "Istanbul → DiscoverEU via Sofia Express",
+      "theme": "bonus",
+      "days": 12,
+      "emoji": "🌉",
+      "countries": ["TR", "BG", "RO", "HU", "AT", "DE"],
+      "description": "The Turkish bonus corridor — start in Istanbul, take the Sofia Express into the DiscoverEU network, then continue west to Central Europe. Requires Schengen visa for Turkish participants.",
+      "highlights": ["Hagia Sophia", "Plovdiv", "Bran Castle", "Budapest", "Vienna", "Berlin"],
+      "reservationHeavy": true,
+      "warnings": ["turkish-schengen", "tr-non-discovereu-start"]
+    }
+  ]
+}

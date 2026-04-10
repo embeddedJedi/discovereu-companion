@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generated": "2026-04-10",
+  "note": "Turkish bonus layer — specific to 18-year-old Turkish applicants who have a Schengen visa hurdle before their DiscoverEU trip. Figures are indicative and should be verified with the relevant consulate / bank.",
+  "schengenChecklist": [
+    { "id": "appointment",       "labelEn": "Visa appointment booked (BLS / TLScontact / consulate)", "labelTr": "Vize randevusu alındı (BLS / TLScontact / konsolosluk)" },
+    { "id": "passport",          "labelEn": "Passport valid 3+ months beyond visa expiry",            "labelTr": "Pasaport vize bitişinden en az 3 ay sonrasına kadar geçerli" },
+    { "id": "photos",            "labelEn": "2 biometric photos (35×45mm, white background, <6mo)",    "labelTr": "2 adet biyometrik fotoğraf (35×45mm, beyaz zemin, <6 ay)" },
+    { "id": "insurance",         "labelEn": "Travel health insurance with €30,000+ coverage",         "labelTr": "Seyahat sağlık sigortası (min €30.000 teminat)" },
+    { "id": "returnTicket",      "labelEn": "Round-trip travel booking (train or flight)",            "labelTr": "Gidiş-dönüş rezervasyonu (tren ya da uçak)" },
+    { "id": "accommodation",     "labelEn": "Accommodation bookings for the full trip",               "labelTr": "Tüm yolculuk için konaklama rezervasyonları" },
+    { "id": "discoverEULetter",  "labelEn": "Official DiscoverEU invitation letter printed",          "labelTr": "Resmi DiscoverEU davet mektubu basılı" },
+    { "id": "financialProof",    "labelEn": "Bank statement or sponsor letter (≈€50/day)",            "labelTr": "Banka hesap özeti veya sponsor mektubu (≈€50/gün)" },
+    { "id": "studentDoc",        "labelEn": "Student / ID document photocopies",                      "labelTr": "Öğrenci belgesi / kimlik fotokopileri" },
+    { "id": "residenceDoc",      "labelEn": "Residence registration extract",                         "labelTr": "Nüfus kayıt örneği (vukuatlı)" }
+  ],
+  "sofiaExpress": {
+    "name": "Sofia Express",
+    "summary": "The Istanbul → Sofia overnight sleeper is the only direct rail route that plugs Turkey into the DiscoverEU network. Once you arrive in Sofia, your pass is valid for the rest of the trip.",
+    "summaryTr": "İstanbul → Sofya gece treni, Türkiye'yi DiscoverEU ağına bağlayan tek doğrudan ray bağlantısı. Sofya'ya vardığın an pason tüm Avrupa için geçerli olur.",
+    "route": "Istanbul (Halkalı) → Sofia (Central)",
+    "duration": "~12 hours",
+    "operator": "TCDD / BDZ joint service",
+    "cost": "Sleeper cabin ≈ €25",
+    "bookingUrl": "https://bilet.tcdd.gov.tr/",
+    "tips": [
+      "Book the sleeper bed — plain seats are rough for 12 hours.",
+      "Bring snacks; the dining car is unreliable.",
+      "Passport control happens twice: leaving Turkey and entering Bulgaria.",
+      "Arrive at Halkalı 45 minutes early — the station is outside central Istanbul."
+    ],
+    "tipsTr": [
+      "Kuşet (yatak) al — 12 saatlik yolculukta normal koltuk zor.",
+      "Yanına atıştırmalık al; vagon restoran güvenilmez.",
+      "Pasaport kontrolü iki kez olur: Türkiye'den çıkış ve Bulgaristan'a giriş.",
+      "Halkalı'ya kalkıştan 45 dakika önce var — istasyon şehir merkezinde değil."
+    ]
+  },
+  "budgetTips": {
+    "note": "1 EUR ≈ 43–45 TL (April 2026, approximate). DiscoverEU pass covers trains, but you'll still pay in EUR or local currency for food, beds, and reservations.",
+    "noteTr": "1 EUR ≈ 43–45 TL (Nisan 2026, yaklaşık). DiscoverEU pasosu trenleri kapsar ama yemek, konaklama ve rezervasyonlar için EUR ya da yerel parayla ödeme yaparsın.",
+    "cards": [
+      {
+        "name": "Wise Multi-currency",
+        "why": "Near-interbank rates, no ATM fees for the first €200 / month, holds EUR + TRY side by side.",
+        "whyTr": "Neredeyse bankalar arası kur, ilk €200 aylık ATM çekiminde komisyon yok, EUR + TRY bir arada tutulur."
+      },
+      {
+        "name": "Revolut Standard",
+        "why": "Free card shipping to Turkey, instant EUR loads, no FX markup on weekdays under €1000.",
+        "whyTr": "Türkiye'ye ücretsiz kart, anında EUR yükleme, hafta içi €1000 altı çekimlerde kur farkı yok."
+      },
+      {
+        "name": "Ziraat Maximum / QNB gold",
+        "why": "Turkish banks with EU ATM partnerships; check the daily withdrawal limit before leaving.",
+        "whyTr": "AB ATM ortaklığı olan Türk bankaları; yola çıkmadan günlük çekim limitini kontrol et."
+      }
+    ]
+  }
+}

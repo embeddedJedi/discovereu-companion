@@ -1,0 +1,29 @@
+{
+  "name": "DiscoverEU Companion",
+  "short_name": "DiscoverEU",
+  "description": "Engage · Connect · Empower — an accessible, green, and inclusive trip-planning companion for all European youth.",
+  "start_url": "../index.html",
+  "scope": "../",
+  "id": "/discovereu-companion/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#ffffff",
+  "theme_color": "#2a47c2",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": ["travel", "education", "lifestyle"],
+  "icons": [
+    {
+      "src": "icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}

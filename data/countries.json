@@ -1,0 +1,2358 @@
+{
+  "version": 1,
+  "generated": "2026-04-10",
+  "countries": [
+    {
+      "id": "AL",
+      "name": "Albania",
+      "nameLocal": "Shqipëria",
+      "capital": "Tirana",
+      "continent": "Europe",
+      "region": "Southeast Europe",
+      "discoverEU": false,
+      "interrail": true,
+      "schengen": false,
+      "eu": false,
+      "currency": "ALL",
+      "languages": [
+        "sq"
+      ],
+      "population": 2830000,
+      "area_km2": 28748,
+      "flag": "🇦🇱",
+      "callingCode": "+355",
+      "emergency": "112",
+      "timezone": "Europe/Tirane",
+      "scores": {
+        "nature": 5,
+        "culture": 4,
+        "nightlife": 3,
+        "food": 4,
+        "beach": 5,
+        "history": 4,
+        "safety": 4,
+        "accessibility": 2,
+        "lgbtqFriendly": 2,
+        "budgetFriendly": 5
+      },
+      "costPerDay": {
+        "low": 22,
+        "mid": 42,
+        "high": 80
+      },
+      "tags": [
+        "beach",
+        "mountains",
+        "affordable",
+        "bunkers",
+        "hospitality"
+      ],
+      "bestMonths": [
+        5,
+        6,
+        9,
+        10
+      ],
+      "shortDescription": "Europe's best-kept coastal secret — turquoise beaches, Ottoman old towns and Alpine valleys at prices the rest of the continent forgot about.",
+      "highlights": [
+        "Albanian Riviera",
+        "Gjirokastër old town",
+        "Berat UNESCO",
+        "Theth National Park",
+        "Tirana Blloku"
+      ],
+      "sources": [
+        "wikivoyage:Albania",
+        "wikipedia:Albania"
+      ]
+    },
+    {
+      "id": "AT",
+      "name": "Austria",
+      "nameLocal": "Österreich",
+      "capital": "Vienna",
+      "continent": "Europe",
+      "region": "Central Europe",
+      "discoverEU": true,
+      "interrail": true,
+      "schengen": true,
+      "eu": true,
+      "currency": "EUR",
+      "languages": [
+        "de"
+      ],
+      "population": 9130000,
+      "area_km2": 83879,
+      "flag": "🇦🇹",
+      "callingCode": "+43",
+      "emergency": "112",
+      "timezone": "Europe/Vienna",
+      "scores": {
+        "nature": 5,
+        "culture": 5,
+        "nightlife": 3,
+        "food": 4,
+        "beach": 1,
+        "history": 5,
+        "safety": 5,
+        "accessibility": 5,
+        "lgbtqFriendly": 4,
+        "budgetFriendly": 3
+      },
+      "costPerDay": {
+        "low": 45,
+        "mid": 80,
+        "high": 150
+      },
+      "tags": [
+        "alps",
+        "music",
+        "coffee",
+        "imperial",
+        "hiking"
+      ],
+      "bestMonths": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "shortDescription": "Imperial Vienna, Mozart concerts, Alpine lakes and ski villages — Austria mixes high culture with high altitude.",
+      "highlights": [
+        "Schönbrunn Palace",
+        "Salzburg old town",
+        "Hallstatt",
+        "Innsbruck Alps",
+        "Vienna coffee houses"
+      ],
+      "sources": [
+        "wikivoyage:Austria",
+        "wikipedia:Austria"
+      ]
+    },
+    {
+      "id": "BA",
+      "name": "Bosnia and Herzegovina",
+      "nameLocal": "Bosna i Hercegovina",
+      "capital": "Sarajevo",
+      "continent": "Europe",
+      "region": "Southeast Europe",
+      "discoverEU": false,
+      "interrail": false,
+      "schengen": false,
+      "eu": false,
+      "currency": "BAM",
+      "languages": [
+        "bs",
+        "hr",
+        "sr"
+      ],
+      "population": 3230000,
+      "area_km2": 51197,
+      "flag": "🇧🇦",
+      "callingCode": "+387",
+      "emergency": "112",
+      "timezone": "Europe/Sarajevo",
+      "scores": {
+        "nature": 5,
+        "culture": 5,
+        "nightlife": 3,
+        "food": 4,
+        "beach": 1,
+        "history": 5,
+        "safety": 4,
+        "accessibility": 2,
+        "lgbtqFriendly": 2,
+        "budgetFriendly": 5
+      },
+      "costPerDay": {
+        "low": 22,
+        "mid": 42,
+        "high": 80
+      },
+      "tags": [
+        "mountains",
+        "history",
+        "affordable",
+        "coffee",
+        "ottoman"
+      ],
+      "bestMonths": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "shortDescription": "Where East meets West — Ottoman mosques, Austro-Hungarian facades, turquoise rivers and a moving 20th-century story.",
+      "highlights": [
+        "Sarajevo old bazaar",
+        "Mostar Old Bridge",
+        "Kravica waterfalls",
+        "Jajce",
+        "Sutjeska National Park"
+      ],
+      "sources": [
+        "wikivoyage:Bosnia_and_Herzegovina",
+        "wikipedia:Bosnia_and_Herzegovina"
+      ]
+    },
+    {
+      "id": "BE",
+      "name": "Belgium",
+      "nameLocal": "België / Belgique / Belgien",
+      "capital": "Brussels",
+      "continent": "Europe",
+      "region": "Western Europe",
+      "discoverEU": true,
+      "interrail": true,
+      "schengen": true,
+      "eu": true,
+      "currency": "EUR",
+      "languages": [
+        "nl",
+        "fr",
+        "de"
+      ],
+      "population": 11740000,
+      "area_km2": 30528,
+      "flag": "🇧🇪",
+      "callingCode": "+32",
+      "emergency": "112",
+      "timezone": "Europe/Brussels",
+      "scores": {
+        "nature": 2,
+        "culture": 4,
+        "nightlife": 4,
+        "food": 5,
+        "beach": 2,
+        "history": 4,
+        "safety": 4,
+        "accessibility": 4,
+        "lgbtqFriendly": 5,
+        "budgetFriendly": 3
+      },
+      "costPerDay": {
+        "low": 45,
+        "mid": 80,
+        "high": 140
+      },
+      "tags": [
+        "beer",
+        "chocolate",
+        "waffles",
+        "art",
+        "eu"
+      ],
+      "bestMonths": [
+        4,
+        5,
+        6,
+        9,
+        10
+      ],
+      "shortDescription": "Medieval squares, Trappist beers, and the capital of the EU — Belgium punches far above its size.",
+      "highlights": [
+        "Grand Place Brussels",
+        "Bruges canals",
+        "Ghent belfry",
+        "Antwerp diamonds",
+        "Waterloo battlefield"
+      ],
+      "sources": [
+        "wikivoyage:Belgium",
+        "wikipedia:Belgium"
+      ]
+    },
+    {
+      "id": "BG",
+      "name": "Bulgaria",
+      "nameLocal": "България",
+      "capital": "Sofia",
+      "continent": "Europe",
+      "region": "Southeast Europe",
+      "discoverEU": true,
+      "interrail": true,
+      "schengen": true,
+      "eu": true,
+      "currency": "BGN",
+      "languages": [
+        "bg"
+      ],
+      "population": 6850000,
+      "area_km2": 110994,
+      "flag": "🇧🇬",
+      "callingCode": "+359",
+      "emergency": "112",
+      "timezone": "Europe/Sofia",
+      "scores": {
+        "nature": 4,
+        "culture": 4,
+        "nightlife": 4,
+        "food": 4,
+        "beach": 5,
+        "history": 5,
+        "safety": 4,
+        "accessibility": 3,
+        "lgbtqFriendly": 3,
+        "budgetFriendly": 5
+      },
+      "costPerDay": {
+        "low": 25,
+        "mid": 50,
+        "high": 90
+      },
+      "tags": [
+        "affordable",
+        "beach",
+        "mountains",
+        "thracian",
+        "yoghurt"
+      ],
+      "bestMonths": [
+        5,
+        6,
+        7,
+        9,
+        10
+      ],
+      "shortDescription": "Black Sea beaches, Rila monasteries, ski resorts and one of the cheapest capitals in the EU — Bulgaria stretches DiscoverEU budgets the furthest.",
+      "highlights": [
+        "Sofia center",
+        "Plovdiv old town",
+        "Rila Monastery",
+        "Sunny Beach",
+        "Veliko Tarnovo"
+      ],
+      "sources": [
+        "wikivoyage:Bulgaria",
+        "wikipedia:Bulgaria"
+      ]
+    },
+    {
+      "id": "CH",
+      "name": "Switzerland",
+      "nameLocal": "Schweiz / Suisse / Svizzera",
+      "capital": "Bern",
+      "continent": "Europe",
+      "region": "Central Europe",
+      "discoverEU": false,
+      "interrail": true,
+      "schengen": true,
+      "eu": false,
+      "currency": "CHF",
+      "languages": [
+        "de",
+        "fr",
+        "it",
+        "rm"
+      ],
+      "population": 8850000,
+      "area_km2": 41285,
+      "flag": "🇨🇭",
+      "callingCode": "+41",
+      "emergency": "112",
+      "timezone": "Europe/Zurich",
+      "scores": {
+        "nature": 5,
+        "culture": 4,
+        "nightlife": 3,
+        "food": 4,
+        "beach": 1,
+        "history": 4,
+        "safety": 5,
+        "accessibility": 5,
+        "lgbtqFriendly": 4,
+        "budgetFriendly": 1
+      },
+      "costPerDay": {
+        "low": 70,
+        "mid": 130,
+        "high": 230
+      },
+      "tags": [
+        "alps",
+        "trains",
+        "lakes",
+        "hiking",
+        "chocolate"
+      ],
+      "bestMonths": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "shortDescription": "The continent's most scenic railway network through the Alps — stunning, precise, and famously expensive.",
+      "highlights": [
+        "Matterhorn",
+        "Jungfraujoch",
+        "Lake Geneva",
+        "Lucerne old town",
+        "Glacier Express"
+      ],
+      "sources": [
+        "wikivoyage:Switzerland",
+        "wikipedia:Switzerland"
+      ]
+    },
+    {
+      "id": "CY",
+      "name": "Cyprus",
+      "nameLocal": "Κύπρος / Kıbrıs",
+      "capital": "Nicosia",
+      "continent": "Europe",
+      "region": "Southern Europe",
+      "discoverEU": true,
+      "interrail": false,
+      "schengen": false,
+      "eu": true,
+      "currency": "EUR",
+      "languages": [
+        "el",
+        "tr"
+      ],
+      "population": 1250000,
+      "area_km2": 9251,
+      "flag": "🇨🇾",
+      "callingCode": "+357",
+      "emergency": "112",
+      "timezone": "Asia/Nicosia",
+      "scores": {
+        "nature": 3,
+        "culture": 4,
+        "nightlife": 4,
+        "food": 4,
+        "beach": 5,
+        "history": 5,
+        "safety": 5,
+        "accessibility": 4,
+        "lgbtqFriendly": 4,
+        "budgetFriendly": 3
+      },
+      "costPerDay": {
+        "low": 40,
+        "mid": 70,
+        "high": 130
+      },
+      "tags": [
+        "beach",
+        "ancient",
+        "mediterranean",
+        "halloumi",
+        "sun"
+      ],
+      "bestMonths": [
+        4,
+        5,
+        6,
+        9,
+        10,
+        11
+      ],
+      "shortDescription": "A divided island with 9000 years of history, sun almost year-round, and beaches most of Europe can only dream about. Reached by plane via DiscoverEU flight alternative.",
+      "highlights": [
+        "Paphos archaeological park",
+        "Troodos villages",
+        "Nicosia green line",
+        "Aphrodite Rock",
+        "Larnaca salt lake"
+      ],
+      "sources": [
+        "wikivoyage:Cyprus",
+        "wikipedia:Cyprus"
+      ]
+    },
+    {
+      "id": "CZ",
+      "name": "Czech Republic",
+      "nameLocal": "Česko",
+      "capital": "Prague",
+      "continent": "Europe",
+      "region": "Central Europe",
+      "discoverEU": true,
+      "interrail": true,
+      "schengen": true,
+      "eu": true,
+      "currency": "CZK",
+      "languages": [
+        "cs"
+      ],
+      "population": 10880000,
+      "area_km2": 78867,
+      "flag": "🇨🇿",
+      "callingCode": "+420",
+      "emergency": "112",
+      "timezone": "Europe/Prague",
+      "scores": {
+        "nature": 3,
+        "culture": 5,
+        "nightlife": 5,
+        "food": 3,
+        "beach": 1,
+        "history": 5,
+        "safety": 5,
+        "accessibility": 3,
+        "lgbtqFriendly": 4,
+        "budgetFriendly": 4
+      },
+      "costPerDay": {
+        "low": 30,
+        "mid": 55,
+        "high": 100
+      },
+      "tags": [
+        "beer",
+        "castles",
+        "nightlife",
+        "history",
+        "affordable"
+      ],
+      "bestMonths": [
+        4,
+        5,
+        6,
+        9,
+        10
+      ],
+      "shortDescription": "Fairytale Prague, the world's best beer, and affordable prices — the favourite first stop for many Interrailers.",
+      "highlights": [
+        "Prague Castle",
+        "Charles Bridge",
+        "Český Krumlov",
+        "Plzeň brewery",
+        "Kutná Hora ossuary"
+      ],
+      "sources": [
+        "wikivoyage:Czech_Republic",
+        "wikipedia:Czech_Republic"
+      ]
+    },
+    {
+      "id": "DE",
+      "name": "Germany",
+      "nameLocal": "Deutschland",
+      "capital": "Berlin",
+      "continent": "Europe",
+      "region": "Western Europe",
+      "discoverEU": true,
+      "interrail": true,
+      "schengen": true,
+      "eu": true,
+      "currency": "EUR",
+      "languages": [
+        "de"
+      ],
+      "population": 83200000,
+      "area_km2": 357022,
+      "flag": "🇩🇪",
+      "callingCode": "+49",
+      "emergency": "112",
+      "timezone": "Europe/Berlin",
+      "scores": {
+        "nature": 3,
+        "culture": 5,
+        "nightlife": 5,
+        "food": 4,
+        "beach": 1,
+        "history": 5,
+        "safety": 5,
+        "accessibility": 5,
+        "lgbtqFriendly": 5,
+        "budgetFriendly": 3
+      },
+      "costPerDay": {
+        "low": 40,
+        "mid": 75,
+        "high": 140
+      },
+      "tags": [
+        "culture",
+        "history",
+        "trains",
+        "beer",
+        "castles"
+      ],
+      "bestMonths": [
+        4,
+        5,
+        6,
+        9,
+        10
+      ],
+      "shortDescription": "Efficient trains, vibrant cities, and centuries of history — Germany is the anchor of the DiscoverEU network.",
+      "highlights": [
+        "Berlin Wall",
+        "Neuschwanstein Castle",
+        "Rhine Valley",
+        "Oktoberfest in Munich",
+        "Hamburg harbour"
+      ],
+      "sources": [
+        "wikivoyage:Germany",
+        "wikipedia:Germany"
+      ]
+    },
+    {
+      "id": "DK",
+      "name": "Denmark",
+      "nameLocal": "Danmark",
+      "capital": "Copenhagen",
+      "continent": "Europe",
+      "region": "Northern Europe",
+      "discoverEU": true,
+      "interrail": true,
+      "schengen": true,
+      "eu": true,
+      "currency": "DKK",
+      "languages": [
+        "da"
+      ],
+      "population": 5930000,
+      "area_km2": 43094,
+      "flag": "🇩🇰",
+      "callingCode": "+45",
+      "emergency": "112",
+      "timezone": "Europe/Copenhagen",
+      "scores": {
+        "nature": 4,
+        "culture": 5,
+        "nightlife": 4,
+        "food": 5,
+        "beach": 3,
+        "history": 5,
+        "safety": 5,
+        "accessibility": 5,
+        "lgbtqFriendly": 5,
+        "budgetFriendly": 1
+      },
+      "costPerDay": {
+        "low": 55,
+        "mid": 100,
+        "high": 180
+      },
+      "tags": [
+        "design",
+        "cycling",
+        "hygge",
+        "vikings",
+        "fika"
+      ],
+      "bestMonths": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "shortDescription": "Hygge central — fairy-tale harbours, bike lanes everywhere, Scandinavian design, and Noma-grade food. Expensive but easy.",
+      "highlights": [
+        "Copenhagen Nyhavn",
+        "Tivoli Gardens",
+        "Legoland Billund",
+        "Aarhus",
+        "Møns Klint cliffs"
+      ],
+      "sources": [
+        "wikivoyage:Denmark",
+        "wikipedia:Denmark"
+      ]
+    },
+    {
+      "id": "EE",
+      "name": "Estonia",
+      "nameLocal": "Eesti",
+      "capital": "Tallinn",
+      "continent": "Europe",
+      "region": "Northern Europe",
+      "discoverEU": true,
+      "interrail": true,
+      "schengen": true,
+      "eu": true,
+      "currency": "EUR",
+      "languages": [
+        "et"
+      ],
+      "population": 1370000,
+      "area_km2": 45227,
+      "flag": "🇪🇪",
+      "callingCode": "+372",
+      "emergency": "112",
+      "timezone": "Europe/Tallinn",
+      "scores": {
+        "nature": 5,
+        "culture": 4,
+        "nightlife": 4,
+        "food": 4,
+        "beach": 3,
+        "history": 5,
+        "safety": 5,
+        "accessibility": 4,
+        "lgbtqFriendly": 4,
+        "budgetFriendly": 4
+      },
+      "costPerDay": {
+        "low": 30,
+        "mid": 55,
+        "high": 100
+      },
+      "tags": [
+        "digital",
+        "forests",
+        "medieval",
+        "saunas",
+        "startup"
+      ],
+      "bestMonths": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "shortDescription": "Medieval Tallinn plus Europe's most digital society, endless bogs, forests and islands — the cool, calm gateway to the Baltics.",
+      "highlights": [
+        "Tallinn old town",
+        "Lahemaa National Park",
+        "Saaremaa island",
+        "Tartu university",
+        "Pärnu beach"
+      ],
+      "sources": [
+        "wikivoyage:Estonia",
+        "wikipedia:Estonia"
+      ]
+    },
+    {
+      "id": "ES",
+      "name": "Spain",
+      "nameLocal": "España",
+      "capital": "Madrid",
+      "continent": "Europe",
+      "region": "Southern Europe",
+      "discoverEU": true,
+      "interrail": true,
+      "schengen": true,
+      "eu": true,
+      "currency": "EUR",
+      "languages": [
+        "es",
+        "ca",
+        "gl",
+        "eu"
+      ],
+      "population": 48590000,
+      "area_km2": 505990,
+      "flag": "🇪🇸",
+      "callingCode": "+34",
+      "emergency": "112",
+      "timezone": "Europe/Madrid",
+      "scores": {
+        "nature": 4,
+        "culture": 5,
+        "nightlife": 5,
+        "food": 5,
+        "beach": 5,
+        "history": 5,
+        "safety": 5,
+        "accessibility": 4,
+        "lgbtqFriendly": 5,
+        "budgetFriendly": 4
+      },
+      "costPerDay": {
+        "low": 35,
+        "mid": 65,
+        "high": 120
+      },
+      "tags": [
+        "beach",
+        "food",
+        "nightlife",
+        "culture",
+        "sunshine"
+      ],
+      "bestMonths": [
+        4,
+        5,
+        6,
+        9,
+        10
+      ],
+      "shortDescription": "Late dinners, all-night fiestas, sun-drenched coasts and Moorish palaces — Spain is the DiscoverEU party anchor.",
+      "highlights": [
+        "Sagrada Família",
+        "Alhambra",
+        "Madrid Prado",
+        "Seville",
+        "Balearic Islands"
+      ],
+      "sources": [
+        "wikivoyage:Spain",
+        "wikipedia:Spain"
+      ]
+    },
+    {
+      "id": "FI",
+      "name": "Finland",
+      "nameLocal": "Suomi",
+      "capital": "Helsinki",
+      "continent": "Europe",
+      "region": "Northern Europe",
+      "discoverEU": true,
+      "interrail": true,
+      "schengen": true,
+      "eu": true,
+      "currency": "EUR",
+      "languages": [
+        "fi",
+        "sv"
+      ],
+      "population": 5560000,
+      "area_km2": 338424,
+      "flag": "🇫🇮",
+      "callingCode": "+358",
+      "emergency": "112",
+      "timezone": "Europe/Helsinki",
+      "scores": {
+        "nature": 5,
+        "culture": 4,
+        "nightlife": 3,
+        "food": 4,
+        "beach": 2,
+        "history": 4,
+        "safety": 5,
+        "accessibility": 5,
+        "lgbtqFriendly": 5,
+        "budgetFriendly": 2
+      },
+      "costPerDay": {
+        "low": 50,
+        "mid": 90,
+        "high": 160
+      },
+      "tags": [
+        "lakes",
+        "sauna",
+        "northern-lights",
+        "design",
+        "forests"
+      ],
+      "bestMonths": [
+        6,
+        7,
+        8,
+        2,
+        3
+      ],
+      "shortDescription": "Land of a thousand lakes, midnight sun in summer and Northern Lights in winter — the world's happiest country is also its quietest.",
+      "highlights": [
+        "Helsinki design district",
+        "Suomenlinna fortress",
+        "Lapland Santa village",
+        "Turku archipelago",
+        "Nuuksio National Park"
+      ],
+      "sources": [
+        "wikivoyage:Finland",
+        "wikipedia:Finland"
+      ]
+    },
+    {
+      "id": "FR",
+      "name": "France",
+      "nameLocal": "France",
+      "capital": "Paris",
+      "continent": "Europe",
+      "region": "Western Europe",
+      "discoverEU": true,
+      "interrail": true,
+      "schengen": true,
+      "eu": true,
+      "currency": "EUR",
+      "languages": [
+        "fr"
+      ],
+      "population": 67970000,
+      "area_km2": 643801,
+      "flag": "🇫🇷",
+      "callingCode": "+33",
+      "emergency": "112",
+      "timezone": "Europe/Paris",
+      "scores": {
+        "nature": 4,
+        "culture": 5,
+        "nightlife": 4,
+        "food": 5,
+        "beach": 4,
+        "history": 5,
+        "safety": 4,
+        "accessibility": 4,
+        "lgbtqFriendly": 5,
+        "budgetFriendly": 2
+      },
+      "costPerDay": {
+        "low": 45,
+        "mid": 85,
+        "high": 160
+      },
+      "tags": [
+        "culture",
+        "food",
+        "art",
+        "wine",
+        "romance"
+      ],
+      "bestMonths": [
+        4,
+        5,
+        6,
+        9,
+        10
+      ],
+      "shortDescription": "From Paris boulevards to Provence lavender and Alpine peaks — France offers the widest travel palette in Europe.",
+      "highlights": [
+        "Eiffel Tower",
+        "Louvre",
+        "Mont Saint-Michel",
+        "French Riviera",
+        "Loire Valley châteaux"
+      ],
+      "sources": [
+        "wikivoyage:France",
+        "wikipedia:France"
+      ]
+    },
+    {
+      "id": "GR",
+      "name": "Greece",
+      "nameLocal": "Ελλάδα",
+      "capital": "Athens",
+      "continent": "Europe",
+      "region": "Southern Europe",
+      "discoverEU": true,
+      "interrail": true,
+      "schengen": true,
+      "eu": true,
+      "currency": "EUR",
+      "languages": [
+        "el"
+      ],
+      "population": 10430000,
+      "area_km2": 131957,
+      "flag": "🇬🇷",
+      "callingCode": "+30",
+      "emergency": "112",
+      "timezone": "Europe/Athens",
+      "scores": {
+        "nature": 4,
+        "culture": 5,
+        "nightlife": 4,
+        "food": 5,
+        "beach": 5,
+        "history": 5,
+        "safety": 5,
+        "accessibility": 2,
+        "lgbtqFriendly": 3,
+        "budgetFriendly": 4
+      },
+      "costPerDay": {
+        "low": 35,
+        "mid": 65,
+        "high": 120
+      },
+      "tags": [
+        "islands",
+        "beach",
+        "history",
+        "food",
+        "ancient"
+      ],
+      "bestMonths": [
+        5,
+        6,
+        9,
+        10
+      ],
+      "shortDescription": "Where European civilization began — ancient ruins, whitewashed island villages, turquoise seas, and endless souvlaki.",
+      "highlights": [
+        "Acropolis",
+        "Santorini",
+        "Meteora",
+        "Delphi",
+        "Crete"
+      ],
+      "sources": [
+        "wikivoyage:Greece",
+        "wikipedia:Greece"
+      ]
+    },
+    {
+      "id": "HR",
+      "name": "Croatia",
+      "nameLocal": "Hrvatska",
+      "capital": "Zagreb",
+      "continent": "Europe",
+      "region": "Southern Europe",
+      "discoverEU": true,
+      "interrail": true,
+      "schengen": true,
+      "eu": true,
+      "currency": "EUR",
+      "languages": [
+        "hr"
+      ],
+      "population": 3860000,
+      "area_km2": 56594,
+      "flag": "🇭🇷",
+      "callingCode": "+385",
+      "emergency": "112",
+      "timezone": "Europe/Zagreb",
+      "scores": {
+        "nature": 5,
+        "culture": 4,
+        "nightlife": 4,
+        "food": 5,
+        "beach": 5,
+        "history": 5,
+        "safety": 5,
+        "accessibility": 3,
+        "lgbtqFriendly": 3,
+        "budgetFriendly": 4
+      },
+      "costPerDay": {
+        "low": 35,
+        "mid": 65,
+        "high": 120
+      },
+      "tags": [
+        "coast",
+        "islands",
+        "sailing",
+        "game-of-thrones",
+        "waterfalls"
+      ],
+      "bestMonths": [
+        5,
+        6,
+        9,
+        10
+      ],
+      "shortDescription": "1244 islands, Roman ruins, Game of Thrones backdrops, and the Adriatic's clearest water — Croatia is the Mediterranean in HD.",
+      "highlights": [
+        "Dubrovnik old town",
+        "Plitvice Lakes",
+        "Split Diocletian Palace",
+        "Hvar",
+        "Krka waterfalls"
+      ],
+      "sources": [
+        "wikivoyage:Croatia",
+        "wikipedia:Croatia"
+      ]
+    },
+    {
+      "id": "HU",
+      "name": "Hungary",
+      "nameLocal": "Magyarország",
+      "capital": "Budapest",
+      "continent": "Europe",
+      "region": "Central Europe",
+      "discoverEU": true,
+      "interrail": true,
+      "schengen": true,
+      "eu": true,
+      "currency": "HUF",
+      "languages": [
+        "hu"
+      ],
+      "population": 9680000,
+      "area_km2": 93028,
+      "flag": "🇭🇺",
+      "callingCode": "+36",
+      "emergency": "112",
+      "timezone": "Europe/Budapest",
+      "scores": {
+        "nature": 3,
+        "culture": 4,
+        "nightlife": 5,
+        "food": 4,
+        "beach": 1,
+        "history": 5,
+        "safety": 4,
+        "accessibility": 3,
+        "lgbtqFriendly": 2,
+        "budgetFriendly": 5
+      },
+      "costPerDay": {
+        "low": 25,
+        "mid": 50,
+        "high": 95
+      },
+      "tags": [
+        "thermal-baths",
+        "ruin-bars",
+        "affordable",
+        "paprika",
+        "danube"
+      ],
+      "bestMonths": [
+        4,
+        5,
+        6,
+        9,
+        10
+      ],
+      "shortDescription": "Budapest's ruin bars, thermal baths, and grand Danube skyline make Hungary an unmissable central-European stop.",
+      "highlights": [
+        "Széchenyi Baths",
+        "Buda Castle",
+        "Hungarian Parliament",
+        "Lake Balaton",
+        "Eger wine region"
+      ],
+      "sources": [
+        "wikivoyage:Hungary",
+        "wikipedia:Hungary"
+      ]
+    },
+    {
+      "id": "IE",
+      "name": "Ireland",
+      "nameLocal": "Éire",
+      "capital": "Dublin",
+      "continent": "Europe",
+      "region": "Northern Europe",
+      "discoverEU": true,
+      "interrail": true,
+      "schengen": false,
+      "eu": true,
+      "currency": "EUR",
+      "languages": [
+        "en",
+        "ga"
+      ],
+      "population": 5150000,
+      "area_km2": 70273,
+      "flag": "🇮🇪",
+      "callingCode": "+353",
+      "emergency": "112",
+      "timezone": "Europe/Dublin",
+      "scores": {
+        "nature": 5,
+        "culture": 5,
+        "nightlife": 5,
+        "food": 4,
+        "beach": 3,
+        "history": 5,
+        "safety": 5,
+        "accessibility": 4,
+        "lgbtqFriendly": 5,
+        "budgetFriendly": 2
+      },
+      "costPerDay": {
+        "low": 55,
+        "mid": 95,
+        "high": 170
+      },
+      "tags": [
+        "pubs",
+        "coast",
+        "music",
+        "literature",
+        "green"
+      ],
+      "bestMonths": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "shortDescription": "Emerald cliffs, trad music in every pub, literary cities and the warmest welcome in Europe — Ireland is everyone's spiritual second home.",
+      "highlights": [
+        "Cliffs of Moher",
+        "Dublin Temple Bar",
+        "Ring of Kerry",
+        "Giants Causeway day trip",
+        "Galway"
+      ],
+      "sources": [
+        "wikivoyage:Ireland",
+        "wikipedia:Ireland"
+      ]
+    },
+    {
+      "id": "IS",
+      "name": "Iceland",
+      "nameLocal": "Ísland",
+      "capital": "Reykjavík",
+      "continent": "Europe",
+      "region": "Northern Europe",
+      "discoverEU": true,
+      "interrail": false,
+      "schengen": true,
+      "eu": false,
+      "currency": "ISK",
+      "languages": [
+        "is"
+      ],
+      "population": 390000,
+      "area_km2": 103000,
+      "flag": "🇮🇸",
+      "callingCode": "+354",
+      "emergency": "112",
+      "timezone": "Atlantic/Reykjavik",
+      "scores": {
+        "nature": 5,
+        "culture": 4,
+        "nightlife": 3,
+        "food": 3,
+        "beach": 2,
+        "history": 4,
+        "safety": 5,
+        "accessibility": 4,
+        "lgbtqFriendly": 5,
+        "budgetFriendly": 1
+      },
+      "costPerDay": {
+        "low": 70,
+        "mid": 120,
+        "high": 200
+      },
+      "tags": [
+        "geysers",
+        "volcanoes",
+        "northern-lights",
+        "waterfalls",
+        "hot-springs"
+      ],
+      "bestMonths": [
+        6,
+        7,
+        8,
+        9,
+        2,
+        3
+      ],
+      "shortDescription": "A raw, otherworldly volcanic island of glaciers, geysers and waterfalls — the priciest DiscoverEU stop, and worth every króna.",
+      "highlights": [
+        "Golden Circle",
+        "Blue Lagoon",
+        "Reynisfjara black beach",
+        "Jökulsárlón glacier lagoon",
+        "Westfjords"
+      ],
+      "sources": [
+        "wikivoyage:Iceland",
+        "wikipedia:Iceland"
+      ]
+    },
+    {
+      "id": "IT",
+      "name": "Italy",
+      "nameLocal": "Italia",
+      "capital": "Rome",
+      "continent": "Europe",
+      "region": "Southern Europe",
+      "discoverEU": true,
+      "interrail": true,
+      "schengen": true,
+      "eu": true,
+      "currency": "EUR",
+      "languages": [
+        "it"
+      ],
+      "population": 58940000,
+      "area_km2": 301340,
+      "flag": "🇮🇹",
+      "callingCode": "+39",
+      "emergency": "112",
+      "timezone": "Europe/Rome",
+      "scores": {
+        "nature": 4,
+        "culture": 5,
+        "nightlife": 4,
+        "food": 5,
+        "beach": 5,
+        "history": 5,
+        "safety": 4,
+        "accessibility": 3,
+        "lgbtqFriendly": 4,
+        "budgetFriendly": 3
+      },
+      "costPerDay": {
+        "low": 40,
+        "mid": 75,
+        "high": 140
+      },
+      "tags": [
+        "food",
+        "history",
+        "art",
+        "beach",
+        "coast"
+      ],
+      "bestMonths": [
+        4,
+        5,
+        6,
+        9,
+        10
+      ],
+      "shortDescription": "The living museum of Europe — Roman ruins, Renaissance art, Alpine lakes, and the best pizza on the planet.",
+      "highlights": [
+        "Colosseum",
+        "Florence",
+        "Venice canals",
+        "Amalfi Coast",
+        "Cinque Terre"
+      ],
+      "sources": [
+        "wikivoyage:Italy",
+        "wikipedia:Italy"
+      ]
+    },
+    {
+      "id": "LI",
+      "name": "Liechtenstein",
+      "nameLocal": "Liechtenstein",
+      "capital": "Vaduz",
+      "continent": "Europe",
+      "region": "Central Europe",
+      "discoverEU": true,
+      "interrail": true,
+      "schengen": true,
+      "eu": false,
+      "currency": "CHF",
+      "languages": [
+        "de"
+      ],
+      "population": 39000,
+      "area_km2": 160,
+      "flag": "🇱🇮",
+      "callingCode": "+423",
+      "emergency": "112",
+      "timezone": "Europe/Vaduz",
+      "scores": {
+        "nature": 5,
+        "culture": 3,
+        "nightlife": 2,
+        "food": 4,
+        "beach": 1,
+        "history": 4,
+        "safety": 5,
+        "accessibility": 5,
+        "lgbtqFriendly": 4,
+        "budgetFriendly": 1
+      },
+      "costPerDay": {
+        "low": 60,
+        "mid": 110,
+        "high": 190
+      },
+      "tags": [
+        "alps",
+        "tiny",
+        "castles",
+        "hiking",
+        "postcards"
+      ],
+      "bestMonths": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "shortDescription": "Europe's fourth-smallest country — a fairy-tale Alpine principality you can cross on foot in an afternoon.",
+      "highlights": [
+        "Vaduz Castle view",
+        "Malbun ski village",
+        "Eagle Trail hike",
+        "Liechtenstein Museum",
+        "Rhine Valley views"
+      ],
+      "sources": [
+        "wikivoyage:Liechtenstein",
+        "wikipedia:Liechtenstein"
+      ]
+    },
+    {
+      "id": "LT",
+      "name": "Lithuania",
+      "nameLocal": "Lietuva",
+      "capital": "Vilnius",
+      "continent": "Europe",
+      "region": "Northern Europe",
+      "discoverEU": true,
+      "interrail": true,
+      "schengen": true,
+      "eu": true,
+      "currency": "EUR",
+      "languages": [
+        "lt"
+      ],
+      "population": 2850000,
+      "area_km2": 65300,
+      "flag": "🇱🇹",
+      "callingCode": "+370",
+      "emergency": "112",
+      "timezone": "Europe/Vilnius",
+      "scores": {
+        "nature": 4,
+        "culture": 4,
+        "nightlife": 4,
+        "food": 4,
+        "beach": 3,
+        "history": 5,
+        "safety": 4,
+        "accessibility": 3,
+        "lgbtqFriendly": 3,
+        "budgetFriendly": 4
+      },
+      "costPerDay": {
+        "low": 25,
+        "mid": 50,
+        "high": 90
+      },
+      "tags": [
+        "baroque",
+        "amber",
+        "affordable",
+        "forests",
+        "basketball"
+      ],
+      "bestMonths": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "shortDescription": "Baroque Vilnius, the Curonian Spit dunes, and a strong independent streak — the biggest Baltic state packs real variety for its size.",
+      "highlights": [
+        "Vilnius old town",
+        "Trakai Castle",
+        "Hill of Crosses",
+        "Curonian Spit",
+        "Kaunas modernism"
+      ],
+      "sources": [
+        "wikivoyage:Lithuania",
+        "wikipedia:Lithuania"
+      ]
+    },
+    {
+      "id": "LU",
+      "name": "Luxembourg",
+      "nameLocal": "Lëtzebuerg",
+      "capital": "Luxembourg City",
+      "continent": "Europe",
+      "region": "Western Europe",
+      "discoverEU": true,
+      "interrail": true,
+      "schengen": true,
+      "eu": true,
+      "currency": "EUR",
+      "languages": [
+        "lb",
+        "fr",
+        "de"
+      ],
+      "population": 670000,
+      "area_km2": 2586,
+      "flag": "🇱🇺",
+      "callingCode": "+352",
+      "emergency": "112",
+      "timezone": "Europe/Luxembourg",
+      "scores": {
+        "nature": 4,
+        "culture": 4,
+        "nightlife": 3,
+        "food": 5,
+        "beach": 1,
+        "history": 5,
+        "safety": 5,
+        "accessibility": 5,
+        "lgbtqFriendly": 5,
+        "budgetFriendly": 1
+      },
+      "costPerDay": {
+        "low": 55,
+        "mid": 100,
+        "high": 180
+      },
+      "tags": [
+        "fortress",
+        "castles",
+        "multilingual",
+        "eu",
+        "free-transport"
+      ],
+      "bestMonths": [
+        4,
+        5,
+        6,
+        9,
+        10
+      ],
+      "shortDescription": "A tiny trilingual grand duchy with free public transport, dramatic old-town views and more castles per square km than anywhere else.",
+      "highlights": [
+        "Luxembourg City old town",
+        "Vianden Castle",
+        "Mullerthal hiking",
+        "Echternach abbey",
+        "Moselle wine"
+      ],
+      "sources": [
+        "wikivoyage:Luxembourg",
+        "wikipedia:Luxembourg"
+      ]
+    },
+    {
+      "id": "LV",
+      "name": "Latvia",
+      "nameLocal": "Latvija",
+      "capital": "Riga",
+      "continent": "Europe",
+      "region": "Northern Europe",
+      "discoverEU": true,
+      "interrail": true,
+      "schengen": true,
+      "eu": true,
+      "currency": "EUR",
+      "languages": [
+        "lv"
+      ],
+      "population": 1880000,
+      "area_km2": 64589,
+      "flag": "🇱🇻",
+      "callingCode": "+371",
+      "emergency": "112",
+      "timezone": "Europe/Riga",
+      "scores": {
+        "nature": 5,
+        "culture": 4,
+        "nightlife": 4,
+        "food": 4,
+        "beach": 4,
+        "history": 5,
+        "safety": 4,
+        "accessibility": 3,
+        "lgbtqFriendly": 3,
+        "budgetFriendly": 4
+      },
+      "costPerDay": {
+        "low": 28,
+        "mid": 52,
+        "high": 95
+      },
+      "tags": [
+        "art-nouveau",
+        "forests",
+        "affordable",
+        "singing",
+        "beach"
+      ],
+      "bestMonths": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "shortDescription": "Riga's art nouveau skyline, white-sand Baltic beaches and wild forests — the middle Baltic state punches above its weight.",
+      "highlights": [
+        "Riga old town",
+        "Jūrmala beach",
+        "Gauja National Park",
+        "Rundāle Palace",
+        "Cēsis"
+      ],
+      "sources": [
+        "wikivoyage:Latvia",
+        "wikipedia:Latvia"
+      ]
+    },
+    {
+      "id": "MK",
+      "name": "North Macedonia",
+      "nameLocal": "Северна Македонија",
+      "capital": "Skopje",
+      "continent": "Europe",
+      "region": "Southeast Europe",
+      "discoverEU": false,
+      "interrail": false,
+      "schengen": false,
+      "eu": false,
+      "currency": "MKD",
+      "languages": [
+        "mk",
+        "sq"
+      ],
+      "population": 2080000,
+      "area_km2": 25713,
+      "flag": "🇲🇰",
+      "callingCode": "+389",
+      "emergency": "112",
+      "timezone": "Europe/Skopje",
+      "scores": {
+        "nature": 5,
+        "culture": 4,
+        "nightlife": 3,
+        "food": 4,
+        "beach": 1,
+        "history": 5,
+        "safety": 4,
+        "accessibility": 2,
+        "lgbtqFriendly": 2,
+        "budgetFriendly": 5
+      },
+      "costPerDay": {
+        "low": 20,
+        "mid": 40,
+        "high": 75
+      },
+      "tags": [
+        "lakes",
+        "mountains",
+        "affordable",
+        "orthodox",
+        "ohrid"
+      ],
+      "bestMonths": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "shortDescription": "Lake Ohrid, ancient churches and the Šar Mountains — an affordable Balkan escape still largely off the DiscoverEU radar.",
+      "highlights": [
+        "Lake Ohrid",
+        "Skopje old bazaar",
+        "Matka Canyon",
+        "Bitola",
+        "Mavrovo National Park"
+      ],
+      "sources": [
+        "wikivoyage:North_Macedonia",
+        "wikipedia:North_Macedonia"
+      ]
+    },
+    {
+      "id": "MT",
+      "name": "Malta",
+      "nameLocal": "Malta",
+      "capital": "Valletta",
+      "continent": "Europe",
+      "region": "Southern Europe",
+      "discoverEU": true,
+      "interrail": false,
+      "schengen": true,
+      "eu": true,
+      "currency": "EUR",
+      "languages": [
+        "mt",
+        "en"
+      ],
+      "population": 540000,
+      "area_km2": 316,
+      "flag": "🇲🇹",
+      "callingCode": "+356",
+      "emergency": "112",
+      "timezone": "Europe/Malta",
+      "scores": {
+        "nature": 3,
+        "culture": 4,
+        "nightlife": 5,
+        "food": 4,
+        "beach": 5,
+        "history": 5,
+        "safety": 5,
+        "accessibility": 3,
+        "lgbtqFriendly": 5,
+        "budgetFriendly": 3
+      },
+      "costPerDay": {
+        "low": 40,
+        "mid": 70,
+        "high": 130
+      },
+      "tags": [
+        "ancient",
+        "beach",
+        "english",
+        "diving",
+        "limestone"
+      ],
+      "bestMonths": [
+        4,
+        5,
+        6,
+        9,
+        10
+      ],
+      "shortDescription": "A sun-bleached limestone archipelago of megalithic temples, knightly fortresses, English-speaking bars and turquoise coves — reached by DiscoverEU flight alternative.",
+      "highlights": [
+        "Valletta",
+        "Blue Lagoon Comino",
+        "Mdina silent city",
+        "Ġgantija temples",
+        "Gozo citadel"
+      ],
+      "sources": [
+        "wikivoyage:Malta",
+        "wikipedia:Malta"
+      ]
+    },
+    {
+      "id": "NL",
+      "name": "Netherlands",
+      "nameLocal": "Nederland",
+      "capital": "Amsterdam",
+      "continent": "Europe",
+      "region": "Western Europe",
+      "discoverEU": true,
+      "interrail": true,
+      "schengen": true,
+      "eu": true,
+      "currency": "EUR",
+      "languages": [
+        "nl"
+      ],
+      "population": 17810000,
+      "area_km2": 41850,
+      "flag": "🇳🇱",
+      "callingCode": "+31",
+      "emergency": "112",
+      "timezone": "Europe/Amsterdam",
+      "scores": {
+        "nature": 2,
+        "culture": 4,
+        "nightlife": 5,
+        "food": 3,
+        "beach": 2,
+        "history": 4,
+        "safety": 5,
+        "accessibility": 5,
+        "lgbtqFriendly": 5,
+        "budgetFriendly": 2
+      },
+      "costPerDay": {
+        "low": 50,
+        "mid": 90,
+        "high": 160
+      },
+      "tags": [
+        "cycling",
+        "museums",
+        "canals",
+        "nightlife",
+        "lgbtq"
+      ],
+      "bestMonths": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "shortDescription": "Flat, bike-friendly, multilingual and famously liberal — the easiest landing pad for a first European solo trip.",
+      "highlights": [
+        "Amsterdam canals",
+        "Van Gogh Museum",
+        "Keukenhof tulips",
+        "Rotterdam architecture",
+        "Utrecht"
+      ],
+      "sources": [
+        "wikivoyage:Netherlands",
+        "wikipedia:Netherlands"
+      ]
+    },
+    {
+      "id": "NO",
+      "name": "Norway",
+      "nameLocal": "Norge",
+      "capital": "Oslo",
+      "continent": "Europe",
+      "region": "Northern Europe",
+      "discoverEU": true,
+      "interrail": true,
+      "schengen": true,
+      "eu": false,
+      "currency": "NOK",
+      "languages": [
+        "no"
+      ],
+      "population": 5480000,
+      "area_km2": 385207,
+      "flag": "🇳🇴",
+      "callingCode": "+47",
+      "emergency": "112",
+      "timezone": "Europe/Oslo",
+      "scores": {
+        "nature": 5,
+        "culture": 4,
+        "nightlife": 3,
+        "food": 4,
+        "beach": 3,
+        "history": 4,
+        "safety": 5,
+        "accessibility": 5,
+        "lgbtqFriendly": 5,
+        "budgetFriendly": 1
+      },
+      "costPerDay": {
+        "low": 65,
+        "mid": 110,
+        "high": 190
+      },
+      "tags": [
+        "fjords",
+        "northern-lights",
+        "hiking",
+        "vikings",
+        "midnight-sun"
+      ],
+      "bestMonths": [
+        6,
+        7,
+        8,
+        2,
+        3
+      ],
+      "shortDescription": "Fjords that cut hundreds of km inland, northern lights in winter, midnight sun in summer — Norway is Europe at its most dramatic (and most expensive).",
+      "highlights": [
+        "Geirangerfjord",
+        "Bergen bryggen",
+        "Lofoten islands",
+        "Preikestolen",
+        "Tromsø Northern Lights"
+      ],
+      "sources": [
+        "wikivoyage:Norway",
+        "wikipedia:Norway"
+      ]
+    },
+    {
+      "id": "PL",
+      "name": "Poland",
+      "nameLocal": "Polska",
+      "capital": "Warsaw",
+      "continent": "Europe",
+      "region": "Central Europe",
+      "discoverEU": true,
+      "interrail": true,
+      "schengen": true,
+      "eu": true,
+      "currency": "PLN",
+      "languages": [
+        "pl"
+      ],
+      "population": 36820000,
+      "area_km2": 312696,
+      "flag": "🇵🇱",
+      "callingCode": "+48",
+      "emergency": "112",
+      "timezone": "Europe/Warsaw",
+      "scores": {
+        "nature": 4,
+        "culture": 4,
+        "nightlife": 4,
+        "food": 4,
+        "beach": 2,
+        "history": 5,
+        "safety": 5,
+        "accessibility": 3,
+        "lgbtqFriendly": 3,
+        "budgetFriendly": 5
+      },
+      "costPerDay": {
+        "low": 25,
+        "mid": 50,
+        "high": 90
+      },
+      "tags": [
+        "affordable",
+        "history",
+        "pierogi",
+        "castles",
+        "forests"
+      ],
+      "bestMonths": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "shortDescription": "Medieval old towns, heavy 20th-century history, and some of the lowest prices in the EU — Poland stretches a travel budget further than almost anywhere.",
+      "highlights": [
+        "Kraków old town",
+        "Auschwitz-Birkenau memorial",
+        "Warsaw old town",
+        "Wieliczka salt mine",
+        "Tatra Mountains"
+      ],
+      "sources": [
+        "wikivoyage:Poland",
+        "wikipedia:Poland"
+      ]
+    },
+    {
+      "id": "PT",
+      "name": "Portugal",
+      "nameLocal": "Portugal",
+      "capital": "Lisbon",
+      "continent": "Europe",
+      "region": "Southern Europe",
+      "discoverEU": true,
+      "interrail": true,
+      "schengen": true,
+      "eu": true,
+      "currency": "EUR",
+      "languages": [
+        "pt"
+      ],
+      "population": 10470000,
+      "area_km2": 92212,
+      "flag": "🇵🇹",
+      "callingCode": "+351",
+      "emergency": "112",
+      "timezone": "Europe/Lisbon",
+      "scores": {
+        "nature": 4,
+        "culture": 4,
+        "nightlife": 4,
+        "food": 5,
+        "beach": 5,
+        "history": 5,
+        "safety": 5,
+        "accessibility": 3,
+        "lgbtqFriendly": 5,
+        "budgetFriendly": 4
+      },
+      "costPerDay": {
+        "low": 35,
+        "mid": 60,
+        "high": 110
+      },
+      "tags": [
+        "beach",
+        "surf",
+        "food",
+        "fado",
+        "tiles"
+      ],
+      "bestMonths": [
+        4,
+        5,
+        6,
+        9,
+        10
+      ],
+      "shortDescription": "Tile-lined hills, fado nights, Atlantic surf and pastel de nata — Portugal is the mellow, budget-friendly corner of Western Europe.",
+      "highlights": [
+        "Lisbon trams",
+        "Porto river front",
+        "Sintra palaces",
+        "Algarve beaches",
+        "Douro Valley"
+      ],
+      "sources": [
+        "wikivoyage:Portugal",
+        "wikipedia:Portugal"
+      ]
+    },
+    {
+      "id": "RO",
+      "name": "Romania",
+      "nameLocal": "România",
+      "capital": "Bucharest",
+      "continent": "Europe",
+      "region": "Southeast Europe",
+      "discoverEU": true,
+      "interrail": true,
+      "schengen": true,
+      "eu": true,
+      "currency": "RON",
+      "languages": [
+        "ro"
+      ],
+      "population": 19050000,
+      "area_km2": 238397,
+      "flag": "🇷🇴",
+      "callingCode": "+40",
+      "emergency": "112",
+      "timezone": "Europe/Bucharest",
+      "scores": {
+        "nature": 5,
+        "culture": 4,
+        "nightlife": 4,
+        "food": 4,
+        "beach": 3,
+        "history": 5,
+        "safety": 4,
+        "accessibility": 3,
+        "lgbtqFriendly": 2,
+        "budgetFriendly": 5
+      },
+      "costPerDay": {
+        "low": 25,
+        "mid": 50,
+        "high": 90
+      },
+      "tags": [
+        "carpathians",
+        "castles",
+        "dracula",
+        "affordable",
+        "wildlife"
+      ],
+      "bestMonths": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "shortDescription": "Carpathian bears, Saxon villages, Bran Castle and one of the EU's cheapest cost-of-living — Romania is undervalued real estate for DiscoverEU trips.",
+      "highlights": [
+        "Bran Castle",
+        "Brașov old town",
+        "Sibiu",
+        "Transfăgărășan highway",
+        "Danube Delta"
+      ],
+      "sources": [
+        "wikivoyage:Romania",
+        "wikipedia:Romania"
+      ]
+    },
+    {
+      "id": "RS",
+      "name": "Serbia",
+      "nameLocal": "Србија",
+      "capital": "Belgrade",
+      "continent": "Europe",
+      "region": "Southeast Europe",
+      "discoverEU": false,
+      "interrail": true,
+      "schengen": false,
+      "eu": false,
+      "currency": "RSD",
+      "languages": [
+        "sr"
+      ],
+      "population": 6660000,
+      "area_km2": 88361,
+      "flag": "🇷🇸",
+      "callingCode": "+381",
+      "emergency": "112",
+      "timezone": "Europe/Belgrade",
+      "scores": {
+        "nature": 4,
+        "culture": 4,
+        "nightlife": 5,
+        "food": 5,
+        "beach": 1,
+        "history": 5,
+        "safety": 4,
+        "accessibility": 2,
+        "lgbtqFriendly": 2,
+        "budgetFriendly": 5
+      },
+      "costPerDay": {
+        "low": 25,
+        "mid": 45,
+        "high": 85
+      },
+      "tags": [
+        "nightlife",
+        "balkan",
+        "affordable",
+        "monasteries",
+        "raft-bars"
+      ],
+      "bestMonths": [
+        5,
+        6,
+        9,
+        10
+      ],
+      "shortDescription": "Belgrade's floating raft-bar nightlife is legendary, the food is huge and the prices low — the Balkans' biggest capital is not yet DiscoverEU but worth the side-trip.",
+      "highlights": [
+        "Belgrade Kalemegdan",
+        "Novi Sad Petrovaradin",
+        "Studenica monastery",
+        "Tara National Park",
+        "Subotica"
+      ],
+      "sources": [
+        "wikivoyage:Serbia",
+        "wikipedia:Serbia"
+      ]
+    },
+    {
+      "id": "SE",
+      "name": "Sweden",
+      "nameLocal": "Sverige",
+      "capital": "Stockholm",
+      "continent": "Europe",
+      "region": "Northern Europe",
+      "discoverEU": true,
+      "interrail": true,
+      "schengen": true,
+      "eu": true,
+      "currency": "SEK",
+      "languages": [
+        "sv"
+      ],
+      "population": 10550000,
+      "area_km2": 450295,
+      "flag": "🇸🇪",
+      "callingCode": "+46",
+      "emergency": "112",
+      "timezone": "Europe/Stockholm",
+      "scores": {
+        "nature": 5,
+        "culture": 4,
+        "nightlife": 3,
+        "food": 4,
+        "beach": 2,
+        "history": 4,
+        "safety": 5,
+        "accessibility": 5,
+        "lgbtqFriendly": 5,
+        "budgetFriendly": 2
+      },
+      "costPerDay": {
+        "low": 55,
+        "mid": 95,
+        "high": 170
+      },
+      "tags": [
+        "nature",
+        "design",
+        "fika",
+        "midnight-sun",
+        "lgbtq"
+      ],
+      "bestMonths": [
+        6,
+        7,
+        8
+      ],
+      "shortDescription": "Forests, archipelagos, design-forward cities and the right-to-roam — Sweden is the gold standard for sustainable northern travel.",
+      "highlights": [
+        "Stockholm Gamla Stan",
+        "Abisko Northern Lights",
+        "Gothenburg archipelago",
+        "Vasa Museum",
+        "Swedish Lapland"
+      ],
+      "sources": [
+        "wikivoyage:Sweden",
+        "wikipedia:Sweden"
+      ]
+    },
+    {
+      "id": "SI",
+      "name": "Slovenia",
+      "nameLocal": "Slovenija",
+      "capital": "Ljubljana",
+      "continent": "Europe",
+      "region": "Central Europe",
+      "discoverEU": true,
+      "interrail": true,
+      "schengen": true,
+      "eu": true,
+      "currency": "EUR",
+      "languages": [
+        "sl"
+      ],
+      "population": 2120000,
+      "area_km2": 20273,
+      "flag": "🇸🇮",
+      "callingCode": "+386",
+      "emergency": "112",
+      "timezone": "Europe/Ljubljana",
+      "scores": {
+        "nature": 5,
+        "culture": 4,
+        "nightlife": 3,
+        "food": 5,
+        "beach": 3,
+        "history": 4,
+        "safety": 5,
+        "accessibility": 4,
+        "lgbtqFriendly": 4,
+        "budgetFriendly": 3
+      },
+      "costPerDay": {
+        "low": 35,
+        "mid": 65,
+        "high": 115
+      },
+      "tags": [
+        "lakes",
+        "alps",
+        "green",
+        "caves",
+        "hiking"
+      ],
+      "bestMonths": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "shortDescription": "Lake Bled's island church, Julian Alps peaks, emerald rivers and a tiny green capital — Slovenia is Europe in miniature.",
+      "highlights": [
+        "Lake Bled",
+        "Ljubljana center",
+        "Postojna Cave",
+        "Triglav National Park",
+        "Piran old town"
+      ],
+      "sources": [
+        "wikivoyage:Slovenia",
+        "wikipedia:Slovenia"
+      ]
+    },
+    {
+      "id": "SK",
+      "name": "Slovakia",
+      "nameLocal": "Slovensko",
+      "capital": "Bratislava",
+      "continent": "Europe",
+      "region": "Central Europe",
+      "discoverEU": true,
+      "interrail": true,
+      "schengen": true,
+      "eu": true,
+      "currency": "EUR",
+      "languages": [
+        "sk"
+      ],
+      "population": 5430000,
+      "area_km2": 49035,
+      "flag": "🇸🇰",
+      "callingCode": "+421",
+      "emergency": "112",
+      "timezone": "Europe/Bratislava",
+      "scores": {
+        "nature": 5,
+        "culture": 4,
+        "nightlife": 4,
+        "food": 4,
+        "beach": 1,
+        "history": 5,
+        "safety": 5,
+        "accessibility": 3,
+        "lgbtqFriendly": 3,
+        "budgetFriendly": 5
+      },
+      "costPerDay": {
+        "low": 28,
+        "mid": 52,
+        "high": 95
+      },
+      "tags": [
+        "castles",
+        "tatras",
+        "caves",
+        "affordable",
+        "hiking"
+      ],
+      "bestMonths": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "shortDescription": "The High Tatras, 180+ castles, and old-town Bratislava just a train ride from Vienna — Slovakia is central Europe's quiet outdoor playground.",
+      "highlights": [
+        "High Tatras",
+        "Bratislava old town",
+        "Spiš Castle",
+        "Slovak Paradise",
+        "Banská Štiavnica"
+      ],
+      "sources": [
+        "wikivoyage:Slovakia",
+        "wikipedia:Slovakia"
+      ]
+    },
+    {
+      "id": "TR",
+      "name": "Turkey",
+      "nameLocal": "Türkiye",
+      "capital": "Ankara",
+      "continent": "Asia",
+      "region": "Western Asia",
+      "discoverEU": false,
+      "interrail": true,
+      "schengen": false,
+      "eu": false,
+      "currency": "TRY",
+      "languages": [
+        "tr"
+      ],
+      "population": 85370000,
+      "area_km2": 783562,
+      "flag": "🇹🇷",
+      "callingCode": "+90",
+      "emergency": "112",
+      "timezone": "Europe/Istanbul",
+      "scores": {
+        "nature": 5,
+        "culture": 5,
+        "nightlife": 4,
+        "food": 5,
+        "beach": 5,
+        "history": 5,
+        "safety": 4,
+        "accessibility": 2,
+        "lgbtqFriendly": 2,
+        "budgetFriendly": 5
+      },
+      "costPerDay": {
+        "low": 20,
+        "mid": 45,
+        "high": 90
+      },
+      "tags": [
+        "bazaars",
+        "food",
+        "history",
+        "coast",
+        "hospitality"
+      ],
+      "bestMonths": [
+        4,
+        5,
+        6,
+        9,
+        10
+      ],
+      "shortDescription": "Where Europe meets Asia — Ottoman mosques, Mediterranean coasts, Cappadocian balloons and the warmest welcome on the continent. The Turkish bonus anchor of DiscoverEU Companion.",
+      "highlights": [
+        "Hagia Sophia",
+        "Cappadocia balloons",
+        "Ephesus",
+        "Pamukkale",
+        "Antalya coast"
+      ],
+      "sources": [
+        "wikivoyage:Turkey",
+        "wikipedia:Turkey"
+      ]
+    }
+  ]
+}

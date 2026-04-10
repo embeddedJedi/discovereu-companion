@@ -1,0 +1,139 @@
+{
+  "version": 1,
+  "generated": "2026-04-10",
+  "note": "Mandatory seat reservations for DiscoverEU / Interrail pass holders in 2026. Prices are typical, not live — always verify with the operator before booking. A 'mandatory' entry means the pass is not valid on that leg without an extra paid reservation.",
+  "reservations": [
+    {
+      "id": "fr-it-tgv",
+      "from": "FR",
+      "to": "IT",
+      "bidirectional": true,
+      "mandatory": true,
+      "operator": "TGV INOUI / Frecciarossa",
+      "sampleRoute": "Paris ↔ Milan / Turin",
+      "costEUR": 35,
+      "notes": "Every train across the French–Italian border requires a reservation. Book 2+ weeks ahead for €10–35; last-minute can exceed €50."
+    },
+    {
+      "id": "fr-es-tgv",
+      "from": "FR",
+      "to": "ES",
+      "bidirectional": true,
+      "mandatory": true,
+      "operator": "TGV INOUI / Renfe-SNCF",
+      "sampleRoute": "Paris ↔ Barcelona",
+      "costEUR": 35,
+      "notes": "Paris–Barcelona high-speed trains need reservations — limited pass-holder quota, book early."
+    },
+    {
+      "id": "fr-de-tgv",
+      "from": "FR",
+      "to": "DE",
+      "bidirectional": true,
+      "mandatory": true,
+      "operator": "TGV INOUI / ICE",
+      "sampleRoute": "Paris ↔ Frankfurt / Munich",
+      "costEUR": 30,
+      "notes": "TGV trains crossing into Germany need reservations. ICE on the same corridor is reservation-free but slower."
+    },
+    {
+      "id": "fr-ch-lyria",
+      "from": "FR",
+      "to": "CH",
+      "bidirectional": true,
+      "mandatory": true,
+      "operator": "TGV Lyria",
+      "sampleRoute": "Paris ↔ Zurich / Geneva",
+      "costEUR": 30,
+      "notes": "TGV Lyria is the only direct high-speed option; reservations sell out weeks ahead in summer."
+    },
+    {
+      "id": "it-domestic-frecciarossa",
+      "from": "IT",
+      "to": "IT",
+      "bidirectional": false,
+      "mandatory": true,
+      "operator": "Trenitalia Frecciarossa",
+      "sampleRoute": "Rome ↔ Milan / Venice / Naples",
+      "costEUR": 13,
+      "notes": "All Italian high-speed trains require a reservation (€13 with the pass). Regional trains do not."
+    },
+    {
+      "id": "es-domestic-ave",
+      "from": "ES",
+      "to": "ES",
+      "bidirectional": false,
+      "mandatory": true,
+      "operator": "Renfe AVE",
+      "sampleRoute": "Madrid ↔ Barcelona / Seville",
+      "costEUR": 10,
+      "notes": "Spanish AVE high-speed requires paid reservations (€10 for pass holders). Cercanías and media distancia are free."
+    },
+    {
+      "id": "de-at-nightjet",
+      "from": "DE",
+      "to": "AT",
+      "bidirectional": true,
+      "mandatory": true,
+      "operator": "ÖBB Nightjet",
+      "sampleRoute": "Munich ↔ Vienna (night)",
+      "costEUR": 29,
+      "notes": "Nightjet sleeper reservations start at €29 (seat), €59 (couchette), €99+ (private sleeper)."
+    },
+    {
+      "id": "hr-hu-istanbul",
+      "from": "HR",
+      "to": "HU",
+      "bidirectional": true,
+      "mandatory": true,
+      "operator": "HŽPP / MÁV",
+      "sampleRoute": "Zagreb ↔ Budapest",
+      "costEUR": 15,
+      "notes": "International trains across the Croatia–Hungary border require a reservation; seats are limited."
+    },
+    {
+      "id": "se-night",
+      "from": "SE",
+      "to": "SE",
+      "bidirectional": false,
+      "mandatory": true,
+      "operator": "SJ Night Train",
+      "sampleRoute": "Stockholm ↔ Lapland",
+      "costEUR": 25,
+      "notes": "All Swedish SJ night trains require a reservation (€25 seat, more for berths)."
+    },
+    {
+      "id": "bg-gr-thessaloniki",
+      "from": "BG",
+      "to": "GR",
+      "bidirectional": true,
+      "mandatory": true,
+      "operator": "BDZ / TrainOSE",
+      "sampleRoute": "Sofia ↔ Thessaloniki",
+      "costEUR": 10,
+      "notes": "Cross-border trains between Bulgaria and Greece require a reservation and run infrequently — plan ahead."
+    },
+    {
+      "id": "ro-hu-corona",
+      "from": "RO",
+      "to": "HU",
+      "bidirectional": true,
+      "mandatory": true,
+      "operator": "CFR / MÁV",
+      "sampleRoute": "Bucharest ↔ Budapest",
+      "costEUR": 10,
+      "notes": "The Corona / Dacia daily trains between Bucharest and Budapest require a reservation."
+    },
+    {
+      "id": "tr-bg-sofia-express",
+      "from": "TR",
+      "to": "BG",
+      "bidirectional": true,
+      "mandatory": true,
+      "operator": "TCDD / BDZ (Sofia Express)",
+      "sampleRoute": "Istanbul ↔ Sofia",
+      "costEUR": 25,
+      "notes": "Turkish bonus: the overnight Sofia Express is the only direct rail link between Istanbul and the DiscoverEU network. Sleeper reservation required."
+    }
+  ]
+}
