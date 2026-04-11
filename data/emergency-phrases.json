@@ -1,0 +1,1164 @@
+{
+  "version": 1,
+  "generated": "2026-04-11",
+  "note": "Offline-ready emergency info. 112 is the universal EU emergency number; country overrides list local variants. Key phrases are in each country's primary language + global EN/TR fallbacks so non-speakers can point-and-show on a phone screen.",
+  "universalEu": {
+    "number": "112",
+    "description": "EU-wide emergency number — police / ambulance / fire, any EU country, any mobile, works even without SIM."
+  },
+  "globalPhrases": {
+    "en": {
+      "help":              "Help!",
+      "callPolice":        "Call the police, please.",
+      "callAmbulance":     "Call an ambulance, please.",
+      "iAmLost":           "I am lost.",
+      "iNeedADoctor":      "I need a doctor.",
+      "whereIsHospital":   "Where is the nearest hospital?",
+      "doYouSpeakEnglish": "Do you speak English?",
+      "allergicTo":        "I am allergic to {thing}.",
+      "myPassportIsLost":  "My passport is lost."
+    },
+    "tr": {
+      "help":              "İmdat!",
+      "callPolice":        "Polis çağırın lütfen.",
+      "callAmbulance":     "Ambulans çağırın lütfen.",
+      "iAmLost":           "Kayboldum.",
+      "iNeedADoctor":      "Doktora ihtiyacım var.",
+      "whereIsHospital":   "En yakın hastane nerede?",
+      "doYouSpeakEnglish": "İngilizce biliyor musunuz?",
+      "allergicTo":        "{thing}'a alerjim var.",
+      "myPassportIsLost":  "Pasaportumu kaybettim."
+    }
+  },
+  "countries": [
+    {
+      "id": "DE",
+      "primaryLanguages": ["de"],
+      "numbers": {
+        "police":        "110",
+        "ambulance":     "112",
+        "fire":          "112",
+        "poisonControl": "030 19240 (Berlin)",
+        "touristPolice": null
+      },
+      "phrases": {
+        "de": {
+          "help":              "Hilfe!",
+          "callPolice":        "Rufen Sie die Polizei, bitte.",
+          "callAmbulance":     "Rufen Sie einen Krankenwagen, bitte.",
+          "iAmLost":           "Ich habe mich verirrt.",
+          "iNeedADoctor":      "Ich brauche einen Arzt.",
+          "whereIsHospital":   "Wo ist das nächste Krankenhaus?",
+          "doYouSpeakEnglish": "Sprechen Sie Englisch?",
+          "allergicTo":        "Ich bin allergisch gegen {thing}.",
+          "myPassportIsLost":  "Mein Pass ist verloren."
+        }
+      },
+      "embassyHint": {
+        "tr":   "Türkiye Berlin Büyükelçiliği — +49 30 27585-0",
+        "hint": "search: 'turkish embassy berlin'"
+      }
+    },
+    {
+      "id": "FR",
+      "primaryLanguages": ["fr"],
+      "numbers": {
+        "police":        "17",
+        "ambulance":     "15",
+        "fire":          "18",
+        "poisonControl": "01 40 05 48 48 (Paris)",
+        "touristPolice": null
+      },
+      "phrases": {
+        "fr": {
+          "help":              "Au secours !",
+          "callPolice":        "Appelez la police, s'il vous plaît.",
+          "callAmbulance":     "Appelez une ambulance, s'il vous plaît.",
+          "iAmLost":           "Je suis perdu.",
+          "iNeedADoctor":      "J'ai besoin d'un médecin.",
+          "whereIsHospital":   "Où est l'hôpital le plus proche ?",
+          "doYouSpeakEnglish": "Parlez-vous anglais ?",
+          "allergicTo":        "Je suis allergique à {thing}.",
+          "myPassportIsLost":  "J'ai perdu mon passeport."
+        }
+      },
+      "embassyHint": {
+        "tr":   "Türkiye Paris Büyükelçiliği — +33 1 53 92 71 12",
+        "hint": "search: 'turkish embassy paris'"
+      }
+    },
+    {
+      "id": "IT",
+      "primaryLanguages": ["it"],
+      "numbers": {
+        "police":        "113",
+        "ambulance":     "118",
+        "fire":          "115",
+        "poisonControl": "06 3054343 (Roma)",
+        "touristPolice": null
+      },
+      "phrases": {
+        "it": {
+          "help":              "Aiuto!",
+          "callPolice":        "Chiami la polizia, per favore.",
+          "callAmbulance":     "Chiami un'ambulanza, per favore.",
+          "iAmLost":           "Mi sono perso.",
+          "iNeedADoctor":      "Ho bisogno di un medico.",
+          "whereIsHospital":   "Dov'è l'ospedale più vicino?",
+          "doYouSpeakEnglish": "Parla inglese?",
+          "allergicTo":        "Sono allergico a {thing}.",
+          "myPassportIsLost":  "Ho perso il mio passaporto."
+        }
+      },
+      "embassyHint": {
+        "tr":   "Türkiye Roma Büyükelçiliği — +39 06 445 941",
+        "hint": "search: 'turkish embassy rome'"
+      }
+    },
+    {
+      "id": "ES",
+      "primaryLanguages": ["es"],
+      "numbers": {
+        "police":        "091",
+        "ambulance":     "061",
+        "fire":          "080",
+        "poisonControl": "91 562 04 20 (Madrid)",
+        "touristPolice": "902 102 112"
+      },
+      "phrases": {
+        "es": {
+          "help":              "¡Socorro!",
+          "callPolice":        "Llame a la policía, por favor.",
+          "callAmbulance":     "Llame a una ambulancia, por favor.",
+          "iAmLost":           "Estoy perdido.",
+          "iNeedADoctor":      "Necesito un médico.",
+          "whereIsHospital":   "¿Dónde está el hospital más cercano?",
+          "doYouSpeakEnglish": "¿Habla usted inglés?",
+          "allergicTo":        "Soy alérgico a {thing}.",
+          "myPassportIsLost":  "He perdido mi pasaporte."
+        }
+      },
+      "embassyHint": {
+        "tr":   "Türkiye Madrid Büyükelçiliği — +34 91 319 80 64",
+        "hint": "search: 'turkish embassy madrid'"
+      }
+    },
+    {
+      "id": "NL",
+      "primaryLanguages": ["nl"],
+      "numbers": {
+        "police":        "0900-8844",
+        "ambulance":     "112",
+        "fire":          "112",
+        "poisonControl": "030 274 88 88",
+        "touristPolice": null
+      },
+      "phrases": {
+        "nl": {
+          "help":              "Help!",
+          "callPolice":        "Bel de politie, alstublieft.",
+          "callAmbulance":     "Bel een ambulance, alstublieft.",
+          "iAmLost":           "Ik ben verdwaald.",
+          "iNeedADoctor":      "Ik heb een dokter nodig.",
+          "whereIsHospital":   "Waar is het dichtstbijzijnde ziekenhuis?",
+          "doYouSpeakEnglish": "Spreekt u Engels?",
+          "allergicTo":        "Ik ben allergisch voor {thing}.",
+          "myPassportIsLost":  "Ik ben mijn paspoort kwijt."
+        }
+      },
+      "embassyHint": {
+        "tr":   "Türkiye Lahey Büyükelçiliği — +31 70 360 49 12",
+        "hint": "search: 'turkish embassy the hague'"
+      }
+    },
+    {
+      "id": "BE",
+      "primaryLanguages": ["nl", "fr"],
+      "numbers": {
+        "police":        "101",
+        "ambulance":     "112",
+        "fire":          "112",
+        "poisonControl": "070 245 245",
+        "touristPolice": null
+      },
+      "phrases": {
+        "nl": {
+          "help":              "Help!",
+          "callPolice":        "Bel de politie, alstublieft.",
+          "callAmbulance":     "Bel een ambulance, alstublieft.",
+          "iAmLost":           "Ik ben verdwaald.",
+          "iNeedADoctor":      "Ik heb een dokter nodig.",
+          "whereIsHospital":   "Waar is het dichtstbijzijnde ziekenhuis?",
+          "doYouSpeakEnglish": "Spreekt u Engels?",
+          "allergicTo":        "Ik ben allergisch voor {thing}.",
+          "myPassportIsLost":  "Ik ben mijn paspoort kwijt."
+        },
+        "fr": {
+          "help":              "Au secours !",
+          "callPolice":        "Appelez la police, s'il vous plaît.",
+          "callAmbulance":     "Appelez une ambulance, s'il vous plaît.",
+          "iAmLost":           "Je suis perdu.",
+          "iNeedADoctor":      "J'ai besoin d'un médecin.",
+          "whereIsHospital":   "Où est l'hôpital le plus proche ?",
+          "doYouSpeakEnglish": "Parlez-vous anglais ?",
+          "allergicTo":        "Je suis allergique à {thing}.",
+          "myPassportIsLost":  "J'ai perdu mon passeport."
+        }
+      },
+      "embassyHint": {
+        "tr":   "Türkiye Brüksel Büyükelçiliği — +32 2 513 40 95",
+        "hint": "search: 'turkish embassy brussels'"
+      }
+    },
+    {
+      "id": "AT",
+      "primaryLanguages": ["de"],
+      "numbers": {
+        "police":        "133",
+        "ambulance":     "144",
+        "fire":          "122",
+        "poisonControl": "01 406 43 43 (Wien)",
+        "touristPolice": null
+      },
+      "phrases": {
+        "de": {
+          "help":              "Hilfe!",
+          "callPolice":        "Rufen Sie die Polizei, bitte.",
+          "callAmbulance":     "Rufen Sie einen Krankenwagen, bitte.",
+          "iAmLost":           "Ich habe mich verirrt.",
+          "iNeedADoctor":      "Ich brauche einen Arzt.",
+          "whereIsHospital":   "Wo ist das nächste Krankenhaus?",
+          "doYouSpeakEnglish": "Sprechen Sie Englisch?",
+          "allergicTo":        "Ich bin allergisch gegen {thing}.",
+          "myPassportIsLost":  "Mein Pass ist verloren."
+        }
+      },
+      "embassyHint": {
+        "tr":   "Türkiye Viyana Büyükelçiliği — +43 1 504 81 12",
+        "hint": "search: 'turkish embassy vienna'"
+      }
+    },
+    {
+      "id": "CH",
+      "primaryLanguages": ["de", "fr", "it"],
+      "numbers": {
+        "police":        "117",
+        "ambulance":     "144",
+        "fire":          "118",
+        "poisonControl": "145",
+        "touristPolice": null
+      },
+      "phrases": {
+        "de": {
+          "help":              "Hilfe!",
+          "callPolice":        "Rufen Sie die Polizei, bitte.",
+          "callAmbulance":     "Rufen Sie einen Krankenwagen, bitte.",
+          "iAmLost":           "Ich habe mich verirrt.",
+          "iNeedADoctor":      "Ich brauche einen Arzt.",
+          "whereIsHospital":   "Wo ist das nächste Krankenhaus?",
+          "doYouSpeakEnglish": "Sprechen Sie Englisch?",
+          "allergicTo":        "Ich bin allergisch gegen {thing}.",
+          "myPassportIsLost":  "Mein Pass ist verloren."
+        },
+        "fr": {
+          "help":              "Au secours !",
+          "callPolice":        "Appelez la police, s'il vous plaît.",
+          "callAmbulance":     "Appelez une ambulance, s'il vous plaît.",
+          "iAmLost":           "Je suis perdu.",
+          "iNeedADoctor":      "J'ai besoin d'un médecin.",
+          "whereIsHospital":   "Où est l'hôpital le plus proche ?",
+          "doYouSpeakEnglish": "Parlez-vous anglais ?",
+          "allergicTo":        "Je suis allergique à {thing}.",
+          "myPassportIsLost":  "J'ai perdu mon passeport."
+        },
+        "it": {
+          "help":              "Aiuto!",
+          "callPolice":        "Chiami la polizia, per favore.",
+          "callAmbulance":     "Chiami un'ambulanza, per favore.",
+          "iAmLost":           "Mi sono perso.",
+          "iNeedADoctor":      "Ho bisogno di un medico.",
+          "whereIsHospital":   "Dov'è l'ospedale più vicino?",
+          "doYouSpeakEnglish": "Parla inglese?",
+          "allergicTo":        "Sono allergico a {thing}.",
+          "myPassportIsLost":  "Ho perso il mio passaporto."
+        }
+      },
+      "embassyHint": {
+        "tr":   "Türkiye Bern Büyükelçiliği — +41 31 359 70 70",
+        "hint": "search: 'turkish embassy bern'"
+      }
+    },
+    {
+      "id": "CZ",
+      "primaryLanguages": ["cs"],
+      "numbers": {
+        "police":        "158",
+        "ambulance":     "155",
+        "fire":          "150",
+        "poisonControl": "224 919 293 (Praha)",
+        "touristPolice": null
+      },
+      "phrases": {
+        "cs": {
+          "help":              "Pomoc!",
+          "callPolice":        "Zavolejte policii, prosím.",
+          "callAmbulance":     "Zavolejte sanitku, prosím.",
+          "iAmLost":           "Ztratil jsem se.",
+          "iNeedADoctor":      "Potřebuji lékaře.",
+          "whereIsHospital":   "Kde je nejbližší nemocnice?",
+          "doYouSpeakEnglish": "Mluvíte anglicky?",
+          "allergicTo":        "Jsem alergický na {thing}.",
+          "myPassportIsLost":  "Ztratil jsem pas."
+        }
+      },
+      "embassyHint": {
+        "tr":   "Türkiye Prag Büyükelçiliği — +420 224 311 402",
+        "hint": "search: 'turkish embassy prague'"
+      }
+    },
+    {
+      "id": "PL",
+      "primaryLanguages": ["pl"],
+      "numbers": {
+        "police":        "997",
+        "ambulance":     "999",
+        "fire":          "998",
+        "poisonControl": "42 657 99 00 (Łódź)",
+        "touristPolice": null
+      },
+      "phrases": {
+        "pl": {
+          "help":              "Pomocy!",
+          "callPolice":        "Proszę wezwać policję.",
+          "callAmbulance":     "Proszę wezwać karetkę.",
+          "iAmLost":           "Zgubiłem się.",
+          "iNeedADoctor":      "Potrzebuję lekarza.",
+          "whereIsHospital":   "Gdzie jest najbliższy szpital?",
+          "doYouSpeakEnglish": "Czy mówi pan po angielsku?",
+          "allergicTo":        "Jestem uczulony na {thing}.",
+          "myPassportIsLost":  "Zgubiłem paszport."
+        }
+      },
+      "embassyHint": {
+        "tr":   "Türkiye Varşova Büyükelçiliği — +48 22 628 40 51",
+        "hint": "search: 'turkish embassy warsaw'"
+      }
+    },
+    {
+      "id": "HU",
+      "primaryLanguages": ["hu"],
+      "numbers": {
+        "police":        "107",
+        "ambulance":     "104",
+        "fire":          "105",
+        "poisonControl": "06 80 201 199",
+        "touristPolice": "+36 1 438 8080"
+      },
+      "phrases": {
+        "hu": {
+          "help":              "Segítség!",
+          "callPolice":        "Hívja a rendőrséget, kérem.",
+          "callAmbulance":     "Hívjon mentőt, kérem.",
+          "iAmLost":           "Eltévedtem.",
+          "iNeedADoctor":      "Orvosra van szükségem.",
+          "whereIsHospital":   "Hol van a legközelebbi kórház?",
+          "doYouSpeakEnglish": "Beszél angolul?",
+          "allergicTo":        "Allergiás vagyok a {thing}-ra.",
+          "myPassportIsLost":  "Elvesztettem az útlevelemet."
+        }
+      },
+      "embassyHint": {
+        "tr":   "Türkiye Budapeşte Büyükelçiliği — +36 1 478 51 00",
+        "hint": "search: 'turkish embassy budapest'"
+      }
+    },
+    {
+      "id": "PT",
+      "primaryLanguages": ["pt"],
+      "numbers": {
+        "police":        "112",
+        "ambulance":     "112",
+        "fire":          "112",
+        "poisonControl": "808 250 143",
+        "touristPolice": "+351 213 421 634 (Lisboa)"
+      },
+      "phrases": {
+        "pt": {
+          "help":              "Socorro!",
+          "callPolice":        "Chame a polícia, por favor.",
+          "callAmbulance":     "Chame uma ambulância, por favor.",
+          "iAmLost":           "Estou perdido.",
+          "iNeedADoctor":      "Preciso de um médico.",
+          "whereIsHospital":   "Onde fica o hospital mais próximo?",
+          "doYouSpeakEnglish": "Fala inglês?",
+          "allergicTo":        "Sou alérgico a {thing}.",
+          "myPassportIsLost":  "Perdi o meu passaporte."
+        }
+      },
+      "embassyHint": {
+        "tr":   "Türkiye Lizbon Büyükelçiliği — +351 21 301 42 61",
+        "hint": "search: 'turkish embassy lisbon'"
+      }
+    },
+    {
+      "id": "GR",
+      "primaryLanguages": ["el"],
+      "numbers": {
+        "police":        "100",
+        "ambulance":     "166",
+        "fire":          "199",
+        "poisonControl": "210 779 3777 (Athens)",
+        "touristPolice": "1571"
+      },
+      "phrases": {
+        "el": {
+          "help":              "Βοήθεια!",
+          "callPolice":        "Καλέστε την αστυνομία, παρακαλώ.",
+          "callAmbulance":     "Καλέστε ασθενοφόρο, παρακαλώ.",
+          "iAmLost":           "Έχω χαθεί.",
+          "iNeedADoctor":      "Χρειάζομαι γιατρό.",
+          "whereIsHospital":   "Πού είναι το πλησιέστερο νοσοκομείο;",
+          "doYouSpeakEnglish": "Μιλάτε αγγλικά;",
+          "allergicTo":        "Είμαι αλλεργικός στο {thing}.",
+          "myPassportIsLost":  "Έχασα το διαβατήριό μου."
+        }
+      },
+      "embassyHint": {
+        "tr":   "Türkiye Atina Büyükelçiliği — +30 210 726 3000",
+        "hint": "search: 'turkish embassy athens'"
+      }
+    },
+    {
+      "id": "SE",
+      "primaryLanguages": ["sv"],
+      "numbers": {
+        "police":        "114 14",
+        "ambulance":     "112",
+        "fire":          "112",
+        "poisonControl": "010 456 6700",
+        "touristPolice": null
+      },
+      "phrases": {
+        "sv": {
+          "help":              "Hjälp!",
+          "callPolice":        "Ring polisen, tack.",
+          "callAmbulance":     "Ring en ambulans, tack.",
+          "iAmLost":           "Jag har gått vilse.",
+          "iNeedADoctor":      "Jag behöver en läkare.",
+          "whereIsHospital":   "Var ligger närmaste sjukhus?",
+          "doYouSpeakEnglish": "Talar du engelska?",
+          "allergicTo":        "Jag är allergisk mot {thing}.",
+          "myPassportIsLost":  "Jag har tappat mitt pass."
+        }
+      },
+      "embassyHint": {
+        "tr":   "Türkiye Stockholm Büyükelçiliği — +46 8 679 15 70",
+        "hint": "search: 'turkish embassy stockholm'"
+      }
+    },
+    {
+      "id": "TR",
+      "primaryLanguages": ["tr"],
+      "numbers": {
+        "police":        "155",
+        "ambulance":     "112",
+        "fire":          "110",
+        "poisonControl": "114",
+        "touristPolice": "+90 212 527 45 03 (İstanbul)"
+      },
+      "phrases": {
+        "tr": {
+          "help":              "İmdat!",
+          "callPolice":        "Polis çağırın lütfen.",
+          "callAmbulance":     "Ambulans çağırın lütfen.",
+          "iAmLost":           "Kayboldum.",
+          "iNeedADoctor":      "Doktora ihtiyacım var.",
+          "whereIsHospital":   "En yakın hastane nerede?",
+          "doYouSpeakEnglish": "İngilizce biliyor musunuz?",
+          "allergicTo":        "{thing}'a alerjim var.",
+          "myPassportIsLost":  "Pasaportumu kaybettim."
+        }
+      },
+      "embassyHint": {
+        "tr":   "Bu senin kendi ülken — Dışişleri Bakanlığı çağrı merkezi: 112",
+        "hint": "home country"
+      }
+    },
+    {
+      "id": "DK",
+      "primaryLanguages": ["da"],
+      "numbers": {
+        "police":        "114",
+        "ambulance":     "112",
+        "fire":          "112",
+        "poisonControl": "82 12 12 12",
+        "touristPolice": null
+      },
+      "phrases": {
+        "da": {
+          "help":              "Hjælp!",
+          "callPolice":        "Ring til politiet, tak.",
+          "callAmbulance":     "Ring efter en ambulance, tak.",
+          "iAmLost":           "Jeg er faret vild.",
+          "iNeedADoctor":      "Jeg har brug for en læge.",
+          "whereIsHospital":   "Hvor er det nærmeste hospital?",
+          "doYouSpeakEnglish": "Taler du engelsk?",
+          "allergicTo":        "Jeg er allergisk over for {thing}.",
+          "myPassportIsLost":  "Jeg har mistet mit pas."
+        }
+      },
+      "embassyHint": {
+        "tr":   "Türkiye Kopenhag Büyükelçiliği — +45 39 20 27 88",
+        "hint": "search: 'turkish embassy copenhagen'"
+      }
+    },
+    {
+      "id": "FI",
+      "primaryLanguages": ["fi", "sv"],
+      "numbers": {
+        "police":        "112",
+        "ambulance":     "112",
+        "fire":          "112",
+        "poisonControl": "0800 147 111",
+        "touristPolice": null
+      },
+      "phrases": {
+        "fi": {
+          "help":              "Apua!",
+          "callPolice":        "Soittakaa poliisi, kiitos.",
+          "callAmbulance":     "Soittakaa ambulanssi, kiitos.",
+          "iAmLost":           "Olen eksynyt.",
+          "iNeedADoctor":      "Tarvitsen lääkärin.",
+          "whereIsHospital":   "Missä on lähin sairaala?",
+          "doYouSpeakEnglish": "Puhutko englantia?",
+          "allergicTo":        "Olen allerginen {thing}lle.",
+          "myPassportIsLost":  "Olen hukannut passini."
+        },
+        "sv": {
+          "help":              "Hjälp!",
+          "callPolice":        "Ring polisen, tack.",
+          "callAmbulance":     "Ring en ambulans, tack.",
+          "iAmLost":           "Jag har gått vilse.",
+          "iNeedADoctor":      "Jag behöver en läkare.",
+          "whereIsHospital":   "Var ligger närmaste sjukhus?",
+          "doYouSpeakEnglish": "Talar du engelska?",
+          "allergicTo":        "Jag är allergisk mot {thing}.",
+          "myPassportIsLost":  "Jag har tappat mitt pass."
+        }
+      },
+      "embassyHint": {
+        "tr":   "Türkiye Helsinki Büyükelçiliği — +358 9 6122 6500",
+        "hint": "search: 'turkish embassy helsinki'"
+      }
+    },
+    {
+      "id": "IE",
+      "primaryLanguages": ["en", "ga"],
+      "numbers": {
+        "police":        "999",
+        "ambulance":     "112",
+        "fire":          "112",
+        "poisonControl": "01 809 2166",
+        "touristPolice": null
+      },
+      "phrases": {
+        "en": {
+          "help":              "Help!",
+          "callPolice":        "Call the Gardaí, please.",
+          "callAmbulance":     "Call an ambulance, please.",
+          "iAmLost":           "I am lost.",
+          "iNeedADoctor":      "I need a doctor.",
+          "whereIsHospital":   "Where is the nearest hospital?",
+          "doYouSpeakEnglish": "Do you speak English?",
+          "allergicTo":        "I am allergic to {thing}.",
+          "myPassportIsLost":  "My passport is lost."
+        },
+        "ga": {
+          "help":              "Cabhair!",
+          "callPolice":        "Cuir glaoch ar na Gardaí, le do thoil.",
+          "callAmbulance":     "Cuir glaoch ar otharcharr, le do thoil.",
+          "iAmLost":           "Táim caillte.",
+          "iNeedADoctor":      "Tá dochtúir de dhíth orm.",
+          "whereIsHospital":   "Cá bhfuil an t-ospidéal is cóngaraí?",
+          "doYouSpeakEnglish": "An bhfuil Béarla agat?",
+          "allergicTo":        "Tá ailléirge orm le {thing}.",
+          "myPassportIsLost":  "Tá mo phas caillte."
+        }
+      },
+      "embassyHint": {
+        "tr":   "Türkiye Dublin Büyükelçiliği — +353 1 668 5240",
+        "hint": "search: 'turkish embassy dublin'"
+      }
+    },
+    {
+      "id": "LU",
+      "primaryLanguages": ["fr", "de", "lb"],
+      "numbers": {
+        "police":        "113",
+        "ambulance":     "112",
+        "fire":          "112",
+        "poisonControl": "+32 70 245 245 (BE shared)",
+        "touristPolice": null
+      },
+      "phrases": {
+        "fr": {
+          "help":              "Au secours !",
+          "callPolice":        "Appelez la police, s'il vous plaît.",
+          "callAmbulance":     "Appelez une ambulance, s'il vous plaît.",
+          "iAmLost":           "Je suis perdu.",
+          "iNeedADoctor":      "J'ai besoin d'un médecin.",
+          "whereIsHospital":   "Où est l'hôpital le plus proche ?",
+          "doYouSpeakEnglish": "Parlez-vous anglais ?",
+          "allergicTo":        "Je suis allergique à {thing}.",
+          "myPassportIsLost":  "J'ai perdu mon passeport."
+        },
+        "de": {
+          "help":              "Hilfe!",
+          "callPolice":        "Rufen Sie die Polizei, bitte.",
+          "callAmbulance":     "Rufen Sie einen Krankenwagen, bitte.",
+          "iAmLost":           "Ich habe mich verirrt.",
+          "iNeedADoctor":      "Ich brauche einen Arzt.",
+          "whereIsHospital":   "Wo ist das nächste Krankenhaus?",
+          "doYouSpeakEnglish": "Sprechen Sie Englisch?",
+          "allergicTo":        "Ich bin allergisch gegen {thing}.",
+          "myPassportIsLost":  "Mein Pass ist verloren."
+        },
+        "lb": {
+          "help":              "Hëllef!",
+          "callPolice":        "Rufft d'Police, w.e.g.",
+          "callAmbulance":     "Rufft en Ambulanz, w.e.g.",
+          "iAmLost":           "Ech hunn mech verlaf.",
+          "iNeedADoctor":      "Ech brauch en Dokter.",
+          "whereIsHospital":   "Wou ass dat nootste Spidol?",
+          "doYouSpeakEnglish": "Schwätzt Dir Englesch?",
+          "allergicTo":        "Ech sinn allergesch géint {thing}.",
+          "myPassportIsLost":  "Ech hunn mäi Pass verluer."
+        }
+      },
+      "embassyHint": {
+        "tr":   "Türkiye Brüksel Büyükelçiliği (yetki alanı: LU) — +32 2 513 40 95",
+        "hint": "nearest: turkish embassy brussels (covers Luxembourg)"
+      }
+    },
+    {
+      "id": "MT",
+      "primaryLanguages": ["mt", "en"],
+      "numbers": {
+        "police":        "112",
+        "ambulance":     "112",
+        "fire":          "112",
+        "poisonControl": "2545 0000",
+        "touristPolice": "+356 2122 4001"
+      },
+      "phrases": {
+        "mt": {
+          "help":              "Ajjut!",
+          "callPolice":        "Ċempel lill-pulizija, jekk jogħġbok.",
+          "callAmbulance":     "Ċempel ambulanza, jekk jogħġbok.",
+          "iAmLost":           "Jien mitluf.",
+          "iNeedADoctor":      "Għandi bżonn tabib.",
+          "whereIsHospital":   "Fejn hu l-isptar l-eqreb?",
+          "doYouSpeakEnglish": "Titkellem bl-Ingliż?",
+          "allergicTo":        "Jien allerġiku għal {thing}.",
+          "myPassportIsLost":  "Tlift il-passaport tiegħi."
+        },
+        "en": {
+          "help":              "Help!",
+          "callPolice":        "Call the police, please.",
+          "callAmbulance":     "Call an ambulance, please.",
+          "iAmLost":           "I am lost.",
+          "iNeedADoctor":      "I need a doctor.",
+          "whereIsHospital":   "Where is the nearest hospital?",
+          "doYouSpeakEnglish": "Do you speak English?",
+          "allergicTo":        "I am allergic to {thing}.",
+          "myPassportIsLost":  "My passport is lost."
+        }
+      },
+      "embassyHint": {
+        "tr":   "Türkiye'nin Malta'da büyükelçiliği yoktur. En yakın: Roma Büyükelçiliği — +39 06 445 941",
+        "hint": "nearest: turkish embassy rome (covers Malta)"
+      }
+    },
+    {
+      "id": "CY",
+      "primaryLanguages": ["el", "tr"],
+      "numbers": {
+        "police":        "112",
+        "ambulance":     "112",
+        "fire":          "112",
+        "poisonControl": "1401",
+        "touristPolice": "+357 22 808080"
+      },
+      "phrases": {
+        "el": {
+          "help":              "Βοήθεια!",
+          "callPolice":        "Καλέστε την αστυνομία, παρακαλώ.",
+          "callAmbulance":     "Καλέστε ασθενοφόρο, παρακαλώ.",
+          "iAmLost":           "Έχω χαθεί.",
+          "iNeedADoctor":      "Χρειάζομαι γιατρό.",
+          "whereIsHospital":   "Πού είναι το πλησιέστερο νοσοκομείο;",
+          "doYouSpeakEnglish": "Μιλάτε αγγλικά;",
+          "allergicTo":        "Είμαι αλλεργικός στο {thing}.",
+          "myPassportIsLost":  "Έχασα το διαβατήριό μου."
+        },
+        "tr": {
+          "help":              "İmdat!",
+          "callPolice":        "Polis çağırın lütfen.",
+          "callAmbulance":     "Ambulans çağırın lütfen.",
+          "iAmLost":           "Kayboldum.",
+          "iNeedADoctor":      "Doktora ihtiyacım var.",
+          "whereIsHospital":   "En yakın hastane nerede?",
+          "doYouSpeakEnglish": "İngilizce biliyor musunuz?",
+          "allergicTo":        "{thing}'a alerjim var.",
+          "myPassportIsLost":  "Pasaportumu kaybettim."
+        }
+      },
+      "embassyHint": {
+        "tr":   "Türkiye'nin Güney Kıbrıs Rum Yönetimi ile diplomatik ilişkisi yoktur. KKTC Lefkoşa temsilciliği: +90 392 227 31 36",
+        "hint": "nearest: trnc representation nicosia (north) — no RoC embassy"
+      }
+    },
+    {
+      "id": "HR",
+      "primaryLanguages": ["hr"],
+      "numbers": {
+        "police":        "192",
+        "ambulance":     "194",
+        "fire":          "193",
+        "poisonControl": "01 23 48 342",
+        "touristPolice": null
+      },
+      "phrases": {
+        "hr": {
+          "help":              "Upomoć!",
+          "callPolice":        "Molim vas, zovite policiju.",
+          "callAmbulance":     "Molim vas, zovite hitnu pomoć.",
+          "iAmLost":           "Izgubio sam se.",
+          "iNeedADoctor":      "Trebam liječnika.",
+          "whereIsHospital":   "Gdje je najbliža bolnica?",
+          "doYouSpeakEnglish": "Govorite li engleski?",
+          "allergicTo":        "Alergičan sam na {thing}.",
+          "myPassportIsLost":  "Izgubio sam putovnicu."
+        }
+      },
+      "embassyHint": {
+        "tr":   "Türkiye Zagreb Büyükelçiliği — +385 1 4877 900",
+        "hint": "search: 'turkish embassy zagreb'"
+      }
+    },
+    {
+      "id": "RO",
+      "primaryLanguages": ["ro"],
+      "numbers": {
+        "police":        "112",
+        "ambulance":     "112",
+        "fire":          "112",
+        "poisonControl": "021 318 3606 (București)",
+        "touristPolice": null
+      },
+      "phrases": {
+        "ro": {
+          "help":              "Ajutor!",
+          "callPolice":        "Chemați poliția, vă rog.",
+          "callAmbulance":     "Chemați o ambulanță, vă rog.",
+          "iAmLost":           "M-am rătăcit.",
+          "iNeedADoctor":      "Am nevoie de un doctor.",
+          "whereIsHospital":   "Unde este cel mai apropiat spital?",
+          "doYouSpeakEnglish": "Vorbiți engleză?",
+          "allergicTo":        "Sunt alergic la {thing}.",
+          "myPassportIsLost":  "Mi-am pierdut pașaportul."
+        }
+      },
+      "embassyHint": {
+        "tr":   "Türkiye Bükreş Büyükelçiliği — +40 21 210 47 12",
+        "hint": "search: 'turkish embassy bucharest'"
+      }
+    },
+    {
+      "id": "BG",
+      "primaryLanguages": ["bg"],
+      "numbers": {
+        "police":        "112",
+        "ambulance":     "112",
+        "fire":          "112",
+        "poisonControl": "02 9154 233 (Sofia)",
+        "touristPolice": null
+      },
+      "phrases": {
+        "bg": {
+          "help":              "Помощ!",
+          "callPolice":        "Моля, извикайте полицията.",
+          "callAmbulance":     "Моля, извикайте линейка.",
+          "iAmLost":           "Изгубих се.",
+          "iNeedADoctor":      "Имам нужда от лекар.",
+          "whereIsHospital":   "Къде е най-близката болница?",
+          "doYouSpeakEnglish": "Говорите ли английски?",
+          "allergicTo":        "Алергичен съм към {thing}.",
+          "myPassportIsLost":  "Загубих си паспорта."
+        }
+      },
+      "embassyHint": {
+        "tr":   "Türkiye Sofya Büyükelçiliği — +359 2 935 55 00",
+        "hint": "search: 'turkish embassy sofia'"
+      }
+    },
+    {
+      "id": "SK",
+      "primaryLanguages": ["sk"],
+      "numbers": {
+        "police":        "158",
+        "ambulance":     "155",
+        "fire":          "150",
+        "poisonControl": "02 5477 4166 (Bratislava)",
+        "touristPolice": null
+      },
+      "phrases": {
+        "sk": {
+          "help":              "Pomoc!",
+          "callPolice":        "Zavolajte políciu, prosím.",
+          "callAmbulance":     "Zavolajte sanitku, prosím.",
+          "iAmLost":           "Stratil som sa.",
+          "iNeedADoctor":      "Potrebujem lekára.",
+          "whereIsHospital":   "Kde je najbližšia nemocnica?",
+          "doYouSpeakEnglish": "Hovoríte po anglicky?",
+          "allergicTo":        "Som alergický na {thing}.",
+          "myPassportIsLost":  "Stratil som pas."
+        }
+      },
+      "embassyHint": {
+        "tr":   "Türkiye Bratislava Büyükelçiliği — +421 2 5441 9005",
+        "hint": "search: 'turkish embassy bratislava'"
+      }
+    },
+    {
+      "id": "SI",
+      "primaryLanguages": ["sl"],
+      "numbers": {
+        "police":        "113",
+        "ambulance":     "112",
+        "fire":          "112",
+        "poisonControl": "041 635 500",
+        "touristPolice": null
+      },
+      "phrases": {
+        "sl": {
+          "help":              "Na pomoč!",
+          "callPolice":        "Prosim, pokličite policijo.",
+          "callAmbulance":     "Prosim, pokličite rešilca.",
+          "iAmLost":           "Izgubil sem se.",
+          "iNeedADoctor":      "Potrebujem zdravnika.",
+          "whereIsHospital":   "Kje je najbližja bolnišnica?",
+          "doYouSpeakEnglish": "Govorite angleško?",
+          "allergicTo":        "Alergičen sem na {thing}.",
+          "myPassportIsLost":  "Izgubil sem potni list."
+        }
+      },
+      "embassyHint": {
+        "tr":   "Türkiye Ljubljana Büyükelçiliği — +386 1 513 33 10",
+        "hint": "search: 'turkish embassy ljubljana'"
+      }
+    },
+    {
+      "id": "EE",
+      "primaryLanguages": ["et"],
+      "numbers": {
+        "police":        "112",
+        "ambulance":     "112",
+        "fire":          "112",
+        "poisonControl": "16662",
+        "touristPolice": null
+      },
+      "phrases": {
+        "et": {
+          "help":              "Appi!",
+          "callPolice":        "Palun kutsuge politsei.",
+          "callAmbulance":     "Palun kutsuge kiirabi.",
+          "iAmLost":           "Ma olen eksinud.",
+          "iNeedADoctor":      "Mul on arsti vaja.",
+          "whereIsHospital":   "Kus on lähim haigla?",
+          "doYouSpeakEnglish": "Kas te räägite inglise keelt?",
+          "allergicTo":        "Ma olen {thing} suhtes allergiline.",
+          "myPassportIsLost":  "Ma kaotasin oma passi."
+        }
+      },
+      "embassyHint": {
+        "tr":   "Türkiye Tallinn Büyükelçiliği — +372 627 22 00",
+        "hint": "search: 'turkish embassy tallinn'"
+      }
+    },
+    {
+      "id": "LV",
+      "primaryLanguages": ["lv"],
+      "numbers": {
+        "police":        "110",
+        "ambulance":     "113",
+        "fire":          "112",
+        "poisonControl": "67042473 (Rīga)",
+        "touristPolice": null
+      },
+      "phrases": {
+        "lv": {
+          "help":              "Palīgā!",
+          "callPolice":        "Lūdzu, izsauciet policiju.",
+          "callAmbulance":     "Lūdzu, izsauciet ātro palīdzību.",
+          "iAmLost":           "Esmu apmaldījies.",
+          "iNeedADoctor":      "Man vajag ārstu.",
+          "whereIsHospital":   "Kur ir tuvākā slimnīca?",
+          "doYouSpeakEnglish": "Vai jūs runājat angliski?",
+          "allergicTo":        "Man ir alerģija pret {thing}.",
+          "myPassportIsLost":  "Esmu pazaudējis pasi."
+        }
+      },
+      "embassyHint": {
+        "tr":   "Türkiye Riga Büyükelçiliği — +371 6732 5341",
+        "hint": "search: 'turkish embassy riga'"
+      }
+    },
+    {
+      "id": "LT",
+      "primaryLanguages": ["lt"],
+      "numbers": {
+        "police":        "112",
+        "ambulance":     "112",
+        "fire":          "112",
+        "poisonControl": "8 5 236 20 52 (Vilnius)",
+        "touristPolice": null
+      },
+      "phrases": {
+        "lt": {
+          "help":              "Gelbėkite!",
+          "callPolice":        "Prašau iškvieskite policiją.",
+          "callAmbulance":     "Prašau iškvieskite greitąją pagalbą.",
+          "iAmLost":           "Aš pasiklydau.",
+          "iNeedADoctor":      "Man reikia gydytojo.",
+          "whereIsHospital":   "Kur yra artimiausia ligoninė?",
+          "doYouSpeakEnglish": "Ar jūs kalbate angliškai?",
+          "allergicTo":        "Aš esu alergiškas {thing}.",
+          "myPassportIsLost":  "Pamečiau pasą."
+        }
+      },
+      "embassyHint": {
+        "tr":   "Türkiye Vilnius Büyükelçiliği — +370 5 212 4404",
+        "hint": "search: 'turkish embassy vilnius'"
+      }
+    },
+    {
+      "id": "IS",
+      "primaryLanguages": ["is"],
+      "numbers": {
+        "police":        "112",
+        "ambulance":     "112",
+        "fire":          "112",
+        "poisonControl": "543 2222",
+        "touristPolice": null
+      },
+      "phrases": {
+        "is": {
+          "help":              "Hjálp!",
+          "callPolice":        "Vinsamlegast hringið í lögregluna.",
+          "callAmbulance":     "Vinsamlegast hringið á sjúkrabíl.",
+          "iAmLost":           "Ég er villtur.",
+          "iNeedADoctor":      "Ég þarf lækni.",
+          "whereIsHospital":   "Hvar er næsti spítali?",
+          "doYouSpeakEnglish": "Talar þú ensku?",
+          "allergicTo":        "Ég er með ofnæmi fyrir {thing}.",
+          "myPassportIsLost":  "Vegabréfið mitt er týnt."
+        }
+      },
+      "embassyHint": {
+        "tr":   "Türkiye'nin İzlanda'da büyükelçiliği yoktur. En yakın: Oslo Büyükelçiliği — +47 22 12 94 60",
+        "hint": "nearest: turkish embassy oslo (covers Iceland)"
+      }
+    },
+    {
+      "id": "LI",
+      "primaryLanguages": ["de"],
+      "numbers": {
+        "police":        "117",
+        "ambulance":     "144",
+        "fire":          "118",
+        "poisonControl": "145 (CH shared)",
+        "touristPolice": null
+      },
+      "phrases": {
+        "de": {
+          "help":              "Hilfe!",
+          "callPolice":        "Rufen Sie die Polizei, bitte.",
+          "callAmbulance":     "Rufen Sie einen Krankenwagen, bitte.",
+          "iAmLost":           "Ich habe mich verirrt.",
+          "iNeedADoctor":      "Ich brauche einen Arzt.",
+          "whereIsHospital":   "Wo ist das nächste Krankenhaus?",
+          "doYouSpeakEnglish": "Sprechen Sie Englisch?",
+          "allergicTo":        "Ich bin allergisch gegen {thing}.",
+          "myPassportIsLost":  "Mein Pass ist verloren."
+        }
+      },
+      "embassyHint": {
+        "tr":   "Türkiye'nin Liechtenstein'da büyükelçiliği yoktur. En yakın: Bern Büyükelçiliği — +41 31 359 70 70",
+        "hint": "nearest: turkish embassy bern (covers Liechtenstein)"
+      }
+    },
+    {
+      "id": "NO",
+      "primaryLanguages": ["no"],
+      "numbers": {
+        "police":        "112",
+        "ambulance":     "113",
+        "fire":          "110",
+        "poisonControl": "22 59 13 00",
+        "touristPolice": null
+      },
+      "phrases": {
+        "no": {
+          "help":              "Hjelp!",
+          "callPolice":        "Ring politiet, vær så snill.",
+          "callAmbulance":     "Ring en ambulanse, vær så snill.",
+          "iAmLost":           "Jeg har gått meg bort.",
+          "iNeedADoctor":      "Jeg trenger en lege.",
+          "whereIsHospital":   "Hvor er nærmeste sykehus?",
+          "doYouSpeakEnglish": "Snakker du engelsk?",
+          "allergicTo":        "Jeg er allergisk mot {thing}.",
+          "myPassportIsLost":  "Jeg har mistet passet mitt."
+        }
+      },
+      "embassyHint": {
+        "tr":   "Türkiye Oslo Büyükelçiliği — +47 22 12 94 60",
+        "hint": "search: 'turkish embassy oslo'"
+      }
+    },
+    {
+      "id": "AL",
+      "primaryLanguages": ["sq"],
+      "numbers": {
+        "police":        "129",
+        "ambulance":     "127",
+        "fire":          "128",
+        "poisonControl": "04 2362627 (Tiranë)",
+        "touristPolice": "126"
+      },
+      "phrases": {
+        "sq": {
+          "help":              "Ndihmë!",
+          "callPolice":        "Ju lutem, thirrni policinë.",
+          "callAmbulance":     "Ju lutem, thirrni ambulancën.",
+          "iAmLost":           "Kam humbur rrugën.",
+          "iNeedADoctor":      "Më duhet një mjek.",
+          "whereIsHospital":   "Ku është spitali më i afërt?",
+          "doYouSpeakEnglish": "A flisni anglisht?",
+          "allergicTo":        "Jam alergjik ndaj {thing}.",
+          "myPassportIsLost":  "Kam humbur pasaportën."
+        }
+      },
+      "embassyHint": {
+        "tr":   "Türkiye Tiran Büyükelçiliği — +355 4 2234 504",
+        "hint": "search: 'turkish embassy tirana'"
+      }
+    },
+    {
+      "id": "BA",
+      "primaryLanguages": ["bs", "hr", "sr"],
+      "numbers": {
+        "police":        "122",
+        "ambulance":     "124",
+        "fire":          "123",
+        "poisonControl": "033 445 522 (Sarajevo)",
+        "touristPolice": null
+      },
+      "phrases": {
+        "bs": {
+          "help":              "Upomoć!",
+          "callPolice":        "Molim vas, pozovite policiju.",
+          "callAmbulance":     "Molim vas, pozovite hitnu pomoć.",
+          "iAmLost":           "Izgubio sam se.",
+          "iNeedADoctor":      "Treba mi doktor.",
+          "whereIsHospital":   "Gdje je najbliža bolnica?",
+          "doYouSpeakEnglish": "Govorite li engleski?",
+          "allergicTo":        "Alergičan sam na {thing}.",
+          "myPassportIsLost":  "Izgubio sam pasoš."
+        },
+        "hr": {
+          "help":              "Upomoć!",
+          "callPolice":        "Molim vas, zovite policiju.",
+          "callAmbulance":     "Molim vas, zovite hitnu pomoć.",
+          "iAmLost":           "Izgubio sam se.",
+          "iNeedADoctor":      "Trebam liječnika.",
+          "whereIsHospital":   "Gdje je najbliža bolnica?",
+          "doYouSpeakEnglish": "Govorite li engleski?",
+          "allergicTo":        "Alergičan sam na {thing}.",
+          "myPassportIsLost":  "Izgubio sam putovnicu."
+        },
+        "sr": {
+          "help":              "Упомоћ!",
+          "callPolice":        "Молим вас, позовите полицију.",
+          "callAmbulance":     "Молим вас, позовите хитну помоћ.",
+          "iAmLost":           "Изгубио сам се.",
+          "iNeedADoctor":      "Треба ми лекар.",
+          "whereIsHospital":   "Где је најближа болница?",
+          "doYouSpeakEnglish": "Да ли говорите енглески?",
+          "allergicTo":        "Алергичан сам на {thing}.",
+          "myPassportIsLost":  "Изгубио сам пасош."
+        }
+      },
+      "embassyHint": {
+        "tr":   "Türkiye Saraybosna Büyükelçiliği — +387 33 445 480",
+        "hint": "search: 'turkish embassy sarajevo'"
+      }
+    },
+    {
+      "id": "MK",
+      "primaryLanguages": ["mk"],
+      "numbers": {
+        "police":        "192",
+        "ambulance":     "194",
+        "fire":          "193",
+        "poisonControl": "02 3147 635 (Skopje)",
+        "touristPolice": null
+      },
+      "phrases": {
+        "mk": {
+          "help":              "Помош!",
+          "callPolice":        "Ве молам, повикајте ја полицијата.",
+          "callAmbulance":     "Ве молам, повикајте брза помош.",
+          "iAmLost":           "Се изгубив.",
+          "iNeedADoctor":      "Ми треба лекар.",
+          "whereIsHospital":   "Каде е најблиската болница?",
+          "doYouSpeakEnglish": "Зборувате ли англиски?",
+          "allergicTo":        "Алергичен сум на {thing}.",
+          "myPassportIsLost":  "Го изгубив пасошот."
+        }
+      },
+      "embassyHint": {
+        "tr":   "Türkiye Üsküp Büyükelçiliği — +389 2 3113 270",
+        "hint": "search: 'turkish embassy skopje'"
+      }
+    },
+    {
+      "id": "RS",
+      "primaryLanguages": ["sr"],
+      "numbers": {
+        "police":        "192",
+        "ambulance":     "194",
+        "fire":          "193",
+        "poisonControl": "011 3608 440 (Beograd)",
+        "touristPolice": null
+      },
+      "phrases": {
+        "sr": {
+          "help":              "Упомоћ!",
+          "callPolice":        "Молим вас, позовите полицију.",
+          "callAmbulance":     "Молим вас, позовите хитну помоћ.",
+          "iAmLost":           "Изгубио сам се.",
+          "iNeedADoctor":      "Треба ми лекар.",
+          "whereIsHospital":   "Где је најближа болница?",
+          "doYouSpeakEnglish": "Да ли говорите енглески?",
+          "allergicTo":        "Алергичан сам на {thing}.",
+          "myPassportIsLost":  "Изгубио сам пасош."
+        }
+      },
+      "embassyHint": {
+        "tr":   "Türkiye Belgrad Büyükelçiliği — +381 11 333 24 00",
+        "hint": "search: 'turkish embassy belgrade'"
+      }
+    }
+  ]
+}
