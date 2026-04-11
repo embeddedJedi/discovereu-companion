@@ -23,7 +23,8 @@
       "budget": "Bütçe",
       "filters": "Filtre",
       "compare": "Kıyas",
-      "prep": "Hazırlık"
+      "inclusion": "Kapsa",
+      "prep": "Hazır."
     },
     "empty": {
       "message": "Başlamak için haritadan bir ülke seç"

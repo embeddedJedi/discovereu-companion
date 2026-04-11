@@ -18,11 +18,12 @@
   },
   "panel": {
     "tab": {
-      "detail": "Detail",
+      "detail": "Info",
       "route": "Route",
-      "budget": "Budget",
-      "filters": "Filters",
-      "compare": "Compare",
+      "budget": "Cost",
+      "filters": "Filter",
+      "compare": "Match",
+      "inclusion": "Equal",
       "prep": "Prep"
     },
     "empty": {
