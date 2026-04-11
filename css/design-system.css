@@ -78,6 +78,15 @@
   --danger:         var(--eu-red-500);
   --danger-soft:    #fee2e2;
 
+  /* Inclusion map colour gradient — 5 stops, 0 → 100 scale.
+     Red → orange → yellow → light-green → dark-green.
+     Matches WCAG AA contrast against --bg-default. */
+  --inclusion-grad-0:   #ef4444;
+  --inclusion-grad-25:  #f97316;
+  --inclusion-grad-50:  #facc15;
+  --inclusion-grad-75:  #86efac;
+  --inclusion-grad-100: #16a34a;
+
   /* Shadows */
   --shadow-xs: 0 1px 2px rgba(15, 23, 42, 0.05);
   --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.08), 0 1px 2px rgba(15, 23, 42, 0.04);
@@ -183,6 +192,12 @@
   --success-soft:   rgba(22, 163, 74, 0.15);
   --warning-soft:   rgba(230, 163, 0, 0.15);
   --danger-soft:    rgba(220, 38, 38, 0.15);
+
+  --inclusion-grad-0:   #dc2626;
+  --inclusion-grad-25:  #ea580c;
+  --inclusion-grad-50:  #ca8a04;
+  --inclusion-grad-75:  #4ade80;
+  --inclusion-grad-100: #15803d;
 
   --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.3);
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4), 0 1px 2px rgba(0, 0, 0, 0.3);
