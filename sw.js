@@ -7,7 +7,7 @@
 //   • On activate: wipe any older cache buckets so version bumps roll
 //     out cleanly
 
-const CACHE_VERSION = 'discovereu-v2';
+const CACHE_VERSION = 'discovereu-v3';
 const APP_SHELL = [
   './',
   './index.html',
@@ -17,7 +17,14 @@ const APP_SHELL = [
   './css/map.css',
   './assets/icons/favicon.svg',
   './assets/icons/icon.svg',
-  './assets/manifest.json'
+  './assets/manifest.json',
+  '/data/rainbow-map.json',
+  '/data/accessibility.json',
+  '/data/emergency-phrases.json',
+  '/js/features/inclusion-data.js',
+  '/js/map/inclusion-layer.js',
+  '/js/ui/inclusion.js',
+  '/js/ui/welcome-wizard.js'
 ];
 
 self.addEventListener('install', (event) => {
