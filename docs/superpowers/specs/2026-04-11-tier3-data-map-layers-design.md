@@ -15,9 +15,10 @@ Tier 1 (MVP) and Tier 2 (viral & amplification) are already shipped and live on 
 
 Tier 3 is the Inclusion Pack — the most direct expression of the EACEA narrative. It was originally scoped as a single list of five items (Wheelmap, ILGA Rainbow Map, DE/FR/ES/IT translations, emergency info, fewer-opportunities mode). During brainstorming the user chose to decompose it into three sub-projects:
 
-- **Sub-project 1 — Data & Map Layers** *(this spec)*: Wheelmap + Rainbow Map + Emergency info + Fewer-opportunities mode, including the data snapshots, map visualisation, and a new dedicated `Kapsayıcılık` ("Inclusion") tab
+- **Sub-project 1 — Data & Map Layers** *(this spec)*: Wheelmap + Rainbow Map + Emergency info + Fewer-opportunities mode, including the data snapshots, map visualisation, a new dedicated `Kapsayıcılık` ("Inclusion") tab, and a **minimal first-visit Welcome Wizard** that connects onboarding answers to the Fewer-opportunities preset
 - **Sub-project 2 — UI Panels** *(future spec)*: any additional UI work that surfaces after shipping sub-project 1 (for example the Night Arrival Shield or Pickpocket heatmap, depending on reprioritisation)
 - **Sub-project 3 — Localisation** *(future spec)*: DE / FR / ES / IT translation passes
+- **Future sub-spec — Personalisation Wizard** *(separate, post-Tier-3)*: deeper contextual questions (passive, surfaced at natural moments like "adding the 3rd stop to a route" or "opening the Wrapped card for the first time"), granular preference capture, saved profiles, and settings management. Out of scope for this spec; noted here so the minimal welcome wizard shipped in this spec is understood as Phase 1 of a larger personalisation story.
 
 This spec covers sub-project 1 only.
 
@@ -394,7 +395,53 @@ A 5-stop gradient is exposed through design-system custom properties so the colo
 
 A legend card below the map (`#inclusionLegend`) shows the active scale and the dataset's `lastUpdated` date. The legend is hidden when mode is `default`.
 
-### 6.5 Fewer-opportunities mode preset
+### 6.5 Welcome Wizard (first-visit onboarding)
+
+A minimal, skippable 4-question modal appears on the very first visit so the app can personalise its defaults instead of shipping everyone the same cold-start experience. The wizard is the ground-floor of the deeper Personalisation Wizard that will be specced separately post-Tier-3.
+
+**Trigger:** `state.user.onboarded !== true` (new persisted boolean, default `false`). Fires from `main.js` after `loadCoreData()` completes and the loading shell is hidden.
+
+**Dismissal:** "Skip for now" is always visible; the modal can be reopened later from a small `⚙️` button in the header.
+
+**Questions (max 4, enforced):**
+
+1. **Home country** — `<select>` prefilled by browser locale guess (`navigator.language` → country). Used to set `state.user.homeCountry` and, if the answer is `TR`, toggle the Turkish Bonus layer automatically.
+2. **Group size** — segmented control: `1` / `2-3` / `4` (DiscoverEU max). Writes `state.user.groupSize`.
+3. **Budget style** — segmented control: `budget` / `moderate` / `comfort`. Writes `state.user.budget` and drives the Budget tab defaults.
+4. **Priorities** — multi-select chips: `accessible` / `LGBTQ+ safe` / `low-budget` / `green/sustainable` / `cultural` / `adventurous`. Writes into `state.filters`:
+   - If any of `accessible` / `LGBTQ+ safe` / `low-budget` is selected, the Fewer-opportunities preset is applied automatically (same bulk filter update as the Inclusion tab button — single source of truth, no duplicate code path).
+   - `green/sustainable` sets `filters.green = true` (already a state field, currently unused by UI but available).
+   - `cultural` / `adventurous` seed `filters.categories` with the matching category tags.
+
+**UI layout:**
+
+- Reuses the existing `.modal-overlay` + `.modal` pattern established by the Wrapped card in `js/features/wrapped.js`. No new modal system.
+- 4-step carousel inside a single modal — Previous / Next / Skip buttons, 4-dot progress indicator at the top.
+- Final step renders a small summary: *"Seninle tanışıyoruz 👋 — Türkiye'den 4 kişi, düşük bütçe, erişilebilir + LGBTQ+ güvenli öncelikler. Haritayı bu tercihlere göre ayarladık."* with a "Finish" button.
+- On Finish: sets `state.user.onboarded = true`, persists, closes modal, optionally displays a quick toast confirming the Fewer-opportunities preset if it was triggered.
+- The modal does NOT block map or side panel rendering — it appears on top, and if the user closes it with Esc or Skip, the rest of the app is already fully functional underneath.
+
+**File additions:**
+
+- `js/ui/welcome-wizard.js` — wizard renderer + state wiring + auto-trigger from `main.js`
+- `css/components.css` — `.wizard-modal`, `.wizard-step`, `.wizard-progress`, `.priority-chip` styles
+- `i18n/en.json` + `i18n/tr.json` — `wizard.*` block (~25 keys for questions, options, buttons, summary copy)
+
+**State additions:**
+
+```js
+// js/state.js — state.user additions
+user: {
+  // existing fields
+  onboarded: false   // persisted; flips true on wizard completion or after 'Skip for now' 3 times
+}
+```
+
+**Relationship to Fewer-opportunities preset:** the wizard's priority multi-select is the **first** and most natural trigger for the Fewer-opportunities preset. The preset logic lives in exactly one place (`js/ui/inclusion.js` exports `activateFewerOpportunitiesMode()`), and `welcome-wizard.js` calls that exported function — no duplicate state manipulation.
+
+**Why this belongs in this spec:** the wizard and the Inclusion tab share the same conceptual surface (*"tell us what matters to you"* → *"here are the inclusion-aware defaults"*). Shipping them together makes the EACEA outreach story considerably stronger: a reviewer opens the app, gets asked three friendly questions, and immediately sees Rainbow Europe + accessibility defaults tuned to their answers. Without the wizard, the Inclusion tab is content they have to discover.
+
+### 6.6 Fewer-opportunities mode preset
 
 A primary button in the Inclusion tab's summary view fires:
 
@@ -420,10 +467,17 @@ A `role="status" aria-live="polite"` toast explains: *"Erasmus+ Inclusion Action
   // existing slices unchanged
   panelTab: 'detail',  // 'detail' | 'route' | 'budget' | 'filters' | 'compare' | 'inclusion' | 'prep'
   inclusionMode: 'default',  // 'default' | 'rainbow' | 'accessibility' — EPHEMERAL
+
+  user: {
+    // existing user fields
+    onboarded: false   // PERSISTED — flips true on wizard completion or skip
+  }
 }
 ```
 
 `inclusionMode` is **not** persisted — like `compare`, it resets on each session. Route shares (URL hash) do not encode the mode; each visitor sees their own preferred layer.
+
+`user.onboarded` **is** persisted (user slice is already in `PERSIST_KEYS`) so the wizard only appears once.
 
 ## 8. File inventory
 
@@ -432,18 +486,19 @@ A `role="status" aria-live="polite"` toast explains: *"Erasmus+ Inclusion Action
 | `js/features/inclusion-data.js`     | **NEW**      | Pluggable data adapter for all three JSONs, Phase-2-ready signatures |
 | `js/map/inclusion-layer.js`         | **NEW**      | Polygon fill recolouring, mode-reactive |
 | `js/ui/inclusion.js`                | **NEW**      | Inclusion tab renderer (summary + country view), fewer-opps hook |
+| `js/ui/welcome-wizard.js`           | **NEW**      | First-visit 4-question onboarding modal, reuses Wrapped card modal pattern |
 | `data/rainbow-map.json`             | **NEW**      | ILGA Rainbow Europe 2025 full rubric, 36 countries |
 | `data/accessibility.json`           | **NEW**      | Wheelmap + EU policy accessibility data, 36 countries |
 | `data/emergency-phrases.json`       | **NEW**      | Emergency numbers + phrases, 36 countries |
-| `js/main.js`                        | UPDATED      | Inclusion tab + layer wiring, panelTab value list |
-| `js/state.js`                       | UPDATED      | `inclusionMode` slice added |
+| `js/main.js`                        | UPDATED      | Inclusion tab + layer wiring, panelTab value list, wizard auto-trigger |
+| `js/state.js`                       | UPDATED      | `inclusionMode` slice added, `user.onboarded` flag added |
 | `js/ui/filters-ui.js`               | UPDATED      | Reference to fewer-opps helper from inclusion.js |
 | `css/main.css`                      | UPDATED      | Tab bar redesign (icon + label layout, both desktop and mobile) |
-| `css/components.css`                | UPDATED      | `.inclusion-*` card styles, legend, phrase-show modal |
+| `css/components.css`                | UPDATED      | `.inclusion-*` card styles, legend, phrase-show modal, `.wizard-*` styles |
 | `css/map.css`                       | UPDATED      | Polygon fill transition animation |
 | `css/design-system.css`             | UPDATED      | 5-step gradient custom properties (light + dark) |
 | `index.html`                        | UPDATED      | 7-tab markup with Lucide SVG icons inline, mobile bottom-nav expanded |
-| `i18n/en.json`                      | UPDATED      | `inclusion.*`, `emergency.*`, `panel.tab.inclusion` blocks |
+| `i18n/en.json`                      | UPDATED      | `inclusion.*`, `emergency.*`, `panel.tab.inclusion`, `wizard.*` blocks |
 | `i18n/tr.json`                      | UPDATED      | Same blocks in Turkish |
 | `sw.js`                             | UPDATED      | Cache manifest entries for the 3 new JSONs + new modules |
 | `PROGRESS.md`                       | UPDATED      | Tier 3 Inclusion checklist progression |
@@ -490,6 +545,9 @@ A `role="status" aria-live="polite"` toast explains: *"Erasmus+ Inclusion Action
 | T8 | Click "Show phrase on phone" → modal opens, Esc closes |
 | T9 | Rapidly toggle 6 mode chips → no freeze (loop regression guard) |
 | T10 | Test at 375 / 768 / 1440 viewport → tab bar never clips |
+| T11 | First-visit flow: cold storage → wizard modal appears → 4 questions → Finish → `user.onboarded === true`, wizard does not reopen on refresh |
+| T12 | Wizard Skip: open wizard → click Skip → modal closes, app is fully interactive, `user.onboarded === true` |
+| T13 | Wizard priority answer triggers Fewer-opps: pick `accessible + lgbtq` → Finish → `state.filters` reflects the preset, Inclusion tab is focused |
 
 Each test produces a screenshot under `.playwright-mcp/` (gitignored).
 
@@ -503,19 +561,22 @@ Implementation is split into six steps that can be dispatched to specialised age
 | 2    | `feature-engineer`              | `inclusion-data.js`, `inclusion-layer.js`, `state.js` update           | none       |
 | 3    | `ui-designer`                   | Tab bar redesign in `css/main.css` + Lucide SVGs in `index.html`        | none       |
 | 4    | `feature-engineer`              | `ui/inclusion.js` (summary + country view + fewer-opps), main.js wire   | 2, 3       |
-| 5    | `ui-designer`                   | `components.css` cards + legend + phrase-show modal + gradient vars     | 4          |
-| 6    | `data-curator`                  | `i18n/en.json` + `i18n/tr.json` inclusion/emergency blocks             | 4          |
-| 7    | `feature-engineer`              | `sw.js` cache manifest update, `PROGRESS.md` progress update            | 1, 4       |
+| 5    | `ui-designer`                   | `components.css` cards + legend + phrase-show modal + gradient vars + wizard styles | 4          |
+| 6    | `data-curator`                  | `i18n/en.json` + `i18n/tr.json` inclusion / emergency / wizard blocks   | 4          |
+| 7    | `feature-engineer`              | `ui/welcome-wizard.js` (4-step modal + auto-trigger in main.js + delegates to activateFewerOpportunitiesMode) | 4          |
+| 8    | `feature-engineer`              | `sw.js` cache manifest update, `PROGRESS.md` progress update            | 1, 4, 7    |
 
-Steps 1, 2, 3 can run in parallel (no cross-dependencies). Step 4 is the critical path because it consumes both the data adapter and the new tab markup. Steps 5, 6, 7 run in parallel after step 4.
+Steps 1, 2, 3 can run in parallel (no cross-dependencies). Step 4 is the critical path because it consumes both the data adapter and the new tab markup. Steps 5, 6, 7 run in parallel after step 4. Step 8 is the finisher.
 
-Each step is its own git commit with a descriptive message. Manual verification with Playwright MCP happens after step 7.
+Each step is its own git commit with a descriptive message. Manual verification with Playwright MCP happens after step 8.
 
 ## 13. Acceptance criteria
 
-- [ ] All 10 smoke tests (T1–T10) pass on a real browser against the local server
+- [ ] All 13 smoke tests (T1–T13) pass on a real browser against the local server
 - [ ] All 3 JSONs parse cleanly and cover 36/36 countries (no stubs, no TBDs)
-- [ ] `PROGRESS.md` Tier 3 section marks Wheelmap / Rainbow Map / Emergency / Fewer-opps as `[x]`
+- [ ] Welcome wizard appears on first visit, does not reappear after Finish / Skip
+- [ ] Wizard's "accessible / lgbtq / low-budget" priorities trigger the Fewer-opps preset automatically
+- [ ] `PROGRESS.md` Tier 3 section marks Wheelmap / Rainbow Map / Emergency / Fewer-opps / Welcome Wizard as `[x]`
 - [ ] No new console errors or warnings on a clean load (hard-refresh + SW cleared)
 - [ ] Tab bar renders correctly at 375, 768, and 1440 px in both TR and EN
 - [ ] Rainbow / Accessibility gradients meet WCAG AA 4.5:1 contrast in both themes
