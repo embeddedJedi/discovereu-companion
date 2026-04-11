@@ -101,6 +101,19 @@ async function boot() {
       setTimeout(() => loader.remove(), 400);
     }
 
+    // 9. First-visit welcome wizard
+    const { shouldShowWizard, openWizard } = await import('./ui/welcome-wizard.js');
+    if (shouldShowWizard()) {
+      // Delay a beat so the loading shell has finished fading out first.
+      setTimeout(openWizard, 500);
+    }
+
+    // 10. Wire the header settings button to re-open the wizard on demand
+    const settingsBtn = qs('#btnSettings');
+    if (settingsBtn) {
+      settingsBtn.addEventListener('click', () => openWizard());
+    }
+
     console.info('[DiscoverEU Companion] ready');
   } catch (err) {
     console.error('[main] boot failed', err);
