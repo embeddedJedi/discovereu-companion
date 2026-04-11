@@ -116,8 +116,10 @@ function renderStep() {
 function renderQuestion(stepIndex) {
   switch (stepIndex) {
     case 0: return renderQ1HomeCountry();
-    // Cases 1-3 filled in Task 16.
-    default: return h('div', null, 'TODO');
+    case 1: return renderQ2GroupSize();
+    case 2: return renderQ3Budget();
+    case 3: return renderQ4Priorities();
+    default: return h('div', null, '?');
   }
 }
 
@@ -138,6 +140,71 @@ function renderQ1HomeCountry() {
       value: id,
       ...(answers.homeCountry === id ? { selected: '' } : {})
     }, `${name} (${id})`)))
+  ]);
+}
+
+function renderQ2GroupSize() {
+  const sizes = [
+    { value: 1, label: t('wizard.q2.solo') },
+    { value: 2, label: t('wizard.q2.small') },
+    { value: 4, label: t('wizard.q2.full') }
+  ];
+  return h('div', { class: 'wizard-step' }, [
+    h('h4', null, t('wizard.q2.title')),
+    h('p',  { class: 'wizard-help' }, t('wizard.q2.help')),
+    h('div', { class: 'wizard-options', role: 'radiogroup', 'aria-label': t('wizard.q2.title') },
+      sizes.map(s => h('button', {
+        class: 'wizard-option' + (answers.groupSize === s.value ? ' is-active' : ''),
+        type: 'button',
+        role: 'radio',
+        'aria-checked': answers.groupSize === s.value ? 'true' : 'false',
+        'data-action': 'wizard-group',
+        'data-size': String(s.value)
+      }, s.label)))
+  ]);
+}
+
+function renderQ3Budget() {
+  const tiers = [
+    { value: 'budget',   label: t('wizard.q3.low') },
+    { value: 'moderate', label: t('wizard.q3.mid') },
+    { value: 'comfort',  label: t('wizard.q3.high') }
+  ];
+  return h('div', { class: 'wizard-step' }, [
+    h('h4', null, t('wizard.q3.title')),
+    h('p',  { class: 'wizard-help' }, t('wizard.q3.help')),
+    h('div', { class: 'wizard-options', role: 'radiogroup', 'aria-label': t('wizard.q3.title') },
+      tiers.map(tier => h('button', {
+        class: 'wizard-option' + (answers.budget === tier.value ? ' is-active' : ''),
+        type: 'button',
+        role: 'radio',
+        'aria-checked': answers.budget === tier.value ? 'true' : 'false',
+        'data-action': 'wizard-budget',
+        'data-budget': tier.value
+      }, tier.label)))
+  ]);
+}
+
+function renderQ4Priorities() {
+  const priorities = [
+    { id: 'accessible', icon: '♿', label: t('wizard.q4.accessible') },
+    { id: 'lgbtq',      icon: '🌈', label: t('wizard.q4.lgbtq') },
+    { id: 'lowBudget',  icon: '💶', label: t('wizard.q4.lowBudget') },
+    { id: 'green',      icon: '🌱', label: t('wizard.q4.green') },
+    { id: 'cultural',   icon: '🏛️', label: t('wizard.q4.cultural') },
+    { id: 'adventurous',icon: '🏔️', label: t('wizard.q4.adventurous') }
+  ];
+  return h('div', { class: 'wizard-step' }, [
+    h('h4', null, t('wizard.q4.title')),
+    h('p',  { class: 'wizard-help' }, t('wizard.q4.help')),
+    h('div', { class: 'wizard-priorities' },
+      priorities.map(p => h('button', {
+        class: 'priority-chip' + (answers.priorities.has(p.id) ? ' is-active' : ''),
+        type: 'button',
+        'aria-pressed': answers.priorities.has(p.id) ? 'true' : 'false',
+        'data-action': 'wizard-priority',
+        'data-priority': p.id
+      }, `${p.icon} ${p.label}`)))
   ]);
 }
 
