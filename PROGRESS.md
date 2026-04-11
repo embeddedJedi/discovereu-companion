@@ -2,8 +2,8 @@
 
 > **Single source of truth for this project.** Every feature, decision, and architectural change is recorded here. Read this before coding anything.
 
-**Last updated:** 2026-04-10 (session 6 — Wrapped card, PDF export, Turkish bonus layer, housekeeping + first real push)
-**Phase:** 2 (Tier 2 complete; Tier 5 Turkish bonus landed early alongside the Prep tab)
+**Last updated:** 2026-04-11 (session 7 — Tier 3 Inclusion Pack: Rainbow Map, Wheelmap accessibility, emergency phrases, Fewer-opportunities mode, Welcome Wizard, 7-tab bar redesign)
+**Phase:** 3 (Tier 3 sub-project 1 complete; sub-projects 2 & 3 remain)
 **Launch target:** 2026-04-22 (12-day sprint)
 **GitHub:** `embeddedJedi/discovereu-companion` *(not pushed yet)*
 **Live URL:** `https://embeddedjedi.github.io/discovereu-companion` *(pending deploy)*
@@ -254,11 +254,13 @@ All loaded with SRI hashes (to add in Phase 1).
 - [x] Countdown timer + checklist + smart packing list
 
 ### Tier 3 — Inclusion *(Days 9-10)*
-- [ ] Wheelmap accessibility filter
-- [ ] ILGA Rainbow Map LGBTQ+ safety layer
-- [ ] DE / FR / ES / IT translations
-- [ ] Low-budget "fewer opportunities" mode
-- [ ] Emergency info panel (offline, per country)
+- [x] **Wheelmap accessibility layer** — map colour mode + country breakdown card + station assistance + EU Disability Card meta
+- [x] **ILGA Rainbow Map LGBTQ+ safety layer** — full 7-category rubric + key items + map colour mode
+- [x] **Low-budget "fewer opportunities" mode** — single-click preset, single source of truth shared between Inclusion tab and Welcome Wizard
+- [x] **Emergency info panel** — EU 112 + local numbers + per-country phrase pack + "show on phone" modal
+- [x] **Welcome Wizard** — first-visit 4-question onboarding, feeds answers into state.user + state.filters
+- [x] **7-tab bar redesign** — icon + label layout, scales beyond 6 tabs, mobile bottom-nav mirrored
+- [ ] DE / FR / ES / IT translations  ← sub-project 3 (separate spec)
 
 ### Tier 4 — Fun & Memory *(Days 11-12)*
 - [ ] City Bingo cards + achievement badges
@@ -344,6 +346,14 @@ All loaded with SRI hashes (to add in Phase 1).
 - **`js/features/turkish-bonus.js` + `data/turkish-bonus.json`** ⭐ (Tier 5) — Turkish applicant layer. Three cards rendered into the Prep tab: 10-item **Schengen visa checklist** (biometrics, €30k travel insurance, €50/day financial proof, DiscoverEU invitation letter, etc.), **Sofia Express** callout (Istanbul→Sofia sleeper, the only direct rail bridge into DiscoverEU, ~12h, ~€25), and **TL budget tips** (Wise / Revolut / Ziraat Maximum guidance plus ~43–45 TL/EUR reference rate). Active when `language==='tr'`, `user.homeCountry==='TR'`, or the route starts at a Turkish stop — otherwise the whole module is a no-op.
 - **`css/components.css`** — added `.modal-overlay`, `.modal-wrapped`, `.wrapped-card`, `.turkish-bonus`, and `.tier5-card` styles so the three new features slot into the existing design-system tokens without hardcoded colours.
 - **Session 6 translations** — `i18n/en.json` + `i18n/tr.json` extended with `wrapped.*`, `modal.*`, `pdf.*`, and `turkishBonus.*` keys.
+- **Session 7 — Tier 3 Inclusion sub-project 1** (2026-04-11):
+  - 3 new data files: `rainbow-map.json`, `accessibility.json`, `emergency-phrases.json` (~140 KB total)
+  - `js/features/inclusion-data.js` pluggable adapter (Phase-2-ready signatures)
+  - `js/map/inclusion-layer.js` polygon fill recolouring reactive to `state.inclusionMode`
+  - `js/ui/inclusion.js` summary + country views, mode chips, fewer-opps preset export
+  - `js/ui/welcome-wizard.js` 4-question first-visit onboarding
+  - Tab bar redesign from text-only to icon + label layout, 6 → 7 tabs (mobile bottom-nav mirrored)
+  - All 13 smoke tests pass
 
 ### 🚧 In progress
 - *(nothing — ready to continue)*
