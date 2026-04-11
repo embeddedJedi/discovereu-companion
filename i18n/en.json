@@ -322,5 +322,118 @@
       "exportPdf": "Export as PDF",
       "wrapped": "Share as Wrapped card"
     }
+  },
+  "inclusion": {
+    "title": "Inclusion",
+    "subtitle": "Accessibility, LGBTQ+ safety, and emergency information for all 36 countries.",
+    "source": "Source",
+    "fewerOppsEnabled": "Filtered for youth with fewer opportunities — low budget, accessible, LGBTQ+ safe.",
+    "summary": {
+      "rainbowTitle": "Europe Rainbow Index",
+      "rainbowCaption": "Average ILGA score across {total} countries. {marriage} recognise full marriage equality, {selfdet} have self-determination gender laws.",
+      "accessTitle": "Accessible infrastructure",
+      "accessStations": "{n} / {total} countries offer step-free access at all major train stations.",
+      "accessDiscCard": "EU Disability Card accepted in {n} countries.",
+      "mapModesTitle": "Map modes",
+      "fewerOppsTitle": "Fewer-opportunities mode",
+      "fewerOppsDesc": "Filter the map by Erasmus+ Inclusion Action criteria.",
+      "fewerOppsCta": "Activate",
+      "pickCountryHint": "Pick a country on the map for the full breakdown."
+    },
+    "mode": {
+      "default": "Default",
+      "rainbow": "Rainbow",
+      "accessibility": "Accessibility"
+    },
+    "country": {
+      "subtitle": "Rainbow rubric, accessibility breakdown, and emergency info.",
+      "notFound": "Country not found."
+    },
+    "rainbow": {
+      "cat": {
+        "equality":          "Equality",
+        "family":            "Family",
+        "hateCrime":         "Hate crime",
+        "legalGenderRecog":  "Gender recognition",
+        "intersexIntegrity": "Intersex integrity",
+        "civilSociety":      "Civil society",
+        "asylum":            "Asylum"
+      },
+      "keyItem": {
+        "marriageEquality":        "Marriage equality",
+        "jointAdoption":           "Joint adoption",
+        "constitutionalBan":       "Constitutional non-discrimination",
+        "employmentProtection":    "Employment protection",
+        "selfDeterminationGender": "Self-determination gender law",
+        "banOnIntersexSurgery":    "Ban on intersex surgery",
+        "banOnConversionTherapy":  "Ban on conversion therapy",
+        "hateCrimeLawSO":          "Hate crime law (SO)",
+        "hateCrimeLawGI":          "Hate crime law (GI)"
+      }
+    },
+    "access": {
+      "title": "Accessibility",
+      "section": {
+        "publicTransport": "Public transport",
+        "trainStations":   "Train stations",
+        "accommodation":   "Accommodation",
+        "attractions":     "Attractions"
+      },
+      "euCardYes": "EU Disability Card accepted",
+      "euCardNo":  "EU Disability Card not yet accepted",
+      "nationalCard": "National card",
+      "discount": "Typical discount",
+      "topCities": "Accessible venues (Wheelmap)",
+      "assistanceBooking": "Train assistance booking",
+      "leadTimeHours": "Book {n} hours ahead"
+    },
+    "emergency": {
+      "title": "Emergency",
+      "eu": "EU emergency number",
+      "police": "Police",
+      "ambulance": "Ambulance",
+      "fire": "Fire",
+      "phrasesTitle": "Basic phrases"
+    },
+    "missing": {
+      "rainbow":       "Rainbow data is not yet compiled for this country — contribute on GitHub.",
+      "accessibility": "Accessibility data is not yet compiled for this country — contribute on GitHub.",
+      "emergency":     "Emergency data is not yet compiled for this country — contribute on GitHub."
+    }
+  },
+  "wizard": {
+    "title": "Welcome!",
+    "skip": "Skip for now",
+    "prev": "Back",
+    "next": "Next",
+    "finish": "Finish",
+    "q1": {
+      "title": "Where are you from?",
+      "help":  "We use this to unlock country-specific tips (Schengen visa, Sofia Express, and more)."
+    },
+    "q2": {
+      "title": "How many of you?",
+      "help":  "DiscoverEU allows groups of up to 4 applicants.",
+      "solo":  "1 — solo",
+      "small": "2-3 — friends",
+      "full":  "4 — full group"
+    },
+    "q3": {
+      "title": "Budget style?",
+      "help":  "This sets defaults in the Budget tab.",
+      "low":   "Budget",
+      "mid":   "Moderate",
+      "high":  "Comfort"
+    },
+    "q4": {
+      "title": "What matters most?",
+      "help":  "Pick any that apply — the map adapts to your priorities.",
+      "accessible":  "Accessible",
+      "lgbtq":       "LGBTQ+ safe",
+      "lowBudget":   "Low budget",
+      "green":       "Sustainable",
+      "cultural":    "Cultural",
+      "adventurous": "Adventurous"
+    }
   }
 }

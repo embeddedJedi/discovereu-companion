@@ -322,5 +322,118 @@
       "exportPdf": "PDF olarak dışa aktar",
       "wrapped": "Wrapped kartı olarak paylaş"
     }
+  },
+  "inclusion": {
+    "title": "Kapsayıcılık",
+    "subtitle": "36 ülke için erişilebilirlik, LGBTQ+ güvenliği ve acil durum bilgisi.",
+    "source": "Kaynak",
+    "fewerOppsEnabled": "Daha az fırsata sahip gençler için süzüldü — düşük bütçe, erişilebilir, LGBTQ+ güvenli.",
+    "summary": {
+      "rainbowTitle": "Avrupa Rainbow Endeksi",
+      "rainbowCaption": "{total} ülke genelinde ortalama ILGA skoru. {marriage} ülke tam evlilik eşitliğini, {selfdet} ülke kendi kaderini tayin yasasını tanıyor.",
+      "accessTitle": "Erişilebilir altyapı",
+      "accessStations": "{n} / {total} ülkenin ana tren istasyonları engelsiz erişim sunuyor.",
+      "accessDiscCard": "EU Disability Card {n} ülkede geçerli.",
+      "mapModesTitle": "Harita modları",
+      "fewerOppsTitle": "Düşük eşik modu",
+      "fewerOppsDesc": "Erasmus+ Inclusion Action kriterleriyle haritayı süzer.",
+      "fewerOppsCta": "Etkinleştir",
+      "pickCountryHint": "Tam dökümü görmek için haritadan bir ülke seç."
+    },
+    "mode": {
+      "default": "Varsayılan",
+      "rainbow": "Rainbow",
+      "accessibility": "Erişim"
+    },
+    "country": {
+      "subtitle": "Rainbow rubric, erişilebilirlik kırılımı ve acil durum bilgisi.",
+      "notFound": "Ülke bulunamadı."
+    },
+    "rainbow": {
+      "cat": {
+        "equality":          "Eşitlik",
+        "family":            "Aile",
+        "hateCrime":         "Nefret suçu",
+        "legalGenderRecog":  "Cinsiyet tanıma",
+        "intersexIntegrity": "İnterseks bütünlüğü",
+        "civilSociety":      "Sivil toplum",
+        "asylum":            "İltica"
+      },
+      "keyItem": {
+        "marriageEquality":        "Evlilik eşitliği",
+        "jointAdoption":           "Ortak evlat edinme",
+        "constitutionalBan":       "Anayasal ayrımcılık yasağı",
+        "employmentProtection":    "İstihdamda koruma",
+        "selfDeterminationGender": "Kendi kaderini tayin yasası",
+        "banOnIntersexSurgery":    "İnterseks ameliyat yasağı",
+        "banOnConversionTherapy":  "Dönüştürme terapisi yasağı",
+        "hateCrimeLawSO":          "Nefret suçu yasası (cinsel yönelim)",
+        "hateCrimeLawGI":          "Nefret suçu yasası (cinsiyet kimliği)"
+      }
+    },
+    "access": {
+      "title": "Erişilebilirlik",
+      "section": {
+        "publicTransport": "Toplu ulaşım",
+        "trainStations":   "Tren istasyonları",
+        "accommodation":   "Konaklama",
+        "attractions":     "Turistik yerler"
+      },
+      "euCardYes": "EU Disability Card kabul ediliyor",
+      "euCardNo":  "EU Disability Card henüz kabul edilmiyor",
+      "nationalCard": "Yerel kart",
+      "discount": "Tipik indirim",
+      "topCities": "Erişilebilir mekan sayısı (Wheelmap)",
+      "assistanceBooking": "Tren yardım bookingu",
+      "leadTimeHours": "{n} saat önceden rezervasyon yap"
+    },
+    "emergency": {
+      "title": "Acil durum",
+      "eu": "EU acil numarası",
+      "police": "Polis",
+      "ambulance": "Ambulans",
+      "fire": "İtfaiye",
+      "phrasesTitle": "Temel ifadeler"
+    },
+    "missing": {
+      "rainbow":       "Bu ülke için Rainbow verisi henüz derlenmedi — GitHub'da katkıda bulun.",
+      "accessibility": "Bu ülke için erişilebilirlik verisi henüz derlenmedi — GitHub'da katkıda bulun.",
+      "emergency":     "Bu ülke için acil durum verisi henüz derlenmedi — GitHub'da katkıda bulun."
+    }
+  },
+  "wizard": {
+    "title": "Hoş geldin!",
+    "skip": "Şimdilik geç",
+    "prev": "Geri",
+    "next": "İleri",
+    "finish": "Bitir",
+    "q1": {
+      "title": "Nereden geliyorsun?",
+      "help":  "Ülkeye özgü ipuçlarını (Schengen vizesi, Sofia Express, vb.) açmak için kullanıyoruz."
+    },
+    "q2": {
+      "title": "Kaç kişisiniz?",
+      "help":  "DiscoverEU 4 kişiye kadar gruplara izin veriyor.",
+      "solo":  "1 — tek başıma",
+      "small": "2-3 — arkadaşlarla",
+      "full":  "4 — tam grup"
+    },
+    "q3": {
+      "title": "Bütçe stilin?",
+      "help":  "Bütçe sekmesindeki varsayılanları ayarlar.",
+      "low":   "Ekonomik",
+      "mid":   "Orta",
+      "high":  "Konforlu"
+    },
+    "q4": {
+      "title": "Öncelikli ne?",
+      "help":  "Uygun olanları seç — harita tercihlerine göre ayarlanır.",
+      "accessible":  "Erişilebilir",
+      "lgbtq":       "LGBTQ+ güvenli",
+      "lowBudget":   "Düşük bütçe",
+      "green":       "Sürdürülebilir",
+      "cultural":    "Kültür",
+      "adventurous": "Macera"
+    }
   }
 }
