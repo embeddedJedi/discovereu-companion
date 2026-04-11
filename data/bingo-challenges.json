@@ -1,0 +1,954 @@
+{
+  "version": 1,
+  "generated": "2026-04-12",
+  "note": "25 universal + per-country bonus challenges. Universal card is always 5x5 (index 0..24). Country bonuses unlock when the country is in state.route.stops.",
+  "universal": [
+    {
+      "id": "uni-local-coffee",
+      "emoji": "☕",
+      "title": "Try a local coffee speciality",
+      "titleTr": "Yerel bir kahve çeşidini dene",
+      "hint": "Viennese melange, Italian espresso, Turkish coffee, Greek freddo — anything that isn't a chain",
+      "hintTr": "Viyana melange, İtalyan espresso, Türk kahvesi, Yunan freddo — zincir olmayan herhangi bir şey",
+      "category": "culinary"
+    },
+    {
+      "id": "uni-street-food",
+      "emoji": "🥟",
+      "title": "Eat a regional street food",
+      "titleTr": "Yöresel bir sokak lezzeti ye",
+      "hint": "Pick something you can only find in this region",
+      "hintTr": "Sadece bu bölgede bulabileceğin bir şey seç",
+      "category": "culinary"
+    },
+    {
+      "id": "uni-bakery-breakfast",
+      "emoji": "🥐",
+      "title": "Breakfast from a neighbourhood bakery",
+      "titleTr": "Mahalle fırınından kahvaltı al",
+      "hint": "Skip the hotel buffet for one morning",
+      "hintTr": "Bir sabah otel büfesini atla",
+      "category": "culinary"
+    },
+    {
+      "id": "uni-local-market",
+      "emoji": "🧺",
+      "title": "Buy fruit at a local market",
+      "titleTr": "Yerel pazardan meyve al",
+      "hint": "Covered halls or weekend squares — ask the vendor for a taste",
+      "hintTr": "Kapalı çarşılar ya da hafta sonu meydanları — satıcıdan tatmak için iste",
+      "category": "culinary"
+    },
+    {
+      "id": "uni-tap-water",
+      "emoji": "🚰",
+      "title": "Refill your bottle from a public fountain",
+      "titleTr": "Şişeni halka açık bir çeşmeden doldur",
+      "hint": "Most EU cities have safe, free drinking water — save plastic",
+      "hintTr": "AB şehirlerinin çoğunda güvenli, ücretsiz içme suyu vardır — plastikten tasarruf et",
+      "category": "green"
+    },
+    {
+      "id": "uni-dessert",
+      "emoji": "🍰",
+      "title": "Order a dessert you can't pronounce",
+      "titleTr": "Adını söyleyemediğin bir tatlı sipariş et",
+      "hint": "Point at the case and smile",
+      "hintTr": "Vitrinı göster ve gülümse",
+      "category": "culinary"
+    },
+    {
+      "id": "uni-free-museum",
+      "emoji": "🏛️",
+      "title": "Visit a free museum or gallery",
+      "titleTr": "Ücretsiz bir müze ya da galeri ziyaret et",
+      "hint": "Many EU museums are free for under-26s or on certain days",
+      "hintTr": "Birçok AB müzesi 26 yaş altına ya da belirli günlerde ücretsizdir",
+      "category": "cultural"
+    },
+    {
+      "id": "uni-old-town",
+      "emoji": "🏰",
+      "title": "Walk a full lap of the old town",
+      "titleTr": "Eski şehrin çevresinde tam bir tur at",
+      "hint": "Follow the old city walls if they still exist",
+      "hintTr": "Hâlâ varsa eski şehir surlarını takip et",
+      "category": "cultural"
+    },
+    {
+      "id": "uni-public-library",
+      "emoji": "📚",
+      "title": "Step into a public library",
+      "titleTr": "Bir halk kütüphanesine gir",
+      "hint": "Free wifi, free toilets, often stunning architecture",
+      "hintTr": "Ücretsiz wifi, ücretsiz tuvalet, çoğu zaman muhteşem mimari",
+      "category": "cultural"
+    },
+    {
+      "id": "uni-live-music",
+      "emoji": "🎷",
+      "title": "Catch live music, even for 10 minutes",
+      "titleTr": "10 dakikalığına bile olsa canlı müzik dinle",
+      "hint": "Buskers count — drop a coin if you enjoyed it",
+      "hintTr": "Sokak müzisyenleri de sayılır — beğendiysen bir bozukluk bırak",
+      "category": "cultural"
+    },
+    {
+      "id": "uni-postcard-home",
+      "emoji": "📮",
+      "title": "Send a postcard to someone back home",
+      "titleTr": "Memleketindeki birine kartpostal gönder",
+      "hint": "Yes, actual paper with a stamp",
+      "hintTr": "Evet, pullu gerçek kâğıt",
+      "category": "cultural"
+    },
+    {
+      "id": "uni-learn-phrase",
+      "emoji": "💬",
+      "title": "Learn 'hello' and 'thank you' in the local language",
+      "titleTr": "Yerel dilde 'merhaba' ve 'teşekkürler' öğren",
+      "hint": "Then actually use them",
+      "hintTr": "Sonra gerçekten kullan",
+      "category": "social"
+    },
+    {
+      "id": "uni-ask-local",
+      "emoji": "🗣️",
+      "title": "Ask a local for a recommendation",
+      "titleTr": "Yerel bir kişiden bir öneri iste",
+      "hint": "Shop owners and older people usually give the best tips",
+      "hintTr": "Dükkân sahipleri ve yaşlılar genelde en iyi tavsiyeleri verir",
+      "category": "social"
+    },
+    {
+      "id": "uni-meet-traveller",
+      "emoji": "🤝",
+      "title": "Meet another DiscoverEU traveller",
+      "titleTr": "Başka bir DiscoverEU gezgini ile tanış",
+      "hint": "Hostels, train stations and EYCs are the easiest spots",
+      "hintTr": "En kolay yerler: hosteller, tren istasyonları ve Avrupa Gençlik Merkezleri",
+      "category": "social"
+    },
+    {
+      "id": "uni-group-photo",
+      "emoji": "📸",
+      "title": "Take a group photo with people you just met",
+      "titleTr": "Yeni tanıştığın insanlarla grup fotoğrafı çek",
+      "hint": "Ask nicely, share it with them afterwards",
+      "hintTr": "Kibarca sor, sonra onlarla paylaş",
+      "category": "social"
+    },
+    {
+      "id": "uni-journal-entry",
+      "emoji": "📓",
+      "title": "Write a paragraph in your trip journal",
+      "titleTr": "Seyahat günlüğüne bir paragraf yaz",
+      "hint": "Smells, sounds and overheard conversations beat landmarks",
+      "hintTr": "Kokular, sesler ve kulağına çalınan sohbetler simgeleri geçer",
+      "category": "social"
+    },
+    {
+      "id": "uni-night-train",
+      "emoji": "🌙",
+      "title": "Ride an overnight or early-morning train",
+      "titleTr": "Gece ya da sabah erken bir trene bin",
+      "hint": "Saves a night of accommodation and looks magical",
+      "hintTr": "Bir gece konaklamadan tasarruf ettirir ve büyülü görünür",
+      "category": "green"
+    },
+    {
+      "id": "uni-walk-10k",
+      "emoji": "🚶",
+      "title": "Walk at least 10 km in a single day",
+      "titleTr": "Bir günde en az 10 km yürü",
+      "hint": "Cheapest and greenest way to see a city",
+      "hintTr": "Bir şehri görmenin en ucuz ve en yeşil yolu",
+      "category": "green"
+    },
+    {
+      "id": "uni-bike-share",
+      "emoji": "🚲",
+      "title": "Use a city bike or scooter share",
+      "titleTr": "Şehir bisikleti ya da scooter paylaşımı kullan",
+      "hint": "Most EU capitals have cheap day passes",
+      "hintTr": "Çoğu AB başkentinde ucuz günlük abonelikler var",
+      "category": "green"
+    },
+    {
+      "id": "uni-tram-metro",
+      "emoji": "🚊",
+      "title": "Ride a tram or metro without using a map app",
+      "titleTr": "Harita uygulaması kullanmadan tramvay ya da metroya bin",
+      "hint": "Paper map or the station board — old-school navigation",
+      "hintTr": "Kâğıt harita ya da istasyon tabelası — eski usul rota bulma",
+      "category": "green"
+    },
+    {
+      "id": "uni-sunset-spot",
+      "emoji": "🌅",
+      "title": "Watch a sunset from a free viewpoint",
+      "titleTr": "Ücretsiz bir manzara noktasından gün batımı izle",
+      "hint": "Hilltops, bridges and church steps usually work",
+      "hintTr": "Tepe noktaları, köprüler ve kilise basamakları genelde iş görür",
+      "category": "quirky"
+    },
+    {
+      "id": "uni-weird-statue",
+      "emoji": "🗿",
+      "title": "Find a weird or funny statue",
+      "titleTr": "Garip ya da komik bir heykel bul",
+      "hint": "Every European city has at least one",
+      "hintTr": "Her Avrupa şehrinde en az bir tane var",
+      "category": "quirky"
+    },
+    {
+      "id": "uni-lost-on-purpose",
+      "emoji": "🧭",
+      "title": "Get lost on purpose for 30 minutes",
+      "titleTr": "30 dakika boyunca bilerek kaybol",
+      "hint": "Phone in your pocket, pick random turns",
+      "hintTr": "Telefon cebinde, rastgele sokaklara sap",
+      "category": "quirky"
+    },
+    {
+      "id": "uni-bookshop-souvenir",
+      "emoji": "📖",
+      "title": "Buy something from an independent bookshop",
+      "titleTr": "Bağımsız bir kitapçıdan bir şey al",
+      "hint": "A postcard, bookmark or secondhand paperback counts",
+      "hintTr": "Bir kartpostal, ayraç ya da ikinci el kitap da sayılır",
+      "category": "quirky"
+    },
+    {
+      "id": "uni-dance-moment",
+      "emoji": "💃",
+      "title": "Dance, even badly, in a public place",
+      "titleTr": "Kötü de olsa halka açık bir yerde dans et",
+      "hint": "Street festival, square, silent disco — anywhere",
+      "hintTr": "Sokak festivali, meydan, sessiz disko — her yer olur",
+      "category": "quirky"
+    }
+  ],
+  "byCountry": {
+    "AL": [
+      {
+        "id": "bonus-AL-byrek",
+        "emoji": "🥧",
+        "title": "Try a warm byrek from a bakery",
+        "titleTr": "Bir fırından sıcak byrek dene",
+        "hint": "Flaky filo pie with cheese, spinach or pumpkin",
+        "hintTr": "Peynirli, ıspanaklı ya da kabaklı katmerli böreği",
+        "category": "culinary"
+      },
+      {
+        "id": "bonus-AL-bunker",
+        "emoji": "🕳️",
+        "title": "Visit a Cold War bunker museum",
+        "titleTr": "Soğuk Savaş sığınağı müzesini ziyaret et",
+        "hint": "Bunk'Art in Tirana is the most famous one",
+        "hintTr": "En ünlüsü Tiran'daki Bunk'Art",
+        "category": "cultural"
+      }
+    ],
+    "AT": [
+      {
+        "id": "bonus-AT-schnitzel",
+        "emoji": "🍖",
+        "title": "Eat a proper Wiener Schnitzel",
+        "titleTr": "Gerçek bir Wiener Schnitzel ye",
+        "hint": "Veal, breaded, bigger than the plate",
+        "hintTr": "Dana eti, galeta unlu, tabaktan büyük",
+        "category": "culinary"
+      },
+      {
+        "id": "bonus-AT-coffeehouse",
+        "emoji": "☕",
+        "title": "Spend an hour in a Viennese coffeehouse",
+        "titleTr": "Bir Viyana kahvehanesinde bir saat geçir",
+        "hint": "UNESCO-listed culture — one coffee buys you the whole afternoon",
+        "hintTr": "UNESCO listesinde bir kültür — bir kahve sana tüm öğleden sonrayı alır",
+        "category": "cultural"
+      }
+    ],
+    "BA": [
+      {
+        "id": "bonus-BA-cevapi",
+        "emoji": "🌯",
+        "title": "Order ćevapi with somun bread",
+        "titleTr": "Somun ekmeğiyle ćevapi sipariş et",
+        "hint": "Grilled minced-meat fingers, the national dish",
+        "hintTr": "Izgara kıyma köfteleri — ülkenin milli yemeği",
+        "category": "culinary"
+      },
+      {
+        "id": "bonus-BA-mostar-bridge",
+        "emoji": "🌉",
+        "title": "Watch someone jump from the Stari Most bridge",
+        "titleTr": "Birinin Stari Most köprüsünden atlayışını izle",
+        "hint": "Mostar's rebuilt Ottoman bridge, UNESCO site",
+        "hintTr": "Mostar'ın yeniden inşa edilmiş Osmanlı köprüsü, UNESCO alanı",
+        "category": "cultural"
+      }
+    ],
+    "BE": [
+      {
+        "id": "bonus-BE-frites",
+        "emoji": "🍟",
+        "title": "Eat frites from a friterie with mayo",
+        "titleTr": "Bir friterie'den mayonezle patates kızartması ye",
+        "hint": "Not 'French fries' — Belgian, and they'll fight you on it",
+        "hintTr": "'French fries' değil — Belçika'ya ait, bu konuda tartışırlar",
+        "category": "culinary"
+      },
+      {
+        "id": "bonus-BE-comic-mural",
+        "emoji": "💥",
+        "title": "Spot a comic-book mural in Brussels",
+        "titleTr": "Brüksel'de bir çizgi roman duvar resmi bul",
+        "hint": "Tintin, Lucky Luke and the Smurfs are all painted on walls",
+        "hintTr": "Tintin, Red Kit ve Şirinler'in hepsi duvarlara çizili",
+        "category": "quirky"
+      }
+    ],
+    "BG": [
+      {
+        "id": "bonus-BG-banitsa",
+        "emoji": "🥐",
+        "title": "Eat a banitsa with ayran for breakfast",
+        "titleTr": "Kahvaltıda ayranla banitsa ye",
+        "hint": "Cheese pastry roll — the classic Bulgarian morning",
+        "hintTr": "Peynirli hamur işi ruloları — klasik Bulgar sabahı",
+        "category": "culinary"
+      },
+      {
+        "id": "bonus-BG-cyrillic",
+        "emoji": "🔤",
+        "title": "Read one whole sign in Cyrillic out loud",
+        "titleTr": "Kiril alfabesiyle bir tabelayı sesli oku",
+        "hint": "Bulgaria invented Cyrillic — get the letters right",
+        "hintTr": "Kiril alfabesini Bulgaristan icat etti — harfleri doğru söyle",
+        "category": "cultural"
+      }
+    ],
+    "CH": [
+      {
+        "id": "bonus-CH-fondue",
+        "emoji": "🫕",
+        "title": "Share a cheese fondue with someone",
+        "titleTr": "Biriyle peynir fondü paylaş",
+        "hint": "Don't drop the bread — there are traditional penalties",
+        "hintTr": "Ekmeği düşürme — geleneksel cezaları var",
+        "category": "culinary"
+      },
+      {
+        "id": "bonus-CH-alpine-train",
+        "emoji": "🚞",
+        "title": "Ride a panoramic alpine train",
+        "titleTr": "Panoramik bir Alp treni yolculuğu yap",
+        "hint": "Even a short regional route gives postcard views",
+        "hintTr": "Kısa bir bölgesel hat bile kartpostal gibi manzara verir",
+        "category": "green"
+      }
+    ],
+    "CY": [
+      {
+        "id": "bonus-CY-halloumi",
+        "emoji": "🧀",
+        "title": "Eat grilled halloumi at a meze dinner",
+        "titleTr": "Meze akşam yemeğinde ızgara hellim ye",
+        "hint": "Cyprus is the original home of halloumi",
+        "hintTr": "Kıbrıs hellimin gerçek memleketi",
+        "category": "culinary"
+      },
+      {
+        "id": "bonus-CY-green-line",
+        "emoji": "🚧",
+        "title": "Walk along the Nicosia Green Line",
+        "titleTr": "Lefkoşa'daki Yeşil Hat boyunca yürü",
+        "hint": "Europe's last divided capital — cross carefully",
+        "hintTr": "Avrupa'nın son bölünmüş başkenti — dikkatle geç",
+        "category": "cultural"
+      }
+    ],
+    "CZ": [
+      {
+        "id": "bonus-CZ-pilsner",
+        "emoji": "🍺",
+        "title": "Drink a proper pilsner in a Prague hospoda",
+        "titleTr": "Prag'da bir hospoda'da gerçek bir pilsner iç",
+        "hint": "Pilsner was invented in Plzeň in 1842",
+        "hintTr": "Pilsner 1842'de Plzeň'de icat edildi",
+        "category": "culinary"
+      },
+      {
+        "id": "bonus-CZ-astronomical-clock",
+        "emoji": "🕰️",
+        "title": "Watch the Prague Astronomical Clock on the hour",
+        "titleTr": "Prag Astronomik Saati'nin tam saatteki gösterisini izle",
+        "hint": "Built in 1410 — the skeleton still rings the bell",
+        "hintTr": "1410'da yapıldı — iskelet figürü hâlâ çanı çalıyor",
+        "category": "cultural"
+      }
+    ],
+    "DE": [
+      {
+        "id": "bonus-DE-bakery-breakfast",
+        "emoji": "🥨",
+        "title": "Eat a warm Brezel from a German bakery",
+        "titleTr": "Bir Alman fırınından sıcak Brezel ye",
+        "hint": "Salt, butter, zero regret",
+        "hintTr": "Tuz, tereyağı, sıfır pişmanlık",
+        "category": "culinary"
+      },
+      {
+        "id": "bonus-DE-berlin-wall",
+        "emoji": "🧱",
+        "title": "Touch a remaining piece of the Berlin Wall",
+        "titleTr": "Berlin Duvarı'nın kalan bir parçasına dokun",
+        "hint": "East Side Gallery or Bernauer Straße memorial",
+        "hintTr": "East Side Gallery ya da Bernauer Straße anıtı",
+        "category": "cultural"
+      }
+    ],
+    "DK": [
+      {
+        "id": "bonus-DK-smorrebrod",
+        "emoji": "🥪",
+        "title": "Try a classic smørrebrød open sandwich",
+        "titleTr": "Klasik bir smørrebrød açık sandviçi dene",
+        "hint": "Rye bread, pickled herring, dill — textbook Danish lunch",
+        "hintTr": "Çavdar ekmeği, salamura ringa, dereotu — klasik Danimarka öğle yemeği",
+        "category": "culinary"
+      },
+      {
+        "id": "bonus-DK-nyhavn",
+        "emoji": "🎨",
+        "title": "Photograph a rainbow row of townhouses",
+        "titleTr": "Renkli sıra evlerin fotoğrafını çek",
+        "hint": "Nyhavn in Copenhagen is the classic one",
+        "hintTr": "Kopenhag'daki Nyhavn klasik olanı",
+        "category": "cultural"
+      }
+    ],
+    "EE": [
+      {
+        "id": "bonus-EE-black-bread",
+        "emoji": "🍞",
+        "title": "Eat Estonian black rye bread with butter",
+        "titleTr": "Tereyağıyla Estonya siyah çavdar ekmeği ye",
+        "hint": "Dense, dark, deeply loved by locals",
+        "hintTr": "Yoğun, koyu, yerliler tarafından çok sevilen",
+        "category": "culinary"
+      },
+      {
+        "id": "bonus-EE-digital-nomad",
+        "emoji": "💻",
+        "title": "Work from a café in Tallinn's old town",
+        "titleTr": "Tallinn'in eski şehrinde bir kafeden çalış",
+        "hint": "Estonia is the world's most digital country — use it",
+        "hintTr": "Estonya dünyanın en dijital ülkesi — bunu kullan",
+        "category": "quirky"
+      }
+    ],
+    "ES": [
+      {
+        "id": "bonus-ES-tapas-crawl",
+        "emoji": "🍤",
+        "title": "Do a tapas crawl with at least 3 bars",
+        "titleTr": "En az 3 barda tapas turu yap",
+        "hint": "One small plate per bar, then move on",
+        "hintTr": "Her barda bir küçük tabak, sonra diğerine geç",
+        "category": "culinary"
+      },
+      {
+        "id": "bonus-ES-siesta",
+        "emoji": "😴",
+        "title": "Respect the siesta — nap between 14:00 and 17:00",
+        "titleTr": "Siesta'ya saygı göster — 14:00 ile 17:00 arası şekerleme yap",
+        "hint": "Many shops close anyway, so join them",
+        "hintTr": "Birçok dükkân zaten kapanır, sen de katıl",
+        "category": "quirky"
+      }
+    ],
+    "FI": [
+      {
+        "id": "bonus-FI-sauna",
+        "emoji": "🧖",
+        "title": "Visit a public sauna",
+        "titleTr": "Halka açık bir saunaya git",
+        "hint": "Finland has more saunas than cars — this is essential",
+        "hintTr": "Finlandiya'da sauna sayısı araba sayısından fazla — bu olmazsa olmaz",
+        "category": "cultural"
+      },
+      {
+        "id": "bonus-FI-coffee-break",
+        "emoji": "☕",
+        "title": "Take a Finnish coffee break with a korvapuusti",
+        "titleTr": "Bir korvapuusti ile Fin kahve molası ver",
+        "hint": "Finns drink more coffee per capita than anyone",
+        "hintTr": "Finler kişi başına en çok kahveyi içen millet",
+        "category": "culinary"
+      }
+    ],
+    "FR": [
+      {
+        "id": "bonus-FR-bakery-baguette",
+        "emoji": "🥖",
+        "title": "Carry a baguette under your arm",
+        "titleTr": "Kolunun altında bir baget taşı",
+        "hint": "Straight from the boulangerie, still warm",
+        "hintTr": "Doğrudan boulangerie'den, hâlâ sıcak",
+        "category": "culinary"
+      },
+      {
+        "id": "bonus-FR-picnic-monument",
+        "emoji": "🧺",
+        "title": "Picnic in front of a national monument",
+        "titleTr": "Ulusal bir anıtın önünde piknik yap",
+        "hint": "Eiffel Tower, Pont du Gard, Mont-Saint-Michel — all legal",
+        "hintTr": "Eyfel, Pont du Gard, Mont-Saint-Michel — hepsi serbest",
+        "category": "social"
+      }
+    ],
+    "GR": [
+      {
+        "id": "bonus-GR-freddo",
+        "emoji": "🧋",
+        "title": "Order a freddo espresso like a local",
+        "titleTr": "Yerli gibi bir freddo espresso sipariş et",
+        "hint": "Iced, shaken, no milk unless you ask — Greek summer fuel",
+        "hintTr": "Buzlu, çalkalanmış, istemezsen sütsüz — Yunan yazının yakıtı",
+        "category": "culinary"
+      },
+      {
+        "id": "bonus-GR-acropolis",
+        "emoji": "🏛️",
+        "title": "See an ancient Greek ruin up close",
+        "titleTr": "Antik bir Yunan harabesini yakından gör",
+        "hint": "The Acropolis is free for EU youth on certain days",
+        "hintTr": "Akropolis bazı günlerde AB gençliğine ücretsiz",
+        "category": "cultural"
+      }
+    ],
+    "HR": [
+      {
+        "id": "bonus-HR-burek",
+        "emoji": "🥮",
+        "title": "Eat a cheese or meat burek for breakfast",
+        "titleTr": "Kahvaltıda peynirli ya da etli börek ye",
+        "hint": "Spiral pastry, sold by the quarter kilo",
+        "hintTr": "Sarmal börek, çeyrek kiloyla satılır",
+        "category": "culinary"
+      },
+      {
+        "id": "bonus-HR-adriatic-swim",
+        "emoji": "🏊",
+        "title": "Swim in the Adriatic Sea",
+        "titleTr": "Adriyatik Denizi'nde yüz",
+        "hint": "Even a quick dip off a Split or Dubrovnik beach counts",
+        "hintTr": "Split ya da Dubrovnik sahilinden kısa bir dalış bile sayılır",
+        "category": "green"
+      }
+    ],
+    "HU": [
+      {
+        "id": "bonus-HU-thermal-bath",
+        "emoji": "♨️",
+        "title": "Soak in a Budapest thermal bath",
+        "titleTr": "Budapeşte'de bir termal hamamda yıkan",
+        "hint": "Széchenyi and Gellért are the most famous",
+        "hintTr": "En ünlüleri Széchenyi ve Gellért",
+        "category": "cultural"
+      },
+      {
+        "id": "bonus-HU-ruin-bar",
+        "emoji": "🍸",
+        "title": "Have a drink in a Budapest ruin bar",
+        "titleTr": "Bir Budapeşte harabe barında bir şey iç",
+        "hint": "Szimpla Kert is the original one",
+        "hintTr": "Orijinali Szimpla Kert",
+        "category": "social"
+      }
+    ],
+    "IE": [
+      {
+        "id": "bonus-IE-trad-session",
+        "emoji": "🪕",
+        "title": "Catch a trad music session in a pub",
+        "titleTr": "Bir pub'da geleneksel müzik seansına denk gel",
+        "hint": "Usually unannounced, usually free — just listen",
+        "hintTr": "Genelde habersiz, genelde ücretsiz — sadece dinle",
+        "category": "cultural"
+      },
+      {
+        "id": "bonus-IE-coastal-walk",
+        "emoji": "🌊",
+        "title": "Walk a stretch of Irish coastline",
+        "titleTr": "İrlanda kıyısının bir bölümünde yürü",
+        "hint": "Howth, Bray Head and Cliffs of Moher are all reachable by train",
+        "hintTr": "Howth, Bray Head ve Moher Kayalıkları trenle ulaşılabilir",
+        "category": "green"
+      }
+    ],
+    "IS": [
+      {
+        "id": "bonus-IS-geothermal",
+        "emoji": "♨️",
+        "title": "Bathe in a geothermal pool",
+        "titleTr": "Bir jeotermal havuzda yıkan",
+        "hint": "Every Icelandic town has one — far cheaper than Blue Lagoon",
+        "hintTr": "Her İzlanda kasabasında var — Blue Lagoon'dan çok daha ucuz",
+        "category": "green"
+      },
+      {
+        "id": "bonus-IS-skyr",
+        "emoji": "🥛",
+        "title": "Eat a tub of real Icelandic skyr",
+        "titleTr": "Bir kâse gerçek İzlanda skyr'ı ye",
+        "hint": "Thicker than yogurt, officially a cheese",
+        "hintTr": "Yoğurttan kalın, resmi olarak bir peynir",
+        "category": "culinary"
+      }
+    ],
+    "IT": [
+      {
+        "id": "bonus-IT-gelato",
+        "emoji": "🍨",
+        "title": "Eat gelato from a shop with < 10 flavours",
+        "titleTr": "10'dan az çeşidi olan bir gelatocudan dondurma ye",
+        "hint": "Fewer flavours usually means artisanal",
+        "hintTr": "Az çeşit genelde el yapımı demektir",
+        "category": "culinary"
+      },
+      {
+        "id": "bonus-IT-aperitivo",
+        "emoji": "🥂",
+        "title": "Do a proper Italian aperitivo",
+        "titleTr": "Gerçek bir İtalyan aperitivo'su yap",
+        "hint": "One spritz, unlimited snacks from the buffet",
+        "hintTr": "Bir spritz, büfeden sınırsız atıştırmalık",
+        "category": "social"
+      }
+    ],
+    "LI": [
+      {
+        "id": "bonus-LI-whole-country",
+        "emoji": "🏔️",
+        "title": "Walk across the whole country in a day",
+        "titleTr": "Tüm ülkeyi bir günde yürüyerek geç",
+        "hint": "Liechtenstein is 25 km long — it's genuinely doable",
+        "hintTr": "Lihtenştayn 25 km uzunlukta — gerçekten mümkün",
+        "category": "quirky"
+      },
+      {
+        "id": "bonus-LI-passport-stamp",
+        "emoji": "🛂",
+        "title": "Get a souvenir passport stamp in Vaduz",
+        "titleTr": "Vaduz'dan hatıra pasaport damgası al",
+        "hint": "The tourism office stamps it for a small fee",
+        "hintTr": "Turizm ofisi küçük bir ücretle damga basıyor",
+        "category": "cultural"
+      }
+    ],
+    "LT": [
+      {
+        "id": "bonus-LT-cepelinai",
+        "emoji": "🥔",
+        "title": "Eat a cepelinai potato zeppelin",
+        "titleTr": "Bir cepelinai patates zeplini ye",
+        "hint": "Huge, heavy, stuffed with meat — share it",
+        "hintTr": "Kocaman, ağır, etle doldurulmuş — paylaş",
+        "category": "culinary"
+      },
+      {
+        "id": "bonus-LT-hill-of-crosses",
+        "emoji": "✝️",
+        "title": "Visit the Hill of Crosses if you can",
+        "titleTr": "Mümkünse Haçlar Tepesi'ni ziyaret et",
+        "hint": "Pilgrimage site near Šiauliai with 100,000+ crosses",
+        "hintTr": "Šiauliai yakınında 100.000'den fazla haçın olduğu hac yeri",
+        "category": "cultural"
+      }
+    ],
+    "LU": [
+      {
+        "id": "bonus-LU-free-transit",
+        "emoji": "🚌",
+        "title": "Use Luxembourg's free public transport",
+        "titleTr": "Lüksemburg'un ücretsiz toplu taşımasını kullan",
+        "hint": "It's the first country in the world with fully free transit",
+        "hintTr": "Tamamen ücretsiz toplu taşımaya sahip dünyadaki ilk ülke",
+        "category": "green"
+      },
+      {
+        "id": "bonus-LU-casemates",
+        "emoji": "🏰",
+        "title": "Walk through the Bock Casemates",
+        "titleTr": "Bock Kazemataları'nda yürü",
+        "hint": "UNESCO-listed underground fortress tunnels",
+        "hintTr": "UNESCO listesindeki yeraltı kale tünelleri",
+        "category": "cultural"
+      }
+    ],
+    "LV": [
+      {
+        "id": "bonus-LV-rye-bread",
+        "emoji": "🍞",
+        "title": "Eat Latvian rupjmaize dark rye",
+        "titleTr": "Letonya rupjmaize koyu çavdar ekmeği ye",
+        "hint": "Sweet, dense, a national staple",
+        "hintTr": "Tatlı, yoğun, millî bir temel gıda",
+        "category": "culinary"
+      },
+      {
+        "id": "bonus-LV-art-nouveau",
+        "emoji": "🏛️",
+        "title": "Photograph Art Nouveau facades in Riga",
+        "titleTr": "Riga'daki Art Nouveau cephelerinin fotoğrafını çek",
+        "hint": "Riga has the densest collection in Europe",
+        "hintTr": "Riga Avrupa'nın en yoğun koleksiyonuna sahip",
+        "category": "cultural"
+      }
+    ],
+    "MK": [
+      {
+        "id": "bonus-MK-tavče-gravče",
+        "emoji": "🫘",
+        "title": "Eat a clay pot of tavče gravče",
+        "titleTr": "Kil güveç içinde tavče gravče ye",
+        "hint": "Baked beans, the North Macedonian national dish",
+        "hintTr": "Fırınlanmış fasulye — Kuzey Makedonya'nın millî yemeği",
+        "category": "culinary"
+      },
+      {
+        "id": "bonus-MK-ohrid-lake",
+        "emoji": "🏞️",
+        "title": "See Lake Ohrid from a viewpoint",
+        "titleTr": "Bir bakış noktasından Ohri Gölü'nü gör",
+        "hint": "One of the oldest lakes in the world, UNESCO-listed",
+        "hintTr": "Dünyanın en eski göllerinden, UNESCO listesinde",
+        "category": "green"
+      }
+    ],
+    "MT": [
+      {
+        "id": "bonus-MT-pastizzi",
+        "emoji": "🥟",
+        "title": "Eat a ricotta pastizzi with a coffee",
+        "titleTr": "Kahveyle birlikte ricotta'lı pastizzi ye",
+        "hint": "Flaky Maltese pastry — under 1 euro anywhere",
+        "hintTr": "Katmerli Malta böreği — her yerde 1 Euro'nun altında",
+        "category": "culinary"
+      },
+      {
+        "id": "bonus-MT-limestone",
+        "emoji": "🟡",
+        "title": "Walk through a honey-coloured limestone town",
+        "titleTr": "Bal renkli kireçtaşı bir kasabada yürü",
+        "hint": "Mdina and Valletta glow gold at sunset",
+        "hintTr": "Mdina ve Valletta gün batımında altın gibi parlar",
+        "category": "cultural"
+      }
+    ],
+    "NL": [
+      {
+        "id": "bonus-NL-windmill",
+        "emoji": "🌬️",
+        "title": "See a working windmill from up close",
+        "titleTr": "Çalışan bir yel değirmenini yakından gör",
+        "hint": "Zaanse Schans, Kinderdijk, or any rural canal",
+        "hintTr": "Zaanse Schans, Kinderdijk ya da herhangi bir kırsal kanal",
+        "category": "cultural"
+      },
+      {
+        "id": "bonus-NL-bike-commute",
+        "emoji": "🚲",
+        "title": "Cycle through a Dutch city at rush hour",
+        "titleTr": "Yoğun saatte bir Hollanda şehrinde bisiklet sür",
+        "hint": "Follow the flow, trust the infrastructure",
+        "hintTr": "Akışa uy, altyapıya güven",
+        "category": "green"
+      }
+    ],
+    "NO": [
+      {
+        "id": "bonus-NO-fjord-view",
+        "emoji": "⛰️",
+        "title": "See a Norwegian fjord in person",
+        "titleTr": "Bir Norveç fiyordunu canlı gör",
+        "hint": "Bergen and the Flåm railway are the cheapest routes",
+        "hintTr": "En ucuz rotalar Bergen ve Flåm demiryolu",
+        "category": "green"
+      },
+      {
+        "id": "bonus-NO-brown-cheese",
+        "emoji": "🧀",
+        "title": "Try brunost brown cheese on bread",
+        "titleTr": "Ekmek üstünde brunost kahverengi peyniri dene",
+        "hint": "Caramel-flavoured goat cheese, a Norwegian obsession",
+        "hintTr": "Karamel lezzetli keçi peyniri — Norveç'in takıntısı",
+        "category": "culinary"
+      }
+    ],
+    "PL": [
+      {
+        "id": "bonus-PL-pierogi",
+        "emoji": "🥟",
+        "title": "Eat pierogi at a milk bar",
+        "titleTr": "Bir süt barında pierogi ye",
+        "hint": "'Bar mleczny' — subsidised canteens, insanely cheap",
+        "hintTr": "'Bar mleczny' — devlet destekli yemekhaneler, inanılmaz ucuz",
+        "category": "culinary"
+      },
+      {
+        "id": "bonus-PL-auschwitz",
+        "emoji": "🕯️",
+        "title": "Pay respects at a WWII memorial site",
+        "titleTr": "Bir İkinci Dünya Savaşı anıt alanında saygı duruşunda bulun",
+        "hint": "Auschwitz-Birkenau entry is free, book ahead",
+        "hintTr": "Auschwitz-Birkenau girişi ücretsiz, önceden yer ayır",
+        "category": "cultural"
+      }
+    ],
+    "PT": [
+      {
+        "id": "bonus-PT-fado",
+        "emoji": "🎶",
+        "title": "Listen to a live fado performance",
+        "titleTr": "Canlı bir fado performansı dinle",
+        "hint": "Lisbon's Alfama district has the most authentic spots",
+        "hintTr": "Lizbon'un Alfama semtinde en otantik yerler var",
+        "category": "cultural"
+      },
+      {
+        "id": "bonus-PT-pastel-de-nata",
+        "emoji": "🥮",
+        "title": "Eat a pastel de nata still warm from the oven",
+        "titleTr": "Fırından henüz çıkmış bir pastel de nata ye",
+        "hint": "Dust it with cinnamon, not powdered sugar",
+        "hintTr": "Pudra şekeri değil, tarçın serp",
+        "category": "culinary"
+      }
+    ],
+    "RO": [
+      {
+        "id": "bonus-RO-sarmale",
+        "emoji": "🍲",
+        "title": "Eat sarmale with mămăligă",
+        "titleTr": "Mămăligă ile sarmale ye",
+        "hint": "Stuffed cabbage rolls with polenta — the national dish",
+        "hintTr": "Mısır lapasıyla lahana sarması — millî yemek",
+        "category": "culinary"
+      },
+      {
+        "id": "bonus-RO-painted-monastery",
+        "emoji": "⛪",
+        "title": "Visit a painted monastery or fortified church",
+        "titleTr": "Bir resimli manastır ya da kaleli kiliseyi gez",
+        "hint": "Bucovina and Transylvania are full of UNESCO sites",
+        "hintTr": "Bucovina ve Transilvanya UNESCO alanlarıyla dolu",
+        "category": "cultural"
+      }
+    ],
+    "RS": [
+      {
+        "id": "bonus-RS-rakija",
+        "emoji": "🥃",
+        "title": "Share a shot of homemade rakija",
+        "titleTr": "Ev yapımı bir rakija paylaş",
+        "hint": "Serbian fruit brandy — cheers with 'živeli!'",
+        "hintTr": "Sırp meyve brendisi — 'živeli!' diyerek kadeh kaldır",
+        "category": "social"
+      },
+      {
+        "id": "bonus-RS-kalemegdan",
+        "emoji": "🏰",
+        "title": "Watch sunset from Belgrade's Kalemegdan fortress",
+        "titleTr": "Belgrad Kalemegdan kalesinden gün batımı izle",
+        "hint": "Confluence of the Danube and Sava, free entry",
+        "hintTr": "Tuna ve Sava'nın birleştiği yer, giriş ücretsiz",
+        "category": "cultural"
+      }
+    ],
+    "SE": [
+      {
+        "id": "bonus-SE-fika",
+        "emoji": "🍪",
+        "title": "Take a proper fika break with a cinnamon bun",
+        "titleTr": "Tarçınlı çörekle gerçek bir fika molası ver",
+        "hint": "Fika is sacred — sit down, phone away",
+        "hintTr": "Fika kutsaldır — otur, telefonu bırak",
+        "category": "social"
+      },
+      {
+        "id": "bonus-SE-abba",
+        "emoji": "🕺",
+        "title": "Play an ABBA song somewhere in Sweden",
+        "titleTr": "İsveç'te bir yerlerde bir ABBA şarkısı çal",
+        "hint": "Bonus points if you sing along in public",
+        "hintTr": "Halka açık yerde eşlik edersen bonus puan",
+        "category": "quirky"
+      }
+    ],
+    "SI": [
+      {
+        "id": "bonus-SI-lake-bled",
+        "emoji": "🏞️",
+        "title": "See Lake Bled and its island church",
+        "titleTr": "Bled Gölü'nü ve ada kilisesini gör",
+        "hint": "Cheapest to reach by train + bus from Ljubljana",
+        "hintTr": "En ucuz yol: Ljubljana'dan tren + otobüs",
+        "category": "green"
+      },
+      {
+        "id": "bonus-SI-kremna-rezina",
+        "emoji": "🍰",
+        "title": "Eat a Bled cream cake (kremna rezina)",
+        "titleTr": "Bir Bled kremalı pastası (kremna rezina) ye",
+        "hint": "Invented at the lake, still made to the same recipe",
+        "hintTr": "Göl kenarında icat edildi, hâlâ aynı tarifle yapılıyor",
+        "category": "culinary"
+      }
+    ],
+    "SK": [
+      {
+        "id": "bonus-SK-bryndzove-halusky",
+        "emoji": "🧀",
+        "title": "Eat bryndzové halušky, the national dish",
+        "titleTr": "Millî yemek bryndzové halušky'yi ye",
+        "hint": "Sheep-cheese dumplings with bacon",
+        "hintTr": "Pastırmalı koyun peyniri hamurları",
+        "category": "culinary"
+      },
+      {
+        "id": "bonus-SK-tatra-hike",
+        "emoji": "🥾",
+        "title": "Take a short hike in the High Tatras",
+        "titleTr": "Yüksek Tatralar'da kısa bir yürüyüş yap",
+        "hint": "Reachable by train from Poprad, marked trails everywhere",
+        "hintTr": "Poprad'dan trenle ulaşılabilir, her yerde işaretli patikalar",
+        "category": "green"
+      }
+    ],
+    "TR": [
+      {
+        "id": "bonus-TR-cay",
+        "emoji": "🫖",
+        "title": "Drink Turkish çay in a tulip-shaped glass",
+        "titleTr": "İnce belli bardakta Türk çayı iç",
+        "hint": "Always offered, always accept",
+        "hintTr": "Her zaman ikram edilir, her zaman kabul et",
+        "category": "culinary"
+      },
+      {
+        "id": "bonus-TR-ferry-bosphorus",
+        "emoji": "⛴️",
+        "title": "Cross between two continents on an Istanbul ferry",
+        "titleTr": "İstanbul vapuruyla iki kıta arasında geçiş yap",
+        "hint": "A city transit card fare, the best view in Europe",
+        "hintTr": "Bir İstanbulkart ücretine Avrupa'nın en güzel manzarası",
+        "category": "cultural"
+      }
+    ]
+  }
+}
