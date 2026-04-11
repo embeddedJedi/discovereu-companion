@@ -1,0 +1,1489 @@
+{
+  "version": 1,
+  "generated": "2026-04-11",
+  "sources": [
+    "Wheelmap.org public snapshot 2026-04 (OSM-based)",
+    "EU Disability Card pilot programme",
+    "DB Barrierefrei Reisen service guide",
+    "Eurostat 2024 Accessibility Index"
+  ],
+  "note": "Country-level summary. Wheelmap data is per-city; we aggregate the top 3 cities per country. 'overallScore' mirrors countries.scores.accessibility so consumers can cross-reference. Where a confirmed Wheelmap count could not be obtained at snapshot time, accessibleSpots is 0 and wheelmapCoverage is 'low' as a safe fallback rather than invented data.",
+  "countries": [
+    {
+      "id": "DE",
+      "overallScore": 5,
+      "publicTransport": {
+        "score": 4,
+        "status": "mostly-accessible",
+        "notes": "S-Bahn + U-Bahn fully accessible in Berlin, Munich, Hamburg. DB long-distance trains 85% accessible.",
+        "notesTr": "Berlin, Münih, Hamburg'da S-Bahn ve U-Bahn tamamen erişilebilir. DB uzun yol trenlerinin %85'i erişilebilir."
+      },
+      "trainStations": {
+        "score": 4,
+        "barrierFreePercent": 85,
+        "assistanceBooking": {
+          "available": true,
+          "url": "https://www.bahn.de/service/individuelle-hilfe/mobilitaetsservice",
+          "phone": "+49 30 65212888",
+          "leadTimeHours": 24
+        }
+      },
+      "topCities": [
+        { "city": "Berlin", "accessibleSpots": 3147, "wheelmapCoverage": "high" },
+        { "city": "Munich", "accessibleSpots": 1893, "wheelmapCoverage": "high" },
+        { "city": "Hamburg", "accessibleSpots": 1204, "wheelmapCoverage": "high" }
+      ],
+      "accommodation": {
+        "score": 3,
+        "notes": "Major chains (Motel One, NH) offer accessible rooms; budget hostels vary.",
+        "notesTr": "Büyük zincirlerde (Motel One, NH) erişilebilir oda bulunur; budget hostel'ler değişken."
+      },
+      "attractions": {
+        "score": 4,
+        "notes": "Most museums offer free entry + guide for disabled visitors with a companion.",
+        "notesTr": "Çoğu müze engelli ziyaretçilere refakatçiyle ücretsiz giriş + rehberlik sunar."
+      },
+      "disabilityCard": {
+        "euDisabilityCardAccepted": true,
+        "nationalCard": "Schwerbehindertenausweis",
+        "typicalDiscount": "50% DB tickets, free public transport in most cities"
+      },
+      "lastUpdated": "2026-04"
+    },
+    {
+      "id": "FR",
+      "overallScore": 4,
+      "publicTransport": {
+        "score": 3,
+        "status": "mostly-accessible",
+        "notes": "Paris metro has limited step-free access (only Line 14 fully accessible); buses and tramways are accessible. TGV and Intercités long-distance trains are accessible with advance booking.",
+        "notesTr": "Paris metrosunun erişilebilirliği sınırlı (tamamen erişilebilir sadece 14. hat); otobüs ve tramvaylar erişilebilir. TGV ve Intercités uzun yol trenleri önceden rezervasyonla erişilebilir."
+      },
+      "trainStations": {
+        "score": 4,
+        "barrierFreePercent": 80,
+        "assistanceBooking": {
+          "available": true,
+          "url": "https://www.sncf-connect.com/en-en/help/assist-enmr",
+          "phone": "+33 890 640 650",
+          "leadTimeHours": 48
+        }
+      },
+      "topCities": [
+        { "city": "Paris", "accessibleSpots": 0, "wheelmapCoverage": "low" },
+        { "city": "Lyon", "accessibleSpots": 0, "wheelmapCoverage": "low" },
+        { "city": "Marseille", "accessibleSpots": 0, "wheelmapCoverage": "low" }
+      ],
+      "accommodation": {
+        "score": 3,
+        "notes": "Tourisme & Handicap label identifies certified accessible accommodation. Major chains compliant.",
+        "notesTr": "Tourisme & Handicap etiketi sertifikalı erişilebilir konaklamaları belirtir. Büyük zincirler uyumludur."
+      },
+      "attractions": {
+        "score": 4,
+        "notes": "Louvre, Orsay and most national museums offer free entry for disabled visitors + companion; priority queueing standard.",
+        "notesTr": "Louvre, Orsay ve çoğu ulusal müze engelli ziyaretçilere ve refakatçilerine ücretsiz giriş sunar; öncelikli sıra standarttır."
+      },
+      "disabilityCard": {
+        "euDisabilityCardAccepted": true,
+        "nationalCard": "Carte Mobilité Inclusion (CMI)",
+        "typicalDiscount": "Free entry to national museums, reduced SNCF fares"
+      },
+      "lastUpdated": "2026-04"
+    },
+    {
+      "id": "IT",
+      "overallScore": 3,
+      "publicTransport": {
+        "score": 2,
+        "status": "partially-accessible",
+        "notes": "Rome and Milan metros partially accessible; historic city centres often have cobblestones. Trenitalia Sala Blu provides station assistance nationwide.",
+        "notesTr": "Roma ve Milano metroları kısmen erişilebilir; tarihi şehir merkezlerinde çoğunlukla arnavut kaldırımı vardır. Trenitalia Sala Blu ülke çapında istasyon yardımı sağlar."
+      },
+      "trainStations": {
+        "score": 3,
+        "barrierFreePercent": 60,
+        "assistanceBooking": {
+          "available": true,
+          "url": "https://www.rfi.it/en/stations/sala-blu.html",
+          "phone": "+39 02 32 32 32",
+          "leadTimeHours": 12
+        }
+      },
+      "topCities": [
+        { "city": "Rome", "accessibleSpots": 0, "wheelmapCoverage": "low" },
+        { "city": "Milan", "accessibleSpots": 0, "wheelmapCoverage": "low" },
+        { "city": "Naples", "accessibleSpots": 0, "wheelmapCoverage": "low" }
+      ],
+      "accommodation": {
+        "score": 3,
+        "notes": "Modern hotels accessible; many historic boutique hotels and pensioni are not.",
+        "notesTr": "Modern oteller erişilebilirdir; birçok tarihi butik otel ve pensione erişilebilir değildir."
+      },
+      "attractions": {
+        "score": 3,
+        "notes": "Colosseum and Vatican Museums offer accessible routes and free disability access; smaller archaeological sites often inaccessible.",
+        "notesTr": "Kolezyum ve Vatikan Müzeleri erişilebilir güzergâhlar ve ücretsiz engelli girişi sunar; daha küçük arkeolojik alanlar genellikle erişilemez."
+      },
+      "disabilityCard": {
+        "euDisabilityCardAccepted": true,
+        "nationalCard": "Carta Europea della Disabilità",
+        "typicalDiscount": "Free or reduced museum entry, Trenitalia Carta Blu discount"
+      },
+      "lastUpdated": "2026-04"
+    },
+    {
+      "id": "ES",
+      "overallScore": 4,
+      "publicTransport": {
+        "score": 4,
+        "status": "mostly-accessible",
+        "notes": "Madrid metro ~70% step-free; Barcelona metro ~90%. Renfe Atendo provides free assistance at 140+ stations.",
+        "notesTr": "Madrid metrosunun yaklaşık %70'i basamaksız; Barcelona metrosunun yaklaşık %90'ı. Renfe Atendo 140'tan fazla istasyonda ücretsiz yardım sağlar."
+      },
+      "trainStations": {
+        "score": 4,
+        "barrierFreePercent": 78,
+        "assistanceBooking": {
+          "available": true,
+          "url": "https://www.renfe.com/es/en/services/accessibility-and-assistance/atendo",
+          "phone": "+34 912 140 505",
+          "leadTimeHours": 12
+        }
+      },
+      "topCities": [
+        { "city": "Madrid", "accessibleSpots": 0, "wheelmapCoverage": "low" },
+        { "city": "Barcelona", "accessibleSpots": 0, "wheelmapCoverage": "low" },
+        { "city": "Valencia", "accessibleSpots": 0, "wheelmapCoverage": "low" }
+      ],
+      "accommodation": {
+        "score": 4,
+        "notes": "Strong accessible tourism sector; Paradores (state hotels) mostly accessible.",
+        "notesTr": "Güçlü erişilebilir turizm sektörü; Paradores (devlet otelleri) çoğunlukla erişilebilir."
+      },
+      "attractions": {
+        "score": 4,
+        "notes": "Prado, Reina Sofía and Sagrada Família offer accessible routes and companion free entry.",
+        "notesTr": "Prado, Reina Sofía ve Sagrada Família erişilebilir güzergâhlar ve refakatçiye ücretsiz giriş sunar."
+      },
+      "disabilityCard": {
+        "euDisabilityCardAccepted": true,
+        "nationalCard": "Tarjeta Acreditativa del Grado de Discapacidad",
+        "typicalDiscount": "Free or reduced entry to public museums, Renfe discounts"
+      },
+      "lastUpdated": "2026-04"
+    },
+    {
+      "id": "NL",
+      "overallScore": 5,
+      "publicTransport": {
+        "score": 5,
+        "status": "fully-accessible",
+        "notes": "Amsterdam trams and metro step-free; all NS trains accessible with ramp assistance at staffed stations.",
+        "notesTr": "Amsterdam tramvay ve metrosu basamaksız; tüm NS trenleri personelli istasyonlarda rampa yardımıyla erişilebilir."
+      },
+      "trainStations": {
+        "score": 5,
+        "barrierFreePercent": 92,
+        "assistanceBooking": {
+          "available": true,
+          "url": "https://www.ns.nl/en/travel-information/traveling-with-a-disability",
+          "phone": "+31 30 235 7822",
+          "leadTimeHours": 1
+        }
+      },
+      "topCities": [
+        { "city": "Amsterdam", "accessibleSpots": 0, "wheelmapCoverage": "low" },
+        { "city": "Rotterdam", "accessibleSpots": 0, "wheelmapCoverage": "low" },
+        { "city": "The Hague", "accessibleSpots": 0, "wheelmapCoverage": "low" }
+      ],
+      "accommodation": {
+        "score": 4,
+        "notes": "Wide accessible hotel supply; older canal-house B&Bs often not accessible.",
+        "notesTr": "Geniş erişilebilir otel arzı; eski kanal-evi B&B'leri genellikle erişilebilir değildir."
+      },
+      "attractions": {
+        "score": 4,
+        "notes": "Rijksmuseum, Van Gogh Museum fully accessible with free companion entry.",
+        "notesTr": "Rijksmuseum ve Van Gogh Müzesi tamamen erişilebilirdir, refakatçi ücretsizdir."
+      },
+      "disabilityCard": {
+        "euDisabilityCardAccepted": true,
+        "nationalCard": "Europese Gehandicaptenkaart",
+        "typicalDiscount": "Free companion on NS trains with OV-begeleiderskaart"
+      },
+      "lastUpdated": "2026-04"
+    },
+    {
+      "id": "BE",
+      "overallScore": 4,
+      "publicTransport": {
+        "score": 3,
+        "status": "mostly-accessible",
+        "notes": "Brussels metro largely accessible; trams and buses variable. SNCB offers assistance at 132 stations.",
+        "notesTr": "Brüksel metrosu büyük ölçüde erişilebilir; tramvay ve otobüsler değişken. SNCB 132 istasyonda yardım sunar."
+      },
+      "trainStations": {
+        "score": 4,
+        "barrierFreePercent": 70,
+        "assistanceBooking": {
+          "available": true,
+          "url": "https://www.belgiantrain.be/en/travel-info/assistance-pmr",
+          "phone": "+32 2 528 28 28",
+          "leadTimeHours": 3
+        }
+      },
+      "topCities": [
+        { "city": "Brussels", "accessibleSpots": 0, "wheelmapCoverage": "low" },
+        { "city": "Antwerp", "accessibleSpots": 0, "wheelmapCoverage": "low" },
+        { "city": "Ghent", "accessibleSpots": 0, "wheelmapCoverage": "low" }
+      ],
+      "accommodation": {
+        "score": 4,
+        "notes": "Access-i label rates accessible hotels, restaurants and sights.",
+        "notesTr": "Access-i etiketi erişilebilir otel, restoran ve mekânları puanlar."
+      },
+      "attractions": {
+        "score": 4,
+        "notes": "Most federal museums accessible; medieval city centres (Bruges, Ghent) challenging due to cobblestones.",
+        "notesTr": "Çoğu federal müze erişilebilirdir; ortaçağ şehir merkezleri (Bruges, Gent) arnavut kaldırımı nedeniyle zorludur."
+      },
+      "disabilityCard": {
+        "euDisabilityCardAccepted": true,
+        "nationalCard": "European Disability Card (pilot origin country)",
+        "typicalDiscount": "Free or reduced entry to participating cultural sites"
+      },
+      "lastUpdated": "2026-04"
+    },
+    {
+      "id": "AT",
+      "overallScore": 5,
+      "publicTransport": {
+        "score": 5,
+        "status": "fully-accessible",
+        "notes": "Vienna U-Bahn fully step-free; all ÖBB Railjet and Nightjet trains accessible with onboard lift.",
+        "notesTr": "Viyana U-Bahn tamamen basamaksız; tüm ÖBB Railjet ve Nightjet trenleri tekerlekli sandalye liftiyle erişilebilir."
+      },
+      "trainStations": {
+        "score": 5,
+        "barrierFreePercent": 88,
+        "assistanceBooking": {
+          "available": true,
+          "url": "https://www.oebb.at/en/reiseplanung-services/service-am-bahnhof/oebb-mobilitaetsservice",
+          "phone": "+43 5 1717 5",
+          "leadTimeHours": 24
+        }
+      },
+      "topCities": [
+        { "city": "Vienna", "accessibleSpots": 0, "wheelmapCoverage": "low" },
+        { "city": "Graz", "accessibleSpots": 0, "wheelmapCoverage": "low" },
+        { "city": "Salzburg", "accessibleSpots": 0, "wheelmapCoverage": "low" }
+      ],
+      "accommodation": {
+        "score": 4,
+        "notes": "Strong accessible tourism certification (ÖHV standards).",
+        "notesTr": "Güçlü erişilebilir turizm sertifikasyonu (ÖHV standartları)."
+      },
+      "attractions": {
+        "score": 4,
+        "notes": "Schönbrunn, Belvedere, Kunsthistorisches Museum offer accessible routes and companion free entry.",
+        "notesTr": "Schönbrunn, Belvedere ve Kunsthistorisches Museum erişilebilir güzergâh ve refakatçiye ücretsiz giriş sunar."
+      },
+      "disabilityCard": {
+        "euDisabilityCardAccepted": true,
+        "nationalCard": "Behindertenpass",
+        "typicalDiscount": "Free companion on ÖBB trains, reduced museum entry"
+      },
+      "lastUpdated": "2026-04"
+    },
+    {
+      "id": "CH",
+      "overallScore": 5,
+      "publicTransport": {
+        "score": 5,
+        "status": "fully-accessible",
+        "notes": "Swiss law (BehiG) requires full accessibility of public transport by 2024; SBB Call Center Handicap provides nationwide assistance.",
+        "notesTr": "İsviçre yasası (BehiG) 2024'e kadar toplu taşımanın tam erişilebilirliğini zorunlu kılar; SBB Call Center Handicap ülke çapında yardım sağlar."
+      },
+      "trainStations": {
+        "score": 5,
+        "barrierFreePercent": 90,
+        "assistanceBooking": {
+          "available": true,
+          "url": "https://www.sbb.ch/en/travel-information/travelling-barrier-free.html",
+          "phone": "+41 800 007 102",
+          "leadTimeHours": 1
+        }
+      },
+      "topCities": [
+        { "city": "Zurich", "accessibleSpots": 0, "wheelmapCoverage": "low" },
+        { "city": "Geneva", "accessibleSpots": 0, "wheelmapCoverage": "low" },
+        { "city": "Basel", "accessibleSpots": 0, "wheelmapCoverage": "low" }
+      ],
+      "accommodation": {
+        "score": 4,
+        "notes": "Swiss Tourism for All label identifies accessible hotels nationwide.",
+        "notesTr": "Swiss Tourism for All etiketi ülke çapında erişilebilir otelleri belirtir."
+      },
+      "attractions": {
+        "score": 4,
+        "notes": "Most museums and cable cars accessible; many Alpine trails have adapted sections.",
+        "notesTr": "Çoğu müze ve teleferik erişilebilirdir; birçok Alp patikasının uyarlanmış bölümleri vardır."
+      },
+      "disabilityCard": {
+        "euDisabilityCardAccepted": false,
+        "nationalCard": "IV-Ausweis",
+        "typicalDiscount": "Free SBB companion travel with companion card"
+      },
+      "lastUpdated": "2026-04"
+    },
+    {
+      "id": "CZ",
+      "overallScore": 3,
+      "publicTransport": {
+        "score": 2,
+        "status": "partially-accessible",
+        "notes": "Prague metro ~60% step-free (older stations lack lifts); trams increasingly low-floor. České dráhy offers assistance at major stations.",
+        "notesTr": "Prag metrosunun yaklaşık %60'ı basamaksız (eski istasyonlarda asansör yok); tramvaylar giderek alçak tabanlı. České dráhy büyük istasyonlarda yardım sunar."
+      },
+      "trainStations": {
+        "score": 3,
+        "barrierFreePercent": 55,
+        "assistanceBooking": {
+          "available": true,
+          "url": "https://www.cd.cz/en/informace-pro-cestujici/cestujici-s-omezenou-schopnosti-pohybu-a-orientace/",
+          "phone": "+420 221 111 122",
+          "leadTimeHours": 48
+        }
+      },
+      "topCities": [
+        { "city": "Prague", "accessibleSpots": 0, "wheelmapCoverage": "low" },
+        { "city": "Brno", "accessibleSpots": 0, "wheelmapCoverage": "low" },
+        { "city": "Ostrava", "accessibleSpots": 0, "wheelmapCoverage": "low" }
+      ],
+      "accommodation": {
+        "score": 3,
+        "notes": "Modern hotels accessible; historic Prague buildings often without lifts.",
+        "notesTr": "Modern oteller erişilebilirdir; Prag'ın tarihi binalarında çoğunlukla asansör yoktur."
+      },
+      "attractions": {
+        "score": 3,
+        "notes": "Prague Castle offers an accessible route; many cobblestone streets in the Old Town are challenging.",
+        "notesTr": "Prag Kalesi erişilebilir bir güzergâh sunar; Eski Şehir'deki arnavut kaldırımlı sokaklar zorludur."
+      },
+      "disabilityCard": {
+        "euDisabilityCardAccepted": true,
+        "nationalCard": "Průkaz osoby se zdravotním postižením (TP/ZTP/ZTP-P)",
+        "typicalDiscount": "Free public transport in Prague, reduced ČD tickets"
+      },
+      "lastUpdated": "2026-04"
+    },
+    {
+      "id": "PL",
+      "overallScore": 3,
+      "publicTransport": {
+        "score": 3,
+        "status": "partially-accessible",
+        "notes": "Warsaw metro fully accessible; trams and buses largely low-floor in major cities. PKP Intercity offers assistance at 250+ stations.",
+        "notesTr": "Varşova metrosu tamamen erişilebilir; büyük şehirlerde tramvay ve otobüslerin çoğu alçak tabanlı. PKP Intercity 250'den fazla istasyonda yardım sunar."
+      },
+      "trainStations": {
+        "score": 3,
+        "barrierFreePercent": 50,
+        "assistanceBooking": {
+          "available": true,
+          "url": "https://www.intercity.pl/en/site/for-passengers/disabled-passengers/",
+          "phone": "+48 22 473 13 71",
+          "leadTimeHours": 48
+        }
+      },
+      "topCities": [
+        { "city": "Warsaw", "accessibleSpots": 0, "wheelmapCoverage": "low" },
+        { "city": "Krakow", "accessibleSpots": 0, "wheelmapCoverage": "low" },
+        { "city": "Gdansk", "accessibleSpots": 0, "wheelmapCoverage": "low" }
+      ],
+      "accommodation": {
+        "score": 3,
+        "notes": "International chains accessible; many budget and historic properties are not.",
+        "notesTr": "Uluslararası zincirler erişilebilirdir; birçok ekonomik ve tarihi tesis değildir."
+      },
+      "attractions": {
+        "score": 3,
+        "notes": "Auschwitz-Birkenau Memorial fully accessible; Krakow Old Town challenging due to cobblestones.",
+        "notesTr": "Auschwitz-Birkenau Anıtı tamamen erişilebilirdir; Krakow Eski Şehir arnavut kaldırımı nedeniyle zorludur."
+      },
+      "disabilityCard": {
+        "euDisabilityCardAccepted": true,
+        "nationalCard": "Legitymacja osoby niepełnosprawnej",
+        "typicalDiscount": "37-78% PKP discount depending on disability degree"
+      },
+      "lastUpdated": "2026-04"
+    },
+    {
+      "id": "HU",
+      "overallScore": 3,
+      "publicTransport": {
+        "score": 2,
+        "status": "partially-accessible",
+        "notes": "Budapest metro Line 4 fully accessible; historic Lines 1-3 mostly not. MÁV offers assistance at major stations.",
+        "notesTr": "Budapeşte metrosunun 4. hattı tamamen erişilebilirdir; tarihi 1-3. hatlar çoğunlukla erişilebilir değildir. MÁV büyük istasyonlarda yardım sunar."
+      },
+      "trainStations": {
+        "score": 3,
+        "barrierFreePercent": 45,
+        "assistanceBooking": {
+          "available": true,
+          "url": "https://www.mavcsoport.hu/en/mav-start/mozgaskorlatozott-utasok",
+          "phone": "+36 1 3 49 49 49",
+          "leadTimeHours": 48
+        }
+      },
+      "topCities": [
+        { "city": "Budapest", "accessibleSpots": 0, "wheelmapCoverage": "low" },
+        { "city": "Debrecen", "accessibleSpots": 0, "wheelmapCoverage": "low" },
+        { "city": "Szeged", "accessibleSpots": 0, "wheelmapCoverage": "low" }
+      ],
+      "accommodation": {
+        "score": 3,
+        "notes": "Modern hotels accessible; historic thermal bath hotels often not.",
+        "notesTr": "Modern oteller erişilebilirdir; tarihi kaplıca otelleri çoğunlukla erişilebilir değildir."
+      },
+      "attractions": {
+        "score": 3,
+        "notes": "Parliament and major museums offer accessible routes; Buda Castle hill challenging.",
+        "notesTr": "Parlamento ve büyük müzeler erişilebilir güzergâh sunar; Buda Kalesi tepesi zorludur."
+      },
+      "disabilityCard": {
+        "euDisabilityCardAccepted": true,
+        "nationalCard": "Fogyatékossági igazolvány",
+        "typicalDiscount": "Free MÁV travel with companion"
+      },
+      "lastUpdated": "2026-04"
+    },
+    {
+      "id": "PT",
+      "overallScore": 3,
+      "publicTransport": {
+        "score": 3,
+        "status": "partially-accessible",
+        "notes": "Lisbon metro mostly accessible; historic trams and hilly streets remain barriers. CP offers Serviço Integrado de Mobilidade Reduzida.",
+        "notesTr": "Lizbon metrosu çoğunlukla erişilebilirdir; tarihi tramvaylar ve tepeli sokaklar engel olmaya devam eder. CP Serviço Integrado de Mobilidade Reduzida sunar."
+      },
+      "trainStations": {
+        "score": 3,
+        "barrierFreePercent": 55,
+        "assistanceBooking": {
+          "available": true,
+          "url": "https://www.cp.pt/passageiros/en/how-to-travel/useful-info/accessibility",
+          "phone": "+351 707 210 220",
+          "leadTimeHours": 48
+        }
+      },
+      "topCities": [
+        { "city": "Lisbon", "accessibleSpots": 0, "wheelmapCoverage": "low" },
+        { "city": "Porto", "accessibleSpots": 0, "wheelmapCoverage": "low" },
+        { "city": "Braga", "accessibleSpots": 0, "wheelmapCoverage": "low" }
+      ],
+      "accommodation": {
+        "score": 3,
+        "notes": "Modern pousadas and chains accessible; older guesthouses vary.",
+        "notesTr": "Modern pousadalar ve zincirler erişilebilirdir; eski misafirhaneler değişkendir."
+      },
+      "attractions": {
+        "score": 3,
+        "notes": "Jerónimos Monastery and Gulbenkian accessible; Alfama/Bairro Alto hills difficult.",
+        "notesTr": "Jerónimos Manastırı ve Gulbenkian erişilebilirdir; Alfama/Bairro Alto tepeleri zordur."
+      },
+      "disabilityCard": {
+        "euDisabilityCardAccepted": true,
+        "nationalCard": "Cartão Europeu de Deficiência",
+        "typicalDiscount": "Free or reduced entry to public museums"
+      },
+      "lastUpdated": "2026-04"
+    },
+    {
+      "id": "GR",
+      "overallScore": 2,
+      "publicTransport": {
+        "score": 2,
+        "status": "partially-accessible",
+        "notes": "Athens metro fully accessible on newer lines; buses and islands largely not. Trainose/Hellenic Train assistance limited.",
+        "notesTr": "Atina metrosunun yeni hatları tamamen erişilebilirdir; otobüsler ve adalar büyük ölçüde erişilebilir değildir. Trainose/Hellenic Train yardımı sınırlıdır."
+      },
+      "trainStations": {
+        "score": 2,
+        "barrierFreePercent": 30,
+        "assistanceBooking": {
+          "available": true,
+          "url": "https://hellenictrain.gr/en/useful/accessibility-disabled",
+          "phone": "+30 14 511",
+          "leadTimeHours": 48
+        }
+      },
+      "topCities": [
+        { "city": "Athens", "accessibleSpots": 0, "wheelmapCoverage": "low" },
+        { "city": "Thessaloniki", "accessibleSpots": 0, "wheelmapCoverage": "low" },
+        { "city": "Patras", "accessibleSpots": 0, "wheelmapCoverage": "low" }
+      ],
+      "accommodation": {
+        "score": 2,
+        "notes": "Large resorts accessible; island villages, hostels and historic buildings rarely so.",
+        "notesTr": "Büyük tatil köyleri erişilebilirdir; ada köyleri, hosteller ve tarihi binalar nadiren erişilebilirdir."
+      },
+      "attractions": {
+        "score": 2,
+        "notes": "Acropolis has an accessible lift (weather permitting); many archaeological sites remain inaccessible.",
+        "notesTr": "Akropolis'te erişilebilir bir asansör vardır (hava koşullarına bağlı); birçok arkeolojik alan erişilemez kalmaktadır."
+      },
+      "disabilityCard": {
+        "euDisabilityCardAccepted": true,
+        "nationalCard": "Κάρτα Αναπηρίας",
+        "typicalDiscount": "Free or reduced museum and public transport fares"
+      },
+      "lastUpdated": "2026-04"
+    },
+    {
+      "id": "SE",
+      "overallScore": 5,
+      "publicTransport": {
+        "score": 5,
+        "status": "fully-accessible",
+        "notes": "Stockholm T-bana fully step-free; SJ trains accessible and Ledsagning assistance service covers all staffed stations.",
+        "notesTr": "Stockholm T-bana tamamen basamaksız; SJ trenleri erişilebilir ve Ledsagning yardım servisi tüm personelli istasyonları kapsar."
+      },
+      "trainStations": {
+        "score": 5,
+        "barrierFreePercent": 90,
+        "assistanceBooking": {
+          "available": true,
+          "url": "https://www.sj.se/en/customer-service/travel-with-sj/accessibility.html",
+          "phone": "+46 771 25 55 55",
+          "leadTimeHours": 24
+        }
+      },
+      "topCities": [
+        { "city": "Stockholm", "accessibleSpots": 0, "wheelmapCoverage": "low" },
+        { "city": "Gothenburg", "accessibleSpots": 0, "wheelmapCoverage": "low" },
+        { "city": "Malmö", "accessibleSpots": 0, "wheelmapCoverage": "low" }
+      ],
+      "accommodation": {
+        "score": 5,
+        "notes": "Accessible design embedded in building code; nearly all modern hotels compliant.",
+        "notesTr": "Erişilebilir tasarım yapı yönetmeliğine entegredir; neredeyse tüm modern oteller uyumludur."
+      },
+      "attractions": {
+        "score": 5,
+        "notes": "Vasa Museum, ABBA Museum, Skansen all fully accessible.",
+        "notesTr": "Vasa Müzesi, ABBA Müzesi, Skansen tamamen erişilebilirdir."
+      },
+      "disabilityCard": {
+        "euDisabilityCardAccepted": true,
+        "nationalCard": "Parkeringstillstånd / funktionsnedsättningsintyg",
+        "typicalDiscount": "Free companion travel on SJ with Ledsagarkort"
+      },
+      "lastUpdated": "2026-04"
+    },
+    {
+      "id": "TR",
+      "overallScore": 2,
+      "publicTransport": {
+        "score": 2,
+        "status": "partially-accessible",
+        "notes": "Istanbul metro and Marmaray mostly step-free; buses and historic tram less so. TCDD offers a dedicated assistance service at major stations.",
+        "notesTr": "İstanbul metrosu ve Marmaray çoğunlukla basamaksızdır; otobüsler ve tarihi tramvay daha az erişilebilirdir. TCDD büyük istasyonlarda özel bir yardım servisi sunar."
+      },
+      "trainStations": {
+        "score": 2,
+        "barrierFreePercent": 35,
+        "assistanceBooking": {
+          "available": true,
+          "url": "https://www.tcddtasimacilik.gov.tr/engelsiz-seyahat/",
+          "phone": "+90 444 8 233",
+          "leadTimeHours": 48
+        }
+      },
+      "topCities": [
+        { "city": "Istanbul", "accessibleSpots": 0, "wheelmapCoverage": "low" },
+        { "city": "Ankara", "accessibleSpots": 0, "wheelmapCoverage": "low" },
+        { "city": "Izmir", "accessibleSpots": 0, "wheelmapCoverage": "low" }
+      ],
+      "accommodation": {
+        "score": 3,
+        "notes": "Large international chains in Istanbul and resort areas offer accessible rooms; family-run pensions typically do not.",
+        "notesTr": "İstanbul ve tatil bölgelerindeki büyük uluslararası zincirler erişilebilir oda sunar; aile işletmesi pansiyonlar genellikle sunmaz."
+      },
+      "attractions": {
+        "score": 2,
+        "notes": "Hagia Sophia and Topkapı have partial accessible routes; many Byzantine and Ottoman monuments remain difficult to access.",
+        "notesTr": "Ayasofya ve Topkapı'da kısmi erişilebilir güzergâhlar vardır; birçok Bizans ve Osmanlı anıtına erişim zordur."
+      },
+      "disabilityCard": {
+        "euDisabilityCardAccepted": false,
+        "nationalCard": "Engelli Kimlik Kartı",
+        "typicalDiscount": "Free urban public transport, free or 50% TCDD tickets, free entry to state museums"
+      },
+      "lastUpdated": "2026-04"
+    },
+    {
+      "id": "DK",
+      "overallScore": 5,
+      "publicTransport": {
+        "score": 5,
+        "status": "fully-accessible",
+        "notes": "Copenhagen metro fully automated and step-free; DSB trains accessible with Handicapservice.",
+        "notesTr": "Kopenhag metrosu tamamen otomatik ve basamaksız; DSB trenleri Handicapservice ile erişilebilir."
+      },
+      "trainStations": {
+        "score": 5,
+        "barrierFreePercent": 90,
+        "assistanceBooking": {
+          "available": true,
+          "url": "https://www.dsb.dk/en/customer-service/accessibility/",
+          "phone": "+45 70 13 14 16",
+          "leadTimeHours": 12
+        }
+      },
+      "topCities": [
+        { "city": "Copenhagen", "accessibleSpots": 0, "wheelmapCoverage": "low" },
+        { "city": "Aarhus", "accessibleSpots": 0, "wheelmapCoverage": "low" },
+        { "city": "Odense", "accessibleSpots": 0, "wheelmapCoverage": "low" }
+      ],
+      "accommodation": {
+        "score": 5,
+        "notes": "God Adgang (Good Access) label identifies certified accessible venues.",
+        "notesTr": "God Adgang (İyi Erişim) etiketi sertifikalı erişilebilir mekânları belirtir."
+      },
+      "attractions": {
+        "score": 5,
+        "notes": "Tivoli, National Museum and Louisiana fully accessible.",
+        "notesTr": "Tivoli, Ulusal Müze ve Louisiana tamamen erişilebilirdir."
+      },
+      "disabilityCard": {
+        "euDisabilityCardAccepted": true,
+        "nationalCard": "Ledsagerkort",
+        "typicalDiscount": "Free companion travel on DSB"
+      },
+      "lastUpdated": "2026-04"
+    },
+    {
+      "id": "FI",
+      "overallScore": 5,
+      "publicTransport": {
+        "score": 5,
+        "status": "fully-accessible",
+        "notes": "Helsinki metro, trams and buses fully low-floor; VR long-distance trains have accessible carriages and assistance service.",
+        "notesTr": "Helsinki metrosu, tramvayları ve otobüsleri tamamen alçak tabanlıdır; VR uzun yol trenlerinde erişilebilir vagonlar ve yardım servisi vardır."
+      },
+      "trainStations": {
+        "score": 5,
+        "barrierFreePercent": 85,
+        "assistanceBooking": {
+          "available": true,
+          "url": "https://www.vr.fi/en/travel-info/accessibility",
+          "phone": "+358 600 41 902",
+          "leadTimeHours": 36
+        }
+      },
+      "topCities": [
+        { "city": "Helsinki", "accessibleSpots": 0, "wheelmapCoverage": "low" },
+        { "city": "Espoo", "accessibleSpots": 0, "wheelmapCoverage": "low" },
+        { "city": "Tampere", "accessibleSpots": 0, "wheelmapCoverage": "low" }
+      ],
+      "accommodation": {
+        "score": 5,
+        "notes": "Strict building code; nearly all modern hotels accessible.",
+        "notesTr": "Katı yapı yönetmeliği; neredeyse tüm modern oteller erişilebilirdir."
+      },
+      "attractions": {
+        "score": 5,
+        "notes": "Kiasma, Ateneum and Suomenlinna (partially) accessible.",
+        "notesTr": "Kiasma, Ateneum ve Suomenlinna (kısmen) erişilebilirdir."
+      },
+      "disabilityCard": {
+        "euDisabilityCardAccepted": true,
+        "nationalCard": "Vammaiskortti",
+        "typicalDiscount": "Free companion on VR and many attractions"
+      },
+      "lastUpdated": "2026-04"
+    },
+    {
+      "id": "IE",
+      "overallScore": 4,
+      "publicTransport": {
+        "score": 3,
+        "status": "mostly-accessible",
+        "notes": "Dublin Luas and DART accessible; Irish Rail provides assistance with advance notice at staffed stations.",
+        "notesTr": "Dublin Luas ve DART erişilebilirdir; Irish Rail personelli istasyonlarda önceden bildirimle yardım sağlar."
+      },
+      "trainStations": {
+        "score": 4,
+        "barrierFreePercent": 70,
+        "assistanceBooking": {
+          "available": true,
+          "url": "https://www.irishrail.ie/en-ie/travel-information/accessibility",
+          "phone": "+353 1 703 2634",
+          "leadTimeHours": 24
+        }
+      },
+      "topCities": [
+        { "city": "Dublin", "accessibleSpots": 0, "wheelmapCoverage": "low" },
+        { "city": "Cork", "accessibleSpots": 0, "wheelmapCoverage": "low" },
+        { "city": "Galway", "accessibleSpots": 0, "wheelmapCoverage": "low" }
+      ],
+      "accommodation": {
+        "score": 4,
+        "notes": "Fáilte Ireland's accessible tourism programme rates hotels and B&Bs.",
+        "notesTr": "Fáilte Ireland'ın erişilebilir turizm programı otelleri ve B&B'leri derecelendirir."
+      },
+      "attractions": {
+        "score": 4,
+        "notes": "Guinness Storehouse, National Museum and Trinity Library accessible.",
+        "notesTr": "Guinness Storehouse, Ulusal Müze ve Trinity Kütüphanesi erişilebilirdir."
+      },
+      "disabilityCard": {
+        "euDisabilityCardAccepted": true,
+        "nationalCard": "Disabled Person's Travel Pass",
+        "typicalDiscount": "Free travel on all public transport"
+      },
+      "lastUpdated": "2026-04"
+    },
+    {
+      "id": "LU",
+      "overallScore": 5,
+      "publicTransport": {
+        "score": 5,
+        "status": "fully-accessible",
+        "notes": "All public transport in Luxembourg is free and largely accessible; CFL trains and stations well equipped.",
+        "notesTr": "Lüksemburg'daki tüm toplu taşıma ücretsizdir ve büyük ölçüde erişilebilirdir; CFL trenleri ve istasyonları iyi donanımlıdır."
+      },
+      "trainStations": {
+        "score": 5,
+        "barrierFreePercent": 85,
+        "assistanceBooking": {
+          "available": true,
+          "url": "https://www.cfl.lu/en/travellers/accessibility",
+          "phone": "+352 2489 2489",
+          "leadTimeHours": 24
+        }
+      },
+      "topCities": [
+        { "city": "Luxembourg City", "accessibleSpots": 0, "wheelmapCoverage": "low" },
+        { "city": "Esch-sur-Alzette", "accessibleSpots": 0, "wheelmapCoverage": "low" },
+        { "city": "Differdange", "accessibleSpots": 0, "wheelmapCoverage": "low" }
+      ],
+      "accommodation": {
+        "score": 4,
+        "notes": "Modern hotels accessible; older hotels in Grund district vary.",
+        "notesTr": "Modern oteller erişilebilirdir; Grund bölgesindeki eski oteller değişkendir."
+      },
+      "attractions": {
+        "score": 4,
+        "notes": "MUDAM, Philharmonie and Casemates (partial) accessible.",
+        "notesTr": "MUDAM, Philharmonie ve Casemates (kısmen) erişilebilirdir."
+      },
+      "disabilityCard": {
+        "euDisabilityCardAccepted": true,
+        "nationalCard": "Carte d'invalidité",
+        "typicalDiscount": "Free public transport nationwide (applies to all residents and visitors)"
+      },
+      "lastUpdated": "2026-04"
+    },
+    {
+      "id": "MT",
+      "overallScore": 3,
+      "publicTransport": {
+        "score": 3,
+        "status": "partially-accessible",
+        "notes": "Malta Public Transport bus fleet largely low-floor; no rail network. Historic Valletta steep and stepped.",
+        "notesTr": "Malta Toplu Taşıma otobüs filosunun çoğu alçak tabanlıdır; demiryolu ağı yoktur. Tarihi Valletta dik ve basamaklıdır."
+      },
+      "trainStations": {
+        "score": 1,
+        "barrierFreePercent": 0,
+        "assistanceBooking": {
+          "available": false,
+          "url": "",
+          "phone": "",
+          "leadTimeHours": 0
+        }
+      },
+      "topCities": [
+        { "city": "Valletta", "accessibleSpots": 0, "wheelmapCoverage": "low" },
+        { "city": "Sliema", "accessibleSpots": 0, "wheelmapCoverage": "low" },
+        { "city": "Birkirkara", "accessibleSpots": 0, "wheelmapCoverage": "low" }
+      ],
+      "accommodation": {
+        "score": 3,
+        "notes": "Resort hotels on Sliema/St Julian's coast accessible; historic Valletta townhouses rarely so.",
+        "notesTr": "Sliema/St Julian's kıyısındaki tatil otelleri erişilebilirdir; tarihi Valletta konakları nadiren erişilebilirdir."
+      },
+      "attractions": {
+        "score": 3,
+        "notes": "St John's Co-Cathedral has a lift; Mdina and Hypogeum challenging.",
+        "notesTr": "St John's Ortak Katedrali'nde bir asansör vardır; Mdina ve Hypogeum zordur."
+      },
+      "disabilityCard": {
+        "euDisabilityCardAccepted": true,
+        "nationalCard": "Special ID Card (CRPD)",
+        "typicalDiscount": "Free public transport with Tallinja card for disabled residents"
+      },
+      "lastUpdated": "2026-04"
+    },
+    {
+      "id": "CY",
+      "overallScore": 4,
+      "publicTransport": {
+        "score": 3,
+        "status": "partially-accessible",
+        "notes": "Cyprus has no railway; intercity and urban buses are largely low-floor. Nicosia and Limassol have accessible pavements on main avenues.",
+        "notesTr": "Kıbrıs'ta demiryolu yoktur; şehirler arası ve şehir içi otobüslerin çoğu alçak tabanlıdır. Lefkoşa ve Limasol ana caddelerinde erişilebilir kaldırımlara sahiptir."
+      },
+      "trainStations": {
+        "score": 1,
+        "barrierFreePercent": 0,
+        "assistanceBooking": {
+          "available": false,
+          "url": "",
+          "phone": "",
+          "leadTimeHours": 0
+        }
+      },
+      "topCities": [
+        { "city": "Nicosia", "accessibleSpots": 0, "wheelmapCoverage": "low" },
+        { "city": "Limassol", "accessibleSpots": 0, "wheelmapCoverage": "low" },
+        { "city": "Larnaca", "accessibleSpots": 0, "wheelmapCoverage": "low" }
+      ],
+      "accommodation": {
+        "score": 4,
+        "notes": "Large resort hotels in Paphos and Limassol accessible; village agrotourism rarely so.",
+        "notesTr": "Paphos ve Limasol'daki büyük tatil otelleri erişilebilirdir; köy agroturizmi nadiren erişilebilirdir."
+      },
+      "attractions": {
+        "score": 3,
+        "notes": "Kourion and Paphos archaeological parks have partial accessible routes.",
+        "notesTr": "Kourion ve Paphos arkeolojik parklarında kısmi erişilebilir güzergâhlar vardır."
+      },
+      "disabilityCard": {
+        "euDisabilityCardAccepted": true,
+        "nationalCard": "Κάρτα Αναπηρίας",
+        "typicalDiscount": "Free entry to state museums and archaeological sites"
+      },
+      "lastUpdated": "2026-04"
+    },
+    {
+      "id": "HR",
+      "overallScore": 3,
+      "publicTransport": {
+        "score": 3,
+        "status": "partially-accessible",
+        "notes": "Zagreb trams partially low-floor; HŽPP trains offer assistance at major stations. Dubrovnik and Split historic cores very challenging.",
+        "notesTr": "Zagreb tramvayları kısmen alçak tabanlıdır; HŽPP trenleri büyük istasyonlarda yardım sunar. Dubrovnik ve Split tarihi merkezleri çok zordur."
+      },
+      "trainStations": {
+        "score": 3,
+        "barrierFreePercent": 45,
+        "assistanceBooking": {
+          "available": true,
+          "url": "https://www.hzpp.hr/en/persons-with-disabilities",
+          "phone": "+385 1 3782 583",
+          "leadTimeHours": 48
+        }
+      },
+      "topCities": [
+        { "city": "Zagreb", "accessibleSpots": 0, "wheelmapCoverage": "low" },
+        { "city": "Split", "accessibleSpots": 0, "wheelmapCoverage": "low" },
+        { "city": "Rijeka", "accessibleSpots": 0, "wheelmapCoverage": "low" }
+      ],
+      "accommodation": {
+        "score": 3,
+        "notes": "Coastal resort hotels accessible; historic Old Town apartments usually not.",
+        "notesTr": "Kıyı tatil otelleri erişilebilirdir; tarihi Eski Şehir daireleri genellikle erişilebilir değildir."
+      },
+      "attractions": {
+        "score": 3,
+        "notes": "Plitvice Lakes has an accessible trail section; Diocletian's Palace partially accessible.",
+        "notesTr": "Plitvice Gölleri'nde erişilebilir bir patika bölümü vardır; Diocletian Sarayı kısmen erişilebilirdir."
+      },
+      "disabilityCard": {
+        "euDisabilityCardAccepted": true,
+        "nationalCard": "Znak pristupačnosti",
+        "typicalDiscount": "Reduced HŽPP fares, free companion travel"
+      },
+      "lastUpdated": "2026-04"
+    },
+    {
+      "id": "RO",
+      "overallScore": 3,
+      "publicTransport": {
+        "score": 2,
+        "status": "partially-accessible",
+        "notes": "Bucharest metro partially accessible; trams and old train stations largely not. CFR Călători offers assistance at 30 stations.",
+        "notesTr": "Bükreş metrosu kısmen erişilebilirdir; tramvaylar ve eski tren istasyonları büyük ölçüde erişilebilir değildir. CFR Călători 30 istasyonda yardım sunar."
+      },
+      "trainStations": {
+        "score": 2,
+        "barrierFreePercent": 30,
+        "assistanceBooking": {
+          "available": true,
+          "url": "https://www.cfrcalatori.ro/en/accessibility/",
+          "phone": "+40 21 9522",
+          "leadTimeHours": 48
+        }
+      },
+      "topCities": [
+        { "city": "Bucharest", "accessibleSpots": 0, "wheelmapCoverage": "low" },
+        { "city": "Cluj-Napoca", "accessibleSpots": 0, "wheelmapCoverage": "low" },
+        { "city": "Timișoara", "accessibleSpots": 0, "wheelmapCoverage": "low" }
+      ],
+      "accommodation": {
+        "score": 3,
+        "notes": "International chains accessible; many family-run pensiuni not.",
+        "notesTr": "Uluslararası zincirler erişilebilirdir; birçok aile işletmesi pensiune erişilebilir değildir."
+      },
+      "attractions": {
+        "score": 3,
+        "notes": "Palace of Parliament offers an accessible tour; Transfăgărășan and village museums challenging.",
+        "notesTr": "Parlamento Sarayı erişilebilir bir tur sunar; Transfăgărășan ve köy müzeleri zordur."
+      },
+      "disabilityCard": {
+        "euDisabilityCardAccepted": true,
+        "nationalCard": "Certificat de încadrare în grad de handicap",
+        "typicalDiscount": "Free CFR intercity travel (12 trips/year), free urban transport"
+      },
+      "lastUpdated": "2026-04"
+    },
+    {
+      "id": "BG",
+      "overallScore": 3,
+      "publicTransport": {
+        "score": 2,
+        "status": "partially-accessible",
+        "notes": "Sofia metro fully accessible; trams and trolleybuses less so. BDZ trains offer limited wheelchair spaces.",
+        "notesTr": "Sofya metrosu tamamen erişilebilirdir; tramvay ve troleybüsler daha az erişilebilirdir. BDZ trenleri sınırlı tekerlekli sandalye alanı sunar."
+      },
+      "trainStations": {
+        "score": 2,
+        "barrierFreePercent": 25,
+        "assistanceBooking": {
+          "available": true,
+          "url": "https://www.bdz.bg/en",
+          "phone": "+359 2 932 4220",
+          "leadTimeHours": 48
+        }
+      },
+      "topCities": [
+        { "city": "Sofia", "accessibleSpots": 0, "wheelmapCoverage": "low" },
+        { "city": "Plovdiv", "accessibleSpots": 0, "wheelmapCoverage": "low" },
+        { "city": "Varna", "accessibleSpots": 0, "wheelmapCoverage": "low" }
+      ],
+      "accommodation": {
+        "score": 3,
+        "notes": "Black Sea resort chains accessible; historic Plovdiv and Veliko Tarnovo properties rarely so.",
+        "notesTr": "Karadeniz tatil zincirleri erişilebilirdir; tarihi Plovdiv ve Veliko Tarnovo tesisleri nadiren erişilebilirdir."
+      },
+      "attractions": {
+        "score": 3,
+        "notes": "Rila Monastery partially accessible; Plovdiv amphitheatre has an accessible viewpoint.",
+        "notesTr": "Rila Manastırı kısmen erişilebilirdir; Plovdiv amfitiyatrosunda erişilebilir bir seyir noktası vardır."
+      },
+      "disabilityCard": {
+        "euDisabilityCardAccepted": true,
+        "nationalCard": "ТЕЛК решение",
+        "typicalDiscount": "Reduced BDZ fares, free urban transport in Sofia"
+      },
+      "lastUpdated": "2026-04"
+    },
+    {
+      "id": "SK",
+      "overallScore": 3,
+      "publicTransport": {
+        "score": 3,
+        "status": "partially-accessible",
+        "notes": "Bratislava trams increasingly low-floor; ZSSK trains offer assistance at 40+ stations.",
+        "notesTr": "Bratislava tramvayları giderek alçak tabanlı hale geliyor; ZSSK trenleri 40'tan fazla istasyonda yardım sunar."
+      },
+      "trainStations": {
+        "score": 3,
+        "barrierFreePercent": 45,
+        "assistanceBooking": {
+          "available": true,
+          "url": "https://www.zssk.sk/en/passengers-with-limited-mobility/",
+          "phone": "+421 18 188",
+          "leadTimeHours": 48
+        }
+      },
+      "topCities": [
+        { "city": "Bratislava", "accessibleSpots": 0, "wheelmapCoverage": "low" },
+        { "city": "Košice", "accessibleSpots": 0, "wheelmapCoverage": "low" },
+        { "city": "Prešov", "accessibleSpots": 0, "wheelmapCoverage": "low" }
+      ],
+      "accommodation": {
+        "score": 3,
+        "notes": "Modern hotels in Bratislava accessible; High Tatras mountain huts not.",
+        "notesTr": "Bratislava'daki modern oteller erişilebilirdir; Yüksek Tatras dağ barınakları erişilebilir değildir."
+      },
+      "attractions": {
+        "score": 3,
+        "notes": "Bratislava Castle and Slovak National Gallery accessible.",
+        "notesTr": "Bratislava Kalesi ve Slovak Ulusal Galerisi erişilebilirdir."
+      },
+      "disabilityCard": {
+        "euDisabilityCardAccepted": true,
+        "nationalCard": "Preukaz ZŤP",
+        "typicalDiscount": "Free ZSSK second-class travel, free urban transport"
+      },
+      "lastUpdated": "2026-04"
+    },
+    {
+      "id": "SI",
+      "overallScore": 4,
+      "publicTransport": {
+        "score": 4,
+        "status": "mostly-accessible",
+        "notes": "Ljubljana buses fully low-floor; SŽ trains offer assistance at main stations.",
+        "notesTr": "Ljubljana otobüsleri tamamen alçak tabanlıdır; SŽ trenleri ana istasyonlarda yardım sunar."
+      },
+      "trainStations": {
+        "score": 4,
+        "barrierFreePercent": 65,
+        "assistanceBooking": {
+          "available": true,
+          "url": "https://potniski.sz.si/en/accessibility/",
+          "phone": "+386 1 29 13 332",
+          "leadTimeHours": 48
+        }
+      },
+      "topCities": [
+        { "city": "Ljubljana", "accessibleSpots": 0, "wheelmapCoverage": "low" },
+        { "city": "Maribor", "accessibleSpots": 0, "wheelmapCoverage": "low" },
+        { "city": "Celje", "accessibleSpots": 0, "wheelmapCoverage": "low" }
+      ],
+      "accommodation": {
+        "score": 4,
+        "notes": "Slovenia Green scheme increasingly includes accessibility criteria; Ljubljana hotels mostly compliant.",
+        "notesTr": "Slovenia Green programı giderek erişilebilirlik kriterlerini içeriyor; Ljubljana otelleri çoğunlukla uyumludur."
+      },
+      "attractions": {
+        "score": 4,
+        "notes": "Lake Bled and Ljubljana Castle (via funicular) accessible; Postojna Cave has an accessible section.",
+        "notesTr": "Bled Gölü ve Ljubljana Kalesi (füniküler ile) erişilebilirdir; Postojna Mağarası'nda erişilebilir bir bölüm vardır."
+      },
+      "disabilityCard": {
+        "euDisabilityCardAccepted": true,
+        "nationalCard": "Evropska kartica ugodnosti za invalide",
+        "typicalDiscount": "Reduced SŽ fares, free museum entry"
+      },
+      "lastUpdated": "2026-04"
+    },
+    {
+      "id": "EE",
+      "overallScore": 4,
+      "publicTransport": {
+        "score": 4,
+        "status": "mostly-accessible",
+        "notes": "Tallinn public transport free for residents and largely accessible; Elron trains modern and accessible.",
+        "notesTr": "Tallinn toplu taşıması sakinler için ücretsizdir ve büyük ölçüde erişilebilirdir; Elron trenleri modern ve erişilebilirdir."
+      },
+      "trainStations": {
+        "score": 4,
+        "barrierFreePercent": 75,
+        "assistanceBooking": {
+          "available": true,
+          "url": "https://elron.ee/en/accessibility/",
+          "phone": "+372 615 8851",
+          "leadTimeHours": 24
+        }
+      },
+      "topCities": [
+        { "city": "Tallinn", "accessibleSpots": 0, "wheelmapCoverage": "low" },
+        { "city": "Tartu", "accessibleSpots": 0, "wheelmapCoverage": "low" },
+        { "city": "Narva", "accessibleSpots": 0, "wheelmapCoverage": "low" }
+      ],
+      "accommodation": {
+        "score": 4,
+        "notes": "Modern hotels in Tallinn and Tartu accessible; medieval Old Town guesthouses variable.",
+        "notesTr": "Tallinn ve Tartu'daki modern oteller erişilebilirdir; ortaçağ Eski Şehir misafirhaneleri değişkendir."
+      },
+      "attractions": {
+        "score": 4,
+        "notes": "KUMU Art Museum and Seaplane Harbour fully accessible.",
+        "notesTr": "KUMU Sanat Müzesi ve Uçak Limanı tamamen erişilebilirdir."
+      },
+      "disabilityCard": {
+        "euDisabilityCardAccepted": true,
+        "nationalCard": "Puudega isiku kaart",
+        "typicalDiscount": "Reduced Elron fares, discounted museum entry"
+      },
+      "lastUpdated": "2026-04"
+    },
+    {
+      "id": "LV",
+      "overallScore": 3,
+      "publicTransport": {
+        "score": 3,
+        "status": "partially-accessible",
+        "notes": "Riga trolleybuses and buses largely low-floor; PV electric trains partially accessible. Old Town cobblestones challenging.",
+        "notesTr": "Riga troleybüs ve otobüslerinin çoğu alçak tabanlıdır; PV elektrikli trenleri kısmen erişilebilirdir. Eski Şehir'in arnavut kaldırımları zordur."
+      },
+      "trainStations": {
+        "score": 3,
+        "barrierFreePercent": 40,
+        "assistanceBooking": {
+          "available": true,
+          "url": "https://www.pv.lv/en/",
+          "phone": "+371 80007777",
+          "leadTimeHours": 48
+        }
+      },
+      "topCities": [
+        { "city": "Riga", "accessibleSpots": 0, "wheelmapCoverage": "low" },
+        { "city": "Daugavpils", "accessibleSpots": 0, "wheelmapCoverage": "low" },
+        { "city": "Liepāja", "accessibleSpots": 0, "wheelmapCoverage": "low" }
+      ],
+      "accommodation": {
+        "score": 3,
+        "notes": "Modern Riga hotels accessible; Jugendstil and medieval properties often without lifts.",
+        "notesTr": "Modern Riga otelleri erişilebilirdir; Jugendstil ve ortaçağ tesisleri çoğunlukla asansörsüzdür."
+      },
+      "attractions": {
+        "score": 3,
+        "notes": "Latvian National Museum of Art accessible; Riga Old Town streets difficult.",
+        "notesTr": "Letonya Ulusal Sanat Müzesi erişilebilirdir; Riga Eski Şehir sokakları zordur."
+      },
+      "disabilityCard": {
+        "euDisabilityCardAccepted": true,
+        "nationalCard": "Invaliditātes apliecība",
+        "typicalDiscount": "Free urban transport in Riga, reduced PV fares"
+      },
+      "lastUpdated": "2026-04"
+    },
+    {
+      "id": "LT",
+      "overallScore": 3,
+      "publicTransport": {
+        "score": 3,
+        "status": "partially-accessible",
+        "notes": "Vilnius buses largely low-floor; LTG Link trains accessible with onboard lift on main routes.",
+        "notesTr": "Vilnius otobüslerinin çoğu alçak tabanlıdır; LTG Link trenleri ana hatlarda lift ile erişilebilirdir."
+      },
+      "trainStations": {
+        "score": 3,
+        "barrierFreePercent": 50,
+        "assistanceBooking": {
+          "available": true,
+          "url": "https://ltglink.lt/en/accessible-travel",
+          "phone": "+370 700 55 111",
+          "leadTimeHours": 48
+        }
+      },
+      "topCities": [
+        { "city": "Vilnius", "accessibleSpots": 0, "wheelmapCoverage": "low" },
+        { "city": "Kaunas", "accessibleSpots": 0, "wheelmapCoverage": "low" },
+        { "city": "Klaipėda", "accessibleSpots": 0, "wheelmapCoverage": "low" }
+      ],
+      "accommodation": {
+        "score": 3,
+        "notes": "Modern Vilnius hotels accessible; historic Old Town and Trakai variable.",
+        "notesTr": "Modern Vilnius otelleri erişilebilirdir; tarihi Eski Şehir ve Trakai değişkendir."
+      },
+      "attractions": {
+        "score": 3,
+        "notes": "MO Museum fully accessible; Vilnius Cathedral and Gediminas Tower partially.",
+        "notesTr": "MO Müzesi tamamen erişilebilirdir; Vilnius Katedrali ve Gediminas Kulesi kısmen erişilebilirdir."
+      },
+      "disabilityCard": {
+        "euDisabilityCardAccepted": true,
+        "nationalCard": "Neįgaliojo pažymėjimas",
+        "typicalDiscount": "Free urban transport in Vilnius, 80% LTG Link discount"
+      },
+      "lastUpdated": "2026-04"
+    },
+    {
+      "id": "IS",
+      "overallScore": 4,
+      "publicTransport": {
+        "score": 4,
+        "status": "mostly-accessible",
+        "notes": "Reykjavík Strætó buses fully low-floor; no rail network. Flybus airport transfer accessible.",
+        "notesTr": "Reykjavík Strætó otobüsleri tamamen alçak tabanlıdır; demiryolu ağı yoktur. Flybus havaalanı transferi erişilebilirdir."
+      },
+      "trainStations": {
+        "score": 1,
+        "barrierFreePercent": 0,
+        "assistanceBooking": {
+          "available": false,
+          "url": "",
+          "phone": "",
+          "leadTimeHours": 0
+        }
+      },
+      "topCities": [
+        { "city": "Reykjavík", "accessibleSpots": 0, "wheelmapCoverage": "low" },
+        { "city": "Kópavogur", "accessibleSpots": 0, "wheelmapCoverage": "low" },
+        { "city": "Akureyri", "accessibleSpots": 0, "wheelmapCoverage": "low" }
+      ],
+      "accommodation": {
+        "score": 4,
+        "notes": "Most Reykjavík hotels accessible; rural guesthouses variable.",
+        "notesTr": "Reykjavík otellerinin çoğu erişilebilirdir; kırsal misafirhaneler değişkendir."
+      },
+      "attractions": {
+        "score": 4,
+        "notes": "Blue Lagoon fully accessible with wheelchair ramps into water; Golden Circle sites have accessible viewpoints.",
+        "notesTr": "Mavi Lagün suya tekerlekli sandalye rampalarıyla tamamen erişilebilirdir; Golden Circle alanlarında erişilebilir seyir noktaları vardır."
+      },
+      "disabilityCard": {
+        "euDisabilityCardAccepted": false,
+        "nationalCard": "Örorkuskírteini",
+        "typicalDiscount": "Reduced fares on Strætó and many tourist attractions"
+      },
+      "lastUpdated": "2026-04"
+    },
+    {
+      "id": "LI",
+      "overallScore": 5,
+      "publicTransport": {
+        "score": 5,
+        "status": "fully-accessible",
+        "notes": "Liechtenstein Bus (LBA) fleet fully low-floor and free for disabled travellers; connects to Swiss rail via Sargans/Buchs.",
+        "notesTr": "Liechtenstein Bus (LBA) filosu tamamen alçak tabanlıdır ve engelli yolcular için ücretsizdir; Sargans/Buchs üzerinden İsviçre demiryoluna bağlanır."
+      },
+      "trainStations": {
+        "score": 3,
+        "barrierFreePercent": 60,
+        "assistanceBooking": {
+          "available": true,
+          "url": "https://www.sbb.ch/en/travel-information/travelling-barrier-free.html",
+          "phone": "+41 800 007 102",
+          "leadTimeHours": 1
+        }
+      },
+      "topCities": [
+        { "city": "Vaduz", "accessibleSpots": 0, "wheelmapCoverage": "low" },
+        { "city": "Schaan", "accessibleSpots": 0, "wheelmapCoverage": "low" },
+        { "city": "Triesen", "accessibleSpots": 0, "wheelmapCoverage": "low" }
+      ],
+      "accommodation": {
+        "score": 4,
+        "notes": "Modern Vaduz hotels accessible.",
+        "notesTr": "Modern Vaduz otelleri erişilebilirdir."
+      },
+      "attractions": {
+        "score": 4,
+        "notes": "Kunstmuseum Liechtenstein and Landesmuseum fully accessible.",
+        "notesTr": "Kunstmuseum Liechtenstein ve Landesmuseum tamamen erişilebilirdir."
+      },
+      "disabilityCard": {
+        "euDisabilityCardAccepted": false,
+        "nationalCard": "Ausweis für Personen mit Behinderung",
+        "typicalDiscount": "Free LBA bus travel with disability ID"
+      },
+      "lastUpdated": "2026-04"
+    },
+    {
+      "id": "NO",
+      "overallScore": 5,
+      "publicTransport": {
+        "score": 5,
+        "status": "fully-accessible",
+        "notes": "Oslo T-bane, trams and buses fully accessible; Vy trains and stations largely barrier-free with nationwide assistance service.",
+        "notesTr": "Oslo T-bane, tramvayları ve otobüsleri tamamen erişilebilirdir; Vy trenleri ve istasyonları büyük ölçüde engelsizdir ve ülke çapında yardım servisi vardır."
+      },
+      "trainStations": {
+        "score": 5,
+        "barrierFreePercent": 85,
+        "assistanceBooking": {
+          "available": true,
+          "url": "https://www.vy.no/en/customer-service/on-the-trip/accessibility-and-service-on-the-train",
+          "phone": "+47 61 05 19 10",
+          "leadTimeHours": 24
+        }
+      },
+      "topCities": [
+        { "city": "Oslo", "accessibleSpots": 0, "wheelmapCoverage": "low" },
+        { "city": "Bergen", "accessibleSpots": 0, "wheelmapCoverage": "low" },
+        { "city": "Trondheim", "accessibleSpots": 0, "wheelmapCoverage": "low" }
+      ],
+      "accommodation": {
+        "score": 5,
+        "notes": "Strict Universal Design building regulations; most modern hotels accessible.",
+        "notesTr": "Katı Evrensel Tasarım yapı yönetmelikleri; çoğu modern otel erişilebilirdir."
+      },
+      "attractions": {
+        "score": 4,
+        "notes": "Munch Museum, Fram Museum, Viking Ship Museum all fully accessible.",
+        "notesTr": "Munch Müzesi, Fram Müzesi, Viking Gemisi Müzesi tamamen erişilebilirdir."
+      },
+      "disabilityCard": {
+        "euDisabilityCardAccepted": false,
+        "nationalCard": "Ledsagerbevis",
+        "typicalDiscount": "Free companion on Vy trains and most attractions"
+      },
+      "lastUpdated": "2026-04"
+    },
+    {
+      "id": "AL",
+      "overallScore": 2,
+      "publicTransport": {
+        "score": 1,
+        "status": "limited-accessibility",
+        "notes": "Tirana buses partially low-floor; intercity transport mostly furgons (minibuses) without accessibility features. Rail network minimal and not accessible.",
+        "notesTr": "Tiran otobüsleri kısmen alçak tabanlıdır; şehirler arası ulaşım çoğunlukla erişilebilirlik özellikleri olmayan furgonlardır (minibüs). Demiryolu ağı minimal ve erişilebilir değildir."
+      },
+      "trainStations": {
+        "score": 1,
+        "barrierFreePercent": 10,
+        "assistanceBooking": {
+          "available": false,
+          "url": "",
+          "phone": "",
+          "leadTimeHours": 0
+        }
+      },
+      "topCities": [
+        { "city": "Tirana", "accessibleSpots": 0, "wheelmapCoverage": "low" },
+        { "city": "Durrës", "accessibleSpots": 0, "wheelmapCoverage": "low" },
+        { "city": "Vlorë", "accessibleSpots": 0, "wheelmapCoverage": "low" }
+      ],
+      "accommodation": {
+        "score": 2,
+        "notes": "International chains in Tirana accessible; coastal and mountain guesthouses rarely so.",
+        "notesTr": "Tiran'daki uluslararası zincirler erişilebilirdir; kıyı ve dağ misafirhaneleri nadiren erişilebilirdir."
+      },
+      "attractions": {
+        "score": 2,
+        "notes": "Bunk'Art museums and Skanderbeg Square accessible; Berat and Gjirokastër Ottoman quarters very difficult.",
+        "notesTr": "Bunk'Art müzeleri ve Skanderbeg Meydanı erişilebilirdir; Berat ve Gjirokastër Osmanlı mahalleleri çok zordur."
+      },
+      "disabilityCard": {
+        "euDisabilityCardAccepted": false,
+        "nationalCard": "Libreza e personit me aftësi të kufizuara",
+        "typicalDiscount": "Reduced fares and free entry to some state sites"
+      },
+      "lastUpdated": "2026-04"
+    },
+    {
+      "id": "BA",
+      "overallScore": 2,
+      "publicTransport": {
+        "score": 2,
+        "status": "limited-accessibility",
+        "notes": "Sarajevo trams mostly old and stepped; newer buses low-floor. ŽFBH and ŽRS trains rarely accessible.",
+        "notesTr": "Saraybosna tramvayları çoğunlukla eski ve basamaklıdır; yeni otobüsler alçak tabanlıdır. ŽFBH ve ŽRS trenleri nadiren erişilebilirdir."
+      },
+      "trainStations": {
+        "score": 2,
+        "barrierFreePercent": 15,
+        "assistanceBooking": {
+          "available": false,
+          "url": "",
+          "phone": "",
+          "leadTimeHours": 0
+        }
+      },
+      "topCities": [
+        { "city": "Sarajevo", "accessibleSpots": 0, "wheelmapCoverage": "low" },
+        { "city": "Banja Luka", "accessibleSpots": 0, "wheelmapCoverage": "low" },
+        { "city": "Mostar", "accessibleSpots": 0, "wheelmapCoverage": "low" }
+      ],
+      "accommodation": {
+        "score": 2,
+        "notes": "Newer Sarajevo hotels accessible; Baščaršija and Mostar historic hotels usually not.",
+        "notesTr": "Yeni Saraybosna otelleri erişilebilirdir; Baščaršija ve Mostar tarihi otelleri genellikle erişilebilir değildir."
+      },
+      "attractions": {
+        "score": 2,
+        "notes": "Tunnel of Hope partially accessible; Mostar Old Bridge cobblestones difficult.",
+        "notesTr": "Umut Tüneli kısmen erişilebilirdir; Mostar Eski Köprüsü'nün arnavut kaldırımları zordur."
+      },
+      "disabilityCard": {
+        "euDisabilityCardAccepted": false,
+        "nationalCard": "Legitimacija za osobe sa invaliditetom",
+        "typicalDiscount": "Varies by entity; reduced rail and bus fares"
+      },
+      "lastUpdated": "2026-04"
+    },
+    {
+      "id": "MK",
+      "overallScore": 2,
+      "publicTransport": {
+        "score": 2,
+        "status": "limited-accessibility",
+        "notes": "Skopje buses partially low-floor (JSP fleet renewal ongoing); MŽ trains rarely accessible.",
+        "notesTr": "Üsküp otobüsleri kısmen alçak tabanlıdır (JSP filo yenilemesi devam ediyor); MŽ trenleri nadiren erişilebilirdir."
+      },
+      "trainStations": {
+        "score": 2,
+        "barrierFreePercent": 15,
+        "assistanceBooking": {
+          "available": false,
+          "url": "",
+          "phone": "",
+          "leadTimeHours": 0
+        }
+      },
+      "topCities": [
+        { "city": "Skopje", "accessibleSpots": 0, "wheelmapCoverage": "low" },
+        { "city": "Bitola", "accessibleSpots": 0, "wheelmapCoverage": "low" },
+        { "city": "Kumanovo", "accessibleSpots": 0, "wheelmapCoverage": "low" }
+      ],
+      "accommodation": {
+        "score": 2,
+        "notes": "Modern Skopje hotels accessible; Ohrid old town guesthouses usually not.",
+        "notesTr": "Modern Üsküp otelleri erişilebilirdir; Ohrid eski şehir misafirhaneleri genellikle erişilebilir değildir."
+      },
+      "attractions": {
+        "score": 2,
+        "notes": "Skopje city centre monuments mostly accessible; Matka Canyon and Ohrid churches challenging.",
+        "notesTr": "Üsküp şehir merkezi anıtları çoğunlukla erişilebilirdir; Matka Kanyonu ve Ohrid kiliseleri zordur."
+      },
+      "disabilityCard": {
+        "euDisabilityCardAccepted": false,
+        "nationalCard": "Легитимација за лице со попреченост",
+        "typicalDiscount": "Reduced MŽ and urban transport fares"
+      },
+      "lastUpdated": "2026-04"
+    },
+    {
+      "id": "RS",
+      "overallScore": 2,
+      "publicTransport": {
+        "score": 2,
+        "status": "limited-accessibility",
+        "notes": "Belgrade buses increasingly low-floor; trams and trolleybuses older. Soko high-speed train to Novi Sad accessible.",
+        "notesTr": "Belgrad otobüsleri giderek alçak tabanlı hale geliyor; tramvay ve troleybüsler daha eski. Novi Sad'a Soko hızlı treni erişilebilirdir."
+      },
+      "trainStations": {
+        "score": 2,
+        "barrierFreePercent": 25,
+        "assistanceBooking": {
+          "available": true,
+          "url": "https://www.srbvoz.rs/en/",
+          "phone": "+381 11 3602 899",
+          "leadTimeHours": 48
+        }
+      },
+      "topCities": [
+        { "city": "Belgrade", "accessibleSpots": 0, "wheelmapCoverage": "low" },
+        { "city": "Novi Sad", "accessibleSpots": 0, "wheelmapCoverage": "low" },
+        { "city": "Niš", "accessibleSpots": 0, "wheelmapCoverage": "low" }
+      ],
+      "accommodation": {
+        "score": 2,
+        "notes": "International chains in Belgrade accessible; Bohemian quarter Skadarlija and hostels rarely so.",
+        "notesTr": "Belgrad'daki uluslararası zincirler erişilebilirdir; Bohem mahallesi Skadarlija ve hosteller nadiren erişilebilirdir."
+      },
+      "attractions": {
+        "score": 2,
+        "notes": "Museum of Yugoslavia and Nikola Tesla Museum accessible; Kalemegdan fortress partial.",
+        "notesTr": "Yugoslavya Müzesi ve Nikola Tesla Müzesi erişilebilirdir; Kalemegdan kalesi kısmen erişilebilirdir."
+      },
+      "disabilityCard": {
+        "euDisabilityCardAccepted": false,
+        "nationalCard": "Legitimacija za osobe sa invaliditetom",
+        "typicalDiscount": "Free urban transport in Belgrade, reduced Srbija Voz fares"
+      },
+      "lastUpdated": "2026-04"
+    }
+  ]
+}
