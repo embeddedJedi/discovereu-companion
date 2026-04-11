@@ -65,6 +65,7 @@ async function boot() {
       import('./ui/route-builder.js').then(m => m.initRouteBuilder()),
       import('./ui/budget.js').then(m => m.initBudget()),
       import('./ui/compare.js').then(m => m.initCompare()),
+      import('./ui/inclusion.js').then(m => m.initInclusion()),
       import('./ui/prep.js').then(m => m.initPrep())
     ]);
 
