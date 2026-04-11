@@ -73,12 +73,14 @@ async function boot() {
     const map = initMap();
 
     if (map) {
-      const [{ initCountriesLayer }, { initLabelsLayer }] = await Promise.all([
+      const [{ initCountriesLayer }, { initLabelsLayer }, { initInclusionLayer }] = await Promise.all([
         import('./map/countries-layer.js'),
-        import('./map/labels.js')
+        import('./map/labels.js'),
+        import('./map/inclusion-layer.js')
       ]);
-      await initCountriesLayer(map);
+      const countriesLayer = await initCountriesLayer(map);
       await initLabelsLayer(map);
+      if (countriesLayer) await initInclusionLayer(countriesLayer);
       // Reveal the legend now that polygons are drawn
       const legend = qs('#mapLegend');
       if (legend) legend.hidden = false;
