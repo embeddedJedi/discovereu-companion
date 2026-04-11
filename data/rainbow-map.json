@@ -1,0 +1,2098 @@
+{
+  "version": 1,
+  "generated": "2026-04-11",
+  "source": "ILGA-Europe Rainbow Europe 2025 annual report",
+  "sourceUrl": "https://www.ilga-europe.org/report/rainbow-map-2025/",
+  "note": "Aggregate and category scores plus flat key-item flags. Refresh manually each May when ILGA publishes the new report.",
+  "rubricCategories": [
+    {
+      "id": "equality",
+      "weight": 25,
+      "label": "Equality & non-discrimination"
+    },
+    {
+      "id": "family",
+      "weight": 29,
+      "label": "Family"
+    },
+    {
+      "id": "hateCrime",
+      "weight": 19,
+      "label": "Hate crime & hate speech"
+    },
+    {
+      "id": "legalGenderRecog",
+      "weight": 13,
+      "label": "Legal gender recognition"
+    },
+    {
+      "id": "intersexIntegrity",
+      "weight": 3,
+      "label": "Intersex bodily integrity"
+    },
+    {
+      "id": "civilSociety",
+      "weight": 6,
+      "label": "Civil society space"
+    },
+    {
+      "id": "asylum",
+      "weight": 5,
+      "label": "Asylum"
+    }
+  ],
+  "countries": [
+    {
+      "id": "DE",
+      "ilgaRank": 7,
+      "overallScore": 69,
+      "trend": "up",
+      "categories": {
+        "equality": {
+          "score": 63,
+          "achievedItems": 15,
+          "totalItems": 25
+        },
+        "family": {
+          "score": 39,
+          "achievedItems": 4,
+          "totalItems": 11
+        },
+        "hateCrime": {
+          "score": 65,
+          "achievedItems": 6,
+          "totalItems": 9
+        },
+        "legalGenderRecog": {
+          "score": 89,
+          "achievedItems": 14,
+          "totalItems": 15
+        },
+        "intersexIntegrity": {
+          "score": 50,
+          "achievedItems": 1,
+          "totalItems": 4
+        },
+        "civilSociety": {
+          "score": 100,
+          "achievedItems": 6,
+          "totalItems": 6
+        },
+        "asylum": {
+          "score": 67,
+          "achievedItems": 4,
+          "totalItems": 6
+        }
+      },
+      "keyItems": {
+        "marriageEquality": true,
+        "jointAdoption": true,
+        "constitutionalBan": false,
+        "employmentProtectionSO": true,
+        "selfDeterminationGender": true,
+        "banOnIntersexSurgery": true,
+        "banOnConversionTherapySO": true,
+        "hateCrimeLawSO": true,
+        "hateCrimeLawGI": true
+      },
+      "highlight": "Self-Determination Act (SBGG) took effect November 2024, removing medical barriers to legal gender recognition.",
+      "highlightTr": "2024 Kasım ayında yürürlüğe giren Kendi Kaderini Tayin Yasası, yasal cinsiyet tanınmasının önündeki tıbbi engelleri kaldırdı.",
+      "lastUpdated": "2025-05"
+    },
+    {
+      "id": "FR",
+      "ilgaRank": 15,
+      "overallScore": 61,
+      "trend": "down",
+      "categories": {
+        "equality": {
+          "score": 64,
+          "achievedItems": 15,
+          "totalItems": 25
+        },
+        "family": {
+          "score": 69,
+          "achievedItems": 8,
+          "totalItems": 11
+        },
+        "hateCrime": {
+          "score": 46,
+          "achievedItems": 4,
+          "totalItems": 9
+        },
+        "legalGenderRecog": {
+          "score": 64,
+          "achievedItems": 10,
+          "totalItems": 15
+        },
+        "intersexIntegrity": {
+          "score": 0,
+          "achievedItems": 0,
+          "totalItems": 4
+        },
+        "civilSociety": {
+          "score": 100,
+          "achievedItems": 6,
+          "totalItems": 6
+        },
+        "asylum": {
+          "score": 50,
+          "achievedItems": 3,
+          "totalItems": 6
+        }
+      },
+      "keyItems": {
+        "marriageEquality": true,
+        "jointAdoption": true,
+        "constitutionalBan": false,
+        "employmentProtectionSO": true,
+        "selfDeterminationGender": false,
+        "banOnIntersexSurgery": false,
+        "banOnConversionTherapySO": true,
+        "hateCrimeLawSO": true,
+        "hateCrimeLawGI": true
+      },
+      "highlight": "Conversion practices ban remains in force; slipped one point amid stalled family-law reforms.",
+      "highlightTr": "Dönüştürme uygulamalarına getirilen yasak yürürlükte; aile hukuku reformlarının durmasıyla bir puan kaybetti.",
+      "lastUpdated": "2025-05"
+    },
+    {
+      "id": "IT",
+      "ilgaRank": 35,
+      "overallScore": 24,
+      "trend": "down",
+      "categories": {
+        "equality": {
+          "score": 9,
+          "achievedItems": 2,
+          "totalItems": 25
+        },
+        "family": {
+          "score": 17,
+          "achievedItems": 2,
+          "totalItems": 11
+        },
+        "hateCrime": {
+          "score": 0,
+          "achievedItems": 0,
+          "totalItems": 9
+        },
+        "legalGenderRecog": {
+          "score": 42,
+          "achievedItems": 7,
+          "totalItems": 15
+        },
+        "intersexIntegrity": {
+          "score": 0,
+          "achievedItems": 0,
+          "totalItems": 4
+        },
+        "civilSociety": {
+          "score": 100,
+          "achievedItems": 6,
+          "totalItems": 6
+        },
+        "asylum": {
+          "score": 33,
+          "achievedItems": 2,
+          "totalItems": 6
+        }
+      },
+      "keyItems": {
+        "marriageEquality": false,
+        "jointAdoption": false,
+        "constitutionalBan": true,
+        "employmentProtectionSO": true,
+        "selfDeterminationGender": false,
+        "banOnIntersexSurgery": false,
+        "banOnConversionTherapySO": false,
+        "hateCrimeLawSO": false,
+        "hateCrimeLawGI": false
+      },
+      "highlight": "No marriage equality or joint adoption; one of the lowest LGBTI legal protection scores in Western Europe.",
+      "highlightTr": "Evlilik eşitliği veya ortak evlat edinme yok; Batı Avrupa'daki en düşük LGBTİ+ yasal koruma skorlarından biri.",
+      "lastUpdated": "2025-05"
+    },
+    {
+      "id": "ES",
+      "ilgaRank": 5,
+      "overallScore": 78,
+      "trend": "up",
+      "categories": {
+        "equality": {
+          "score": 76,
+          "achievedItems": 16,
+          "totalItems": 25
+        },
+        "family": {
+          "score": 87,
+          "achievedItems": 9,
+          "totalItems": 11
+        },
+        "hateCrime": {
+          "score": 47,
+          "achievedItems": 4,
+          "totalItems": 9
+        },
+        "legalGenderRecog": {
+          "score": 77,
+          "achievedItems": 12,
+          "totalItems": 15
+        },
+        "intersexIntegrity": {
+          "score": 50,
+          "achievedItems": 1,
+          "totalItems": 4
+        },
+        "civilSociety": {
+          "score": 100,
+          "achievedItems": 6,
+          "totalItems": 6
+        },
+        "asylum": {
+          "score": 100,
+          "achievedItems": 6,
+          "totalItems": 6
+        }
+      },
+      "keyItems": {
+        "marriageEquality": true,
+        "jointAdoption": true,
+        "constitutionalBan": false,
+        "employmentProtectionSO": true,
+        "selfDeterminationGender": true,
+        "banOnIntersexSurgery": true,
+        "banOnConversionTherapySO": true,
+        "hateCrimeLawSO": true,
+        "hateCrimeLawGI": true
+      },
+      "highlight": "Comprehensive 2023 Trans Law remains benchmark; self-determination, non-binary options and asylum protections in force.",
+      "highlightTr": "2023 kapsamlı Trans Yasası referans olmaya devam ediyor; kendi kaderini tayin, ikili olmayan seçenekler ve sığınma korumaları yürürlükte.",
+      "lastUpdated": "2025-05"
+    },
+    {
+      "id": "NL",
+      "ilgaRank": 13,
+      "overallScore": 64,
+      "trend": "up",
+      "categories": {
+        "equality": {
+          "score": 75,
+          "achievedItems": 19,
+          "totalItems": 25
+        },
+        "family": {
+          "score": 81,
+          "achievedItems": 9,
+          "totalItems": 11
+        },
+        "hateCrime": {
+          "score": 46,
+          "achievedItems": 4,
+          "totalItems": 9
+        },
+        "legalGenderRecog": {
+          "score": 53,
+          "achievedItems": 8,
+          "totalItems": 15
+        },
+        "intersexIntegrity": {
+          "score": 0,
+          "achievedItems": 0,
+          "totalItems": 4
+        },
+        "civilSociety": {
+          "score": 100,
+          "achievedItems": 6,
+          "totalItems": 6
+        },
+        "asylum": {
+          "score": 50,
+          "achievedItems": 3,
+          "totalItems": 6
+        }
+      },
+      "keyItems": {
+        "marriageEquality": true,
+        "jointAdoption": true,
+        "constitutionalBan": false,
+        "employmentProtectionSO": true,
+        "selfDeterminationGender": false,
+        "banOnIntersexSurgery": false,
+        "banOnConversionTherapySO": false,
+        "hateCrimeLawSO": true,
+        "hateCrimeLawGI": true
+      },
+      "highlight": "Gained five points after new SOGIESC-inclusive hate crime and equal-treatment provisions.",
+      "highlightTr": "SOGIESC kapsayıcı yeni nefret suçu ve eşit muamele düzenlemeleriyle beş puan kazandı.",
+      "lastUpdated": "2025-05"
+    },
+    {
+      "id": "BE",
+      "ilgaRank": 2,
+      "overallScore": 85,
+      "trend": "up",
+      "categories": {
+        "equality": {
+          "score": 82,
+          "achievedItems": 18,
+          "totalItems": 25
+        },
+        "family": {
+          "score": 87,
+          "achievedItems": 10,
+          "totalItems": 11
+        },
+        "hateCrime": {
+          "score": 100,
+          "achievedItems": 9,
+          "totalItems": 9
+        },
+        "legalGenderRecog": {
+          "score": 76,
+          "achievedItems": 11,
+          "totalItems": 15
+        },
+        "intersexIntegrity": {
+          "score": 0,
+          "achievedItems": 0,
+          "totalItems": 4
+        },
+        "civilSociety": {
+          "score": 100,
+          "achievedItems": 6,
+          "totalItems": 6
+        },
+        "asylum": {
+          "score": 83,
+          "achievedItems": 5,
+          "totalItems": 6
+        }
+      },
+      "keyItems": {
+        "marriageEquality": true,
+        "jointAdoption": true,
+        "constitutionalBan": false,
+        "employmentProtectionSO": true,
+        "selfDeterminationGender": true,
+        "banOnIntersexSurgery": false,
+        "banOnConversionTherapySO": true,
+        "hateCrimeLawSO": true,
+        "hateCrimeLawGI": true
+      },
+      "highlight": "Climbed to 2nd place with new SOGIESC-inclusive criminal code and expanded anti-discrimination law.",
+      "highlightTr": "SOGIESC kapsayıcı yeni ceza kanunu ve genişletilen ayrımcılık yasağı yasasıyla 2. sıraya yükseldi.",
+      "lastUpdated": "2025-05"
+    },
+    {
+      "id": "AT",
+      "ilgaRank": 16,
+      "overallScore": 54,
+      "trend": "up",
+      "categories": {
+        "equality": {
+          "score": 60,
+          "achievedItems": 15,
+          "totalItems": 25
+        },
+        "family": {
+          "score": 72,
+          "achievedItems": 8,
+          "totalItems": 11
+        },
+        "hateCrime": {
+          "score": 23,
+          "achievedItems": 2,
+          "totalItems": 9
+        },
+        "legalGenderRecog": {
+          "score": 53,
+          "achievedItems": 10,
+          "totalItems": 15
+        },
+        "intersexIntegrity": {
+          "score": 0,
+          "achievedItems": 0,
+          "totalItems": 4
+        },
+        "civilSociety": {
+          "score": 100,
+          "achievedItems": 6,
+          "totalItems": 6
+        },
+        "asylum": {
+          "score": 50,
+          "achievedItems": 3,
+          "totalItems": 6
+        }
+      },
+      "keyItems": {
+        "marriageEquality": true,
+        "jointAdoption": true,
+        "constitutionalBan": false,
+        "employmentProtectionSO": true,
+        "selfDeterminationGender": false,
+        "banOnIntersexSurgery": false,
+        "banOnConversionTherapySO": false,
+        "hateCrimeLawSO": true,
+        "hateCrimeLawGI": false
+      },
+      "highlight": "Austria gained four points on stronger equal-treatment enforcement and conversion-therapy ban preparation.",
+      "highlightTr": "Avusturya, güçlendirilmiş eşit muamele uygulaması ve dönüştürme terapisi yasağı hazırlığıyla dört puan kazandı.",
+      "lastUpdated": "2025-05"
+    },
+    {
+      "id": "CH",
+      "ilgaRank": 17,
+      "overallScore": 50,
+      "trend": "flat",
+      "categories": {
+        "equality": {
+          "score": 44,
+          "achievedItems": 12,
+          "totalItems": 25
+        },
+        "family": {
+          "score": 52,
+          "achievedItems": 6,
+          "totalItems": 11
+        },
+        "hateCrime": {
+          "score": 12,
+          "achievedItems": 1,
+          "totalItems": 9
+        },
+        "legalGenderRecog": {
+          "score": 83,
+          "achievedItems": 13,
+          "totalItems": 15
+        },
+        "intersexIntegrity": {
+          "score": 0,
+          "achievedItems": 0,
+          "totalItems": 4
+        },
+        "civilSociety": {
+          "score": 100,
+          "achievedItems": 6,
+          "totalItems": 6
+        },
+        "asylum": {
+          "score": 33,
+          "achievedItems": 2,
+          "totalItems": 6
+        }
+      },
+      "keyItems": {
+        "marriageEquality": true,
+        "jointAdoption": true,
+        "constitutionalBan": false,
+        "employmentProtectionSO": false,
+        "selfDeterminationGender": true,
+        "banOnIntersexSurgery": false,
+        "banOnConversionTherapySO": false,
+        "hateCrimeLawSO": false,
+        "hateCrimeLawGI": false
+      },
+      "highlight": "Marriage equality since 2022 in force; no self-determination gender recognition law yet.",
+      "highlightTr": "2022'den beri evlilik eşitliği yürürlükte; henüz kendi kaderini tayin esaslı cinsiyet tanınma yasası yok.",
+      "lastUpdated": "2025-05"
+    },
+    {
+      "id": "CZ",
+      "ilgaRank": 30,
+      "overallScore": 33,
+      "trend": "up",
+      "categories": {
+        "equality": {
+          "score": 49,
+          "achievedItems": 11,
+          "totalItems": 25
+        },
+        "family": {
+          "score": 28,
+          "achievedItems": 4,
+          "totalItems": 11
+        },
+        "hateCrime": {
+          "score": 0,
+          "achievedItems": 0,
+          "totalItems": 9
+        },
+        "legalGenderRecog": {
+          "score": 25,
+          "achievedItems": 5,
+          "totalItems": 15
+        },
+        "intersexIntegrity": {
+          "score": 0,
+          "achievedItems": 0,
+          "totalItems": 4
+        },
+        "civilSociety": {
+          "score": 100,
+          "achievedItems": 6,
+          "totalItems": 6
+        },
+        "asylum": {
+          "score": 33,
+          "achievedItems": 2,
+          "totalItems": 6
+        }
+      },
+      "keyItems": {
+        "marriageEquality": false,
+        "jointAdoption": false,
+        "constitutionalBan": false,
+        "employmentProtectionSO": true,
+        "selfDeterminationGender": false,
+        "banOnIntersexSurgery": false,
+        "banOnConversionTherapySO": false,
+        "hateCrimeLawSO": false,
+        "hateCrimeLawGI": false
+      },
+      "highlight": "Rose three places after registered partnership upgrade to near-marriage status in January 2025.",
+      "highlightTr": "Ocak 2025'te kayıtlı birlikteliğin evliliğe yakın statüye yükseltilmesinin ardından üç sıra yükseldi.",
+      "lastUpdated": "2025-05"
+    },
+    {
+      "id": "PL",
+      "ilgaRank": 39,
+      "overallScore": 21,
+      "trend": "up",
+      "categories": {
+        "equality": {
+          "score": 24,
+          "achievedItems": 6,
+          "totalItems": 25
+        },
+        "family": {
+          "score": 0,
+          "achievedItems": 0,
+          "totalItems": 11
+        },
+        "hateCrime": {
+          "score": 0,
+          "achievedItems": 0,
+          "totalItems": 9
+        },
+        "legalGenderRecog": {
+          "score": 43,
+          "achievedItems": 8,
+          "totalItems": 15
+        },
+        "intersexIntegrity": {
+          "score": 0,
+          "achievedItems": 0,
+          "totalItems": 4
+        },
+        "civilSociety": {
+          "score": 50,
+          "achievedItems": 3,
+          "totalItems": 6
+        },
+        "asylum": {
+          "score": 33,
+          "achievedItems": 2,
+          "totalItems": 6
+        }
+      },
+      "keyItems": {
+        "marriageEquality": false,
+        "jointAdoption": false,
+        "constitutionalBan": true,
+        "employmentProtectionSO": true,
+        "selfDeterminationGender": false,
+        "banOnIntersexSurgery": false,
+        "banOnConversionTherapySO": false,
+        "hateCrimeLawSO": false,
+        "hateCrimeLawGI": false
+      },
+      "highlight": "Advanced three places after ending state obstruction of Pride events and abolishing last \"LGBT-free zones\".",
+      "highlightTr": "Onur yürüyüşlerine devlet engellemesinin sona ermesi ve son \"LGBT'siz bölgelerin\" kaldırılmasının ardından üç sıra yükseldi.",
+      "lastUpdated": "2025-05"
+    },
+    {
+      "id": "HU",
+      "ilgaRank": 37,
+      "overallScore": 23,
+      "trend": "down",
+      "categories": {
+        "equality": {
+          "score": 19,
+          "achievedItems": 4,
+          "totalItems": 25
+        },
+        "family": {
+          "score": 26,
+          "achievedItems": 3,
+          "totalItems": 11
+        },
+        "hateCrime": {
+          "score": 46,
+          "achievedItems": 4,
+          "totalItems": 9
+        },
+        "legalGenderRecog": {
+          "score": 0,
+          "achievedItems": 0,
+          "totalItems": 15
+        },
+        "intersexIntegrity": {
+          "score": 0,
+          "achievedItems": 0,
+          "totalItems": 4
+        },
+        "civilSociety": {
+          "score": 33,
+          "achievedItems": 2,
+          "totalItems": 6
+        },
+        "asylum": {
+          "score": 17,
+          "achievedItems": 1,
+          "totalItems": 6
+        }
+      },
+      "keyItems": {
+        "marriageEquality": false,
+        "jointAdoption": false,
+        "constitutionalBan": true,
+        "employmentProtectionSO": true,
+        "selfDeterminationGender": false,
+        "banOnIntersexSurgery": false,
+        "banOnConversionTherapySO": false,
+        "hateCrimeLawSO": true,
+        "hateCrimeLawGI": true
+      },
+      "highlight": "Fell seven places to 37th — lowest ever — after banning Pride events and removing gender-identity protection.",
+      "highlightTr": "Onur yürüyüşlerinin yasaklanması ve cinsiyet kimliği korumasının kaldırılmasının ardından yedi sıra düşerek 37.'liğe geriledi — tarihinin en düşüğü.",
+      "lastUpdated": "2025-05"
+    },
+    {
+      "id": "PT",
+      "ilgaRank": 11,
+      "overallScore": 67,
+      "trend": "flat",
+      "categories": {
+        "equality": {
+          "score": 54,
+          "achievedItems": 13,
+          "totalItems": 25
+        },
+        "family": {
+          "score": 81,
+          "achievedItems": 9,
+          "totalItems": 11
+        },
+        "hateCrime": {
+          "score": 46,
+          "achievedItems": 4,
+          "totalItems": 9
+        },
+        "legalGenderRecog": {
+          "score": 76,
+          "achievedItems": 11,
+          "totalItems": 15
+        },
+        "intersexIntegrity": {
+          "score": 50,
+          "achievedItems": 1,
+          "totalItems": 4
+        },
+        "civilSociety": {
+          "score": 100,
+          "achievedItems": 6,
+          "totalItems": 6
+        },
+        "asylum": {
+          "score": 67,
+          "achievedItems": 4,
+          "totalItems": 6
+        }
+      },
+      "keyItems": {
+        "marriageEquality": true,
+        "jointAdoption": true,
+        "constitutionalBan": false,
+        "employmentProtectionSO": true,
+        "selfDeterminationGender": true,
+        "banOnIntersexSurgery": true,
+        "banOnConversionTherapySO": true,
+        "hateCrimeLawSO": true,
+        "hateCrimeLawGI": true
+      },
+      "highlight": "Held score at 67%; trans parenthood and asylum protections remain in force, but no new reform this year.",
+      "highlightTr": "%67 skorunu korudu; trans ebeveynlik ve sığınma korumaları yürürlükte ancak bu yıl yeni reform yok.",
+      "lastUpdated": "2025-05"
+    },
+    {
+      "id": "GR",
+      "ilgaRank": 7,
+      "overallScore": 69,
+      "trend": "down",
+      "categories": {
+        "equality": {
+          "score": 86,
+          "achievedItems": 19,
+          "totalItems": 25
+        },
+        "family": {
+          "score": 65,
+          "achievedItems": 7,
+          "totalItems": 11
+        },
+        "hateCrime": {
+          "score": 70,
+          "achievedItems": 6,
+          "totalItems": 9
+        },
+        "legalGenderRecog": {
+          "score": 65,
+          "achievedItems": 10,
+          "totalItems": 15
+        },
+        "intersexIntegrity": {
+          "score": 60,
+          "achievedItems": 2,
+          "totalItems": 4
+        },
+        "civilSociety": {
+          "score": 83,
+          "achievedItems": 5,
+          "totalItems": 6
+        },
+        "asylum": {
+          "score": 33,
+          "achievedItems": 2,
+          "totalItems": 6
+        }
+      },
+      "keyItems": {
+        "marriageEquality": true,
+        "jointAdoption": true,
+        "constitutionalBan": false,
+        "employmentProtectionSO": true,
+        "selfDeterminationGender": false,
+        "banOnIntersexSurgery": true,
+        "banOnConversionTherapySO": true,
+        "hateCrimeLawSO": true,
+        "hateCrimeLawGI": true
+      },
+      "highlight": "Marriage equality since February 2024 drove last year's jump; slipped two points as implementation stalled.",
+      "highlightTr": "Şubat 2024'ten beri evlilik eşitliği geçen yılki sıçramayı getirdi; uygulamanın yavaşlamasıyla iki puan kaybetti.",
+      "lastUpdated": "2025-05"
+    },
+    {
+      "id": "SE",
+      "ilgaRank": 12,
+      "overallScore": 66,
+      "trend": "up",
+      "categories": {
+        "equality": {
+          "score": 61,
+          "achievedItems": 14,
+          "totalItems": 25
+        },
+        "family": {
+          "score": 79,
+          "achievedItems": 9,
+          "totalItems": 11
+        },
+        "hateCrime": {
+          "score": 67,
+          "achievedItems": 6,
+          "totalItems": 9
+        },
+        "legalGenderRecog": {
+          "score": 47,
+          "achievedItems": 8,
+          "totalItems": 15
+        },
+        "intersexIntegrity": {
+          "score": 0,
+          "achievedItems": 0,
+          "totalItems": 4
+        },
+        "civilSociety": {
+          "score": 100,
+          "achievedItems": 6,
+          "totalItems": 6
+        },
+        "asylum": {
+          "score": 50,
+          "achievedItems": 3,
+          "totalItems": 6
+        }
+      },
+      "keyItems": {
+        "marriageEquality": true,
+        "jointAdoption": true,
+        "constitutionalBan": false,
+        "employmentProtectionSO": true,
+        "selfDeterminationGender": false,
+        "banOnIntersexSurgery": false,
+        "banOnConversionTherapySO": false,
+        "hateCrimeLawSO": true,
+        "hateCrimeLawGI": true
+      },
+      "highlight": "Updated self-determination legal gender recognition law effective 2025 added two points.",
+      "highlightTr": "2025'te yürürlüğe giren güncellenmiş kendi kaderini tayin esaslı yasal cinsiyet tanınma yasası iki puan ekledi.",
+      "lastUpdated": "2025-05"
+    },
+    {
+      "id": "TR",
+      "ilgaRank": 47,
+      "overallScore": 5,
+      "trend": "flat",
+      "categories": {
+        "equality": {
+          "score": 0,
+          "achievedItems": 0,
+          "totalItems": 25
+        },
+        "family": {
+          "score": 0,
+          "achievedItems": 0,
+          "totalItems": 11
+        },
+        "hateCrime": {
+          "score": 0,
+          "achievedItems": 0,
+          "totalItems": 9
+        },
+        "legalGenderRecog": {
+          "score": 19,
+          "achievedItems": 3,
+          "totalItems": 15
+        },
+        "intersexIntegrity": {
+          "score": 0,
+          "achievedItems": 0,
+          "totalItems": 4
+        },
+        "civilSociety": {
+          "score": 17,
+          "achievedItems": 1,
+          "totalItems": 6
+        },
+        "asylum": {
+          "score": 0,
+          "achievedItems": 0,
+          "totalItems": 6
+        }
+      },
+      "keyItems": {
+        "marriageEquality": false,
+        "jointAdoption": false,
+        "constitutionalBan": true,
+        "employmentProtectionSO": false,
+        "selfDeterminationGender": false,
+        "banOnIntersexSurgery": false,
+        "banOnConversionTherapySO": false,
+        "hateCrimeLawSO": false,
+        "hateCrimeLawGI": false
+      },
+      "highlight": "No legal protection in any category except minimal asylum recognition; İzmir Pride ban annulled by court in November 2024.",
+      "highlightTr": "Asgari sığınma tanıması dışında hiçbir kategoride yasal koruma yok; İzmir Onur Haftası yasağı Kasım 2024'te mahkeme tarafından iptal edildi.",
+      "lastUpdated": "2025-05"
+    },
+    {
+      "id": "DK",
+      "ilgaRank": 4,
+      "overallScore": 80,
+      "trend": "up",
+      "categories": {
+        "equality": {
+          "score": 87,
+          "achievedItems": 19,
+          "totalItems": 25
+        },
+        "family": {
+          "score": 79,
+          "achievedItems": 9,
+          "totalItems": 11
+        },
+        "hateCrime": {
+          "score": 90,
+          "achievedItems": 8,
+          "totalItems": 9
+        },
+        "legalGenderRecog": {
+          "score": 77,
+          "achievedItems": 12,
+          "totalItems": 15
+        },
+        "intersexIntegrity": {
+          "score": 0,
+          "achievedItems": 0,
+          "totalItems": 4
+        },
+        "civilSociety": {
+          "score": 100,
+          "achievedItems": 6,
+          "totalItems": 6
+        },
+        "asylum": {
+          "score": 33,
+          "achievedItems": 2,
+          "totalItems": 6
+        }
+      },
+      "keyItems": {
+        "marriageEquality": true,
+        "jointAdoption": true,
+        "constitutionalBan": false,
+        "employmentProtectionSO": true,
+        "selfDeterminationGender": true,
+        "banOnIntersexSurgery": false,
+        "banOnConversionTherapySO": false,
+        "hateCrimeLawSO": true,
+        "hateCrimeLawGI": true
+      },
+      "highlight": "Gained four points; strong family, equality and civil-society provisions keep Denmark in top five.",
+      "highlightTr": "Dört puan kazandı; güçlü aile, eşitlik ve sivil toplum düzenlemeleri Danimarka'yı ilk beşte tutuyor.",
+      "lastUpdated": "2025-05"
+    },
+    {
+      "id": "FI",
+      "ilgaRank": 6,
+      "overallScore": 70,
+      "trend": "down",
+      "categories": {
+        "equality": {
+          "score": 81,
+          "achievedItems": 19,
+          "totalItems": 25
+        },
+        "family": {
+          "score": 67,
+          "achievedItems": 7,
+          "totalItems": 11
+        },
+        "hateCrime": {
+          "score": 46,
+          "achievedItems": 4,
+          "totalItems": 9
+        },
+        "legalGenderRecog": {
+          "score": 75,
+          "achievedItems": 11,
+          "totalItems": 15
+        },
+        "intersexIntegrity": {
+          "score": 0,
+          "achievedItems": 0,
+          "totalItems": 4
+        },
+        "civilSociety": {
+          "score": 100,
+          "achievedItems": 6,
+          "totalItems": 6
+        },
+        "asylum": {
+          "score": 50,
+          "achievedItems": 3,
+          "totalItems": 6
+        }
+      },
+      "keyItems": {
+        "marriageEquality": true,
+        "jointAdoption": true,
+        "constitutionalBan": false,
+        "employmentProtectionSO": true,
+        "selfDeterminationGender": true,
+        "banOnIntersexSurgery": false,
+        "banOnConversionTherapySO": false,
+        "hateCrimeLawSO": true,
+        "hateCrimeLawGI": true
+      },
+      "highlight": "Self-ID gender recognition since 2023; slipped one point on narrower asylum practice.",
+      "highlightTr": "2023'ten beri kendi beyanı esaslı cinsiyet tanınması; daralan sığınma pratiği nedeniyle bir puan kaybetti.",
+      "lastUpdated": "2025-05"
+    },
+    {
+      "id": "IE",
+      "ilgaRank": 14,
+      "overallScore": 63,
+      "trend": "up",
+      "categories": {
+        "equality": {
+          "score": 38,
+          "achievedItems": 9,
+          "totalItems": 25
+        },
+        "family": {
+          "score": 56,
+          "achievedItems": 6,
+          "totalItems": 11
+        },
+        "hateCrime": {
+          "score": 67,
+          "achievedItems": 6,
+          "totalItems": 9
+        },
+        "legalGenderRecog": {
+          "score": 75,
+          "achievedItems": 11,
+          "totalItems": 15
+        },
+        "intersexIntegrity": {
+          "score": 0,
+          "achievedItems": 0,
+          "totalItems": 4
+        },
+        "civilSociety": {
+          "score": 100,
+          "achievedItems": 6,
+          "totalItems": 6
+        },
+        "asylum": {
+          "score": 67,
+          "achievedItems": 4,
+          "totalItems": 6
+        }
+      },
+      "keyItems": {
+        "marriageEquality": true,
+        "jointAdoption": true,
+        "constitutionalBan": false,
+        "employmentProtectionSO": true,
+        "selfDeterminationGender": true,
+        "banOnIntersexSurgery": false,
+        "banOnConversionTherapySO": false,
+        "hateCrimeLawSO": true,
+        "hateCrimeLawGI": true
+      },
+      "highlight": "Gained six points after new hate-crime law covering sexual orientation and gender identity passed 2024.",
+      "highlightTr": "2024'te cinsel yönelim ve cinsiyet kimliğini kapsayan yeni nefret suçu yasasının kabulüyle altı puan kazandı.",
+      "lastUpdated": "2025-05"
+    },
+    {
+      "id": "LU",
+      "ilgaRank": 10,
+      "overallScore": 68,
+      "trend": "down",
+      "categories": {
+        "equality": {
+          "score": 57,
+          "achievedItems": 13,
+          "totalItems": 25
+        },
+        "family": {
+          "score": 69,
+          "achievedItems": 7,
+          "totalItems": 11
+        },
+        "hateCrime": {
+          "score": 67,
+          "achievedItems": 6,
+          "totalItems": 9
+        },
+        "legalGenderRecog": {
+          "score": 83,
+          "achievedItems": 13,
+          "totalItems": 15
+        },
+        "intersexIntegrity": {
+          "score": 0,
+          "achievedItems": 0,
+          "totalItems": 4
+        },
+        "civilSociety": {
+          "score": 100,
+          "achievedItems": 6,
+          "totalItems": 6
+        },
+        "asylum": {
+          "score": 67,
+          "achievedItems": 4,
+          "totalItems": 6
+        }
+      },
+      "keyItems": {
+        "marriageEquality": true,
+        "jointAdoption": true,
+        "constitutionalBan": false,
+        "employmentProtectionSO": true,
+        "selfDeterminationGender": true,
+        "banOnIntersexSurgery": false,
+        "banOnConversionTherapySO": false,
+        "hateCrimeLawSO": true,
+        "hateCrimeLawGI": true
+      },
+      "highlight": "Slipped two points but retains full marriage equality, joint adoption and self-ID gender recognition.",
+      "highlightTr": "İki puan kaybetti ancak tam evlilik eşitliği, ortak evlat edinme ve kendi beyanı esaslı cinsiyet tanınmasını koruyor.",
+      "lastUpdated": "2025-05"
+    },
+    {
+      "id": "MT",
+      "ilgaRank": 1,
+      "overallScore": 89,
+      "trend": "up",
+      "categories": {
+        "equality": {
+          "score": 75,
+          "achievedItems": 19,
+          "totalItems": 25
+        },
+        "family": {
+          "score": 100,
+          "achievedItems": 11,
+          "totalItems": 11
+        },
+        "hateCrime": {
+          "score": 100,
+          "achievedItems": 9,
+          "totalItems": 9
+        },
+        "legalGenderRecog": {
+          "score": 100,
+          "achievedItems": 15,
+          "totalItems": 15
+        },
+        "intersexIntegrity": {
+          "score": 50,
+          "achievedItems": 1,
+          "totalItems": 4
+        },
+        "civilSociety": {
+          "score": 100,
+          "achievedItems": 6,
+          "totalItems": 6
+        },
+        "asylum": {
+          "score": 67,
+          "achievedItems": 4,
+          "totalItems": 6
+        }
+      },
+      "keyItems": {
+        "marriageEquality": true,
+        "jointAdoption": true,
+        "constitutionalBan": false,
+        "employmentProtectionSO": true,
+        "selfDeterminationGender": true,
+        "banOnIntersexSurgery": true,
+        "banOnConversionTherapySO": true,
+        "hateCrimeLawSO": true,
+        "hateCrimeLawGI": true
+      },
+      "highlight": "Holds #1 for the 10th consecutive year; comprehensive LGBTI rights framework unchanged.",
+      "highlightTr": "Üst üste 10. yıl 1. sıradaki yerini koruyor; kapsamlı LGBTİ+ hakları çerçevesi değişmedi.",
+      "lastUpdated": "2025-05"
+    },
+    {
+      "id": "CY",
+      "ilgaRank": 29,
+      "overallScore": 34,
+      "trend": "down",
+      "categories": {
+        "equality": {
+          "score": 19,
+          "achievedItems": 5,
+          "totalItems": 25
+        },
+        "family": {
+          "score": 24,
+          "achievedItems": 3,
+          "totalItems": 11
+        },
+        "hateCrime": {
+          "score": 46,
+          "achievedItems": 4,
+          "totalItems": 9
+        },
+        "legalGenderRecog": {
+          "score": 16,
+          "achievedItems": 3,
+          "totalItems": 15
+        },
+        "intersexIntegrity": {
+          "score": 0,
+          "achievedItems": 0,
+          "totalItems": 4
+        },
+        "civilSociety": {
+          "score": 100,
+          "achievedItems": 6,
+          "totalItems": 6
+        },
+        "asylum": {
+          "score": 33,
+          "achievedItems": 2,
+          "totalItems": 6
+        }
+      },
+      "keyItems": {
+        "marriageEquality": false,
+        "jointAdoption": false,
+        "constitutionalBan": false,
+        "employmentProtectionSO": true,
+        "selfDeterminationGender": false,
+        "banOnIntersexSurgery": false,
+        "banOnConversionTherapySO": true,
+        "hateCrimeLawSO": true,
+        "hateCrimeLawGI": true
+      },
+      "highlight": "No marriage equality; civil unions only; slipped one point on weakened asylum practice.",
+      "highlightTr": "Evlilik eşitliği yok; yalnızca medeni birlik; zayıflayan sığınma uygulaması nedeniyle bir puan kaybetti.",
+      "lastUpdated": "2025-05"
+    },
+    {
+      "id": "HR",
+      "ilgaRank": 19,
+      "overallScore": 49,
+      "trend": "down",
+      "categories": {
+        "equality": {
+          "score": 53,
+          "achievedItems": 11,
+          "totalItems": 25
+        },
+        "family": {
+          "score": 46,
+          "achievedItems": 5,
+          "totalItems": 11
+        },
+        "hateCrime": {
+          "score": 46,
+          "achievedItems": 4,
+          "totalItems": 9
+        },
+        "legalGenderRecog": {
+          "score": 37,
+          "achievedItems": 6,
+          "totalItems": 15
+        },
+        "intersexIntegrity": {
+          "score": 0,
+          "achievedItems": 0,
+          "totalItems": 4
+        },
+        "civilSociety": {
+          "score": 100,
+          "achievedItems": 6,
+          "totalItems": 6
+        },
+        "asylum": {
+          "score": 33,
+          "achievedItems": 2,
+          "totalItems": 6
+        }
+      },
+      "keyItems": {
+        "marriageEquality": false,
+        "jointAdoption": true,
+        "constitutionalBan": true,
+        "employmentProtectionSO": true,
+        "selfDeterminationGender": false,
+        "banOnIntersexSurgery": false,
+        "banOnConversionTherapySO": false,
+        "hateCrimeLawSO": true,
+        "hateCrimeLawGI": true
+      },
+      "highlight": "Joint adoption rights upheld in courts; slipped one point on stalled trans-parenthood recognition.",
+      "highlightTr": "Ortak evlat edinme hakları mahkemelerde onaylandı; trans ebeveynlik tanınmasının durmasıyla bir puan kaybetti.",
+      "lastUpdated": "2025-05"
+    },
+    {
+      "id": "RO",
+      "ilgaRank": 40,
+      "overallScore": 19,
+      "trend": "flat",
+      "categories": {
+        "equality": {
+          "score": 23,
+          "achievedItems": 5,
+          "totalItems": 25
+        },
+        "family": {
+          "score": 0,
+          "achievedItems": 0,
+          "totalItems": 11
+        },
+        "hateCrime": {
+          "score": 12,
+          "achievedItems": 1,
+          "totalItems": 9
+        },
+        "legalGenderRecog": {
+          "score": 13,
+          "achievedItems": 2,
+          "totalItems": 15
+        },
+        "intersexIntegrity": {
+          "score": 0,
+          "achievedItems": 0,
+          "totalItems": 4
+        },
+        "civilSociety": {
+          "score": 83,
+          "achievedItems": 5,
+          "totalItems": 6
+        },
+        "asylum": {
+          "score": 17,
+          "achievedItems": 1,
+          "totalItems": 6
+        }
+      },
+      "keyItems": {
+        "marriageEquality": false,
+        "jointAdoption": false,
+        "constitutionalBan": true,
+        "employmentProtectionSO": true,
+        "selfDeterminationGender": false,
+        "banOnIntersexSurgery": false,
+        "banOnConversionTherapySO": false,
+        "hateCrimeLawSO": true,
+        "hateCrimeLawGI": false
+      },
+      "highlight": "No marriage equality, no gender recognition law; lowest EU member-state score at 19%.",
+      "highlightTr": "Evlilik eşitliği yok, cinsiyet tanınma yasası yok; %19 ile AB üye devletleri arasında en düşük skor.",
+      "lastUpdated": "2025-05"
+    },
+    {
+      "id": "BG",
+      "ilgaRank": 38,
+      "overallScore": 21,
+      "trend": "down",
+      "categories": {
+        "equality": {
+          "score": 45,
+          "achievedItems": 10,
+          "totalItems": 25
+        },
+        "family": {
+          "score": 9,
+          "achievedItems": 1,
+          "totalItems": 11
+        },
+        "hateCrime": {
+          "score": 23,
+          "achievedItems": 2,
+          "totalItems": 9
+        },
+        "legalGenderRecog": {
+          "score": 0,
+          "achievedItems": 0,
+          "totalItems": 15
+        },
+        "intersexIntegrity": {
+          "score": 0,
+          "achievedItems": 0,
+          "totalItems": 4
+        },
+        "civilSociety": {
+          "score": 50,
+          "achievedItems": 3,
+          "totalItems": 6
+        },
+        "asylum": {
+          "score": 0,
+          "achievedItems": 0,
+          "totalItems": 6
+        }
+      },
+      "keyItems": {
+        "marriageEquality": false,
+        "jointAdoption": false,
+        "constitutionalBan": true,
+        "employmentProtectionSO": true,
+        "selfDeterminationGender": false,
+        "banOnIntersexSurgery": false,
+        "banOnConversionTherapySO": false,
+        "hateCrimeLawSO": true,
+        "hateCrimeLawGI": false
+      },
+      "highlight": "Restricted LGBTI representation in schools by law in 2024; slipped two points.",
+      "highlightTr": "2024'te yasayla okullarda LGBTİ+ temsili kısıtlandı; iki puan kaybetti.",
+      "lastUpdated": "2025-05"
+    },
+    {
+      "id": "SK",
+      "ilgaRank": 33,
+      "overallScore": 27,
+      "trend": "down",
+      "categories": {
+        "equality": {
+          "score": 46,
+          "achievedItems": 11,
+          "totalItems": 25
+        },
+        "family": {
+          "score": 0,
+          "achievedItems": 0,
+          "totalItems": 11
+        },
+        "hateCrime": {
+          "score": 23,
+          "achievedItems": 2,
+          "totalItems": 9
+        },
+        "legalGenderRecog": {
+          "score": 19,
+          "achievedItems": 3,
+          "totalItems": 15
+        },
+        "intersexIntegrity": {
+          "score": 0,
+          "achievedItems": 0,
+          "totalItems": 4
+        },
+        "civilSociety": {
+          "score": 67,
+          "achievedItems": 4,
+          "totalItems": 6
+        },
+        "asylum": {
+          "score": 33,
+          "achievedItems": 2,
+          "totalItems": 6
+        }
+      },
+      "keyItems": {
+        "marriageEquality": false,
+        "jointAdoption": false,
+        "constitutionalBan": true,
+        "employmentProtectionSO": true,
+        "selfDeterminationGender": false,
+        "banOnIntersexSurgery": false,
+        "banOnConversionTherapySO": false,
+        "hateCrimeLawSO": true,
+        "hateCrimeLawGI": false
+      },
+      "highlight": "Slipped four points following 2024 restrictions on civil-society space and trans healthcare access.",
+      "highlightTr": "2024'te sivil toplum alanı ve trans sağlık hizmetlerine erişim kısıtlamalarının ardından dört puan kaybetti.",
+      "lastUpdated": "2025-05"
+    },
+    {
+      "id": "SI",
+      "ilgaRank": 17,
+      "overallScore": 50,
+      "trend": "flat",
+      "categories": {
+        "equality": {
+          "score": 61,
+          "achievedItems": 14,
+          "totalItems": 25
+        },
+        "family": {
+          "score": 50,
+          "achievedItems": 5,
+          "totalItems": 11
+        },
+        "hateCrime": {
+          "score": 23,
+          "achievedItems": 2,
+          "totalItems": 9
+        },
+        "legalGenderRecog": {
+          "score": 46,
+          "achievedItems": 9,
+          "totalItems": 15
+        },
+        "intersexIntegrity": {
+          "score": 0,
+          "achievedItems": 0,
+          "totalItems": 4
+        },
+        "civilSociety": {
+          "score": 100,
+          "achievedItems": 6,
+          "totalItems": 6
+        },
+        "asylum": {
+          "score": 33,
+          "achievedItems": 2,
+          "totalItems": 6
+        }
+      },
+      "keyItems": {
+        "marriageEquality": true,
+        "jointAdoption": true,
+        "constitutionalBan": false,
+        "employmentProtectionSO": true,
+        "selfDeterminationGender": false,
+        "banOnIntersexSurgery": false,
+        "banOnConversionTherapySO": false,
+        "hateCrimeLawSO": true,
+        "hateCrimeLawGI": false
+      },
+      "highlight": "Marriage equality since 2022 in force; score flat at 50% with no new reforms.",
+      "highlightTr": "2022'den beri evlilik eşitliği yürürlükte; yeni reform olmaması nedeniyle skor %50'de sabit.",
+      "lastUpdated": "2025-05"
+    },
+    {
+      "id": "EE",
+      "ilgaRank": 21,
+      "overallScore": 46,
+      "trend": "flat",
+      "categories": {
+        "equality": {
+          "score": 44,
+          "achievedItems": 11,
+          "totalItems": 25
+        },
+        "family": {
+          "score": 77,
+          "achievedItems": 8,
+          "totalItems": 11
+        },
+        "hateCrime": {
+          "score": 12,
+          "achievedItems": 1,
+          "totalItems": 9
+        },
+        "legalGenderRecog": {
+          "score": 55,
+          "achievedItems": 10,
+          "totalItems": 15
+        },
+        "intersexIntegrity": {
+          "score": 0,
+          "achievedItems": 0,
+          "totalItems": 4
+        },
+        "civilSociety": {
+          "score": 100,
+          "achievedItems": 6,
+          "totalItems": 6
+        },
+        "asylum": {
+          "score": 0,
+          "achievedItems": 0,
+          "totalItems": 6
+        }
+      },
+      "keyItems": {
+        "marriageEquality": true,
+        "jointAdoption": true,
+        "constitutionalBan": false,
+        "employmentProtectionSO": true,
+        "selfDeterminationGender": false,
+        "banOnIntersexSurgery": false,
+        "banOnConversionTherapySO": false,
+        "hateCrimeLawSO": false,
+        "hateCrimeLawGI": false
+      },
+      "highlight": "Marriage equality since January 2024 maintained the 46% score; no new gains in 2025.",
+      "highlightTr": "Ocak 2024'ten beri evlilik eşitliği %46 skorunu korudu; 2025'te yeni kazanım yok.",
+      "lastUpdated": "2025-05"
+    },
+    {
+      "id": "LV",
+      "ilgaRank": 34,
+      "overallScore": 26,
+      "trend": "up",
+      "categories": {
+        "equality": {
+          "score": 12,
+          "achievedItems": 3,
+          "totalItems": 25
+        },
+        "family": {
+          "score": 17,
+          "achievedItems": 2,
+          "totalItems": 11
+        },
+        "hateCrime": {
+          "score": 12,
+          "achievedItems": 1,
+          "totalItems": 9
+        },
+        "legalGenderRecog": {
+          "score": 19,
+          "achievedItems": 3,
+          "totalItems": 15
+        },
+        "intersexIntegrity": {
+          "score": 0,
+          "achievedItems": 0,
+          "totalItems": 4
+        },
+        "civilSociety": {
+          "score": 100,
+          "achievedItems": 6,
+          "totalItems": 6
+        },
+        "asylum": {
+          "score": 50,
+          "achievedItems": 3,
+          "totalItems": 6
+        }
+      },
+      "keyItems": {
+        "marriageEquality": false,
+        "jointAdoption": false,
+        "constitutionalBan": true,
+        "employmentProtectionSO": true,
+        "selfDeterminationGender": false,
+        "banOnIntersexSurgery": false,
+        "banOnConversionTherapySO": false,
+        "hateCrimeLawSO": true,
+        "hateCrimeLawGI": false
+      },
+      "highlight": "Advanced four places after new civil-union law and SOGIESC-inclusive hate-speech provisions entered force.",
+      "highlightTr": "Yeni medeni birlik yasası ve SOGIESC kapsayıcı nefret söylemi düzenlemelerinin yürürlüğe girmesinin ardından dört sıra yükseldi.",
+      "lastUpdated": "2025-05"
+    },
+    {
+      "id": "LT",
+      "ilgaRank": 35,
+      "overallScore": 24,
+      "trend": "down",
+      "categories": {
+        "equality": {
+          "score": 26,
+          "achievedItems": 6,
+          "totalItems": 25
+        },
+        "family": {
+          "score": 0,
+          "achievedItems": 0,
+          "totalItems": 11
+        },
+        "hateCrime": {
+          "score": 23,
+          "achievedItems": 2,
+          "totalItems": 9
+        },
+        "legalGenderRecog": {
+          "score": 26,
+          "achievedItems": 4,
+          "totalItems": 15
+        },
+        "intersexIntegrity": {
+          "score": 0,
+          "achievedItems": 0,
+          "totalItems": 4
+        },
+        "civilSociety": {
+          "score": 100,
+          "achievedItems": 6,
+          "totalItems": 6
+        },
+        "asylum": {
+          "score": 0,
+          "achievedItems": 0,
+          "totalItems": 6
+        }
+      },
+      "keyItems": {
+        "marriageEquality": false,
+        "jointAdoption": false,
+        "constitutionalBan": true,
+        "employmentProtectionSO": true,
+        "selfDeterminationGender": false,
+        "banOnIntersexSurgery": false,
+        "banOnConversionTherapySO": false,
+        "hateCrimeLawSO": true,
+        "hateCrimeLawGI": false
+      },
+      "highlight": "Slipped four points after constitutional court blocked registered partnership law.",
+      "highlightTr": "Anayasa mahkemesinin kayıtlı birliktelik yasasını engellemesinin ardından dört puan kaybetti.",
+      "lastUpdated": "2025-05"
+    },
+    {
+      "id": "IS",
+      "ilgaRank": 3,
+      "overallScore": 84,
+      "trend": "up",
+      "categories": {
+        "equality": {
+          "score": 94,
+          "achievedItems": 21,
+          "totalItems": 25
+        },
+        "family": {
+          "score": 71,
+          "achievedItems": 8,
+          "totalItems": 11
+        },
+        "hateCrime": {
+          "score": 70,
+          "achievedItems": 6,
+          "totalItems": 9
+        },
+        "legalGenderRecog": {
+          "score": 100,
+          "achievedItems": 15,
+          "totalItems": 15
+        },
+        "intersexIntegrity": {
+          "score": 50,
+          "achievedItems": 1,
+          "totalItems": 4
+        },
+        "civilSociety": {
+          "score": 100,
+          "achievedItems": 6,
+          "totalItems": 6
+        },
+        "asylum": {
+          "score": 50,
+          "achievedItems": 3,
+          "totalItems": 6
+        }
+      },
+      "keyItems": {
+        "marriageEquality": true,
+        "jointAdoption": true,
+        "constitutionalBan": false,
+        "employmentProtectionSO": true,
+        "selfDeterminationGender": true,
+        "banOnIntersexSurgery": true,
+        "banOnConversionTherapySO": true,
+        "hateCrimeLawSO": true,
+        "hateCrimeLawGI": true
+      },
+      "highlight": "Comprehensive framework unchanged at 84%; remains in top three for the sixth consecutive year.",
+      "highlightTr": "Kapsamlı çerçeve %84'te değişmedi; üst üste altıncı yıl ilk üçte kalmaya devam ediyor.",
+      "lastUpdated": "2025-05"
+    },
+    {
+      "id": "LI",
+      "ilgaRank": 31,
+      "overallScore": 29,
+      "trend": "up",
+      "categories": {
+        "equality": {
+          "score": 9,
+          "achievedItems": 2,
+          "totalItems": 25
+        },
+        "family": {
+          "score": 47,
+          "achievedItems": 5,
+          "totalItems": 11
+        },
+        "hateCrime": {
+          "score": 12,
+          "achievedItems": 1,
+          "totalItems": 9
+        },
+        "legalGenderRecog": {
+          "score": 10,
+          "achievedItems": 2,
+          "totalItems": 15
+        },
+        "intersexIntegrity": {
+          "score": 0,
+          "achievedItems": 0,
+          "totalItems": 4
+        },
+        "civilSociety": {
+          "score": 100,
+          "achievedItems": 6,
+          "totalItems": 6
+        },
+        "asylum": {
+          "score": 33,
+          "achievedItems": 2,
+          "totalItems": 6
+        }
+      },
+      "keyItems": {
+        "marriageEquality": true,
+        "jointAdoption": true,
+        "constitutionalBan": false,
+        "employmentProtectionSO": false,
+        "selfDeterminationGender": false,
+        "banOnIntersexSurgery": false,
+        "banOnConversionTherapySO": false,
+        "hateCrimeLawSO": false,
+        "hateCrimeLawGI": false
+      },
+      "highlight": "Marriage equality since January 2025 added one point; still no gender recognition law.",
+      "highlightTr": "Ocak 2025'ten beri evlilik eşitliği bir puan ekledi; hâlâ cinsiyet tanınma yasası yok.",
+      "lastUpdated": "2025-05"
+    },
+    {
+      "id": "NO",
+      "ilgaRank": 7,
+      "overallScore": 69,
+      "trend": "down",
+      "categories": {
+        "equality": {
+          "score": 68,
+          "achievedItems": 15,
+          "totalItems": 25
+        },
+        "family": {
+          "score": 61,
+          "achievedItems": 7,
+          "totalItems": 11
+        },
+        "hateCrime": {
+          "score": 46,
+          "achievedItems": 4,
+          "totalItems": 9
+        },
+        "legalGenderRecog": {
+          "score": 83,
+          "achievedItems": 13,
+          "totalItems": 15
+        },
+        "intersexIntegrity": {
+          "score": 0,
+          "achievedItems": 0,
+          "totalItems": 4
+        },
+        "civilSociety": {
+          "score": 100,
+          "achievedItems": 6,
+          "totalItems": 6
+        },
+        "asylum": {
+          "score": 83,
+          "achievedItems": 5,
+          "totalItems": 6
+        }
+      },
+      "keyItems": {
+        "marriageEquality": true,
+        "jointAdoption": true,
+        "constitutionalBan": false,
+        "employmentProtectionSO": true,
+        "selfDeterminationGender": true,
+        "banOnIntersexSurgery": false,
+        "banOnConversionTherapySO": true,
+        "hateCrimeLawSO": true,
+        "hateCrimeLawGI": true
+      },
+      "highlight": "Slipped one point; remains in top ten with comprehensive equality and family frameworks.",
+      "highlightTr": "Bir puan kaybetti; kapsamlı eşitlik ve aile çerçeveleriyle ilk onda kalmaya devam ediyor.",
+      "lastUpdated": "2025-05"
+    },
+    {
+      "id": "AL",
+      "ilgaRank": 26,
+      "overallScore": 35,
+      "trend": "down",
+      "categories": {
+        "equality": {
+          "score": 57,
+          "achievedItems": 13,
+          "totalItems": 25
+        },
+        "family": {
+          "score": 3,
+          "achievedItems": 1,
+          "totalItems": 11
+        },
+        "hateCrime": {
+          "score": 46,
+          "achievedItems": 4,
+          "totalItems": 9
+        },
+        "legalGenderRecog": {
+          "score": 4,
+          "achievedItems": 1,
+          "totalItems": 15
+        },
+        "intersexIntegrity": {
+          "score": 0,
+          "achievedItems": 0,
+          "totalItems": 4
+        },
+        "civilSociety": {
+          "score": 100,
+          "achievedItems": 6,
+          "totalItems": 6
+        },
+        "asylum": {
+          "score": 33,
+          "achievedItems": 2,
+          "totalItems": 6
+        }
+      },
+      "keyItems": {
+        "marriageEquality": false,
+        "jointAdoption": false,
+        "constitutionalBan": false,
+        "employmentProtectionSO": true,
+        "selfDeterminationGender": false,
+        "banOnIntersexSurgery": false,
+        "banOnConversionTherapySO": false,
+        "hateCrimeLawSO": true,
+        "hateCrimeLawGI": true
+      },
+      "highlight": "Slipped one point; no marriage equality or gender recognition, but civil-society space remains open.",
+      "highlightTr": "Bir puan kaybetti; evlilik eşitliği veya cinsiyet tanınması yok ancak sivil toplum alanı açık kalmaya devam ediyor.",
+      "lastUpdated": "2025-05"
+    },
+    {
+      "id": "BA",
+      "ilgaRank": 24,
+      "overallScore": 40,
+      "trend": "flat",
+      "categories": {
+        "equality": {
+          "score": 90,
+          "achievedItems": 20,
+          "totalItems": 25
+        },
+        "family": {
+          "score": 3,
+          "achievedItems": 1,
+          "totalItems": 11
+        },
+        "hateCrime": {
+          "score": 31,
+          "achievedItems": 3,
+          "totalItems": 9
+        },
+        "legalGenderRecog": {
+          "score": 25,
+          "achievedItems": 5,
+          "totalItems": 15
+        },
+        "intersexIntegrity": {
+          "score": 0,
+          "achievedItems": 0,
+          "totalItems": 4
+        },
+        "civilSociety": {
+          "score": 89,
+          "achievedItems": 6,
+          "totalItems": 6
+        },
+        "asylum": {
+          "score": 0,
+          "achievedItems": 0,
+          "totalItems": 6
+        }
+      },
+      "keyItems": {
+        "marriageEquality": false,
+        "jointAdoption": false,
+        "constitutionalBan": false,
+        "employmentProtectionSO": true,
+        "selfDeterminationGender": false,
+        "banOnIntersexSurgery": false,
+        "banOnConversionTherapySO": false,
+        "hateCrimeLawSO": true,
+        "hateCrimeLawGI": "partial"
+      },
+      "highlight": "Score flat at 40%; Sarajevo Pride held for seventh year but no legislative reform.",
+      "highlightTr": "Skor %40'ta sabit; Saraybosna Onur Yürüyüşü yedinci kez düzenlendi ancak yasama reformu yok.",
+      "lastUpdated": "2025-05"
+    },
+    {
+      "id": "MK",
+      "ilgaRank": 31,
+      "overallScore": 29,
+      "trend": "down",
+      "categories": {
+        "equality": {
+          "score": 45,
+          "achievedItems": 10,
+          "totalItems": 25
+        },
+        "family": {
+          "score": 3,
+          "achievedItems": 1,
+          "totalItems": 11
+        },
+        "hateCrime": {
+          "score": 23,
+          "achievedItems": 2,
+          "totalItems": 9
+        },
+        "legalGenderRecog": {
+          "score": 10,
+          "achievedItems": 2,
+          "totalItems": 15
+        },
+        "intersexIntegrity": {
+          "score": 0,
+          "achievedItems": 0,
+          "totalItems": 4
+        },
+        "civilSociety": {
+          "score": 100,
+          "achievedItems": 6,
+          "totalItems": 6
+        },
+        "asylum": {
+          "score": 33,
+          "achievedItems": 2,
+          "totalItems": 6
+        }
+      },
+      "keyItems": {
+        "marriageEquality": false,
+        "jointAdoption": false,
+        "constitutionalBan": false,
+        "employmentProtectionSO": true,
+        "selfDeterminationGender": false,
+        "banOnIntersexSurgery": false,
+        "banOnConversionTherapySO": false,
+        "hateCrimeLawSO": true,
+        "hateCrimeLawGI": true
+      },
+      "highlight": "Slipped two points after stalled anti-discrimination law reform and limited Pride protection.",
+      "highlightTr": "Ayrımcılık yasağı yasası reformunun durması ve sınırlı Onur Haftası korumasının ardından iki puan kaybetti.",
+      "lastUpdated": "2025-05"
+    },
+    {
+      "id": "RS",
+      "ilgaRank": 26,
+      "overallScore": 35,
+      "trend": "down",
+      "categories": {
+        "equality": {
+          "score": 64,
+          "achievedItems": 14,
+          "totalItems": 25
+        },
+        "family": {
+          "score": 0,
+          "achievedItems": 0,
+          "totalItems": 11
+        },
+        "hateCrime": {
+          "score": 35,
+          "achievedItems": 3,
+          "totalItems": 9
+        },
+        "legalGenderRecog": {
+          "score": 19,
+          "achievedItems": 3,
+          "totalItems": 15
+        },
+        "intersexIntegrity": {
+          "score": 0,
+          "achievedItems": 0,
+          "totalItems": 4
+        },
+        "civilSociety": {
+          "score": 83,
+          "achievedItems": 5,
+          "totalItems": 6
+        },
+        "asylum": {
+          "score": 33,
+          "achievedItems": 2,
+          "totalItems": 6
+        }
+      },
+      "keyItems": {
+        "marriageEquality": false,
+        "jointAdoption": false,
+        "constitutionalBan": true,
+        "employmentProtectionSO": true,
+        "selfDeterminationGender": false,
+        "banOnIntersexSurgery": false,
+        "banOnConversionTherapySO": false,
+        "hateCrimeLawSO": true,
+        "hateCrimeLawGI": true
+      },
+      "highlight": "Slipped one point; no marriage equality, but administrative gender recognition remains available.",
+      "highlightTr": "Bir puan kaybetti; evlilik eşitliği yok ancak idari cinsiyet tanınması mevcut olmaya devam ediyor.",
+      "lastUpdated": "2025-05"
+    }
+  ]
+}
