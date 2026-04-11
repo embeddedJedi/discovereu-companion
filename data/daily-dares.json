@@ -1,0 +1,574 @@
+{
+  "version": 1,
+  "generated": "2026-04-12",
+  "note": "Deterministic rotation. Seed = (dayOfYear ^ FNV1a(YYYY)). If state.route.stops.length > 0, prefer dares whose preferredCountries intersects the route.",
+  "dares": [
+    {
+      "id": "dare-newspaper",
+      "emoji": "📰",
+      "title": "Buy a local newspaper you can't fully read",
+      "titleTr": "Tamamını okuyamayacağın yerel bir gazete al",
+      "category": "cultural",
+      "preferredCountries": [],
+      "xp": 10
+    },
+    {
+      "id": "dare-learn-hello",
+      "emoji": "👋",
+      "title": "Learn 'hello' and 'thanks' in the local tongue",
+      "titleTr": "Yerel dilde 'merhaba' ve 'teşekkürler' öğren",
+      "category": "cultural",
+      "preferredCountries": [],
+      "xp": 5
+    },
+    {
+      "id": "dare-postcard-home",
+      "emoji": "✉️",
+      "title": "Send a postcard to your past self",
+      "titleTr": "Geçmişteki kendine bir kartpostal yolla",
+      "category": "cultural",
+      "preferredCountries": [],
+      "xp": 10
+    },
+    {
+      "id": "dare-free-museum",
+      "emoji": "🏛️",
+      "title": "Visit a museum on its free-entry day",
+      "titleTr": "Bir müzeyi ücretsiz giriş gününde ziyaret et",
+      "category": "cultural",
+      "preferredCountries": [],
+      "xp": 10
+    },
+    {
+      "id": "dare-public-library",
+      "emoji": "📚",
+      "title": "Read 10 pages in a public library",
+      "titleTr": "Halk kütüphanesinde 10 sayfa kitap oku",
+      "category": "cultural",
+      "preferredCountries": [],
+      "xp": 5
+    },
+    {
+      "id": "dare-street-art",
+      "emoji": "🎨",
+      "title": "Photograph street art and learn its artist",
+      "titleTr": "Bir sokak sanatı eserini fotoğrafla, sanatçısını öğren",
+      "category": "cultural",
+      "preferredCountries": [],
+      "xp": 10
+    },
+    {
+      "id": "dare-oldest-church",
+      "emoji": "⛪",
+      "title": "Visit the oldest church in town",
+      "titleTr": "Şehrin en eski kilisesini gör",
+      "category": "cultural",
+      "preferredCountries": [],
+      "xp": 10
+    },
+    {
+      "id": "dare-listen-busker",
+      "emoji": "🎻",
+      "title": "Listen to a street musician for a full song",
+      "titleTr": "Bir sokak müzisyenini tam bir şarkı boyunca dinle",
+      "category": "cultural",
+      "preferredCountries": [],
+      "xp": 5
+    },
+    {
+      "id": "dare-sketch-landmark",
+      "emoji": "✏️",
+      "title": "Sketch a landmark on paper, no phone",
+      "titleTr": "Bir tarihi yeri telefonsuz kağıda çiz",
+      "category": "cultural",
+      "preferredCountries": [],
+      "xp": 15
+    },
+    {
+      "id": "dare-local-cinema",
+      "emoji": "🎬",
+      "title": "Watch a film at a local independent cinema",
+      "titleTr": "Yerel bir bağımsız sinemada film izle",
+      "category": "cultural",
+      "preferredCountries": [],
+      "xp": 15
+    },
+    {
+      "id": "dare-old-town-loop",
+      "emoji": "🏰",
+      "title": "Walk the full old-town wall or perimeter",
+      "titleTr": "Tarihi şehir duvarını baştan sona yürü",
+      "category": "cultural",
+      "preferredCountries": [],
+      "xp": 10
+    },
+    {
+      "id": "dare-local-festival",
+      "emoji": "🎉",
+      "title": "Find and visit a neighbourhood festival",
+      "titleTr": "Bir mahalle festivali bul ve katıl",
+      "category": "cultural",
+      "preferredCountries": [],
+      "xp": 15
+    },
+    {
+      "id": "dare-fado-bar",
+      "emoji": "🎶",
+      "title": "Sit at a fado bar after dark",
+      "titleTr": "Karanlık çöktükten sonra bir fado barında otur",
+      "category": "cultural",
+      "preferredCountries": ["PT"],
+      "xp": 15
+    },
+    {
+      "id": "dare-flamenco-tablao",
+      "emoji": "💃",
+      "title": "Catch a flamenco tablao performance",
+      "titleTr": "Canlı bir flamenko tablao gösterisi yakala",
+      "category": "cultural",
+      "preferredCountries": ["ES"],
+      "xp": 15
+    },
+    {
+      "id": "dare-vienna-coffeehouse",
+      "emoji": "☕",
+      "title": "Spend an hour in a historic Viennese coffee house",
+      "titleTr": "Tarihi bir Viyana kahvesinde bir saat geçir",
+      "category": "cultural",
+      "preferredCountries": ["AT"],
+      "xp": 10
+    },
+    {
+      "id": "dare-berlin-wall-piece",
+      "emoji": "🧱",
+      "title": "Stand by a surviving piece of the Berlin Wall",
+      "titleTr": "Berlin Duvarı'nın ayakta kalan bir parçasını gör",
+      "category": "cultural",
+      "preferredCountries": ["DE"],
+      "xp": 10
+    },
+    {
+      "id": "dare-try-new-dish",
+      "emoji": "🍲",
+      "title": "Order a dish you can't pronounce",
+      "titleTr": "Adını telaffuz edemediğin bir yemek sipariş et",
+      "category": "culinary",
+      "preferredCountries": [],
+      "xp": 10
+    },
+    {
+      "id": "dare-market-breakfast",
+      "emoji": "🥐",
+      "title": "Have breakfast assembled from a farmers' market",
+      "titleTr": "Köylü pazarından topladıklarınla kahvaltı yap",
+      "category": "culinary",
+      "preferredCountries": [],
+      "xp": 10
+    },
+    {
+      "id": "dare-bakery-before-8",
+      "emoji": "🥖",
+      "title": "Visit a bakery before 8 am",
+      "titleTr": "Sabah 8'den önce bir fırına git",
+      "category": "culinary",
+      "preferredCountries": [],
+      "xp": 5
+    },
+    {
+      "id": "dare-hole-in-wall",
+      "emoji": "🍽️",
+      "title": "Eat at a place with no English menu",
+      "titleTr": "İngilizce menüsü olmayan bir yerde yemek ye",
+      "category": "culinary",
+      "preferredCountries": [],
+      "xp": 10
+    },
+    {
+      "id": "dare-local-dessert",
+      "emoji": "🍰",
+      "title": "Try a dessert unique to this region",
+      "titleTr": "Bu bölgeye özgü bir tatlı dene",
+      "category": "culinary",
+      "preferredCountries": [],
+      "xp": 5
+    },
+    {
+      "id": "dare-cheapest-lunch",
+      "emoji": "💶",
+      "title": "Find the cheapest sit-down lunch in town",
+      "titleTr": "Şehrin en ucuz oturmalı öğle yemeğini bul",
+      "category": "culinary",
+      "preferredCountries": [],
+      "xp": 10
+    },
+    {
+      "id": "dare-local-soft-drink",
+      "emoji": "🥤",
+      "title": "Taste a soft drink you've never heard of",
+      "titleTr": "Daha önce duymadığın bir alkolsüz içeceği tat",
+      "category": "culinary",
+      "preferredCountries": [],
+      "xp": 5
+    },
+    {
+      "id": "dare-street-food-stall",
+      "emoji": "🌯",
+      "title": "Eat a full meal at a street-food stall",
+      "titleTr": "Bir sokak yemeği tezgâhında tam bir öğün ye",
+      "category": "culinary",
+      "preferredCountries": [],
+      "xp": 10
+    },
+    {
+      "id": "dare-picnic-in-park",
+      "emoji": "🧺",
+      "title": "Picnic in a public park with shop-bought food",
+      "titleTr": "Bir halka açık parkta marketten aldıklarınla piknik yap",
+      "category": "culinary",
+      "preferredCountries": [],
+      "xp": 5
+    },
+    {
+      "id": "dare-local-cheese",
+      "emoji": "🧀",
+      "title": "Ask a cheesemonger for their favourite cheese",
+      "titleTr": "Peynircisine en sevdiği yerel peyniri sor",
+      "category": "culinary",
+      "preferredCountries": [],
+      "xp": 10
+    },
+    {
+      "id": "dare-turkish-tea-five",
+      "emoji": "🫖",
+      "title": "Drink Turkish tea at 5 pm sharp",
+      "titleTr": "Tam saat 17:00'de çay iç",
+      "category": "culinary",
+      "preferredCountries": ["TR"],
+      "xp": 5
+    },
+    {
+      "id": "dare-gelato-three-flavours",
+      "emoji": "🍦",
+      "title": "Order gelato with three regional flavours",
+      "titleTr": "Üç yöresel aromayla gelato sipariş et",
+      "category": "culinary",
+      "preferredCountries": ["IT"],
+      "xp": 5
+    },
+    {
+      "id": "dare-french-boulangerie",
+      "emoji": "🥖",
+      "title": "Buy a baguette from a neighbourhood boulangerie",
+      "titleTr": "Mahalle fırınından (boulangerie) bir baget al",
+      "category": "culinary",
+      "preferredCountries": ["FR"],
+      "xp": 5
+    },
+    {
+      "id": "dare-greek-meze",
+      "emoji": "🫒",
+      "title": "Share a full meze plate with someone",
+      "titleTr": "Biriyle tam bir meze tabağı paylaş",
+      "category": "culinary",
+      "preferredCountries": ["GR"],
+      "xp": 10
+    },
+    {
+      "id": "dare-belgian-frites",
+      "emoji": "🍟",
+      "title": "Eat frites from a proper friterie",
+      "titleTr": "Gerçek bir friterie'den patates kızartması ye",
+      "category": "culinary",
+      "preferredCountries": ["BE"],
+      "xp": 5
+    },
+    {
+      "id": "dare-dutch-herring",
+      "emoji": "🐟",
+      "title": "Try raw herring from a street cart",
+      "titleTr": "Bir sokak arabasından çiğ ringa dene",
+      "category": "culinary",
+      "preferredCountries": ["NL"],
+      "xp": 10
+    },
+    {
+      "id": "dare-swiss-fondue",
+      "emoji": "🫕",
+      "title": "Share a fondue pot with at least one new friend",
+      "titleTr": "En az bir yeni arkadaşla fondü paylaş",
+      "category": "culinary",
+      "preferredCountries": ["CH"],
+      "xp": 15
+    },
+    {
+      "id": "dare-currywurst",
+      "emoji": "🌭",
+      "title": "Rate a currywurst out of ten",
+      "titleTr": "Bir currywurst'u on üzerinden puanla",
+      "category": "culinary",
+      "preferredCountries": ["DE"],
+      "xp": 5
+    },
+    {
+      "id": "dare-ask-directions",
+      "emoji": "🗺️",
+      "title": "Ask a stranger for directions, no phone out",
+      "titleTr": "Telefonu çıkarmadan bir yabancıya yol sor",
+      "category": "social",
+      "preferredCountries": [],
+      "xp": 10
+    },
+    {
+      "id": "dare-compliment-stranger",
+      "emoji": "😊",
+      "title": "Compliment a stranger's outfit",
+      "titleTr": "Bir yabancının kıyafetine iltifat et",
+      "category": "social",
+      "preferredCountries": [],
+      "xp": 5
+    },
+    {
+      "id": "dare-hostel-story",
+      "emoji": "🛏️",
+      "title": "Learn one story from a hostel roommate",
+      "titleTr": "Hostel oda arkadaşından bir hikâye dinle",
+      "category": "social",
+      "preferredCountries": [],
+      "xp": 10
+    },
+    {
+      "id": "dare-join-free-tour",
+      "emoji": "🚶",
+      "title": "Join a free walking tour",
+      "titleTr": "Ücretsiz bir yürüyüş turuna katıl",
+      "category": "social",
+      "preferredCountries": [],
+      "xp": 10
+    },
+    {
+      "id": "dare-language-exchange",
+      "emoji": "💬",
+      "title": "Teach a phrase in your language, learn one back",
+      "titleTr": "Dilinden bir söz öğret, karşılığında bir söz öğren",
+      "category": "social",
+      "preferredCountries": [],
+      "xp": 10
+    },
+    {
+      "id": "dare-group-photo-strangers",
+      "emoji": "📸",
+      "title": "Ask strangers to take a group photo of you",
+      "titleTr": "Yabancılardan bir grup fotoğrafı çekmelerini iste",
+      "category": "social",
+      "preferredCountries": [],
+      "xp": 10
+    },
+    {
+      "id": "dare-cafe-board-game",
+      "emoji": "♟️",
+      "title": "Play a board game at a café with locals",
+      "titleTr": "Bir kafede yerellerle masa oyunu oyna",
+      "category": "social",
+      "preferredCountries": [],
+      "xp": 15
+    },
+    {
+      "id": "dare-buy-round-shared-table",
+      "emoji": "🥂",
+      "title": "Buy a round at a communal table",
+      "titleTr": "Ortak bir masada herkese ikram söyle",
+      "category": "social",
+      "preferredCountries": [],
+      "xp": 15
+    },
+    {
+      "id": "dare-dance-with-stranger",
+      "emoji": "💃",
+      "title": "Dance with a stranger at any public event",
+      "titleTr": "Herhangi bir etkinlikte bir yabancıyla dans et",
+      "category": "social",
+      "preferredCountries": [],
+      "xp": 20
+    },
+    {
+      "id": "dare-letter-fellow-traveller",
+      "emoji": "📝",
+      "title": "Write a note of encouragement to another traveller",
+      "titleTr": "Başka bir gezgine cesaret veren bir not bırak",
+      "category": "social",
+      "preferredCountries": [],
+      "xp": 10
+    },
+    {
+      "id": "dare-split-dinner-locals",
+      "emoji": "🍝",
+      "title": "Split a dinner bill with people you just met",
+      "titleTr": "Az önce tanıştığın insanlarla akşam yemeği hesabı böl",
+      "category": "social",
+      "preferredCountries": [],
+      "xp": 15
+    },
+    {
+      "id": "dare-voice-note-friend",
+      "emoji": "🎙️",
+      "title": "Send a 60-second voice note to a friend back home",
+      "titleTr": "Evdeki bir arkadaşına 60 saniyelik sesli mesaj yolla",
+      "category": "social",
+      "preferredCountries": [],
+      "xp": 5
+    },
+    {
+      "id": "dare-finnish-sauna-stranger",
+      "emoji": "🧖",
+      "title": "Share a public sauna with a stranger",
+      "titleTr": "Halka açık bir saunada bir yabancıyla otur",
+      "category": "social",
+      "preferredCountries": ["FI"],
+      "xp": 20
+    },
+    {
+      "id": "dare-irish-pub-session",
+      "emoji": "🎵",
+      "title": "Stay a full set at a pub trad-music session",
+      "titleTr": "Bir pub'da geleneksel müzik setinin tamamında kal",
+      "category": "social",
+      "preferredCountries": ["IE"],
+      "xp": 15
+    },
+    {
+      "id": "dare-skip-taxi-walk",
+      "emoji": "👟",
+      "title": "Skip a taxi and walk 30+ minutes instead",
+      "titleTr": "Taksi yerine 30+ dakika yürü",
+      "category": "green",
+      "preferredCountries": [],
+      "xp": 10
+    },
+    {
+      "id": "dare-refill-bottle",
+      "emoji": "💧",
+      "title": "Refill a reusable bottle at a public fountain",
+      "titleTr": "Halka açık çeşmeden matarayı yeniden doldur",
+      "category": "green",
+      "preferredCountries": [],
+      "xp": 5
+    },
+    {
+      "id": "dare-zero-single-use-day",
+      "emoji": "♻️",
+      "title": "Go a full day with zero single-use plastic",
+      "titleTr": "Tek kullanımlık plastik kullanmadan bir gün geçir",
+      "category": "green",
+      "preferredCountries": [],
+      "xp": 15
+    },
+    {
+      "id": "dare-night-train-over-flight",
+      "emoji": "🌙",
+      "title": "Take a night train instead of a short-haul flight",
+      "titleTr": "Kısa bir uçuş yerine gece treni tercih et",
+      "category": "green",
+      "preferredCountries": [],
+      "xp": 20
+    },
+    {
+      "id": "dare-rent-bike-day",
+      "emoji": "🚲",
+      "title": "Rent a city bike and use it all day",
+      "titleTr": "Şehir bisikleti kirala ve bütün gün kullan",
+      "category": "green",
+      "preferredCountries": [],
+      "xp": 10
+    },
+    {
+      "id": "dare-local-farm-shop",
+      "emoji": "🥕",
+      "title": "Buy one thing from a local farm shop",
+      "titleTr": "Yerel bir çiftlik dükkânından bir şey al",
+      "category": "green",
+      "preferredCountries": [],
+      "xp": 5
+    },
+    {
+      "id": "dare-pack-out-litter",
+      "emoji": "🗑️",
+      "title": "Collect three pieces of litter on a walk",
+      "titleTr": "Yürüyüş sırasında üç parça çöp topla",
+      "category": "green",
+      "preferredCountries": [],
+      "xp": 10
+    },
+    {
+      "id": "dare-public-transport-only",
+      "emoji": "🚇",
+      "title": "Use only public transport for 24 hours",
+      "titleTr": "24 saat boyunca sadece toplu taşıma kullan",
+      "category": "green",
+      "preferredCountries": [],
+      "xp": 10
+    },
+    {
+      "id": "dare-tap-water-challenge",
+      "emoji": "🚰",
+      "title": "Drink only tap water for the whole day",
+      "titleTr": "Bütün gün boyunca sadece musluk suyu iç",
+      "category": "green",
+      "preferredCountries": [],
+      "xp": 5
+    },
+    {
+      "id": "dare-city-park-hour",
+      "emoji": "🌳",
+      "title": "Spend an unbroken hour in a city park",
+      "titleTr": "Bir şehir parkında bölünmeden bir saat geçir",
+      "category": "green",
+      "preferredCountries": [],
+      "xp": 5
+    },
+    {
+      "id": "dare-second-hand-souvenir",
+      "emoji": "🛍️",
+      "title": "Buy your souvenir from a second-hand shop",
+      "titleTr": "Hatıra eşyanı ikinci el bir dükkândan al",
+      "category": "green",
+      "preferredCountries": [],
+      "xp": 10
+    },
+    {
+      "id": "dare-meat-free-day",
+      "emoji": "🥗",
+      "title": "Go fully meat-free for one day",
+      "titleTr": "Bir gün tamamen etsiz geçir",
+      "category": "green",
+      "preferredCountries": [],
+      "xp": 10
+    },
+    {
+      "id": "dare-stairs-not-lift",
+      "emoji": "🪜",
+      "title": "Take stairs instead of every lift today",
+      "titleTr": "Bugün her asansör yerine merdiven kullan",
+      "category": "green",
+      "preferredCountries": [],
+      "xp": 5
+    },
+    {
+      "id": "dare-dutch-bike-commute",
+      "emoji": "🚴",
+      "title": "Commute like a local on a bike",
+      "titleTr": "Yerliler gibi bisikletle şehir içi ulaşım yap",
+      "category": "green",
+      "preferredCountries": ["NL", "DK"],
+      "xp": 10
+    },
+    {
+      "id": "dare-swim-natural-water",
+      "emoji": "🏊",
+      "title": "Swim in a lake, river or sea you found on foot",
+      "titleTr": "Yürüyerek bulduğun bir göl, nehir veya denizde yüz",
+      "category": "green",
+      "preferredCountries": [],
+      "xp": 15
+    }
+  ]
+}
