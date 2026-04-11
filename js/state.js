@@ -14,7 +14,8 @@ const initialState = {
     homeCountry: 'TR',
     budget: 'moderate',        // 'budget' | 'moderate' | 'comfort'
     accommodation: 'hostel',   // 'hostel' | 'airbnb' | 'camp' | 'couchsurf'
-    foodStyle: 'moderate'      // 'budget' | 'moderate' | 'comfort'
+    foodStyle: 'moderate',     // 'budget' | 'moderate' | 'comfort'
+    onboarded: false           // Welcome wizard completion flag — persisted via PERSIST_KEYS.user
   },
   route: {
     stops: [],                 // [{ countryId, cityId, nights, arrivalDay, transport }]
@@ -34,6 +35,7 @@ const initialState = {
   panelTab: 'detail',
   panelOpen: false,
   compare: [],                 // list of country ids (max 4) — ephemeral
+  inclusionMode: 'default',    // 'default' | 'rainbow' | 'accessibility' — ephemeral
   prep: {
     departureDate: null,       // ISO "YYYY-MM-DD" or null
     checklistDone: {},         // { itemId: true }
