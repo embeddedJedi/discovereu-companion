@@ -11,7 +11,7 @@ import { callGroq, ParseError } from './llm-groq.js';
 import { state } from '../state.js';
 import { loadGuides } from '../data/loader.js';
 
-const MAX_STOPS = 8;
+const MAX_STOPS = 20;
 const MAX_NIGHTS_PER_STOP = 14;
 const MAX_TOTAL_DAYS = 30;
 
@@ -25,7 +25,7 @@ const SYSTEM_PROMPT = `You are a DiscoverEU trip planner. Respond ONLY with JSON
 
 Rules:
 - countryId MUST be one of the provided ISO codes.
-- Max 8 stops. Total nights across stops must be <= 30.
+- Max 20 stops. Total nights across stops must be <= 30.
 - Prefer rail-friendly adjacencies. Mention reservation-mandatory legs when relevant.
 - Respect the user's stated constraints (budget, accessibility, LGBTQ+ safety, green preference).
 - Answer in the user's interface language.
