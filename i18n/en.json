@@ -680,5 +680,13 @@
       "cultural": "Cultural",
       "adventurous": "Adventurous"
     }
+  },
+  "nightShield": {
+    "groupTitle": "Night arrival shield",
+    "lateArrivalBadge": "Late arrival",
+    "lateArrivalTooltip": "Estimated arrival around {time} — after 22:00. Book accommodation with late check-in or plan an earlier departure.",
+    "hideLateArrivalToggle": "Hide late-arrival routes",
+    "nightShieldDescription": "Flags stops where the train arrives between 22:00 and 06:00. Helpful if you prefer daylight arrivals.",
+    "templateFilteredNote": "This route has a late-night arrival."
   }
 }

@@ -2467,3 +2467,30 @@
   .sheet-container { display: none; }
 }
 .tr-card-consulate .tr-actions { display: flex; gap: var(--space-2); flex-wrap: wrap; margin-top: var(--space-2); }
+
+/* ─── Night Arrival Shield ──────────────────────────────────────────── */
+.night-shield-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  margin-left: var(--space-1);
+  font-size: 0.72rem;
+  padding: 1px 6px;
+  vertical-align: middle;
+}
+.route-stop.is-late .route-stop-name { font-weight: 600; }
+.template-dimmed { opacity: 0.55; filter: saturate(0.8); }
+.template-dimmed .btn { pointer-events: auto; }
+.template-dim-note {
+  font-size: 0.78rem;
+  color: var(--warning);
+  background: var(--warning-soft);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--space-2);
+}
+.filter-group-help {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin: var(--space-1) 0 0;
+}

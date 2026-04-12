@@ -13,6 +13,7 @@ import { qs, h, empty, on, escape } from '../utils/dom.js';
 import { getRouteReservations } from '../features/reservations.js';
 import { computeSeatCredits } from '../features/seat-credits.js';
 import { computeCO2 } from '../features/co2.js';
+import { checkNightArrivals, hasLateArrival } from '../features/night-shield.js';
 
 export function initRouteBuilder() {
   const body = qs('#panelBody');
@@ -111,8 +112,11 @@ function sumNights(route) {
 // ─── Stop list ───────────────────────────────────────────────────────────
 
 function renderStopList(route) {
+  const trains = state.getSlice('trains') || [];
+  const arrivals = checkNightArrivals(route, trains);
+
   const list = h('ol', { class: 'route-stops' },
-    route.stops.map((stop, i) => renderStop(stop, i)));
+    route.stops.map((stop, i) => renderStop(stop, i, arrivals[i])));
 
   return h('section', { class: 'route-section' }, [
     h('div', { class: 'route-section-head' }, [
@@ -127,14 +131,16 @@ function renderStopList(route) {
   ]);
 }
 
-function renderStop(stop, index) {
+function renderStop(stop, index, arrival) {
   const country = countryById(stop.countryId);
   const name = country?.name || stop.countryId;
   const flag = country?.flag || '';
   const nights = Number(stop.nights) || 0;
+  const isLate = !!arrival?.isLate;
+  const arrivalLabel = arrival?.arrivalEstimate || '';
 
   return h('li', {
-    class: 'route-stop',
+    class: 'route-stop' + (isLate ? ' is-late' : ''),
     'data-stop-index': index,
     draggable: 'true'
   }, [
@@ -145,7 +151,19 @@ function renderStop(stop, index) {
     }, '⋮⋮'),
     h('span', { class: 'route-stop-index' }, String(index + 1)),
     h('div', { class: 'route-stop-body' }, [
-      h('div', { class: 'route-stop-name' }, `${flag} ${escape(name)}`),
+      h('div', { class: 'route-stop-name' }, [
+        `${flag} ${escape(name)} `,
+        isLate
+          ? h('span', {
+              class: 'badge badge-warning night-shield-badge',
+              title: t('nightShield.lateArrivalTooltip', { time: arrivalLabel }),
+              'aria-label': t('nightShield.lateArrivalTooltip', { time: arrivalLabel })
+            }, [
+              h('span', { 'aria-hidden': 'true' }, '🌙 '),
+              h('span', null, t('nightShield.lateArrivalBadge'))
+            ])
+          : null
+      ]),
       h('div', { class: 'route-stop-meta' },
         t('route.stopNights', { n: nights }))
     ]),
@@ -318,7 +336,21 @@ function renderTemplateCard(tpl) {
 
   const flags = countries.map(c => c.flag || c.id).join(' ');
 
-  return h('article', { class: 'template-card', 'data-template-id': tpl.id }, [
+  // Night Arrival Shield: mark templates whose legs would arrive at night.
+  const trains = state.getSlice('trains') || [];
+  const tplRoute = { stops: (tpl.countries || []).map(id => ({ countryId: id, cityId: null })) };
+  const tplLate  = hasLateArrival(tplRoute, trains);
+  const filters  = state.getSlice('filters') || {};
+  const hide     = !!filters.hideLateArrival && tplLate;
+
+  return h('article', {
+    class: 'template-card' + (hide ? ' template-dimmed' : ''),
+    'data-template-id': tpl.id
+  }, [
+    hide
+      ? h('div', { class: 'template-dim-note', role: 'note' },
+          t('nightShield.templateFilteredNote'))
+      : null,
     h('header', { class: 'template-head' }, [
       h('span', { class: 'template-emoji', 'aria-hidden': 'true' }, tpl.emoji || '🗺'),
       h('div', { class: 'template-head-text' }, [

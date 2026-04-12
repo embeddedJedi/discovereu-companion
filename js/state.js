@@ -30,7 +30,8 @@ const initialState = {
     interrailOnly: true,
     accessibility: false,
     lgbtqSafe: false,
-    green: false
+    green: false,
+    hideLateArrival: false   // Night Arrival Shield — hide templates/routes with 22:00+ arrivals
   },
   selectedCountry: null,
   panelTab: 'detail',

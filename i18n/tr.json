@@ -680,5 +680,13 @@
       "cultural": "Kültür",
       "adventurous": "Macera"
     }
+  },
+  "nightShield": {
+    "groupTitle": "Gece varış kalkanı",
+    "lateArrivalBadge": "Geç varış",
+    "lateArrivalTooltip": "Tahmini varış {time} civarı — 22:00'den sonra. Geç giriş kabul eden bir konaklama ayarla ya da daha erken bir kalkış planla.",
+    "hideLateArrivalToggle": "Geç varışlı rotaları gizle",
+    "nightShieldDescription": "Trenin 22:00 ile 06:00 arasında ulaştığı durakları işaretler. Gündüz varışı tercih edenler için faydalı.",
+    "templateFilteredNote": "Bu rotada gece geç saatte bir varış var."
   }
 }

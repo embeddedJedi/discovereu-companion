@@ -49,6 +49,7 @@ function renderInto(root) {
     renderBudgetGroup(filters),
     renderInclusionGroup(filters),
     renderInterrailGroup(filters),
+    renderNightShieldGroup(filters),
 
     h('div', { class: 'filters-actions' }, [
       h('button', {
@@ -122,6 +123,14 @@ function renderInterrailGroup(filters) {
   ]);
 }
 
+function renderNightShieldGroup(filters) {
+  return h('section', { class: 'filter-group' }, [
+    h('h3', { class: 'filter-group-title' }, t('nightShield.groupTitle')),
+    renderToggle('hideLateArrival', !!filters.hideLateArrival, t('nightShield.hideLateArrivalToggle')),
+    h('p', { class: 'filter-group-help' }, t('nightShield.nightShieldDescription'))
+  ]);
+}
+
 function renderToggle(key, checked, label) {
   const input = h('input', {
     type: 'checkbox',
@@ -171,7 +180,8 @@ function wireInteractions(panel) {
       interrailOnly: true,
       accessibility: false,
       lgbtqSafe: false,
-      green: false
+      green: false,
+      hideLateArrival: false
     }));
   });
 }
