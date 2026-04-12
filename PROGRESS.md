@@ -386,12 +386,28 @@ All loaded with SRI hashes (to add in Phase 1).
   - PWA cache bumped v3 → v4 with all new assets precached
   - All 20 smoke tests pass
 
+- **v1.2 Round-trip routing + directional arrows + AI returnLeg** (2026-04-13):
+  - `state.user.homeCity` + welcome wizard home-city step + route-builder home chip with modal editor
+  - `state.route.returnStops` + `includeReturnInBudget` toggle + optional `returnTransport`
+  - `js/ui/home-city-picker.js` — shared country+city picker + `resolveHomeCoords()` helper
+  - `js/map/route-layer.js` — owns all route drawing; outbound (`accent`, dash `8,6`, weight 3) + return (`accent-2`, dash `4,10`, weight 2.5) polylines, numbered outbound markers (1,2,3), lettered return markers (A,B), 🏠 home marker
+  - `leaflet-polylinedecorator@1.6.0` CDN — forward arrowheads every 80px on both legs, guarded with `if (L.polylineDecorator)` for graceful offline degrade
+  - `js/features/effective-legs.js` — budget/credits/CO₂/reservations all iterate over `getEffectiveLegs(route)` when toggle on, skip to outbound-only when off
+  - AI: `SYSTEM_PROMPT` → `buildSystemPrompt(ctx)` bakes in home + limits + `returnLeg` JSON shape; response parser + `validateReturnLeg` writes `returnStops`/`returnTransport`; `ai:optimize-return` event → focused LLM call → diff modal (Accept/Reject) built entirely with `h()` helper
+  - 3 route templates (`grand-tour`, `mediterranean-coast`, `green-rail`) gained `returnLeg` field; `applyTemplate` backward-compatible
+  - 6 i18n locales (en/tr existing; de/fr/es/it created — these four locales NEED full backfill before the language options go live)
+  - Route summary overlay gained 🏠 return status badge
+  - PWA cache `discovereu-v4` → `discovereu-v5`
+  - 12 commits, plan in `docs/superpowers/plans/2026-04-13-roundtrip-routing.md`, spec in `docs/superpowers/specs/2026-04-13-roundtrip-routing-design.md`
+
 ### 🚧 In progress
-- *(nothing — ready to continue)*
+- v1.2 end-to-end Playwright smoke pass (20 scenarios) — pending next /loop iteration
 
 ### ⏭ Next up (in order)
 1. **Send outreach package** (launch-critical, deadline 2026-04-22) — EACEA one-pager, Turkish UA email, LinkedIn DG EAC
-2. Sub-project 3: DE / FR / ES / IT translations (extend i18n JSONs)
+2. DE / FR / ES / IT translation backfill (full app surface, not just v1.2 keys)
+3. v1.3 roadmap kickoff: Crisis Shield + Impact Dashboard + UI design system 2.0 (aligned with KA3/KA2 grant narrative — see `memory/project_pivot_erasmus_startup.md`)
+4. Custom domain (post-launch)
 3. Deploy polish: custom domain
 
 ### 🛑 Blocked
