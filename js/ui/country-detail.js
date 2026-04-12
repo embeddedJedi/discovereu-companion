@@ -8,6 +8,7 @@ import { t } from '../i18n/i18n.js';
 import { qs, h, empty, escape } from '../utils/dom.js';
 import { formatNumber } from '../utils/format.js';
 import { getFeatureName } from '../map/countries-layer.js';
+import { renderCountryGuideAccordion, renderCitiesAccordion } from './guide.js';
 
 const SCORE_KEYS = ['nature', 'culture', 'nightlife', 'food', 'history', 'safety'];
 
@@ -67,6 +68,14 @@ function renderInto(root, country, selectedId) {
   }
 
   root.appendChild(renderActions(country));
+
+  // Country Guide + Top Cities accordions (from guide.js)
+  const guideHost  = h('div', { class: 'country-detail-guide-host' });
+  const citiesHost = h('div', { class: 'country-detail-cities-host' });
+  root.appendChild(guideHost);
+  root.appendChild(citiesHost);
+  renderCountryGuideAccordion(guideHost, country.id);
+  renderCitiesAccordion(citiesHost, country.id);
 
   if (country.discoverEU === false) {
     root.appendChild(renderNonParticipatingWarning(country));
