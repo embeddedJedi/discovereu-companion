@@ -66,7 +66,8 @@ async function boot() {
       import('./ui/budget.js').then(m => m.initBudget()),
       import('./ui/compare.js').then(m => m.initCompare()),
       import('./ui/inclusion.js').then(m => m.initInclusion()),
-      import('./ui/prep.js').then(m => m.initPrep())
+      import('./ui/prep.js').then(m => m.initPrep()),
+      import('./ui/fun-tab.js').then(m => m.initFunTab())
     ]);
 
     // 7. Map — init base, then layer polygons + labels on top
