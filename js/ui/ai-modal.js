@@ -54,9 +54,14 @@ export function openAIModal() {
     if (ev.target instanceof HTMLElement && ev.target.dataset.action === 'close') close();
   });
 
-  // Decide first screen
-  if (!getKey()) renderKeyScreen(body);
-  else           renderPromptScreen(body);
+  // Decide first screen — hydrate key from storage into state if needed
+  const existingKey = getKey();
+  if (!existingKey) {
+    renderKeyScreen(body);
+  } else {
+    if (!state.getSlice('ai')?.groqKey) setKey(existingKey);
+    renderPromptScreen(body);
+  }
 }
 
 // ─── Screens ─────────────────────────────────────────────────────────────
