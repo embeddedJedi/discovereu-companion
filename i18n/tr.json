@@ -905,5 +905,167 @@
     "export": "Zaman çizelgesini dışa aktar",
     "permissionDenied": "Konum izni reddedildi. Yine de manuel girdi ekleyebilirsin.",
     "privacyNote": "Tüm konum ve fotoğraf verileri cihazında kalır. Koordinatları sadece şehir ismi için OpenStreetMap Nominatim'e gönderiyoruz."
+  },
+  "crisis": {
+    "title": "Kriz Kalkanı",
+    "subtitle": "Rotandaki her ülke için çevrimdışı çalışan acil yardım katmanı.",
+    "open": "Tam kalkanı aç",
+    "close": "Kriz kalkanını kapat",
+    "compact": {
+      "title": "Hemen yardım gerekiyor mu?",
+      "subtitle": "Aramak için numaraya dokunun. Çevrimdışı çalışır."
+    },
+    "tab": {
+      "numbers": "Acil numaralar",
+      "embassy": "Büyükelçilik ve temsilcilik",
+      "flows": "Adım adım rehberler"
+    },
+    "dial": {
+      "general": "Tüm acil durumlar (AB 112)",
+      "police": "Polis",
+      "ambulance": "Ambulans",
+      "fire": "İtfaiye",
+      "touristPolice": "Turizm polisi",
+      "women": "Kadın destek hattı",
+      "lgbtqi": "LGBTİ+ destek hattı",
+      "poison": "Zehir danışma",
+      "mental": "Ruh sağlığı destek hattı",
+      "child": "Çocuk destek hattı",
+      "callAria": "{label} numarasını ara: {number}"
+    },
+    "dialQuirk": "Yerel arama notu",
+    "call112": "112'yi arayın — AB genelinde ücretsizdir",
+    "embassy": {
+      "tr": {
+        "title": "{country} ülkesindeki T.C. temsilcilikleri",
+        "empty": "Bu ülkede yerleşik bir T.C. temsilciliği bulunmuyor — aşağıdaki komşu ülkelere bakabilirsiniz.",
+        "phone24h": "24 saat konsolosluk hattı",
+        "email": "Acil e-posta",
+        "mapsLink": "Haritada aç"
+      },
+      "other": {
+        "title": "Kendi ülkenizin elçiliğini bulun",
+        "guidance": "Ülkenizi seçin, {destCountry} ülkesindeki elçiliği için arama bağlantısı açalım. Vatandaşlığınızı hiçbir yere kaydetmiyoruz.",
+        "lookup": "Elçiliğimi ara",
+        "homeLabel": "Vatandaşı olduğunuz ülke"
+      }
+    },
+    "ownEmbassy": "Elçiliğimi bul",
+    "ownEmbassyHint": "Yalnızca bir arama bağlantısı hazırlıyoruz — hiçbir bilgi gönderilmez veya saklanmaz.",
+    "share": {
+      "button": "Konumumu paylaş",
+      "message": "Yardıma ihtiyacım var — şu an buradayım:",
+      "success": "Konum paylaşıldı",
+      "copied": "Bağlantı panoya kopyalandı",
+      "failed": "Paylaşım yapılamadı — bağlantıyı elle kopyalayabilirsiniz.",
+      "permissionDenied": "Konum izni reddedildi. Tarayıcı ayarlarından izin verin.",
+      "timeout": "Konum isteği zaman aşımına uğradı. Lütfen tekrar deneyin."
+    },
+    "flow": {
+      "back": "Geri",
+      "restart": "Baştan başla",
+      "source": "Resmi kaynak",
+      "done": "Tamam",
+      "lostPassport": {
+        "title": "Pasaport kaybı",
+        "desc": "Pasaportunuz kaybolduysa veya çalındıysa adım adım yapılacaklar.",
+        "n1": {
+          "text": "Şu an güvende misiniz?",
+          "opt1": "Evet, güvendeyim",
+          "opt2": "Hayır, güvende değilim"
+        },
+        "n2": {
+          "text": "Polise başvurup tutanak tutturun. Dosya numarasını saklayın — elçilik isteyecektir.",
+          "filingLink": "https://e-devlet.gov.tr/"
+        },
+        "n3": {
+          "text": "En yakın T.C. temsilciliğine ulaşın. Yanınıza kimlik fotokopisi, iki biyometrik fotoğraf ve polis tutanağını alın.",
+          "checklist": "Yanınıza alın: polis tutanağı, kimlik fotokopisi, iki biyometrik fotoğraf, seyahat bilgileri, banka kartı."
+        },
+        "n4": {
+          "text": "Yeni pasaport hazırlanana kadar seyahat etmeniz gerekiyorsa temsilcilikten Acil Seyahat Belgesi (ETD) isteyin.",
+          "etdInfo": "https://www.mfa.gov.tr/consular-info.tr.mfa"
+        },
+        "n5": {
+          "text": "Ailenize haber verin ve dosya numaranızı güvenli bir yere not edin.",
+          "notifyFamily": "Pasaportumu kaybettim ama güvendeyim. Dosya no: {caseNumber}. Elçilikle iletişimdeyim.",
+          "caseNumber": "Dosya numarası:"
+        },
+        "n6": {
+          "text": "Yeni belgeniz hazır olana kadar temsilcilik ile iletişimi sürdürün. Sigorta için tüm makbuzların aslını saklayın."
+        },
+        "n7": {
+          "text": "Önce güvenli bir yere geçin — aydınlık bir umumi alan, istasyon, otel lobisi — ya da yerel acil numarayı arayın."
+        }
+      },
+      "lostCard": {
+        "title": "Kart veya bilet kaybı",
+        "desc": "Kaybolan banka kartı, Interrail pasosu veya DiscoverEU biletini bloke edin, bildirin, yenileyin.",
+        "n1": {
+          "text": "Ne kaybettiniz?",
+          "optBank": "Banka kartı",
+          "optInterrail": "Interrail / Eurail pasosu",
+          "optDeuTicket": "DiscoverEU seyahat bileti"
+        },
+        "n2": {
+          "text": "Önce bankacılık uygulamasından kartı dondurun, ardından polis tutanağı tutturun.",
+          "freezeAppLink": "https://europa.eu/youreurope/citizens/consumers/financial-products-and-services/payments-transfers-cheques/index_en.htm",
+          "reportTemplate": "Banka kartım {date} tarihinde {city} şehrinde kayboldu/çalındı. Lütfen kartı bloke edip yazılı teyit veriniz."
+        },
+        "n3": {
+          "text": "Yeni kart talep edin; yolda kaldıysanız acil nakit avans isteyin."
+        },
+        "n4": {
+          "text": "Kaybolan pasoyu paso numaranızla birlikte Interrail/Eurail müşteri hizmetlerine bildirin.",
+          "interrailFaq": "https://www.interrail.eu/en/support/customer-service/faqs",
+          "passNumber": "Paso numarası:"
+        },
+        "n5": {
+          "text": "Interrail genellikle birkaç iş günü içinde yenisini düzenler — bu sırada referans numaranızla yolculuğa devam edebilirsiniz."
+        },
+        "n6": {
+          "text": "DiscoverEU panelinize giriş yapıp destek talebi açın.",
+          "deuDashboard": "https://youth.europa.eu/discovereu_en"
+        },
+        "n7": {
+          "text": "EACEA destek ekibi biletinizin yenilenmesinde size yol gösterir — bilet numaranızı hazır bulundurun."
+        }
+      },
+      "medical": {
+        "title": "Tıbbi acil durum",
+        "desc": "Kimi arayacağınıza ve hangi belgelerin hazır olacağına karar verin.",
+        "n1": {
+          "text": "Durum ne kadar ciddi?",
+          "optLifeThreat": "Hayati tehlike var",
+          "optUrgent": "Acil ama stabil",
+          "optMinor": "Hafif, kendi başıma hallederim"
+        },
+        "n2": {
+          "text": "Hemen 112'yi arayın. Operatöre tam konumunuzu bildirin.",
+          "locationShare": "Tıbbi yardıma ihtiyacım var. Konumum:"
+        },
+        "n3": {
+          "text": "Yardım gelene kadar hatta kalın. EHIC / özel sigorta bilgilerinizi hazır tutun."
+        },
+        "n4": {
+          "text": "Devlet polikliniğinde EHIC'inizi kullanın veya yakında 24 saat açık bir kliniği bulun.",
+          "ehicInfo": "https://ec.europa.eu/social/main.jsp?catId=559",
+          "clinicFinder": "https://www.google.com/maps/search/24+saat+klinik",
+          "insuranceDetails": "Sigorta şirketi, poliçe numarası, EHIC numarası, alerjiler, kullandığınız ilaçlar."
+        },
+        "n5": {
+          "text": "Tüm makbuzları saklayın — EHIC kamu sağlığını karşılar; özel sigorta geri kalanını öder."
+        },
+        "n6": {
+          "text": "Bir eczaneye uğrayın. Avrupa'da eczacılar yaygın rahatsızlıklar için ücretsiz tavsiye verir.",
+          "pharmacyFinder": "https://www.google.com/maps/search/eczane"
+        },
+        "n7": {
+          "text": "Şikayetler 24 saat içinde ağırlaşırsa 112'yi arayın veya kliniğe gidin."
+        }
+      }
+    },
+    "offlineNote": "Bu kalkan tamamen çevrimdışı çalışır — veriler uygulamayla birlikte gelir.",
+    "noPII": "Hiçbir kişisel bilgi cihazınızdan çıkmaz."
   }
 }

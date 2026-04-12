@@ -905,5 +905,167 @@
     "export": "Export timeline",
     "permissionDenied": "Location permission denied. You can still add manual entries.",
     "privacyNote": "All location and photo data stays on your device. We send coordinates only to OpenStreetMap Nominatim for city name lookup."
+  },
+  "crisis": {
+    "title": "Crisis Shield",
+    "subtitle": "Offline-first emergency help for every country on your route.",
+    "open": "Open full shield",
+    "close": "Close crisis shield",
+    "compact": {
+      "title": "Need help right now?",
+      "subtitle": "Tap a number to call. Works offline."
+    },
+    "tab": {
+      "numbers": "Emergency numbers",
+      "embassy": "Embassy & mission",
+      "flows": "Step-by-step guides"
+    },
+    "dial": {
+      "general": "All-emergencies (EU 112)",
+      "police": "Police",
+      "ambulance": "Ambulance",
+      "fire": "Fire brigade",
+      "touristPolice": "Tourist police",
+      "women": "Women's helpline",
+      "lgbtqi": "LGBTQI+ helpline",
+      "poison": "Poison control",
+      "mental": "Mental health helpline",
+      "child": "Child helpline",
+      "callAria": "Call {label} on {number}"
+    },
+    "dialQuirk": "Local dialing note",
+    "call112": "Call 112 — free across the EU",
+    "embassy": {
+      "tr": {
+        "title": "Turkish missions in {country}",
+        "empty": "No resident Turkish mission in this country — check neighbouring countries below.",
+        "phone24h": "24-hour consular line",
+        "email": "Emergency email",
+        "mapsLink": "Open in maps"
+      },
+      "other": {
+        "title": "Find your country's embassy",
+        "guidance": "Pick your home country and we will open a search for its embassy in {destCountry}. We never store your nationality.",
+        "lookup": "Search for my embassy",
+        "homeLabel": "Your home country"
+      }
+    },
+    "ownEmbassy": "Find my embassy",
+    "ownEmbassyHint": "We only build a search link — nothing is sent or saved.",
+    "share": {
+      "button": "Share my location",
+      "message": "I need help — I am here:",
+      "success": "Location shared",
+      "copied": "Link copied to clipboard",
+      "failed": "Could not share — the link is ready for you to copy manually.",
+      "permissionDenied": "Location permission denied. Enable it in your browser settings.",
+      "timeout": "Location request timed out. Please try again."
+    },
+    "flow": {
+      "back": "Back",
+      "restart": "Start over",
+      "source": "Official source",
+      "done": "Done",
+      "lostPassport": {
+        "title": "Lost passport",
+        "desc": "Step-by-step recovery if your passport is lost or stolen.",
+        "n1": {
+          "text": "Are you somewhere safe right now?",
+          "opt1": "Yes, I am safe",
+          "opt2": "No, I feel unsafe"
+        },
+        "n2": {
+          "text": "File a police report. Keep the case number — your embassy will ask for it.",
+          "filingLink": "https://e-devlet.gov.tr/"
+        },
+        "n3": {
+          "text": "Contact the nearest Turkish mission. Bring any ID copy, two photos, and the police report.",
+          "checklist": "Bring: police report, photo ID copy, two biometric photos, travel itinerary, payment card."
+        },
+        "n4": {
+          "text": "Ask the mission for an Emergency Travel Document (ETD) if you need to travel before a full passport can be issued.",
+          "etdInfo": "https://www.mfa.gov.tr/consular-info.en.mfa"
+        },
+        "n5": {
+          "text": "Let family know and save your case number somewhere safe.",
+          "notifyFamily": "I lost my passport but I am safe. Case number: {caseNumber}. Embassy in touch.",
+          "caseNumber": "Case number:"
+        },
+        "n6": {
+          "text": "Follow up with the mission until your new document is ready. Keep originals of every receipt for insurance."
+        },
+        "n7": {
+          "text": "Move to a safe place first — a lit public area, a station, a hotel lobby, or call the local emergency number."
+        }
+      },
+      "lostCard": {
+        "title": "Lost card or pass",
+        "desc": "Freeze, report, and replace a lost bank card, Interrail pass, or DiscoverEU ticket.",
+        "n1": {
+          "text": "What did you lose?",
+          "optBank": "Bank card",
+          "optInterrail": "Interrail / Eurail pass",
+          "optDeuTicket": "DiscoverEU travel pass"
+        },
+        "n2": {
+          "text": "Freeze the card in your banking app first, then file a police report.",
+          "freezeAppLink": "https://europa.eu/youreurope/citizens/consumers/financial-products-and-services/payments-transfers-cheques/index_en.htm",
+          "reportTemplate": "My bank card was lost/stolen on {date} in {city}. Please freeze the card and confirm in writing."
+        },
+        "n3": {
+          "text": "Order a replacement card and ask for an emergency cash advance if you are stranded."
+        },
+        "n4": {
+          "text": "Report the lost pass to Interrail/Eurail customer service with your pass number.",
+          "interrailFaq": "https://www.interrail.eu/en/support/customer-service/faqs",
+          "passNumber": "Pass number:"
+        },
+        "n5": {
+          "text": "Interrail can usually issue a replacement within a few working days — keep travelling with the reference number."
+        },
+        "n6": {
+          "text": "Sign in to your DiscoverEU dashboard and open a support ticket.",
+          "deuDashboard": "https://youth.europa.eu/discovereu_en"
+        },
+        "n7": {
+          "text": "EACEA support will guide you on re-issuing your travel pass — keep the ticket number handy."
+        }
+      },
+      "medical": {
+        "title": "Medical emergency",
+        "desc": "Decide who to call and what documents to have ready.",
+        "n1": {
+          "text": "How serious is it?",
+          "optLifeThreat": "Life-threatening",
+          "optUrgent": "Urgent but stable",
+          "optMinor": "Minor, self-care"
+        },
+        "n2": {
+          "text": "Call 112 now. Share your exact location with the dispatcher.",
+          "locationShare": "I need medical help. My location:"
+        },
+        "n3": {
+          "text": "Stay on the line until help arrives. Keep your EHIC / private insurance details ready."
+        },
+        "n4": {
+          "text": "Use your EHIC at a public clinic, or find a 24-hour walk-in clinic nearby.",
+          "ehicInfo": "https://ec.europa.eu/social/main.jsp?catId=559",
+          "clinicFinder": "https://www.google.com/maps/search/24h+clinic+near+me",
+          "insuranceDetails": "Insurance provider, policy number, EHIC number, allergies, current medication."
+        },
+        "n5": {
+          "text": "Keep every receipt — EHIC covers public care; private insurance reimburses the rest."
+        },
+        "n6": {
+          "text": "Visit a pharmacy. European pharmacists can advise on common issues for free.",
+          "pharmacyFinder": "https://www.google.com/maps/search/pharmacy+near+me"
+        },
+        "n7": {
+          "text": "If symptoms worsen within 24 hours, call 112 or visit a clinic."
+        }
+      }
+    },
+    "offlineNote": "This shield works fully offline — data is bundled with the app.",
+    "noPII": "No personal data leaves your device."
   }
 }
