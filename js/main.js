@@ -1,11 +1,10 @@
-// js/main.js — v1.1
-// Application bootstrap: router-driven SPA shell.
-// Each page is a lazy-loaded module with mount(container) / unmount().
+// js/main.js — v1.1 hybrid
+// Map page + side panel (5 tabs) + 2 standalone pages.
 
 import { state } from './state.js';
 import { i18n, t } from './i18n/i18n.js';
 import { initTheme } from './ui/theme.js';
-import { qs } from './utils/dom.js';
+import { qs, on, setOpen } from './utils/dom.js';
 import { loadCoreData } from './data/loader.js';
 import { hydrateRouteFromHash } from './utils/share.js';
 import { showToast } from './ui/toast.js';
@@ -14,11 +13,9 @@ import { initBottomNav } from './ui/bottom-nav.js';
 
 const pageCache = {};
 const PAGE_MODULES = {
-  map:   () => import('./pages/map.js'),
-  plan:  () => import('./pages/plan.js'),
-  fun:   () => import('./pages/fun.js'),
-  guide: () => import('./pages/guide.js'),
-  more:  () => import('./pages/more.js')
+  map:      () => import('./pages/map.js'),
+  hazirlik: () => import('./pages/hazirlik.js'),
+  kesfet:   () => import('./pages/kesfet.js')
 };
 
 let currentPageModule = null;
@@ -33,7 +30,7 @@ async function boot() {
     const savedLang = state.getSlice('language') || 'en';
     await i18n.load(savedLang);
 
-    // 3. Wire language switcher (header)
+    // 3. Wire language switcher
     const langSelect = qs('#langSelect');
     if (langSelect) {
       langSelect.value = savedLang;
@@ -42,16 +39,15 @@ async function boot() {
       });
     }
 
-    // 4. Load core data
+    // 4. Core data
     await loadCoreData();
 
-    // 5. Check for share URL before router takes over
-    const initialHash = location.hash;
-    if (initialHash.startsWith('#route=')) {
+    // 5. Share URL hydration
+    if (location.hash.startsWith('#route=')) {
       hydrateRouteFromHash();
     }
 
-    // 6. Init map (persistent — lives across page switches)
+    // 6. Init map (persistent)
     const { initMap } = await import('./map/map.js');
     const map = initMap();
     if (map) {
@@ -67,31 +63,43 @@ async function boot() {
       if (legend) legend.hidden = false;
     }
 
-    // 7. Bottom navigation
+    // 7. Wire side panel tabs (map page — 5 tabs)
+    initPanelTabs();
+    initPanelOpenState();
+
+    // 8. Init side-panel tab modules (they subscribe to state.panelTab)
+    await Promise.all([
+      import('./ui/country-detail.js').then(m => m.initCountryDetail()),
+      import('./ui/filters-ui.js').then(m => m.initFiltersUI()),
+      import('./ui/route-builder.js').then(m => m.initRouteBuilder()),
+      import('./ui/budget.js').then(m => m.initBudget()),
+      import('./ui/compare.js').then(m => m.initCompare()),
+    ]);
+
+    // 9. Bottom navigation (3 items)
     const navRoot = qs('#bottomNavRoot');
     if (navRoot) initBottomNav(navRoot);
 
-    // 8. Router — mount initial page
+    // 10. Router
     const pageRoot = qs('#pageRoot');
     onRouteChange((route) => mountPage(route.page, pageRoot));
-
     const initial = parseHash();
     await mountPage(initial.page, pageRoot);
 
-    // 9. Wire header buttons
+    // 11. Wire header buttons
     wireHeaderButtons();
 
-    // 10. Service worker
+    // 12. Service worker
     registerServiceWorker();
 
-    // 11. Hide loading shell
+    // 13. Hide loading shell
     const loader = qs('#appLoading');
     if (loader) {
       loader.setAttribute('data-hidden', 'true');
       setTimeout(() => loader.remove(), 400);
     }
 
-    // 12. Welcome wizard (first visit)
+    // 14. Welcome wizard
     const { shouldShowWizard, openWizard } = await import('./ui/welcome-wizard.js');
     if (shouldShowWizard()) {
       setTimeout(openWizard, 500);
@@ -101,6 +109,10 @@ async function boot() {
       settingsBtn.addEventListener('click', () => openWizard());
     }
 
+    // 15. Wrapped trigger
+    const { initWrappedTrigger } = await import('./features/wrapped.js');
+    initWrappedTrigger();
+
     console.info('[DiscoverEU Companion v1.1] ready');
   } catch (err) {
     console.error('[main] boot failed', err);
@@ -109,47 +121,93 @@ async function boot() {
   }
 }
 
+// ─── Side panel (map page) ──────────────────────────────────────────
+
+function initPanelOpenState() {
+  const panel = qs('#sidePanel');
+  if (!panel) return;
+
+  state.subscribe('panelOpen', (open) => setOpen(panel, open));
+  setOpen(panel, state.getSlice('panelOpen') === true);
+
+  // Auto-open panel and jump to Detail tab when a country is picked
+  state.subscribe('selectedCountry', (id) => {
+    if (!id) return;
+    if (state.getSlice('currentPage') !== 'map') return;
+    state.set('panelOpen', true);
+    state.set('panelTab', 'detail');
+  });
+}
+
+function initPanelTabs() {
+  const tabs = qs('.panel-tabs');
+  if (!tabs) return;
+
+  on(tabs, 'click', '.panel-tab', (_ev, target) => {
+    const tab = target.dataset.tab;
+    if (tab) {
+      state.set('panelTab', tab);
+      state.set('panelOpen', true);
+    }
+  });
+
+  const sync = (tab) => {
+    tabs.querySelectorAll('.panel-tab').forEach(t => {
+      t.setAttribute('aria-selected', t.dataset.tab === tab ? 'true' : 'false');
+    });
+  };
+  state.subscribe('panelTab', sync);
+  sync(state.getSlice('panelTab') || 'detail');
+}
+
+// ─── Page mounting ──────────────────────────────────────────────────
+
 async function mountPage(pageName, container) {
   if (!container) return;
   if (pageName === currentPageName) return;
 
-  // Unmount current page
   if (currentPageModule?.unmount) {
     currentPageModule.unmount();
   }
 
-  // Map container visibility + page-root transparency for map page
+  // Map + side panel visibility
   const mapContainer = qs('#mapContainer');
-  if (mapContainer) {
-    mapContainer.style.display = pageName === 'map' ? 'block' : 'none';
-  }
-  if (pageName === 'map') {
+  const sidePanel = qs('#sidePanel');
+  const isMap = pageName === 'map';
+
+  if (mapContainer) mapContainer.style.display = isMap ? 'block' : 'none';
+  if (sidePanel) sidePanel.style.display = isMap ? '' : 'none';
+
+  if (isMap) {
     container.classList.add('page-root--map');
   } else {
     container.classList.remove('page-root--map');
   }
 
-  // Clear page root
   container.innerHTML = '';
 
-  // Load and mount new page
-  if (!pageCache[pageName]) {
-    const loader = PAGE_MODULES[pageName];
-    if (!loader) { console.error(`[router] unknown page: ${pageName}`); return; }
-    pageCache[pageName] = await loader();
+  // Only load page module for non-map pages (map uses the persistent panel)
+  if (!isMap) {
+    if (!pageCache[pageName]) {
+      const loader = PAGE_MODULES[pageName];
+      if (!loader) { console.error(`[router] unknown page: ${pageName}`); return; }
+      pageCache[pageName] = await loader();
+    }
+    currentPageModule = pageCache[pageName];
+    if (currentPageModule.mount) {
+      await currentPageModule.mount(container);
+    }
+  } else {
+    currentPageModule = null;
   }
 
-  currentPageModule = pageCache[pageName];
   currentPageName = pageName;
   state.set('currentPage', pageName);
-
-  if (currentPageModule.mount) {
-    await currentPageModule.mount(container);
-  }
 }
 
+// ─── Header buttons ──────────────────────────────────────────────────
+
 function wireHeaderButtons() {
-  // Share button
   const shareBtn = qs('#btnShare');
   if (shareBtn) {
     shareBtn.addEventListener('click', async () => {
@@ -164,7 +222,6 @@ function wireHeaderButtons() {
     });
   }
 
-  // AI suggest button
   const aiBtn = qs('#aiSuggestBtn');
   if (aiBtn) {
     aiBtn.addEventListener('click', async () => {
@@ -173,7 +230,6 @@ function wireHeaderButtons() {
     });
   }
 
-  // AI header icon button
   const aiBtnIcon = qs('#btnAI');
   if (aiBtnIcon) {
     aiBtnIcon.addEventListener('click', async () => {

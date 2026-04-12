@@ -1,5 +1,5 @@
 // js/ui/bottom-nav.js
-// 5-item bottom navigation bar, syncs with router.
+// 3-item bottom navigation bar, syncs with router.
 // On desktop (≥1024px) this renders as a left sidebar via CSS.
 
 import { navigate, getCurrentRoute, onRouteChange } from '../router.js';
@@ -8,11 +8,9 @@ import { h, on } from '../utils/dom.js';
 import { state } from '../state.js';
 
 const NAV_ITEMS = [
-  { page: 'map',   icon: 'map-pin',   labelKey: 'nav.map'   },
-  { page: 'plan',  icon: 'clipboard', labelKey: 'nav.plan'  },
-  { page: 'fun',   icon: 'target',    labelKey: 'nav.fun'   },
-  { page: 'guide', icon: 'compass',   labelKey: 'nav.guide' },
-  { page: 'more',  icon: 'grid',      labelKey: 'nav.more'  }
+  { page: 'map',      icon: 'map-pin',   labelKey: 'nav.map'      },
+  { page: 'hazirlik', icon: 'clipboard', labelKey: 'nav.hazirlik' },
+  { page: 'kesfet',   icon: 'target',    labelKey: 'nav.kesfet'   }
 ];
 
 const ICONS = {

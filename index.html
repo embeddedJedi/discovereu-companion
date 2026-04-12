@@ -143,6 +143,64 @@
         </div>
       </div>
 
+      <!-- Side panel (map page — 5 tabs) -->
+      <aside class="side-panel" id="sidePanel" data-open="false" aria-label="Details panel">
+        <nav class="panel-tabs" role="tablist" aria-label="Panel sections">
+          <button class="panel-tab" role="tab" data-tab="detail" aria-selected="true">
+            <svg class="tab-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="12" y1="16" x2="12" y2="12"/>
+              <line x1="12" y1="8" x2="12.01" y2="8"/>
+            </svg>
+            <span class="tab-label" data-i18n="panel.tab.detail">Explore</span>
+          </button>
+          <button class="panel-tab" role="tab" data-tab="route">
+            <svg class="tab-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="6" cy="19" r="3"/>
+              <path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/>
+              <circle cx="18" cy="5" r="3"/>
+            </svg>
+            <span class="tab-label" data-i18n="panel.tab.route">Route</span>
+          </button>
+          <button class="panel-tab" role="tab" data-tab="budget">
+            <svg class="tab-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M20 12V8H6a2 2 0 0 1-2-2c0-1.1.9-2 2-2h12v4"/>
+              <path d="M4 6v12c0 1.1.9 2 2 2h14v-4"/>
+              <path d="M18 12a2 2 0 0 0 0 4h4v-4Z"/>
+            </svg>
+            <span class="tab-label" data-i18n="panel.tab.budget">Budget</span>
+          </button>
+          <button class="panel-tab" role="tab" data-tab="compare">
+            <svg class="tab-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3 3v18h18"/>
+              <path d="M7 16V9"/>
+              <path d="M12 16V5"/>
+              <path d="M17 16v-5"/>
+            </svg>
+            <span class="tab-label" data-i18n="panel.tab.compare">Compare</span>
+          </button>
+          <button class="panel-tab" role="tab" data-tab="filters">
+            <svg class="tab-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <line x1="4" y1="21" x2="4" y2="14"/>
+              <line x1="4" y1="10" x2="4" y2="3"/>
+              <line x1="12" y1="21" x2="12" y2="12"/>
+              <line x1="12" y1="8" x2="12" y2="3"/>
+              <line x1="20" y1="21" x2="20" y2="16"/>
+              <line x1="20" y1="12" x2="20" y2="3"/>
+              <line x1="1" y1="14" x2="7" y2="14"/>
+              <line x1="9" y1="8" x2="15" y2="8"/>
+              <line x1="17" y1="16" x2="23" y2="16"/>
+            </svg>
+            <span class="tab-label" data-i18n="panel.tab.filters">Filter</span>
+          </button>
+        </nav>
+        <div class="panel-body" id="panelBody" role="tabpanel">
+          <div class="panel-empty">
+            <p data-i18n="panel.empty.message">Select a country on the map to begin</p>
+          </div>
+        </div>
+      </aside>
+
       <!-- Page content root (router mounts pages here) -->
       <div id="pageRoot" class="page-root"></div>
     </main>

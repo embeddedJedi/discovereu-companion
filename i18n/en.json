@@ -10,6 +10,8 @@
   },
   "nav": {
     "map": "Map",
+    "hazirlik": "Prep",
+    "kesfet": "Fun",
     "plan": "Plan",
     "fun": "Fun",
     "guide": "Guide",
@@ -19,6 +21,13 @@
     "filters": "Filters",
     "compare": "Compare",
     "prep": "Prep"
+  },
+  "hazirlik": {
+    "pageTitle": "Preparation"
+  },
+  "kesfet": {
+    "pageTitle": "Fun & Inclusion",
+    "inclusionTitle": "Accessibility & Inclusion"
   },
   "panel": {
     "tab": {

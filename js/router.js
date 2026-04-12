@@ -1,9 +1,9 @@
 // js/router.js
 // Lightweight hash-based SPA router.
-// Routes: #/map, #/plan, #/fun, #/guide, #/more
-// Nested: #/guide/DE, #/fun/bingo — parsed as { page, sub }
+// Routes: #/map, #/hazirlik, #/kesfet
+// Nested: #/map/DE — parsed as { page, sub }
 
-const PAGES = ['map', 'plan', 'fun', 'guide', 'more'];
+const PAGES = ['map', 'hazirlik', 'kesfet'];
 const DEFAULT_PAGE = 'map';
 const listeners = new Set();
 
@@ -11,7 +11,7 @@ const listeners = new Set();
  * Parse a location.hash into { page, sub, params }.
  *   "#/guide/DE"  → { page: 'guide', sub: 'DE', params: {} }
  *   "#/map"       → { page: 'map',   sub: null,  params: {} }
- *   "#route=abc"  → { page: 'plan',  sub: null,  params: { route: 'abc' } }
+ *   "#route=abc"  → { page: 'map',   sub: null,  params: { route: 'abc' } }
  *   ""            → { page: 'map',   sub: null,  params: {} }
  */
 export function parseHash(hash = location.hash) {
@@ -19,7 +19,7 @@ export function parseHash(hash = location.hash) {
 
   // Legacy share URL: #route=...
   if (raw.startsWith('route=')) {
-    return { page: 'plan', sub: null, params: { route: raw.slice(6) } };
+    return { page: 'map', sub: null, params: { route: raw.slice(6) } };
   }
 
   const segments = raw.split('/').filter(Boolean);

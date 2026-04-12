@@ -10,6 +10,8 @@
   },
   "nav": {
     "map": "Harita",
+    "hazirlik": "Hazırlık",
+    "kesfet": "Keşfet",
     "plan": "Plan",
     "fun": "Eğlence",
     "guide": "Rehber",
@@ -19,6 +21,13 @@
     "filters": "Filtre",
     "compare": "Karşılaştır",
     "prep": "Hazırlık"
+  },
+  "hazirlik": {
+    "pageTitle": "Hazırlık"
+  },
+  "kesfet": {
+    "pageTitle": "Eğlence & Kapsayıcılık",
+    "inclusionTitle": "Erişilebilirlik & Kapsayıcılık"
   },
   "panel": {
     "tab": {
