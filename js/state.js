@@ -37,6 +37,7 @@ const initialState = {
   panelOpen: false,
   compare: [],                 // list of country ids (max 4) — ephemeral
   inclusionMode: 'default',    // 'default' | 'rainbow' | 'accessibility' — ephemeral
+  currentPage: 'map',          // 'map' | 'plan' | 'fun' | 'guide' | 'more' — ephemeral
   activeFunSubtab: 'bingo',    // 'bingo' | 'dares' | 'futureMe' — ephemeral
   bingo: {                     // persisted
     completed: {}              // { [challengeId]: true }

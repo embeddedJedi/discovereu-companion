@@ -1,27 +1,39 @@
-// js/main.js
-// Application bootstrap — wires state, i18n, theme, panel, map, data.
-// Kept deliberately lean: everything interesting lives in its own module.
+// js/main.js — v1.1
+// Application bootstrap: router-driven SPA shell.
+// Each page is a lazy-loaded module with mount(container) / unmount().
 
 import { state } from './state.js';
-import { i18n } from './i18n/i18n.js';
+import { i18n, t } from './i18n/i18n.js';
 import { initTheme } from './ui/theme.js';
-import { qs, on, setOpen } from './utils/dom.js';
+import { qs } from './utils/dom.js';
 import { loadCoreData } from './data/loader.js';
-import { hydrateRouteFromHash, copyCurrentURL } from './utils/share.js';
+import { hydrateRouteFromHash } from './utils/share.js';
 import { showToast } from './ui/toast.js';
-import { t } from './i18n/i18n.js';
-import { initWrappedTrigger } from './features/wrapped.js';
+import { parseHash, onRouteChange } from './router.js';
+import { initBottomNav } from './ui/bottom-nav.js';
+
+const pageCache = {};
+const PAGE_MODULES = {
+  map:   () => import('./pages/map.js'),
+  plan:  () => import('./pages/plan.js'),
+  fun:   () => import('./pages/fun.js'),
+  guide: () => import('./pages/guide.js'),
+  more:  () => import('./pages/more.js')
+};
+
+let currentPageModule = null;
+let currentPageName = null;
 
 async function boot() {
   try {
-    // 1. Theme — apply immediately (synchronous; prevents FOUC)
+    // 1. Theme
     initTheme();
 
-    // 2. i18n — await language load before rendering UI strings
+    // 2. i18n
     const savedLang = state.getSlice('language') || 'en';
     await i18n.load(savedLang);
 
-    // 3. Wire language switcher
+    // 3. Wire language switcher (header)
     const langSelect = qs('#langSelect');
     if (langSelect) {
       langSelect.value = savedLang;
@@ -30,50 +42,18 @@ async function boot() {
       });
     }
 
-    // 4. Wire panel tabs + mobile bottom nav + panel open/close reaction
-    initPanelTabs();
-    initBottomNav();
-    initPanelOpenState();
-
-    // 5. Core data bundle — countries / trains / reservations / templates
-    //    Fire-and-await: we want the map layer to see the countries slice.
+    // 4. Load core data
     await loadCoreData();
 
-    // 5a. Shareable URL — hydrate the route slice from location.hash
-    //     *after* countries load so the UI has names to render.
-    hydrateRouteFromHash();
-
-    // 5b. Wire the header share button
-    const shareBtn = qs('#btnShare');
-    if (shareBtn) {
-      shareBtn.addEventListener('click', async () => {
-        const route = state.getSlice('route');
-        if (!route?.stops?.length) {
-          showToast(t('share.empty'), 'warning');
-          return;
-        }
-        const ok = await copyCurrentURL();
-        showToast(ok ? t('share.copied') : t('share.failed'), ok ? 'success' : 'danger');
-      });
+    // 5. Check for share URL before router takes over
+    const initialHash = location.hash;
+    if (initialHash.startsWith('#route=')) {
+      hydrateRouteFromHash();
     }
 
-    // 6. Side-panel tab modules — each owns its own tab and subscribes to
-    //    panelTab, re-rendering #panelBody when its tab becomes active.
-    await Promise.all([
-      import('./ui/country-detail.js').then(m => m.initCountryDetail()),
-      import('./ui/filters-ui.js').then(m => m.initFiltersUI()),
-      import('./ui/route-builder.js').then(m => m.initRouteBuilder()),
-      import('./ui/budget.js').then(m => m.initBudget()),
-      import('./ui/compare.js').then(m => m.initCompare()),
-      import('./ui/inclusion.js').then(m => m.initInclusion()),
-      import('./ui/prep.js').then(m => m.initPrep()),
-      import('./ui/fun-tab.js').then(m => m.initFunTab())
-    ]);
-
-    // 7. Map — init base, then layer polygons + labels on top
+    // 6. Init map (persistent — lives across page switches)
     const { initMap } = await import('./map/map.js');
     const map = initMap();
-
     if (map) {
       const [{ initCountriesLayer }, { initLabelsLayer }, { initInclusionLayer }] = await Promise.all([
         import('./map/countries-layer.js'),
@@ -83,43 +63,45 @@ async function boot() {
       const countriesLayer = await initCountriesLayer(map);
       await initLabelsLayer(map);
       if (countriesLayer) await initInclusionLayer(countriesLayer);
-      // Reveal the legend now that polygons are drawn
       const legend = qs('#mapLegend');
       if (legend) legend.hidden = false;
     }
 
-    // 7a. Register the service worker (PWA offline support). Non-blocking:
-    //     failure logs a warning but the app keeps running online-only.
+    // 7. Bottom navigation
+    const navRoot = qs('#bottomNavRoot');
+    if (navRoot) initBottomNav(navRoot);
+
+    // 8. Router — mount initial page
+    const pageRoot = qs('#pageRoot');
+    onRouteChange((route) => mountPage(route.page, pageRoot));
+
+    const initial = parseHash();
+    await mountPage(initial.page, pageRoot);
+
+    // 9. Wire header buttons
+    wireHeaderButtons();
+
+    // 10. Service worker
     registerServiceWorker();
 
-    // 7b. Wire Wrapped card trigger (delegates to any [data-wrapped-trigger])
-    initWrappedTrigger();
-
-    // 7c. Wire AI assistant header button
-    const { initAITrigger } = await import('./features/ai-assistant.js');
-    initAITrigger('#aiSuggestBtn');
-
-    // 8. Hide loading shell
+    // 11. Hide loading shell
     const loader = qs('#appLoading');
     if (loader) {
       loader.setAttribute('data-hidden', 'true');
       setTimeout(() => loader.remove(), 400);
     }
 
-    // 9. First-visit welcome wizard
+    // 12. Welcome wizard (first visit)
     const { shouldShowWizard, openWizard } = await import('./ui/welcome-wizard.js');
     if (shouldShowWizard()) {
-      // Delay a beat so the loading shell has finished fading out first.
       setTimeout(openWizard, 500);
     }
-
-    // 10. Wire the header settings button to re-open the wizard on demand
     const settingsBtn = qs('#btnSettings');
     if (settingsBtn) {
       settingsBtn.addEventListener('click', () => openWizard());
     }
 
-    console.info('[DiscoverEU Companion] ready');
+    console.info('[DiscoverEU Companion v1.1] ready');
   } catch (err) {
     console.error('[main] boot failed', err);
     const loader = qs('#appLoading');
@@ -127,70 +109,83 @@ async function boot() {
   }
 }
 
-function initPanelOpenState() {
-  const panel = qs('#sidePanel');
-  if (!panel) return;
+async function mountPage(pageName, container) {
+  if (!container) return;
+  if (pageName === currentPageName) return;
 
-  // Keep panel DOM + state in sync
-  state.subscribe('panelOpen', (open) => setOpen(panel, open));
-  setOpen(panel, state.getSlice('panelOpen') === true);
+  // Unmount current page
+  if (currentPageModule?.unmount) {
+    currentPageModule.unmount();
+  }
 
-  // Auto-open the panel and jump to the Detail tab when a country is picked.
-  state.subscribe('selectedCountry', (id) => {
-    if (!id) return;
-    state.set('panelOpen', true);
-    state.set('panelTab', 'detail');
-  });
+  // Map container visibility
+  const mapContainer = qs('#mapContainer');
+  if (mapContainer) {
+    mapContainer.style.display = pageName === 'map' ? 'block' : 'none';
+  }
+
+  // Clear page root
+  container.innerHTML = '';
+
+  // Load and mount new page
+  if (!pageCache[pageName]) {
+    const loader = PAGE_MODULES[pageName];
+    if (!loader) { console.error(`[router] unknown page: ${pageName}`); return; }
+    pageCache[pageName] = await loader();
+  }
+
+  currentPageModule = pageCache[pageName];
+  currentPageName = pageName;
+  state.set('currentPage', pageName);
+
+  if (currentPageModule.mount) {
+    await currentPageModule.mount(container);
+  }
 }
 
-function initPanelTabs() {
-  const tabs = qs('.panel-tabs');
-  if (!tabs) return;
-
-  // Click → state
-  on(tabs, 'click', '.panel-tab', (_ev, target) => {
-    const tab = target.dataset.tab;
-    if (tab) state.set('panelTab', tab);
-  });
-
-  // State → DOM (single source of truth)
-  const sync = (tab) => {
-    tabs.querySelectorAll('.panel-tab').forEach(t => {
-      t.setAttribute('aria-selected', t.dataset.tab === tab ? 'true' : 'false');
+function wireHeaderButtons() {
+  // Share button
+  const shareBtn = qs('#btnShare');
+  if (shareBtn) {
+    shareBtn.addEventListener('click', async () => {
+      const route = state.getSlice('route');
+      if (!route?.stops?.length) {
+        showToast(t('share.empty'), 'warning');
+        return;
+      }
+      const { copyCurrentURL } = await import('./utils/share.js');
+      const ok = await copyCurrentURL();
+      showToast(ok ? t('share.copied') : t('share.failed'), ok ? 'success' : 'danger');
     });
-  };
-  state.subscribe('panelTab', sync);
-  sync(state.getSlice('panelTab') || 'detail');
-}
+  }
 
-function initBottomNav() {
-  const nav = qs('.bottom-nav');
-  if (!nav) return;
-
-  on(nav, 'click', '.bottom-nav-item', (_ev, target) => {
-    const tab = target.dataset.tab;
-    if (!tab) return;
-    state.set('panelOpen', true);
-    state.set('panelTab', tab);
-  });
-
-  state.subscribe('panelTab', (tab) => {
-    nav.querySelectorAll('.bottom-nav-item').forEach(item => {
-      item.setAttribute('aria-selected', item.dataset.tab === tab ? 'true' : 'false');
+  // AI suggest button
+  const aiBtn = qs('#aiSuggestBtn');
+  if (aiBtn) {
+    aiBtn.addEventListener('click', async () => {
+      const { initAITrigger } = await import('./features/ai-assistant.js');
+      initAITrigger('#aiSuggestBtn');
     });
-  });
+  }
+
+  // AI header icon button
+  const aiBtnIcon = qs('#btnAI');
+  if (aiBtnIcon) {
+    aiBtnIcon.addEventListener('click', async () => {
+      const { initAITrigger } = await import('./features/ai-assistant.js');
+      initAITrigger();
+    });
+  }
 }
 
 function registerServiceWorker() {
   if (!('serviceWorker' in navigator)) return;
-  // Only register when served over HTTP(S); file:// cannot host a SW.
   if (!location.protocol.startsWith('http')) return;
   navigator.serviceWorker.register('./sw.js').catch(err => {
     console.warn('[sw] registration failed', err);
   });
 }
 
-// Start
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', boot);
 } else {
