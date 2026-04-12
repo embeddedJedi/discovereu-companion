@@ -179,3 +179,6 @@ function wireActions(panel) {
     state.set('compare', []);
   });
 }
+
+// ─── Page-level export ──────────────────────────────────────────────────
+export { renderInto as renderComparePanel };

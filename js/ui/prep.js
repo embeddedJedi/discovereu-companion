@@ -243,3 +243,6 @@ function daysBetween(from, to) {
   const tDate = new Date(to.getFullYear(), to.getMonth(), to.getDate());
   return Math.round((tDate - f) / ONE_DAY);
 }
+
+// ─── Page-level export ──────────────────────────────────────────────────
+export { renderInto as renderPrepPanel };

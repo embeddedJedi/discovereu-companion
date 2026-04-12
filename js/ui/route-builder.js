@@ -479,3 +479,6 @@ function applyTemplate(templateId) {
     name: tpl.name
   }));
 }
+
+// ─── Page-level export ──────────────────────────────────────────────────
+export { renderInto as renderRoutePanel };

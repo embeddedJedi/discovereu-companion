@@ -262,3 +262,6 @@ function wireActions(panel) {
     state.update('user', u => ({ ...u, foodStyle: target.dataset.value }));
   });
 }
+
+// ─── Page-level export ──────────────────────────────────────────────────
+export { renderInto as renderBudgetPanel };

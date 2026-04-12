@@ -325,3 +325,5 @@ export function activateFewerOpportunitiesMode() {
   showToast(t('inclusion.fewerOppsEnabled'), 'success', 5000);
   state.set('panelTab', 'filters');
 }
+
+export { renderInto as renderInclusionPanel, renderCountryView as renderInclusionSummary };
