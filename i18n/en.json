@@ -23,6 +23,7 @@
       "budget": "Cost",
       "filters": "Filter",
       "compare": "Match",
+      "fun": "Fun",
       "inclusion": "Equal",
       "prep": "Prep"
     },
