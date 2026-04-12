@@ -8,12 +8,14 @@ import { state } from '../state.js';
 import { t } from '../i18n/i18n.js';
 import { h, on } from '../utils/dom.js';
 import { activateFewerOpportunitiesMode } from './inclusion.js';
+import { renderHomeCityPicker } from './home-city-picker.js';
 
 const STEP_COUNT = 4;
 
 // Transient state held in the module while the wizard is open.
 let answers = {
   homeCountry: null,
+  homeCity: null,
   groupSize: null,
   budget: null,
   priorities: new Set()
@@ -27,10 +29,12 @@ export function shouldShowWizard() {
 
 export function openWizard() {
   currentStep = 0;
-  answers = { homeCountry: null, groupSize: null, budget: null, priorities: new Set() };
-  // Pre-fill the home country guess from browser locale.
+  answers = { homeCountry: null, homeCity: null, groupSize: null, budget: null, priorities: new Set() };
+  // Pre-fill from existing user slice, falling back to browser locale.
+  const user = state.getSlice('user') || {};
   const guess = (navigator.language || 'en').split('-')[1]?.toUpperCase() || 'TR';
-  answers.homeCountry = guess;
+  answers.homeCountry = user.homeCountry || guess;
+  answers.homeCity    = user.homeCity || null;
 
   overlayEl = h('div', { class: 'modal-overlay wizard-overlay', 'data-modal': 'wizard' }, [
     h('div', { class: 'modal wizard-modal', role: 'dialog', 'aria-modal': 'true', 'aria-labelledby': 'wizard-title' }, [
@@ -115,7 +119,7 @@ function renderStep() {
 
 function renderQuestion(stepIndex) {
   switch (stepIndex) {
-    case 0: return renderQ1HomeCountry();
+    case 0: return renderQ1Home();
     case 1: return renderQ2GroupSize();
     case 2: return renderQ3Budget();
     case 3: return renderQ4Priorities();
@@ -123,24 +127,27 @@ function renderQuestion(stepIndex) {
   }
 }
 
-function renderQ1HomeCountry() {
-  // Use the existing countries slice to build a <select>.
-  const countries = state.getSlice('countries') || [];
-  const options = [{ id: 'TR', name: 'Türkiye' }, ...countries]
-    .reduce((map, c) => (map[c.id] = c.name, map), {});
-
-  return h('div', { class: 'wizard-step' }, [
-    h('h4', null, t('wizard.q1.title')),
-    h('p',  { class: 'wizard-help' }, t('wizard.q1.help')),
-    h('select', {
-      class: 'input',
-      'data-action': 'wizard-country-select',
-      'aria-label': t('wizard.q1.title')
-    }, Object.entries(options).map(([id, name]) => h('option', {
-      value: id,
-      ...(answers.homeCountry === id ? { selected: '' } : {})
-    }, `${name} (${id})`)))
+function renderQ1Home() {
+  // Home country + city picker. The picker calls onChange with both ids,
+  // which we capture into `answers` for the finish() step to persist.
+  const step = h('div', { class: 'wizard-step' }, [
+    h('h4', null, t('wizard.home.title')),
+    h('p',  { class: 'wizard-hint' }, t('wizard.home.hint'))
   ]);
+  const pickerBox = h('div', { class: 'wizard-home-picker' });
+  step.appendChild(pickerBox);
+  renderHomeCityPicker(pickerBox, {
+    countryId: answers.homeCountry,
+    cityId: answers.homeCity,
+    onChange: ({ countryId, cityId }) => {
+      answers.homeCountry = countryId;
+      answers.homeCity = cityId;
+      // Persist eagerly so downstream consumers (map, route-builder)
+      // see the home selection as soon as the user picks it.
+      state.update('user', u => ({ ...u, homeCountry: countryId, homeCity: cityId }));
+    }
+  });
+  return step;
 }
 
 function renderQ2GroupSize() {
@@ -229,6 +236,7 @@ function finish() {
   state.update('user', u => ({
     ...u,
     homeCountry: answers.homeCountry || u.homeCountry,
+    homeCity:    answers.homeCity    || u.homeCity,
     groupSize:   answers.groupSize   || u.groupSize,
     budget:      answers.budget      || u.budget,
     onboarded:   true
