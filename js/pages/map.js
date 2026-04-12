@@ -1,7 +1,7 @@
 // js/pages/map.js
-// Map page: full-screen Leaflet map + overlay elements + bottom sheet.
-// The map is persistent (lives in #mapContainer, not destroyed on page switch).
-// mount() shows it + adds overlays, unmount() hides it + cleans up.
+// Map page: full-screen Leaflet map + overlay elements.
+// Desktop (≥1024px): right side panel for country detail.
+// Mobile (<1024px): bottom sheet for country detail.
 
 import { state, countryById } from '../state.js';
 import { t } from '../i18n/i18n.js';
@@ -12,7 +12,11 @@ import { navigate } from '../router.js';
 let sheet = null;
 let overlayEl = null;
 let chipStripEl = null;
+let sidePanelEl = null;
 let unsubscribers = [];
+
+const DESKTOP_BP = 1024;
+function isDesktop() { return window.innerWidth >= DESKTOP_BP; }
 
 export function mount(container) {
   // Show the map container
@@ -31,7 +35,11 @@ export function mount(container) {
   overlayEl.appendChild(chipStripEl);
   renderChipStrip();
 
-  // Bottom sheet for country detail
+  // Desktop: side panel for country detail
+  sidePanelEl = h('div', { class: 'map-side-panel', 'data-open': 'false' });
+  container.appendChild(sidePanelEl);
+
+  // Mobile: bottom sheet for country detail
   sheet = createBottomSheet();
   container.appendChild(sheet.el);
 
@@ -39,7 +47,13 @@ export function mount(container) {
   unsubscribers.push(
     state.subscribe('route', () => { renderRouteSummary(); renderChipStrip(); }),
     state.subscribe('selectedCountry', onCountrySelected),
-    state.subscribe('language', () => { renderRouteSummary(); renderChipStrip(); })
+    state.subscribe('language', () => {
+      renderRouteSummary();
+      renderChipStrip();
+      // Re-render side panel if open
+      const id = state.getSlice('selectedCountry');
+      if (id && isDesktop()) renderSidePanel(countryById(id));
+    })
   );
 
   // Listen for country-click events from countries-layer
@@ -52,6 +66,7 @@ export function unmount() {
 
   if (sheet) { sheet.destroy(); sheet = null; }
   if (overlayEl) { overlayEl.remove(); overlayEl = null; }
+  if (sidePanelEl) { sidePanelEl.remove(); sidePanelEl = null; }
   chipStripEl = null;
   unsubscribers.forEach(fn => fn());
   unsubscribers = [];
@@ -64,15 +79,69 @@ function onCountryClick(ev) {
 }
 
 function onCountrySelected(countryId) {
-  if (!countryId || !sheet) return;
+  if (!countryId) {
+    closeSidePanel();
+    if (sheet) sheet.close();
+    return;
+  }
   const country = countryById(countryId);
   if (!country) return;
-  const content = renderCountrySheet(country);
-  sheet.open(content, 'peek');
+
+  if (isDesktop()) {
+    renderSidePanel(country);
+  } else {
+    if (sheet) {
+      const content = renderCountryContent(country);
+      sheet.open(content, 'peek');
+    }
+  }
 }
 
-function renderCountrySheet(country) {
-  return h('div', { class: 'country-sheet' }, [
+// ─── Side panel (desktop) ────────────────────────────────────────────
+
+function renderSidePanel(country) {
+  if (!sidePanelEl) return;
+  empty(sidePanelEl);
+  sidePanelEl.setAttribute('data-open', 'true');
+
+  // Close button
+  sidePanelEl.appendChild(h('button', {
+    class: 'side-panel-close',
+    type: 'button',
+    'aria-label': 'Close',
+    onclick: () => {
+      state.set('selectedCountry', null);
+      closeSidePanel();
+    }
+  }, '×'));
+
+  // Country content
+  sidePanelEl.appendChild(renderCountryContent(country));
+
+  // Extended info: highlights, description
+  if (country.highlights?.length) {
+    sidePanelEl.appendChild(h('div', { class: 'side-panel-highlights' }, [
+      h('h3', null, 'Highlights'),
+      h('ul', null, country.highlights.map(hi => h('li', null, hi)))
+    ]));
+  }
+
+  if (country.description) {
+    sidePanelEl.appendChild(h('p', { class: 'side-panel-desc' }, country.description));
+  }
+}
+
+function closeSidePanel() {
+  if (sidePanelEl) {
+    sidePanelEl.setAttribute('data-open', 'false');
+    setTimeout(() => { if (sidePanelEl) empty(sidePanelEl); }, 300);
+  }
+}
+
+// ─── Shared country content (used by both sheet + panel) ─────────────
+
+function renderCountryContent(country) {
+  return h('div', { class: 'country-detail-content' }, [
     h('div', { class: 'country-sheet-header' }, [
       h('span', { class: 'country-sheet-flag', 'aria-hidden': 'true' }, country.flag || ''),
       h('h2', { class: 'country-sheet-name' }, country.name),
@@ -97,20 +166,24 @@ function renderCountrySheet(country) {
             ...r,
             stops: [...r.stops, { countryId: country.id, cityId: null, nights: 2, arrivalDay: null }]
           }));
-          sheet.close();
+          closeSidePanel();
+          if (sheet) sheet.close();
         }
       }, t('country.addToRoute')),
       h('button', {
         class: 'btn btn-secondary',
         type: 'button',
         onclick: () => {
-          sheet.close();
+          closeSidePanel();
+          if (sheet) sheet.close();
           navigate('guide', country.id);
         }
       }, t('country.viewGuide'))
     ])
   ]);
 }
+
+// ─── Route overlays ──────────────────────────────────────────────────
 
 function renderRouteSummary() {
   if (!overlayEl) return;
