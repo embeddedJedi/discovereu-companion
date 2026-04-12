@@ -369,7 +369,29 @@
       "bingo": "Bingo",
       "dares": "Günlük Cesaret",
       "futureMe": "Gelecek Bana"
-    }
+    },
+    "pageTitle": "Eğlence & Anılar",
+    "card": {
+      "bingo": "Şehir Bingo",
+      "dares": "Günlük Cesaret",
+      "futureMe": "Gelecekteki Ben",
+      "soundtrack": "Müzik"
+    },
+    "teaser": {
+      "bingo": "Avrupa'da fotoğraf görevleri",
+      "dares": "Günlük mini görevler",
+      "futureMe": "Zaman kapsülü mektupları",
+      "soundtrack": "Ülke playlistleri"
+    },
+    "backToGrid": "Geri",
+    "challenges": "görev",
+    "dayStreak": "günlük seri",
+    "startDare": "İlk görevine başla!",
+    "capsules": "kapsül",
+    "writeCapsule": "İlk kapsülünü yaz",
+    "listenNow": "Yerel müziği keşfet",
+    "comingSoon": "Yakında",
+    "loadError": "Yüklenemedi — tekrar dene"
   },
   "bingo": {
     "loading": "Bingo kartı yükleniyor…",
@@ -513,36 +535,36 @@
     },
     "rainbow": {
       "cat": {
-        "equality":          "Eşitlik",
-        "family":            "Aile",
-        "hateCrime":         "Nefret suçu",
-        "legalGenderRecog":  "Cinsiyet tanıma",
+        "equality": "Eşitlik",
+        "family": "Aile",
+        "hateCrime": "Nefret suçu",
+        "legalGenderRecog": "Cinsiyet tanıma",
         "intersexIntegrity": "İnterseks bütünlüğü",
-        "civilSociety":      "Sivil toplum",
-        "asylum":            "İltica"
+        "civilSociety": "Sivil toplum",
+        "asylum": "İltica"
       },
       "keyItem": {
-        "marriageEquality":        "Evlilik eşitliği",
-        "jointAdoption":           "Ortak evlat edinme",
-        "constitutionalBan":       "Anayasal ayrımcılık yasağı",
-        "employmentProtection":    "İstihdamda koruma",
+        "marriageEquality": "Evlilik eşitliği",
+        "jointAdoption": "Ortak evlat edinme",
+        "constitutionalBan": "Anayasal ayrımcılık yasağı",
+        "employmentProtection": "İstihdamda koruma",
         "selfDeterminationGender": "Kendi kaderini tayin yasası",
-        "banOnIntersexSurgery":    "İnterseks ameliyat yasağı",
-        "banOnConversionTherapy":  "Dönüştürme terapisi yasağı",
-        "hateCrimeLawSO":          "Nefret suçu yasası (cinsel yönelim)",
-        "hateCrimeLawGI":          "Nefret suçu yasası (cinsiyet kimliği)"
+        "banOnIntersexSurgery": "İnterseks ameliyat yasağı",
+        "banOnConversionTherapy": "Dönüştürme terapisi yasağı",
+        "hateCrimeLawSO": "Nefret suçu yasası (cinsel yönelim)",
+        "hateCrimeLawGI": "Nefret suçu yasası (cinsiyet kimliği)"
       }
     },
     "access": {
       "title": "Erişilebilirlik",
       "section": {
         "publicTransport": "Toplu ulaşım",
-        "trainStations":   "Tren istasyonları",
-        "accommodation":   "Konaklama",
-        "attractions":     "Turistik yerler"
+        "trainStations": "Tren istasyonları",
+        "accommodation": "Konaklama",
+        "attractions": "Turistik yerler"
       },
       "euCardYes": "EU Disability Card kabul ediliyor",
-      "euCardNo":  "EU Disability Card henüz kabul edilmiyor",
+      "euCardNo": "EU Disability Card henüz kabul edilmiyor",
       "nationalCard": "Yerel kart",
       "discount": "Tipik indirim",
       "topCities": "Erişilebilir mekan sayısı (Wheelmap)",
@@ -558,9 +580,9 @@
       "phrasesTitle": "Temel ifadeler"
     },
     "missing": {
-      "rainbow":       "Bu ülke için Rainbow verisi henüz derlenmedi — GitHub'da katkıda bulun.",
+      "rainbow": "Bu ülke için Rainbow verisi henüz derlenmedi — GitHub'da katkıda bulun.",
       "accessibility": "Bu ülke için erişilebilirlik verisi henüz derlenmedi — GitHub'da katkıda bulun.",
-      "emergency":     "Bu ülke için acil durum verisi henüz derlenmedi — GitHub'da katkıda bulun."
+      "emergency": "Bu ülke için acil durum verisi henüz derlenmedi — GitHub'da katkıda bulun."
     }
   },
   "wizard": {
@@ -571,30 +593,30 @@
     "finish": "Bitir",
     "q1": {
       "title": "Nereden geliyorsun?",
-      "help":  "Ülkeye özgü ipuçlarını (Schengen vizesi, Sofia Express, vb.) açmak için kullanıyoruz."
+      "help": "Ülkeye özgü ipuçlarını (Schengen vizesi, Sofia Express, vb.) açmak için kullanıyoruz."
     },
     "q2": {
       "title": "Kaç kişisiniz?",
-      "help":  "DiscoverEU 4 kişiye kadar gruplara izin veriyor.",
-      "solo":  "1 — tek başıma",
+      "help": "DiscoverEU 4 kişiye kadar gruplara izin veriyor.",
+      "solo": "1 — tek başıma",
       "small": "2-3 — arkadaşlarla",
-      "full":  "4 — tam grup"
+      "full": "4 — tam grup"
     },
     "q3": {
       "title": "Bütçe stilin?",
-      "help":  "Bütçe sekmesindeki varsayılanları ayarlar.",
-      "low":   "Ekonomik",
-      "mid":   "Orta",
-      "high":  "Konforlu"
+      "help": "Bütçe sekmesindeki varsayılanları ayarlar.",
+      "low": "Ekonomik",
+      "mid": "Orta",
+      "high": "Konforlu"
     },
     "q4": {
       "title": "Öncelikli ne?",
-      "help":  "Uygun olanları seç — harita tercihlerine göre ayarlanır.",
-      "accessible":  "Erişilebilir",
-      "lgbtq":       "LGBTQ+ güvenli",
-      "lowBudget":   "Düşük bütçe",
-      "green":       "Sürdürülebilir",
-      "cultural":    "Kültür",
+      "help": "Uygun olanları seç — harita tercihlerine göre ayarlanır.",
+      "accessible": "Erişilebilir",
+      "lgbtq": "LGBTQ+ güvenli",
+      "lowBudget": "Düşük bütçe",
+      "green": "Sürdürülebilir",
+      "cultural": "Kültür",
       "adventurous": "Macera"
     }
   }

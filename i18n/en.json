@@ -369,7 +369,29 @@
       "bingo": "Bingo",
       "dares": "Daily Dare",
       "futureMe": "FutureMe"
-    }
+    },
+    "pageTitle": "Fun & Memories",
+    "card": {
+      "bingo": "City Bingo",
+      "dares": "Daily Dare",
+      "futureMe": "Future Me",
+      "soundtrack": "Soundtrack"
+    },
+    "teaser": {
+      "bingo": "Photo challenges across Europe",
+      "dares": "Daily micro-quests",
+      "futureMe": "Time capsule letters",
+      "soundtrack": "Country playlists"
+    },
+    "backToGrid": "Back",
+    "challenges": "challenges",
+    "dayStreak": "day streak",
+    "startDare": "Start your first dare!",
+    "capsules": "capsules",
+    "writeCapsule": "Write your first capsule",
+    "listenNow": "Discover local music",
+    "comingSoon": "Coming soon",
+    "loadError": "Failed to load — try again"
   },
   "bingo": {
     "loading": "Loading bingo card…",
@@ -513,36 +535,36 @@
     },
     "rainbow": {
       "cat": {
-        "equality":          "Equality",
-        "family":            "Family",
-        "hateCrime":         "Hate crime",
-        "legalGenderRecog":  "Gender recognition",
+        "equality": "Equality",
+        "family": "Family",
+        "hateCrime": "Hate crime",
+        "legalGenderRecog": "Gender recognition",
         "intersexIntegrity": "Intersex integrity",
-        "civilSociety":      "Civil society",
-        "asylum":            "Asylum"
+        "civilSociety": "Civil society",
+        "asylum": "Asylum"
       },
       "keyItem": {
-        "marriageEquality":        "Marriage equality",
-        "jointAdoption":           "Joint adoption",
-        "constitutionalBan":       "Constitutional non-discrimination",
-        "employmentProtection":    "Employment protection",
+        "marriageEquality": "Marriage equality",
+        "jointAdoption": "Joint adoption",
+        "constitutionalBan": "Constitutional non-discrimination",
+        "employmentProtection": "Employment protection",
         "selfDeterminationGender": "Self-determination gender law",
-        "banOnIntersexSurgery":    "Ban on intersex surgery",
-        "banOnConversionTherapy":  "Ban on conversion therapy",
-        "hateCrimeLawSO":          "Hate crime law (SO)",
-        "hateCrimeLawGI":          "Hate crime law (GI)"
+        "banOnIntersexSurgery": "Ban on intersex surgery",
+        "banOnConversionTherapy": "Ban on conversion therapy",
+        "hateCrimeLawSO": "Hate crime law (SO)",
+        "hateCrimeLawGI": "Hate crime law (GI)"
       }
     },
     "access": {
       "title": "Accessibility",
       "section": {
         "publicTransport": "Public transport",
-        "trainStations":   "Train stations",
-        "accommodation":   "Accommodation",
-        "attractions":     "Attractions"
+        "trainStations": "Train stations",
+        "accommodation": "Accommodation",
+        "attractions": "Attractions"
       },
       "euCardYes": "EU Disability Card accepted",
-      "euCardNo":  "EU Disability Card not yet accepted",
+      "euCardNo": "EU Disability Card not yet accepted",
       "nationalCard": "National card",
       "discount": "Typical discount",
       "topCities": "Accessible venues (Wheelmap)",
@@ -558,9 +580,9 @@
       "phrasesTitle": "Basic phrases"
     },
     "missing": {
-      "rainbow":       "Rainbow data is not yet compiled for this country — contribute on GitHub.",
+      "rainbow": "Rainbow data is not yet compiled for this country — contribute on GitHub.",
       "accessibility": "Accessibility data is not yet compiled for this country — contribute on GitHub.",
-      "emergency":     "Emergency data is not yet compiled for this country — contribute on GitHub."
+      "emergency": "Emergency data is not yet compiled for this country — contribute on GitHub."
     }
   },
   "wizard": {
@@ -571,30 +593,30 @@
     "finish": "Finish",
     "q1": {
       "title": "Where are you from?",
-      "help":  "We use this to unlock country-specific tips (Schengen visa, Sofia Express, and more)."
+      "help": "We use this to unlock country-specific tips (Schengen visa, Sofia Express, and more)."
     },
     "q2": {
       "title": "How many of you?",
-      "help":  "DiscoverEU allows groups of up to 4 applicants.",
-      "solo":  "1 — solo",
+      "help": "DiscoverEU allows groups of up to 4 applicants.",
+      "solo": "1 — solo",
       "small": "2-3 — friends",
-      "full":  "4 — full group"
+      "full": "4 — full group"
     },
     "q3": {
       "title": "Budget style?",
-      "help":  "This sets defaults in the Budget tab.",
-      "low":   "Budget",
-      "mid":   "Moderate",
-      "high":  "Comfort"
+      "help": "This sets defaults in the Budget tab.",
+      "low": "Budget",
+      "mid": "Moderate",
+      "high": "Comfort"
     },
     "q4": {
       "title": "What matters most?",
-      "help":  "Pick any that apply — the map adapts to your priorities.",
-      "accessible":  "Accessible",
-      "lgbtq":       "LGBTQ+ safe",
-      "lowBudget":   "Low budget",
-      "green":       "Sustainable",
-      "cultural":    "Cultural",
+      "help": "Pick any that apply — the map adapts to your priorities.",
+      "accessible": "Accessible",
+      "lgbtq": "LGBTQ+ safe",
+      "lowBudget": "Low budget",
+      "green": "Sustainable",
+      "cultural": "Cultural",
       "adventurous": "Adventurous"
     }
   }
