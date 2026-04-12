@@ -118,10 +118,15 @@ async function mountPage(pageName, container) {
     currentPageModule.unmount();
   }
 
-  // Map container visibility
+  // Map container visibility + page-root transparency for map page
   const mapContainer = qs('#mapContainer');
   if (mapContainer) {
     mapContainer.style.display = pageName === 'map' ? 'block' : 'none';
+  }
+  if (pageName === 'map') {
+    container.classList.add('page-root--map');
+  } else {
+    container.classList.remove('page-root--map');
   }
 
   // Clear page root
