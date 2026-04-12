@@ -22,6 +22,23 @@ export async function getPlaylistFor(countryId) {
 }
 
 /**
+ * Fun page card API — renders the soundtrack for the first country in
+ * the user's route, or a prompt to add stops if no route is set yet.
+ */
+export async function renderInto(container) {
+  const { state } = await import('../state.js');
+  const route = state.getSlice('route');
+  const firstCountry = route?.stops?.[0]?.countryId;
+  if (!firstCountry) {
+    container.appendChild(
+      h('p', { class: 'text-muted' }, t('soundtrack.noRoute'))
+    );
+    return;
+  }
+  await renderSoundtrackAccordion(container, firstCountry);
+}
+
+/**
  * Create (but do NOT insert src) a <details><iframe> accordion for the
  * given country. Returns the <details> element ready to append.
  */

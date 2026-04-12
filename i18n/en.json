@@ -402,7 +402,8 @@
   "soundtrack": {
     "title": "Country Playlist",
     "fallbackNote": "No regional Top 50 for this country — using Global Top 50 instead.",
-    "attribution": "Powered by Spotify — 30-second previews play anonymously."
+    "attribution": "Powered by Spotify — 30-second previews play anonymously.",
+    "noRoute": "Add countries to your route to see their playlist here."
   },
   "consulate": {
     "title": "Consulate appointment",

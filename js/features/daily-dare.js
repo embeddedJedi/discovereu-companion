@@ -86,6 +86,14 @@ export function isTodayDone() {
   return state.getSlice('dares')?.completed?.[isoDay()] === true;
 }
 
+// Fun page card API — loads today's dare and renders the card into any container.
+export async function renderInto(container) {
+  const dares = await ensureDares();
+  const { state: appState } = await import('../state.js');
+  const dare = pickTodaysDare(dares, appState.getSlice('route'));
+  renderDareCard(container, dare);
+}
+
 export function renderDareCard(container, dare) {
   if (!container) return;
   container.innerHTML = '';

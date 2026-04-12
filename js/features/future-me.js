@@ -106,6 +106,9 @@ export function renderFutureMe(container) {
   container.appendChild(list);
 }
 
+// Fun page card API — renders the full FutureMe module into any container.
+export { renderFutureMe as renderInto };
+
 function openCompose(parent) {
   const overlay = h('div', { class: 'modal-overlay futureme-modal-overlay', role: 'dialog', 'aria-modal': 'true' });
   const textarea = h('textarea', { class: 'input', rows: '5', placeholder: t('futureMe.placeholder') });

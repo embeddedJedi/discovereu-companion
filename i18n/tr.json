@@ -402,7 +402,8 @@
   "soundtrack": {
     "title": "Ülke Çalma Listesi",
     "fallbackNote": "Bu ülke için bölgesel Top 50 bulunamadı — Global Top 50 kullanılıyor.",
-    "attribution": "Spotify tarafından sağlanır — 30 saniyelik ön izlemeler anonim olarak çalar."
+    "attribution": "Spotify tarafından sağlanır — 30 saniyelik ön izlemeler anonim olarak çalar.",
+    "noRoute": "Rotana ülke ekle, burada çalma listelerini gör."
   },
   "consulate": {
     "title": "Konsolosluk randevusu",

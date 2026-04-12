@@ -145,3 +145,6 @@ function rerenderParent() {
   const host = document.querySelector('.fun-panel-bingo');
   if (host) renderBingo(host);
 }
+
+// Fun page card API — renders the full bingo module into any container.
+export { renderBingo as renderInto };
