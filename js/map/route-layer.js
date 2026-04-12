@@ -74,6 +74,23 @@ export function renderRouteLayer(map) {
     color: accent2, weight: 2.5, dashArray: '4,10', opacity: 0.85
   }).addTo(map);
 
+  // Directional arrowheads on each leg. Guarded so offline / CDN-blocked
+  // environments gracefully degrade to plain dashed polylines.
+  if (L.polylineDecorator) {
+    const arrowSymbol = (color) => L.Symbol.arrowHead({
+      pixelSize: 12,
+      polygon: false,
+      pathOptions: { stroke: true, color, weight: 2, opacity: 0.9 }
+    });
+    const outboundDecorator = L.polylineDecorator(outboundLayer, {
+      patterns: [{ offset: 25, repeat: 80, symbol: arrowSymbol(accent) }]
+    }).addTo(map);
+    const returnDecorator = L.polylineDecorator(returnLayer, {
+      patterns: [{ offset: 25, repeat: 80, symbol: arrowSymbol(accent2) }]
+    }).addTo(map);
+    decorators.push(outboundDecorator, returnDecorator);
+  }
+
   markersLayer = L.layerGroup().addTo(map);
 
   L.marker(homeLatLng, {

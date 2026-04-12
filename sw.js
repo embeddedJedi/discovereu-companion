@@ -7,7 +7,7 @@
 //   • On activate: wipe any older cache buckets so version bumps roll
 //     out cleanly
 
-const CACHE_VERSION = 'discovereu-v4';
+const CACHE_VERSION = 'discovereu-v5';
 const APP_SHELL = [
   './',
   './index.html',
