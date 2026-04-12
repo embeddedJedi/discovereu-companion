@@ -2405,4 +2405,65 @@
 
 /* Consulate card */
 .tr-card-consulate .consulate-countdown { font-weight: var(--weight-medium); }
+
+/* ─── Bottom Sheet ────────────────────────────────────────────────────── */
+.sheet-container {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-modal);
+  pointer-events: none;
+}
+
+.sheet-container:not([data-state="closed"]) { pointer-events: auto; }
+
+.sheet-backdrop {
+  position: absolute;
+  inset: 0;
+  background: var(--bg-overlay);
+  opacity: 0;
+  transition: opacity var(--duration-sheet) var(--ease-standard);
+  pointer-events: none;
+}
+
+.sheet {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  background: var(--surface-elevated);
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+  box-shadow: var(--shadow-xl);
+  display: flex;
+  flex-direction: column;
+  will-change: transform;
+  touch-action: none;
+}
+
+.sheet-handle {
+  display: flex;
+  justify-content: center;
+  padding: var(--space-3) 0 var(--space-2);
+  cursor: grab;
+  flex-shrink: 0;
+}
+
+.sheet-handle-bar {
+  width: 40px;
+  height: 4px;
+  border-radius: var(--radius-full);
+  background: var(--sheet-handle-color);
+}
+
+.sheet-content {
+  flex: 1;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 0 var(--space-5) var(--space-5);
+}
+
+/* Desktop: no bottom sheet, use side panel instead */
+@media (min-width: 1024px) {
+  .sheet-container { display: none; }
+}
 .tr-card-consulate .tr-actions { display: flex; gap: var(--space-2); flex-wrap: wrap; margin-top: var(--space-2); }
