@@ -1,0 +1,327 @@
+{
+  "version": 1,
+  "generated": "2026-04-12",
+  "note": "Schengen visa application centres in Türkiye. Most Schengen states outsource to VFS Global / iDATA / TLScontact / BLS / Kosmos. Refresh quarterly; providers occasionally change contracts. Non-Schengen DiscoverEU participants (IE, CY, RO, BG) are excluded from this list per the sub-project 2 design spec.",
+  "centres": [
+    {
+      "countryId": "AT",
+      "countryName": "Austria",
+      "countryNameTr": "Avusturya",
+      "provider": "VFS Global",
+      "website": "https://visa.vfsglobal.com/tur/en/aut",
+      "cities": [
+        { "name": "Istanbul", "address": "Altunizade Mah. Ord. Prof. Dr. Fahrettin Kerim Gokay Cad. Euro Business Center No:31/2 D:B Blok, Altunizade, Üsküdar, Istanbul 34662", "phone": "+90 212 373 58 25" },
+        { "name": "Ankara",   "address": "Çankaya, Ankara (VFS Global Austria centre — confirm current address via vfsglobal.com/tur/en/aut/attend-centre)", "phone": "+90 212 373 58 25" }
+      ],
+      "noteTr": "Avusturya için resmi partner VFS Global. İstanbul'da Altunizade ve Harbiye ofisleri, ayrıca Ankara/İzmir/Bursa/Antalya'da başvuru noktaları mevcut."
+    },
+    {
+      "countryId": "BE",
+      "countryName": "Belgium",
+      "countryNameTr": "Belçika",
+      "provider": "VFS Global",
+      "website": "https://visa.vfsglobal.com/tur/en/bel",
+      "cities": [
+        { "name": "Istanbul", "address": "Altunizade Mah. Ord. Prof. Dr. Fahrettin Kerim Gokay Cad. Euro Business Center No:31/2 D:B Blok, Altunizade, Üsküdar, Istanbul 34662", "phone": "+90 212 373 58 25" }
+      ],
+      "noteTr": "Belçika Schengen başvuruları yalnızca VFS Global üzerinden yapılır. Randevu alma ve evrak listesi için resmi siteyi kullanın."
+    },
+    {
+      "countryId": "CH",
+      "countryName": "Switzerland",
+      "countryNameTr": "İsviçre",
+      "provider": "TLScontact",
+      "website": "https://ch.tlscontact.com/tr/splash.php?l=tr",
+      "cities": [
+        { "name": "Istanbul", "address": "TLScontact İstanbul Vize Başvuru Merkezi (resmi adres için ch.tlscontact.com/tr/ist adresine bakın)", "phone": "+90 212 370 31 00" },
+        { "name": "Ankara",   "address": "TLScontact Ankara Vize Başvuru Merkezi (resmi adres için ch.tlscontact.com/tr/ank adresine bakın)", "phone": "+90 212 370 31 00" }
+      ],
+      "noteTr": "İsviçre için resmi partner TLScontact. İstanbul ve Ankara'da iki merkezi var; Liechtenstein için de aynı merkez üzerinden işlem yapılır."
+    },
+    {
+      "countryId": "CZ",
+      "countryName": "Czechia",
+      "countryNameTr": "Çekya",
+      "provider": "VFS Global",
+      "website": "https://visa.vfsglobal.com/tur/en/cze",
+      "cities": [
+        { "name": "Istanbul", "address": "VFS Global Istanbul Beyoğlu / Altunizade ofisleri (adres için visa.vfsglobal.com/tur/en/cze/attend-centre sayfasını kullanın)", "phone": "+90 212 373 58 25" }
+      ],
+      "noteTr": "Çekya Schengen başvuruları VFS Global İstanbul merkezlerinden yapılır. Görüşme için konsoloslukta kişisel mülakat gerekebilir."
+    },
+    {
+      "countryId": "DE",
+      "countryName": "Germany",
+      "countryNameTr": "Almanya",
+      "provider": "iDATA",
+      "website": "https://www.idata.com.tr",
+      "cities": [
+        { "name": "Istanbul (Gayrettepe)", "address": "Esentepe Mah. Büyükdere Cad. No:127 Astoria Kuleleri, Astoria AVM B2 Katı, Esentepe/Şişli, Istanbul", "phone": "+90 850 460 8493" },
+        { "name": "Istanbul (Altunizade)", "address": "Altunizade Mah. Kısıklı Cad. Shibuya Sok. Sarkuysan-AK İş Merkezi A Blok No:4/2, 1. Bodrum Kat, Üsküdar, Istanbul", "phone": "+90 850 460 8493" },
+        { "name": "Ankara",    "address": "iDATA Ankara Almanya Vize Başvuru Merkezi (adres için idata.com.tr/de/tr/office sayfasına bakın)", "phone": "+90 850 460 8493" },
+        { "name": "Izmir",     "address": "iDATA İzmir Almanya Vize Başvuru Merkezi (adres için idata.com.tr/de/tr/office sayfasına bakın)", "phone": "+90 850 460 8493" },
+        { "name": "Bursa",     "address": "Konak Mah. 1. Badem Sok. Lotus Plaza, B Blok, No:26 Kat:1 Daire:10-11-12, Nilüfer/Bursa", "phone": "+90 850 460 8493" },
+        { "name": "Antalya",   "address": "iDATA Antalya Almanya Vize Başvuru Merkezi (adres için idata.com.tr/de/tr/office sayfasına bakın)", "phone": "+90 850 460 8493" },
+        { "name": "Gaziantep", "address": "Budak Mah. 10031 Nolu Sok. Yasem İş Merkezi No:42 C/0, Şehitkâmil/Gaziantep", "phone": "+90 850 460 8493" }
+      ],
+      "noteTr": "Almanya için tek yetkili başvuru merkezi iDATA. Randevular idata.com.tr üzerinden sabah 09:00'da açılır; yoğun dönemlerde 3-4 hafta bekleme süresi normaldir. Çağrı merkezi 0850 460 VİZE (8493)."
+    },
+    {
+      "countryId": "DK",
+      "countryName": "Denmark",
+      "countryNameTr": "Danimarka",
+      "provider": "VFS Global",
+      "website": "https://visa.vfsglobal.com/tur/en/dnk",
+      "cities": [
+        { "name": "Istanbul", "address": "VFS Global Istanbul Beyoğlu / Altunizade ofisleri (adres için visa.vfsglobal.com/tur/en/dnk/attend-centre sayfasını kullanın)", "phone": "+90 212 373 58 25" }
+      ],
+      "noteTr": "Danimarka Schengen başvuruları VFS Global üzerinden kabul edilir. Nordic ülkeleri için benzer süreç uygulanır."
+    },
+    {
+      "countryId": "EE",
+      "countryName": "Estonia",
+      "countryNameTr": "Estonya",
+      "provider": "VFS Global",
+      "website": "https://visa.vfsglobal.com/tur/en/est",
+      "cities": [
+        { "name": "Istanbul", "address": "VFS Global Istanbul Beyoğlu / Altunizade ofisleri (adres için visa.vfsglobal.com/tur/en/est/attend-centre sayfasını kullanın)", "phone": "+90 212 373 58 25" }
+      ],
+      "noteTr": "Estonya başvuruları VFS Global üzerinden yapılır. Tek destinasyon Estonya ise başvuru Estonya konsolosluğuna yönlendirilir."
+    },
+    {
+      "countryId": "ES",
+      "countryName": "Spain",
+      "countryNameTr": "İspanya",
+      "provider": "BLS International",
+      "website": "https://turkey.blsspainvisa.com/",
+      "cities": [
+        { "name": "Istanbul", "address": "Yeşilce Mah. Diken Sok. No:2, 34418 Kâğıthane/Istanbul", "phone": "+90 212 705 65 68" },
+        { "name": "Ankara",   "address": "BLS International Ankara İspanya Vize Başvuru Merkezi (adres için turkey.blsspainvisa.com/ankara sayfasına bakın)", "phone": "+90 212 705 65 68" },
+        { "name": "Izmir",    "address": "Kıbrıs Şehitleri Cad. Aksoy İş Merkezi No:152, Konak/İzmir", "phone": "+90 212 705 65 68" },
+        { "name": "Antalya",  "address": "BLS International Antalya İspanya Vize Başvuru Merkezi (adres için turkey.blsspainvisa.com sayfasına bakın)", "phone": "+90 212 705 65 68" }
+      ],
+      "noteTr": "İspanya için resmi partner BLS International. İstanbul, Ankara, İzmir ve Antalya ofisleri mevcut. Seyahat sigortası zorunludur, ücretler USD olarak tahsil edilir."
+    },
+    {
+      "countryId": "FI",
+      "countryName": "Finland",
+      "countryNameTr": "Finlandiya",
+      "provider": "VFS Global",
+      "website": "https://visa.vfsglobal.com/tur/en/fin",
+      "cities": [
+        { "name": "Istanbul", "address": "VFS Global Istanbul Beyoğlu / Altunizade ofisleri (adres için visa.vfsglobal.com/tur/en/fin/attend-centre sayfasını kullanın)", "phone": "+90 212 373 58 25" },
+        { "name": "Ankara",   "address": "VFS Global Ankara Finlandiya Vize Başvuru Merkezi (adres için visa.vfsglobal.com/tur/en/fin/attend-centre sayfasını kullanın)", "phone": "+90 212 373 58 25" }
+      ],
+      "noteTr": "Finlandiya Schengen başvuruları VFS Global İstanbul, Ankara, İzmir ve Antalya ofislerinden kabul edilir."
+    },
+    {
+      "countryId": "FR",
+      "countryName": "France",
+      "countryNameTr": "Fransa",
+      "provider": "VFS Global",
+      "website": "https://visa.vfsglobal.com/tur/en/fra",
+      "cities": [
+        { "name": "Istanbul", "address": "Büyükdere Cad. No:127 Astoria AVM K:B1, 34394 Şişli/Istanbul", "phone": "+90 212 373 58 25" },
+        { "name": "Ankara",   "address": "MAHALL İş Merkezi, Mustafa Kemal Mah. Dumlupınar Bulv. Çarşı Katı 274/4 No:11-12, 06530 Çankaya/Ankara", "phone": "+90 212 373 58 25" },
+        { "name": "Izmir",    "address": "VFS Global İzmir Fransa Vize Başvuru Merkezi (adres için visa.vfsglobal.com/tur/en/fra/attend-centre sayfasına bakın)", "phone": "+90 212 373 58 25" },
+        { "name": "Gaziantep","address": "VFS Global Gaziantep Fransa Vize Başvuru Merkezi (adres için visa.vfsglobal.com/tur/en/fra/attend-centre sayfasına bakın)", "phone": "+90 212 373 58 25" }
+      ],
+      "noteTr": "Fransa için resmi partner VFS Global. Yoğun dönemlerde İstanbul/Ankara bekleme süresi 3-4 haftaya çıkabilir; en az 8 hafta öncesinden başvuru tavsiye edilir."
+    },
+    {
+      "countryId": "GR",
+      "countryName": "Greece",
+      "countryNameTr": "Yunanistan",
+      "provider": "Kosmos Vize",
+      "website": "https://www.kosmosvize.com.tr",
+      "cities": [
+        { "name": "Istanbul", "address": "Astoria AVM, Esentepe Mah. Büyükdere Cad. No:127 Astoria B1 Kat M32, Esentepe/Şişli, Istanbul", "phone": "+90 850 474 20 21" }
+      ],
+      "noteTr": "Yunanistan başvuruları için tek yetkili merkez Kosmos Vize (eski VFS Global sözleşmesi değişti). Ayrıca Türk vatandaşları için 2026-2027 döneminde Doğu Ege adalarına yönelik hızlandırılmış 'Yunanistan Vize Ekspres' programı mevcut."
+    },
+    {
+      "countryId": "HR",
+      "countryName": "Croatia",
+      "countryNameTr": "Hırvatistan",
+      "provider": "VFS Global",
+      "website": "https://visa.vfsglobal.com/tur/en/hrv",
+      "cities": [
+        { "name": "Istanbul", "address": "VFS Global Istanbul — adres ve randevu bilgisi için visa.vfsglobal.com/tur/en/hrv adresini kullanın", "phone": "+90 212 373 58 25" },
+        { "name": "Ankara", "address": "VFS Global Ankara — adres ve randevu bilgisi için visa.vfsglobal.com/tur/en/hrv adresini kullanın", "phone": "+90 212 373 58 25" }
+      ],
+      "noteTr": "Hırvatistan 2023'ten itibaren tam Schengen üyesi. Vize başvurusu VFS Global üzerinden yapılır."
+    },
+    {
+      "countryId": "HU",
+      "countryName": "Hungary",
+      "countryNameTr": "Macaristan",
+      "provider": "Consulate General of Hungary (no outsourcing)",
+      "website": "https://isztambul.mfa.gov.hu/en/c-vizum-tudnivalok",
+      "cities": [
+        { "name": "Istanbul", "address": "Consulate General of Hungary in Istanbul — randevu için konsolosluğun resmi sayfasını kullanın", "phone": "+90 212 344 42 80" },
+        { "name": "Ankara",   "address": "Embassy of Hungary in Ankara — randevu için büyükelçiliğin resmi sayfasını kullanın", "phone": "+90 312 442 22 76" }
+      ],
+      "noteTr": "Macaristan için aracı firma yoktur; başvurular İstanbul Başkonsolosluğu veya Ankara Büyükelçiliği'nde doğrudan yapılır. Parmak izi için şahsen mülakat zorunludur."
+    },
+    {
+      "countryId": "IS",
+      "countryName": "Iceland",
+      "countryNameTr": "İzlanda",
+      "provider": "VFS Global",
+      "website": "https://visa.vfsglobal.com/tur/en/isl",
+      "cities": [
+        { "name": "Istanbul", "address": "VFS Global Istanbul Beyoğlu / Altunizade ofisleri (adres için visa.vfsglobal.com/tur/en/isl/attend-centre sayfasını kullanın)", "phone": "+90 212 373 58 25" }
+      ],
+      "noteTr": "İzlanda Schengen başvuruları VFS Global üzerinden kabul edilir. İzlanda başvuruları genelde Danimarka konsolosluğu tarafından işlenir."
+    },
+    {
+      "countryId": "IT",
+      "countryName": "Italy",
+      "countryNameTr": "İtalya",
+      "provider": "iDATA",
+      "website": "https://www.idata.com.tr/ita/tr",
+      "cities": [
+        { "name": "Istanbul (Gayrettepe)", "address": "Esentepe Mah. Büyükdere Cad. No:127 Astoria Kuleleri, Astoria AVM B2 Katı, Esentepe/Şişli, Istanbul", "phone": "+90 850 460 8493" },
+        { "name": "Istanbul (Altunizade)", "address": "Altunizade Mah. Kısıklı Cad. Shibuya Sok. Sarkuysan-AK İş Merkezi A Blok No:4/2, 1. Bodrum Kat, Üsküdar, Istanbul", "phone": "+90 850 460 8493" },
+        { "name": "Bursa",     "address": "Konak Mah. 1. Badem Sok. Lotus Plaza, B Blok, No:26 Kat:1 Daire:10-11-12, Nilüfer/Bursa", "phone": "+90 850 460 8493" },
+        { "name": "Gaziantep", "address": "Budak Mah. 10031 Nolu Sok. Yasem İş Merkezi No:42 C/0, Şehitkâmil/Gaziantep", "phone": "+90 850 460 8493" }
+      ],
+      "noteTr": "İtalya için resmi partner iDATA. Yalnızca İtalya İstanbul Başkonsolosluğu yetki alanındaki illerden başvuru kabul edilir; Ankara/İzmir bölgesi için ayrı yetki alanı geçerlidir. Çağrı merkezi 0850 460 VİZE (8493)."
+    },
+    {
+      "countryId": "LI",
+      "countryName": "Liechtenstein",
+      "countryNameTr": "Lihtenştayn",
+      "provider": "TLScontact (via Swiss representation)",
+      "website": "https://ch.tlscontact.com/tr/splash.php?l=tr",
+      "cities": [
+        { "name": "Istanbul", "address": "TLScontact İstanbul Vize Başvuru Merkezi (İsviçre yetkisi altında; adres için ch.tlscontact.com/tr/ist sayfasına bakın)", "phone": "+90 212 370 31 00" }
+      ],
+      "noteTr": "Lihtenştayn, Schengen vizelerinde İsviçre tarafından temsil edilir. Başvurular İsviçre için kullanılan TLScontact merkezinden yapılır."
+    },
+    {
+      "countryId": "LT",
+      "countryName": "Lithuania",
+      "countryNameTr": "Litvanya",
+      "provider": "VFS Global",
+      "website": "https://visa.vfsglobal.com/tur/en/ltu",
+      "cities": [
+        { "name": "Istanbul", "address": "VFS Global Istanbul Beyoğlu / Altunizade ofisleri (adres için visa.vfsglobal.com/tur/en/ltu/attend-centre sayfasını kullanın)", "phone": "+90 212 373 58 25" }
+      ],
+      "noteTr": "Litvanya başvuruları VFS Global üzerinden yapılır. Hizmet ücreti 17,90 € (KDV dahil); ödemeler EUR nakit olarak tahsil edilir."
+    },
+    {
+      "countryId": "LU",
+      "countryName": "Luxembourg",
+      "countryNameTr": "Lüksemburg",
+      "provider": "VFS Global",
+      "website": "https://visa.vfsglobal.com/tur/en/lux",
+      "cities": [
+        { "name": "Istanbul", "address": "VFS Global Istanbul Beyoğlu / Altunizade ofisleri (adres için visa.vfsglobal.com/tur/en/lux/attend-centre sayfasını kullanın)", "phone": "+90 212 373 58 25" }
+      ],
+      "noteTr": "Lüksemburg başvuruları VFS Global üzerinden kabul edilir. Karar Lüksemburg Büyükelçiliği tarafından verilir."
+    },
+    {
+      "countryId": "LV",
+      "countryName": "Latvia",
+      "countryNameTr": "Letonya",
+      "provider": "VFS Global",
+      "website": "https://visa.vfsglobal.com/tur/en/lva",
+      "cities": [
+        { "name": "Istanbul", "address": "VFS Global Istanbul Beyoğlu / Altunizade ofisleri (adres için visa.vfsglobal.com/tur/en/lva/attend-centre sayfasını kullanın)", "phone": "+90 212 373 58 25" }
+      ],
+      "noteTr": "Letonya başvuruları VFS Global üzerinden yapılır. Baltık devletleri için ortak VFS altyapısı kullanılır."
+    },
+    {
+      "countryId": "MT",
+      "countryName": "Malta",
+      "countryNameTr": "Malta",
+      "provider": "VFS Global",
+      "website": "https://visa.vfsglobal.com/tur/en/mlt",
+      "cities": [
+        { "name": "Istanbul", "address": "VFS Global Istanbul Beyoğlu / Altunizade ofisleri (adres için visa.vfsglobal.com/tur/en/mlt/attend-centre sayfasına bakın)", "phone": "+90 212 373 58 25" }
+      ],
+      "noteTr": "Malta başvuruları VFS Global üzerinden yapılır. Başvurucular herhangi bir VFS merkezinden başvurup pasaportlarını tercih ettikleri merkezden alabilir."
+    },
+    {
+      "countryId": "NL",
+      "countryName": "Netherlands",
+      "countryNameTr": "Hollanda",
+      "provider": "VFS Global",
+      "website": "https://visa.vfsglobal.com/tur/en/nld",
+      "cities": [
+        { "name": "Istanbul", "address": "Altunizade Mah. Ord. Prof. Dr. Fahrettin Kerim Gokay Cad. Euro Business Center No:31/2 D:B Blok, Altunizade, Üsküdar, Istanbul 34462", "phone": "+90 212 373 58 25" },
+        { "name": "Ankara",   "address": "Regnum Sky Tower, İşçi Blokları Mah. Muhsin Yazıcıoğlu Cad. No:57/A, Çankaya, Ankara 06530", "phone": "+90 212 373 58 25" }
+      ],
+      "noteTr": "Hollanda Schengen başvuruları yalnızca VFS Global üzerinden kabul edilir. Ankara, Antalya, Bodrum, Bursa, Edirne, Gaziantep, İstanbul ve İzmir merkezleri mevcut."
+    },
+    {
+      "countryId": "NO",
+      "countryName": "Norway",
+      "countryNameTr": "Norveç",
+      "provider": "VFS Global",
+      "website": "https://visa.vfsglobal.com/tur/en/nor",
+      "cities": [
+        { "name": "Istanbul", "address": "VFS Global Istanbul Beyoğlu / Altunizade ofisleri (adres için visa.vfsglobal.com/tur/en/nor/attend-centre sayfasını kullanın)", "phone": "+90 212 373 58 25" }
+      ],
+      "noteTr": "Norveç başvuruları VFS Global üzerinden yapılır. İstanbul ofisi için randevu zorunludur."
+    },
+    {
+      "countryId": "PL",
+      "countryName": "Poland",
+      "countryNameTr": "Polonya",
+      "provider": "VFS Global",
+      "website": "https://visa.vfsglobal.com/tur/en/pol",
+      "cities": [
+        { "name": "Istanbul", "address": "VFS Global Istanbul Beyoğlu / Altunizade ofisleri (adres için visa.vfsglobal.com/tur/en/pol/attend-centre sayfasını kullanın)", "phone": "+90 212 373 58 25" },
+        { "name": "Ankara",   "address": "VFS Global Ankara Polonya Vize Başvuru Merkezi (adres için visa.vfsglobal.com/tur/en/pol/attend-centre sayfasını kullanın)", "phone": "+90 212 373 58 25" }
+      ],
+      "noteTr": "Polonya başvuruları VFS Global üzerinden yapılır. İstanbul-Beyoğlu, Altunizade, İzmir, Gaziantep ve Trabzon İstanbul konsolosluğuna; Ankara ve Antalya ise Ankara büyükelçiliğine bağlıdır."
+    },
+    {
+      "countryId": "PT",
+      "countryName": "Portugal",
+      "countryNameTr": "Portekiz",
+      "provider": "Embassy of Portugal (no outsourcing)",
+      "website": "https://ancara.embaixadaportugal.mne.gov.pt/en/consular-section/general-information",
+      "cities": [
+        { "name": "Ankara",   "address": "Embassy of Portugal, Consular Section, Ankara — randevu için resmi siteyi kullanın", "phone": "+90 312 446 18 90" },
+        { "name": "Istanbul", "address": "Macaristan İstanbul Başkonsolosluğu (Portekiz Schengen başvuruları İstanbul ve çevresi için burada kabul edilir)", "phone": "+90 212 344 42 80" }
+      ],
+      "noteTr": "Portekiz için Türkiye'de aracı firma yoktur. Başvurular Ankara'daki Portekiz Büyükelçiliği Konsolosluk Bölümünden yapılır; İstanbul ve çevresinde yaşayanlar ise 15 Mart 2011'den beri Macaristan İstanbul Başkonsolosluğu üzerinden Portekiz Schengen başvurusu yapabilir. Vize ücreti 90 EUR, TL nakit olarak ödenir."
+    },
+    {
+      "countryId": "SE",
+      "countryName": "Sweden",
+      "countryNameTr": "İsveç",
+      "provider": "VFS Global",
+      "website": "https://visa.vfsglobal.com/tur/en/swe",
+      "cities": [
+        { "name": "Istanbul", "address": "VFS Global Istanbul Beyoğlu / Altunizade ofisleri (adres için visa.vfsglobal.com/tur/en/swe/attend-centre sayfasını kullanın)", "phone": "+90 212 373 58 25" }
+      ],
+      "noteTr": "İsveç başvuruları VFS Global İstanbul, Ankara, İzmir ve Antalya ofislerinden kabul edilir. Başvurular doğrudan konsolosluktan kabul edilmez."
+    },
+    {
+      "countryId": "SI",
+      "countryName": "Slovenia",
+      "countryNameTr": "Slovenya",
+      "provider": "VFS Global",
+      "website": "https://visa.vfsglobal.com/tur/en/svn",
+      "cities": [
+        { "name": "Istanbul", "address": "VFS Global Istanbul Beyoğlu / Altunizade ofisleri (adres için visa.vfsglobal.com/tur/en/svn/attend-centre sayfasını kullanın)", "phone": "+90 212 373 58 25" }
+      ],
+      "noteTr": "Slovenya başvuruları VFS Global üzerinden yapılır."
+    },
+    {
+      "countryId": "SK",
+      "countryName": "Slovakia",
+      "countryNameTr": "Slovakya",
+      "provider": "VFS Global",
+      "website": "https://visa.vfsglobal.com/tur/en/svk",
+      "cities": [
+        { "name": "Istanbul", "address": "VFS Global Istanbul Beyoğlu / Altunizade ofisleri (adres için visa.vfsglobal.com/tur/en/svk/attend-centre sayfasını kullanın)", "phone": "+90 212 373 58 25" }
+      ],
+      "noteTr": "Slovakya başvuruları VFS Global üzerinden yapılır. Parmak izi için başvuru şahsen yapılır."
+    }
+  ]
+}
