@@ -94,6 +94,10 @@ async function boot() {
     // 7b. Wire Wrapped card trigger (delegates to any [data-wrapped-trigger])
     initWrappedTrigger();
 
+    // 7c. Wire AI assistant header button
+    const { initAITrigger } = await import('./features/ai-assistant.js');
+    initAITrigger('#aiSuggestBtn');
+
     // 8. Hide loading shell
     const loader = qs('#appLoading');
     if (loader) {
