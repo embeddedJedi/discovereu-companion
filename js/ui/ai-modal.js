@@ -181,6 +181,7 @@ function renderErrorScreen(body, err, lastPrompt) {
 
   body.appendChild(h('div', { class: 'ai-screen ai-screen-error' }, [
     h('h3', null, `⚠️ ${t(key)}`),
+    err?.message ? h('p', { class: 'text-muted small' }, err.message) : null,
     err?.name === 'AuthError'
       ? button(t('ai.err.updateKey'), 'primary', () => renderKeyScreen(body))
       : button(t('ai.result.retry'),  'primary', () => runSuggestion(body, lastPrompt))

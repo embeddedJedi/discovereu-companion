@@ -60,7 +60,15 @@ export async function callGroq({
 
   if (res.status === 401 || res.status === 403) throw new AuthError(`HTTP ${res.status}`);
   if (res.status === 429)                       throw new RateLimitError('HTTP 429');
-  if (!res.ok)                                   throw new NetworkError(`HTTP ${res.status}`);
+  if (!res.ok) {
+    let detail = `HTTP ${res.status}`;
+    try {
+      const errBody = await res.json();
+      detail = errBody?.error?.message || detail;
+    } catch (_) { /* ignore parse failure on error body */ }
+    if (res.status >= 500) throw new NetworkError(detail);
+    throw new ParseError(detail);
+  }
 
   let json;
   try {
