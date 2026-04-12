@@ -265,13 +265,13 @@ All loaded with SRI hashes (to add in Phase 1).
 ### Tier 4 — Fun & Memory *(Days 11-12)*
 - [x] City Bingo cards + achievement badges
 - [x] Daily Dare micro-quest push
-- [ ] Passive GPS trip journal (Polarsteps-lite) ← deferred to v1.1
-- [ ] Voice memory capsule (30-second audio per day) ← deferred to v1.1
+- [ ] Passive GPS trip journal (Polarsteps-lite) ← deferred to v1.1 sub-project D
+- [ ] Voice memory capsule (30-second audio per day) ← deferred to v1.1 sub-project D
 - [x] Country Soundtrack (Spotify Top 50 embed)
-- [ ] Group Vote Module (for 4-person groups) ← deferred to v1.1
-- [ ] Night Arrival Shield (22:00+ filter) ← deferred to v1.1
-- [ ] Smart Packing Assistant ← deferred to v1.1
-- [ ] Pickpocket heatmap ← deferred to v1.1
+- [ ] Group Vote Module (for 4-person groups) ← deferred to v1.1 sub-project D
+- [x] Night Arrival Shield (22:00+ filter) (v1.1 sub-project C)
+- [x] Smart Packing Assistant (weather-aware, v1.1 sub-project C)
+- [ ] Pickpocket heatmap ← deferred to v1.1 sub-project E
 - [x] FutureMe time capsule
 
 ### Tier 5 — Turkish bonus layer
@@ -354,6 +354,11 @@ All loaded with SRI hashes (to add in Phase 1).
   - `js/ui/welcome-wizard.js` 4-question first-visit onboarding
   - Tab bar redesign from text-only to icon + label layout, 6 → 7 tabs (mobile bottom-nav mirrored)
   - All 13 smoke tests pass
+- **v1.1 Sub-project C — Features Round 1** (2026-04-12):
+  - `js/features/night-shield.js` (af47e19) — `checkNightArrivals`/`isLateStop`/`hasLateArrival` pure functions. Orange "🌙 Geç varış" badge on route stops arriving after 22:00 or before 06:00. `state.filters.hideLateArrival` toggle dims matching templates. Falls back to 80 km/h haversine estimate when trains.json lacks a leg.
+  - `js/features/wrapped.js` redesign (bfcc6ba) — Strava-style Instagram Post (1080×1350) + Story (1080×1920) formats with format toggle. Canvas-drawn mini map of Europe with EU-gold route polyline over all 36 capitals as context dots. 5-stat grid (Countries/Km/Days/CO₂/Credits). Story format includes QR code (api.qrserver.com) linking to the share URL. html2canvas at exact pixel dimensions.
+  - `js/features/packing.js` (c2187df) — route + weather-aware smart packing. 5 categories (essentials/clothing/electronics/documents/health). Open-Meteo 7-day forecast per stop capital (CORS-friendly, no key), cached 6h. Rules: rain prob >40% → rain gear, maxTemp <10°C → warm layers, maxTemp >28°C → sunscreen. Custom items, progress bar, completion celebration animation. `state.prep.packingCustom` slice added.
+  - `js/features/llm-adapter.js` + `llm-gemini.js` + `llm-openai.js` (c922bef) — unified `sendPrompt({messages, jsonMode})` over 3 providers. Groq (llama-3.1-70b), Gemini (gemini-1.5-flash, translates to contents/parts), OpenAI (gpt-4o-mini). Per-provider API keys in localStorage (`discoveru:llm-key-{provider}`), never in git. Settings UI in kesfet page: provider `<select>` + password input + Save + Test connection. ai-assistant migrated to adapter.
 - **v1.1 Sub-project B — Outreach Package** (2026-04-12):
   - `docs/outreach/eacea-one-pager.html` — A4 landscape, self-contained HTML, print-to-PDF, EU blue/gold, 3-column layout (What / Why it matters / 5 Unique Features), screenshot placeholders, footer with live site + GitHub + MIT
   - `docs/outreach/turkish-ua-email.md` — Formal Turkish email template for Türkiye Ulusal Ajansı (~230 words body, EU vocabulary Turkish equivalents, Turkish-specific value layer highlighted: Schengen visa, Sofia Express, TL budget, consulate reminder)
@@ -376,11 +381,10 @@ All loaded with SRI hashes (to add in Phase 1).
 - *(nothing — ready to continue)*
 
 ### ⏭ Next up (in order)
-1. v1.1 sub-project C: Features Round 1 — Night Arrival Shield, Smart Packing Assistant, Multi-LLM adapter (Gemini/OpenAI), Wrapped redesign
-2. v1.1 sub-project D: Features Round 2 — Group Vote, GPS trip journal, Voice memory capsule, Bingo photo collage
-3. v1.1 sub-project E: Data & Polish — Shared mobility data, Live Wikivoyage refresh, Pickpocket heatmap
-4. Sub-project 3: DE / FR / ES / IT translations (extend i18n JSONs)
-5. Deploy polish: custom domain, send outreach package
+1. v1.1 sub-project D: Features Round 2 — Group Vote, GPS trip journal, Voice memory capsule, Bingo photo collage
+2. v1.1 sub-project E: Data & Polish — Shared mobility data, Live Wikivoyage refresh, Pickpocket heatmap
+3. Sub-project 3: DE / FR / ES / IT translations (extend i18n JSONs)
+4. Deploy polish: custom domain, send outreach package
 
 ### 🛑 Blocked
 - *(none)*
