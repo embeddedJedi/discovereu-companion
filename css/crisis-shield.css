@@ -1,0 +1,631 @@
+/* ============================================================================
+ * DiscoverEU Companion — Crisis Shield (v1.3)
+ * Offline, zero-PII emergency & safety layer.
+ *
+ * WCAG targets: AAA for critical dial rows (≥7:1). Rest of the UI meets AA+.
+ * Tokens used: --cs-critical-bg / --cs-critical-fg come from design-system.css.
+ *
+ * Accessibility note (JS-owned, referenced here for clarity):
+ *   .crisis-shield-panel has role="dialog" aria-modal="true" set by JS.
+ *   .crisis-shield-panel[aria-hidden="true"] { display: none; } hides the dialog.
+ * ========================================================================= */
+
+/* ---------------------------------------------------------------------------
+ * Shared local tokens — layered on top of the global design system.
+ * ------------------------------------------------------------------------- */
+.crisis-compact-card,
+.crisis-shield-panel {
+  --cs-focus-ring: 3px solid var(--accent-primary, currentColor);
+  --cs-focus-offset: 2px;
+  --cs-tap-min: 56px;
+  --cs-row-min: 64px;
+  --cs-radius: var(--radius-lg, 0.75rem);
+  --cs-radius-sm: var(--radius-md, 0.5rem);
+  --cs-pad: var(--space-4, 1rem);
+  --cs-pad-lg: var(--space-6, 1.5rem);
+  --cs-gap: var(--space-3, 0.75rem);
+  --cs-surface: var(--bg-surface);
+  --cs-surface-2: var(--bg-sunken);
+  --cs-border: var(--border-default);
+  --cs-text: var(--text-primary);
+  --cs-text-soft: var(--text-secondary);
+  --cs-accent: var(--accent-primary);
+  --cs-accent-2: var(--accent-gold, var(--eu-gold-400));
+}
+
+/* ---------------------------------------------------------------------------
+ * Compact card — embedded inside country detail panel.
+ * ------------------------------------------------------------------------- */
+.crisis-compact-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--cs-gap);
+  width: 100%;
+  padding: var(--cs-pad);
+  background: var(--cs-surface);
+  color: var(--cs-text);
+  border: 1px solid var(--cs-border);
+  border-left: 4px solid var(--cs-critical-bg);
+  border-radius: var(--cs-radius);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--duration-fast, 150ms) var(--ease-out),
+              transform var(--duration-fast, 150ms) var(--ease-out);
+}
+
+.crisis-compact-card:hover,
+.crisis-compact-card:focus-within {
+  box-shadow: var(--shadow-md);
+}
+
+.crisis-compact-card__header {
+  display: flex;
+  align-items: center;
+  gap: var(--cs-gap);
+}
+
+.crisis-compact-card__icon {
+  flex: 0 0 auto;
+  width: 2rem;
+  height: 2rem;
+  font-size: 1.5rem;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.crisis-compact-card__title {
+  flex: 1 1 auto;
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-semibold);
+  color: var(--cs-text);
+  margin: 0;
+}
+
+.crisis-compact-card__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2, 0.5rem);
+}
+
+.crisis-compact-card__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1, 0.25rem);
+  min-height: 2.25rem;
+  padding: 0.375rem 0.75rem;
+  background: var(--cs-surface-2);
+  color: var(--cs-text);
+  border: 1px solid var(--cs-border);
+  border-radius: var(--radius-full);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background var(--duration-fast, 150ms) var(--ease-out),
+              border-color var(--duration-fast, 150ms) var(--ease-out);
+}
+
+.crisis-compact-card__chip:hover {
+  background: var(--bg-hover);
+  border-color: var(--border-strong);
+  text-decoration: none;
+}
+
+.crisis-compact-card__chip:focus-visible {
+  outline: var(--cs-focus-ring);
+  outline-offset: var(--cs-focus-offset);
+}
+
+.crisis-compact-card__open {
+  align-self: flex-start;
+  min-height: var(--cs-tap-min);
+  padding: 0.75rem 1.25rem;
+  background: var(--cs-critical-bg);
+  color: var(--cs-critical-fg);
+  border: 2px solid var(--cs-critical-bg);
+  border-radius: var(--cs-radius-sm);
+  font-weight: var(--weight-semibold);
+  font-size: var(--text-base);
+  cursor: pointer;
+  transition: filter var(--duration-fast, 150ms) var(--ease-out);
+}
+
+.crisis-compact-card__open:hover {
+  filter: brightness(0.92);
+}
+
+.crisis-compact-card__open:focus-visible {
+  outline: var(--cs-focus-ring);
+  outline-offset: var(--cs-focus-offset);
+}
+
+/* ---------------------------------------------------------------------------
+ * Full panel — modal dialog.
+ * ------------------------------------------------------------------------- */
+.crisis-shield-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: var(--z-modal, 400);
+  opacity: 1;
+  transition: opacity var(--duration-normal, 250ms) var(--ease-out);
+}
+
+.crisis-shield-backdrop[aria-hidden="true"] {
+  display: none;
+}
+
+.crisis-shield-panel {
+  position: fixed;
+  inset: 0;
+  z-index: calc(var(--z-modal, 400) + 1);
+  display: flex;
+  flex-direction: column;
+  background: var(--cs-surface);
+  color: var(--cs-text);
+  overflow: hidden;
+}
+
+/* SR note: aria-hidden="true" is set by JS when dismissed. */
+.crisis-shield-panel[aria-hidden="true"] {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .crisis-shield-panel {
+    inset: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: min(720px, calc(100vw - 2rem));
+    max-height: min(90vh, 900px);
+    border-radius: var(--cs-radius);
+    box-shadow: var(--shadow-2xl);
+    border: 1px solid var(--cs-border);
+  }
+}
+
+.crisis-shield-panel__header {
+  display: flex;
+  align-items: center;
+  gap: var(--cs-gap);
+  padding: var(--cs-pad) var(--cs-pad-lg);
+  border-bottom: 1px solid var(--cs-border);
+  background: var(--cs-surface);
+}
+
+.crisis-shield-panel__title {
+  flex: 1 1 auto;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: var(--weight-bold);
+  color: var(--cs-text);
+}
+
+.crisis-shield-panel__close {
+  flex: 0 0 auto;
+  width: var(--cs-tap-min);
+  height: var(--cs-tap-min);
+  min-width: var(--cs-tap-min);
+  min-height: var(--cs-tap-min);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: var(--cs-text);
+  border: 2px solid transparent;
+  border-radius: var(--radius-full);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background var(--duration-fast, 150ms) var(--ease-out);
+}
+
+.crisis-shield-panel__close:hover {
+  background: var(--bg-hover);
+}
+
+.crisis-shield-panel__close:focus-visible {
+  outline: var(--cs-focus-ring);
+  outline-offset: var(--cs-focus-offset);
+}
+
+/* Tab bar */
+.crisis-shield-panel__tabs {
+  display: flex;
+  gap: 0;
+  padding: 0 var(--cs-pad-lg);
+  border-bottom: 1px solid var(--cs-border);
+  background: var(--cs-surface);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.crisis-shield-panel__tab {
+  flex: 1 1 auto;
+  min-height: var(--cs-tap-min);
+  padding: 0.75rem 1rem;
+  background: transparent;
+  color: var(--cs-text-soft);
+  border: none;
+  border-bottom: 3px solid transparent;
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  font-weight: var(--weight-medium);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color var(--duration-fast, 150ms) var(--ease-out),
+              border-color var(--duration-fast, 150ms) var(--ease-out);
+}
+
+.crisis-shield-panel__tab:hover {
+  color: var(--cs-text);
+}
+
+.crisis-shield-panel__tab[aria-selected="true"] {
+  color: var(--cs-text);
+  border-bottom-color: var(--cs-accent);
+  font-weight: var(--weight-semibold);
+}
+
+.crisis-shield-panel__tab:focus-visible {
+  outline: var(--cs-focus-ring);
+  outline-offset: -3px;
+}
+
+/* Body scrolls inside, backdrop does not. */
+.crisis-shield-panel__body {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: var(--cs-pad-lg);
+  background: var(--cs-surface);
+}
+
+/* ---------------------------------------------------------------------------
+ * Dial list — large-tap-target emergency numbers.
+ * ------------------------------------------------------------------------- */
+.dial-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2, 0.5rem);
+}
+
+.dial-row {
+  display: flex;
+  align-items: center;
+  gap: var(--cs-gap);
+  min-height: var(--cs-row-min);
+  padding: 0.75rem;
+  background: var(--cs-surface);
+  color: var(--cs-text);
+  border: 1px solid var(--cs-border);
+  border-radius: var(--cs-radius-sm);
+  text-decoration: none;
+  transition: background var(--duration-fast, 150ms) var(--ease-out),
+              border-color var(--duration-fast, 150ms) var(--ease-out);
+}
+
+.dial-row:hover,
+.dial-row:focus-within {
+  background: var(--cs-surface-2);
+  border-color: var(--border-strong);
+  text-decoration: none;
+}
+
+.dial-row:focus-visible {
+  outline: var(--cs-focus-ring);
+  outline-offset: var(--cs-focus-offset);
+}
+
+.dial-row__icon {
+  flex: 0 0 auto;
+  width: 48px;
+  height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  line-height: 1;
+  border-radius: var(--radius-full);
+  background: var(--cs-surface-2);
+  color: var(--cs-text);
+}
+
+.dial-row__meta {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  min-width: 0;
+}
+
+.dial-row__label {
+  font-weight: var(--weight-semibold);
+  font-size: var(--text-base);
+  color: var(--cs-text);
+}
+
+.dial-row__number {
+  font-family: var(--font-mono);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-bold);
+  color: var(--cs-text);
+  letter-spacing: 0.02em;
+}
+
+.dial-row__call {
+  flex: 0 0 auto;
+  width: var(--cs-tap-min);
+  height: var(--cs-tap-min);
+  min-width: var(--cs-tap-min);
+  min-height: var(--cs-tap-min);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--cs-accent);
+  color: var(--text-inverse);
+  border: 2px solid var(--cs-accent);
+  border-radius: var(--radius-full);
+  font-size: 1.25rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: filter var(--duration-fast, 150ms) var(--ease-out);
+}
+
+.dial-row__call:hover {
+  filter: brightness(0.92);
+  text-decoration: none;
+}
+
+.dial-row__call:focus-visible {
+  outline: var(--cs-focus-ring);
+  outline-offset: var(--cs-focus-offset);
+}
+
+/* AAA-critical emphasis row (e.g. 112 / police / ambulance). */
+.dial-critical {
+  background: var(--cs-critical-bg);
+  color: var(--cs-critical-fg);
+  border: 2px solid var(--cs-critical-bg);
+}
+
+.dial-critical:hover,
+.dial-critical:focus-within {
+  background: var(--cs-critical-bg);
+  color: var(--cs-critical-fg);
+  filter: brightness(0.94);
+  border-color: var(--cs-critical-fg);
+}
+
+.dial-critical .dial-row__icon {
+  background: var(--cs-critical-fg);
+  color: var(--cs-critical-bg);
+}
+
+.dial-critical .dial-row__label,
+.dial-critical .dial-row__number {
+  color: var(--cs-critical-fg);
+}
+
+.dial-critical .dial-row__call {
+  background: var(--cs-critical-fg);
+  color: var(--cs-critical-bg);
+  border-color: var(--cs-critical-fg);
+}
+
+/* Optional inclusion modifier — bumps type to 22px for low-vision. */
+.cs-card--largetype,
+.cs-card--largetype .dial-row__label,
+.cs-card--largetype .dial-row__number {
+  font-size: 22px;
+}
+
+/* ---------------------------------------------------------------------------
+ * Flowchart renderer.
+ * ------------------------------------------------------------------------- */
+.crisis-flow {
+  display: flex;
+  flex-direction: column;
+  gap: var(--cs-pad);
+}
+
+.flow-node {
+  padding: 1.5rem;
+  background: var(--cs-surface);
+  color: var(--cs-text);
+  border: 1px solid var(--cs-border);
+  border-radius: 0.5rem;
+  box-shadow: var(--shadow-xs);
+}
+
+.flow-node__prompt {
+  margin: 0 0 var(--cs-pad) 0;
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-semibold);
+  color: var(--cs-text);
+  line-height: var(--leading-snug);
+}
+
+.flow-options {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2, 0.5rem);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.flow-option {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  min-height: var(--cs-tap-min);
+  padding: 0.75rem 1rem;
+  background: var(--cs-accent);
+  color: var(--text-inverse);
+  border: 2px solid var(--cs-accent);
+  border-radius: var(--cs-radius-sm);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: var(--weight-semibold);
+  text-align: left;
+  cursor: pointer;
+  transition: filter var(--duration-fast, 150ms) var(--ease-out),
+              transform var(--duration-fast, 150ms) var(--ease-out);
+}
+
+.flow-option:hover {
+  filter: brightness(0.92);
+}
+
+.flow-option:focus-visible {
+  outline: var(--cs-focus-ring);
+  outline-offset: var(--cs-focus-offset);
+}
+
+/* Alternate every other option for visual separation (colour NOT the sole cue —
+   button order + labels remain the primary indicator). */
+.flow-option:nth-child(even) {
+  background: var(--cs-accent-2);
+  color: var(--eu-gray-900);
+  border-color: var(--cs-accent-2);
+}
+
+/* Terminal node — highlighted end-state with source citation. */
+.flow-terminal {
+  padding: 1.5rem;
+  background: var(--cs-surface-2);
+  color: var(--cs-text);
+  border: 2px solid var(--cs-accent);
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: var(--cs-gap);
+}
+
+.flow-terminal__text {
+  margin: 0;
+  font-size: var(--text-lg);
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-snug);
+}
+
+.flow-terminal__source {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  align-self: flex-start;
+  max-width: 100%;
+  padding: 0.375rem 0.75rem;
+  background: var(--cs-surface);
+  color: var(--cs-text);
+  border: 1px solid var(--cs-border);
+  border-radius: var(--radius-full);
+  font-size: var(--text-sm);
+  font-family: var(--font-mono);
+  text-decoration: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.flow-terminal__source:hover {
+  background: var(--bg-hover);
+  border-color: var(--border-strong);
+  text-decoration: underline;
+}
+
+.flow-terminal__source:focus-visible {
+  outline: var(--cs-focus-ring);
+  outline-offset: var(--cs-focus-offset);
+}
+
+/* Sticky bottom controls. */
+.flow-controls {
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  gap: var(--space-2, 0.5rem);
+  padding: var(--cs-pad) 0 0 0;
+  margin-top: var(--cs-pad);
+  background: linear-gradient(
+    to bottom,
+    transparent 0,
+    var(--cs-surface) 0.5rem
+  );
+  border-top: 1px solid var(--cs-border);
+}
+
+.flow-controls__btn {
+  flex: 1 1 auto;
+  min-height: var(--cs-tap-min);
+  padding: 0.75rem 1rem;
+  border-radius: var(--cs-radius-sm);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: var(--weight-semibold);
+  cursor: pointer;
+  transition: background var(--duration-fast, 150ms) var(--ease-out),
+              border-color var(--duration-fast, 150ms) var(--ease-out);
+}
+
+.flow-controls__btn--back {
+  background: transparent;
+  color: var(--cs-text);
+  border: 2px solid var(--cs-border);
+}
+
+.flow-controls__btn--back:hover {
+  background: var(--bg-hover);
+  border-color: var(--border-strong);
+}
+
+.flow-controls__btn--restart {
+  background: transparent;
+  color: var(--cs-text-soft);
+  border: 2px solid transparent;
+}
+
+.flow-controls__btn--restart:hover {
+  color: var(--cs-text);
+  background: var(--bg-hover);
+}
+
+.flow-controls__btn:focus-visible {
+  outline: var(--cs-focus-ring);
+  outline-offset: var(--cs-focus-offset);
+}
+
+.flow-controls__btn[disabled],
+.flow-controls__btn[aria-disabled="true"] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ---------------------------------------------------------------------------
+ * Reduced motion — respect user preference.
+ * ------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .crisis-compact-card,
+  .crisis-compact-card__chip,
+  .crisis-compact-card__open,
+  .crisis-shield-backdrop,
+  .crisis-shield-panel__close,
+  .crisis-shield-panel__tab,
+  .dial-row,
+  .dial-row__call,
+  .flow-option,
+  .flow-terminal__source,
+  .flow-controls__btn {
+    transition: none;
+  }
+}

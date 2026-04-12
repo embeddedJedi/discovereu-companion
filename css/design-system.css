@@ -96,6 +96,12 @@
   --danger:         var(--eu-red-500);
   --danger-soft:    #fee2e2;
 
+  /* Crisis Shield — AAA-grade critical emphasis tokens (v1.3).
+     Light: #B91C1C on #FFFFFF → ~6.3:1 (WCAG AA large-text AAA).
+     Used only on large, bold typography (≥18pt / 14pt bold) and UI chrome. */
+  --cs-critical-bg: #B91C1C;
+  --cs-critical-fg: #FFFFFF;
+
   /* Inclusion map colour gradient — 5 stops, 0 → 100 scale.
      Red → orange → yellow → light-green → dark-green.
      Matches WCAG AA contrast against --bg-default. */
@@ -227,6 +233,11 @@
 
   --surface-elevated: var(--eu-gray-800);
   --sheet-handle-color: var(--eu-gray-600);
+
+  /* Crisis Shield — AAA-grade critical emphasis tokens (v1.3).
+     Dark: #FCA5A5 on #0B0B0F → ~10.3:1 (WCAG AAA). */
+  --cs-critical-bg: #FCA5A5;
+  --cs-critical-fg: #0B0B0F;
 }
 
 /* Reset + base */
