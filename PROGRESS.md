@@ -271,7 +271,7 @@ All loaded with SRI hashes (to add in Phase 1).
 - [x] Group Vote Module (for 4-person groups) (v1.1 sub-project D)
 - [x] Night Arrival Shield (22:00+ filter) (v1.1 sub-project C)
 - [x] Smart Packing Assistant (weather-aware, v1.1 sub-project C)
-- [ ] Pickpocket heatmap ← deferred to v1.1 sub-project E
+- [x] Pickpocket heatmap (v1.1 sub-project E, 30 cities)
 - [x] FutureMe time capsule
 
 ### Tier 5 — Turkish bonus layer
@@ -354,6 +354,10 @@ All loaded with SRI hashes (to add in Phase 1).
   - `js/ui/welcome-wizard.js` 4-question first-visit onboarding
   - Tab bar redesign from text-only to icon + label layout, 6 → 7 tabs (mobile bottom-nav mirrored)
   - All 13 smoke tests pass
+- **v1.1 Sub-project E — Data & Polish** (2026-04-12):
+  - `data/shared-mobility.json` (978d78c) — 21 countries + 37 cities, ridesharing/scooters/bikes/car-sharing/ride-hailing platforms, price ranges, tips. New "Shared Mobility" accordion in country guide between Transport and Budget. Loader extended with `loadSharedMobility`/`getSharedMobilityForCountry`.
+  - `js/features/wikivoyage-refresh.js` (85c69ca) — MediaWiki API via `origin=*` CORS, 24h localStorage cache, per-section "↻ Refresh" button in country guide, HTML sanitizer (tag allowlist, strips scripts/iframes/on*), clear-cache button in kesfet settings.
+  - `data/pickpocket-zones.json` + `js/features/pickpocket.js` (008f5ff) — 30 city risk database (score 1-5, hotspots, tips, sources). Leaflet layer group with color-coded circle markers toggleable on the map page. "Safety" accordion in country guide per city with `renderSafetyCallout`. Methodology note emphasizes awareness over alarm.
 - **v1.1 Sub-project D — Features Round 2** (2026-04-12):
   - `js/features/group-vote.js` (4e377d8) — LZ-string URL ballot (`#vote=`), 4-voter limit, CSS bar chart results, added as kesfet Fun card
   - `js/features/journal.js` (92ae53d) — IDB `journalEntries` store (entries + photos share keyspace), `requestGeoLog` for auto GPS entries, `addManualEntry` with EXIF-stripped photos, Nominatim reverse-geocode cached 30d per-language at 3-decimal coord rounding, `exportTimeline` via html2canvas. Fun card on kesfet.
@@ -386,9 +390,9 @@ All loaded with SRI hashes (to add in Phase 1).
 - *(nothing — ready to continue)*
 
 ### ⏭ Next up (in order)
-1. v1.1 sub-project E: Data & Polish — Shared mobility data, Live Wikivoyage refresh, Pickpocket heatmap
+1. **Send outreach package** (launch-critical, deadline 2026-04-22) — EACEA one-pager, Turkish UA email, LinkedIn DG EAC
 2. Sub-project 3: DE / FR / ES / IT translations (extend i18n JSONs)
-3. Deploy polish: custom domain, send outreach package
+3. Deploy polish: custom domain
 
 ### 🛑 Blocked
 - *(none)*
