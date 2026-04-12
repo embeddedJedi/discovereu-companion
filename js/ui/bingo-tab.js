@@ -8,7 +8,8 @@ import { h, on, empty } from '../utils/dom.js';
 import { showToast } from './toast.js';
 import {
   ensureBingoData, getActiveCard, isDone, markDone, markUndone,
-  getProgress, detectBingoLines, attachPhoto, getPhoto, removePhoto
+  getProgress, detectBingoLines, attachPhoto, getPhoto, removePhoto,
+  canGenerateCollage, generateCollage
 } from '../features/bingo.js';
 
 function useTr() { return state.getSlice('language') === 'tr'; }
@@ -41,6 +42,18 @@ export async function renderBingo(container) {
   }
 
   container.appendChild(h('p', { class: 'bingo-legend text-muted small' }, t('bingo.legend')));
+
+  // Collage CTA — only surfaced when ≥4 photos are stored locally.
+  try {
+    if (await canGenerateCollage()) {
+      const btn = h('button', {
+        class: 'btn btn-primary bingo-collage-cta',
+        type: 'button'
+      }, `🖼️ ${t('bingo.collage.generate')}`);
+      on(btn, 'click', () => openCollageModal());
+      container.appendChild(btn);
+    }
+  } catch (e) { console.warn('[bingo-tab] collage availability check failed', e); }
 
   const completedIds = new Set(Object.keys(state.getSlice('bingo')?.completed || {}));
   const lines = detectBingoLines(card.universal, completedIds);
@@ -139,6 +152,116 @@ function openCellDetail(cell) {
   document.addEventListener('keydown', onKey);
   on(overlay, 'click', ev => { if (ev.target === overlay) close(); });
   card.querySelector('.modal-close').addEventListener('click', close);
+}
+
+async function openCollageModal() {
+  const overlay = h('div', { class: 'modal-overlay bingo-modal-overlay', role: 'dialog', 'aria-modal': 'true', 'aria-label': t('bingo.collage.title') });
+  const previewHost = h('div', { class: 'bingo-collage-preview' }, [
+    h('p', { class: 'text-muted', 'aria-busy': 'true' }, '…')
+  ]);
+  const actions = h('div', { class: 'modal-actions' });
+
+  const card = h('div', { class: 'modal-card' }, [
+    h('header', { class: 'modal-header' }, [
+      h('h3', null, `🖼️ ${t('bingo.collage.title')}`),
+      h('button', { class: 'modal-close', type: 'button', 'aria-label': t('modal.close') }, '×')
+    ]),
+    h('div', { class: 'modal-body' }, [previewHost, actions])
+  ]);
+  overlay.appendChild(card);
+  document.body.appendChild(overlay);
+
+  let objectUrl = null;
+  let pngBlob = null;
+
+  function close() {
+    if (objectUrl) URL.revokeObjectURL(objectUrl);
+    overlay.remove();
+    document.removeEventListener('keydown', onKey);
+  }
+  function onKey(e) {
+    if (e.key === 'Escape') close();
+    else if (e.key === 'Tab') trapFocus(e, card);
+  }
+  document.addEventListener('keydown', onKey);
+  on(overlay, 'click', ev => { if (ev.target === overlay) close(); });
+  card.querySelector('.modal-close').addEventListener('click', close);
+
+  try {
+    pngBlob = await generateCollage({ tr: useTr() });
+    objectUrl = URL.createObjectURL(pngBlob);
+    empty(previewHost);
+    const img = h('img', {
+      src: objectUrl,
+      alt: t('bingo.collage.title'),
+      class: 'bingo-collage-img',
+      style: { maxWidth: '100%', height: 'auto', display: 'block', borderRadius: '8px' }
+    });
+    previewHost.appendChild(img);
+
+    const dl = h('button', { class: 'btn btn-primary', type: 'button' }, t('bingo.collage.download'));
+    on(dl, 'click', () => downloadBlob(pngBlob));
+    actions.appendChild(dl);
+
+    if (navigator.canShare && navigator.share) {
+      const sh = h('button', { class: 'btn btn-secondary', type: 'button' }, t('bingo.collage.share'));
+      on(sh, 'click', () => sharePng(pngBlob));
+      actions.appendChild(sh);
+    }
+
+    const closeBtn = h('button', { class: 'btn btn-ghost', type: 'button' }, t('modal.close'));
+    on(closeBtn, 'click', close);
+    actions.appendChild(closeBtn);
+
+    // Move focus to download for keyboard users
+    dl.focus();
+  } catch (e) {
+    console.warn('[bingo-tab] collage generation failed', e);
+    empty(previewHost);
+    previewHost.appendChild(h('p', { class: 'text-muted' }, t('bingo.collage.needMorePhotos')));
+    const closeBtn = h('button', { class: 'btn btn-ghost', type: 'button' }, t('modal.close'));
+    on(closeBtn, 'click', close);
+    actions.appendChild(closeBtn);
+  }
+}
+
+function downloadBlob(blob) {
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  const today = new Date().toISOString().slice(0, 10);
+  a.href = url;
+  a.download = `discovereu-bingo-collage-${today}.png`;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 2000);
+}
+
+async function sharePng(blob) {
+  const file = new File([blob], 'discovereu-bingo-collage.png', { type: 'image/png' });
+  try {
+    if (navigator.canShare && navigator.canShare({ files: [file] })) {
+      await navigator.share({ files: [file], title: 'DiscoverEU Bingo' });
+      return;
+    }
+  } catch (e) { console.warn('[bingo-tab] share failed', e); }
+  // Fallback: trigger download + toast
+  downloadBlob(blob);
+  showToast({ message: t('bingo.photoSaved'), variant: 'success' });
+}
+
+function trapFocus(ev, root) {
+  const focusables = root.querySelectorAll(
+    'button:not([disabled]), [href], input:not([disabled]), [tabindex]:not([tabindex="-1"])'
+  );
+  if (!focusables.length) return;
+  const first = focusables[0];
+  const last = focusables[focusables.length - 1];
+  if (ev.shiftKey && document.activeElement === first) {
+    last.focus(); ev.preventDefault();
+  } else if (!ev.shiftKey && document.activeElement === last) {
+    first.focus(); ev.preventDefault();
+  }
 }
 
 function rerenderParent() {

@@ -542,7 +542,15 @@
     "uploadLabel": "Attach photo evidence",
     "photoSaved": "Photo saved locally",
     "photoFailed": "Couldn't save photo",
-    "removePhoto": "Remove photo"
+    "removePhoto": "Remove photo",
+    "collage": {
+      "generate": "Generate photo collage",
+      "title": "My Bingo Collage",
+      "download": "Download",
+      "share": "Share",
+      "needMorePhotos": "Add at least 4 photos to build a collage.",
+      "noPhotosYet": "No photos yet — attach some to bingo cells first."
+    }
   },
   "dares": {
     "noneToday": "No dare for today.",

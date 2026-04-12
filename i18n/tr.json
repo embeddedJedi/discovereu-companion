@@ -495,13 +495,15 @@
       "bingo": "Şehir Bingo",
       "dares": "Günlük Cesaret",
       "futureMe": "Gelecekteki Ben",
-      "soundtrack": "Müzik"
+      "soundtrack": "Müzik",
+      "voiceMemory": "Sesli Anı"
     },
     "teaser": {
       "bingo": "Avrupa'da fotoğraf görevleri",
       "dares": "Günlük mini görevler",
       "futureMe": "Zaman kapsülü mektupları",
-      "soundtrack": "Ülke playlistleri"
+      "soundtrack": "Ülke playlistleri",
+      "voiceMemory": "Günlük 30 saniyelik ses kapsülleri"
     },
     "backToGrid": "Geri",
     "challenges": "görev",
@@ -512,6 +514,20 @@
     "listenNow": "Yerel müziği keşfet",
     "comingSoon": "Yakında",
     "loadError": "Yüklenemedi — tekrar dene"
+  },
+  "voiceMemory": {
+    "title": "Sesli Anı",
+    "description": "Her gün 30 saniyelik bir ses anısı kaydet. Sadece cihazında saklanır.",
+    "record": "Kaydet",
+    "recording": "Kaydediliyor…",
+    "stop": "Durdur",
+    "savedToday": "Bugün için kaydedildi",
+    "overwriteConfirm": "Bugün için zaten bir anı var. Değiştirilsin mi?",
+    "delete": "Sil",
+    "deleteConfirm": "Bu sesli anıyı sil?",
+    "notSupported": "Sesli anı bu cihazda veya tarayıcıda desteklenmiyor.",
+    "permissionDenied": "Mikrofon erişimi reddedildi. Kayıt için tarayıcı ayarlarından izin ver.",
+    "empty": "Henüz anı yok — ilkini yakalamak için mikrofona dokun."
   },
   "bingo": {
     "loading": "Bingo kartı yükleniyor…",
@@ -526,7 +542,15 @@
     "uploadLabel": "Kanıt fotoğrafı ekle",
     "photoSaved": "Fotoğraf yerel olarak kaydedildi",
     "photoFailed": "Fotoğraf kaydedilemedi",
-    "removePhoto": "Fotoğrafı kaldır"
+    "removePhoto": "Fotoğrafı kaldır",
+    "collage": {
+      "generate": "Fotoğraf kolajı oluştur",
+      "title": "Bingo Kolajım",
+      "download": "İndir",
+      "share": "Paylaş",
+      "needMorePhotos": "Kolaj için en az 4 fotoğraf ekle.",
+      "noPhotosYet": "Henüz fotoğraf yok — önce bingo hücrelerine fotoğraf ekle."
+    }
   },
   "dares": {
     "noneToday": "Bugün için cesaret yok.",
