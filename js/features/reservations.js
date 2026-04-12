@@ -6,6 +6,7 @@
 // reservation before boarding. The first competitive differentiator.
 
 import { state } from '../state.js';
+import { getEffectiveLegs } from './effective-legs.js';
 
 /**
  * Walk adjacent stop pairs of a route and return the list of mandatory
@@ -18,7 +19,7 @@ import { state } from '../state.js';
  * that country (e.g. Rome → Milan inside Italy).
  */
 export function getRouteReservations(route) {
-  const stops = route?.stops || [];
+  const stops = getEffectiveLegs(route);
   if (stops.length < 2) return [];
 
   const all = state.getSlice('reservations') || [];

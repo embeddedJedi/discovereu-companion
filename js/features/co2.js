@@ -12,6 +12,8 @@
 // city. That's imprecise (real trips do not fly between capitals), but
 // the whole point of the number is the *ratio*, not a shipping quote.
 
+import { getEffectiveLegs } from './effective-legs.js';
+
 const RAIL_G_PER_KM  = 35;
 const FLIGHT_G_PER_KM = 255;
 const EARTH_KM = 6371;
@@ -39,7 +41,7 @@ const CAPITAL_LATLNG = {
  *   const { rail, flight, savedKg, savedPct, green } = computeCO2(route);
  */
 export function computeCO2(route) {
-  const stops = route?.stops || [];
+  const stops = getEffectiveLegs(route);
   if (stops.length < 2) {
     return { totalKm: 0, railKg: 0, flightKg: 0, savedKg: 0, savedPct: 0, green: false };
   }

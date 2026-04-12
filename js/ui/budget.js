@@ -10,6 +10,7 @@ import { t } from '../i18n/i18n.js';
 import { qs, h, empty, on } from '../utils/dom.js';
 import { formatCurrency } from '../utils/format.js';
 import { getRouteReservations } from '../features/reservations.js';
+import { getEffectiveLegs } from '../features/effective-legs.js';
 
 // ─── Config ──────────────────────────────────────────────────────────────
 
@@ -39,7 +40,7 @@ const SHARE = { accommodation: 0.40, food: 0.35, activities: 0.25 };
  *   const budget = computeBudget(state.getSlice('route'), state.getSlice('user'));
  */
 export function computeBudget(route, user) {
-  const stops = route?.stops || [];
+  const stops = getEffectiveLegs(route);
   const tier = BUDGET_TO_TIER[user?.budget] || 'mid';
   const accMod  = ACC_MODIFIER[user?.accommodation] ?? 1.0;
   const foodMod = FOOD_MODIFIER[user?.foodStyle]    ?? 1.0;
