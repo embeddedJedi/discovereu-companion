@@ -7,7 +7,7 @@
 //   • On activate: wipe any older cache buckets so version bumps roll
 //     out cleanly
 
-const CACHE_VERSION = 'discovereu-v5';
+const CACHE_VERSION = 'discovereu-v6';
 const APP_SHELL = [
   './',
   './index.html',
@@ -41,7 +41,17 @@ const APP_SHELL = [
   '/js/ui/ai-modal.js',
   '/js/ui/guide.js',
   '/js/ui/bingo-tab.js',
-  '/js/ui/fun-tab.js'
+  '/js/ui/fun-tab.js',
+  '/data/emergency-numbers.json',
+  '/data/tr-missions.json',
+  '/data/embassy-lookup-pattern.json',
+  '/data/crisis-flowcharts.json',
+  '/css/crisis-shield.css',
+  '/js/features/crisis-shield.js',
+  '/js/features/flowchart-runner.js',
+  '/js/features/share-location.js',
+  '/js/ui/crisis-shield-panel.js',
+  '/js/ui/emergency-dial-list.js'
 ];
 
 self.addEventListener('install', (event) => {
