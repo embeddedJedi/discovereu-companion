@@ -4,7 +4,7 @@
 // No retries here — the modal handles that; we just surface the outcome.
 
 const ENDPOINT = 'https://api.groq.com/openai/v1/chat/completions';
-const DEFAULT_MODEL = 'llama-3.1-70b-versatile';
+const DEFAULT_MODEL = 'llama-3.3-70b-versatile';
 
 export class AuthError      extends Error { constructor(m){ super(m); this.name='AuthError'; } }
 export class RateLimitError extends Error { constructor(m){ super(m); this.name='RateLimitError'; } }
