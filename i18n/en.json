@@ -487,7 +487,17 @@
       "transport": "Local transport",
       "safety": "Safety",
       "avoid": "Avoid"
-    }
+    },
+    "searchPlaceholder": "Search countries...",
+    "mode": {
+      "default": "All",
+      "accessibility": "Accessibility",
+      "rainbow": "LGBTQ+"
+    },
+    "emergency": "Emergency Info",
+    "noResults": "No countries match your search",
+    "backToList": "All countries",
+    "loadError": "Failed to load guide content"
   },
   "error": {
     "weatherUnavailable": "Weather data unavailable",

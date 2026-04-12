@@ -487,7 +487,17 @@
       "transport": "Yerel ulaşım",
       "safety": "Güvenlik",
       "avoid": "Kaçınılacaklar"
-    }
+    },
+    "searchPlaceholder": "Ülke ara...",
+    "mode": {
+      "default": "Tümü",
+      "accessibility": "Erişilebilirlik",
+      "rainbow": "LGBTQ+"
+    },
+    "emergency": "Acil Durum",
+    "noResults": "Aramanızla eşleşen ülke yok",
+    "backToList": "Tüm ülkeler",
+    "loadError": "Rehber içeriği yüklenemedi"
   },
   "error": {
     "weatherUnavailable": "Hava durumu verisi alınamadı",
