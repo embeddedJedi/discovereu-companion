@@ -595,6 +595,31 @@
       "emergency": "Emergency data is not yet compiled for this country — contribute on GitHub."
     }
   },
+  "more": {
+    "aiTitle": "AI Travel Assistant",
+    "aiSubtitle": "Let AI plan your route across Europe",
+    "section": {
+      "share": "Share & Remember",
+      "compare": "Compare",
+      "turkish": "Turkish Bonus",
+      "settings": "Settings"
+    },
+    "wrapped": "DiscoverEU Wrapped",
+    "exportPdf": "Export PDF Itinerary",
+    "shareRoute": "Share Route Link",
+    "radarCompare": "Country Comparison",
+    "visaGuide": "Schengen Visa Guide",
+    "sofiaExpress": "Sofia Express Info",
+    "tlBudget": "TL Budget Tips",
+    "consulate": "Consulate Reminder",
+    "language": "Language",
+    "themeLabel": "Theme",
+    "theme": { "light": "Light", "dark": "Dark" },
+    "aiKey": "AI API Key (Groq)",
+    "clearData": "Clear All Data",
+    "clearConfirm": "Delete all saved routes, settings, and memories? This cannot be undone.",
+    "about": "DiscoverEU Companion — open-source, MIT licensed."
+  },
   "wizard": {
     "title": "Welcome!",
     "skip": "Skip for now",

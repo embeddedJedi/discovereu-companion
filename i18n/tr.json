@@ -595,6 +595,31 @@
       "emergency": "Bu ülke için acil durum verisi henüz derlenmedi — GitHub'da katkıda bulun."
     }
   },
+  "more": {
+    "aiTitle": "AI Seyahat Asistanı",
+    "aiSubtitle": "AI ile Avrupa rotanı planla",
+    "section": {
+      "share": "Paylaş & Hatırla",
+      "compare": "Karşılaştır",
+      "turkish": "Türkiye Bonusu",
+      "settings": "Ayarlar"
+    },
+    "wrapped": "DiscoverEU Wrapped",
+    "exportPdf": "PDF Olarak İndir",
+    "shareRoute": "Rota Linki Paylaş",
+    "radarCompare": "Ülke Karşılaştırma",
+    "visaGuide": "Schengen Vize Rehberi",
+    "sofiaExpress": "Sofia Ekspresi",
+    "tlBudget": "TL Bütçe İpuçları",
+    "consulate": "Konsolosluk Hatırlatıcı",
+    "language": "Dil",
+    "themeLabel": "Tema",
+    "theme": { "light": "Açık", "dark": "Koyu" },
+    "aiKey": "AI API Anahtarı (Groq)",
+    "clearData": "Tüm Verileri Sil",
+    "clearConfirm": "Tüm rotalar, ayarlar ve anılar silinsin mi? Bu işlem geri alınamaz.",
+    "about": "DiscoverEU Companion — açık kaynak, MIT lisansı."
+  },
   "wizard": {
     "title": "Hoş geldin!",
     "skip": "Şimdilik geç",
