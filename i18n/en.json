@@ -296,6 +296,45 @@
     "greenTraveler": "Green Traveler"
   },
   "ai": {
+    "headerCta": "AI Suggest",
+    "title": "AI Route Suggestion",
+    "key": {
+      "intro": "Bring your own Groq API key. Your key never leaves your browser.",
+      "getLink": "Get a free Groq key →",
+      "label": "Groq API key",
+      "save": "Save key",
+      "invalid": "That doesn't look like a Groq key (gsk_…)",
+      "privacy": "Stored only in your browser localStorage."
+    },
+    "prompt": {
+      "intro": "Describe the trip you want — we'll draft a route.",
+      "placeholder": "e.g. 14 days, beaches + small towns, mid budget",
+      "label": "Your trip idea",
+      "submit": "Suggest route"
+    },
+    "chip": {
+      "beach": "Beaches",
+      "history": "History",
+      "nature": "Nature",
+      "party": "Party",
+      "access": "Accessible"
+    },
+    "loading": "Asking the AI…",
+    "loading.cancel": "Cancel",
+    "result": {
+      "nights": "nights",
+      "replace": "Replace my route",
+      "add": "Add to my route",
+      "retry": "Try again",
+      "applied": "Route applied"
+    },
+    "err": {
+      "auth": "Your Groq key was rejected. Update it and try again.",
+      "rate": "Groq rate limit hit. Try again in a minute.",
+      "parse": "The AI returned an unexpected response. Try again.",
+      "network": "Network error talking to Groq.",
+      "updateKey": "Update key"
+    },
     "modal": {
       "title": "AI trip assistant",
       "placeholder": "e.g. 10 days, museums + beach, under €800",
@@ -305,6 +344,109 @@
       "getKey": "Get a free Groq key"
     },
     "thinking": "Thinking…"
+  },
+  "fun": {
+    "subtabLabel": "Fun sub-sections",
+    "subtab": {
+      "bingo": "Bingo",
+      "dares": "Daily Dare",
+      "futureMe": "FutureMe"
+    }
+  },
+  "bingo": {
+    "loading": "Loading bingo card…",
+    "title": "City Bingo",
+    "progress": "{{done}} / {{total}} complete",
+    "gridLabel": "Bingo 5 by 5 grid",
+    "bonusTitle": "Country bonuses",
+    "legend": "Tap any cell to mark it done or add a photo.",
+    "lineBanner": "{{n}} line(s) complete — nice!",
+    "markDone": "Mark done",
+    "markUndone": "Mark undone",
+    "uploadLabel": "Attach photo evidence",
+    "photoSaved": "Photo saved locally",
+    "photoFailed": "Couldn't save photo",
+    "removePhoto": "Remove photo"
+  },
+  "dares": {
+    "noneToday": "No dare for today.",
+    "streakLabel": "{{days}} day streak",
+    "markDone": "Mark done",
+    "done": "Done today",
+    "skip": "Skip"
+  },
+  "futureMe": {
+    "title": "FutureMe",
+    "newBtn": "New message",
+    "newTitle": "Write to your future self",
+    "empty": "No messages yet. Leave one for the next chapter of the trip.",
+    "sealed": "Sealed",
+    "opened": "Opened",
+    "revealedIn": "Reveals in {{days}} days",
+    "messageLabel": "Message",
+    "dateLabel": "Reveal date",
+    "placeholder": "Hey future me…",
+    "save": "Seal it",
+    "needBoth": "Please write a message and pick a date.",
+    "export": "Calendar",
+    "delete": "Delete",
+    "confirmDelete": "Delete this time capsule?",
+    "icsSummary": "DiscoverEU FutureMe — your message is ready",
+    "icsDesc": "Open the DiscoverEU Companion and head to Fun → FutureMe to read your message.",
+    "icsAlarm": "Your message is ready today"
+  },
+  "soundtrack": {
+    "title": "Country Playlist",
+    "fallbackNote": "No regional Top 50 for this country — using Global Top 50 instead.",
+    "attribution": "Powered by Spotify — 30-second previews play anonymously."
+  },
+  "consulate": {
+    "title": "Consulate appointment",
+    "empty": "Add your Schengen visa appointment to get a countdown and a calendar reminder.",
+    "addCta": "Add appointment",
+    "countdown": "{{days}} days {{hours}} hours until your appointment",
+    "addToCalendar": "Add to calendar",
+    "edit": "Edit",
+    "delete": "Delete",
+    "confirmDelete": "Remove this appointment?",
+    "formTitle": "Consulate appointment",
+    "country": "Country",
+    "city": "City",
+    "datetime": "Date & time",
+    "notes": "Notes",
+    "notesPlaceholder": "Application reference, documents ready, etc.",
+    "save": "Save",
+    "icsSummary": "Consulate appointment",
+    "icsDesc": "Documents checklist: passport, biometric photo, insurance (€30k), financial proof (€50/day), DiscoverEU invitation letter, appointment printout.",
+    "alarm1": "Consulate appointment tomorrow",
+    "alarm2": "Consulate appointment in 2 hours"
+  },
+  "guide": {
+    "missing": "Guide not yet compiled for this country — contribute on GitHub.",
+    "countryTitle": "Country Guide",
+    "topCitiesTitle": "Top Cities ({{n}})",
+    "lastUpdated": "Last updated {{date}}",
+    "source": "Source",
+    "section": {
+      "summary": "Overview",
+      "whenToGo": "When to go",
+      "whatToEat": "What to eat",
+      "transport": "Transport",
+      "money": "Money",
+      "etiquette": "Etiquette",
+      "safety": "Safety",
+      "connectivity": "Connectivity",
+      "languageBasics": "Language basics",
+      "avoidPitfalls": "Avoid these pitfalls"
+    },
+    "city": {
+      "mustSee": "Must see",
+      "mustEat": "Must eat",
+      "free": "Free things",
+      "transport": "Local transport",
+      "safety": "Safety",
+      "avoid": "Avoid"
+    }
   },
   "error": {
     "weatherUnavailable": "Weather data unavailable",

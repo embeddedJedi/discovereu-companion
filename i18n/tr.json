@@ -296,6 +296,45 @@
     "greenTraveler": "Yeşil Gezgin"
   },
   "ai": {
+    "headerCta": "AI Öneri",
+    "title": "AI Rota Önerisi",
+    "key": {
+      "intro": "Kendi Groq API anahtarını kullan. Anahtarın tarayıcından asla çıkmaz.",
+      "getLink": "Ücretsiz Groq anahtarı al →",
+      "label": "Groq API anahtarı",
+      "save": "Kaydet",
+      "invalid": "Bu bir Groq anahtarına benzemiyor (gsk_…)",
+      "privacy": "Sadece tarayıcında localStorage'da saklanır."
+    },
+    "prompt": {
+      "intro": "İstediğin geziyi anlat — rota taslağını hazırlarız.",
+      "placeholder": "örn. 14 gün, plaj + küçük kasabalar, orta bütçe",
+      "label": "Gezi fikrin",
+      "submit": "Rota öner"
+    },
+    "chip": {
+      "beach": "Plaj",
+      "history": "Tarih",
+      "nature": "Doğa",
+      "party": "Parti",
+      "access": "Erişilebilir"
+    },
+    "loading": "AI'ya soruluyor…",
+    "loading.cancel": "İptal",
+    "result": {
+      "nights": "gece",
+      "replace": "Rotamı değiştir",
+      "add": "Rotama ekle",
+      "retry": "Yeniden dene",
+      "applied": "Rota uygulandı"
+    },
+    "err": {
+      "auth": "Groq anahtarın reddedildi. Güncelle ve tekrar dene.",
+      "rate": "Groq istek limiti doldu. Bir dakika sonra tekrar dene.",
+      "parse": "AI beklenmeyen bir yanıt döndü. Tekrar dene.",
+      "network": "Groq ile ağ hatası.",
+      "updateKey": "Anahtarı güncelle"
+    },
     "modal": {
       "title": "AI yolculuk asistanı",
       "placeholder": "ör. 10 gün, müze + plaj, 800€ altında",
@@ -305,6 +344,109 @@
       "getKey": "Ücretsiz Groq anahtarı al"
     },
     "thinking": "Düşünüyor…"
+  },
+  "fun": {
+    "subtabLabel": "Eğlence alt bölümleri",
+    "subtab": {
+      "bingo": "Bingo",
+      "dares": "Günlük Cesaret",
+      "futureMe": "Gelecek Bana"
+    }
+  },
+  "bingo": {
+    "loading": "Bingo kartı yükleniyor…",
+    "title": "Şehir Bingo",
+    "progress": "{{done}} / {{total}} tamamlandı",
+    "gridLabel": "Bingo 5'e 5 ızgarası",
+    "bonusTitle": "Ülke bonusları",
+    "legend": "Herhangi bir hücreye dokunarak tamamla veya fotoğraf ekle.",
+    "lineBanner": "{{n}} sıra tamamlandı — harika!",
+    "markDone": "Tamamla",
+    "markUndone": "Geri al",
+    "uploadLabel": "Kanıt fotoğrafı ekle",
+    "photoSaved": "Fotoğraf yerel olarak kaydedildi",
+    "photoFailed": "Fotoğraf kaydedilemedi",
+    "removePhoto": "Fotoğrafı kaldır"
+  },
+  "dares": {
+    "noneToday": "Bugün için cesaret yok.",
+    "streakLabel": "{{days}} gün seri",
+    "markDone": "Tamamla",
+    "done": "Bugün tamam",
+    "skip": "Atla"
+  },
+  "futureMe": {
+    "title": "Gelecek Bana",
+    "newBtn": "Yeni mesaj",
+    "newTitle": "Gelecekteki kendine yaz",
+    "empty": "Henüz mesaj yok. Gezinin bir sonraki bölümü için bir tane bırak.",
+    "sealed": "Mühürlü",
+    "opened": "Açıldı",
+    "revealedIn": "{{days}} gün sonra açılacak",
+    "messageLabel": "Mesaj",
+    "dateLabel": "Açılma tarihi",
+    "placeholder": "Hey gelecekteki ben…",
+    "save": "Mühürle",
+    "needBoth": "Lütfen mesaj yaz ve tarih seç.",
+    "export": "Takvim",
+    "delete": "Sil",
+    "confirmDelete": "Bu zaman kapsülünü sil?",
+    "icsSummary": "DiscoverEU Gelecek Bana — mesajın hazır",
+    "icsDesc": "DiscoverEU Companion sitesini aç ve Eğlence → Gelecek Bana sekmesinde mesajını oku.",
+    "icsAlarm": "Mesajın bugün hazır"
+  },
+  "soundtrack": {
+    "title": "Ülke Çalma Listesi",
+    "fallbackNote": "Bu ülke için bölgesel Top 50 bulunamadı — Global Top 50 kullanılıyor.",
+    "attribution": "Spotify tarafından sağlanır — 30 saniyelik ön izlemeler anonim olarak çalar."
+  },
+  "consulate": {
+    "title": "Konsolosluk randevusu",
+    "empty": "Schengen vize randevunu ekle, geri sayım ve takvim hatırlatıcısı al.",
+    "addCta": "Randevu ekle",
+    "countdown": "Randevuna {{days}} gün {{hours}} saat kaldı",
+    "addToCalendar": "Takvime ekle",
+    "edit": "Düzenle",
+    "delete": "Sil",
+    "confirmDelete": "Bu randevuyu kaldır?",
+    "formTitle": "Konsolosluk randevusu",
+    "country": "Ülke",
+    "city": "Şehir",
+    "datetime": "Tarih ve saat",
+    "notes": "Notlar",
+    "notesPlaceholder": "Başvuru referansı, hazır belgeler, vb.",
+    "save": "Kaydet",
+    "icsSummary": "Konsolosluk randevusu",
+    "icsDesc": "Belgeler checklist: pasaport, biyometrik fotoğraf, sigorta (€30k), mali kanıt (€50/gün), DiscoverEU davet mektubu, randevu çıktısı.",
+    "alarm1": "Yarın konsolosluk randevun var",
+    "alarm2": "2 saat sonra konsolosluk randevun"
+  },
+  "guide": {
+    "missing": "Bu ülke için rehber henüz hazırlanmadı — GitHub'da katkıda bulun.",
+    "countryTitle": "Ülke Rehberi",
+    "topCitiesTitle": "Öne Çıkan Şehirler ({{n}})",
+    "lastUpdated": "Son güncelleme {{date}}",
+    "source": "Kaynak",
+    "section": {
+      "summary": "Genel Bakış",
+      "whenToGo": "Ne zaman gitmeli",
+      "whatToEat": "Ne yenmeli",
+      "transport": "Ulaşım",
+      "money": "Para",
+      "etiquette": "Görgü kuralları",
+      "safety": "Güvenlik",
+      "connectivity": "Bağlantı",
+      "languageBasics": "Temel dil bilgisi",
+      "avoidPitfalls": "Bunlardan kaçın"
+    },
+    "city": {
+      "mustSee": "Mutlaka gör",
+      "mustEat": "Mutlaka ye",
+      "free": "Ücretsiz aktiviteler",
+      "transport": "Yerel ulaşım",
+      "safety": "Güvenlik",
+      "avoid": "Kaçınılacaklar"
+    }
   },
   "error": {
     "weatherUnavailable": "Hava durumu verisi alınamadı",
