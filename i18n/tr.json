@@ -782,5 +782,19 @@
     "hideLateArrivalToggle": "Geç varışlı rotaları gizle",
     "nightShieldDescription": "Trenin 22:00 ile 06:00 arasında ulaştığı durakları işaretler. Gündüz varışı tercih edenler için faydalı.",
     "templateFilteredNote": "Bu rotada gece geç saatte bir varış var."
+  },
+  "groupVote": {
+    "title": "Grup Oylaması",
+    "description": "En fazla 4 yol arkadaşının favori duraklar için oy vermesini sağla — bağlantıyı paylaş, sunucuya gerek yok.",
+    "startVote": "Oylamayı Başlat",
+    "needMoreStops": "Grup oylaması için rotana en az 3 durak ekle.",
+    "voterName": "Adın",
+    "selectCandidates": "Favorilerini seç",
+    "submitVote": "Oyu gönder",
+    "results": "Sonuçlar",
+    "voteShared": "Oylama bağlantısı panoya kopyalandı",
+    "maxVotersReached": "4 oylama hakkı da kullanıldı.",
+    "voterAlreadyVoted": "Bu isimle zaten oy kullanılmış.",
+    "unknownStop": "Bilinmiyor"
   }
 }

@@ -782,5 +782,19 @@
     "hideLateArrivalToggle": "Hide late-arrival routes",
     "nightShieldDescription": "Flags stops where the train arrives between 22:00 and 06:00. Helpful if you prefer daylight arrivals.",
     "templateFilteredNote": "This route has a late-night arrival."
+  },
+  "groupVote": {
+    "title": "Group Vote",
+    "description": "Let up to 4 travel companions vote on their favorite stops — share a link, no backend required.",
+    "startVote": "Start Vote",
+    "needMoreStops": "Add at least 3 stops to your route to start a group vote.",
+    "voterName": "Your name",
+    "selectCandidates": "Pick your favorites",
+    "submitVote": "Submit vote",
+    "results": "Results",
+    "voteShared": "Vote link copied to clipboard",
+    "maxVotersReached": "All 4 voters have cast their votes.",
+    "voterAlreadyVoted": "A voter with that name has already voted.",
+    "unknownStop": "Unknown"
   }
 }
