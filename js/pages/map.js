@@ -111,6 +111,10 @@ function renderRouteSummary() {
     h('div', { class: 'route-summary-stat' }, [
       h('strong', null, String(totalNights)),
       h('span', null, t('map.nights'))
+    ]),
+    h('div', { class: 'route-summary-stat return-badge' }, [
+      '🏠 ',
+      route.includeReturnInBudget ? t('route.return.sectionTitle') + ' ✓' : t('route.return.sectionTitle') + ' –'
     ])
   ]);
   overlayEl.insertBefore(card, overlayEl.firstChild);
