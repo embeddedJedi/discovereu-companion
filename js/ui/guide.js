@@ -11,6 +11,7 @@ import { t } from '../i18n/i18n.js';
 import { h, empty } from '../utils/dom.js';
 import { getCountryGuide, listCitiesForCountry, getCityGuide, getSharedMobilityForCountry } from '../data/loader.js';
 import { refreshCountry } from '../features/wikivoyage-refresh.js';
+import { renderSafetyCallout as renderPickpocketCallout } from '../features/pickpocket.js';
 import { showToast } from './toast.js';
 
 function useTr() { return state.getSlice('language') === 'tr'; }
@@ -117,10 +118,15 @@ function buildCityDetails(city) {
   const name = useTr() ? city.nameTr : city.name;
   const bestMonths = useTr() ? city.bestMonthsTr : city.bestMonths;
 
+  const safetyHost = h('div', { class: 'guide-city-safety-host' });
+  // Kick off the async render; appends card when data is ready.
+  renderPickpocketCallout(city.id, safetyHost).catch(() => {});
+
   return h('details', { class: 'guide-city', open: false }, [
     h('summary', null, `📍 ${name} · ${city.minDays}d · ${bestMonths}`),
     h('div', { class: 'guide-city-body' }, [
       h('p', null, pick(city, 'summary')),
+      safetyHost,
       h('div', { class: 'guide-city-budget' }, [
         h('span', null, `💶 €${city.budgetPerDayEUR.low}–${city.budgetPerDayEUR.high}/day`)
       ]),
@@ -173,5 +179,105 @@ function section(emoji, i18nKey, items) {
   return h('section', { class: 'guide-city-sect' }, [
     h('h5', null, `${emoji} ${t(i18nKey)}`),
     h('ul', null, lis)
+  ]);
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Shared Mobility accordion (E1)
+// ─────────────────────────────────────────────────────────────────────────────
+// Lazy-loads data/shared-mobility.json and renders country-level ridesharing
+// info plus per-city expandable panels (scooters, bikes, car-sharing,
+// ride-hailing, price range, tips). Intended to slot between the Transport
+// accordion (inside country guide) and the Budget tab.
+
+export async function renderSharedMobilityAccordion(container, countryId) {
+  empty(container);
+  let data;
+  try {
+    data = await getSharedMobilityForCountry(countryId);
+  } catch (err) {
+    console.warn('[guide] shared-mobility load failed', err);
+    data = { country: null, cities: [] };
+  }
+
+  const hasCountry = data.country && (data.country.ridesharing || data.country.carpooling);
+  const hasCities = Array.isArray(data.cities) && data.cities.length > 0;
+
+  const details = h('details', { class: 'guide-accordion guide-mobility', open: false }, [
+    h('summary', null, [
+      h('span', null, `🛴 ${t('sharedMobility.title')}`),
+      h('span', { class: 'chevron' }, '▾')
+    ])
+  ]);
+
+  if (!hasCountry && !hasCities) {
+    details.appendChild(h('div', { class: 'guide-sect guide-mobility-empty' }, [
+      h('p', null, t('sharedMobility.noData')),
+      h('a', {
+        href: 'https://github.com/embeddedJedi/discovereu-companion/blob/main/data/shared-mobility.json',
+        target: '_blank', rel: 'noopener'
+      }, t('sharedMobility.contribute'))
+    ]));
+    container.appendChild(details);
+    return;
+  }
+
+  // Country-level block
+  if (hasCountry) {
+    const c = data.country;
+    const countrySect = h('section', { class: 'guide-sect guide-mobility-country' });
+    if (c.ridesharing && Array.isArray(c.ridesharing.platforms) && c.ridesharing.platforms.length) {
+      countrySect.appendChild(h('h4', null, `🚗 ${t('sharedMobility.ridesharing')}`));
+      countrySect.appendChild(h('p', null, c.ridesharing.platforms.join(', ')));
+      if (c.ridesharing.notes) {
+        countrySect.appendChild(h('p', { class: 'text-muted' }, c.ridesharing.notes));
+      }
+    }
+    if (c.carpooling && Array.isArray(c.carpooling.platforms) && c.carpooling.platforms.length) {
+      countrySect.appendChild(h('h4', null, `👥 ${t('sharedMobility.carpooling')}`));
+      countrySect.appendChild(h('p', null, c.carpooling.platforms.join(', ')));
+    }
+    details.appendChild(countrySect);
+  }
+
+  // Per-city expandables
+  if (hasCities) {
+    const citiesWrap = h('div', { class: 'guide-mobility-cities' });
+    for (const city of data.cities) {
+      citiesWrap.appendChild(buildCityMobility(city));
+    }
+    details.appendChild(citiesWrap);
+  }
+
+  container.appendChild(details);
+}
+
+function buildCityMobility(city) {
+  const name = useTr() ? (city.nameTr ?? city.name ?? city.id) : (city.name ?? city.id);
+  const body = h('div', { class: 'guide-city-body' });
+
+  const list = (emoji, key, items) => {
+    if (!Array.isArray(items) || items.length === 0) return;
+    body.appendChild(h('section', { class: 'guide-city-sect' }, [
+      h('h5', null, `${emoji} ${t(key)}`),
+      h('ul', null, items.map(i => h('li', null, i)))
+    ]));
+  };
+
+  list('🛴', 'sharedMobility.scooters',    city.scooters);
+  list('🚲', 'sharedMobility.bikes',       city.bikes);
+  list('🚗', 'sharedMobility.carSharing',  city.carSharing);
+  list('🚕', 'sharedMobility.rideHailing', city.rideHailing);
+
+  if (city.priceRange) {
+    body.appendChild(h('p', null, [h('strong', null, `💶 ${t('sharedMobility.priceRange')}: `), city.priceRange]));
+  }
+  if (city.tips) {
+    body.appendChild(h('p', null, [h('strong', null, `💡 ${t('sharedMobility.tips')}: `), city.tips]));
+  }
+
+  return h('details', { class: 'guide-city', open: false }, [
+    h('summary', null, `📍 ${name}`),
+    body
   ]);
 }

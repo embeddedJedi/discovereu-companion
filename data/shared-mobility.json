@@ -1,0 +1,330 @@
+{
+  "schema": "shared-mobility.v1",
+  "updated": "2026-04-12",
+  "sources": [
+    "Wikivoyage (CC BY-SA) — city transport sections",
+    "Official municipal transit sites (RATP, BVG, ATM Milano, TfL, IETT, EGO, etc.)",
+    "Platform coverage pages: BlaBlaCar, Lime, Tier, Dott, Voi, Bolt, Uber, Free Now, Heetch, Share Now, Free2move, Vélib', Bicing, BiciMAD, Swapfiets, Donkey Republic, MOL Bubi, Nextbike, Veturilo, JOB, MOBIKE, MARTI, BiTaksi, BinBin, İSPARK"
+  ],
+  "countries": {
+    "AT": { "ridesharing": { "available": true, "platforms": ["BlaBlaCar"], "notes": "BlaBlaCar active for intercity routes; domestic carpooling culture is modest compared to DE/FR." }, "carpooling": { "platforms": ["BlaBlaCar"] } },
+    "BE": { "ridesharing": { "available": true, "platforms": ["BlaBlaCar", "Klaxit"], "notes": "BlaBlaCar covers long-distance; Klaxit/Karos used for commuter pooling." }, "carpooling": { "platforms": ["BlaBlaCar", "Klaxit"] } },
+    "BG": { "ridesharing": { "available": true, "platforms": ["BlaBlaCar"], "notes": "BlaBlaCar popular for Sofia–Plovdiv–Varna; intercity buses remain dominant." }, "carpooling": { "platforms": ["BlaBlaCar"] } },
+    "CZ": { "ridesharing": { "available": true, "platforms": ["BlaBlaCar"], "notes": "Strong BlaBlaCar usage; competes with cheap RegioJet/FlixBus." }, "carpooling": { "platforms": ["BlaBlaCar"] } },
+    "DE": { "ridesharing": { "available": true, "platforms": ["BlaBlaCar"], "notes": "Germany is BlaBlaCar's largest market after France; FlixBus (same parent) is the main alternative." }, "carpooling": { "platforms": ["BlaBlaCar"] } },
+    "DK": { "ridesharing": { "available": true, "platforms": ["GoMore"], "notes": "GoMore (Danish origin) is the leading peer-to-peer carpool + car rental platform." }, "carpooling": { "platforms": ["GoMore"] } },
+    "EE": { "ridesharing": { "available": true, "platforms": ["Bolt (intercity pilot)"], "notes": "Formal ridesharing thin; most intercity travel uses Lux Express buses." }, "carpooling": { "platforms": [] } },
+    "ES": { "ridesharing": { "available": true, "platforms": ["BlaBlaCar"], "notes": "Huge BlaBlaCar market for Madrid–Barcelona–Valencia corridors." }, "carpooling": { "platforms": ["BlaBlaCar"] } },
+    "FI": { "ridesharing": { "available": true, "platforms": ["Kimppakyyti.net", "Shareit Blox Car"], "notes": "Carpooling is informal; national rail and OnniBus dominate." }, "carpooling": { "platforms": ["Kimppakyyti.net"] } },
+    "FR": { "ridesharing": { "available": true, "platforms": ["BlaBlaCar", "Karos", "Klaxit"], "notes": "BlaBlaCar's home market; massive coverage on every route." }, "carpooling": { "platforms": ["BlaBlaCar", "Karos", "Klaxit"] } },
+    "GR": { "ridesharing": { "available": true, "platforms": ["BlaBlaCar (limited)"], "notes": "Limited formal ridesharing; KTEL buses and ferries dominate." }, "carpooling": { "platforms": [] } },
+    "HR": { "ridesharing": { "available": true, "platforms": ["BlaBlaCar"], "notes": "Coastal summer demand pushes BlaBlaCar listings up; FlixBus strong too." }, "carpooling": { "platforms": ["BlaBlaCar"] } },
+    "HU": { "ridesharing": { "available": true, "platforms": ["BlaBlaCar", "Oszkár"], "notes": "Oszkár is the local Hungarian carpool platform alongside BlaBlaCar." }, "carpooling": { "platforms": ["BlaBlaCar", "Oszkár"] } },
+    "IE": { "ridesharing": { "available": true, "platforms": ["BlaBlaCar (thin)", "Carpool.ie"], "notes": "Small market; Irish Rail and Bus Éireann remain default." }, "carpooling": { "platforms": ["Carpool.ie"] } },
+    "IT": { "ridesharing": { "available": true, "platforms": ["BlaBlaCar"], "notes": "BlaBlaCar solid, especially Milan–Rome–Naples; Trenitalia/Italo competitive on price." }, "carpooling": { "platforms": ["BlaBlaCar"] } },
+    "NL": { "ridesharing": { "available": true, "platforms": ["BlaBlaCar (light)"], "notes": "Distances short; NS trains and cycling make ridesharing niche." }, "carpooling": { "platforms": ["BlaBlaCar"] } },
+    "NO": { "ridesharing": { "available": true, "platforms": ["Nabobil (peer car rental)"], "notes": "Traditional carpooling rare; peer-to-peer car rental via Nabobil/Hyre common." }, "carpooling": { "platforms": [] } },
+    "PL": { "ridesharing": { "available": true, "platforms": ["BlaBlaCar"], "notes": "Very popular; BlaBlaCar competes head-to-head with FlixBus on intercity." }, "carpooling": { "platforms": ["BlaBlaCar"] } },
+    "PT": { "ridesharing": { "available": true, "platforms": ["BlaBlaCar"], "notes": "BlaBlaCar modest; Rede Expressos bus network dominates." }, "carpooling": { "platforms": ["BlaBlaCar"] } },
+    "SE": { "ridesharing": { "available": true, "platforms": ["GoMore", "Skjutsgruppen"], "notes": "GoMore active for long trips; Skjutsgruppen is a non-profit social ridesharing network." }, "carpooling": { "platforms": ["GoMore", "Skjutsgruppen"] } },
+    "TR": { "ridesharing": { "available": true, "platforms": ["BlaBlaCar (TR)"], "notes": "BlaBlaCar relaunched in Turkiye; intercity buses (Kamil Koç, Metro Turizm) still dominate." }, "carpooling": { "platforms": ["BlaBlaCar"] } }
+  },
+  "cities": {
+    "berlin": {
+      "scooters": ["Lime", "Tier", "Voi", "Bolt"],
+      "bikes": ["Nextbike (Lidl-Bike)", "Lime eBike", "Tier bike"],
+      "carSharing": ["Share Now", "Miles", "Free2move"],
+      "rideHailing": ["Uber", "Bolt", "Free Now"],
+      "priceRange": "Scooter unlock ~1€ + 0.20–0.30€/min; Nextbike day pass ~3€",
+      "tips": "BVG ticket already covers most distances — use bikes for short hops, not whole days."
+    },
+    "munich": {
+      "scooters": ["Lime", "Tier", "Voi", "Bolt"],
+      "bikes": ["MVG Rad", "Nextbike", "Tier bike"],
+      "carSharing": ["Share Now", "Miles", "SIXT share"],
+      "rideHailing": ["Uber", "Bolt", "Free Now"],
+      "priceRange": "Scooter ~1€ unlock + 0.25€/min; MVG Rad first 30 min free for MVG subscribers",
+      "tips": "MVG Rad is the cheapest bike option if you have an MVG day ticket."
+    },
+    "hamburg": {
+      "scooters": ["Lime", "Tier", "Voi", "Bolt"],
+      "bikes": ["StadtRAD (free first 30 min)", "Nextbike"],
+      "carSharing": ["Share Now", "Miles"],
+      "rideHailing": ["Uber", "Bolt", "Free Now", "MOIA (ride-pooling EV)"],
+      "priceRange": "StadtRAD first 30 min free, then 0.10€/min (cap ~15€/day); MOIA pooled ride ~5–10€",
+      "tips": "MOIA pooled electric shuttles are a cheap night option across central Hamburg."
+    },
+    "paris": {
+      "scooters": [],
+      "bikes": ["Vélib' Métropole", "Lime eBike", "Dott eBike", "Tier eBike"],
+      "carSharing": ["Share Now", "Free2move", "Communauto"],
+      "rideHailing": ["Uber", "Bolt", "Heetch", "Free Now"],
+      "priceRange": "Vélib' day pass ~5€ (first 30 min free each ride); eBike ~1€ + 0.25€/min",
+      "tips": "Free-floating e-scooters were banned in Paris from 2023 — only eBikes remain. Vélib' day pass is the best value."
+    },
+    "lyon": {
+      "scooters": ["Dott", "Tier", "Voi"],
+      "bikes": ["Vélo'v", "Dott eBike"],
+      "carSharing": ["Citiz LPA"],
+      "rideHailing": ["Uber", "Bolt", "Heetch", "Free Now"],
+      "priceRange": "Vélo'v 24h ticket ~1.80€; first 30 min free per ride",
+      "tips": "Vélo'v is superb value and integrates with TCL transit app."
+    },
+    "nice": {
+      "scooters": ["Pony", "Tier"],
+      "bikes": ["Vélo Bleu", "Pony bike"],
+      "carSharing": [],
+      "rideHailing": ["Uber", "Bolt", "Heetch"],
+      "priceRange": "Vélo Bleu day pass ~1.50€; first 30 min free",
+      "tips": "Promenade des Anglais bike path is the main reason to grab a Vélo Bleu."
+    },
+    "rome": {
+      "scooters": ["Lime", "Dott", "Bird", "Bit Mobility"],
+      "bikes": ["Lime eBike", "RideMovi"],
+      "carSharing": ["Share Now", "Enjoy (Eni)"],
+      "rideHailing": ["Uber Black only", "Free Now", "itTaxi", "Bolt"],
+      "priceRange": "Scooter ~1€ unlock + 0.22€/min; Free Now taxi start ~4€",
+      "tips": "Standard UberX is not available in Rome — use Free Now or itTaxi for regular taxis."
+    },
+    "milan": {
+      "scooters": ["Lime", "Dott", "Bird", "Bit Mobility"],
+      "bikes": ["BikeMi", "RideMovi", "Lime eBike"],
+      "carSharing": ["Share Now", "Enjoy"],
+      "rideHailing": ["Uber Black", "Free Now", "Bolt"],
+      "priceRange": "BikeMi day pass ~4.50€; scooter ~0.20€/min",
+      "tips": "BikeMi is cheaper than scooters for tourist loops through the Centro Storico."
+    },
+    "florence": {
+      "scooters": ["Lime", "Dott", "Bird"],
+      "bikes": ["RideMovi", "Lime eBike"],
+      "carSharing": ["Adduma Car"],
+      "rideHailing": ["Free Now", "itTaxi"],
+      "priceRange": "Scooter ~1€ + 0.22€/min",
+      "tips": "Historic centre is a ZTL (restricted traffic zone) — walking or e-bikes beat scooters."
+    },
+    "madrid": {
+      "scooters": ["Lime", "Dott", "Voi", "Tier"],
+      "bikes": ["BiciMAD", "Lime eBike"],
+      "carSharing": ["Share Now", "Free2move", "Zity"],
+      "rideHailing": ["Uber", "Bolt", "Cabify", "Free Now"],
+      "priceRange": "BiciMAD single ride ~0.60€ first 30 min; scooter ~1€ unlock + 0.20€/min",
+      "tips": "Cabify is often cheaper than Uber in Madrid; BiciMAD is electric-assist everywhere."
+    },
+    "barcelona": {
+      "scooters": [],
+      "bikes": ["Bicing (residents)", "Donkey Republic"],
+      "carSharing": ["Share Now", "Free2move"],
+      "rideHailing": ["Uber", "Bolt", "Cabify", "Free Now"],
+      "priceRange": "Donkey Republic day pass ~15€; scooter services restricted",
+      "tips": "Bicing requires a local NIE/registration — tourists should use Donkey Republic instead. Most free-floating scooter brands pulled out in 2023."
+    },
+    "seville": {
+      "scooters": ["Lime", "Voi"],
+      "bikes": ["Sevici"],
+      "carSharing": [],
+      "rideHailing": ["Uber", "Bolt", "Cabify", "Free Now"],
+      "priceRange": "Sevici week pass ~13€; first 30 min free",
+      "tips": "Sevici has excellent docking station coverage — better than app scooters for all-day touring."
+    },
+    "amsterdam": {
+      "scooters": [],
+      "bikes": ["Swapfiets (monthly)", "Donkey Republic", "A-Bike", "MacBike"],
+      "carSharing": ["Share Now", "MyWheels", "Greenwheels"],
+      "rideHailing": ["Uber", "Bolt", "Free Now"],
+      "priceRange": "Bike rental ~10–15€/day; Swapfiets ~€17/month",
+      "tips": "Free-floating e-scooters are banned; rent a regular city bike for 24h — it is the only sensible way to move."
+    },
+    "rotterdam": {
+      "scooters": ["Check", "Go Sharing"],
+      "bikes": ["Donkey Republic", "Swapfiets", "OV-fiets (train station)"],
+      "carSharing": ["Share Now", "MyWheels"],
+      "rideHailing": ["Uber", "Bolt"],
+      "priceRange": "OV-fiets ~4.55€/24h with NS card; scooter ~0.30€/min",
+      "tips": "OV-fiets at the train station is by far the cheapest option if you have an OV-chipkaart."
+    },
+    "brussels": {
+      "scooters": ["Lime", "Dott", "Tier", "Bolt"],
+      "bikes": ["Villo!", "Billy Bike", "Dott eBike"],
+      "carSharing": ["Poppy", "Cambio"],
+      "rideHailing": ["Uber", "Bolt", "Heetch", "Free Now"],
+      "priceRange": "Villo! day pass ~1.70€; scooter ~1€ unlock + 0.20€/min",
+      "tips": "Villo! is cheap but has hills — e-scooters win for the upper town."
+    },
+    "ghent": {
+      "scooters": ["Dott", "Bolt"],
+      "bikes": ["Donkey Republic", "Blue-Bike (station)"],
+      "carSharing": ["Cambio", "Partago"],
+      "rideHailing": ["Uber (limited)", "Bolt"],
+      "priceRange": "Blue-Bike ~3.50€/24h with card",
+      "tips": "Ghent is compact and flat — one regular city bike covers the whole trip."
+    },
+    "vienna": {
+      "scooters": ["Lime", "Tier", "Voi", "Bolt", "Link"],
+      "bikes": ["WienMobil Rad", "Nextbike"],
+      "carSharing": ["Share Now", "ELOOP (electric)"],
+      "rideHailing": ["Uber", "Bolt", "Free Now"],
+      "priceRange": "Scooter ~1€ unlock + 0.19€/min; WienMobil Rad 30 min ~0.60€",
+      "tips": "WienMobil app bundles transit, bikes and scooters into one ticket."
+    },
+    "zurich": {
+      "scooters": ["Tier", "Voi", "Bird"],
+      "bikes": ["PubliBike", "Züri rollt (free)"],
+      "carSharing": ["Mobility"],
+      "rideHailing": ["Uber", "Bolt (limited)"],
+      "priceRange": "PubliBike ~3 CHF first 30 min; scooter ~0.30 CHF/min",
+      "tips": "Züri rollt lends regular bikes for free with a deposit — unbeatable for day trips."
+    },
+    "prague": {
+      "scooters": ["Lime", "Bolt"],
+      "bikes": ["Rekola", "Nextbike", "Lime eBike"],
+      "carSharing": ["Anytime", "Car4Way"],
+      "rideHailing": ["Uber", "Bolt", "Liftago"],
+      "priceRange": "Rekola ~60 CZK/30 min; scooter ~25 CZK unlock + 4 CZK/min",
+      "tips": "Liftago is the local taxi app — often cheaper than Uber and drivers speak Czech."
+    },
+    "warsaw": {
+      "scooters": ["Lime", "Bolt", "Dott", "Tier"],
+      "bikes": ["Veturilo", "Lime eBike"],
+      "carSharing": ["Panek", "Traficar"],
+      "rideHailing": ["Uber", "Bolt", "Free Now", "iTaxi"],
+      "priceRange": "Veturilo first 20 min free with 10 PLN registration; scooter ~3 PLN unlock + 0.6 PLN/min",
+      "tips": "Veturilo is one of Europe's best-value bike-shares — register once, reuse for years."
+    },
+    "krakow": {
+      "scooters": ["Lime", "Bolt", "Dott"],
+      "bikes": ["Wavelo (relaunched)", "Lime eBike"],
+      "carSharing": ["Panek", "Traficar"],
+      "rideHailing": ["Uber", "Bolt", "Free Now", "iTaxi"],
+      "priceRange": "Scooter ~3 PLN unlock + 0.5–0.7 PLN/min",
+      "tips": "Old Town is a pedestrian zone — park scooters outside the Planty ring."
+    },
+    "budapest": {
+      "scooters": ["Lime", "Bolt", "Tier"],
+      "bikes": ["MOL Bubi"],
+      "carSharing": ["MOL Limo", "GreenGo (electric)"],
+      "rideHailing": ["Bolt", "Főtaxi"],
+      "priceRange": "MOL Bubi day pass ~500 HUF; scooter ~200 HUF unlock + 70 HUF/min",
+      "tips": "Uber is not available in Budapest — Bolt and Főtaxi cover ride-hailing."
+    },
+    "lisbon": {
+      "scooters": ["Lime", "Bolt", "Bird"],
+      "bikes": ["GIRA", "Bolt eBike"],
+      "carSharing": ["Free2move (CityDrive)", "ShareNow (limited)"],
+      "rideHailing": ["Uber", "Bolt", "Free Now", "Kapten"],
+      "priceRange": "GIRA day pass ~2€; scooter ~1€ unlock + 0.15€/min",
+      "tips": "Hills are brutal — always grab an e-bike (GIRA has both classic and electric)."
+    },
+    "porto": {
+      "scooters": ["Lime", "Bolt"],
+      "bikes": ["Bolt eBike", "Bira Bira (private rentals)"],
+      "carSharing": [],
+      "rideHailing": ["Uber", "Bolt", "Free Now"],
+      "priceRange": "Scooter ~1€ unlock + 0.18€/min",
+      "tips": "No municipal bike-share yet; Uber/Bolt fares are the cheapest in Western Europe."
+    },
+    "athens": {
+      "scooters": ["Lime", "Hive", "Link"],
+      "bikes": ["Brainbox (rentals)"],
+      "carSharing": [],
+      "rideHailing": ["Uber (taxis only)", "Bolt (Beat merged)", "FreeNow"],
+      "priceRange": "Scooter ~1€ unlock + 0.20€/min; taxi start ~3.50€",
+      "tips": "Uber in Athens only dispatches licensed taxis (UberTaxi). Bolt/FreeNow are the main apps."
+    },
+    "thessaloniki": {
+      "scooters": ["Lime", "Hive", "Link"],
+      "bikes": ["Brainbox rentals"],
+      "carSharing": [],
+      "rideHailing": ["Bolt", "FreeNow", "Uber (taxi)"],
+      "priceRange": "Scooter ~1€ unlock + 0.20€/min",
+      "tips": "Flat seafront promenade makes scooters genuinely fun here."
+    },
+    "stockholm": {
+      "scooters": ["Voi", "Lime", "Tier", "Bolt"],
+      "bikes": ["Stockholm eBikes (Voi)"],
+      "carSharing": ["Aimo Share", "M (Volvo)"],
+      "rideHailing": ["Uber", "Bolt", "Taxi Stockholm"],
+      "priceRange": "Scooter ~10 SEK unlock + 3 SEK/min; day pass options ~79 SEK",
+      "tips": "Voi day pass is worth it for islands hopping in summer."
+    },
+    "copenhagen": {
+      "scooters": ["Voi", "Tier", "Lime", "Bolt"],
+      "bikes": ["Bycyklen (Donkey Republic successor)", "Donkey Republic", "Swapfiets"],
+      "carSharing": ["Share Now (exited 2022 — use GreenMobility)", "GreenMobility (electric)"],
+      "rideHailing": ["Bolt", "Viggo", "Dantaxi"],
+      "priceRange": "Donkey Republic day ~10€; scooter ~10 DKK unlock + 2.5 DKK/min",
+      "tips": "Uber is not available in Denmark. Bike infrastructure is world-class — always rent one."
+    },
+    "helsinki": {
+      "scooters": ["Tier", "Voi", "Bolt", "Lime"],
+      "bikes": ["HSL City Bikes (summer only)"],
+      "carSharing": ["24Rent", "Kortteliauto"],
+      "rideHailing": ["Bolt", "Uber", "FixuTaxi"],
+      "priceRange": "HSL bike day pass ~5€; scooter ~1€ unlock + 0.25€/min",
+      "tips": "HSL bikes only run May–October; after that, grab a scooter or walk."
+    },
+    "dublin": {
+      "scooters": [],
+      "bikes": ["Dublinbikes", "Bleeperbike", "Moby Bikes"],
+      "carSharing": ["GoCar"],
+      "rideHailing": ["FreeNow", "Uber (taxis only)", "Bolt"],
+      "priceRange": "Dublinbikes 3-day pass ~5€; taxi start ~4.20€",
+      "tips": "E-scooters legalised in 2024 but public rental schemes are still limited — stick with Dublinbikes."
+    },
+    "istanbul": {
+      "scooters": ["MARTI", "BinBin", "Palm"],
+      "bikes": ["İSBİKE"],
+      "carSharing": [],
+      "rideHailing": ["BiTaksi", "iTaksi", "Uber (taxi)"],
+      "priceRange": "Scooter ~10 TL unlock + 2.5 TL/min; BiTaksi is metered standard taxi",
+      "tips": "Traffic and hills make scooters risky — use ferries + metro. MARTI is the biggest scooter app."
+    },
+    "ankara": {
+      "scooters": ["MARTI", "BinBin"],
+      "bikes": ["BAKİS (limited)"],
+      "carSharing": [],
+      "rideHailing": ["BiTaksi", "iTaksi"],
+      "priceRange": "Scooter ~10 TL unlock + 2.5 TL/min",
+      "tips": "EGO metro + Ankaray trains cover the core — scooters mostly for Kızılay nightlife."
+    },
+    "izmir": {
+      "scooters": ["MARTI", "BinBin"],
+      "bikes": ["BİSİM"],
+      "carSharing": [],
+      "rideHailing": ["BiTaksi", "iTaksi"],
+      "priceRange": "BİSİM ~7 TL/hour with İzmirim Kart; scooter ~10 TL unlock + 2.5 TL/min",
+      "tips": "Seafront Kordon promenade is perfect for BİSİM — flat and dedicated bike path."
+    },
+    "oslo": {
+      "scooters": ["Voi", "Tier", "Ryde", "Bolt"],
+      "bikes": ["Oslo Bysykkel"],
+      "carSharing": ["Hyre", "Nabobil (peer)"],
+      "rideHailing": ["Bolt", "Uber", "TIER Ride"],
+      "priceRange": "Bysykkel day pass ~49 NOK; scooter ~10 NOK unlock + 3 NOK/min",
+      "tips": "Bysykkel season runs April–November; outside that only scooters/transit."
+    },
+    "zagreb": {
+      "scooters": ["Bolt", "Lime"],
+      "bikes": ["Nextbike"],
+      "carSharing": ["Spin City"],
+      "rideHailing": ["Bolt", "Uber"],
+      "priceRange": "Nextbike ~7 HRK/30 min; scooter ~1€ unlock + 0.20€/min",
+      "tips": "Uber and Bolt are reliably cheap — often beat taxis by 30–40%."
+    },
+    "sofia": {
+      "scooters": ["Lime", "Hobo", "Bolt"],
+      "bikes": [],
+      "carSharing": ["Spark (electric)"],
+      "rideHailing": ["Bolt", "Yellow Taxi"],
+      "priceRange": "Scooter ~1 BGN unlock + 0.35 BGN/min",
+      "tips": "Uber is not in Bulgaria — Bolt is the default ride-hailing app."
+    },
+    "tallinn": {
+      "scooters": ["Bolt", "Tuul"],
+      "bikes": ["Bolt Drive", "Tuul bike"],
+      "carSharing": ["Bolt Drive", "CityBee"],
+      "rideHailing": ["Bolt", "Uber", "Forus Taxi"],
+      "priceRange": "Scooter ~1€ unlock + 0.15€/min; Bolt car-share per-minute",
+      "tips": "Bolt is Estonian — whole mobility stack (ride, scooter, car, food) lives in one app here."
+    }
+  }
+}

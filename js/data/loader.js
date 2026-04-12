@@ -130,3 +130,25 @@ export async function loadBingoChallenges() { return loadJson('bingo-challenges.
 export async function loadDares()           { return loadJson('daily-dares.json');      }
 export async function loadSoundtracks()     { return loadJson('soundtracks.json');      }
 export async function loadConsulates()      { return loadJson('tr-consulates.json');    }
+export async function loadSharedMobility()  { return loadJson('shared-mobility.json');  }
+
+/**
+ * Get shared-mobility facts for one country. Returns { country, cities } where
+ * `country` is the country-level entry and `cities` is an array of
+ * { id, ...cityEntry } for every city that belongs to countryId (matched via
+ * the existing guides.json cities index → countryId field).
+ */
+export async function getSharedMobilityForCountry(countryId) {
+  const [sm, guides] = await Promise.all([loadSharedMobility(), loadGuides()]);
+  const country = sm?.countries?.[countryId] ?? null;
+  const cities = [];
+  if (sm?.cities && guides?.cities) {
+    for (const [id, entry] of Object.entries(sm.cities)) {
+      const guideCity = guides.cities[id];
+      if (guideCity && guideCity.countryId === countryId) {
+        cities.push({ id, name: guideCity.name, nameTr: guideCity.nameTr, ...entry });
+      }
+    }
+  }
+  return { country, cities };
+}

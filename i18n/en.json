@@ -643,6 +643,19 @@
     "backToList": "All countries",
     "loadError": "Failed to load guide content"
   },
+  "sharedMobility": {
+    "title": "Shared Mobility",
+    "ridesharing": "Ridesharing",
+    "carpooling": "Carpooling",
+    "scooters": "E-scooters",
+    "bikes": "Bike share",
+    "carSharing": "Car sharing",
+    "rideHailing": "Ride hailing",
+    "priceRange": "Price range",
+    "tips": "Tips",
+    "noData": "Shared mobility data coming soon for this country.",
+    "contribute": "Contribute on GitHub →"
+  },
   "wikivoyage": {
     "refresh": "Refresh from Wikivoyage",
     "refreshing": "Refreshing…",
@@ -831,6 +844,21 @@
     "maxVotersReached": "All 4 voters have cast their votes.",
     "voterAlreadyVoted": "A voter with that name has already voted.",
     "unknownStop": "Unknown"
+  },
+  "pickpocket": {
+    "layerToggle": "Pickpocket zones",
+    "riskScore": "Risk score",
+    "riskLow": "Low awareness",
+    "riskMedium": "Stay aware",
+    "riskHigh": "Extra caution",
+    "hotspots": "Known hotspots",
+    "tips": "Simple precautions",
+    "safetyCallout": "Pickpocket awareness",
+    "source": "Sources & methodology",
+    "methodology": "Risk reflects reported theft density relative to tourist volume — not overall safety.",
+    "noData": "No specific data yet — use common travel safety practices: bag in front, phone out of back pocket, valuables zipped.",
+    "popupTitle": "Pickpocket awareness",
+    "awarenessNote": "Awareness, not alarm. Basic precautions work almost everywhere."
   },
   "journal": {
     "title": "Journey Timeline",

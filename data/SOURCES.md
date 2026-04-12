@@ -6,6 +6,13 @@
 - **Wheelmap.org** (OSM-derived, CC BY-SA) — `https://wheelmap.org` — accessible venue counts for `data/accessibility.json`. EU Disability Card pilot metadata supplemented from `ec.europa.eu`.
 - **EU 112 emergency registry** — `https://112.eu` — universal emergency number + per-country overrides for `data/emergency-phrases.json`. Phrase translations hand-authored by native speakers.
 
+## Data polish E1 — Shared Mobility (2026-04-12)
+
+- **Wikivoyage** (CC BY-SA) — `https://en.wikivoyage.org/` — city "Get around" sections informed the platform lists in `data/shared-mobility.json`.
+- **Municipal transit operator websites** — RATP/Vélib' (Paris), BVG (Berlin), ATM (Milan), BiciMAD (Madrid), Bicing (Barcelona), BiciMAD, Dublinbikes, HSL (Helsinki), MOL Bubi (Budapest), MVG Rad (Munich), StadtRAD (Hamburg), Veturilo (Warsaw), WienMobil Rad (Vienna), etc. — price ranges and free-minute rules.
+- **Platform coverage pages** — BlaBlaCar, Lime, Tier, Dott, Voi, Bolt, Uber, Free Now, Heetch, Cabify, Share Now, Free2move, Communauto, Greenwheels, MyWheels, GoMore, Klaxit, Karos, Oszkár, Panek, Traficar, Liftago, Swapfiets, Donkey Republic, OV-fiets, MARTI, BiTaksi, BinBin, İSBİKE, BİSİM. Country + city availability taken from each platform's public coverage/launch pages. Re-verify annually as the sector churns.
+- All per-city price figures are approximate ranges; verify before booking.
+
 ## Sub-project 2 sources (2026-04-12)
 
 - **Wikivoyage** (CC BY-SA 3.0) — `https://en.wikivoyage.org/` — country + city guide text for `data/guides.json`. Attribution preserved in each entry's `sourceUrl` field. Refreshed annually.

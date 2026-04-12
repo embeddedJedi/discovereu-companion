@@ -155,8 +155,9 @@ async function renderCountryDetail() {
   // Guide accordion content
   const accordionArea = h('div', { class: 'guide-accordion-area' });
   try {
-    const { renderCountryGuideAccordion, renderCitiesAccordion } = await import('../ui/guide.js');
+    const { renderCountryGuideAccordion, renderCitiesAccordion, renderSharedMobilityAccordion } = await import('../ui/guide.js');
     renderCountryGuideAccordion(accordionArea, country.id);
+    renderSharedMobilityAccordion(accordionArea, country.id);
     renderCitiesAccordion(accordionArea, country.id);
   } catch (err) {
     console.error('[guide page] failed to load accordions', err);

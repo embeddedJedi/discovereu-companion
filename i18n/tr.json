@@ -643,6 +643,19 @@
     "backToList": "Tüm ülkeler",
     "loadError": "Rehber içeriği yüklenemedi"
   },
+  "sharedMobility": {
+    "title": "Paylaşımlı Ulaşım",
+    "ridesharing": "Araç paylaşımı (yolculuk)",
+    "carpooling": "Ortak araba kullanımı",
+    "scooters": "Elektrikli scooter",
+    "bikes": "Bisiklet paylaşımı",
+    "carSharing": "Araç paylaşımı (saatlik)",
+    "rideHailing": "Taksi / çağrı uygulamaları",
+    "priceRange": "Fiyat aralığı",
+    "tips": "İpuçları",
+    "noData": "Bu ülke için paylaşımlı ulaşım verisi yakında eklenecek.",
+    "contribute": "GitHub'da katkıda bulun →"
+  },
   "wikivoyage": {
     "refresh": "Wikivoyage'dan yenile",
     "refreshing": "Yenileniyor…",
@@ -831,6 +844,21 @@
     "maxVotersReached": "4 oylama hakkı da kullanıldı.",
     "voterAlreadyVoted": "Bu isimle zaten oy kullanılmış.",
     "unknownStop": "Bilinmiyor"
+  },
+  "pickpocket": {
+    "layerToggle": "Yankesici bölgeleri",
+    "riskScore": "Risk skoru",
+    "riskLow": "Düşük — temkinli ol yeter",
+    "riskMedium": "Dikkatli ol",
+    "riskHigh": "Ekstra dikkat",
+    "hotspots": "Bilinen yoğun noktalar",
+    "tips": "Basit önlemler",
+    "safetyCallout": "Yankesici farkındalığı",
+    "source": "Kaynaklar ve metodoloji",
+    "methodology": "Risk, turist yoğunluğuna kıyasla raporlanan hırsızlık yoğunluğunu yansıtır — genel güvenliği değil.",
+    "noData": "Bu şehir için özel veri yok — temel önlemler yeterli: çantayı öne al, telefonu arka cebe koyma, değerlilerin fermuarlı olsun.",
+    "popupTitle": "Yankesici farkındalığı",
+    "awarenessNote": "Alarm değil, farkındalık. Basit önlemler hemen her yerde yeterlidir."
   },
   "journal": {
     "title": "Yolculuk Zaman Çizelgesi",

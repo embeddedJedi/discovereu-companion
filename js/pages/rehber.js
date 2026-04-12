@@ -208,10 +208,11 @@ async function renderCountryGuide() {
 
   // Guide accordion (lazy-load existing module)
   try {
-    const { renderCountryGuideAccordion, renderCitiesAccordion } = await import('../ui/guide.js');
+    const { renderCountryGuideAccordion, renderCitiesAccordion, renderSharedMobilityAccordion } = await import('../ui/guide.js');
     const guideArea = h('div', { class: 'rehber-guide-sections' });
     guideArea.appendChild(h('h2', { class: 'rehber-section-title' }, t('rehber.travelGuide')));
     renderCountryGuideAccordion(guideArea, country.id);
+    renderSharedMobilityAccordion(guideArea, country.id);
     renderCitiesAccordion(guideArea, country.id);
     page.appendChild(guideArea);
   } catch (err) {

@@ -8,7 +8,7 @@ import { t } from '../i18n/i18n.js';
 import { qs, h, empty, escape } from '../utils/dom.js';
 import { formatNumber } from '../utils/format.js';
 import { getFeatureName } from '../map/countries-layer.js';
-import { renderCountryGuideAccordion, renderCitiesAccordion } from './guide.js';
+import { renderCountryGuideAccordion, renderCitiesAccordion, renderSharedMobilityAccordion } from './guide.js';
 import { renderSoundtrackAccordion } from '../features/soundtrack.js';
 
 const SCORE_KEYS = ['nature', 'culture', 'nightlife', 'food', 'history', 'safety'];
@@ -77,6 +77,11 @@ function renderInto(root, country, selectedId) {
   root.appendChild(citiesHost);
   renderCountryGuideAccordion(guideHost, country.id);
   renderCitiesAccordion(citiesHost, country.id);
+  // Shared Mobility accordion (E1) — slots between Transport (inside guide)
+  // and Budget/Soundtrack sections.
+  const mobilityHost = h('div', { class: 'country-detail-mobility-host' });
+  root.appendChild(mobilityHost);
+  renderSharedMobilityAccordion(mobilityHost, country.id);
 
   const soundtrackHost = h('div', { class: 'country-detail-soundtrack-host' });
   root.appendChild(soundtrackHost);
