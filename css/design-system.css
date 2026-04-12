@@ -54,6 +54,24 @@
   --bg-hover:       var(--eu-gray-100);
   --bg-active:      var(--eu-gray-200);
 
+  /* v1.1 — SPA shell tokens */
+  --surface-elevated: var(--eu-gray-0);
+  --bottom-nav-height: 64px;
+  --sidebar-width: 72px;
+  --sheet-handle-color: var(--eu-gray-300);
+
+  /* Fun page accent colors */
+  --fun-purple: #8B5CF6;
+  --fun-orange: #F97316;
+  --fun-teal:   #14B8A6;
+  --fun-pink:   #EC4899;
+
+  /* Animation tokens */
+  --ease-spring: cubic-bezier(0.32, 0.72, 0, 1);
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-page: 200ms;
+  --duration-sheet: 300ms;
+
   --text-primary:   var(--eu-gray-900);
   --text-secondary: var(--eu-gray-600);
   --text-tertiary:  var(--eu-gray-400);
@@ -204,6 +222,9 @@
   --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.4), 0 2px 4px rgba(0, 0, 0, 0.3);
   --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.4), 0 4px 6px rgba(0, 0, 0, 0.3);
   --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.5), 0 8px 10px rgba(0, 0, 0, 0.3);
+
+  --surface-elevated: var(--eu-gray-800);
+  --sheet-handle-color: var(--eu-gray-600);
 }
 
 /* Reset + base */
