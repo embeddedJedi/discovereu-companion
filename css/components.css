@@ -2997,3 +2997,158 @@
   text-decoration: underline;
 }
 
+
+/* ─── Route builder: home chip + return section (Task 5 / v1.2) ─────── */
+
+.home-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  border-radius: 999px;
+  background: var(--surface-2, var(--bg-elevated));
+  border: 1px solid var(--border, var(--border-subtle));
+  color: var(--text-primary);
+  font-size: var(--text-sm);
+  cursor: pointer;
+  margin-bottom: var(--space-3);
+}
+
+.home-chip:hover,
+.home-chip:focus-visible {
+  background: var(--surface-3, var(--bg-hover));
+}
+
+.home-chip-label {
+  font-weight: var(--weight-medium);
+}
+
+.home-chip-edit {
+  font-size: var(--text-xs);
+  color: var(--accent-primary, var(--accent));
+  text-decoration: underline;
+}
+
+.route-return-section {
+  margin-top: var(--space-6);
+  padding-top: var(--space-4);
+  border-top: 1px dashed var(--border, var(--border-subtle));
+}
+
+.route-return-section h3 {
+  margin: 0 0 var(--space-2) 0;
+  font-size: var(--text-base);
+}
+
+.toggle-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin: var(--space-2) 0;
+  font-size: var(--text-sm);
+  cursor: pointer;
+}
+
+.return-stops-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin: var(--space-2) 0;
+}
+
+.return-stop-editor {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2);
+  background: var(--surface-2, var(--bg-elevated));
+  border: 1px solid var(--border, var(--border-subtle));
+  border-radius: var(--radius-md);
+}
+
+.return-stop-selects {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.return-stop-selects select {
+  width: 100%;
+}
+
+.return-stop-nights {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.return-stop-nights-label {
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+  min-width: 3.5rem;
+  text-align: center;
+}
+
+.return-home-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3);
+  background: var(--surface-2, var(--bg-elevated));
+  border-radius: var(--radius-md);
+  margin-top: var(--space-2);
+}
+
+.return-home-label {
+  flex: 1 1 auto;
+  font-weight: var(--weight-medium);
+}
+
+.btn-ai {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  background: var(--accent-primary, var(--accent));
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-md);
+  font-weight: var(--weight-semibold);
+  cursor: pointer;
+}
+
+.btn-ai:hover,
+.btn-ai:focus-visible {
+  filter: brightness(1.08);
+}
+
+/* Modal backdrop + box for the home-city modal. */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: grid;
+  place-items: center;
+  z-index: 1000;
+}
+
+.modal-box {
+  background: var(--surface, var(--bg-base));
+  color: var(--text-primary);
+  padding: var(--space-5);
+  border-radius: var(--radius-lg);
+  min-width: 320px;
+  max-width: 90vw;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  box-shadow: var(--shadow-lg);
+}
+
+.modal-box h2 {
+  margin: 0;
+  font-size: var(--text-lg);
+}

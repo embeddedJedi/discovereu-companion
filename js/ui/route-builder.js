@@ -14,6 +14,7 @@ import { getRouteReservations } from '../features/reservations.js';
 import { computeSeatCredits } from '../features/seat-credits.js';
 import { computeCO2 } from '../features/co2.js';
 import { checkNightArrivals, hasLateArrival } from '../features/night-shield.js';
+import { resolveHomeCoords, renderHomeCityPicker } from './home-city-picker.js';
 
 export function initRouteBuilder() {
   const body = qs('#panelBody');
@@ -30,6 +31,7 @@ export function initRouteBuilder() {
   state.subscribe('countries',      render);
   state.subscribe('reservations',   render);
   state.subscribe('language',       render);
+  state.subscribe('user',           render);
 
   render();
 }
@@ -42,10 +44,12 @@ function renderInto(root) {
   const templates = state.getSlice('routeTemplates') || [];
 
   const panel = h('div', { class: 'route-panel' }, [
+    renderHomeChip(),
     renderHeader(route),
     route.stops.length > 0
       ? renderStopList(route)
       : renderEmptyState(),
+    renderReturnSection(route),
     route.stops.length > 1 ? renderReservationsSection(route) : null,
     route.stops.length > 1 ? renderCO2Section(route) : null,
     route.stops.length > 0 ? renderShareActions() : null,
@@ -510,6 +514,232 @@ function applyTemplate(templateId) {
     travelDaysLimit: Math.max(r.travelDaysLimit || 7, tpl.days || 7),
     name: tpl.name
   }));
+}
+
+// ─── Home chip + home modal ──────────────────────────────────────────────
+
+function renderHomeChip() {
+  const home = resolveHomeCoords();
+  const label = home ? t('route.home.chip', { city: home.name }) : t('route.home.modalTitle');
+  return h('button', {
+    class: 'home-chip',
+    type: 'button',
+    'aria-label': t('route.home.edit'),
+    onclick: () => openHomeModal()
+  }, [
+    h('span', { 'aria-hidden': 'true' }, '🏠 '),
+    h('span', { class: 'home-chip-label' }, label),
+    ' ',
+    h('span', { class: 'home-chip-edit' }, t('route.home.edit'))
+  ]);
+}
+
+function openHomeModal() {
+  const backdrop = h('div', { class: 'modal-backdrop', role: 'dialog', 'aria-modal': 'true' });
+  const box = h('div', { class: 'modal-box' });
+  const title = h('h2', {}, t('route.home.modalTitle'));
+  const pickerBox = h('div');
+
+  const user = state.getSlice('user');
+  let pending = { countryId: user.homeCountry, cityId: user.homeCity };
+
+  renderHomeCityPicker(pickerBox, {
+    countryId: pending.countryId,
+    cityId: pending.cityId,
+    onChange: (p) => { pending = p; }
+  });
+
+  const save = h('button', {
+    class: 'btn btn-primary',
+    type: 'button',
+    onclick: () => {
+      state.update('user', u => ({
+        ...u,
+        homeCountry: pending.countryId,
+        homeCity: pending.cityId
+      }));
+      backdrop.remove();
+    }
+  }, t('route.home.save'));
+
+  box.append(title, pickerBox, save);
+  backdrop.append(box);
+  backdrop.addEventListener('click', (e) => {
+    if (e.target === backdrop) backdrop.remove();
+  });
+  document.body.appendChild(backdrop);
+}
+
+// ─── Return section ──────────────────────────────────────────────────────
+
+function renderReturnSection(route) {
+  const home = resolveHomeCoords();
+  const returnStops = route.returnStops || [];
+  const includeInBudget = !!route.includeReturnInBudget;
+  const returnTransport = route.returnTransport || 'train';
+
+  const section = h('section', {
+    class: 'route-return-section',
+    'aria-label': t('route.return.sectionTitle')
+  });
+
+  section.append(h('h3', { class: 'route-section-title' }, t('route.return.sectionTitle')));
+
+  // Include-in-budget toggle.
+  const toggle = h('label', { class: 'toggle-row' }, [
+    h('input', {
+      type: 'checkbox',
+      role: 'switch',
+      checked: includeInBudget,
+      'aria-checked': String(includeInBudget),
+      onchange: (e) => state.update('route', r => ({
+        ...r,
+        includeReturnInBudget: e.target.checked
+      }))
+    }),
+    h('span', {}, t('route.return.toggleLabel'))
+  ]);
+  section.append(toggle);
+
+  // Return stops list — each row uses the shared stop editor helper.
+  const list = h('div', { class: 'return-stops-list' });
+  returnStops.forEach((stop, i) => {
+    list.append(renderStopEditor(stop, i, {
+      onUpdate: (next) => state.update('route', r => {
+        const arr = [...(r.returnStops || [])];
+        arr[i] = next;
+        return { ...r, returnStops: arr };
+      }),
+      onRemove: () => state.update('route', r => ({
+        ...r,
+        returnStops: (r.returnStops || []).filter((_, j) => j !== i)
+      }))
+    }));
+  });
+  if (returnStops.length === 0) {
+    list.append(h('p', { class: 'muted' }, t('route.return.directHint')));
+  }
+  section.append(list);
+
+  // Add return stop button.
+  const addBtn = h('button', {
+    class: 'btn btn-secondary btn-sm',
+    type: 'button',
+    onclick: () => state.update('route', r => ({
+      ...r,
+      returnStops: [
+        ...(r.returnStops || []),
+        { countryId: '', cityId: '', nights: 1, transport: 'train' }
+      ]
+    }))
+  }, t('route.return.addStop'));
+  section.append(addBtn);
+
+  // Fixed home card with transport select.
+  const homeLabel = home
+    ? t('route.return.homeCard', { city: home.name })
+    : t('route.home.modalTitle');
+
+  const transportSelect = h('select', {
+    'aria-label': t('route.return.sectionTitle'),
+    onchange: (e) => state.update('route', r => ({ ...r, returnTransport: e.target.value }))
+  }, ['train', 'bus', 'flight'].map(mode =>
+    h('option', { value: mode, selected: mode === returnTransport }, mode)
+  ));
+
+  const homeCard = h('div', { class: 'return-home-card' }, [
+    h('span', { 'aria-hidden': 'true' }, '→ 🏠 '),
+    h('span', { class: 'return-home-label' }, homeLabel),
+    transportSelect
+  ]);
+  section.append(homeCard);
+
+  // Optimize-with-AI button.
+  const optimizeBtn = h('button', {
+    class: 'btn-ai',
+    type: 'button',
+    onclick: () => window.dispatchEvent(new CustomEvent('ai:optimize-return'))
+  }, t('route.return.optimizeBtn'));
+  section.append(optimizeBtn);
+
+  return section;
+}
+
+// ─── Shared stop editor (used by return stops) ───────────────────────────
+//
+// A compact, callback-driven row for editing a single stop. Outbound stops
+// keep their richer renderer (`renderStop`) with drag-and-drop + late-
+// arrival badges + delegated data-actions; that behaviour is unchanged.
+// This helper exists so the return list can reuse the same country/city
+// picker + nights stepper pattern without dragging outbound's subsystems
+// along with it.
+
+function renderStopEditor(stop, index, { onUpdate, onRemove }) {
+  const countries = state.getSlice('countries') || [];
+  const country   = countries.find(c => c.id === stop.countryId) || null;
+  const cities    = country?.cities || [];
+  const nights    = Number(stop.nights) || 1;
+
+  const countrySelect = h('select', {
+    'aria-label': t('route.home.country'),
+    onchange: (e) => {
+      const nextCountry = countries.find(c => c.id === e.target.value);
+      const nextCity    = nextCountry?.cities?.[0]?.id || '';
+      onUpdate({ ...stop, countryId: e.target.value, cityId: nextCity });
+    }
+  }, [
+    h('option', { value: '', selected: !stop.countryId }, '—'),
+    ...countries.map(c => h('option', {
+      value: c.id,
+      selected: c.id === stop.countryId
+    }, c.name || c.id))
+  ]);
+
+  const citySelect = h('select', {
+    'aria-label': t('route.home.city'),
+    disabled: cities.length === 0,
+    onchange: (e) => onUpdate({ ...stop, cityId: e.target.value })
+  }, [
+    h('option', { value: '', selected: !stop.cityId }, '—'),
+    ...cities.map(c => h('option', {
+      value: c.id,
+      selected: c.id === stop.cityId
+    }, c.name))
+  ]);
+
+  const dec = h('button', {
+    class: 'nights-btn',
+    type: 'button',
+    'aria-label': '-1 night',
+    disabled: nights <= 1,
+    onclick: () => onUpdate({ ...stop, nights: Math.max(1, nights - 1) })
+  }, '−');
+
+  const inc = h('button', {
+    class: 'nights-btn',
+    type: 'button',
+    'aria-label': '+1 night',
+    onclick: () => onUpdate({ ...stop, nights: nights + 1 })
+  }, '+');
+
+  const nightsLabel = h('span', { class: 'return-stop-nights-label' },
+    t('route.stopNights', { n: nights }));
+
+  const removeBtn = h('button', {
+    class: 'route-stop-remove',
+    type: 'button',
+    'aria-label': t('route.removeStop'),
+    onclick: () => onRemove()
+  }, '×');
+
+  return h('div', {
+    class: 'return-stop-editor',
+    'data-return-stop-index': index
+  }, [
+    h('div', { class: 'return-stop-selects' }, [countrySelect, citySelect]),
+    h('div', { class: 'return-stop-nights' }, [dec, nightsLabel, inc]),
+    removeBtn
+  ]);
 }
 
 // ─── Page-level export ──────────────────────────────────────────────────
