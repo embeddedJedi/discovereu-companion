@@ -4,7 +4,7 @@
 
 import { storage } from './utils/storage.js';
 
-const PERSIST_KEYS = ['theme', 'language', 'user', 'route', 'filters', 'prep'];
+const PERSIST_KEYS = ['theme', 'language', 'user', 'route', 'filters', 'prep', 'bingo', 'dares', 'futureMessages'];
 
 const initialState = {
   theme: 'light',
@@ -15,7 +15,8 @@ const initialState = {
     budget: 'moderate',        // 'budget' | 'moderate' | 'comfort'
     accommodation: 'hostel',   // 'hostel' | 'airbnb' | 'camp' | 'couchsurf'
     foodStyle: 'moderate',     // 'budget' | 'moderate' | 'comfort'
-    onboarded: false           // Welcome wizard completion flag — persisted via PERSIST_KEYS.user
+    onboarded: false,          // Welcome wizard completion flag — persisted via PERSIST_KEYS.user
+    consulateAppointment: null // { countryId, city, datetime, notes } | null — sub-project 2
   },
   route: {
     stops: [],                 // [{ countryId, cityId, nights, arrivalDay, transport }]
@@ -36,6 +37,20 @@ const initialState = {
   panelOpen: false,
   compare: [],                 // list of country ids (max 4) — ephemeral
   inclusionMode: 'default',    // 'default' | 'rainbow' | 'accessibility' — ephemeral
+  activeFunSubtab: 'bingo',    // 'bingo' | 'dares' | 'futureMe' — ephemeral
+  bingo: {                     // persisted
+    completed: {}              // { [challengeId]: true }
+  },
+  dares: {                     // persisted
+    completed: {},             // { [YYYY-MM-DD]: true | 'skipped' }
+    lastDareId: null,
+    streak: 0
+  },
+  futureMessages: [],          // persisted — [{ id, message, createdAt, revealDate }]
+  ai: {                        // ephemeral
+    groqKey: null,             // mirrors localStorage['discoveru:ai.groqKey']
+    lastSuggestion: null       // ephemeral, retained for retry UX
+  },
   prep: {
     departureDate: null,       // ISO "YYYY-MM-DD" or null
     checklistDone: {},         // { itemId: true }
