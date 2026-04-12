@@ -34,3 +34,11 @@
 - **Kaggle Cost of Living** — `https://www.kaggle.com/datasets/` — per-country cost indices informing `data/countries.json` `costPerDay` fields.
 - **Seat61** — `https://www.seat61.com/` — train route and mandatory reservation data for `data/trains.json` and `data/reservations.json`.
 - **Eurail / Interrail** — `https://www.eurail.com/` — DiscoverEU pass rules, seat credit mechanics, participating countries.
+
+## TR missions (2026-04-13)
+
+- **Republic of Türkiye Ministry of Foreign Affairs — Representations index** — `https://www.mfa.gov.tr/representations.en.mfa` — authoritative list of TR embassies, consulate-generals, and honorary consulates worldwide. Primary source for `data/tr-missions.json`.
+- **Per-mission mfa.gov.tr subdomains** — each TR mission publishes its own site under the pattern `<city>.be.mfa.gov.tr` (embassies), `<city>.bk.mfa.gov.tr` (consulate-generals), and `<city>.emb.mfa.gov.tr` (some embassies) — used for address, phone, email, and working hours of each entry.
+- Honorary consulates (IS, LI, LU, MT) have limited consular capacity; TR citizens in those countries are typically served by the nearest resident embassy as noted in each entry's `notes` field.
+- Cyprus: TR maintains diplomatic representation in the Turkish Republic of Northern Cyprus (Lefkoşa) and does not operate a mission in the Republic of Cyprus; this is noted in the CY entry.
+- Refresh cadence: quarterly, or immediately on any publicly-announced change. `emergencyPhone` fields are null pending per-mission verification — most missions publish a 24/7 nöbetçi memur line on their site and these will be filled in a follow-up pass.

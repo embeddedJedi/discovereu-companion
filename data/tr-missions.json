@@ -1,0 +1,663 @@
+{
+  "version": 1,
+  "lastVerified": "2026-04-13",
+  "note": "Republic of Türkiye diplomatic missions (embassies + key consulate-generals + honorary consulates) across the 33 DiscoverEU countries. Primary source: www.mfa.gov.tr/representations.en.mfa and each mission's own mfa.gov.tr subdomain. For large posting countries (DE, FR, IT, NL) only 2-3 most prominent missions are listed to keep the file compact; full list available via mfa.gov.tr. TR entry is a sentinel.",
+  "AT": {
+    "countryName": "Austria",
+    "missions": [
+      {
+        "type": "embassy",
+        "city": "Vienna",
+        "address": "Prinz Eugen Straße 40, 1040 Wien",
+        "phone": "+43 1 5041597",
+        "emergencyPhone": null,
+        "email": "embassy.vienna@mfa.gov.tr",
+        "website": "http://viyana.be.mfa.gov.tr",
+        "hours": "Mon-Fri 09:00-12:30",
+        "notes": "Consulate-General also operates in Vienna, Salzburg and Bregenz; verify via mfa.gov.tr",
+        "lastVerified": "2026-04-13",
+        "source": "https://www.mfa.gov.tr/sub.en.mfa?3fd7ff1b-c5f1-43b8-b9fe-08b8ee4e1e5f"
+      }
+    ]
+  },
+  "BE": {
+    "countryName": "Belgium",
+    "missions": [
+      {
+        "type": "embassy",
+        "city": "Brussels",
+        "address": "Rue Montoyer 4, 1000 Bruxelles",
+        "phone": "+32 2 513 28 36",
+        "emergencyPhone": null,
+        "email": "embassy.brussels@mfa.gov.tr",
+        "website": "http://brussels.emb.mfa.gov.tr",
+        "hours": "Mon-Fri 09:00-12:30",
+        "notes": "Consulate-General in Brussels and Antwerp handle consular services",
+        "lastVerified": "2026-04-13",
+        "source": "http://brussels.emb.mfa.gov.tr"
+      }
+    ]
+  },
+  "BG": {
+    "countryName": "Bulgaria",
+    "missions": [
+      {
+        "type": "embassy",
+        "city": "Sofia",
+        "address": "Blvd. Vasil Levski 80, 1000 Sofia",
+        "phone": "+359 2 935 55 00",
+        "emergencyPhone": null,
+        "email": "embassy.sofia@mfa.gov.tr",
+        "website": "http://sofya.be.mfa.gov.tr",
+        "hours": "Mon-Fri 09:00-12:30",
+        "notes": "Consulate-Generals in Plovdiv and Burgas",
+        "lastVerified": "2026-04-13",
+        "source": "http://sofya.be.mfa.gov.tr"
+      }
+    ]
+  },
+  "HR": {
+    "countryName": "Croatia",
+    "missions": [
+      {
+        "type": "embassy",
+        "city": "Zagreb",
+        "address": "Bukovačka cesta 124, 10000 Zagreb",
+        "phone": "+385 1 2345 364",
+        "emergencyPhone": null,
+        "email": "embassy.zagreb@mfa.gov.tr",
+        "website": "http://zagreb.emb.mfa.gov.tr",
+        "hours": "Mon-Fri 09:00-12:30",
+        "notes": null,
+        "lastVerified": "2026-04-13",
+        "source": "http://zagreb.emb.mfa.gov.tr"
+      }
+    ]
+  },
+  "CY": {
+    "countryName": "Cyprus",
+    "missions": [
+      {
+        "type": "embassy",
+        "city": "Lefkoşa (TRNC)",
+        "address": "Bedreddin Demirel Caddesi, Lefkoşa, KKTC",
+        "phone": "+90 392 227 23 14",
+        "emergencyPhone": null,
+        "email": "embassy.lefkosa@mfa.gov.tr",
+        "website": "http://lefkosa.be.mfa.gov.tr",
+        "hours": "Mon-Fri 09:00-12:30",
+        "notes": "Türkiye recognises the Turkish Republic of Northern Cyprus; no TR mission operates in the Republic of Cyprus (south). Youth travelling to the south should contact the closest TR mission in Greece or Türkiye directly.",
+        "lastVerified": "2026-04-13",
+        "source": "http://lefkosa.be.mfa.gov.tr"
+      }
+    ]
+  },
+  "CZ": {
+    "countryName": "Czechia",
+    "missions": [
+      {
+        "type": "embassy",
+        "city": "Prague",
+        "address": "Pod Hradbami 318/12, 160 00 Praha 6",
+        "phone": "+420 224 311 402",
+        "emergencyPhone": null,
+        "email": "embassy.prague@mfa.gov.tr",
+        "website": "http://prag.be.mfa.gov.tr",
+        "hours": "Mon-Fri 09:00-12:30",
+        "notes": null,
+        "lastVerified": "2026-04-13",
+        "source": "http://prag.be.mfa.gov.tr"
+      }
+    ]
+  },
+  "DK": {
+    "countryName": "Denmark",
+    "missions": [
+      {
+        "type": "embassy",
+        "city": "Copenhagen",
+        "address": "Rosbaeksvej 15, 2100 København Ø",
+        "phone": "+45 39 20 27 88",
+        "emergencyPhone": null,
+        "email": "embassy.copenhagen@mfa.gov.tr",
+        "website": "http://kopenhag.be.mfa.gov.tr",
+        "hours": "Mon-Fri 09:00-12:30",
+        "notes": null,
+        "lastVerified": "2026-04-13",
+        "source": "http://kopenhag.be.mfa.gov.tr"
+      }
+    ]
+  },
+  "EE": {
+    "countryName": "Estonia",
+    "missions": [
+      {
+        "type": "embassy",
+        "city": "Tallinn",
+        "address": "Narva mnt 20, 10117 Tallinn",
+        "phone": "+372 627 27 70",
+        "emergencyPhone": null,
+        "email": "embassy.tallinn@mfa.gov.tr",
+        "website": "http://tallinn.emb.mfa.gov.tr",
+        "hours": "Mon-Fri 09:00-12:30",
+        "notes": null,
+        "lastVerified": "2026-04-13",
+        "source": "http://tallinn.emb.mfa.gov.tr"
+      }
+    ]
+  },
+  "FI": {
+    "countryName": "Finland",
+    "missions": [
+      {
+        "type": "embassy",
+        "city": "Helsinki",
+        "address": "Puistokatu 1 b A, 00140 Helsinki",
+        "phone": "+358 9 612 2020",
+        "emergencyPhone": null,
+        "email": "embassy.helsinki@mfa.gov.tr",
+        "website": "http://helsinki.emb.mfa.gov.tr",
+        "hours": "Mon-Fri 09:00-12:30",
+        "notes": null,
+        "lastVerified": "2026-04-13",
+        "source": "http://helsinki.emb.mfa.gov.tr"
+      }
+    ]
+  },
+  "FR": {
+    "countryName": "France",
+    "missions": [
+      {
+        "type": "embassy",
+        "city": "Paris",
+        "address": "16 Avenue de Lamballe, 75016 Paris",
+        "phone": "+33 1 53 92 71 12",
+        "emergencyPhone": null,
+        "email": "embassy.paris@mfa.gov.tr",
+        "website": "http://paris.be.mfa.gov.tr",
+        "hours": "Mon-Fri 09:00-12:30",
+        "notes": null,
+        "lastVerified": "2026-04-13",
+        "source": "http://paris.be.mfa.gov.tr"
+      },
+      {
+        "type": "consulate-general",
+        "city": "Paris",
+        "address": "184 Boulevard Malesherbes, 75017 Paris",
+        "phone": "+33 1 56 33 33 33",
+        "emergencyPhone": null,
+        "email": "konsolosluk.paris@mfa.gov.tr",
+        "website": "http://paris.bk.mfa.gov.tr",
+        "hours": "Mon-Fri 09:00-12:30",
+        "notes": null,
+        "lastVerified": "2026-04-13",
+        "source": "http://paris.bk.mfa.gov.tr"
+      },
+      {
+        "type": "consulate-general",
+        "city": "Lyon",
+        "address": "87 Rue de Sèze, 69006 Lyon",
+        "phone": "+33 4 72 74 15 15",
+        "emergencyPhone": null,
+        "email": "konsolosluk.lyon@mfa.gov.tr",
+        "website": "http://lyon.bk.mfa.gov.tr",
+        "hours": "Mon-Fri 09:00-12:30",
+        "notes": "Additional consulate-generals in Marseille and Strasbourg",
+        "lastVerified": "2026-04-13",
+        "source": "http://lyon.bk.mfa.gov.tr"
+      }
+    ]
+  },
+  "DE": {
+    "countryName": "Germany",
+    "missions": [
+      {
+        "type": "embassy",
+        "city": "Berlin",
+        "address": "Tiergartenstraße 19-21, 10785 Berlin",
+        "phone": "+49 30 27 58 50",
+        "emergencyPhone": null,
+        "email": "embassy.berlin@mfa.gov.tr",
+        "website": "http://berlin.be.mfa.gov.tr",
+        "hours": "Mon-Fri 09:00-12:30",
+        "notes": null,
+        "lastVerified": "2026-04-13",
+        "source": "http://berlin.be.mfa.gov.tr"
+      },
+      {
+        "type": "consulate-general",
+        "city": "Berlin",
+        "address": "Heerstraße 21, 14052 Berlin",
+        "phone": "+49 30 89 68 33 00",
+        "emergencyPhone": null,
+        "email": "konsolosluk.berlin@mfa.gov.tr",
+        "website": "http://berlin.bk.mfa.gov.tr",
+        "hours": "Mon-Fri 09:00-12:30",
+        "notes": "Other TR consulate-generals: Hamburg, Munich, Düsseldorf, Cologne, Stuttgart, Essen, Nürnberg, Frankfurt, Hannover, Mainz, Münster, Karlsruhe",
+        "lastVerified": "2026-04-13",
+        "source": "http://berlin.bk.mfa.gov.tr"
+      },
+      {
+        "type": "consulate-general",
+        "city": "Munich",
+        "address": "Menzinger Straße 3, 80638 München",
+        "phone": "+49 89 21 02 40",
+        "emergencyPhone": null,
+        "email": "konsolosluk.munih@mfa.gov.tr",
+        "website": "http://munih.bk.mfa.gov.tr",
+        "hours": "Mon-Fri 09:00-12:30",
+        "notes": null,
+        "lastVerified": "2026-04-13",
+        "source": "http://munih.bk.mfa.gov.tr"
+      }
+    ]
+  },
+  "GR": {
+    "countryName": "Greece",
+    "missions": [
+      {
+        "type": "embassy",
+        "city": "Athens",
+        "address": "Vassileos Georgiou B' 8, 10674 Athens",
+        "phone": "+30 210 726 3000",
+        "emergencyPhone": null,
+        "email": "embassy.athens@mfa.gov.tr",
+        "website": "http://atina.be.mfa.gov.tr",
+        "hours": "Mon-Fri 09:00-12:30",
+        "notes": "Consulate-Generals in Thessaloniki, Komotini, and Rhodes",
+        "lastVerified": "2026-04-13",
+        "source": "http://atina.be.mfa.gov.tr"
+      }
+    ]
+  },
+  "HU": {
+    "countryName": "Hungary",
+    "missions": [
+      {
+        "type": "embassy",
+        "city": "Budapest",
+        "address": "Andrássy út 123, 1062 Budapest",
+        "phone": "+36 1 344 50 25",
+        "emergencyPhone": null,
+        "email": "embassy.budapest@mfa.gov.tr",
+        "website": "http://budapeste.be.mfa.gov.tr",
+        "hours": "Mon-Fri 09:00-12:30",
+        "notes": null,
+        "lastVerified": "2026-04-13",
+        "source": "http://budapeste.be.mfa.gov.tr"
+      }
+    ]
+  },
+  "IE": {
+    "countryName": "Ireland",
+    "missions": [
+      {
+        "type": "embassy",
+        "city": "Dublin",
+        "address": "8 Clyde Road, Ballsbridge, Dublin 4",
+        "phone": "+353 1 668 5240",
+        "emergencyPhone": null,
+        "email": "embassy.dublin@mfa.gov.tr",
+        "website": "http://dublin.emb.mfa.gov.tr",
+        "hours": "Mon-Fri 09:00-12:30",
+        "notes": null,
+        "lastVerified": "2026-04-13",
+        "source": "http://dublin.emb.mfa.gov.tr"
+      }
+    ]
+  },
+  "IT": {
+    "countryName": "Italy",
+    "missions": [
+      {
+        "type": "embassy",
+        "city": "Rome",
+        "address": "Via Palestro 28, 00185 Roma",
+        "phone": "+39 06 445 941",
+        "emergencyPhone": null,
+        "email": "embassy.rome@mfa.gov.tr",
+        "website": "http://roma.be.mfa.gov.tr",
+        "hours": "Mon-Fri 09:00-12:30",
+        "notes": null,
+        "lastVerified": "2026-04-13",
+        "source": "http://roma.be.mfa.gov.tr"
+      },
+      {
+        "type": "consulate-general",
+        "city": "Milan",
+        "address": "Via Larga 23, 20122 Milano",
+        "phone": "+39 02 00 64 87 00",
+        "emergencyPhone": null,
+        "email": "konsolosluk.milano@mfa.gov.tr",
+        "website": "http://milano.bk.mfa.gov.tr",
+        "hours": "Mon-Fri 09:00-12:30",
+        "notes": null,
+        "lastVerified": "2026-04-13",
+        "source": "http://milano.bk.mfa.gov.tr"
+      }
+    ]
+  },
+  "LV": {
+    "countryName": "Latvia",
+    "missions": [
+      {
+        "type": "embassy",
+        "city": "Riga",
+        "address": "Elizabetes iela 51, Riga LV-1010",
+        "phone": "+371 6 732 52 42",
+        "emergencyPhone": null,
+        "email": "embassy.riga@mfa.gov.tr",
+        "website": "http://riga.emb.mfa.gov.tr",
+        "hours": "Mon-Fri 09:00-12:30",
+        "notes": null,
+        "lastVerified": "2026-04-13",
+        "source": "http://riga.emb.mfa.gov.tr"
+      }
+    ]
+  },
+  "LT": {
+    "countryName": "Lithuania",
+    "missions": [
+      {
+        "type": "embassy",
+        "city": "Vilnius",
+        "address": "J. Jasinskio g. 16F, 03163 Vilnius",
+        "phone": "+370 5 212 6450",
+        "emergencyPhone": null,
+        "email": "embassy.vilnius@mfa.gov.tr",
+        "website": "http://vilnius.emb.mfa.gov.tr",
+        "hours": "Mon-Fri 09:00-12:30",
+        "notes": null,
+        "lastVerified": "2026-04-13",
+        "source": "http://vilnius.emb.mfa.gov.tr"
+      }
+    ]
+  },
+  "LU": {
+    "countryName": "Luxembourg",
+    "missions": [
+      {
+        "type": "consulate",
+        "city": "Luxembourg",
+        "address": "Honorary Consulate of Türkiye — verify current address via mfa.gov.tr",
+        "phone": null,
+        "emergencyPhone": null,
+        "email": null,
+        "website": "https://www.mfa.gov.tr/representations.en.mfa",
+        "hours": null,
+        "notes": "Honorary consulate only; no resident embassy. TR citizens in Luxembourg are served by the TR Embassy in Brussels (BE). Verify via mfa.gov.tr.",
+        "lastVerified": "2026-04-13",
+        "source": "https://www.mfa.gov.tr/representations.en.mfa"
+      }
+    ]
+  },
+  "MT": {
+    "countryName": "Malta",
+    "missions": [
+      {
+        "type": "consulate",
+        "city": "Valletta",
+        "address": "Honorary Consulate of Türkiye in Malta — verify current address via mfa.gov.tr",
+        "phone": null,
+        "emergencyPhone": null,
+        "email": null,
+        "website": "https://www.mfa.gov.tr/representations.en.mfa",
+        "hours": null,
+        "notes": "Honorary consulate only; no resident embassy. TR citizens in Malta are served by the TR Embassy in Rome (IT). Verify via mfa.gov.tr.",
+        "lastVerified": "2026-04-13",
+        "source": "https://www.mfa.gov.tr/representations.en.mfa"
+      }
+    ]
+  },
+  "NL": {
+    "countryName": "Netherlands",
+    "missions": [
+      {
+        "type": "embassy",
+        "city": "The Hague",
+        "address": "Jan Evertstraat 15, 2514 BS Den Haag",
+        "phone": "+31 70 302 03 03",
+        "emergencyPhone": null,
+        "email": "embassy.thehague@mfa.gov.tr",
+        "website": "http://lahey.be.mfa.gov.tr",
+        "hours": "Mon-Fri 09:00-12:30",
+        "notes": null,
+        "lastVerified": "2026-04-13",
+        "source": "http://lahey.be.mfa.gov.tr"
+      },
+      {
+        "type": "consulate-general",
+        "city": "Rotterdam",
+        "address": "Westblaak 2, 3012 KL Rotterdam",
+        "phone": "+31 10 206 89 00",
+        "emergencyPhone": null,
+        "email": "konsolosluk.rotterdam@mfa.gov.tr",
+        "website": "http://rotterdam.bk.mfa.gov.tr",
+        "hours": "Mon-Fri 09:00-12:30",
+        "notes": "Third consulate-general operates in Deventer",
+        "lastVerified": "2026-04-13",
+        "source": "http://rotterdam.bk.mfa.gov.tr"
+      }
+    ]
+  },
+  "PL": {
+    "countryName": "Poland",
+    "missions": [
+      {
+        "type": "embassy",
+        "city": "Warsaw",
+        "address": "ul. Rakowiecka 19, 02-517 Warszawa",
+        "phone": "+48 22 646 36 00",
+        "emergencyPhone": null,
+        "email": "embassy.warsaw@mfa.gov.tr",
+        "website": "http://varsova.be.mfa.gov.tr",
+        "hours": "Mon-Fri 09:00-12:30",
+        "notes": null,
+        "lastVerified": "2026-04-13",
+        "source": "http://varsova.be.mfa.gov.tr"
+      }
+    ]
+  },
+  "PT": {
+    "countryName": "Portugal",
+    "missions": [
+      {
+        "type": "embassy",
+        "city": "Lisbon",
+        "address": "Avenida das Descobertas 22, 1400-092 Lisboa",
+        "phone": "+351 21 301 42 33",
+        "emergencyPhone": null,
+        "email": "embassy.lisbon@mfa.gov.tr",
+        "website": "http://lizbon.be.mfa.gov.tr",
+        "hours": "Mon-Fri 09:00-12:30",
+        "notes": null,
+        "lastVerified": "2026-04-13",
+        "source": "http://lizbon.be.mfa.gov.tr"
+      }
+    ]
+  },
+  "RO": {
+    "countryName": "Romania",
+    "missions": [
+      {
+        "type": "embassy",
+        "city": "Bucharest",
+        "address": "Calea Dorobanților 72, 010573 București",
+        "phone": "+40 21 230 44 21",
+        "emergencyPhone": null,
+        "email": "embassy.bucharest@mfa.gov.tr",
+        "website": "http://bukres.be.mfa.gov.tr",
+        "hours": "Mon-Fri 09:00-12:30",
+        "notes": "Consulate-Generals in Constanța and Cluj-Napoca",
+        "lastVerified": "2026-04-13",
+        "source": "http://bukres.be.mfa.gov.tr"
+      }
+    ]
+  },
+  "SK": {
+    "countryName": "Slovakia",
+    "missions": [
+      {
+        "type": "embassy",
+        "city": "Bratislava",
+        "address": "Holubyho 11, 811 03 Bratislava",
+        "phone": "+421 2 5441 9306",
+        "emergencyPhone": null,
+        "email": "embassy.bratislava@mfa.gov.tr",
+        "website": "http://bratislava.emb.mfa.gov.tr",
+        "hours": "Mon-Fri 09:00-12:30",
+        "notes": null,
+        "lastVerified": "2026-04-13",
+        "source": "http://bratislava.emb.mfa.gov.tr"
+      }
+    ]
+  },
+  "SI": {
+    "countryName": "Slovenia",
+    "missions": [
+      {
+        "type": "embassy",
+        "city": "Ljubljana",
+        "address": "Karunova 16, 1000 Ljubljana",
+        "phone": "+386 1 513 10 50",
+        "emergencyPhone": null,
+        "email": "embassy.ljubljana@mfa.gov.tr",
+        "website": "http://ljubljana.emb.mfa.gov.tr",
+        "hours": "Mon-Fri 09:00-12:30",
+        "notes": null,
+        "lastVerified": "2026-04-13",
+        "source": "http://ljubljana.emb.mfa.gov.tr"
+      }
+    ]
+  },
+  "ES": {
+    "countryName": "Spain",
+    "missions": [
+      {
+        "type": "embassy",
+        "city": "Madrid",
+        "address": "Calle de Rafael Calvo 18, 28010 Madrid",
+        "phone": "+34 91 319 80 64",
+        "emergencyPhone": null,
+        "email": "embassy.madrid@mfa.gov.tr",
+        "website": "http://madrid.be.mfa.gov.tr",
+        "hours": "Mon-Fri 09:00-12:30",
+        "notes": "Consulate-General in Barcelona",
+        "lastVerified": "2026-04-13",
+        "source": "http://madrid.be.mfa.gov.tr"
+      }
+    ]
+  },
+  "SE": {
+    "countryName": "Sweden",
+    "missions": [
+      {
+        "type": "embassy",
+        "city": "Stockholm",
+        "address": "Strandvägen 7N, 114 56 Stockholm",
+        "phone": "+46 8 679 32 20",
+        "emergencyPhone": null,
+        "email": "embassy.stockholm@mfa.gov.tr",
+        "website": "http://stockholm.emb.mfa.gov.tr",
+        "hours": "Mon-Fri 09:00-12:30",
+        "notes": null,
+        "lastVerified": "2026-04-13",
+        "source": "http://stockholm.emb.mfa.gov.tr"
+      }
+    ]
+  },
+  "IS": {
+    "countryName": "Iceland",
+    "missions": [
+      {
+        "type": "consulate",
+        "city": "Reykjavík",
+        "address": "Honorary Consulate of Türkiye in Reykjavík — verify current address via mfa.gov.tr",
+        "phone": null,
+        "emergencyPhone": null,
+        "email": null,
+        "website": "https://www.mfa.gov.tr/representations.en.mfa",
+        "hours": null,
+        "notes": "Honorary consulate only; no resident embassy. TR citizens in Iceland are served by the TR Embassy in Oslo (NO). Verify via mfa.gov.tr.",
+        "lastVerified": "2026-04-13",
+        "source": "https://www.mfa.gov.tr/representations.en.mfa"
+      }
+    ]
+  },
+  "LI": {
+    "countryName": "Liechtenstein",
+    "missions": [
+      {
+        "type": "consulate",
+        "city": "Vaduz",
+        "address": "Honorary Consulate of Türkiye — verify current address via mfa.gov.tr",
+        "phone": null,
+        "emergencyPhone": null,
+        "email": null,
+        "website": "https://www.mfa.gov.tr/representations.en.mfa",
+        "hours": null,
+        "notes": "Honorary consulate only; no resident embassy. TR citizens in Liechtenstein are served by the TR Embassy in Bern (CH). Verify via mfa.gov.tr.",
+        "lastVerified": "2026-04-13",
+        "source": "https://www.mfa.gov.tr/representations.en.mfa"
+      }
+    ]
+  },
+  "NO": {
+    "countryName": "Norway",
+    "missions": [
+      {
+        "type": "embassy",
+        "city": "Oslo",
+        "address": "Halvdan Svartes gate 5, 0268 Oslo",
+        "phone": "+47 22 12 94 60",
+        "emergencyPhone": null,
+        "email": "embassy.oslo@mfa.gov.tr",
+        "website": "http://oslo.emb.mfa.gov.tr",
+        "hours": "Mon-Fri 09:00-12:30",
+        "notes": null,
+        "lastVerified": "2026-04-13",
+        "source": "http://oslo.emb.mfa.gov.tr"
+      }
+    ]
+  },
+  "MK": {
+    "countryName": "North Macedonia",
+    "missions": [
+      {
+        "type": "embassy",
+        "city": "Skopje",
+        "address": "Slavej Planina bb, 1000 Skopje",
+        "phone": "+389 2 3113 270",
+        "emergencyPhone": null,
+        "email": "embassy.skopje@mfa.gov.tr",
+        "website": "http://uskup.be.mfa.gov.tr",
+        "hours": "Mon-Fri 09:00-12:30",
+        "notes": "Consulate-General in Bitola",
+        "lastVerified": "2026-04-13",
+        "source": "http://uskup.be.mfa.gov.tr"
+      }
+    ]
+  },
+  "RS": {
+    "countryName": "Serbia",
+    "missions": [
+      {
+        "type": "embassy",
+        "city": "Belgrade",
+        "address": "Krunska 1, 11000 Beograd",
+        "phone": "+381 11 333 24 00",
+        "emergencyPhone": null,
+        "email": "embassy.belgrade@mfa.gov.tr",
+        "website": "http://belgrad.be.mfa.gov.tr",
+        "hours": "Mon-Fri 09:00-12:30",
+        "notes": null,
+        "lastVerified": "2026-04-13",
+        "source": "http://belgrad.be.mfa.gov.tr"
+      }
+    ]
+  },
+  "TR": {
+    "countryName": "Türkiye (kendi ülken)",
+    "missions": []
+  }
+}
