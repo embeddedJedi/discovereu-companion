@@ -511,6 +511,8 @@ function applyTemplate(templateId) {
   state.update('route', r => ({
     ...r,
     stops,
+    returnStops: tpl.returnLeg?.stops || [],
+    returnTransport: tpl.returnLeg?.transport || 'train',
     travelDaysLimit: Math.max(r.travelDaysLimit || 7, tpl.days || 7),
     name: tpl.name
   }));

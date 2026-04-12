@@ -12,7 +12,11 @@
       "countries": ["DE", "FR", "IT", "AT", "CZ"],
       "description": "Berlin → Paris → Rome → Vienna → Prague. The historical heart of Europe in one long week, each stop a world capital.",
       "highlights": ["Brandenburg Gate", "Eiffel Tower", "Colosseum", "Schönbrunn Palace", "Charles Bridge"],
-      "reservationHeavy": true
+      "reservationHeavy": true,
+      "returnLeg": {
+        "stops": [{ "countryId": "CZ", "cityId": null, "nights": 1, "transport": "night-train" }],
+        "transport": "night-train"
+      }
     },
     {
       "id": "balkan-adventure",
@@ -50,7 +54,11 @@
       "countries": ["ES", "FR", "IT", "HR", "GR"],
       "description": "Barcelona → French Riviera → Cinque Terre → Dubrovnik → Athens. Follow the coast, swim every day, eat your weight in tomatoes.",
       "highlights": ["Sagrada Família", "Nice promenade", "Cinque Terre", "Dubrovnik old town", "Santorini"],
-      "reservationHeavy": true
+      "reservationHeavy": true,
+      "returnLeg": {
+        "stops": [{ "countryId": "GR", "cityId": null, "nights": 1, "transport": "flight" }],
+        "transport": "flight"
+      }
     },
     {
       "id": "green-rail",
@@ -63,7 +71,8 @@
       "description": "Amsterdam → Berlin → Zurich → Vienna → Ljubljana. Entirely on rail, through Europe's most scenic corridors. Lowest CO₂ footprint on the list.",
       "highlights": ["Amsterdam canals", "Rhine Valley", "Glacier Express", "Vienna coffee houses", "Lake Bled"],
       "reservationHeavy": false,
-      "warnings": ["ch-non-discovereu"]
+      "warnings": ["ch-non-discovereu"],
+      "returnLeg": { "stops": [], "transport": "train" }
     },
     {
       "id": "inclusion-first",
