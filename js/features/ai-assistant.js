@@ -7,7 +7,7 @@
 //   4. Validate the returned route against data/countries.json
 //   5. Return { stops, rationale, usage } or throw typed error
 
-import { callGroq, ParseError } from './llm-groq.js';
+import { sendPrompt, getActiveProvider, getApiKey, ParseError } from './llm-adapter.js';
 import { state } from '../state.js';
 import { loadGuides } from '../data/loader.js';
 
@@ -65,7 +65,8 @@ function validateStops(stops, countryIndex) {
  *   → { stops, rationale, usage }
  */
 export async function suggestRoute({ userPrompt, signal } = {}) {
-  const apiKey = state.getSlice('ai')?.groqKey;
+  // Adapter picks the active provider (Groq / Gemini / OpenAI) and its key.
+  const apiKey = getApiKey(getActiveProvider());
   if (!apiKey) { const e = new Error('missing key'); e.name = 'AuthError'; throw e; }
 
   const countries = state.getSlice('countries') || [];
@@ -91,10 +92,11 @@ export async function suggestRoute({ userPrompt, signal } = {}) {
     buildCountryContext(countries, guides)
   ].join('\n');
 
-  const { content, usage } = await callGroq({
-    apiKey,
-    systemPrompt: SYSTEM_PROMPT,
-    userMessage: prompt,
+  const { content, usage } = await sendPrompt({
+    messages: [
+      { role: 'system', content: SYSTEM_PROMPT },
+      { role: 'user',   content: prompt }
+    ],
     jsonMode: true,
     signal
   });

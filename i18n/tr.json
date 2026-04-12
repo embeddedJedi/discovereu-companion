@@ -350,6 +350,24 @@
     "km": "{km} km",
     "greenTraveler": "Yeşil Gezgin"
   },
+  "llm": {
+    "providerLabel": "AI sağlayıcı",
+    "providerGroq": "Groq",
+    "providerGemini": "Gemini",
+    "providerOpenAI": "OpenAI",
+    "apiKeyLabel": "API anahtarı",
+    "apiKeyPlaceholder": "Anahtarını yapıştır",
+    "saveKey": "Anahtarı kaydet",
+    "testConnection": "Bağlantıyı test et",
+    "testSuccess": "Bağlantı tamam",
+    "testFailure": "Bağlantı başarısız",
+    "keySavedToast": "Anahtar kaydedildi",
+    "getGroqKey": "Ücretsiz Groq anahtarı al →",
+    "getGeminiKey": "Ücretsiz Gemini anahtarı al →",
+    "getOpenAIKey": "OpenAI anahtarı al →",
+    "openAINote": "Not: OpenAI ücretsiz değildir, hesap bakiyesi gerekir.",
+    "providerHelp": "Anahtarlar yalnızca tarayıcında saklanır."
+  },
   "ai": {
     "headerCta": "AI Öneri",
     "title": "AI Rota Önerisi",

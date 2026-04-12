@@ -5,6 +5,10 @@
 import { state } from '../state.js';
 import { t } from '../i18n/i18n.js';
 import { h, empty } from '../utils/dom.js';
+import {
+  listProviders, getActiveProvider, setActiveProvider,
+  getApiKey, setApiKey, sendPrompt
+} from '../features/llm-adapter.js';
 
 let containerEl = null;
 let activeCard = null;
@@ -195,18 +199,7 @@ function renderSettings() {
           }, t(`more.theme.${theme}`))
         ))
       ]),
-      h('div', { class: 'kesfet-setting' }, [
-        h('label', { for: 'ksAiKey' }, t('more.aiKey')),
-        h('input', {
-          id: 'ksAiKey', type: 'password', class: 'input', placeholder: 'gsk_...',
-          value: localStorage.getItem('discoveru:ai.groqKey') || '',
-          onchange: (ev) => {
-            const key = ev.target.value.trim();
-            if (key) { localStorage.setItem('discoveru:ai.groqKey', key); state.update('ai', ai => ({ ...ai, groqKey: key })); }
-            else { localStorage.removeItem('discoveru:ai.groqKey'); state.update('ai', ai => ({ ...ai, groqKey: null })); }
-          }
-        })
-      ])
+      renderLlmSetting()
     ]),
     h('button', {
       class: 'btn btn-danger', style: { width: '100%', marginTop: 'var(--space-4)' },
@@ -214,4 +207,92 @@ function renderSettings() {
       onclick: () => { if (confirm(t('more.clearConfirm'))) { state.reset(); location.reload(); } }
     }, t('more.clearData'))
   ]);
+}
+
+// ─── Multi-LLM provider setting ─────────────────────────────────────────────
+const PROVIDER_LINKS = {
+  groq:   { href: 'https://console.groq.com/keys',    placeholder: 'gsk_...',      helpKey: 'llm.getGroqKey'   },
+  gemini: { href: 'https://aistudio.google.com/apikey', placeholder: 'AIza...',    helpKey: 'llm.getGeminiKey' },
+  openai: { href: 'https://platform.openai.com/api-keys', placeholder: 'sk-...',   helpKey: 'llm.getOpenAIKey' }
+};
+
+function renderLlmSetting() {
+  const providers = listProviders();
+  let selectedId = getActiveProvider();
+  const wrap = h('div', { class: 'kesfet-setting kesfet-setting--llm' });
+
+  const providerSelect = h('select', {
+    id: 'ksLlmProvider',
+    class: 'input',
+    onchange: (ev) => {
+      selectedId = ev.target.value;
+      setActiveProvider(selectedId);
+      refreshKeyInput();
+      refreshHelp();
+    }
+  }, providers.map(p =>
+    h('option', { value: p.id, selected: p.id === selectedId }, p.label)
+  ));
+
+  const keyInput = h('input', {
+    id: 'ksLlmKey',
+    type: 'password',
+    class: 'input',
+    autocomplete: 'off',
+    spellcheck: 'false',
+    placeholder: PROVIDER_LINKS[selectedId]?.placeholder || ''
+  });
+  const saveBtn   = h('button', { class: 'btn btn-primary', type: 'button' }, t('llm.saveKey'));
+  const testBtn   = h('button', { class: 'btn btn-ghost',   type: 'button' }, t('llm.testConnection'));
+  const statusEl  = h('span', { class: 'kesfet-llm-status', role: 'status', 'aria-live': 'polite' });
+  const helpEl    = h('div',  { class: 'kesfet-llm-help text-muted small' });
+
+  function refreshKeyInput() {
+    keyInput.value = getApiKey(selectedId) || '';
+    keyInput.placeholder = PROVIDER_LINKS[selectedId]?.placeholder || '';
+    statusEl.textContent = '';
+  }
+  function refreshHelp() {
+    empty(helpEl);
+    const info = PROVIDER_LINKS[selectedId];
+    if (!info) return;
+    helpEl.appendChild(h('a', { href: info.href, target: '_blank', rel: 'noopener' }, t(info.helpKey)));
+    if (selectedId === 'openai') {
+      helpEl.appendChild(h('div', { class: 'text-muted small' }, t('llm.openAINote')));
+    }
+  }
+
+  saveBtn.addEventListener('click', () => {
+    const v = (keyInput.value || '').trim();
+    setApiKey(selectedId, v);
+    statusEl.textContent = t('llm.keySavedToast');
+  });
+
+  testBtn.addEventListener('click', async () => {
+    const v = (keyInput.value || '').trim();
+    if (v) setApiKey(selectedId, v);
+    statusEl.textContent = '…';
+    try {
+      const r = await sendPrompt({
+        messages: [{ role: 'user', content: 'Reply with the single word: OK' }],
+        providerOverride: selectedId
+      });
+      statusEl.textContent = r?.content ? t('llm.testSuccess') : t('llm.testFailure');
+    } catch (err) {
+      console.warn('[llm test]', err);
+      statusEl.textContent = `${t('llm.testFailure')} (${err?.name || 'error'})`;
+    }
+  });
+
+  refreshKeyInput();
+  refreshHelp();
+
+  wrap.appendChild(h('label', { for: 'ksLlmProvider' }, t('llm.providerLabel')));
+  wrap.appendChild(providerSelect);
+  wrap.appendChild(h('label', { for: 'ksLlmKey', style: { marginTop: 'var(--space-2)' } }, t('llm.apiKeyLabel')));
+  wrap.appendChild(keyInput);
+  wrap.appendChild(h('div', { class: 'kesfet-llm-actions', style: { display: 'flex', gap: 'var(--space-2)', marginTop: 'var(--space-2)' } }, [saveBtn, testBtn]));
+  wrap.appendChild(statusEl);
+  wrap.appendChild(helpEl);
+  return wrap;
 }
