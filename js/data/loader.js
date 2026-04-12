@@ -92,3 +92,41 @@ export async function loadCoreData() {
 export async function loadEuropeGeoJson() {
   return loadJson('geojson/europe.geojson');
 }
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Sub-project 2 lazy loaders
+// ─────────────────────────────────────────────────────────────────────────────
+// Each loader calls loadJson() (which is already memoised) so repeated
+// invocations are cheap. Guides are also the single biggest lazy bundle
+// (~100 KB) so we wrap it with an index accessor for O(1) country lookup.
+
+let _guidesCache = null;
+
+export async function loadGuides() {
+  if (_guidesCache) return _guidesCache;
+  _guidesCache = await loadJson('guides.json');
+  return _guidesCache;
+}
+
+export async function getCountryGuide(countryId) {
+  const g = await loadGuides();
+  return g?.countries?.[countryId] ?? null;
+}
+
+export async function getCityGuide(cityId) {
+  const g = await loadGuides();
+  return g?.cities?.[cityId] ?? null;
+}
+
+export async function listCitiesForCountry(countryId) {
+  const g = await loadGuides();
+  if (!g?.cities) return [];
+  return Object.entries(g.cities)
+    .filter(([, c]) => c.countryId === countryId)
+    .map(([id, c]) => ({ id, ...c }));
+}
+
+export async function loadBingoChallenges() { return loadJson('bingo-challenges.json'); }
+export async function loadDares()           { return loadJson('daily-dares.json');      }
+export async function loadSoundtracks()     { return loadJson('soundtracks.json');      }
+export async function loadConsulates()      { return loadJson('tr-consulates.json');    }
