@@ -1,5 +1,13 @@
 # Data Sources & Attribution
 
+## Emergency numbers (2026-04-13)
+
+- **EU 112 country pages** — `https://112.eu/en/countries/` — primary source for the general, police, ambulance, and fire numbers across all EU + EEA members in `data/emergency-numbers.json`. Each country block cites its specific 112.eu sub-page.
+- **National interior ministries & police portals** — cross-checked per country (e.g. `bmi.gv.at`, `police.hu`, `policia.es`, `poliziadistato.it`, `politiet.no`, `politie.nl`, `polisen.se`, `psp.pt`, `egm.gov.tr`). Used to confirm short-code legacy numbers and tourist-police lines.
+- **ILGA-Europe country pages** — `https://www.ilga-europe.org/` — only authoritative source consulted for `lgbtqiSafeLine` fields. Where no ILGA-recognised helpline exists the field is `null` by policy (a wrong number is worse than none). Currently populated only for IE (LGBT Ireland) and IT (Gay Help Line / Gay Center Rome).
+- **Turkish Ministry of Interior + e-Devlet** — `icisleri.gov.tr`, `turkiye.gov.tr` — confirmed the 2021 consolidation of emergency lines under 112 and the Istanbul Tourist Police desk number.
+- Refresh cadence: annually, or immediately on any publicly-announced number change. Contributors invited via GitHub issue to flag stale entries.
+
 ## Sub-project 1 sources (2026-04-11)
 
 - **ILGA-Europe Rainbow Europe 2025** (annual report) — `https://www.ilga-europe.org/report/rainbow-europe-2025/` — LGBTQ+ rights scores for `data/rainbow-map.json`. Refreshed annually each May.

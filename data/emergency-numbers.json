@@ -1,0 +1,636 @@
+{
+  "version": "2026-04-13",
+  "lastVerified": "2026-04-13",
+  "countries": {
+    "AT": {
+      "countryName": "Austria",
+      "eu112": true,
+      "general": "112",
+      "police": "133",
+      "ambulance": "144",
+      "fire": "122",
+      "touristPolice": null,
+      "womenHelpline": "0800 222 555",
+      "lgbtqiSafeLine": null,
+      "poisonControl": "+43 1 406 43 43",
+      "mentalHealth": "142",
+      "dialQuirks": "Mobile phones default to 112 across all networks.",
+      "notes": null,
+      "sources": [
+        "https://112.eu/en/countries/austria/",
+        "https://www.bmi.gv.at/"
+      ]
+    },
+    "BE": {
+      "countryName": "Belgium",
+      "eu112": true,
+      "general": "112",
+      "police": "101",
+      "ambulance": "112",
+      "fire": "112",
+      "touristPolice": null,
+      "womenHelpline": "1712",
+      "lgbtqiSafeLine": null,
+      "poisonControl": "070 245 245",
+      "mentalHealth": "1813",
+      "dialQuirks": "112 app (BE-Alert) recommended for deaf/hard-of-hearing users.",
+      "notes": null,
+      "sources": [
+        "https://112.eu/en/countries/belgium/",
+        "https://www.112.be/"
+      ]
+    },
+    "BG": {
+      "countryName": "Bulgaria",
+      "eu112": true,
+      "general": "112",
+      "police": "166",
+      "ambulance": "150",
+      "fire": "160",
+      "touristPolice": null,
+      "womenHelpline": "0800 18 676",
+      "lgbtqiSafeLine": null,
+      "poisonControl": "+359 2 9154 233",
+      "mentalHealth": null,
+      "dialQuirks": "112 operators offer service in Bulgarian, English, French, German, and Russian.",
+      "notes": null,
+      "sources": [
+        "https://112.eu/en/countries/bulgaria/",
+        "https://www.mvr.bg/"
+      ]
+    },
+    "CY": {
+      "countryName": "Cyprus",
+      "eu112": true,
+      "general": "112",
+      "police": "112",
+      "ambulance": "112",
+      "fire": "112",
+      "touristPolice": null,
+      "womenHelpline": "1440",
+      "lgbtqiSafeLine": null,
+      "poisonControl": "1401",
+      "mentalHealth": null,
+      "dialQuirks": "112 and 199 both reach the unified emergency centre.",
+      "notes": null,
+      "sources": [
+        "https://112.eu/en/countries/cyprus/",
+        "https://www.police.gov.cy/"
+      ]
+    },
+    "CZ": {
+      "countryName": "Czechia",
+      "eu112": true,
+      "general": "112",
+      "police": "158",
+      "ambulance": "155",
+      "fire": "150",
+      "touristPolice": null,
+      "womenHelpline": "116 006",
+      "lgbtqiSafeLine": null,
+      "poisonControl": "+420 224 919 293",
+      "mentalHealth": "116 123",
+      "dialQuirks": "Municipal police reachable on 156.",
+      "notes": null,
+      "sources": [
+        "https://112.eu/en/countries/czech-republic/",
+        "https://www.mvcr.cz/"
+      ]
+    },
+    "DE": {
+      "countryName": "Germany",
+      "eu112": true,
+      "general": "112",
+      "police": "110",
+      "ambulance": "112",
+      "fire": "112",
+      "touristPolice": null,
+      "womenHelpline": "08000 116 016",
+      "lgbtqiSafeLine": null,
+      "poisonControl": "+49 30 19240",
+      "mentalHealth": "0800 111 0 111",
+      "dialQuirks": "112 is free from any phone including locked mobiles; 110 is police-only.",
+      "notes": null,
+      "sources": [
+        "https://112.eu/en/countries/germany/",
+        "https://www.bmi.bund.de/"
+      ]
+    },
+    "DK": {
+      "countryName": "Denmark",
+      "eu112": true,
+      "general": "112",
+      "police": "114",
+      "ambulance": "112",
+      "fire": "112",
+      "touristPolice": null,
+      "womenHelpline": "1888",
+      "lgbtqiSafeLine": null,
+      "poisonControl": "82 12 12 12",
+      "mentalHealth": "70 201 201",
+      "dialQuirks": "114 is the non-emergency police line; 112 for life-threatening only.",
+      "notes": null,
+      "sources": [
+        "https://112.eu/en/countries/denmark/",
+        "https://politi.dk/"
+      ]
+    },
+    "EE": {
+      "countryName": "Estonia",
+      "eu112": true,
+      "general": "112",
+      "police": "112",
+      "ambulance": "112",
+      "fire": "112",
+      "touristPolice": null,
+      "womenHelpline": "1492",
+      "lgbtqiSafeLine": null,
+      "poisonControl": "16662",
+      "mentalHealth": "6558 088",
+      "dialQuirks": "Police non-emergency reached via 612 3000; 112 handles all emergencies.",
+      "notes": null,
+      "sources": [
+        "https://112.eu/en/countries/estonia/",
+        "https://www.politsei.ee/"
+      ]
+    },
+    "ES": {
+      "countryName": "Spain",
+      "eu112": true,
+      "general": "112",
+      "police": "091",
+      "ambulance": "061",
+      "fire": "080",
+      "touristPolice": "902 102 112",
+      "womenHelpline": "016",
+      "lgbtqiSafeLine": null,
+      "poisonControl": "91 562 04 20",
+      "mentalHealth": "024",
+      "dialQuirks": "091 is National Police; 092 is local police; 062 is Guardia Civil.",
+      "notes": "Tourist police line (SATE) operates in multiple languages for travellers.",
+      "sources": [
+        "https://112.eu/en/countries/spain/",
+        "https://www.policia.es/"
+      ]
+    },
+    "FI": {
+      "countryName": "Finland",
+      "eu112": true,
+      "general": "112",
+      "police": "112",
+      "ambulance": "112",
+      "fire": "112",
+      "touristPolice": null,
+      "womenHelpline": "080 005 005",
+      "lgbtqiSafeLine": null,
+      "poisonControl": "0800 147 111",
+      "mentalHealth": "09 2525 0111",
+      "dialQuirks": "112 Suomi app provides GPS-accurate location to dispatchers.",
+      "notes": null,
+      "sources": [
+        "https://112.eu/en/countries/finland/",
+        "https://112.fi/"
+      ]
+    },
+    "FR": {
+      "countryName": "France",
+      "eu112": true,
+      "general": "112",
+      "police": "17",
+      "ambulance": "15",
+      "fire": "18",
+      "touristPolice": null,
+      "womenHelpline": "3919",
+      "lgbtqiSafeLine": null,
+      "poisonControl": "+33 1 40 05 48 48",
+      "mentalHealth": "3114",
+      "dialQuirks": "114 is the SMS/fax emergency line for deaf and hard-of-hearing users.",
+      "notes": null,
+      "sources": [
+        "https://112.eu/en/countries/france/",
+        "https://www.interieur.gouv.fr/"
+      ]
+    },
+    "GR": {
+      "countryName": "Greece",
+      "eu112": true,
+      "general": "112",
+      "police": "100",
+      "ambulance": "166",
+      "fire": "199",
+      "touristPolice": "1571",
+      "womenHelpline": "15900",
+      "lgbtqiSafeLine": null,
+      "poisonControl": "+30 210 779 3777",
+      "mentalHealth": "1018",
+      "dialQuirks": "Tourist Police (1571) operates in English, French, German, Spanish, Italian and more.",
+      "notes": null,
+      "sources": [
+        "https://112.eu/en/countries/greece/",
+        "https://www.astynomia.gr/"
+      ]
+    },
+    "HR": {
+      "countryName": "Croatia",
+      "eu112": true,
+      "general": "112",
+      "police": "192",
+      "ambulance": "194",
+      "fire": "193",
+      "touristPolice": null,
+      "womenHelpline": "0800 5544",
+      "lgbtqiSafeLine": null,
+      "poisonControl": "+385 1 2348 342",
+      "mentalHealth": null,
+      "dialQuirks": "Sea rescue reachable on 195.",
+      "notes": null,
+      "sources": [
+        "https://112.eu/en/countries/croatia/",
+        "https://mup.gov.hr/"
+      ]
+    },
+    "HU": {
+      "countryName": "Hungary",
+      "eu112": true,
+      "general": "112",
+      "police": "107",
+      "ambulance": "104",
+      "fire": "105",
+      "touristPolice": null,
+      "womenHelpline": "06 80 20 55 20",
+      "lgbtqiSafeLine": null,
+      "poisonControl": "+36 80 201 199",
+      "mentalHealth": "116 123",
+      "dialQuirks": "112 operators answer in Hungarian, English, and German.",
+      "notes": null,
+      "sources": [
+        "https://112.eu/en/countries/hungary/",
+        "https://www.police.hu/"
+      ]
+    },
+    "IE": {
+      "countryName": "Ireland",
+      "eu112": true,
+      "general": "112",
+      "police": "112",
+      "ambulance": "112",
+      "fire": "112",
+      "touristPolice": null,
+      "womenHelpline": "1800 341 900",
+      "lgbtqiSafeLine": "1800 929 539",
+      "poisonControl": "01 809 2566",
+      "mentalHealth": "116 123",
+      "dialQuirks": "999 also routes to the same emergency service as 112.",
+      "notes": "LGBT Ireland National Helpline operates Mon-Sun evenings; verify current hours.",
+      "sources": [
+        "https://112.eu/en/countries/ireland/",
+        "https://www.lgbt.ie/helpline/",
+        "https://www.garda.ie/"
+      ]
+    },
+    "IS": {
+      "countryName": "Iceland",
+      "eu112": true,
+      "general": "112",
+      "police": "112",
+      "ambulance": "112",
+      "fire": "112",
+      "touristPolice": null,
+      "womenHelpline": "561 1205",
+      "lgbtqiSafeLine": null,
+      "poisonControl": "543 2222",
+      "mentalHealth": "1717",
+      "dialQuirks": "112 Iceland app shares GPS location and is recommended for hikers.",
+      "notes": null,
+      "sources": [
+        "https://112.eu/en/countries/iceland/",
+        "https://www.112.is/"
+      ]
+    },
+    "IT": {
+      "countryName": "Italy",
+      "eu112": true,
+      "general": "112",
+      "police": "113",
+      "ambulance": "118",
+      "fire": "115",
+      "touristPolice": "06 46861",
+      "womenHelpline": "1522",
+      "lgbtqiSafeLine": "800 713 713",
+      "poisonControl": "+39 06 3054343",
+      "mentalHealth": null,
+      "dialQuirks": "112 NUE (Numero Unico Emergenze) rolled out nationwide; legacy numbers still work.",
+      "notes": "Gay Help Line (800 713 713) operated by Gay Center, Rome — recognised by ILGA-Europe.",
+      "sources": [
+        "https://112.eu/en/countries/italy/",
+        "https://www.gaycenter.it/",
+        "https://www.poliziadistato.it/"
+      ]
+    },
+    "LI": {
+      "countryName": "Liechtenstein",
+      "eu112": true,
+      "general": "112",
+      "police": "117",
+      "ambulance": "144",
+      "fire": "118",
+      "touristPolice": null,
+      "womenHelpline": "+423 380 02 03",
+      "lgbtqiSafeLine": null,
+      "poisonControl": "145",
+      "mentalHealth": "143",
+      "dialQuirks": "Shares emergency infrastructure with Swiss dispatch; 112 and 117 both valid.",
+      "notes": null,
+      "sources": [
+        "https://112.eu/en/countries/liechtenstein/",
+        "https://www.landespolizei.li/"
+      ]
+    },
+    "LT": {
+      "countryName": "Lithuania",
+      "eu112": true,
+      "general": "112",
+      "police": "112",
+      "ambulance": "112",
+      "fire": "112",
+      "touristPolice": null,
+      "womenHelpline": "8 800 66366",
+      "lgbtqiSafeLine": null,
+      "poisonControl": "+370 5 236 20 52",
+      "mentalHealth": "116 123",
+      "dialQuirks": "Legacy 01/02/03 numbers decommissioned; only 112 is active.",
+      "notes": null,
+      "sources": [
+        "https://112.eu/en/countries/lithuania/",
+        "https://www.112.lt/"
+      ]
+    },
+    "LU": {
+      "countryName": "Luxembourg",
+      "eu112": true,
+      "general": "112",
+      "police": "113",
+      "ambulance": "112",
+      "fire": "112",
+      "touristPolice": null,
+      "womenHelpline": "12344",
+      "lgbtqiSafeLine": null,
+      "poisonControl": "+352 8002 5500",
+      "mentalHealth": "454545",
+      "dialQuirks": "112 operators speak Luxembourgish, French, German, and English.",
+      "notes": null,
+      "sources": [
+        "https://112.eu/en/countries/luxembourg/",
+        "https://police.public.lu/"
+      ]
+    },
+    "LV": {
+      "countryName": "Latvia",
+      "eu112": true,
+      "general": "112",
+      "police": "110",
+      "ambulance": "113",
+      "fire": "112",
+      "touristPolice": null,
+      "womenHelpline": "116 006",
+      "lgbtqiSafeLine": null,
+      "poisonControl": "+371 67042473",
+      "mentalHealth": "116 123",
+      "dialQuirks": "Gas leak emergency: 114.",
+      "notes": null,
+      "sources": [
+        "https://112.eu/en/countries/latvia/",
+        "https://www.vp.gov.lv/"
+      ]
+    },
+    "MK": {
+      "countryName": "North Macedonia",
+      "eu112": true,
+      "general": "112",
+      "police": "192",
+      "ambulance": "194",
+      "fire": "193",
+      "touristPolice": null,
+      "womenHelpline": "15 700",
+      "lgbtqiSafeLine": null,
+      "poisonControl": "+389 2 3147 635",
+      "mentalHealth": null,
+      "dialQuirks": "112 is the unified emergency number; legacy single-digit numbers still work.",
+      "notes": null,
+      "sources": [
+        "https://112.eu/en/countries/north-macedonia/",
+        "https://www.mvr.gov.mk/"
+      ]
+    },
+    "MT": {
+      "countryName": "Malta",
+      "eu112": true,
+      "general": "112",
+      "police": "112",
+      "ambulance": "112",
+      "fire": "112",
+      "touristPolice": null,
+      "womenHelpline": "179",
+      "lgbtqiSafeLine": null,
+      "poisonControl": "+356 2545 0000",
+      "mentalHealth": "179",
+      "dialQuirks": "Supportline 179 covers mental health, domestic violence, and general crisis.",
+      "notes": null,
+      "sources": [
+        "https://112.eu/en/countries/malta/",
+        "https://pulizija.gov.mt/"
+      ]
+    },
+    "NL": {
+      "countryName": "Netherlands",
+      "eu112": true,
+      "general": "112",
+      "police": "0900 8844",
+      "ambulance": "112",
+      "fire": "112",
+      "touristPolice": null,
+      "womenHelpline": "0800 2000",
+      "lgbtqiSafeLine": null,
+      "poisonControl": "+31 88 755 8000",
+      "mentalHealth": "113",
+      "dialQuirks": "0900 8844 is non-emergency police; dial 112 only for urgent/life-threatening.",
+      "notes": null,
+      "sources": [
+        "https://112.eu/en/countries/netherlands/",
+        "https://www.politie.nl/"
+      ]
+    },
+    "NO": {
+      "countryName": "Norway",
+      "eu112": true,
+      "general": "112",
+      "police": "112",
+      "ambulance": "113",
+      "fire": "110",
+      "touristPolice": null,
+      "womenHelpline": "116 006",
+      "lgbtqiSafeLine": null,
+      "poisonControl": "22 59 13 00",
+      "mentalHealth": "116 123",
+      "dialQuirks": "Non-emergency police: 02800.",
+      "notes": null,
+      "sources": [
+        "https://112.eu/en/countries/norway/",
+        "https://www.politiet.no/"
+      ]
+    },
+    "PL": {
+      "countryName": "Poland",
+      "eu112": true,
+      "general": "112",
+      "police": "997",
+      "ambulance": "999",
+      "fire": "998",
+      "touristPolice": null,
+      "womenHelpline": "800 120 002",
+      "lgbtqiSafeLine": null,
+      "poisonControl": "+48 22 619 66 54",
+      "mentalHealth": "116 123",
+      "dialQuirks": "Municipal police (Straz Miejska): 986.",
+      "notes": null,
+      "sources": [
+        "https://112.eu/en/countries/poland/",
+        "https://www.policja.pl/"
+      ]
+    },
+    "PT": {
+      "countryName": "Portugal",
+      "eu112": true,
+      "general": "112",
+      "police": "112",
+      "ambulance": "112",
+      "fire": "112",
+      "touristPolice": "+351 213 421 634",
+      "womenHelpline": "800 202 148",
+      "lgbtqiSafeLine": null,
+      "poisonControl": "800 250 250",
+      "mentalHealth": "808 24 24 24",
+      "dialQuirks": "PSP tourist support desk in Lisbon assists travellers with theft reports in multiple languages.",
+      "notes": null,
+      "sources": [
+        "https://112.eu/en/countries/portugal/",
+        "https://www.psp.pt/"
+      ]
+    },
+    "RO": {
+      "countryName": "Romania",
+      "eu112": true,
+      "general": "112",
+      "police": "112",
+      "ambulance": "112",
+      "fire": "112",
+      "touristPolice": null,
+      "womenHelpline": "0800 500 333",
+      "lgbtqiSafeLine": null,
+      "poisonControl": "+40 21 318 36 06",
+      "mentalHealth": "0800 801 200",
+      "dialQuirks": "112 is the only emergency number; legacy numbers decommissioned in 2004.",
+      "notes": null,
+      "sources": [
+        "https://112.eu/en/countries/romania/",
+        "https://www.112.ro/"
+      ]
+    },
+    "RS": {
+      "countryName": "Serbia",
+      "eu112": true,
+      "general": "112",
+      "police": "192",
+      "ambulance": "194",
+      "fire": "193",
+      "touristPolice": null,
+      "womenHelpline": "0800 100 600",
+      "lgbtqiSafeLine": null,
+      "poisonControl": "+381 11 3672 187",
+      "mentalHealth": "+381 11 7777 000",
+      "dialQuirks": "112 unified line is being rolled out; legacy 192/193/194 remain primary.",
+      "notes": null,
+      "sources": [
+        "https://112.eu/en/countries/serbia/",
+        "https://www.mup.gov.rs/"
+      ]
+    },
+    "SE": {
+      "countryName": "Sweden",
+      "eu112": true,
+      "general": "112",
+      "police": "114 14",
+      "ambulance": "112",
+      "fire": "112",
+      "touristPolice": null,
+      "womenHelpline": "020 50 50 50",
+      "lgbtqiSafeLine": null,
+      "poisonControl": "010 456 6700",
+      "mentalHealth": "90101",
+      "dialQuirks": "114 14 is non-emergency police; dial 112 for life-threatening emergencies.",
+      "notes": null,
+      "sources": [
+        "https://112.eu/en/countries/sweden/",
+        "https://polisen.se/"
+      ]
+    },
+    "SI": {
+      "countryName": "Slovenia",
+      "eu112": true,
+      "general": "112",
+      "police": "113",
+      "ambulance": "112",
+      "fire": "112",
+      "touristPolice": null,
+      "womenHelpline": "080 11 55",
+      "lgbtqiSafeLine": null,
+      "poisonControl": "+386 41 635 500",
+      "mentalHealth": "116 123",
+      "dialQuirks": "113 for police; 112 for fire, ambulance, and mountain rescue.",
+      "notes": null,
+      "sources": [
+        "https://112.eu/en/countries/slovenia/",
+        "https://www.policija.si/"
+      ]
+    },
+    "SK": {
+      "countryName": "Slovakia",
+      "eu112": true,
+      "general": "112",
+      "police": "158",
+      "ambulance": "155",
+      "fire": "150",
+      "touristPolice": null,
+      "womenHelpline": "0800 212 212",
+      "lgbtqiSafeLine": null,
+      "poisonControl": "+421 2 5477 4166",
+      "mentalHealth": "116 123",
+      "dialQuirks": "Mountain rescue reachable on 18 300.",
+      "notes": null,
+      "sources": [
+        "https://112.eu/en/countries/slovakia/",
+        "https://www.minv.sk/"
+      ]
+    },
+    "TR": {
+      "countryName": "Turkiye",
+      "eu112": false,
+      "general": "112",
+      "police": "155",
+      "ambulance": "112",
+      "fire": "110",
+      "touristPolice": "+90 212 527 45 03",
+      "womenHelpline": "183",
+      "lgbtqiSafeLine": null,
+      "poisonControl": "114",
+      "mentalHealth": "182",
+      "dialQuirks": "All emergency lines consolidated under 112 since 2021; legacy numbers still route correctly.",
+      "notes": "Tourist Police (Turizm Polisi) based in Sultanahmet, Istanbul; other cities use 155 with English-speaking dispatchers.",
+      "sources": [
+        "https://www.icisleri.gov.tr/",
+        "https://www.egm.gov.tr/",
+        "https://www.turkiye.gov.tr/"
+      ]
+    }
+  }
+}
