@@ -193,6 +193,22 @@
       "nonParticipating": "{country} is not part of DiscoverEU — the pass won't work there",
       "mandatoryReservation": "Reservation required: this leg needs a paid seat reservation",
       "seatCreditsExhausted": "You've used your 4 free DiscoverEU seat credits"
+    },
+    "return": {
+      "sectionTitle": "Return",
+      "toggleLabel": "Include return in budget & seat credits",
+      "directHint": "Direct return to home",
+      "addStop": "Add return stop",
+      "homeCard": "Home: {city}",
+      "optimizeBtn": "Optimize return with AI"
+    },
+    "home": {
+      "chip": "Home: {city}",
+      "edit": "Change",
+      "modalTitle": "Your home city",
+      "country": "Country",
+      "city": "City",
+      "save": "Save"
     }
   },
   "budget": {
@@ -481,7 +497,12 @@
       "keyHint": "Your key is stored only in your browser, never sent to our servers (we have none).",
       "getKey": "Get a free Groq key"
     },
-    "thinking": "Thinking…"
+    "thinking": "Thinking…",
+    "return": {
+      "optimizing": "Planning your return…",
+      "accept": "Use this return",
+      "reject": "Keep current return"
+    }
   },
   "fun": {
     "subtabLabel": "Fun sub-sections",
@@ -782,7 +803,10 @@
     "consulate": "Consulate Reminder",
     "language": "Language",
     "themeLabel": "Theme",
-    "theme": { "light": "Light", "dark": "Dark" },
+    "theme": {
+      "light": "Light",
+      "dark": "Dark"
+    },
     "aiKey": "AI API Key (Groq)",
     "clearData": "Clear All Data",
     "clearConfirm": "Delete all saved routes, settings, and memories? This cannot be undone.",
@@ -821,6 +845,10 @@
       "green": "Sustainable",
       "cultural": "Cultural",
       "adventurous": "Adventurous"
+    },
+    "home": {
+      "title": "Where do you live?",
+      "hint": "We use this to plan your return journey."
     }
   },
   "nightShield": {

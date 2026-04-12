@@ -1,0 +1,33 @@
+{
+  "route": {
+    "return": {
+      "sectionTitle": "Ritorno",
+      "toggleLabel": "Includi il ritorno in budget e prenotazioni",
+      "directHint": "Ritorno diretto a casa",
+      "addStop": "Aggiungi tappa di ritorno",
+      "homeCard": "Casa: {city}",
+      "optimizeBtn": "Ottimizza il ritorno con l'IA"
+    },
+    "home": {
+      "chip": "Casa: {city}",
+      "edit": "Modifica",
+      "modalTitle": "La tua città",
+      "country": "Paese",
+      "city": "Città",
+      "save": "Salva"
+    }
+  },
+  "wizard": {
+    "home": {
+      "title": "Dove vivi?",
+      "hint": "Lo usiamo per pianificare il ritorno."
+    }
+  },
+  "ai": {
+    "return": {
+      "optimizing": "Pianificazione del ritorno…",
+      "accept": "Usa questo ritorno",
+      "reject": "Mantieni il ritorno attuale"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "route": {
+    "return": {
+      "sectionTitle": "Rückreise",
+      "toggleLabel": "Rückreise in Budget und Sitzplatzreservierungen einbeziehen",
+      "directHint": "Direkte Rückreise",
+      "addStop": "Zwischenstopp hinzufügen",
+      "homeCard": "Zuhause: {city}",
+      "optimizeBtn": "Rückreise mit KI optimieren"
+    },
+    "home": {
+      "chip": "Zuhause: {city}",
+      "edit": "Ändern",
+      "modalTitle": "Deine Heimatstadt",
+      "country": "Land",
+      "city": "Stadt",
+      "save": "Speichern"
+    }
+  },
+  "wizard": {
+    "home": {
+      "title": "Wo wohnst du?",
+      "hint": "Wir nutzen das für deine Rückreise."
+    }
+  },
+  "ai": {
+    "return": {
+      "optimizing": "Rückreise wird geplant…",
+      "accept": "Diese Rückreise nutzen",
+      "reject": "Aktuelle Rückreise behalten"
+    }
+  }
+}

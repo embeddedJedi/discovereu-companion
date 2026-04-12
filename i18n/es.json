@@ -1,0 +1,33 @@
+{
+  "route": {
+    "return": {
+      "sectionTitle": "Regreso",
+      "toggleLabel": "Incluir regreso en presupuesto y reservas",
+      "directHint": "Regreso directo a casa",
+      "addStop": "Añadir parada de regreso",
+      "homeCard": "Casa: {city}",
+      "optimizeBtn": "Optimizar regreso con IA"
+    },
+    "home": {
+      "chip": "Casa: {city}",
+      "edit": "Cambiar",
+      "modalTitle": "Tu ciudad de origen",
+      "country": "País",
+      "city": "Ciudad",
+      "save": "Guardar"
+    }
+  },
+  "wizard": {
+    "home": {
+      "title": "¿Dónde vives?",
+      "hint": "Lo usamos para planear tu regreso."
+    }
+  },
+  "ai": {
+    "return": {
+      "optimizing": "Planeando el regreso…",
+      "accept": "Usar este regreso",
+      "reject": "Mantener el regreso actual"
+    }
+  }
+}

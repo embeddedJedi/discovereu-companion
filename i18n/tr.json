@@ -193,6 +193,22 @@
       "nonParticipating": "{country} DiscoverEU kapsamında değil — paso orada geçmez",
       "mandatoryReservation": "Rezervasyon zorunlu: bu etapta ücretli koltuk rezervasyonu gerekiyor",
       "seatCreditsExhausted": "4 ücretsiz DiscoverEU koltuk kredini harcadın"
+    },
+    "return": {
+      "sectionTitle": "Dönüş",
+      "toggleLabel": "Dönüşü bütçe ve seat credit'lere dahil et",
+      "directHint": "Doğrudan eve dönüş",
+      "addStop": "Dönüş durağı ekle",
+      "homeCard": "Ev: {city}",
+      "optimizeBtn": "Dönüşü AI ile optimize et"
+    },
+    "home": {
+      "chip": "Ev: {city}",
+      "edit": "Değiştir",
+      "modalTitle": "Ev şehriniz",
+      "country": "Ülke",
+      "city": "Şehir",
+      "save": "Kaydet"
     }
   },
   "budget": {
@@ -481,7 +497,12 @@
       "keyHint": "Anahtarın sadece tarayıcıda saklanır, sunucumuza gitmez (zaten sunucumuz yok).",
       "getKey": "Ücretsiz Groq anahtarı al"
     },
-    "thinking": "Düşünüyor…"
+    "thinking": "Düşünüyor…",
+    "return": {
+      "optimizing": "Dönüş planlanıyor…",
+      "accept": "Bu dönüşü kullan",
+      "reject": "Mevcut dönüşü tut"
+    }
   },
   "fun": {
     "subtabLabel": "Eğlence alt bölümleri",
@@ -782,7 +803,10 @@
     "consulate": "Konsolosluk Hatırlatıcı",
     "language": "Dil",
     "themeLabel": "Tema",
-    "theme": { "light": "Açık", "dark": "Koyu" },
+    "theme": {
+      "light": "Açık",
+      "dark": "Koyu"
+    },
     "aiKey": "AI API Anahtarı (Groq)",
     "clearData": "Tüm Verileri Sil",
     "clearConfirm": "Tüm rotalar, ayarlar ve anılar silinsin mi? Bu işlem geri alınamaz.",
@@ -821,6 +845,10 @@
       "green": "Sürdürülebilir",
       "cultural": "Kültür",
       "adventurous": "Macera"
+    },
+    "home": {
+      "title": "Nerede yaşıyorsun?",
+      "hint": "Dönüş yolculuğunu planlamak için kullanıyoruz."
     }
   },
   "nightShield": {
