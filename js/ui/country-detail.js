@@ -10,6 +10,8 @@ import { formatNumber } from '../utils/format.js';
 import { getFeatureName } from '../map/countries-layer.js';
 import { renderCountryGuideAccordion, renderCitiesAccordion, renderSharedMobilityAccordion } from './guide.js';
 import { renderSoundtrackAccordion } from '../features/soundtrack.js';
+import { renderCompactCard, openCrisisShield } from './crisis-shield-panel.js';
+import { load as loadCrisisData } from '../features/crisis-shield.js';
 
 const SCORE_KEYS = ['nature', 'culture', 'nightlife', 'food', 'history', 'safety'];
 
@@ -69,6 +71,29 @@ function renderInto(root, country, selectedId) {
   }
 
   root.appendChild(renderActions(country));
+
+  // Crisis Shield compact card — inserted right after weather/overview block
+  // (renderActions closes the overview). Eagerly warms the crisis-data cache
+  // so subsequent "Open full shield" clicks are instant. The compact card
+  // owns its own "Open full shield" trigger which calls openCrisisShield().
+  if (country.id) {
+    loadCrisisData().catch(() => { /* non-fatal — compact card handles its own empty state */ });
+    const crisisHost = h('div', { class: 'country-detail-crisis-host' });
+    root.appendChild(crisisHost);
+    try {
+      renderCompactCard(crisisHost, country.id);
+      // If the card chose not to render (no country match), drop the empty box.
+      if (!crisisHost.childNodes.length) {
+        crisisHost.remove();
+      }
+    } catch (_err) {
+      // Panel module not yet available — degrade silently.
+      crisisHost.remove();
+    }
+  }
+  // Keep openCrisisShield import reachable for tree-shakers; it's the public
+  // API that renderCompactCard dispatches into when its trigger is clicked.
+  void openCrisisShield;
 
   // Country Guide + Top Cities accordions (from guide.js)
   const guideHost  = h('div', { class: 'country-detail-guide-host' });
