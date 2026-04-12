@@ -14,8 +14,9 @@ import { initBottomNav } from './ui/bottom-nav.js';
 const pageCache = {};
 const PAGE_MODULES = {
   map:      () => import('./pages/map.js'),
-  hazirlik: () => import('./pages/hazirlik.js'),
-  kesfet:   () => import('./pages/kesfet.js')
+  rehber:   () => import('./pages/rehber.js'),
+  kesfet:   () => import('./pages/kesfet.js'),
+  hazirlik: () => import('./pages/hazirlik.js')
 };
 
 let currentPageModule = null;

@@ -10,6 +10,7 @@
   },
   "nav": {
     "map": "Harita",
+    "rehber": "Rehber",
     "hazirlik": "Hazırlık",
     "kesfet": "Keşfet",
     "plan": "Plan",
@@ -25,8 +26,24 @@
   "hazirlik": {
     "pageTitle": "Hazırlık"
   },
+  "rehber": {
+    "pageTitle": "Seyahat Rehberi",
+    "subtitle": "Her ülkeyi şehir şehir keşfet",
+    "searchPlaceholder": "Ülke ara...",
+    "backToAll": "Tüm ülkeler",
+    "capital": "Başkent",
+    "currency": "Para birimi",
+    "languages": "Diller",
+    "population": "Nüfus",
+    "callingCode": "Telefon kodu",
+    "emergency": "Acil durum",
+    "atAGlance": "Genel Bakış",
+    "highlights": "Öne Çıkanlar",
+    "travelGuide": "Gezi Rehberi"
+  },
   "kesfet": {
     "pageTitle": "Eğlence & Kapsayıcılık",
+    "subtitle": "Oyunlar, görevler ve anılar",
     "inclusionTitle": "Erişilebilirlik & Kapsayıcılık"
   },
   "panel": {

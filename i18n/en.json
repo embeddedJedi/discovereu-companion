@@ -10,6 +10,7 @@
   },
   "nav": {
     "map": "Map",
+    "rehber": "Guide",
     "hazirlik": "Prep",
     "kesfet": "Fun",
     "plan": "Plan",
@@ -25,8 +26,24 @@
   "hazirlik": {
     "pageTitle": "Preparation"
   },
+  "rehber": {
+    "pageTitle": "Travel Guide",
+    "subtitle": "Discover every country, city by city",
+    "searchPlaceholder": "Search countries...",
+    "backToAll": "All countries",
+    "capital": "Capital",
+    "currency": "Currency",
+    "languages": "Languages",
+    "population": "Population",
+    "callingCode": "Calling code",
+    "emergency": "Emergency",
+    "atAGlance": "At a Glance",
+    "highlights": "Highlights",
+    "travelGuide": "Travel Guide"
+  },
   "kesfet": {
     "pageTitle": "Fun & Inclusion",
+    "subtitle": "Games, challenges & memories",
     "inclusionTitle": "Accessibility & Inclusion"
   },
   "panel": {

@@ -1,5 +1,6 @@
 // js/pages/kesfet.js
-// Eğlence & Kapsayıcılık page: fun cards + inclusion + settings.
+// Eğlence & Kapsayıcılık — game-inspired fun features.
+// Each card has a distinctive visual identity.
 
 import { state } from '../state.js';
 import { t } from '../i18n/i18n.js';
@@ -10,10 +11,47 @@ let activeCard = null;
 let unsubscribers = [];
 
 const FUN_CARDS = [
-  { id: 'bingo',      icon: '🎯', accentVar: '--fun-purple', labelKey: 'fun.card.bingo',      teaserKey: 'fun.teaser.bingo' },
-  { id: 'dares',      icon: '⚡', accentVar: '--fun-orange', labelKey: 'fun.card.dares',      teaserKey: 'fun.teaser.dares' },
-  { id: 'futureMe',   icon: '💌', accentVar: '--fun-teal',   labelKey: 'fun.card.futureMe',   teaserKey: 'fun.teaser.futureMe' },
-  { id: 'soundtrack', icon: '🎵', accentVar: '--fun-pink',   labelKey: 'fun.card.soundtrack', teaserKey: 'fun.teaser.soundtrack' }
+  {
+    id: 'dares',
+    icon: '\u26A1',
+    labelKey: 'fun.card.dares',
+    teaserFn: () => {
+      const streak = state.getSlice('dares')?.streak || 0;
+      return streak > 0 ? `${streak} ${t('fun.dayStreak')}` : t('fun.startDare');
+    },
+    cssClass: 'fun-card--dare',
+    gradient: 'linear-gradient(135deg, #FF6B35 0%, #F7C948 100%)'
+  },
+  {
+    id: 'bingo',
+    icon: '\uD83D\uDCF8',
+    labelKey: 'fun.card.bingo',
+    teaserFn: () => {
+      const done = Object.keys(state.getSlice('bingo')?.completed || {}).length;
+      return `${done}/25 ${t('fun.challenges')}`;
+    },
+    cssClass: 'fun-card--bingo',
+    gradient: 'linear-gradient(135deg, #7C3AED 0%, #DB2777 100%)'
+  },
+  {
+    id: 'futureMe',
+    icon: '\u2709\uFE0F',
+    labelKey: 'fun.card.futureMe',
+    teaserFn: () => {
+      const count = (state.getSlice('futureMessages') || []).length;
+      return count > 0 ? `${count} ${t('fun.capsules')}` : t('fun.writeCapsule');
+    },
+    cssClass: 'fun-card--letter',
+    gradient: 'linear-gradient(135deg, #0EA5E9 0%, #14B8A6 100%)'
+  },
+  {
+    id: 'soundtrack',
+    icon: '\uD83C\uDFB5',
+    labelKey: 'fun.card.soundtrack',
+    teaserFn: () => t('fun.listenNow'),
+    cssClass: 'fun-card--vinyl',
+    gradient: 'linear-gradient(135deg, #EC4899 0%, #8B5CF6 100%)'
+  }
 ];
 
 const subModules = {};
@@ -42,72 +80,81 @@ function render() {
   if (!containerEl) return;
   empty(containerEl);
 
-  const page = h('div', { class: 'fun-page' });
-  page.appendChild(h('h1', { class: 'page-title' }, t('kesfet.pageTitle')));
+  const page = h('div', { class: 'kesfet-page' });
 
   if (activeCard) {
     renderExpanded(page);
   } else {
-    renderGrid(page);
+    // Hero
+    page.appendChild(h('div', { class: 'kesfet-hero' }, [
+      h('h1', { class: 'kesfet-title' }, t('kesfet.pageTitle')),
+      h('p', { class: 'kesfet-subtitle' }, t('kesfet.subtitle'))
+    ]));
+
+    // Fun cards — each with unique visual identity
+    const grid = h('div', { class: 'kesfet-grid' });
+    FUN_CARDS.forEach(card => {
+      grid.appendChild(h('button', {
+        class: `kesfet-card ${card.cssClass}`,
+        type: 'button',
+        onclick: () => { activeCard = card.id; render(); }
+      }, [
+        h('div', { class: 'kesfet-card-shine' }),
+        h('div', { class: 'kesfet-card-bg', style: { background: card.gradient } }),
+        h('div', { class: 'kesfet-card-inner' }, [
+          h('div', { class: 'kesfet-card-icon' }, card.icon),
+          h('h3', { class: 'kesfet-card-title' }, t(card.labelKey)),
+          h('p', { class: 'kesfet-card-teaser' }, card.teaserFn())
+        ])
+      ]));
+    });
+    page.appendChild(grid);
 
     // Inclusion section
-    const inclusionSection = h('section', { class: 'plan-section', style: { marginTop: 'var(--space-8)' } });
-    inclusionSection.appendChild(h('h2', { class: 'page-title', style: { fontSize: 'var(--text-xl)' } }, t('kesfet.inclusionTitle')));
+    const inclusionSection = h('section', { class: 'kesfet-section' });
+    inclusionSection.appendChild(h('h2', { class: 'kesfet-section-title' }, t('kesfet.inclusionTitle')));
     import('../ui/inclusion.js').then(mod => {
       if (mod.renderInclusionPanel) mod.renderInclusionPanel(inclusionSection);
     }).catch(() => {});
     page.appendChild(inclusionSection);
 
-    // Settings section
+    // Settings
     page.appendChild(renderSettings());
   }
 
   containerEl.appendChild(page);
 }
 
-function renderGrid(page) {
-  const grid = h('div', { class: 'fun-grid' });
-  FUN_CARDS.forEach(card => {
-    const teaser = getTeaser(card.id);
-    grid.appendChild(h('button', {
-      class: 'fun-card',
-      type: 'button',
-      style: { '--card-accent': `var(${card.accentVar})` },
-      onclick: () => { activeCard = card.id; render(); }
-    }, [
-      h('div', { class: 'fun-card-icon' }, card.icon),
-      h('div', { class: 'fun-card-body' }, [
-        h('h3', { class: 'fun-card-title' }, t(card.labelKey)),
-        h('p', { class: 'fun-card-teaser' }, teaser)
-      ])
-    ]));
-  });
-  page.appendChild(grid);
-}
-
 async function renderExpanded(page) {
   const card = FUN_CARDS.find(c => c.id === activeCard);
   if (!card) { activeCard = null; render(); return; }
 
+  // Back button
   page.appendChild(h('button', {
-    class: 'fun-back-btn', type: 'button',
+    class: 'kesfet-back',
+    type: 'button',
     onclick: () => { activeCard = null; render(); }
-  }, [h('span', null, '←'), h('span', null, ' ' + t('fun.backToGrid'))]));
+  }, [h('span', null, '\u2190'), h('span', null, t('fun.backToGrid'))]));
 
-  page.appendChild(h('div', { class: 'fun-expanded-header' }, [
-    h('span', { class: 'fun-expanded-icon' }, card.icon),
-    h('h2', null, t(card.labelKey))
+  // Expanded header with card's gradient
+  page.appendChild(h('div', {
+    class: `kesfet-expanded-hero ${card.cssClass}`,
+    style: { background: card.gradient }
+  }, [
+    h('span', { class: 'kesfet-expanded-icon' }, card.icon),
+    h('h2', { class: 'kesfet-expanded-title' }, t(card.labelKey))
   ]));
 
-  const contentArea = h('div', { class: 'fun-expanded-content' });
+  // Content
+  const contentArea = h('div', { class: 'kesfet-expanded-content' });
   page.appendChild(contentArea);
 
   try {
     if (!subModules[activeCard]) {
       switch (activeCard) {
-        case 'bingo':      subModules.bingo      = await import('../ui/bingo-tab.js'); break;
-        case 'dares':      subModules.dares      = await import('../features/daily-dare.js'); break;
-        case 'futureMe':   subModules.futureMe   = await import('../features/future-me.js'); break;
+        case 'bingo':      subModules.bingo = await import('../ui/bingo-tab.js'); break;
+        case 'dares':      subModules.dares = await import('../features/daily-dare.js'); break;
+        case 'futureMe':   subModules.futureMe = await import('../features/future-me.js'); break;
         case 'soundtrack': subModules.soundtrack = await import('../features/soundtrack.js'); break;
       }
     }
@@ -123,13 +170,13 @@ function renderSettings() {
   const currentLang = state.getSlice('language') || 'en';
   const currentTheme = state.getSlice('theme') || 'light';
 
-  return h('section', { class: 'more-section', style: { marginTop: 'var(--space-8)' } }, [
-    h('h2', { class: 'more-section-title' }, t('more.section.settings')),
-    h('div', { class: 'more-settings' }, [
-      h('div', { class: 'more-setting-row' }, [
-        h('label', { for: 'pageLangSelect' }, t('more.language')),
+  return h('section', { class: 'kesfet-section kesfet-settings' }, [
+    h('h2', { class: 'kesfet-section-title' }, t('more.section.settings')),
+    h('div', { class: 'kesfet-settings-grid' }, [
+      h('div', { class: 'kesfet-setting' }, [
+        h('label', { for: 'ksLang' }, t('more.language')),
         h('select', {
-          id: 'pageLangSelect',
+          id: 'ksLang',
           onchange: async (ev) => {
             const { i18n } = await import('../i18n/i18n.js');
             await i18n.load(ev.target.value);
@@ -138,9 +185,9 @@ function renderSettings() {
           h('option', { value: code, selected: code === currentLang }, code.toUpperCase())
         ))
       ]),
-      h('div', { class: 'more-setting-row' }, [
+      h('div', { class: 'kesfet-setting' }, [
         h('label', null, t('more.themeLabel')),
-        h('div', { class: 'more-theme-toggle' }, ['light', 'dark'].map(theme =>
+        h('div', { class: 'kesfet-theme-btns' }, ['light', 'dark'].map(theme =>
           h('button', {
             class: `chip ${currentTheme === theme ? 'chip-active' : ''}`,
             type: 'button',
@@ -148,10 +195,10 @@ function renderSettings() {
           }, t(`more.theme.${theme}`))
         ))
       ]),
-      h('div', { class: 'more-setting-row' }, [
-        h('label', { for: 'pageAiKey' }, t('more.aiKey')),
+      h('div', { class: 'kesfet-setting' }, [
+        h('label', { for: 'ksAiKey' }, t('more.aiKey')),
         h('input', {
-          id: 'pageAiKey', type: 'password', class: 'input', placeholder: 'gsk_...',
+          id: 'ksAiKey', type: 'password', class: 'input', placeholder: 'gsk_...',
           value: localStorage.getItem('discoveru:ai.groqKey') || '',
           onchange: (ev) => {
             const key = ev.target.value.trim();
@@ -159,35 +206,12 @@ function renderSettings() {
             else { localStorage.removeItem('discoveru:ai.groqKey'); state.update('ai', ai => ({ ...ai, groqKey: null })); }
           }
         })
-      ]),
-      h('button', {
-        class: 'btn btn-danger more-clear-btn', type: 'button',
-        onclick: () => { if (confirm(t('more.clearConfirm'))) { state.reset(); location.reload(); } }
-      }, t('more.clearData')),
-      h('div', { class: 'more-about' }, [
-        h('p', null, t('more.about')),
-        h('a', { href: 'https://github.com/embeddedJedi/discovereu-companion', target: '_blank', rel: 'noopener' }, 'GitHub')
       ])
-    ])
+    ]),
+    h('button', {
+      class: 'btn btn-danger', style: { width: '100%', marginTop: 'var(--space-4)' },
+      type: 'button',
+      onclick: () => { if (confirm(t('more.clearConfirm'))) { state.reset(); location.reload(); } }
+    }, t('more.clearData'))
   ]);
-}
-
-function getTeaser(cardId) {
-  switch (cardId) {
-    case 'bingo': {
-      const done = Object.keys(state.getSlice('bingo')?.completed || {}).length;
-      return `${done}/25 ${t('fun.challenges')}`;
-    }
-    case 'dares': {
-      const streak = state.getSlice('dares')?.streak || 0;
-      return streak > 0 ? `${streak} ${t('fun.dayStreak')}` : t('fun.startDare');
-    }
-    case 'futureMe': {
-      const count = (state.getSlice('futureMessages') || []).length;
-      return count > 0 ? `${count} ${t('fun.capsules')}` : t('fun.writeCapsule');
-    }
-    case 'soundtrack':
-      return t('fun.listenNow');
-    default: return '';
-  }
 }

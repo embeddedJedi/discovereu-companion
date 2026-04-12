@@ -9,8 +9,9 @@ import { state } from '../state.js';
 
 const NAV_ITEMS = [
   { page: 'map',      icon: 'map-pin',   labelKey: 'nav.map'      },
-  { page: 'hazirlik', icon: 'clipboard', labelKey: 'nav.hazirlik' },
-  { page: 'kesfet',   icon: 'target',    labelKey: 'nav.kesfet'   }
+  { page: 'rehber',   icon: 'compass',   labelKey: 'nav.rehber'   },
+  { page: 'kesfet',   icon: 'target',    labelKey: 'nav.kesfet'   },
+  { page: 'hazirlik', icon: 'clipboard', labelKey: 'nav.hazirlik' }
 ];
 
 const ICONS = {

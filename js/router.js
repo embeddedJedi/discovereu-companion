@@ -3,7 +3,7 @@
 // Routes: #/map, #/hazirlik, #/kesfet
 // Nested: #/map/DE — parsed as { page, sub }
 
-const PAGES = ['map', 'hazirlik', 'kesfet'];
+const PAGES = ['map', 'rehber', 'kesfet', 'hazirlik'];
 const DEFAULT_PAGE = 'map';
 const listeners = new Set();
 
