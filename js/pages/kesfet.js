@@ -71,6 +71,14 @@ const FUN_CARDS = [
     teaserFn: () => t('journal.logLocation'),
     cssClass: 'fun-card--journal',
     gradient: 'linear-gradient(135deg, #059669 0%, #0891B2 100%)'
+  },
+  {
+    id: 'voiceMemory',
+    icon: '\uD83C\uDFA4',
+    labelKey: 'fun.card.voiceMemory',
+    teaserFn: () => t('fun.teaser.voiceMemory'),
+    cssClass: 'fun-card--voice',
+    gradient: 'linear-gradient(135deg, #F43F5E 0%, #8B5CF6 100%)'
   }
 ];
 
@@ -178,6 +186,7 @@ async function renderExpanded(page) {
         case 'soundtrack': subModules.soundtrack = await import('../features/soundtrack.js'); break;
         case 'groupVote':  subModules.groupVote  = await import('../features/group-vote.js'); break;
         case 'journal':    subModules.journal    = await import('../features/journal.js'); break;
+        case 'voiceMemory': subModules.voiceMemory = await import('../features/voice-memory.js'); break;
       }
     }
     const mod = subModules[activeCard];
