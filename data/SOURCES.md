@@ -70,3 +70,13 @@ Source data for `data/embassy-lookup-pattern.json` — every `mfaUrl`, `embassyL
 - **Emergency hotlines** — cross-checked against each MFA's public "consular emergency" / "crisis centre" page. Where a single public 24/7 number is not published (AR), the field is `null` and `emergencyNote` directs users to the post-specific duty officer.
 - **Liechtenstein** — consular representation is provided by Switzerland abroad under the 1919 Liechtenstein-Switzerland Customs and Representation Treaty; both numbers documented.
 - Refresh cadence: annually, or immediately when a user issue reports a dead URL. Contributors invited via GitHub issue.
+
+## Crisis flowcharts (2026-04-13)
+
+- **Turkish MFA Consular Services** — `https://www.mfa.gov.tr/consular-info.en.mfa` — authoritative guidance on lost/stolen Turkish passport abroad, Emergency Travel Document (ETD) procedure, and nearest mission lookup. Cited from the `lost-passport` flow terminal.
+- **Your Europe — Payments & cards** — `https://europa.eu/youreurope/citizens/consumers/financial-products-and-services/payments-transfers-cheques/index_en.htm` — EU consumer rights on lost/stolen bank cards, freeze obligations, issuer liability caps. Cited from the `lost-card` bank branch terminal.
+- **Interrail FAQ — Lost Pass** — `https://www.interrail.eu/en/support/customer-service/faqs` — official Interrail policy for lost or stolen Mobile/Paper Pass replacement. Cited from the `lost-card` Interrail branch terminal.
+- **DiscoverEU participant portal** — `https://youth.europa.eu/discovereu_en` — official EACEA programme portal with travel-pass support contact. Cited from the `lost-card` DiscoverEU-ticket branch terminal.
+- **EC EHIC page** — `https://ec.europa.eu/social/main.jsp?catId=559` — European Health Insurance Card coverage, rights, and use-abroad guidance. Cited from both `medical-emergency` emergency + urgent-care terminals.
+- **Your Europe — Unplanned healthcare** — `https://europa.eu/youreurope/citizens/health/unplanned-healthcare/temporary-stays/index_en.htm` — pharmacy access, reimbursement for temporary stays. Cited from the `medical-emergency` minor branch terminal.
+- Refresh cadence: annually, or on any publicly-announced policy change from MFA, EACEA, or EC DG SANTE.

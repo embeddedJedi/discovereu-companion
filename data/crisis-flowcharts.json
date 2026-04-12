@@ -1,0 +1,185 @@
+{
+  "lost-passport": {
+    "title": "crisis.flow.lostPassport.title",
+    "description": "crisis.flow.lostPassport.desc",
+    "startNode": "n1",
+    "nodes": {
+      "n1": {
+        "kind": "question",
+        "text": "crisis.flow.lostPassport.n1.text",
+        "options": [
+          { "labelKey": "crisis.flow.lostPassport.n1.opt1", "next": "n2" },
+          { "labelKey": "crisis.flow.lostPassport.n1.opt2", "next": "n7" }
+        ]
+      },
+      "n2": {
+        "kind": "action",
+        "text": "crisis.flow.lostPassport.n2.text",
+        "actions": [
+          { "kind": "call", "numberRef": "countryEmergency.police" },
+          { "kind": "link", "urlKey": "crisis.flow.lostPassport.n2.filingLink" }
+        ],
+        "next": "n3"
+      },
+      "n3": {
+        "kind": "action",
+        "text": "crisis.flow.lostPassport.n3.text",
+        "actions": [
+          { "kind": "external", "urlRef": "trMissions.nearestEmbassy" },
+          { "kind": "copy", "valueKey": "crisis.flow.lostPassport.n3.checklist" }
+        ],
+        "next": "n4"
+      },
+      "n4": {
+        "kind": "action",
+        "text": "crisis.flow.lostPassport.n4.text",
+        "actions": [
+          { "kind": "link", "urlKey": "crisis.flow.lostPassport.n4.etdInfo" },
+          { "kind": "external", "urlRef": "trMissions.nearestEmbassy" }
+        ],
+        "next": "n5"
+      },
+      "n5": {
+        "kind": "action",
+        "text": "crisis.flow.lostPassport.n5.text",
+        "actions": [
+          { "kind": "share", "valueKey": "crisis.flow.lostPassport.n5.notifyFamily" },
+          { "kind": "copy", "valueKey": "crisis.flow.lostPassport.n5.caseNumber" }
+        ],
+        "next": "n6"
+      },
+      "n6": {
+        "kind": "terminal",
+        "text": "crisis.flow.lostPassport.n6.text",
+        "sourceUrl": "https://www.mfa.gov.tr/consular-info.en.mfa"
+      },
+      "n7": {
+        "kind": "action",
+        "text": "crisis.flow.lostPassport.n7.text",
+        "actions": [
+          { "kind": "call", "numberRef": "countryEmergency.general" }
+        ],
+        "next": "n2"
+      }
+    }
+  },
+  "lost-card": {
+    "title": "crisis.flow.lostCard.title",
+    "description": "crisis.flow.lostCard.desc",
+    "startNode": "n1",
+    "nodes": {
+      "n1": {
+        "kind": "question",
+        "text": "crisis.flow.lostCard.n1.text",
+        "options": [
+          { "labelKey": "crisis.flow.lostCard.n1.optBank", "next": "n2" },
+          { "labelKey": "crisis.flow.lostCard.n1.optInterrail", "next": "n4" },
+          { "labelKey": "crisis.flow.lostCard.n1.optDeuTicket", "next": "n6" }
+        ]
+      },
+      "n2": {
+        "kind": "action",
+        "text": "crisis.flow.lostCard.n2.text",
+        "actions": [
+          { "kind": "link", "urlKey": "crisis.flow.lostCard.n2.freezeAppLink" },
+          { "kind": "call", "numberRef": "countryEmergency.police" },
+          { "kind": "copy", "valueKey": "crisis.flow.lostCard.n2.reportTemplate" }
+        ],
+        "next": "n3"
+      },
+      "n3": {
+        "kind": "terminal",
+        "text": "crisis.flow.lostCard.n3.text",
+        "sourceUrl": "https://europa.eu/youreurope/citizens/consumers/financial-products-and-services/payments-transfers-cheques/index_en.htm"
+      },
+      "n4": {
+        "kind": "action",
+        "text": "crisis.flow.lostCard.n4.text",
+        "actions": [
+          { "kind": "link", "urlKey": "crisis.flow.lostCard.n4.interrailFaq" },
+          { "kind": "external", "urlRef": "interrail.lostPass" },
+          { "kind": "copy", "valueKey": "crisis.flow.lostCard.n4.passNumber" }
+        ],
+        "next": "n5"
+      },
+      "n5": {
+        "kind": "terminal",
+        "text": "crisis.flow.lostCard.n5.text",
+        "sourceUrl": "https://www.interrail.eu/en/support/customer-service/faqs"
+      },
+      "n6": {
+        "kind": "action",
+        "text": "crisis.flow.lostCard.n6.text",
+        "actions": [
+          { "kind": "link", "urlKey": "crisis.flow.lostCard.n6.deuDashboard" },
+          { "kind": "external", "urlRef": "discoverEu.supportPortal" }
+        ],
+        "next": "n7"
+      },
+      "n7": {
+        "kind": "terminal",
+        "text": "crisis.flow.lostCard.n7.text",
+        "sourceUrl": "https://youth.europa.eu/discovereu_en"
+      }
+    }
+  },
+  "medical-emergency": {
+    "title": "crisis.flow.medical.title",
+    "description": "crisis.flow.medical.desc",
+    "startNode": "n1",
+    "nodes": {
+      "n1": {
+        "kind": "question",
+        "text": "crisis.flow.medical.n1.text",
+        "options": [
+          { "labelKey": "crisis.flow.medical.n1.optLifeThreat", "next": "n2" },
+          { "labelKey": "crisis.flow.medical.n1.optUrgent", "next": "n4" },
+          { "labelKey": "crisis.flow.medical.n1.optMinor", "next": "n6" }
+        ]
+      },
+      "n2": {
+        "kind": "action",
+        "text": "crisis.flow.medical.n2.text",
+        "actions": [
+          { "kind": "call", "numberRef": "countryEmergency.general" },
+          { "kind": "share", "valueKey": "crisis.flow.medical.n2.locationShare" }
+        ],
+        "next": "n3"
+      },
+      "n3": {
+        "kind": "terminal",
+        "text": "crisis.flow.medical.n3.text",
+        "sourceUrl": "https://ec.europa.eu/social/main.jsp?catId=559"
+      },
+      "n4": {
+        "kind": "action",
+        "text": "crisis.flow.medical.n4.text",
+        "actions": [
+          { "kind": "link", "urlKey": "crisis.flow.medical.n4.ehicInfo" },
+          { "kind": "link", "urlKey": "crisis.flow.medical.n4.clinicFinder" },
+          { "kind": "copy", "valueKey": "crisis.flow.medical.n4.insuranceDetails" }
+        ],
+        "next": "n5"
+      },
+      "n5": {
+        "kind": "terminal",
+        "text": "crisis.flow.medical.n5.text",
+        "sourceUrl": "https://ec.europa.eu/social/main.jsp?catId=559"
+      },
+      "n6": {
+        "kind": "action",
+        "text": "crisis.flow.medical.n6.text",
+        "actions": [
+          { "kind": "link", "urlKey": "crisis.flow.medical.n6.pharmacyFinder" },
+          { "kind": "external", "urlRef": "translator.pharmacyPhrases" }
+        ],
+        "next": "n7"
+      },
+      "n7": {
+        "kind": "terminal",
+        "text": "crisis.flow.medical.n7.text",
+        "sourceUrl": "https://europa.eu/youreurope/citizens/health/unplanned-healthcare/temporary-stays/index_en.htm"
+      }
+    }
+  }
+}
