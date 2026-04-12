@@ -10,6 +10,10 @@
   },
   "nav": {
     "map": "Harita",
+    "plan": "Plan",
+    "fun": "Eğlence",
+    "guide": "Rehber",
+    "more": "Diğer",
     "route": "Rota",
     "budget": "Bütçe",
     "filters": "Filtre",

@@ -10,6 +10,10 @@
   },
   "nav": {
     "map": "Map",
+    "plan": "Plan",
+    "fun": "Fun",
+    "guide": "Guide",
+    "more": "More",
     "route": "Route",
     "budget": "Budget",
     "filters": "Filters",
