@@ -286,7 +286,7 @@ All loaded with SRI hashes (to add in Phase 1).
 ### Deploy & outreach
 - [ ] GitHub repo + Pages workflow
 - [ ] Custom domain (post-launch)
-- [ ] Outreach package for EACEA, Turkish UA, LinkedIn DG EAC Youth Unit
+- [x] Outreach package for EACEA, Turkish UA, LinkedIn DG EAC Youth Unit (v1.1 sub-project B)
 
 ---
 
@@ -354,6 +354,11 @@ All loaded with SRI hashes (to add in Phase 1).
   - `js/ui/welcome-wizard.js` 4-question first-visit onboarding
   - Tab bar redesign from text-only to icon + label layout, 6 → 7 tabs (mobile bottom-nav mirrored)
   - All 13 smoke tests pass
+- **v1.1 Sub-project B — Outreach Package** (2026-04-12):
+  - `docs/outreach/eacea-one-pager.html` — A4 landscape, self-contained HTML, print-to-PDF, EU blue/gold, 3-column layout (What / Why it matters / 5 Unique Features), screenshot placeholders, footer with live site + GitHub + MIT
+  - `docs/outreach/turkish-ua-email.md` — Formal Turkish email template for Türkiye Ulusal Ajansı (~230 words body, EU vocabulary Turkish equivalents, Turkish-specific value layer highlighted: Schengen visa, Sofia Express, TL budget, consulate reminder)
+  - `docs/outreach/linkedin-dg-eac.md` — English InMail template (~150 words) + short connection request version (<300 chars) for DG EAC Youth Unit, emphasizing inclusion layers + CO₂ calculator
+  - No startup jargon, no fabricated metrics — every claim backed by PROGRESS.md
 - **Session 8 — Sub-project 2 (AI + Fun + Guide + Consulate)** (2026-04-12):
   - 5 new data files: `guides.json` (~410 KB), `bingo-challenges.json`, `daily-dares.json`, `soundtracks.json`, `tr-consulates.json`
   - 2 new utilities: `js/utils/ics.js`, `js/utils/image.js` (plus IndexedDB helpers in `js/utils/storage.js`)
@@ -371,9 +376,11 @@ All loaded with SRI hashes (to add in Phase 1).
 - *(nothing — ready to continue)*
 
 ### ⏭ Next up (in order)
-1. Sub-project 3: DE / FR / ES / IT translations (extend i18n JSONs)
-2. Deploy polish: custom domain + outreach package for EACEA / Turkish UA / LinkedIn DG EAC Youth Unit
-8. Deploy polish: custom domain + outreach package for EACEA / Turkish UA / LinkedIn DG EAC Youth Unit
+1. v1.1 sub-project C: Features Round 1 — Night Arrival Shield, Smart Packing Assistant, Multi-LLM adapter (Gemini/OpenAI), Wrapped redesign
+2. v1.1 sub-project D: Features Round 2 — Group Vote, GPS trip journal, Voice memory capsule, Bingo photo collage
+3. v1.1 sub-project E: Data & Polish — Shared mobility data, Live Wikivoyage refresh, Pickpocket heatmap
+4. Sub-project 3: DE / FR / ES / IT translations (extend i18n JSONs)
+5. Deploy polish: custom domain, send outreach package
 
 ### 🛑 Blocked
 - *(none)*

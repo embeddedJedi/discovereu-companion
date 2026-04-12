@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DiscoverEU Companion — One-Pager</title>
+  <style>
+    /* === Reset & Base === */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: #1a1a2e;
+      background: #fff;
+      font-size: 11px;
+      line-height: 1.45;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* === Page container — A4 landscape proportions === */
+    .page {
+      width: 297mm;
+      height: 210mm;
+      margin: 0 auto;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    /* === Header === */
+    .header {
+      background: #003399;
+      color: #fff;
+      padding: 14px 28px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-shrink: 0;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .logo-mark {
+      width: 44px;
+      height: 44px;
+      background: #FFCC00;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      font-weight: 700;
+      color: #003399;
+      flex-shrink: 0;
+    }
+
+    .header-text h1 {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      margin-bottom: 1px;
+    }
+
+    .header-text p {
+      font-size: 12px;
+      font-weight: 400;
+      opacity: 0.9;
+    }
+
+    .tagline {
+      font-size: 13px;
+      font-weight: 600;
+      color: #FFCC00;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    /* === Gold accent bar === */
+    .accent-bar {
+      height: 3px;
+      background: linear-gradient(90deg, #FFCC00 0%, #FFCC00 40%, #003399 100%);
+      flex-shrink: 0;
+    }
+
+    /* === Body columns === */
+    .body {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0;
+      flex: 1;
+      min-height: 0;
+    }
+
+    .col {
+      padding: 16px 22px 12px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .col:not(:last-child) {
+      border-right: 1px solid #e0e0e0;
+    }
+
+    .col-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: #003399;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 10px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #FFCC00;
+    }
+
+    .col p {
+      font-size: 10.5px;
+      line-height: 1.5;
+      color: #2a2a3e;
+    }
+
+    /* === Bullet list (Column 2) === */
+    .bullet-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .bullet-list li {
+      font-size: 10.5px;
+      line-height: 1.45;
+      margin-bottom: 10px;
+      padding-left: 14px;
+      position: relative;
+      color: #2a2a3e;
+    }
+
+    .bullet-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 5px;
+      width: 6px;
+      height: 6px;
+      background: #FFCC00;
+      border-radius: 50%;
+    }
+
+    .bullet-list li strong {
+      color: #003399;
+      font-weight: 600;
+    }
+
+    /* === Numbered list (Column 3) === */
+    .feature-list {
+      list-style: none;
+      padding: 0;
+      counter-reset: features;
+    }
+
+    .feature-list li {
+      font-size: 10px;
+      line-height: 1.4;
+      margin-bottom: 7px;
+      padding-left: 22px;
+      position: relative;
+      color: #2a2a3e;
+      counter-increment: features;
+    }
+
+    .feature-list li::before {
+      content: counter(features);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 16px;
+      height: 16px;
+      background: #003399;
+      color: #fff;
+      border-radius: 50%;
+      font-size: 9px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .feature-list li strong {
+      color: #003399;
+      font-weight: 600;
+    }
+
+    /* === Screenshot strip === */
+    .screenshots {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 16px;
+      padding: 10px 28px;
+      background: #fafafa;
+      border-top: 1px solid #e0e0e0;
+      flex-shrink: 0;
+    }
+
+    .screenshot-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .screenshot-placeholder {
+      width: 100%;
+      height: 52px;
+      background: #f0f0f0;
+      border: 2px dashed #c0c0c0;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 9px;
+      color: #999;
+      font-style: italic;
+    }
+
+    .screenshot-caption {
+      font-size: 9px;
+      font-weight: 600;
+      color: #003399;
+      margin-top: 4px;
+      text-align: center;
+    }
+
+    /* === Footer === */
+    .footer {
+      background: #003399;
+      color: #fff;
+      padding: 8px 28px;
+      font-size: 9px;
+      text-align: center;
+      flex-shrink: 0;
+      letter-spacing: 0.2px;
+    }
+
+    .footer a {
+      color: #FFCC00;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* === Print === */
+    @page {
+      size: A4 landscape;
+      margin: 0;
+    }
+
+    @media print {
+      html, body {
+        width: 297mm;
+        height: 210mm;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+
+      .page {
+        width: 297mm;
+        height: 210mm;
+        margin: 0;
+        page-break-after: avoid;
+        page-break-inside: avoid;
+      }
+    }
+
+    /* === Screen responsiveness for smaller windows === */
+    @media screen and (max-width: 1100px) {
+      .page {
+        width: 100%;
+        height: auto;
+        min-height: 100vh;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <!-- Header -->
+    <header class="header">
+      <div class="header-left">
+        <div class="logo-mark" aria-hidden="true">EU</div>
+        <div class="header-text">
+          <h1>DiscoverEU Companion</h1>
+          <p>An Open-Source Trip Planning Tool for European Youth</p>
+        </div>
+      </div>
+      <div class="tagline">Engage &middot; Connect &middot; Empower</div>
+    </header>
+
+    <div class="accent-bar" aria-hidden="true"></div>
+
+    <!-- Body: 3 columns -->
+    <main class="body">
+
+      <!-- Column 1: What is it? -->
+      <section class="col">
+        <h2 class="col-title">What is it?</h2>
+        <p>
+          DiscoverEU Companion is a free, open-source web application that helps
+          young Europeans plan, budget, and navigate their DiscoverEU rail trip
+          across 33 participating countries. Designed with accessible and inclusive
+          principles, it lowers the threshold for participation &mdash; especially
+          for youth with fewer opportunities &mdash; while promoting sustainable
+          mobility and intercultural understanding across Europe.
+        </p>
+      </section>
+
+      <!-- Column 2: Why it matters -->
+      <section class="col">
+        <h2 class="col-title">Why it matters</h2>
+        <ul class="bullet-list">
+          <li>
+            <strong>Inclusion:</strong> Built-in accessibility layer (Wheelmap integration),
+            LGBTQ+ safety map (ILGA data), and a &ldquo;fewer opportunities&rdquo; budget
+            mode &mdash; ensuring no young traveler is left behind.
+          </li>
+          <li>
+            <strong>Sustainability:</strong> CO&#8322; vs. flying calculator shows the
+            environmental benefit of rail travel, reinforcing the programme&rsquo;s
+            green mobility message.
+          </li>
+          <li>
+            <strong>Digital empowerment:</strong> Fully open-source (MIT license), no
+            installation required, works offline as a PWA &mdash; accessible to anyone
+            with a browser.
+          </li>
+        </ul>
+      </section>
+
+      <!-- Column 3: 5 Unique Features -->
+      <section class="col">
+        <h2 class="col-title">5 Unique Features</h2>
+        <ol class="feature-list">
+          <li>
+            <strong>Mandatory reservation warnings</strong> &mdash; alerts travelers to routes
+            requiring advance booking, preventing missed trains and penalty fares
+          </li>
+          <li>
+            <strong>4 seat-credit tracker</strong> &mdash; visualizes the DiscoverEU credit
+            system so travelers optimize their free journeys
+          </li>
+          <li>
+            <strong>CO&#8322; savings calculator</strong> &mdash; compares rail vs. flight emissions
+            with a shareable &ldquo;Green Traveler&rdquo; badge
+          </li>
+          <li>
+            <strong>Accessibility &amp; LGBTQ+ safety layers</strong> &mdash; Wheelmap data +
+            ILGA Rainbow Map scores integrated into the interactive map
+          </li>
+          <li>
+            <strong>AI route planner</strong> &mdash; natural language trip suggestions powered by
+            open LLM APIs (user-provided keys, no data collection)
+          </li>
+        </ol>
+      </section>
+
+    </main>
+
+    <!-- Screenshot strip -->
+    <section class="screenshots" aria-label="Application screenshots">
+      <div class="screenshot-box">
+        <div class="screenshot-placeholder">Screenshot</div>
+        <span class="screenshot-caption">Interactive Map</span>
+      </div>
+      <div class="screenshot-box">
+        <div class="screenshot-placeholder">Screenshot</div>
+        <span class="screenshot-caption">Route Planner</span>
+      </div>
+      <div class="screenshot-box">
+        <div class="screenshot-placeholder">Screenshot</div>
+        <span class="screenshot-caption">Country Guide</span>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <a href="https://embeddedjedi.github.io/discovereu-companion">embeddedjedi.github.io/discovereu-companion</a>
+      &nbsp;&nbsp;|&nbsp;&nbsp;
+      <a href="https://github.com/embeddedJedi/discovereu-companion">github.com/embeddedJedi/discovereu-companion</a>
+      &nbsp;&nbsp;|&nbsp;&nbsp;
+      MIT License
+      &nbsp;&nbsp;|&nbsp;&nbsp;
+      Made by a DiscoverEU traveler, for DiscoverEU travelers.
+    </footer>
+
+  </div>
+</body>
+</html>
