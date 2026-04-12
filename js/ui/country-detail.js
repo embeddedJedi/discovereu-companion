@@ -9,6 +9,7 @@ import { qs, h, empty, escape } from '../utils/dom.js';
 import { formatNumber } from '../utils/format.js';
 import { getFeatureName } from '../map/countries-layer.js';
 import { renderCountryGuideAccordion, renderCitiesAccordion } from './guide.js';
+import { renderSoundtrackAccordion } from '../features/soundtrack.js';
 
 const SCORE_KEYS = ['nature', 'culture', 'nightlife', 'food', 'history', 'safety'];
 
@@ -76,6 +77,10 @@ function renderInto(root, country, selectedId) {
   root.appendChild(citiesHost);
   renderCountryGuideAccordion(guideHost, country.id);
   renderCitiesAccordion(citiesHost, country.id);
+
+  const soundtrackHost = h('div', { class: 'country-detail-soundtrack-host' });
+  root.appendChild(soundtrackHost);
+  renderSoundtrackAccordion(soundtrackHost, country.id);
 
   if (country.discoverEU === false) {
     root.appendChild(renderNonParticipatingWarning(country));
