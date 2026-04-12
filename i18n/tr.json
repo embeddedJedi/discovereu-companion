@@ -76,7 +76,21 @@
       "participating": "Katılımcı",
       "inRoute": "Rotanda",
       "nonParticipating": "DiscoverEU'da değil"
-    }
+    },
+    "countries": "ülke",
+    "nights": "gece"
+  },
+  "country": {
+    "addToRoute": "Rotaya ekle",
+    "viewGuide": "Rehbere git",
+    "nonParticipating": "DiscoverEU'da yok"
+  },
+  "score": {
+    "nature": "Doğa",
+    "culture": "Kültür",
+    "nightlife": "Gece hayatı",
+    "food": "Yemek",
+    "safety": "Güvenlik"
   },
   "filters": {
     "title": "Filtreler",

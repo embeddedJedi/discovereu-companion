@@ -79,6 +79,7 @@ export function selectCountry(id) {
   if (!id) return;
   state.set('selectedCountry', id);
   state.set('panelOpen', true);
+  document.dispatchEvent(new CustomEvent('countryclick', { detail: { countryId: id } }));
 }
 
 /** Get the Leaflet layer for a country id (or null). */

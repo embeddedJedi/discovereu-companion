@@ -76,7 +76,21 @@
       "participating": "Participating",
       "inRoute": "In your route",
       "nonParticipating": "Not in DiscoverEU"
-    }
+    },
+    "countries": "countries",
+    "nights": "nights"
+  },
+  "country": {
+    "addToRoute": "Add to route",
+    "viewGuide": "View guide",
+    "nonParticipating": "Not in DiscoverEU"
+  },
+  "score": {
+    "nature": "Nature",
+    "culture": "Culture",
+    "nightlife": "Nightlife",
+    "food": "Food",
+    "safety": "Safety"
   },
   "filters": {
     "title": "Filters",
