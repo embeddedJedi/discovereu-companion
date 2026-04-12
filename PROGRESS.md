@@ -2,8 +2,8 @@
 
 > **Single source of truth for this project.** Every feature, decision, and architectural change is recorded here. Read this before coding anything.
 
-**Last updated:** 2026-04-11 (session 7 — Tier 3 Inclusion Pack: Rainbow Map, Wheelmap accessibility, emergency phrases, Fewer-opportunities mode, Welcome Wizard, 7-tab bar redesign)
-**Phase:** 3 (Tier 3 sub-project 1 complete; sub-projects 2 & 3 remain)
+**Last updated:** 2026-04-12 (session 8 — Sub-project 2: AI assistant, city/country guides, soundtrack, bingo, daily dare, futureMe, consulate reminder, 8-tab bar)
+**Phase:** 4 (Tier 3 sub-project 1 + Tier 4 fun layer + Tier 5 consulate reminder all live; sub-project 3 translations remain)
 **Launch target:** 2026-04-22 (12-day sprint)
 **GitHub:** `embeddedJedi/discovereu-companion` *(not pushed yet)*
 **Live URL:** `https://embeddedjedi.github.io/discovereu-companion` *(pending deploy)*
@@ -263,25 +263,25 @@ All loaded with SRI hashes (to add in Phase 1).
 - [ ] DE / FR / ES / IT translations  ← sub-project 3 (separate spec)
 
 ### Tier 4 — Fun & Memory *(Days 11-12)*
-- [ ] City Bingo cards + achievement badges
-- [ ] Daily Dare micro-quest push
-- [ ] Passive GPS trip journal (Polarsteps-lite)
-- [ ] Voice memory capsule (30-second audio per day)
-- [ ] Country Soundtrack (Spotify Top 50 embed)
-- [ ] Group Vote Module (for 4-person groups)
-- [ ] Night Arrival Shield (22:00+ filter)
-- [ ] Smart Packing Assistant
-- [ ] Pickpocket heatmap
-- [ ] FutureMe time capsule
+- [x] City Bingo cards + achievement badges
+- [x] Daily Dare micro-quest push
+- [ ] Passive GPS trip journal (Polarsteps-lite) ← deferred to v1.1
+- [ ] Voice memory capsule (30-second audio per day) ← deferred to v1.1
+- [x] Country Soundtrack (Spotify Top 50 embed)
+- [ ] Group Vote Module (for 4-person groups) ← deferred to v1.1
+- [ ] Night Arrival Shield (22:00+ filter) ← deferred to v1.1
+- [ ] Smart Packing Assistant ← deferred to v1.1
+- [ ] Pickpocket heatmap ← deferred to v1.1
+- [x] FutureMe time capsule
 
 ### Tier 5 — Turkish bonus layer
 - [x] Schengen visa checklist (18-year-old variant)
 - [x] Sofia Express connector (DiscoverEU pre-segment)
 - [x] TL budget mode + Wise/Revolut guidance
-- [ ] Turkish consulate appointment reminder
+- [x] Turkish consulate appointment reminder
 
 ### AI (cross-cutting)
-- [ ] Natural language route suggestion (Groq API, user-provided key)
+- [x] Natural language route suggestion (Groq API, user-provided key)
 
 ### Deploy & outreach
 - [ ] GitHub repo + Pages workflow
@@ -354,18 +354,25 @@ All loaded with SRI hashes (to add in Phase 1).
   - `js/ui/welcome-wizard.js` 4-question first-visit onboarding
   - Tab bar redesign from text-only to icon + label layout, 6 → 7 tabs (mobile bottom-nav mirrored)
   - All 13 smoke tests pass
+- **Session 8 — Sub-project 2 (AI + Fun + Guide + Consulate)** (2026-04-12):
+  - 5 new data files: `guides.json` (~410 KB), `bingo-challenges.json`, `daily-dares.json`, `soundtracks.json`, `tr-consulates.json`
+  - 2 new utilities: `js/utils/ics.js`, `js/utils/image.js` (plus IndexedDB helpers in `js/utils/storage.js`)
+  - 6 new feature modules: `features/llm-groq.js`, `features/ai-assistant.js`, `features/bingo.js`, `features/daily-dare.js`, `features/future-me.js`, `features/soundtrack.js`
+  - 4 new UI modules: `ui/ai-modal.js`, `ui/guide.js`, `ui/bingo-tab.js`, `ui/fun-tab.js`
+  - `turkish-bonus.js` 4th card: consulate reminder with .ics (2 VALARMs)
+  - 8-tab bar (grew from 7): new Eğlence tab housing Bingo / Daily Dare / FutureMe
+  - Country Detail: guide accordion (10 sections), top cities accordion, Spotify soundtrack accordion
+  - Bingo photos in IndexedDB `bingoPhotos` store, EXIF-stripped
+  - Groq key stored in `localStorage`, never leaves browser
+  - PWA cache bumped v3 → v4 with all new assets precached
+  - All 20 smoke tests pass
 
 ### 🚧 In progress
 - *(nothing — ready to continue)*
 
 ### ⏭ Next up (in order)
-1. Housekeeping: `.gitignore` dev screenshots + `.playwright-mcp/`, commit session 2–6 work in logical chunks, push to GitHub, verify Pages deploy
-2. Tier 3: Wheelmap accessibility layer + ILGA Rainbow Map layer
-3. Tier 3: DE / FR / ES / IT translations (extend i18n JSONs)
-4. Tier 3: Emergency info panel (offline, per country) + fewer-opportunities mode
-5. Tier 4: City Bingo + Daily Dare + Journal + Voice capsule (fun/memory layer)
-6. Tier 4: Country Soundtrack (Spotify embed), Group Vote, Night Arrival Shield, Pickpocket heatmap, FutureMe
-7. AI: Natural-language route suggestion (Groq API, user-provided key)
+1. Sub-project 3: DE / FR / ES / IT translations (extend i18n JSONs)
+2. Deploy polish: custom domain + outreach package for EACEA / Turkish UA / LinkedIn DG EAC Youth Unit
 8. Deploy polish: custom domain + outreach package for EACEA / Turkish UA / LinkedIn DG EAC Youth Unit
 
 ### 🛑 Blocked
@@ -396,6 +403,13 @@ All loaded with SRI hashes (to add in Phase 1).
 | 2026-04-10 | Share URL uses `location.hash`, not a query string | Hash stays client-side so GitHub Pages needs no routing rules; `history.replaceState` keeps the address bar in sync without reloads |
 | 2026-04-10 | Service worker is same-origin only, CDN assets skipped | Leaflet / Chart.js / LZ-string already ship with long-lived cache headers; re-caching them in our SW would just duplicate bytes |
 | 2026-04-10 | Icons are SVG-only, including maskable | Keeps the repo binary-free so EACEA reviewers can clone + read everything; modern Chrome/Safari PWA installers accept SVG maskables |
+| 2026-04-12 | AI provider: Groq (Llama 3.1 70B), user-provided key, JSON mode | Free tier, CORS-friendly browser calls, structured output enables route hydration |
+| 2026-04-12 | City/Country guide via build-time Wikivoyage snapshot | Offline-first PWA story, TR translations, reviewer-inspectable |
+| 2026-04-12 | Bingo photos in IndexedDB, state in localStorage | State is < 5 KB; photos as blobs need IDB; photos never leave the device |
+| 2026-04-12 | Daily Dare deterministic day-of-year rotation, no push | iOS Safari push is broken; rotation works offline |
+| 2026-04-12 | Spotify iframe embed only, no auth | CORS-safe, 30-sec previews work anonymously |
+| 2026-04-12 | FutureMe localStorage + .ics calendar export, no SMTP | No backend; .ics gives a portable reminder anchor |
+| 2026-04-12 | Shared `utils/ics.js` for FutureMe + consulate | Single module both features depend on; no duplication |
 
 ---
 
