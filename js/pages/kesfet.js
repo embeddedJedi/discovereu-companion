@@ -63,6 +63,14 @@ const FUN_CARDS = [
     teaserFn: () => t('groupVote.description'),
     cssClass: 'fun-card--vote',
     gradient: 'linear-gradient(135deg, #10B981 0%, #3B82F6 100%)'
+  },
+  {
+    id: 'journal',
+    icon: '\uD83D\uDCCD',
+    labelKey: 'journal.title',
+    teaserFn: () => t('journal.logLocation'),
+    cssClass: 'fun-card--journal',
+    gradient: 'linear-gradient(135deg, #059669 0%, #0891B2 100%)'
   }
 ];
 
@@ -169,6 +177,7 @@ async function renderExpanded(page) {
         case 'futureMe':   subModules.futureMe = await import('../features/future-me.js'); break;
         case 'soundtrack': subModules.soundtrack = await import('../features/soundtrack.js'); break;
         case 'groupVote':  subModules.groupVote  = await import('../features/group-vote.js'); break;
+        case 'journal':    subModules.journal    = await import('../features/journal.js'); break;
       }
     }
     const mod = subModules[activeCard];

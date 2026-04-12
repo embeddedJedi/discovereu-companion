@@ -495,13 +495,15 @@
       "bingo": "City Bingo",
       "dares": "Daily Dare",
       "futureMe": "Future Me",
-      "soundtrack": "Soundtrack"
+      "soundtrack": "Soundtrack",
+      "voiceMemory": "Voice Memory"
     },
     "teaser": {
       "bingo": "Photo challenges across Europe",
       "dares": "Daily micro-quests",
       "futureMe": "Time capsule letters",
-      "soundtrack": "Country playlists"
+      "soundtrack": "Country playlists",
+      "voiceMemory": "30-second daily audio capsules"
     },
     "backToGrid": "Back",
     "challenges": "challenges",
@@ -512,6 +514,20 @@
     "listenNow": "Discover local music",
     "comingSoon": "Coming soon",
     "loadError": "Failed to load — try again"
+  },
+  "voiceMemory": {
+    "title": "Voice Memory",
+    "description": "Record a 30-second audio memory each day. Stored only on your device.",
+    "record": "Record",
+    "recording": "Recording…",
+    "stop": "Stop",
+    "savedToday": "Saved for today",
+    "overwriteConfirm": "You already have a memory for today. Replace it?",
+    "delete": "Delete",
+    "deleteConfirm": "Delete this voice memory?",
+    "notSupported": "Voice memory is not supported on this device or browser.",
+    "permissionDenied": "Microphone access was denied. Enable it in your browser settings to record.",
+    "empty": "No memories yet — tap the mic to capture your first one."
   },
   "bingo": {
     "loading": "Loading bingo card…",
@@ -796,5 +812,23 @@
     "maxVotersReached": "All 4 voters have cast their votes.",
     "voterAlreadyVoted": "A voter with that name has already voted.",
     "unknownStop": "Unknown"
+  },
+  "journal": {
+    "title": "Journey Timeline",
+    "logLocation": "Log my location now",
+    "addManual": "Add entry",
+    "noteLabel": "Note",
+    "notePlaceholder": "What happened here? (max 280 chars)",
+    "photosLabel": "Photos (up to 4)",
+    "source": {
+      "gps": "GPS",
+      "manual": "Manual"
+    },
+    "empty": "No entries yet. Log your first location to start your journey timeline.",
+    "clear": "Clear journal",
+    "clearConfirm": "Delete all journal entries and photos? This cannot be undone.",
+    "export": "Export timeline",
+    "permissionDenied": "Location permission denied. You can still add manual entries.",
+    "privacyNote": "All location and photo data stays on your device. We send coordinates only to OpenStreetMap Nominatim for city name lookup."
   }
 }

@@ -82,8 +82,8 @@ export const cache = {
 // (`discovereu`) so future stores can be added without new wiring.
 
 const IDB_NAME = 'discovereu';
-const IDB_VERSION = 1;
-const IDB_STORES = ['bingoPhotos'];
+const IDB_VERSION = 3;
+const IDB_STORES = ['bingoPhotos', 'journalEntries', 'voiceMemories'];
 
 let _dbPromise = null;
 
@@ -134,4 +134,27 @@ export async function idbGet(storeName, key) {
 
 export async function idbDelete(storeName, key) {
   return withStore(storeName, 'readwrite', store => { store.delete(key); });
+}
+
+/** Return all { key, value } pairs in the store. */
+export async function idbGetAll(storeName) {
+  const db = await idbOpen();
+  return new Promise((resolve, reject) => {
+    const tx = db.transaction(storeName, 'readonly');
+    const store = tx.objectStore(storeName);
+    const out = [];
+    const req = store.openCursor();
+    req.onsuccess = () => {
+      const cur = req.result;
+      if (!cur) { resolve(out); return; }
+      out.push({ key: cur.key, value: cur.value });
+      cur.continue();
+    };
+    req.onerror = () => reject(req.error);
+  });
+}
+
+/** Wipe all entries in a store. */
+export async function idbClear(storeName) {
+  return withStore(storeName, 'readwrite', store => { store.clear(); });
 }

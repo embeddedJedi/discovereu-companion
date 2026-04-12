@@ -796,5 +796,23 @@
     "maxVotersReached": "4 oylama hakkı da kullanıldı.",
     "voterAlreadyVoted": "Bu isimle zaten oy kullanılmış.",
     "unknownStop": "Bilinmiyor"
+  },
+  "journal": {
+    "title": "Yolculuk Zaman Çizelgesi",
+    "logLocation": "Konumumu şimdi kaydet",
+    "addManual": "Girdi ekle",
+    "noteLabel": "Not",
+    "notePlaceholder": "Burada ne oldu? (en fazla 280 karakter)",
+    "photosLabel": "Fotoğraflar (en fazla 4)",
+    "source": {
+      "gps": "GPS",
+      "manual": "Manuel"
+    },
+    "empty": "Henüz girdi yok. İlk konumunu kaydet ve zaman çizelgeni başlat.",
+    "clear": "Günlüğü temizle",
+    "clearConfirm": "Tüm günlük girdileri ve fotoğraflar silinsin mi? Bu işlem geri alınamaz.",
+    "export": "Zaman çizelgesini dışa aktar",
+    "permissionDenied": "Konum izni reddedildi. Yine de manuel girdi ekleyebilirsin.",
+    "privacyNote": "Tüm konum ve fotoğraf verileri cihazında kalır. Koordinatları sadece şehir ismi için OpenStreetMap Nominatim'e gönderiyoruz."
   }
 }
