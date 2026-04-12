@@ -9,10 +9,13 @@ import { h, empty } from '../utils/dom.js';
 let containerEl = null;
 let unsubscribers = [];
 let prepMod = null;
+let packingMod = null;
+let packingUnmount = null;
 
 export async function mount(container) {
   containerEl = container;
   prepMod = await import('../ui/prep.js');
+  packingMod = await import('../features/packing.js');
   render();
   unsubscribers.push(
     state.subscribe('prep', render),
@@ -25,6 +28,7 @@ export async function mount(container) {
 export function unmount() {
   unsubscribers.forEach(fn => fn());
   unsubscribers = [];
+  if (packingUnmount) { packingUnmount(); packingUnmount = null; }
   containerEl = null;
 }
 
@@ -41,6 +45,14 @@ function render() {
     prepMod.renderPrepPanel(prepSection);
   }
   page.appendChild(prepSection);
+
+  // Smart packing assistant — standalone module, has its own subscriptions.
+  const packingSection = h('section', { class: 'plan-section packing-mount' });
+  page.appendChild(packingSection);
+  if (packingUnmount) { packingUnmount(); packingUnmount = null; }
+  if (packingMod?.mount) {
+    packingUnmount = packingMod.mount(packingSection);
+  }
 
   // Turkish bonus (conditional)
   const lang = state.getSlice('language');

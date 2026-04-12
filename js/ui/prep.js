@@ -90,7 +90,7 @@ function renderInto(root) {
     renderHeader(),
     renderCountdown(prep),
     renderChecklist(prep),
-    renderPacking(prep, route, user),
+    // Packing list is now rendered by js/features/packing.js (mounted separately).
     // Turkish bonus section — only renders when the layer is active.
     isTurkishLayerActive()
       ? renderTurkishBonus(() => renderInto(root))  // re-render once JSON arrives

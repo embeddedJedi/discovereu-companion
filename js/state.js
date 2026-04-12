@@ -56,7 +56,8 @@ const initialState = {
   prep: {
     departureDate: null,       // ISO "YYYY-MM-DD" or null
     checklistDone: {},         // { itemId: true }
-    packingDone:   {}          // { itemId: true }
+    packingDone:   {},         // { itemId: true }
+    packingCustom: []          // [{ id, label, category }] — user-added items
   },
   countries: [],               // loaded from data/countries.json
   trains: [],                  // loaded from data/trains.json
