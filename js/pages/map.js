@@ -6,6 +6,7 @@ import { state, countryById } from '../state.js';
 import { t } from '../i18n/i18n.js';
 import { h, qs, empty } from '../utils/dom.js';
 import { getMap } from '../map/map.js';
+import { initRouteLayer } from '../map/route-layer.js';
 import { toggleLayer as togglePickpocketLayer } from '../features/pickpocket.js';
 
 let overlayEl = null;
@@ -17,6 +18,10 @@ let unsubscribers = [];
 export function mount(container) {
   const mapContainer = qs('#mapContainer');
   if (mapContainer) mapContainer.style.display = 'block';
+
+  // Initialize route rendering layer (idempotent — guarded inside the module).
+  const map = getMap();
+  if (map) initRouteLayer(map);
 
   overlayEl = h('div', { class: 'map-overlays' });
   container.appendChild(overlayEl);
