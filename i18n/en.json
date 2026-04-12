@@ -643,6 +643,17 @@
     "backToList": "All countries",
     "loadError": "Failed to load guide content"
   },
+  "wikivoyage": {
+    "refresh": "Refresh from Wikivoyage",
+    "refreshing": "Refreshing…",
+    "refreshSuccess": "Updated from Wikivoyage",
+    "refreshFailed": "Could not refresh — try again later",
+    "updatedFromWikivoyage": "Updated from Wikivoyage {{date}}",
+    "clearCache": "Clear Wikivoyage cache",
+    "clearCacheConfirm": "Clear all cached Wikivoyage content? Fresh data will be fetched on next refresh.",
+    "sourceLabel": "Source",
+    "notAvailable": "Not available on Wikivoyage"
+  },
   "error": {
     "weatherUnavailable": "Weather data unavailable",
     "countriesLoad": "Couldn't load country data",

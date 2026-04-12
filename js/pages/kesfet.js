@@ -229,6 +229,17 @@ function renderSettings() {
       renderLlmSetting()
     ]),
     h('button', {
+      class: 'btn btn-ghost', style: { width: '100%', marginTop: 'var(--space-3)' },
+      type: 'button',
+      onclick: async () => {
+        if (!confirm(t('wikivoyage.clearCacheConfirm'))) return;
+        const { clearCache } = await import('../features/wikivoyage-refresh.js');
+        const { showToast } = await import('../ui/toast.js');
+        const n = clearCache();
+        showToast(`${t('wikivoyage.clearCache')} (${n})`, 'info');
+      }
+    }, t('wikivoyage.clearCache')),
+    h('button', {
       class: 'btn btn-danger', style: { width: '100%', marginTop: 'var(--space-4)' },
       type: 'button',
       onclick: () => { if (confirm(t('more.clearConfirm'))) { state.reset(); location.reload(); } }

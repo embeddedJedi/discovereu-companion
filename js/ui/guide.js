@@ -9,7 +9,9 @@
 import { state } from '../state.js';
 import { t } from '../i18n/i18n.js';
 import { h, empty } from '../utils/dom.js';
-import { getCountryGuide, listCitiesForCountry, getCityGuide } from '../data/loader.js';
+import { getCountryGuide, listCitiesForCountry, getCityGuide, getSharedMobilityForCountry } from '../data/loader.js';
+import { refreshCountry } from '../features/wikivoyage-refresh.js';
+import { showToast } from './toast.js';
 
 function useTr() { return state.getSlice('language') === 'tr'; }
 function pick(obj, key) { return useTr() ? (obj[key + 'Tr'] ?? obj[key]) : obj[key]; }
@@ -26,7 +28,7 @@ export async function renderCountryGuideAccordion(container, countryId) {
       h('span', null, `🗺️ ${t('guide.countryTitle')}`),
       h('span', { class: 'chevron' }, '▾')
     ]),
-    buildCountrySections(guide),
+    buildCountrySections(guide, countryId),
     h('footer', { class: 'guide-footer' }, [
       h('span', null, `${t('guide.lastUpdated', { date: guide.lastUpdated })} · `),
       h('a', { href: guide.sourceUrl, target: '_blank', rel: 'noopener' }, t('guide.source'))
@@ -35,7 +37,7 @@ export async function renderCountryGuideAccordion(container, countryId) {
   container.appendChild(details);
 }
 
-function buildCountrySections(guide) {
+function buildCountrySections(guide, countryId) {
   const wrap = h('div', { class: 'guide-sections' });
   const sections = [
     ['summary',       '📘', 'guide.section.summary'],
@@ -50,9 +52,23 @@ function buildCountrySections(guide) {
   for (const [key, emoji, i18nKey] of sections) {
     const text = pick(guide, key);
     if (!text) continue;
+    const title = guide.sourceUrl?.split('/').pop();
+    const body = h('div', { class: 'guide-sect-body' }, [h('p', null, text)]);
+    const caption = h('p', { class: 'guide-sect-caption text-muted small', hidden: true });
+    const refreshBtn = h('button', {
+      class: 'guide-refresh-btn',
+      type: 'button',
+      'aria-label': t('wikivoyage.refresh'),
+      title: t('wikivoyage.refresh'),
+      onclick: (ev) => handleRefresh(ev.currentTarget, countryId, key, body, caption, title)
+    }, [h('span', { 'aria-hidden': 'true' }, '↻')]);
     wrap.appendChild(h('section', { class: 'guide-sect' }, [
-      h('h4', null, `${emoji} ${t(i18nKey)}`),
-      h('p', null, text)
+      h('header', { class: 'guide-sect-header' }, [
+        h('h4', null, `${emoji} ${t(i18nKey)}`),
+        refreshBtn
+      ]),
+      body,
+      caption
     ]));
   }
   // Language basics
@@ -119,6 +135,36 @@ function buildCityDetails(city) {
       section('🚫', 'guide.city.avoid',  avoid)
     ])
   ]);
+}
+
+async function handleRefresh(btn, countryId, sectionKey, bodyEl, captionEl, title) {
+  if (btn.getAttribute('aria-busy') === 'true') return;
+  btn.setAttribute('aria-busy', 'true');
+  btn.classList.add('is-loading');
+  const snapshot = Array.from(bodyEl.childNodes).map(n => n.cloneNode(true));
+  try {
+    const result = await refreshCountry(countryId, sectionKey, { title });
+    if (!result?.html) throw new Error('empty');
+    // html is pre-sanitized in wikivoyage-refresh.js (sanitizeHtml)
+    empty(bodyEl);
+    const tmpl = document.createElement('template');
+    tmpl.innerHTML = result.html;
+    bodyEl.appendChild(tmpl.content);
+    const when = new Date(result.updated).toISOString().slice(0, 10);
+    captionEl.hidden = false;
+    empty(captionEl);
+    captionEl.appendChild(document.createTextNode(t('wikivoyage.updatedFromWikivoyage', { date: when }) + ' · '));
+    captionEl.appendChild(h('a', { href: result.source, target: '_blank', rel: 'noopener noreferrer' }, t('wikivoyage.sourceLabel')));
+    showToast(t('wikivoyage.refreshSuccess'), 'success');
+  } catch (err) {
+    console.warn('[wikivoyage] refresh failed', err);
+    empty(bodyEl);
+    snapshot.forEach(n => bodyEl.appendChild(n));
+    showToast(t('wikivoyage.refreshFailed'), 'error');
+  } finally {
+    btn.setAttribute('aria-busy', 'false');
+    btn.classList.remove('is-loading');
+  }
 }
 
 function section(emoji, i18nKey, items) {

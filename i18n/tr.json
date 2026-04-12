@@ -643,6 +643,17 @@
     "backToList": "Tüm ülkeler",
     "loadError": "Rehber içeriği yüklenemedi"
   },
+  "wikivoyage": {
+    "refresh": "Wikivoyage'dan yenile",
+    "refreshing": "Yenileniyor…",
+    "refreshSuccess": "Wikivoyage'dan güncellendi",
+    "refreshFailed": "Yenilenemedi — sonra tekrar dene",
+    "updatedFromWikivoyage": "Wikivoyage'dan güncellendi {{date}}",
+    "clearCache": "Wikivoyage önbelleğini temizle",
+    "clearCacheConfirm": "Tüm önbelleğe alınmış Wikivoyage içeriği silinsin mi? Bir sonraki yenilemede taze veri çekilecek.",
+    "sourceLabel": "Kaynak",
+    "notAvailable": "Wikivoyage'da mevcut değil"
+  },
   "error": {
     "weatherUnavailable": "Hava durumu verisi alınamadı",
     "countriesLoad": "Ülke verisi yüklenemedi",
