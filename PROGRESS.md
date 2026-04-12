@@ -400,14 +400,36 @@ All loaded with SRI hashes (to add in Phase 1).
   - PWA cache `discovereu-v4` → `discovereu-v5`
   - 12 commits, plan in `docs/superpowers/plans/2026-04-13-roundtrip-routing.md`, spec in `docs/superpowers/specs/2026-04-13-roundtrip-routing-design.md`
 
+- **v1.3 Crisis Shield — offline-first safety layer** (2026-04-13):
+  - 4 new data files: `emergency-numbers.json` (33 EU + TR with 112/police/ambulance/fire/tourist/women/LGBTQI), `tr-missions.json` (TR diplomatic missions in 33 countries), `embassy-lookup-pattern.json` (43 nationalities — 33 EU + US/GB/CA/AU/NZ/JP/KR/IN/BR/AR), `crisis-flowcharts.json` (lost-passport / lost-card / medical-emergency DAGs with validated terminals and source URLs)
+  - 3 new feature modules: `js/features/crisis-shield.js` (loader + resolver API), `flowchart-runner.js` (DOM-free DAG walker + validator), `share-location.js` (Web Share → clipboard → manual fallback, permission-aware, no persistence)
+  - 2 new UI modules: `js/ui/crisis-shield-panel.js` (modal dialog 3 tabs + focus trap + keyboard nav + reduced-motion), `emergency-dial-list.js` (AAA tel: buttons, 56px tap targets, `DIAL_KIND_MAP` with 9 kinds)
+  - New `css/crisis-shield.css` + 2 new design tokens (`--cs-critical-bg`, `--cs-critical-fg` in both themes; contrast 6.3:1 light AAA-for-large-text, 10.3:1 dark AAA-all-sizes)
+  - 162 new i18n keys under `crisis.*` + `crisis.flow.*` in en+tr (de/fr/es/it fall back to key path until backfill)
+  - PWA cache v5 → v6 with 10 new precache entries (offline-first guarantee)
+  - Integration point: country-detail panel gets the compact card after overview/actions
+  - 13 commits across plan + data + feature + UI + CSS + i18n + SW + integration
+  - 13/14 tasks shipped; Task 14 (full Playwright smoke) deferred to manual launch-eve pass
+  - Spec: `docs/superpowers/specs/2026-04-13-crisis-shield-design.md` · Plan: `docs/superpowers/plans/2026-04-13-crisis-shield.md`
+
 ### 🚧 In progress
-- v1.2 end-to-end Playwright smoke pass (20 scenarios) — pending next /loop iteration
+- v1.2 + v1.3 end-to-end Playwright smoke pass — deferred to manual launch-eve verification
 
 ### ⏭ Next up (in order)
 1. **Send outreach package** (launch-critical, deadline 2026-04-22) — EACEA one-pager, Turkish UA email, LinkedIn DG EAC
-2. DE / FR / ES / IT translation backfill (full app surface, not just v1.2 keys)
-3. v1.3 roadmap kickoff: Crisis Shield + Impact Dashboard + UI design system 2.0 (aligned with KA3/KA2 grant narrative — see `memory/project_pivot_erasmus_startup.md`)
-4. Custom domain (post-launch)
+2. **ESC Host Quality Label application** (rolling, ~8 weeks eval) — Türkiye UA; unlocks ESC51 volunteer grants, see `docs/grants/erasmus-research-2026-04-13.md`
+3. **KA154 Round 2 submission draft** (deadline 2026-10-01) — €30-50k lump-sum, informal youth group or friendly dernek as applicant; Crisis Shield + Inclusion features are the grant narrative core
+4. **Consortium partner outreach** for KA220 2027-03-05 deadline — use `docs/outreach/consortium-shortlist.md` Tier A longlist + SALTO forum post
+5. DE / FR / ES / IT i18n backfill (full app surface incl. v1.2 round-trip + v1.3 Crisis Shield keys)
+6. v1.4 roadmap: Impact Dashboard + UI design system 2.0 + Buddy matching
+7. Custom domain (post-launch)
+
+---
+
+### Editorial followups (non-blocking)
+- `tr-missions.json` quarterly verification pass — `emergencyPhone` fields largely null, confirm each mission's 24/7 nöbetçi line via `*.be.mfa.gov.tr` subdomains
+- `crisis-flowcharts.json` node URLs editorial — e-devlet filing link, clinic/pharmacy finder URLs are MVP placeholders; curator review needed
+- `i18n/en.json` + `i18n/tr.json` ambiguous flowchart keys (`n2.filingLink`, `n2.freezeAppLink`, `n4.clinicFinder`, `n6.pharmacyFinder`) — editorial pass for natural phrasing
 3. Deploy polish: custom domain
 
 ### 🛑 Blocked
