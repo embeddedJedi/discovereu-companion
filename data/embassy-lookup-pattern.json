@@ -1,0 +1,353 @@
+{
+  "version": "2026-04-13",
+  "defaultPattern": {
+    "guidance": "Search: \"<your country> embassy in <destination>\". Your ministry of foreign affairs usually publishes the authoritative list.",
+    "fallbackUrl": "https://embassy-finder.com"
+  },
+  "countries": {
+    "AR": {
+      "countryName": "Argentina",
+      "mfaUrl": "https://www.cancilleria.gob.ar/",
+      "embassyListUrl": "https://www.cancilleria.gob.ar/es/representaciones",
+      "guidance": "Visit cancilleria.gob.ar and open \"Representaciones en el exterior\" to locate your embassy.",
+      "emergencyPhone": null,
+      "emergencyNote": "Consular emergencies are handled by the nearest Argentine embassy; numbers vary by post."
+    },
+    "AT": {
+      "countryName": "Austria",
+      "mfaUrl": "https://www.bmeia.gv.at/",
+      "embassyListUrl": "https://www.bmeia.gv.at/botschaften-konsulate/",
+      "guidance": "Use the BMEIA \"Botschaften & Konsulate\" directory to find the Austrian embassy abroad.",
+      "emergencyPhone": "+43 1 90115 4411",
+      "emergencyNote": "BMEIA Bürgerservice 24/7 hotline"
+    },
+    "AU": {
+      "countryName": "Australia",
+      "mfaUrl": "https://www.dfat.gov.au/",
+      "embassyListUrl": "https://www.dfat.gov.au/about-us/our-locations/missions",
+      "guidance": "Use Smartraveller.gov.au or DFAT's \"Our missions\" directory to find your embassy.",
+      "emergencyPhone": "+61 2 6261 3305",
+      "emergencyNote": "DFAT 24/7 Consular Emergency Centre"
+    },
+    "BE": {
+      "countryName": "Belgium",
+      "mfaUrl": "https://diplomatie.belgium.be/",
+      "embassyListUrl": "https://diplomatie.belgium.be/en/embassies-and-consulates",
+      "guidance": "Use the FPS Foreign Affairs \"Embassies and consulates\" search on diplomatie.belgium.be.",
+      "emergencyPhone": "+32 2 501 4000",
+      "emergencyNote": "FPS Foreign Affairs 24/7 crisis line"
+    },
+    "BG": {
+      "countryName": "Bulgaria",
+      "mfaUrl": "https://www.mfa.bg/",
+      "embassyListUrl": "https://www.mfa.bg/en/embassiesabroad",
+      "guidance": "Open mfa.bg \"Embassies abroad\" to locate the nearest Bulgarian mission.",
+      "emergencyPhone": "+359 2 948 2404",
+      "emergencyNote": "MFA Situation Centre 24/7"
+    },
+    "BR": {
+      "countryName": "Brazil",
+      "mfaUrl": "https://www.gov.br/mre/",
+      "embassyListUrl": "https://www.gov.br/mre/pt-br/embaixadas-e-consulados",
+      "guidance": "Visit gov.br/mre \"Embaixadas e consulados\" to find your Brazilian embassy.",
+      "emergencyPhone": "+55 61 2030 8800",
+      "emergencyNote": "Itamaraty central switchboard; each post publishes its own 24/7 plantão consular."
+    },
+    "CA": {
+      "countryName": "Canada",
+      "mfaUrl": "https://www.international.gc.ca/",
+      "embassyListUrl": "https://travel.gc.ca/assistance/embassies-consulates",
+      "guidance": "Use travel.gc.ca \"Embassies and consulates\" or call the Emergency Watch and Response Centre.",
+      "emergencyPhone": "+1 613 996 8885",
+      "emergencyNote": "Global Affairs Canada 24/7 Emergency Watch and Response Centre (collect calls accepted)"
+    },
+    "CY": {
+      "countryName": "Cyprus",
+      "mfaUrl": "https://www.mfa.gov.cy/",
+      "embassyListUrl": "https://www.mfa.gov.cy/mfa/embassies/embassies.nsf/index_en/index_en",
+      "guidance": "Browse mfa.gov.cy \"Cyprus Embassies Abroad\" for the mission covering your destination.",
+      "emergencyPhone": "+357 22 651113",
+      "emergencyNote": "MFA Crisis Management Centre"
+    },
+    "CZ": {
+      "countryName": "Czechia",
+      "mfaUrl": "https://www.mzv.gov.cz/",
+      "embassyListUrl": "https://www.mzv.gov.cz/jnp/en/encyclopedia_of_states/index.html",
+      "guidance": "Open mzv.gov.cz, pick the destination country; the page lists the Czech embassy serving it.",
+      "emergencyPhone": "+420 224 183 200",
+      "emergencyNote": "MZV 24/7 emergency line for Czech citizens abroad"
+    },
+    "DE": {
+      "countryName": "Germany",
+      "mfaUrl": "https://www.auswaertiges-amt.de/",
+      "embassyListUrl": "https://www.auswaertiges-amt.de/en/aamt/auslandsvertretungen",
+      "guidance": "Use auswaertiges-amt.de \"Missions abroad\" to find the German embassy at your destination.",
+      "emergencyPhone": "+49 30 5000 3000",
+      "emergencyNote": "Auswärtiges Amt Bürgerservice 24/7"
+    },
+    "DK": {
+      "countryName": "Denmark",
+      "mfaUrl": "https://um.dk/",
+      "embassyListUrl": "https://um.dk/en/about-us/organisation/find-dansk-repraesentation",
+      "guidance": "Use um.dk \"Find a Danish mission abroad\" to locate your embassy.",
+      "emergencyPhone": "+45 33 92 11 12",
+      "emergencyNote": "Udenrigsministeriet Borgerservice 24/7"
+    },
+    "EE": {
+      "countryName": "Estonia",
+      "mfaUrl": "https://vm.ee/",
+      "embassyListUrl": "https://vm.ee/en/estonian-representations",
+      "guidance": "Visit vm.ee \"Estonian representations\" to find the relevant mission.",
+      "emergencyPhone": "+372 53 01 9999",
+      "emergencyNote": "MFA consular emergency 24/7"
+    },
+    "ES": {
+      "countryName": "Spain",
+      "mfaUrl": "https://www.exteriores.gob.es/",
+      "embassyListUrl": "https://www.exteriores.gob.es/es/EmbajadasConsulados/",
+      "guidance": "Use exteriores.gob.es \"Embajadas y Consulados\" to find the Spanish post at your destination.",
+      "emergencyPhone": "+34 91 394 8900",
+      "emergencyNote": "Unidad de Emergencia Consular 24/7"
+    },
+    "FI": {
+      "countryName": "Finland",
+      "mfaUrl": "https://um.fi/",
+      "embassyListUrl": "https://finlandabroad.fi/",
+      "guidance": "Open finlandabroad.fi and pick the destination country to find your mission.",
+      "emergencyPhone": "+358 9 1605 5555",
+      "emergencyNote": "Ulkoministeriö consular duty officer 24/7"
+    },
+    "FR": {
+      "countryName": "France",
+      "mfaUrl": "https://www.diplomatie.gouv.fr/",
+      "embassyListUrl": "https://www.diplomatie.gouv.fr/fr/le-ministere-et-son-reseau/annuaires-et-adresses-du-maedi/ambassades-et-consulats-francais-a-l-etranger/",
+      "guidance": "Use France Diplomatie \"Ambassades et consulats français à l'étranger\" or the Ariane travel registry.",
+      "emergencyPhone": "+33 1 53 59 11 00",
+      "emergencyNote": "Centre de crise et de soutien (MEAE) 24/7"
+    },
+    "GB": {
+      "countryName": "United Kingdom",
+      "mfaUrl": "https://www.gov.uk/government/organisations/foreign-commonwealth-development-office",
+      "embassyListUrl": "https://www.gov.uk/world/embassies",
+      "guidance": "Search \"UK embassy in <destination>\" on gov.uk; the FCDO page lists the British mission.",
+      "emergencyPhone": "+44 20 7008 5000",
+      "emergencyNote": "FCDO 24/7 global response centre"
+    },
+    "GR": {
+      "countryName": "Greece",
+      "mfaUrl": "https://www.mfa.gr/",
+      "embassyListUrl": "https://www.mfa.gr/en/appendix/greece-bilateral-relations/",
+      "guidance": "Open mfa.gr, pick the destination country; the entry lists the Greek embassy serving it.",
+      "emergencyPhone": "+30 210 368 1259",
+      "emergencyNote": "Ypourgeio Exoterikon Crisis Management Unit"
+    },
+    "HR": {
+      "countryName": "Croatia",
+      "mfaUrl": "https://mvep.gov.hr/",
+      "embassyListUrl": "https://mvep.gov.hr/predstavnistva/veleposlanstva-i-konzulati-rh-u-svijetu/22",
+      "guidance": "Use mvep.gov.hr \"Veleposlanstva i konzulati RH u svijetu\" to locate your mission.",
+      "emergencyPhone": "+385 1 4569 964",
+      "emergencyNote": "MVEP consular duty service"
+    },
+    "HU": {
+      "countryName": "Hungary",
+      "mfaUrl": "https://konzuliszolgalat.kormany.hu/",
+      "embassyListUrl": "https://konzuliszolgalat.kormany.hu/kulkepviseletek",
+      "guidance": "Open konzuliszolgalat.kormany.hu \"Külképviseletek\" for the Hungarian mission serving your destination.",
+      "emergencyPhone": "+36 80 36 80 36",
+      "emergencyNote": "Konzuli Szolgálat 24/7 hotline"
+    },
+    "IE": {
+      "countryName": "Ireland",
+      "mfaUrl": "https://www.dfa.ie/",
+      "embassyListUrl": "https://www.dfa.ie/embassies/irish-embassies-abroad/",
+      "guidance": "Use dfa.ie \"Irish embassies abroad\" to find the Embassy of Ireland at your destination.",
+      "emergencyPhone": "+353 1 408 2000",
+      "emergencyNote": "DFA 24/7 Consular Assistance (Duty Officer)"
+    },
+    "IN": {
+      "countryName": "India",
+      "mfaUrl": "https://www.mea.gov.in/",
+      "embassyListUrl": "https://www.mea.gov.in/indian-missions-abroad-new.htm",
+      "guidance": "Use mea.gov.in \"Indian Missions Abroad\" to find your embassy or high commission.",
+      "emergencyPhone": "+91 11 2301 2113",
+      "emergencyNote": "MEA Control Room; also use MADAD portal for consular grievances"
+    },
+    "IS": {
+      "countryName": "Iceland",
+      "mfaUrl": "https://www.government.is/ministries/ministry-for-foreign-affairs/",
+      "embassyListUrl": "https://www.government.is/diplomatic-missions/",
+      "guidance": "Use government.is \"Diplomatic missions\" list; Iceland has limited posts, honorary consuls cover many countries.",
+      "emergencyPhone": "+354 545 0112",
+      "emergencyNote": "MFA 24/7 consular emergency line"
+    },
+    "IT": {
+      "countryName": "Italy",
+      "mfaUrl": "https://www.esteri.it/",
+      "embassyListUrl": "https://www.esteri.it/it/ministero/lafarnesinanelmondo/",
+      "guidance": "Use esteri.it \"La Farnesina nel mondo\" or the Dove Siamo Nel Mondo travel registry.",
+      "emergencyPhone": "+39 06 36225",
+      "emergencyNote": "Unità di Crisi Farnesina 24/7"
+    },
+    "JP": {
+      "countryName": "Japan",
+      "mfaUrl": "https://www.mofa.go.jp/",
+      "embassyListUrl": "https://www.mofa.go.jp/about/emb_cons/mofaserv.html",
+      "guidance": "Use mofa.go.jp \"Embassies, Consulates and Missions\" directory or the Tabi-Regi registration.",
+      "emergencyPhone": "+81 3 3580 3311",
+      "emergencyNote": "MOFA main switchboard; each embassy publishes its own 24/7 emergency number"
+    },
+    "KR": {
+      "countryName": "South Korea",
+      "mfaUrl": "https://www.mofa.go.kr/eng/",
+      "embassyListUrl": "https://www.mofa.go.kr/eng/wpge/m_5644/contents.do",
+      "guidance": "Use mofa.go.kr \"Embassies & Consulates\" or the Overseas Safe Travel (0404.go.kr) portal.",
+      "emergencyPhone": "+82 2 3210 0404",
+      "emergencyNote": "MOFA Consular Call Centre 24/7"
+    },
+    "LI": {
+      "countryName": "Liechtenstein",
+      "mfaUrl": "https://www.llv.li/de/landesverwaltung/amt-fuer-auswaertige-angelegenheiten",
+      "embassyListUrl": "https://www.llv.li/de/landesverwaltung/amt-fuer-auswaertige-angelegenheiten/vertretungen-liechtensteins-im-ausland",
+      "guidance": "Liechtenstein has few missions; Switzerland represents Liechtensteiners consularly in most countries under a 1919 treaty.",
+      "emergencyPhone": "+423 236 60 58",
+      "emergencyNote": "Amt für Auswärtige Angelegenheiten; for Swiss consular cover call the Swiss FDFA Helpline +41 800 24 7 365"
+    },
+    "LT": {
+      "countryName": "Lithuania",
+      "mfaUrl": "https://www.urm.lt/",
+      "embassyListUrl": "https://www.urm.lt/default/en/lithuanian-missions",
+      "guidance": "Use urm.lt \"Lithuanian missions\" to find your embassy abroad.",
+      "emergencyPhone": "+370 5 236 2444",
+      "emergencyNote": "URM consular duty officer 24/7"
+    },
+    "LU": {
+      "countryName": "Luxembourg",
+      "mfaUrl": "https://maee.gouvernement.lu/",
+      "embassyListUrl": "https://maee.gouvernement.lu/fr/directions-du-maee/affaires-consulaires/representations-lu-etranger.html",
+      "guidance": "Use maee.gouvernement.lu \"Représentations luxembourgeoises à l'étranger\" for your nearest post.",
+      "emergencyPhone": "+352 2478 2300",
+      "emergencyNote": "MAEE consular emergency line"
+    },
+    "LV": {
+      "countryName": "Latvia",
+      "mfaUrl": "https://www.mfa.gov.lv/",
+      "embassyListUrl": "https://www.mfa.gov.lv/en/latvian-representations",
+      "guidance": "Use mfa.gov.lv \"Latvian representations\" to find the Latvian embassy.",
+      "emergencyPhone": "+371 2637 7777",
+      "emergencyNote": "MFA consular duty officer 24/7"
+    },
+    "MK": {
+      "countryName": "North Macedonia",
+      "mfaUrl": "https://mfa.gov.mk/",
+      "embassyListUrl": "https://mfa.gov.mk/en/page/62/embassies-of-the-rnm",
+      "guidance": "Open mfa.gov.mk \"Embassies of the RNM\" for the Macedonian mission serving your destination.",
+      "emergencyPhone": "+389 2 3115 266",
+      "emergencyNote": "MFA consular affairs line"
+    },
+    "MT": {
+      "countryName": "Malta",
+      "mfaUrl": "https://foreign.gov.mt/",
+      "embassyListUrl": "https://foreignandeu.gov.mt/en/Embassies/Pages/Maltese-Missions.aspx",
+      "guidance": "Use foreign.gov.mt \"Maltese Missions\" directory for the embassy covering your destination.",
+      "emergencyPhone": "+356 2204 2200",
+      "emergencyNote": "Ministry for Foreign Affairs main line"
+    },
+    "NL": {
+      "countryName": "Netherlands",
+      "mfaUrl": "https://www.government.nl/ministries/ministry-of-foreign-affairs",
+      "embassyListUrl": "https://www.netherlandsworldwide.nl/contact/embassies-consulates-general",
+      "guidance": "Use netherlandsworldwide.nl \"Embassies and consulates-general\" or register with the BZ Information Service.",
+      "emergencyPhone": "+31 247 247 247",
+      "emergencyNote": "BZ 24/7 Contactcentrum (call from anywhere in the world)"
+    },
+    "NO": {
+      "countryName": "Norway",
+      "mfaUrl": "https://www.regjeringen.no/en/dep/ud/id833/",
+      "embassyListUrl": "https://www.norway.no/",
+      "guidance": "Open norway.no and choose the destination country for the Norwegian embassy page.",
+      "emergencyPhone": "+47 23 95 00 00",
+      "emergencyNote": "UD Operative Centre (Operativt senter) 24/7"
+    },
+    "NZ": {
+      "countryName": "New Zealand",
+      "mfaUrl": "https://www.mfat.govt.nz/",
+      "embassyListUrl": "https://www.mfat.govt.nz/en/embassies/",
+      "guidance": "Use mfat.govt.nz \"Embassies\" directory or register travel on SafeTravel.govt.nz.",
+      "emergencyPhone": "+64 99 20 20 20",
+      "emergencyNote": "MFAT Consular Emergency 24/7 (accepts collect calls)"
+    },
+    "PL": {
+      "countryName": "Poland",
+      "mfaUrl": "https://www.gov.pl/web/dyplomacja",
+      "embassyListUrl": "https://www.gov.pl/web/dyplomacja/polskie-placowki-dyplomatyczne-za-granica",
+      "guidance": "Use gov.pl/web/dyplomacja \"Polskie placówki\" to find the Polish mission.",
+      "emergencyPhone": "+48 22 523 88 80",
+      "emergencyNote": "MSZ Citizens' Information 24/7"
+    },
+    "PT": {
+      "countryName": "Portugal",
+      "mfaUrl": "https://www.portaldiplomatico.mne.gov.pt/",
+      "embassyListUrl": "https://www.portaldascomunidades.mne.gov.pt/pt/rede-consular",
+      "guidance": "Use portaldascomunidades.mne.gov.pt \"Rede consular\" for the Portuguese embassy or consulate.",
+      "emergencyPhone": "+351 217 929 714",
+      "emergencyNote": "Gabinete de Emergência Consular 24/7"
+    },
+    "RO": {
+      "countryName": "Romania",
+      "mfaUrl": "https://www.mae.ro/",
+      "embassyListUrl": "https://www.mae.ro/en/romanian-missions",
+      "guidance": "Use mae.ro \"Romanian missions\" directory to find the embassy covering your destination.",
+      "emergencyPhone": "+40 21 320 20 20",
+      "emergencyNote": "MAE Consular Call Centre 24/7"
+    },
+    "RS": {
+      "countryName": "Serbia",
+      "mfaUrl": "https://www.mfa.gov.rs/",
+      "embassyListUrl": "https://www.mfa.gov.rs/en/citizens/travelling-abroad/serbian-missions-world",
+      "guidance": "Open mfa.gov.rs \"Serbian missions in the world\" for the embassy nearest your destination.",
+      "emergencyPhone": "+381 11 306 8000",
+      "emergencyNote": "MFA duty service; each embassy also publishes a 24/7 emergency number"
+    },
+    "SE": {
+      "countryName": "Sweden",
+      "mfaUrl": "https://www.government.se/government-of-sweden/ministry-for-foreign-affairs/",
+      "embassyListUrl": "https://www.swedenabroad.se/en/",
+      "guidance": "Open swedenabroad.se and select the destination country for the Swedish embassy page.",
+      "emergencyPhone": "+46 8 405 50 05",
+      "emergencyNote": "UD Konsulära Jouren 24/7"
+    },
+    "SI": {
+      "countryName": "Slovenia",
+      "mfaUrl": "https://www.gov.si/en/state-authorities/ministries/ministry-of-foreign-and-european-affairs/",
+      "embassyListUrl": "https://www.gov.si/en/registries/list-of-diplomatic-missions-and-consulates-of-the-republic-of-slovenia/",
+      "guidance": "Use gov.si list of Slovenian diplomatic missions and consulates to find your post.",
+      "emergencyPhone": "+386 1 478 2000",
+      "emergencyNote": "MZEZ main switchboard; consular duty is routed through it"
+    },
+    "SK": {
+      "countryName": "Slovakia",
+      "mfaUrl": "https://www.mzv.sk/",
+      "embassyListUrl": "https://www.mzv.sk/en/ministry/slovak_missions_abroad",
+      "guidance": "Use mzv.sk \"Slovak missions abroad\" for the embassy serving your destination.",
+      "emergencyPhone": "+421 2 5978 5978",
+      "emergencyNote": "MZVEZ consular info line"
+    },
+    "TR": {
+      "countryName": "Türkiye",
+      "mfaUrl": "https://www.mfa.gov.tr/",
+      "embassyListUrl": "https://www.mfa.gov.tr/turkish-representations.en.mfa",
+      "guidance": "Use mfa.gov.tr \"Turkish Representations\" or the Konsolosluk.gov.tr portal; register on e-Konsolosluk before travel.",
+      "emergencyPhone": "+90 312 292 2929",
+      "emergencyNote": "Dışişleri Bakanlığı Konsolosluk Çağrı Merkezi 24/7"
+    },
+    "US": {
+      "countryName": "United States",
+      "mfaUrl": "https://www.state.gov/",
+      "embassyListUrl": "https://www.usembassy.gov/",
+      "guidance": "Visit usembassy.gov and select the destination country from the map; enrol in STEP before travel.",
+      "emergencyPhone": "+1 888 407 4747",
+      "emergencyNote": "State Department Overseas Citizens Services (from overseas: +1 202 501 4444)"
+    }
+  }
+}

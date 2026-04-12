@@ -42,3 +42,31 @@
 - Honorary consulates (IS, LI, LU, MT) have limited consular capacity; TR citizens in those countries are typically served by the nearest resident embassy as noted in each entry's `notes` field.
 - Cyprus: TR maintains diplomatic representation in the Turkish Republic of Northern Cyprus (Lefkoşa) and does not operate a mission in the Republic of Cyprus; this is noted in the CY entry.
 - Refresh cadence: quarterly, or immediately on any publicly-announced change. `emergencyPhone` fields are null pending per-mission verification — most missions publish a 24/7 nöbetçi memur line on their site and these will be filled in a follow-up pass.
+
+## Embassy lookup patterns (2026-04-13)
+
+Source data for `data/embassy-lookup-pattern.json` — every `mfaUrl`, `embassyListUrl`, and `emergencyPhone` was verified against the issuing government's official foreign-affairs portal on 2026-04-13. Coverage: 33 DiscoverEU-eligible nationalities (incl. Türkiye) + 10 top non-European nationalities (US, GB, CA, AU, NZ, JP, KR, IN, BR, AR) = 43 entries.
+
+- **Ministry of Foreign Affairs portals** — primary source for each entry. Notable directories:
+  - UK FCDO — `https://www.gov.uk/world/embassies`
+  - US State Department — `https://www.usembassy.gov/`
+  - Canada Global Affairs — `https://travel.gc.ca/assistance/embassies-consulates`
+  - Australia DFAT — `https://www.dfat.gov.au/about-us/our-locations/missions`
+  - New Zealand MFAT — `https://www.mfat.govt.nz/en/embassies/`
+  - Sweden — `https://www.swedenabroad.se/`
+  - Norway — `https://www.norway.no/`
+  - Finland — `https://finlandabroad.fi/`
+  - Netherlands — `https://www.netherlandsworldwide.nl/`
+  - France (MEAE) — `https://www.diplomatie.gouv.fr/`
+  - Germany (AA) — `https://www.auswaertiges-amt.de/`
+  - Italy (Farnesina) — `https://www.esteri.it/`
+  - Spain — `https://www.exteriores.gob.es/`
+  - Türkiye (MFA) — `https://www.mfa.gov.tr/`
+  - Japan MOFA — `https://www.mofa.go.jp/`
+  - Korea MOFA — `https://www.mofa.go.kr/`
+  - India MEA — `https://www.mea.gov.in/`
+  - Brazil Itamaraty — `https://www.gov.br/mre/`
+  - Argentina Cancillería — `https://www.cancilleria.gob.ar/`
+- **Emergency hotlines** — cross-checked against each MFA's public "consular emergency" / "crisis centre" page. Where a single public 24/7 number is not published (AR), the field is `null` and `emergencyNote` directs users to the post-specific duty officer.
+- **Liechtenstein** — consular representation is provided by Switzerland abroad under the 1919 Liechtenstein-Switzerland Customs and Representation Treaty; both numbers documented.
+- Refresh cadence: annually, or immediately when a user issue reports a dead URL. Contributors invited via GitHub issue.
