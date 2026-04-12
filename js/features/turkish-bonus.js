@@ -5,8 +5,10 @@
 // (Turkish UI language OR homeCountry === 'TR' OR route starts with TR).
 
 import { state } from '../state.js';
-import { loadJson } from '../data/loader.js';
+import { loadJson, loadConsulates } from '../data/loader.js';
 import { h, on } from '../utils/dom.js';
+import { buildICS, downloadICS } from '../utils/ics.js';
+import { t } from '../i18n/i18n.js';
 
 let bonusData = null;
 let loadPromise = null;
@@ -64,11 +66,18 @@ function buildLayer(data) {
   const lang = state.getSlice('language');
   const useTr = lang === 'tr';
 
-  return h('div', { class: 'tr-bonus' }, [
+  const wrap = h('div', { class: 'tr-bonus' }, [
     renderSchengenCard(data, useTr),
     renderSofiaCard(data, useTr),
     renderBudgetCard(data, useTr)
   ]);
+
+  // Async consulate card (it needs tr-consulates.json)
+  const consulateHost = h('div', { class: 'tr-consulate-host' });
+  wrap.appendChild(consulateHost);
+  renderConsulateCard().then(card => { if (card) consulateHost.appendChild(card); });
+
+  return wrap;
 }
 
 function renderSchengenCard(data, useTr) {
@@ -171,3 +180,150 @@ document.addEventListener('change', (ev) => {
     schengenDone: { ...(p?.schengenDone || {}), [id]: target.checked }
   }));
 });
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Consulate reminder — 4th Turkish bonus card (sub-project 2)
+// ─────────────────────────────────────────────────────────────────────────────
+
+let _consulatesCache = null;
+async function ensureConsulates() {
+  if (_consulatesCache) return _consulatesCache;
+  _consulatesCache = await loadConsulates().catch(() => null);
+  return _consulatesCache;
+}
+
+export function getAppointment() {
+  return state.getSlice('user')?.consulateAppointment || null;
+}
+
+export function saveAppointment({ countryId, city, datetime, notes }) {
+  state.update('user', prev => ({
+    ...prev,
+    consulateAppointment: { countryId, city, datetime, notes: notes || '' }
+  }));
+}
+
+export function clearAppointment() {
+  state.update('user', prev => ({ ...prev, consulateAppointment: null }));
+}
+
+function findCentre(data, countryId) {
+  if (!data?.centres) return null;
+  return data.centres.find(c => c.countryId === countryId) || null;
+}
+
+export function exportAppointmentICS(appt, centre) {
+  if (!appt || !centre) return;
+  const ics = buildICS({
+    uid: `consulate-${appt.countryId}-${appt.datetime}@discovereu-companion`,
+    summary: `${t('consulate.icsSummary')} — ${centre.countryNameTr || centre.countryName}`,
+    description: t('consulate.icsDesc'),
+    location: `${centre.provider} — ${appt.city}`,
+    startDate: new Date(appt.datetime),
+    alarms: [
+      { minutesBefore: 1440, description: t('consulate.alarm1') },
+      { minutesBefore: 120,  description: t('consulate.alarm2') }
+    ]
+  });
+  downloadICS(`consulate-${appt.datetime.slice(0, 10)}.ics`, ics);
+}
+
+/**
+ * Render the 4th Turkish bonus card. Called from the existing
+ * buildLayer() flow — caller should append the return value after
+ * renderBudgetCard().
+ */
+export async function renderConsulateCard() {
+  const data = await ensureConsulates();
+  const appt = getAppointment();
+  const card = h('section', { class: 'tr-card tr-card-consulate' }, [
+    h('h3', null, `🏛️ ${t('consulate.title')}`)
+  ]);
+
+  if (!appt) {
+    const addBtn = h('button', { class: 'btn btn-primary', type: 'button' }, `+ ${t('consulate.addCta')}`);
+    on(addBtn, 'click', () => openConsulateForm(data));
+    card.appendChild(h('p', { class: 'text-muted' }, t('consulate.empty')));
+    card.appendChild(addBtn);
+    return card;
+  }
+
+  const centre = findCentre(data, appt.countryId);
+  const when = new Date(appt.datetime);
+  const now = new Date();
+  const diffMs = when - now;
+  const days  = Math.max(0, Math.floor(diffMs / 86400000));
+  const hours = Math.max(0, Math.floor((diffMs % 86400000) / 3600000));
+
+  card.appendChild(h('p', { class: 'consulate-countdown' }, t('consulate.countdown', { days, hours })));
+  card.appendChild(h('p', null, `📍 ${centre?.provider || ''} — ${appt.city}`));
+  if (appt.notes) card.appendChild(h('p', { class: 'text-muted small' }, appt.notes));
+
+  const actions = h('div', { class: 'tr-actions' }, [
+    (() => {
+      const a = h('button', { class: 'btn btn-secondary btn-sm', type: 'button' }, `📅 ${t('consulate.addToCalendar')}`);
+      on(a, 'click', () => exportAppointmentICS(appt, centre));
+      return a;
+    })(),
+    (() => {
+      const e = h('button', { class: 'btn btn-ghost btn-sm', type: 'button' }, `✏️ ${t('consulate.edit')}`);
+      on(e, 'click', () => openConsulateForm(data, appt));
+      return e;
+    })(),
+    (() => {
+      const d = h('button', { class: 'btn btn-ghost btn-sm', type: 'button' }, `🗑 ${t('consulate.delete')}`);
+      on(d, 'click', () => { if (confirm(t('consulate.confirmDelete'))) clearAppointment(); });
+      return d;
+    })()
+  ]);
+  card.appendChild(actions);
+  return card;
+}
+
+function openConsulateForm(data, existing) {
+  const overlay = h('div', { class: 'modal-overlay consulate-modal-overlay', role: 'dialog', 'aria-modal': 'true' });
+  const countrySelect = h('select', { class: 'input' },
+    (data?.centres || []).map(c =>
+      h('option', { value: c.countryId, ...(existing?.countryId === c.countryId ? { selected: 'selected' } : {}) },
+        `${c.countryNameTr || c.countryName}`)
+    )
+  );
+  const cityInput = h('input', { type: 'text', class: 'input', placeholder: 'Istanbul', value: existing?.city || '' });
+  const dtInput = h('input', { type: 'datetime-local', class: 'input', value: existing?.datetime?.slice(0, 16) || '' });
+  const notesInput = h('textarea', { class: 'input', rows: '3', placeholder: t('consulate.notesPlaceholder') }, existing?.notes || '');
+
+  const card = h('div', { class: 'modal-card' }, [
+    h('header', { class: 'modal-header' }, [
+      h('h3', null, `🏛️ ${t('consulate.formTitle')}`),
+      h('button', { class: 'modal-close', type: 'button', 'aria-label': t('modal.close') }, '×')
+    ]),
+    h('div', { class: 'modal-body' }, [
+      h('label', null, t('consulate.country')), countrySelect,
+      h('label', null, t('consulate.city')),    cityInput,
+      h('label', null, t('consulate.datetime')),dtInput,
+      h('label', null, t('consulate.notes')),   notesInput,
+      h('div', { class: 'modal-actions' }, [
+        (() => {
+          const b = h('button', { class: 'btn btn-primary', type: 'button' }, t('consulate.save'));
+          on(b, 'click', () => {
+            const countryId = countrySelect.value;
+            const city = cityInput.value.trim();
+            const datetime = dtInput.value;
+            if (!countryId || !city || !datetime) return;
+            saveAppointment({ countryId, city, datetime: new Date(datetime).toISOString(), notes: notesInput.value.trim() });
+            close();
+          });
+          return b;
+        })()
+      ])
+    ])
+  ]);
+  overlay.appendChild(card);
+  document.body.appendChild(overlay);
+
+  function close() { overlay.remove(); document.removeEventListener('keydown', onKey); }
+  function onKey(e) { if (e.key === 'Escape') close(); }
+  document.addEventListener('keydown', onKey);
+  on(overlay, 'click', ev => { if (ev.target === overlay) close(); });
+  card.querySelector('.modal-close').addEventListener('click', close);
+}
