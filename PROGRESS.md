@@ -265,10 +265,10 @@ All loaded with SRI hashes (to add in Phase 1).
 ### Tier 4 — Fun & Memory *(Days 11-12)*
 - [x] City Bingo cards + achievement badges
 - [x] Daily Dare micro-quest push
-- [ ] Passive GPS trip journal (Polarsteps-lite) ← deferred to v1.1 sub-project D
-- [ ] Voice memory capsule (30-second audio per day) ← deferred to v1.1 sub-project D
+- [x] Passive GPS trip journal (Polarsteps-lite) (v1.1 sub-project D)
+- [x] Voice memory capsule (30-second audio per day) (v1.1 sub-project D)
 - [x] Country Soundtrack (Spotify Top 50 embed)
-- [ ] Group Vote Module (for 4-person groups) ← deferred to v1.1 sub-project D
+- [x] Group Vote Module (for 4-person groups) (v1.1 sub-project D)
 - [x] Night Arrival Shield (22:00+ filter) (v1.1 sub-project C)
 - [x] Smart Packing Assistant (weather-aware, v1.1 sub-project C)
 - [ ] Pickpocket heatmap ← deferred to v1.1 sub-project E
@@ -354,6 +354,11 @@ All loaded with SRI hashes (to add in Phase 1).
   - `js/ui/welcome-wizard.js` 4-question first-visit onboarding
   - Tab bar redesign from text-only to icon + label layout, 6 → 7 tabs (mobile bottom-nav mirrored)
   - All 13 smoke tests pass
+- **v1.1 Sub-project D — Features Round 2** (2026-04-12):
+  - `js/features/group-vote.js` (4e377d8) — LZ-string URL ballot (`#vote=`), 4-voter limit, CSS bar chart results, added as kesfet Fun card
+  - `js/features/journal.js` (92ae53d) — IDB `journalEntries` store (entries + photos share keyspace), `requestGeoLog` for auto GPS entries, `addManualEntry` with EXIF-stripped photos, Nominatim reverse-geocode cached 30d per-language at 3-decimal coord rounding, `exportTimeline` via html2canvas. Fun card on kesfet.
+  - `js/features/voice-memory.js` (5db7a19) — MediaRecorder 30s daily audio, IDB `voiceMemories` store keyed YYYY-MM-DD, SVG countdown ring (stroke-dashoffset), overwrite confirm, per-day playback + delete. Graceful fallback when unsupported.
+  - `js/features/bingo.js` extended (bc90a5c) — `generateCollage()` Canvas 2D 1080×1080 PNG, 2×2/3×3/4×4 auto-grid, EU-branded header band, labels from bingo-challenges.json, `navigator.share({files})` with download fallback. Button visible only when ≥4 bingo photos exist.
 - **v1.1 Sub-project C — Features Round 1** (2026-04-12):
   - `js/features/night-shield.js` (af47e19) — `checkNightArrivals`/`isLateStop`/`hasLateArrival` pure functions. Orange "🌙 Geç varış" badge on route stops arriving after 22:00 or before 06:00. `state.filters.hideLateArrival` toggle dims matching templates. Falls back to 80 km/h haversine estimate when trains.json lacks a leg.
   - `js/features/wrapped.js` redesign (bfcc6ba) — Strava-style Instagram Post (1080×1350) + Story (1080×1920) formats with format toggle. Canvas-drawn mini map of Europe with EU-gold route polyline over all 36 capitals as context dots. 5-stat grid (Countries/Km/Days/CO₂/Credits). Story format includes QR code (api.qrserver.com) linking to the share URL. html2canvas at exact pixel dimensions.
@@ -381,10 +386,9 @@ All loaded with SRI hashes (to add in Phase 1).
 - *(nothing — ready to continue)*
 
 ### ⏭ Next up (in order)
-1. v1.1 sub-project D: Features Round 2 — Group Vote, GPS trip journal, Voice memory capsule, Bingo photo collage
-2. v1.1 sub-project E: Data & Polish — Shared mobility data, Live Wikivoyage refresh, Pickpocket heatmap
-3. Sub-project 3: DE / FR / ES / IT translations (extend i18n JSONs)
-4. Deploy polish: custom domain, send outreach package
+1. v1.1 sub-project E: Data & Polish — Shared mobility data, Live Wikivoyage refresh, Pickpocket heatmap
+2. Sub-project 3: DE / FR / ES / IT translations (extend i18n JSONs)
+3. Deploy polish: custom domain, send outreach package
 
 ### 🛑 Blocked
 - *(none)*
