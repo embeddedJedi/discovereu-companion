@@ -73,3 +73,65 @@ export const cache = {
     storage.remove('cache:' + key);
   }
 };
+
+// ─────────────────────────────────────────────────────────────────────────────
+// IndexedDB helpers
+// ─────────────────────────────────────────────────────────────────────────────
+// Minimal Promise-based wrapper around the browser IDB API. Used by Bingo
+// for photo blob storage (store: `bingoPhotos`). One shared database
+// (`discovereu`) so future stores can be added without new wiring.
+
+const IDB_NAME = 'discovereu';
+const IDB_VERSION = 1;
+const IDB_STORES = ['bingoPhotos'];
+
+let _dbPromise = null;
+
+export function idbOpen(dbName = IDB_NAME, version = IDB_VERSION) {
+  if (_dbPromise) return _dbPromise;
+  _dbPromise = new Promise((resolve, reject) => {
+    if (!('indexedDB' in window)) {
+      reject(new Error('[idb] IndexedDB unavailable'));
+      return;
+    }
+    const req = indexedDB.open(dbName, version);
+    req.onupgradeneeded = () => {
+      const db = req.result;
+      for (const name of IDB_STORES) {
+        if (!db.objectStoreNames.contains(name)) db.createObjectStore(name);
+      }
+    };
+    req.onsuccess = () => resolve(req.result);
+    req.onerror   = () => reject(req.error);
+  });
+  return _dbPromise;
+}
+
+async function withStore(storeName, mode, fn) {
+  const db = await idbOpen();
+  return new Promise((resolve, reject) => {
+    const tx = db.transaction(storeName, mode);
+    const store = tx.objectStore(storeName);
+    const result = fn(store);
+    tx.oncomplete = () => resolve(result && result.__value !== undefined ? result.__value : result);
+    tx.onabort = tx.onerror = () => reject(tx.error);
+  });
+}
+
+export async function idbPut(storeName, key, value) {
+  return withStore(storeName, 'readwrite', store => { store.put(value, key); });
+}
+
+export async function idbGet(storeName, key) {
+  const db = await idbOpen();
+  return new Promise((resolve, reject) => {
+    const tx = db.transaction(storeName, 'readonly');
+    const req = tx.objectStore(storeName).get(key);
+    req.onsuccess = () => resolve(req.result ?? null);
+    req.onerror   = () => reject(req.error);
+  });
+}
+
+export async function idbDelete(storeName, key) {
+  return withStore(storeName, 'readwrite', store => { store.delete(key); });
+}
