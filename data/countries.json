@@ -2352,6 +2352,12 @@
       "sources": [
         "wikivoyage:Turkey",
         "wikipedia:Turkey"
+      ],
+      "cities": [
+        { "id": "ist", "name": "İstanbul", "lat": 41.0082, "lng": 28.9784 },
+        { "id": "ank", "name": "Ankara", "lat": 39.9334, "lng": 32.8597 },
+        { "id": "izm", "name": "İzmir", "lat": 38.4237, "lng": 27.1428 },
+        { "id": "esb", "name": "Eskişehir", "lat": 39.7767, "lng": 30.5206 }
       ]
     }
   ]

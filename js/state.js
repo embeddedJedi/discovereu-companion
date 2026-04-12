@@ -12,6 +12,7 @@ const initialState = {
   user: {
     groupSize: 4,
     homeCountry: 'TR',
+    homeCity: 'ist',
     budget: 'moderate',        // 'budget' | 'moderate' | 'comfort'
     accommodation: 'hostel',   // 'hostel' | 'airbnb' | 'camp' | 'couchsurf'
     foodStyle: 'moderate',     // 'budget' | 'moderate' | 'comfort'
@@ -20,6 +21,8 @@ const initialState = {
   },
   route: {
     stops: [],                 // [{ countryId, cityId, nights, arrivalDay, transport }]
+    returnStops: [],           // [{ countryId, cityId, nights, arrivalDay, transport }] — return leg
+    includeReturnInBudget: true, // when true, return leg counts against budget + seat credits
     travelDaysLimit: 7,
     seatCreditsLimit: 4,
     name: ''
@@ -65,6 +68,22 @@ const initialState = {
   routeTemplates: []           // loaded from data/route-templates.json
 };
 
+/**
+ * Migrate persisted state shape to current version.
+ * Adds fields introduced after a user's last visit so old LocalStorage
+ * payloads don't break new features (e.g. v1.2 round-trip routing).
+ */
+function migrate(persisted) {
+  if (persisted?.user && !persisted.user.homeCity) {
+    persisted.user.homeCity = 'ist';
+  }
+  if (persisted?.route) {
+    if (!Array.isArray(persisted.route.returnStops)) persisted.route.returnStops = [];
+    if (typeof persisted.route.includeReturnInBudget !== 'boolean') persisted.route.includeReturnInBudget = true;
+  }
+  return persisted;
+}
+
 class Store {
   constructor(initial) {
     this._state = this._hydrate(initial);
@@ -72,14 +91,20 @@ class Store {
   }
 
   _hydrate(initial) {
-    const hydrated = { ...initial };
+    // Collect persisted slices, run shape migration, then merge with initial defaults.
+    const persisted = {};
     for (const key of PERSIST_KEYS) {
       const stored = storage.get(key);
-      if (stored != null) {
-        hydrated[key] = typeof initial[key] === 'object' && !Array.isArray(initial[key])
-          ? { ...initial[key], ...stored }
-          : stored;
-      }
+      if (stored != null) persisted[key] = stored;
+    }
+    migrate(persisted);
+
+    const hydrated = { ...initial };
+    for (const key of PERSIST_KEYS) {
+      if (persisted[key] == null) continue;
+      hydrated[key] = typeof initial[key] === 'object' && !Array.isArray(initial[key])
+        ? { ...initial[key], ...persisted[key] }
+        : persisted[key];
     }
     return hydrated;
   }
