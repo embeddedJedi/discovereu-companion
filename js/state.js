@@ -4,7 +4,19 @@
 
 import { storage } from './utils/storage.js';
 
-const PERSIST_KEYS = ['theme', 'language', 'user', 'route', 'filters', 'prep', 'bingo', 'dares', 'futureMessages', 'impact', 'a11y'];
+const PERSIST_KEYS = ['theme', 'language', 'user', 'route', 'filters', 'prep', 'bingo', 'dares', 'futureMessages', 'impact', 'a11y', 'buddy'];
+
+const BUDDY_VALID_KINDS = ['local', 'mentor', 'traveler'];
+const BUDDY_SEEN_CAP = 200;
+const BUDDY_DEFAULTS = {
+  handle: null,
+  consented: false,
+  preferences: {
+    kinds: [],
+    citiesOptIn: []
+  },
+  seenIds: []
+};
 
 const A11Y_DEFAULTS = {
   dyslexiaMode: false,
@@ -95,6 +107,11 @@ const initialState = {
     lastSnapshotHash: null     // hash of last computed impact snapshot for change detection
   },
   a11y: { ...A11Y_DEFAULTS },  // persisted — v1.5 Accessibility Overlay
+  buddy: {                     // persisted — v1.6 Buddy Matching
+    ...BUDDY_DEFAULTS,
+    preferences: { ...BUDDY_DEFAULTS.preferences, kinds: [], citiesOptIn: [] },
+    seenIds: []
+  },
   countries: [],               // loaded from data/countries.json
   trains: [],                  // loaded from data/trains.json
   reservations: [],            // loaded from data/reservations.json
@@ -155,6 +172,34 @@ function migrate(persisted) {
     // colorBlindMode — force to 'none' when not in whitelist
     if (!A11Y_COLOR_BLIND.includes(a.colorBlindMode)) {
       a.colorBlindMode = 'none';
+    }
+  }
+  // v1.6 — backfill + sanitize buddy slice (Buddy Matching).
+  if (!persisted.buddy || typeof persisted.buddy !== 'object') {
+    persisted.buddy = {
+      handle: null,
+      consented: false,
+      preferences: { kinds: [], citiesOptIn: [] },
+      seenIds: []
+    };
+  } else {
+    const b = persisted.buddy;
+    if (typeof b.handle !== 'string') b.handle = null;
+    if (typeof b.consented !== 'boolean') b.consented = false;
+    if (!b.preferences || typeof b.preferences !== 'object') {
+      b.preferences = { kinds: [], citiesOptIn: [] };
+    } else {
+      if (!Array.isArray(b.preferences.kinds)) {
+        b.preferences.kinds = [];
+      } else {
+        b.preferences.kinds = b.preferences.kinds.filter(k => BUDDY_VALID_KINDS.includes(k));
+      }
+      if (!Array.isArray(b.preferences.citiesOptIn)) b.preferences.citiesOptIn = [];
+    }
+    if (!Array.isArray(b.seenIds)) b.seenIds = [];
+    // FIFO-drop oldest entries when seenIds exceeds cap.
+    if (b.seenIds.length > BUDDY_SEEN_CAP) {
+      b.seenIds = b.seenIds.slice(b.seenIds.length - BUDDY_SEEN_CAP);
     }
   }
   return persisted;
