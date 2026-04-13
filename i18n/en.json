@@ -1264,5 +1264,50 @@
       "generic": "Something went wrong — please try again",
       "rateLimited": "AI provider rate limit — wait a minute"
     }
+  },
+  "green": {
+    "layer": {
+      "toggle": "Show green-certified hostels",
+      "filterLabel": "Green only"
+    },
+    "filter": {
+      "on": "Showing only green-certified hostels",
+      "off": "Showing all accommodations"
+    },
+    "marker": {
+      "popupTitle": "Green-certified hostel"
+    },
+    "cert": {
+      "ecolabel": "EU Ecolabel",
+      "greenkey": "Green Key",
+      "leed": "LEED",
+      "nordicswan": "Nordic Swan",
+      "biosphere": "Biosphere"
+    },
+    "score": {
+      "label": "Sustainability score"
+    },
+    "priceTier": {
+      "low": "Budget (<€25/night)",
+      "mid": "Mid-range (€25-50/night)",
+      "high": "Premium (>€50/night)"
+    },
+    "popup": {
+      "visit": "Visit hostel website",
+      "verified": "Verified {date}"
+    },
+    "empty": "No certified green hostels yet in your route cities. Contribute via GitHub."
+  },
+  "offset": {
+    "cta": {
+      "title": "Balance your trip's carbon",
+      "body": "Your trip creates an estimated {kg} kg of CO₂. Offsetting isn't a substitute for lower-carbon travel, but can fund verified reductions. Links below are not affiliate.",
+      "myclimate": "Offset with myclimate",
+      "climatecare": "Offset with Climate Care",
+      "treesforall": "Plant trees with Trees for All"
+    },
+    "learnMore": "How does carbon offsetting work?",
+    "learnMoreUrl": "https://www.myclimate.org/en/information/climate-protection-projects/",
+    "disclaimer": "We do not earn a commission from these links."
   }
 }

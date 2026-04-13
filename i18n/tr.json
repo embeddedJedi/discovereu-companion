@@ -1228,5 +1228,50 @@
       "generic": "Bir şey ters gitti — tekrar dene",
       "rateLimited": "AI sağlayıcısı limiti doldu — bir dakika bekle"
     }
+  },
+  "green": {
+    "layer": {
+      "toggle": "Yeşil sertifikalı hostelleri göster",
+      "filterLabel": "Sadece yeşil"
+    },
+    "filter": {
+      "on": "Sadece yeşil sertifikalı hosteller gösteriliyor",
+      "off": "Tüm konaklamalar gösteriliyor"
+    },
+    "marker": {
+      "popupTitle": "Yeşil sertifikalı hostel"
+    },
+    "cert": {
+      "ecolabel": "EU Ecolabel",
+      "greenkey": "Green Key",
+      "leed": "LEED",
+      "nordicswan": "Nordic Swan",
+      "biosphere": "Biosphere"
+    },
+    "score": {
+      "label": "Sürdürülebilirlik puanı"
+    },
+    "priceTier": {
+      "low": "Ekonomik (<€25/gece)",
+      "mid": "Orta (€25-50/gece)",
+      "high": "Premium (>€50/gece)"
+    },
+    "popup": {
+      "visit": "Hostel sitesini ziyaret et",
+      "verified": "Doğrulandı {date}"
+    },
+    "empty": "Rotandaki şehirlerde henüz sertifikalı yeşil hostel yok. GitHub'dan katkı yap."
+  },
+  "offset": {
+    "cta": {
+      "title": "Yolculuğunun karbon izini dengele",
+      "body": "Yolculuğun yaklaşık {kg} kg CO₂ üretiyor. Dengeleme, düşük-karbonlu seyahatin yerine geçmez ama doğrulanmış azaltmaları finanse edebilir. Aşağıdaki linkler affiliate değildir.",
+      "myclimate": "myclimate ile dengele",
+      "climatecare": "Climate Care ile dengele",
+      "treesforall": "Trees for All ile ağaç dik"
+    },
+    "learnMore": "Karbon dengeleme nasıl çalışır?",
+    "learnMoreUrl": "https://www.myclimate.org/en/information/climate-protection-projects/",
+    "disclaimer": "Bu linklerden komisyon almıyoruz."
   }
 }
