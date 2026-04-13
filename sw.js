@@ -7,7 +7,7 @@
 //   • On activate: wipe any older cache buckets so version bumps roll
 //     out cleanly
 
-const CACHE_VERSION = 'discovereu-v11';
+const CACHE_VERSION = 'discovereu-v12';
 const APP_SHELL = [
   './',
   './index.html',
@@ -91,7 +91,18 @@ const APP_SHELL = [
   '/data/green-hostels.json',
   '/css/green-hostel.css',
   '/js/map/green-hostels-layer.js',
-  '/js/ui/offset-cta.js'
+  '/js/ui/offset-cta.js',
+  '/data/phrasebook/de.json',
+  '/data/phrasebook/fr.json',
+  '/data/phrasebook/it.json',
+  '/data/phrasebook/es.json',
+  '/data/phrasebook/tr.json',
+  '/js/features/ocr.js',
+  '/js/features/translate.js',
+  '/js/features/voice-translator.js',
+  '/js/features/phrasebook.js',
+  '/js/ui/language-bridge-panel.js',
+  '/js/ui/phrasebook-deck.js'
 ];
 
 self.addEventListener('install', (event) => {
