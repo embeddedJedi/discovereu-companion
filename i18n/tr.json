@@ -1273,5 +1273,62 @@
     "learnMore": "Karbon dengeleme nasıl çalışır?",
     "learnMoreUrl": "https://www.myclimate.org/en/information/climate-protection-projects/",
     "disclaimer": "Bu linklerden komisyon almıyoruz."
+  },
+  "lang": {
+    "panel": {
+      "title": "Language Bridge",
+      "subtitle": "Kamera OCR · Ses · Cümle Defteri",
+      "chooseLang": "Hedef dil",
+      "currentRoute": "{country} rotan için",
+      "tabs": {
+        "camera": "Kamera",
+        "voice": "Ses",
+        "phrasebook": "Cümle defteri"
+      }
+    },
+    "ocr": {
+      "start": "Metne kamerayı doğrult",
+      "capture": "Çek",
+      "recognizing": "Metin okunuyor…",
+      "noText": "Metin tanınamadı — daha iyi aydınlatma dene",
+      "permissionNeeded": "Kamera izni gerekli. İzin için dokun.",
+      "permissionDenied": "Kamera izni reddedildi. Tarayıcı ayarlarından aç.",
+      "sizeWarn": "İlk kullanım dil paketi indirir (~8 MB). Devam?",
+      "downloading": "Dil paketi indiriliyor ({percent}%)",
+      "translateFound": "Bu metni çevir"
+    },
+    "voice": {
+      "start": "Konuşmak için bas, çevirmek için bırak",
+      "listening": "Dinliyor…",
+      "translating": "Çeviriyor…",
+      "playback": "Çeviriyi oynat",
+      "ttsUnavailable": "Ses sentezi bu cihazda mevcut değil",
+      "slowMode": "Tek-iş parçacığı modunda (daha yavaş)"
+    },
+    "phrasebook": {
+      "title": "{country} için çevrimdışı cümleler",
+      "search": "Cümle ara",
+      "category": {
+        "greetings": "Selamlaşma",
+        "food": "Yemek ve içecek",
+        "emergency": "Acil durum",
+        "directions": "Yön tarifi",
+        "numbers": "Sayılar"
+      },
+      "bookmarkAdd": "Cümleyi kaydet",
+      "bookmarkRemove": "Desteden çıkar",
+      "empty": "Bu ülke için henüz cümle yok"
+    },
+    "deck": {
+      "title": "Kayıtlı cümlelerim",
+      "empty": "Henüz kayıtlı cümle yok — cümle defterinden yer imle",
+      "playAudio": "Sesi çal",
+      "removeAll": "Destesi temizle"
+    },
+    "errors": {
+      "llmKey": "Çeviri için Ayarlar'dan AI API anahtarını ekle",
+      "rateLimit": "AI sağlayıcısı limiti doldu — bir dakika bekle",
+      "offlineFallback": "Çevrimdışı — sadece cümle defteri"
+    }
   }
 }

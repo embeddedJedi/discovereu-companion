@@ -1309,5 +1309,62 @@
     "learnMore": "How does carbon offsetting work?",
     "learnMoreUrl": "https://www.myclimate.org/en/information/climate-protection-projects/",
     "disclaimer": "We do not earn a commission from these links."
+  },
+  "lang": {
+    "panel": {
+      "title": "Language Bridge",
+      "subtitle": "Camera OCR · Voice · Phrasebook",
+      "chooseLang": "Target language",
+      "currentRoute": "For your route to {country}",
+      "tabs": {
+        "camera": "Camera",
+        "voice": "Voice",
+        "phrasebook": "Phrasebook"
+      }
+    },
+    "ocr": {
+      "start": "Point camera at text",
+      "capture": "Capture",
+      "recognizing": "Reading text…",
+      "noText": "No text recognized — try better lighting",
+      "permissionNeeded": "Camera permission needed. Tap to allow.",
+      "permissionDenied": "Camera permission denied. Enable in browser settings.",
+      "sizeWarn": "First use downloads language pack (~8 MB). Continue?",
+      "downloading": "Downloading language pack ({percent}%)",
+      "translateFound": "Translate this text"
+    },
+    "voice": {
+      "start": "Hold to speak, release to translate",
+      "listening": "Listening…",
+      "translating": "Translating…",
+      "playback": "Play translation",
+      "ttsUnavailable": "Voice synthesis not available on this device",
+      "slowMode": "Running in single-thread mode (slower)"
+    },
+    "phrasebook": {
+      "title": "Offline phrases for {country}",
+      "search": "Search phrases",
+      "category": {
+        "greetings": "Greetings",
+        "food": "Food & drink",
+        "emergency": "Emergency",
+        "directions": "Directions",
+        "numbers": "Numbers"
+      },
+      "bookmarkAdd": "Save phrase",
+      "bookmarkRemove": "Remove from deck",
+      "empty": "No phrases for this country yet"
+    },
+    "deck": {
+      "title": "My saved phrases",
+      "empty": "No saved phrases yet — bookmark from the phrasebook",
+      "playAudio": "Play audio",
+      "removeAll": "Clear deck"
+    },
+    "errors": {
+      "llmKey": "Please add your AI API key in Settings for translation",
+      "rateLimit": "AI provider rate limit — wait a minute",
+      "offlineFallback": "Offline — phrasebook only"
+    }
   }
 }
