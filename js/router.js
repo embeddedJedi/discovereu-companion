@@ -3,7 +3,7 @@
 // Routes: #/map, #/hazirlik, #/kesfet
 // Nested: #/map/DE — parsed as { page, sub }
 
-const PAGES = ['map', 'rehber', 'kesfet', 'hazirlik', 'impact', 'coach'];
+const PAGES = ['map', 'rehber', 'kesfet', 'hazirlik', 'impact', 'coach', 'group'];
 const DEFAULT_PAGE = 'map';
 const listeners = new Set();
 
@@ -22,10 +22,22 @@ export function parseHash(hash = location.hash) {
     return { page: 'map', sub: null, params: { route: raw.slice(6) } };
   }
 
-  const segments = raw.split('/').filter(Boolean);
+  // Split query string off first so routes like "group?g=..." still parse.
+  const qIdx = raw.indexOf('?');
+  const pathPart = qIdx >= 0 ? raw.slice(0, qIdx) : raw;
+  const queryPart = qIdx >= 0 ? raw.slice(qIdx + 1) : '';
+
+  const segments = pathPart.split('/').filter(Boolean);
   const page = PAGES.includes(segments[0]) ? segments[0] : DEFAULT_PAGE;
   const sub = segments[1] || null;
-  return { page, sub, params: {} };
+
+  const params = {};
+  if (queryPart) {
+    try {
+      new URLSearchParams(queryPart).forEach((v, k) => { params[k] = v; });
+    } catch (_) { /* noop */ }
+  }
+  return { page, sub, params };
 }
 
 /** Navigate to a page, optionally with a sub-route. */

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--
+    Base href points at repo root so all relative asset/API/i18n paths
+    resolve identically to the main index.html entry.
+  -->
+  <base href="../">
+  <title data-i18n="group.page.title">Group planning — DiscoverEU Companion</title>
+
+  <link rel="stylesheet" href="css/design-system.css">
+  <link rel="stylesheet" href="css/a11y.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/group.css">
+
+  <!-- LZ-string for share URL decode (same CDN as index.html) -->
+  <script src="https://cdn.jsdelivr.net/npm/lz-string@1.5.0/libs/lz-string.min.js" defer></script>
+</head>
+<body class="group-page-body">
+  <header class="group-page-header">
+    <h1 data-i18n="group.page.heading">Group planning</h1>
+    <a class="btn btn-ghost" href="./" data-i18n="group.page.backToApp">Back to app</a>
+  </header>
+
+  <main id="group-mount" class="group-page-main" aria-live="polite"></main>
+
+  <script type="module" src="js/pages/group.js"></script>
+</body>
+</html>

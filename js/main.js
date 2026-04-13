@@ -20,7 +20,8 @@ const PAGE_MODULES = {
   kesfet:   () => import('./pages/kesfet.js'),
   hazirlik: () => import('./pages/hazirlik.js'),
   impact:   () => import('./pages/impact.js'),
-  coach:    () => import('./pages/coach.js')
+  coach:    () => import('./pages/coach.js'),
+  group:    () => import('./pages/group.js')
 };
 
 let currentPageModule = null;
