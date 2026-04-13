@@ -7,7 +7,7 @@
 //   • On activate: wipe any older cache buckets so version bumps roll
 //     out cleanly
 
-const CACHE_VERSION = 'discovereu-v10';
+const CACHE_VERSION = 'discovereu-v11';
 const APP_SHELL = [
   './',
   './index.html',
@@ -87,7 +87,11 @@ const APP_SHELL = [
   '/badges/classes/de.json',
   '/badges/classes/fr.json',
   '/badges/classes/es.json',
-  '/badges/classes/it.json'
+  '/badges/classes/it.json',
+  '/data/green-hostels.json',
+  '/css/green-hostel.css',
+  '/js/map/green-hostels-layer.js',
+  '/js/ui/offset-cta.js'
 ];
 
 self.addEventListener('install', (event) => {
