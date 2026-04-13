@@ -4,7 +4,33 @@
 
 import { storage } from './utils/storage.js';
 
-const PERSIST_KEYS = ['theme', 'language', 'user', 'route', 'filters', 'prep', 'bingo', 'dares', 'futureMessages', 'impact'];
+const PERSIST_KEYS = ['theme', 'language', 'user', 'route', 'filters', 'prep', 'bingo', 'dares', 'futureMessages', 'impact', 'a11y'];
+
+const A11Y_DEFAULTS = {
+  dyslexiaMode: false,
+  lowBandwidth: false,
+  reduceMotion: null,           // null = follow OS, true = force on, false = force off
+  highContrast: false,
+  fontScale: 1.0,               // allowed: 0.85 | 1.25 | 1.5 (1.0 default baseline)
+  lineHeight: 1.5,              // allowed: 1.5 | 1.8 | 2.0
+  letterSpacing: 0,             // allowed: 0 | 0.05 | 0.1 (em)
+  colorBlindMode: 'none',       // 'none' | 'protanopia' | 'deuteranopia' | 'tritanopia'
+  transcribeVoice: false
+};
+const A11Y_FONT_SCALES = [0.85, 1.0, 1.25, 1.5];
+const A11Y_LINE_HEIGHTS = [1.5, 1.8, 2.0];
+const A11Y_LETTER_SPACINGS = [0, 0.05, 0.1];
+const A11Y_COLOR_BLIND = ['none', 'protanopia', 'deuteranopia', 'tritanopia'];
+
+function snapNearest(value, allowed) {
+  let best = allowed[0];
+  let bestDiff = Math.abs(value - best);
+  for (let i = 1; i < allowed.length; i++) {
+    const d = Math.abs(value - allowed[i]);
+    if (d < bestDiff) { best = allowed[i]; bestDiff = d; }
+  }
+  return best;
+}
 
 const initialState = {
   theme: 'light',
@@ -67,6 +93,7 @@ const initialState = {
     badgesEarned: [],          // [badgeId, ...] milestone badges unlocked
     lastSnapshotHash: null     // hash of last computed impact snapshot for change detection
   },
+  a11y: { ...A11Y_DEFAULTS },  // persisted — v1.5 Accessibility Overlay
   countries: [],               // loaded from data/countries.json
   trains: [],                  // loaded from data/trains.json
   reservations: [],            // loaded from data/reservations.json
@@ -93,6 +120,40 @@ function migrate(persisted) {
     if (typeof persisted.impact.aggregateOptIn !== 'boolean') persisted.impact.aggregateOptIn = false;
     if (!Array.isArray(persisted.impact.badgesEarned)) persisted.impact.badgesEarned = [];
     if (persisted.impact.lastSnapshotHash === undefined) persisted.impact.lastSnapshotHash = null;
+  }
+  // v1.5 — backfill + sanitize a11y slice (Accessibility Overlay).
+  if (!persisted.a11y || typeof persisted.a11y !== 'object') {
+    persisted.a11y = { ...A11Y_DEFAULTS };
+  } else {
+    const a = persisted.a11y;
+    if (typeof a.dyslexiaMode !== 'boolean') a.dyslexiaMode = A11Y_DEFAULTS.dyslexiaMode;
+    if (typeof a.lowBandwidth !== 'boolean') a.lowBandwidth = A11Y_DEFAULTS.lowBandwidth;
+    if (typeof a.highContrast !== 'boolean') a.highContrast = A11Y_DEFAULTS.highContrast;
+    if (typeof a.transcribeVoice !== 'boolean') a.transcribeVoice = A11Y_DEFAULTS.transcribeVoice;
+    // reduceMotion must be strictly null | true | false
+    if (!(a.reduceMotion === null || a.reduceMotion === true || a.reduceMotion === false)) {
+      a.reduceMotion = null;
+    }
+    // fontScale — snap to nearest valid value if out of whitelist
+    if (typeof a.fontScale !== 'number' || !A11Y_FONT_SCALES.includes(a.fontScale)) {
+      a.fontScale = typeof a.fontScale === 'number'
+        ? snapNearest(a.fontScale, A11Y_FONT_SCALES)
+        : A11Y_DEFAULTS.fontScale;
+    }
+    // lineHeight — fall back to 1.5 when outside whitelist
+    if (typeof a.lineHeight !== 'number' || !A11Y_LINE_HEIGHTS.includes(a.lineHeight)) {
+      a.lineHeight = 1.5;
+    }
+    // letterSpacing — snap to nearest valid (0 | 0.05 | 0.1)
+    if (typeof a.letterSpacing !== 'number' || !A11Y_LETTER_SPACINGS.includes(a.letterSpacing)) {
+      a.letterSpacing = typeof a.letterSpacing === 'number'
+        ? snapNearest(a.letterSpacing, A11Y_LETTER_SPACINGS)
+        : A11Y_DEFAULTS.letterSpacing;
+    }
+    // colorBlindMode — force to 'none' when not in whitelist
+    if (!A11Y_COLOR_BLIND.includes(a.colorBlindMode)) {
+      a.colorBlindMode = 'none';
+    }
   }
   return persisted;
 }
