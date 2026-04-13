@@ -1,0 +1,20 @@
+/* css/a11y-lowbw.css
+ * v1.5 Accessibility Overlay — low-bandwidth visual strips.
+ * Active only when <html data-a11y-lowbw="on"> is set by a11y-settings.js.
+ * Hides non-essential decorative/heavy visual elements; shows lean
+ * placeholder surfaces in their place (.lowbw-placeholder).
+ */
+
+html[data-a11y-lowbw="on"] .wrapped-preview,
+html[data-a11y-lowbw="on"] .hero-video,
+html[data-a11y-lowbw="on"] .map-tile-layer { display: none !important; }
+
+html[data-a11y-lowbw="on"] .lowbw-placeholder { display: block; }
+
+.lowbw-placeholder {
+  display: none;
+  padding: 1rem;
+  border: 2px dashed var(--accent);
+  border-radius: 0.5rem;
+  text-align: center;
+}

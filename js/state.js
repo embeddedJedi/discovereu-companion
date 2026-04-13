@@ -15,7 +15,8 @@ const A11Y_DEFAULTS = {
   lineHeight: 1.5,              // allowed: 1.5 | 1.8 | 2.0
   letterSpacing: 0,             // allowed: 0 | 0.05 | 0.1 (em)
   colorBlindMode: 'none',       // 'none' | 'protanopia' | 'deuteranopia' | 'tritanopia'
-  transcribeVoice: false
+  transcribeVoice: false,
+  wheelchairLayer: false        // v1.5 — map overlay for step-free metro stations
 };
 const A11Y_FONT_SCALES = [0.85, 1.0, 1.25, 1.5];
 const A11Y_LINE_HEIGHTS = [1.5, 1.8, 2.0];
@@ -130,6 +131,7 @@ function migrate(persisted) {
     if (typeof a.lowBandwidth !== 'boolean') a.lowBandwidth = A11Y_DEFAULTS.lowBandwidth;
     if (typeof a.highContrast !== 'boolean') a.highContrast = A11Y_DEFAULTS.highContrast;
     if (typeof a.transcribeVoice !== 'boolean') a.transcribeVoice = A11Y_DEFAULTS.transcribeVoice;
+    if (typeof a.wheelchairLayer !== 'boolean') a.wheelchairLayer = A11Y_DEFAULTS.wheelchairLayer;
     // reduceMotion must be strictly null | true | false
     if (!(a.reduceMotion === null || a.reduceMotion === true || a.reduceMotion === false)) {
       a.reduceMotion = null;

@@ -178,6 +178,18 @@ function build(uid) {
       })
     ]),
 
+    // 6. Mobility — v1.5 wheelchair layer state binding
+    section(t('a11y.panel.section.mobility'), `${uid}-mobility`, [
+      toggleRow({
+        id: `${uid}-wheelchair`,
+        label: t('a11y.wheelchair.toggle'),
+        describedById: `${uid}-wheelchair-desc`,
+        description: t('a11y.wheelchair.description'),
+        checked: !!a.wheelchairLayer,
+        onChange: (v) => updateA11y('wheelchairLayer', v)
+      })
+    ]),
+
     // Footer
     h('footer', { class: 'a11y-panel-footer' }, [
       h('a', {

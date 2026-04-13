@@ -4,10 +4,22 @@
 // `voiceMemories`, keyed by `YYYY-MM-DD`).
 //
 // DOM-free core + a `mount(container)` renderer for the Fun page.
+//
+// Low-bandwidth (v1.5 a11y overlay)
+// ---------------------------------
+// This module is already lazy — `navigator.mediaDevices.getUserMedia`
+// is only called when the user clicks the record button inside
+// `handleRecordClick`, and `mount()` performs no network / media work
+// beyond `isSupported()` feature detection. The `shouldDefer('voice-
+// memory')` gate is therefore consulted defensively at click time so
+// a user who flips low-bandwidth on mid-session is not re-prompted for
+// mic permission; UI mount stays untouched so the rest of the Fun
+// page keeps working.
 
 import { idbPut, idbGet, idbDelete, idbGetAll } from '../utils/storage.js';
 import { h, empty } from '../utils/dom.js';
 import { t } from '../i18n/i18n.js';
+import { shouldDefer } from './low-bw.js';
 
 const STORE = 'voiceMemories';
 const MAX_DURATION_MS = 30_000;
@@ -247,6 +259,12 @@ function renderUnsupported() {
 async function handleRecordClick() {
   if (activeRecording) {
     activeRecording.stop();
+    return;
+  }
+  // Low-bandwidth gate — avoid prompting for mic permission / allocating
+  // a MediaRecorder pipeline while the user has requested lean mode.
+  if (shouldDefer('voice-memory')) {
+    if (statusEl) statusEl.textContent = t('voiceMemory.lowbwDisabled') || t('voiceMemory.record');
     return;
   }
   try {

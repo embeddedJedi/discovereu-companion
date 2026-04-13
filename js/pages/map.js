@@ -9,6 +9,7 @@ import { getMap } from '../map/map.js';
 import { initRouteLayer } from '../map/route-layer.js';
 import { toggleLayer as togglePickpocketLayer } from '../features/pickpocket.js';
 import { createWheelchairLayer } from '../map/wheelchair-layer.js';
+import { shouldDefer } from '../features/low-bw.js';
 
 let overlayEl = null;
 let chipStripEl = null;
@@ -34,6 +35,14 @@ export function mount(container) {
   const map = getMap();
   if (map) initRouteLayer(map);
 
+  // Low-bandwidth gate: the app currently renders only GeoJSON country
+  // polygons (no raster tile layer). If a CartoDB / OSM tile layer is
+  // added here in the future, wrap the addLayer call, e.g.:
+  //   if (map && !shouldDefer('map-tiles')) { map.addLayer(tileLayer); }
+  // The gate is consulted per-mount so the user can flip the flag
+  // without a reload.
+  void shouldDefer;
+
   overlayEl = h('div', { class: 'map-overlays' });
   container.appendChild(overlayEl);
 
@@ -48,10 +57,45 @@ export function mount(container) {
   overlayEl.appendChild(layerControlsEl);
   renderLayerToggles();
 
+  // Initial sync: if a11y.wheelchairLayer was persisted as true, enable layer now.
+  syncWheelchairFromState();
+
   unsubscribers.push(
-    state.subscribe('route', () => { renderRouteSummary(); renderChipStrip(); }),
-    state.subscribe('language', () => { renderRouteSummary(); renderChipStrip(); renderLayerToggles(); })
+    state.subscribe('route', () => { renderRouteSummary(); renderChipStrip(); syncWheelchairFromState(); }),
+    state.subscribe('language', () => { renderRouteSummary(); renderChipStrip(); renderLayerToggles(); }),
+    state.subscribe('a11y', () => { syncWheelchairFromState(); })
   );
+}
+
+/**
+ * State-driven wheelchair layer binding. Reads `a11y.wheelchairLayer` and
+ * enables/disables the Leaflet layer. Also re-runs when `route` changes so
+ * the country filter stays in sync with the user's stops.
+ */
+async function syncWheelchairFromState() {
+  const map = getMap();
+  if (!map) return;
+  const want = !!(state.getSlice('a11y') || {}).wheelchairLayer;
+
+  if (want && !wheelchairApi) {
+    try { wheelchairApi = createWheelchairLayer(map); }
+    catch (err) { console.error('[map] wheelchair init failed', err); return; }
+  }
+  if (!wheelchairApi) return;
+
+  try {
+    if (want) {
+      const ids = routeCountryIds();
+      await wheelchairApi.enable(ids.size ? ids : undefined);
+      wheelchairOn = true;
+    } else if (wheelchairOn) {
+      wheelchairApi.disable();
+      wheelchairOn = false;
+    }
+  } catch (err) {
+    console.error('[map] wheelchair sync failed', err);
+  }
+  renderLayerToggles();
 }
 
 export function unmount() {
@@ -66,6 +110,9 @@ export function unmount() {
     togglePickpocketLayer(map, false);
     pickpocketOn = false;
   }
+  // Keep a11y.wheelchairLayer state intact across page navigation — just
+  // detach the Leaflet layer so it isn't drawn while the map is hidden.
+  // On re-mount, syncWheelchairFromState() restores it from state.
   if (wheelchairApi && wheelchairOn) {
     wheelchairApi.disable();
     wheelchairOn = false;
@@ -116,27 +163,10 @@ function renderLayerToggles() {
     'aria-pressed': wheelchairOn ? 'true' : 'false',
     'aria-label': t('a11y.wheelchair.toggle'),
     title: t('a11y.wheelchair.description'),
-    onclick: async () => {
-      const map = getMap();
-      if (!map) return;
-      if (!wheelchairApi) {
-        try { wheelchairApi = createWheelchairLayer(map); }
-        catch (err) { console.error('[map] wheelchair init failed', err); return; }
-      }
-      try {
-        if (wheelchairOn) {
-          wheelchairApi.disable();
-          wheelchairOn = false;
-        } else {
-          const ids = routeCountryIds();
-          // No filter when route empty — show all seed cities.
-          await wheelchairApi.enable(ids.size ? ids : undefined);
-          wheelchairOn = true;
-        }
-      } catch (err) {
-        console.error('[map] wheelchair toggle failed', err);
-      }
-      renderLayerToggles();
+    onclick: () => {
+      // Write to state — subscribe in syncWheelchairFromState() drives the layer.
+      const next = !wheelchairOn;
+      state.update('a11y', a => ({ ...(a || {}), wheelchairLayer: next }));
     }
   }, [
     h('span', { 'aria-hidden': 'true' }, '\u267F'),

@@ -7,7 +7,7 @@
 //   • On activate: wipe any older cache buckets so version bumps roll
 //     out cleanly
 
-const CACHE_VERSION = 'discovereu-v7';
+const CACHE_VERSION = 'discovereu-v8';
 const APP_SHELL = [
   './',
   './index.html',
@@ -16,7 +16,15 @@ const APP_SHELL = [
   './css/components.css',
   './css/map.css',
   './css/a11y.css',
+  './css/a11y-lowbw.css',
   './css/impact.css',
+  '/js/features/low-bw.js',
+  '/js/features/voice-transcribe.js',
+  '/js/features/a11y-settings.js',
+  '/js/map/wheelchair-layer.js',
+  '/data/wheelmap-metro-index.json',
+  '/js/ui/a11y-panel.js',
+  '/pages/accessibility-demo.html',
   '/pages/impact.html',
   '/data/impact-public.json',
   '/js/impact-public-renderer.js',
@@ -24,9 +32,7 @@ const APP_SHELL = [
   '/js/features/impact-card.js',
   '/js/features/impact-anonymize.js',
   '/js/features/impact-export.js',
-  '/js/features/a11y-settings.js',
   '/js/ui/impact-panel.js',
-  '/js/ui/a11y-panel.js',
   './assets/icons/favicon.svg',
   './assets/icons/icon.svg',
   './assets/manifest.json',

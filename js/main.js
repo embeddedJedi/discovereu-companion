@@ -11,6 +11,7 @@ import { showToast } from './ui/toast.js';
 import { parseHash, onRouteChange } from './router.js';
 import { initBottomNav } from './ui/bottom-nav.js';
 import { initA11y } from './features/a11y-settings.js';
+import { initLowBw } from './features/low-bw.js';
 
 const pageCache = {};
 const PAGE_MODULES = {
@@ -35,6 +36,7 @@ async function boot() {
 
     // 2b. Accessibility overlay — apply persisted a11y settings before first render.
     initA11y();
+    initLowBw();
 
     // 3. Wire language switcher
     const langSelect = qs('#langSelect');

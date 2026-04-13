@@ -5,14 +5,11 @@
 //
 // Exports: createWheelchairLayer(map) → { layer, enable(countryIds?), disable(), isEnabled() }
 //
-// NOTE (state binding pending): the v1.5 a11y slice in js/state.js ships with
-// keys { dyslexiaMode, lowBandwidth, reduceMotion, highContrast, fontScale,
-// lineHeight, letterSpacing, colorBlindMode, transcribeVoice }. It does NOT
-// yet have a `wheelchair` / `wheelchairLayer` boolean. Until that key is added
-// (follow-up migration, schema bump + PERSIST_KEYS round-trip + a11y-panel
-// wiring), callers toggle this layer imperatively via enable()/disable().
-// When the key lands, subscribe inside createWheelchairLayer():
-//   state.subscribe('a11y', (a) => a.wheelchairLayer ? api.enable() : api.disable());
+// State binding: `state.a11y.wheelchairLayer` (boolean, persisted) drives this
+// layer's enable/disable. The binding lives in js/pages/map.js because the
+// layer needs a Leaflet map instance, which is a page-scope dependency.
+// This module stays pure/imperative (enable/disable/isEnabled) so it can be
+// reused in tests and the standalone accessibility demo page.
 
 /* global L */
 

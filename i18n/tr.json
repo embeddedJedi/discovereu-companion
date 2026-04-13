@@ -1078,7 +1078,8 @@
         "motion": "Hareket ve animasyon",
         "vision": "Görme ve renk",
         "audio": "Ses ve konuşma",
-        "bandwidth": "Bağlantı"
+        "bandwidth": "Bağlantı",
+        "mobility": "Hareket kabiliyeti"
       },
       "saveHint": "Değişiklikler anında uygulanır"
     },

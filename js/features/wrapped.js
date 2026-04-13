@@ -16,6 +16,7 @@ import { computeCO2 } from './co2.js';
 import { computeSeatCredits } from './seat-credits.js';
 import { currentShareURL } from '../utils/share.js';
 import { showToast } from '../ui/toast.js';
+import { shouldDefer } from './low-bw.js';
 
 // ─── Export dimensions ──────────────────────────────────────────────────
 const FORMATS = {
@@ -54,8 +55,29 @@ export function openWrapped() {
 
   const overlay = renderModal();
   document.body.appendChild(overlay);
-  // Initial render after insertion so canvas sizing is stable.
-  renderPreview(overlay, 'post');
+
+  // Low-bandwidth gate — don't auto-render the canvas-heavy card. Show
+  // a placeholder button inside the preview area; user clicks to opt
+  // into the heavy render. Compare/radar charts and the static modal
+  // chrome stay because they are essential, not decorative.
+  if (shouldDefer('wrapped')) {
+    const preview = overlay.querySelector('.wrapped-preview');
+    if (preview) {
+      empty(preview);
+      const loadBtn = h('button', {
+        type: 'button',
+        class: 'lowbw-placeholder',
+        style: 'display:block;'
+      }, t('wrapped.lowbw.loadCard') || 'Click to load story card');
+      loadBtn.addEventListener('click', () => {
+        renderPreview(overlay, 'post');
+      }, { once: true });
+      preview.appendChild(loadBtn);
+    }
+  } else {
+    // Initial render after insertion so canvas sizing is stable.
+    renderPreview(overlay, 'post');
+  }
   overlay.querySelector('.modal-close')?.focus();
 }
 

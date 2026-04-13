@@ -1078,7 +1078,8 @@
         "motion": "Motion and animation",
         "vision": "Vision and color",
         "audio": "Audio and speech",
-        "bandwidth": "Connection"
+        "bandwidth": "Connection",
+        "mobility": "Mobility"
       },
       "saveHint": "Changes apply immediately"
     },
