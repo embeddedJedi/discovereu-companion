@@ -1,0 +1,12 @@
+{
+  "@context": "https://w3id.org/openbadges/v2",
+  "id": "https://embeddedjedi.github.io/discovereu-companion/badges/issuer.json",
+  "type": "Issuer",
+  "name": "DiscoverEU Companion",
+  "description": "Open-source companion for DiscoverEU travelers, issuing intercultural-coach badges. MIT-licensed. Maintained by Superior Boy (Teknopark İstanbul) together with the open-source community.",
+  "url": "https://github.com/embeddedJedi/discovereu-companion",
+  "email": "contact@imersa.tech",
+  "image": "https://embeddedjedi.github.io/discovereu-companion/badges/issuer-logo.png",
+  "publicKey": null,
+  "verification": { "type": "hosted" }
+}

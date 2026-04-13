@@ -1,0 +1,25 @@
+{
+  "@context": "https://w3id.org/openbadges/v2",
+  "id": "https://embeddedjedi.github.io/discovereu-companion/badges/classes/ee.json",
+  "type": "BadgeClass",
+  "name": "Intercultural Coach — Estonia",
+  "description": "Awarded for completing the DiscoverEU Companion intercultural coaching micro-lesson for Estonia, demonstrating basic knowledge of greetings, food culture, social norms, money practices, and cultural context. Verified via hosted OpenBadge 2.0.",
+  "image": "https://embeddedjedi.github.io/discovereu-companion/badges/images/ee.svg",
+  "criteria": {
+    "narrative": "Complete the Estonia micro-lesson in DiscoverEU Companion and score at least 4 out of 5 on the quiz."
+  },
+  "issuer": "https://embeddedjedi.github.io/discovereu-companion/badges/issuer.json",
+  "tags": [
+    "DiscoverEU",
+    "intercultural",
+    "non-formal",
+    "digital-credential",
+    "eu-youth"
+  ],
+  "alignment": [
+    {
+      "targetName": "EU Key Competence 8: Cultural awareness and expression",
+      "targetUrl": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018H0604(01)"
+    }
+  ]
+}
