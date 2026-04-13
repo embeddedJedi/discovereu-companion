@@ -433,17 +433,32 @@ All loaded with SRI hashes (to add in Phase 1).
   - New i18n keys under `a11y.*` in en + tr (de/fr/es/it fall back to key path pending full-surface backfill)
   - Spec: `docs/superpowers/specs/2026-04-13-accessibility-overlay-design.md` · Plan: `docs/superpowers/plans/2026-04-13-accessibility-overlay.md`
 
+- **v1.6 Buddy Matching — GitHub Issues backplane + safety-first consent gate** (2026-04-13):
+  - 8 commits across spec + plan + state + data + issue templates + features + UI + CSS + SW + i18n + integration
+  - New `state.buddy` slice: `handle`, `consented`, `preferences`, `seenIds` (FIFO-capped to prevent unbounded growth across sessions)
+  - New data: `data/buddy-cities.json` — 20-city seed with verified lat/lng for matching rooms (route-aware picker reads from this list)
+  - 4 new GitHub Issue templates: `local.yml`, `mentor.yml`, `traveler.yml`, `report.yml` — each with safety-first checklist blocks ("meet in public", "tell a trusted person", "no payment share") enforced at template level before the issue can be opened
+  - 2 new feature modules: `js/features/buddy.js` (GitHub REST Issues API + IndexedDB SWR cache + PII whitelist on post-body builder), `js/features/buddy-consent.js` (full-screen modal with focus-trap + re-entrancy guard so the gate can't be bypassed by rapid clicks + Crisis Shield deep-link for users who feel unsafe)
+  - New UI module: `js/ui/buddy-panel.js` — 5-section panel (city picker / tabs / feed / CTA / safety banner), route-aware city defaults pulled from current itinerary stops
+  - Integration points: country-detail panel gets a Buddy CTA card, route-builder stops render per-stop buddy badges
+  - New `css/buddy.css` — AAA-contrast safety banner + consent modal + CTA cards + stop badges, design-system tokens only (no hardcoded colors)
+  - PWA cache v8 → v9 with 5 new precache entries (buddy.js, buddy-consent.js, buddy-panel.js, buddy.css, buddy-cities.json)
+  - 32 new i18n leaves under `buddy.*` in en + tr (de/fr/es/it deferred to full-surface backfill)
+  - 11/12 tasks shipped; final Playwright smoke deferred to launch-eve manual pass
+  - Spec: `docs/superpowers/specs/2026-04-13-buddy-matching-design.md` · Plan: `docs/superpowers/plans/2026-04-13-buddy-matching.md`
+
 ### 🚧 In progress
-- *(none — v1.4 + v1.5 shipped; end-to-end Playwright smoke pass for v1.2 + v1.3 + v1.4 + v1.5 deferred to manual launch-eve verification)*
+- **v1.6 AI Intercultural Coach** — 13-task plan in-flight (6/13 committed); OpenBadge 2.0 hosted-verification path chosen
+- *(Playwright smoke pass for v1.2-v1.6 deferred to manual launch-eve verification)*
 
 ### ⏭ Next up (in order)
 1. **Send outreach package** (launch-critical, deadline 2026-04-22) — EACEA one-pager, Turkish UA email, LinkedIn DG EAC
 2. **ESC Host Quality Label application submit** — materials drafted (`docs/outreach/esc-quality-label-application-tr.md`), partner dernek search open
 3. **KA154 Round 2 submission** (deadline 2026-10-01) — draft ready (`docs/outreach/ka154-r2-application-tr.md`): 9-section narrative, 12-month timeline, €45k budget
 4. **Consortium outreach for KA220 2027-03-05 deadline** — 15-org longlist ready in `docs/outreach/consortium-shortlist.md`, outreach in progress
-5. DE / FR / ES / IT full app-surface i18n backfill — new a11y + impact keys plus v1.0/v1.1 app surface still missing in those 4 locales
-6. v1.6 roadmap: Buddy matching + AI Intercultural Coach (from pivot analysis)
-7. Manual Playwright smoke pass for v1.2 + v1.3 + v1.4 + v1.5
+5. v1.6 AI Intercultural Coach — finish remaining 7/13 tasks
+6. DE / FR / ES / IT full app-surface i18n backfill — new buddy + a11y + impact keys plus v1.0/v1.1 app surface still missing in those 4 locales
+7. Manual Playwright smoke pass for v1.2 + v1.3 + v1.4 + v1.5 + v1.6
 8. Custom domain (post-launch)
 
 ---
@@ -496,6 +511,9 @@ All loaded with SRI hashes (to add in Phase 1).
 | 2026-04-13 | State-driven a11y toggles (not imperative) | Single source of truth in `state.a11y`; panel + map + CSS overrides stay in sync automatically via subscribers |
 | 2026-04-13 | OpenDyslexic font lazy-loaded via cdnjs | 80 KB font download only when dyslexia mode is enabled, not part of baseline shell |
 | 2026-04-13 | `pages/impact.html` uses FROZEN block strategy for static-HTML-fallback | EACEA reviewers and search crawlers can see real aggregated numbers with JS disabled; `scripts/freeze-impact.js` rewrites the block at maintainer-build time |
+| 2026-04-13 | Buddy matching = GitHub Issues as backplane (no custom DB) | Auditable by EACEA, no account sprawl, no backend to host, Trust & Safety policy inherited from GitHub; every buddy post is a public issue with a moderation trail |
+| 2026-04-13 | Consent gate mandatory before any buddy feature can be used | 18-year-old audience safety is the highest priority; the gate makes the "meet in public / tell a trusted person / never share payment details" contract explicit and logged in `state.buddy.consented` before any post or message can be composed |
+| 2026-04-13 | AI Coach badges use OpenBadge 2.0 hosted-verification at `embeddedjedi.github.io/discovereu-companion/badges/*` | No backend signing keys required, Europass-compatible, auditable via the OpenBadge `hosted` verification type; reviewers can fetch + validate any issued badge URL directly |
 
 ---
 
