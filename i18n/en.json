@@ -1168,5 +1168,51 @@
     "radar": {
       "alt": "Radar chart: Green {green}, Inclusion {inclusion}, Participation {participation}, Digital {digital}."
     }
+  },
+  "buddy": {
+    "panel": {
+      "title": "Buddy matching",
+      "subtitle": "Connect with locals, mentors and fellow travelers",
+      "cityLabel": "City",
+      "pickCity": "Pick a city from your route",
+      "noCities": "Your route has no cities with active buddy rooms yet",
+      "recentPosts": "Recent posts",
+      "postButton": "Post your request",
+      "empty": "No posts yet — be the first to post",
+      "rateLimited": "GitHub rate limit reached — try again in a minute"
+    },
+    "kind": {
+      "local": "Local host",
+      "localHint": "A youth living there who offers an hour of coffee + advice",
+      "mentor": "Returner mentor",
+      "mentorHint": "Someone who traveled this region before and can answer questions",
+      "traveler": "Travel companion",
+      "travelerHint": "Someone going to the same city within a few days"
+    },
+    "consent": {
+      "title": "Before we connect you",
+      "shared": "What gets shared: your GitHub handle (if you post)",
+      "notShared": "What does NOT get shared: email, phone, location, payment info",
+      "safety1": "Always meet in a public place",
+      "safety2": "Share your trip with someone you trust",
+      "safety3": "Never share payment or ID details",
+      "crisisLink": "If something feels wrong → open Crisis Shield",
+      "checkbox": "I understand and want to continue",
+      "continue": "Continue",
+      "cancel": "Not yet"
+    },
+    "post": {
+      "handlePrompt": "Your GitHub handle (@username)",
+      "pitchPrompt": "A short pitch (2-3 lines)",
+      "datesPrompt": "Your dates in {city}",
+      "openGithub": "Open GitHub to post"
+    },
+    "report": {
+      "button": "Report this post",
+      "reason": "Reason"
+    },
+    "banner": {
+      "safety": "Meet in public · Tell a trusted person · Open Crisis Shield if needed"
+    }
   }
 }

@@ -1132,5 +1132,51 @@
       "link": "Erişilebilirlik demosunu aç",
       "title": "Uygulamamız ekran okuyucularla nasıl çalışıyor"
     }
+  },
+  "buddy": {
+    "panel": {
+      "title": "Yol arkadaşı eşleşmesi",
+      "subtitle": "Yerel sakinler, mentorlar ve yol arkadaşlarıyla bağlan",
+      "cityLabel": "Şehir",
+      "pickCity": "Rotandan bir şehir seç",
+      "noCities": "Rotanda henüz aktif buddy odası olan bir şehir yok",
+      "recentPosts": "Son paylaşımlar",
+      "postButton": "Kendi isteğini paylaş",
+      "empty": "Henüz paylaşım yok — ilk sen paylaş",
+      "rateLimited": "GitHub API limiti doldu — bir dakika sonra dene"
+    },
+    "kind": {
+      "local": "Yerel ev sahibi",
+      "localHint": "Orada yaşayan, bir saat kahve + tavsiye için zaman ayıran bir genç",
+      "mentor": "Dönmüş mentor",
+      "mentorHint": "Bu bölgeyi daha önce gezmiş, sorularını yanıtlayabilecek biri",
+      "traveler": "Seyahat arkadaşı",
+      "travelerHint": "Birkaç gün içinde aynı şehre gidecek biri"
+    },
+    "consent": {
+      "title": "Seni eşleştirmeden önce",
+      "shared": "Paylaşılanlar: GitHub kullanıcı adın (paylaşım yaparsan)",
+      "notShared": "Paylaşılmayanlar: e-posta, telefon, konum, ödeme bilgisi",
+      "safety1": "Her zaman kamuya açık bir yerde buluş",
+      "safety2": "Yolculuğunu güvendiğin biriyle paylaş",
+      "safety3": "Ödeme veya kimlik bilgilerini asla paylaşma",
+      "crisisLink": "Bir şeyler ters gidiyorsa → Crisis Shield'i aç",
+      "checkbox": "Anladım ve devam etmek istiyorum",
+      "continue": "Devam et",
+      "cancel": "Şimdi değil"
+    },
+    "post": {
+      "handlePrompt": "GitHub kullanıcı adın (@username)",
+      "pitchPrompt": "Kısa bir tanıtım (2-3 satır)",
+      "datesPrompt": "{city} şehrindeki tarihlerin",
+      "openGithub": "Paylaşmak için GitHub'ı aç"
+    },
+    "report": {
+      "button": "Bu paylaşımı bildir",
+      "reason": "Sebep"
+    },
+    "banner": {
+      "safety": "Kamuya açık yerde buluş · Güvendiğin birine haber ver · Gerekirse Kriz Kalkanı'nı aç"
+    }
   }
 }
