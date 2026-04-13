@@ -1067,5 +1067,68 @@
     },
     "offlineNote": "This shield works fully offline — data is bundled with the app.",
     "noPII": "No personal data leaves your device."
+  },
+  "a11y": {
+    "panel": {
+      "title": "Accessibility",
+      "subtitle": "Adjust the app to work best for you",
+      "section": {
+        "reading": "Reading comfort",
+        "motion": "Motion and animation",
+        "vision": "Vision and color",
+        "audio": "Audio and speech",
+        "bandwidth": "Connection"
+      },
+      "saveHint": "Changes apply immediately"
+    },
+    "dyslexia": {
+      "toggle": "Dyslexia-friendly font",
+      "description": "Uses OpenDyslexic, loaded only when enabled (~80 KB)",
+      "loading": "Loading font…"
+    },
+    "font": {
+      "scaleLabel": "Text size",
+      "scaleHint": "1.0× is the standard. Choose larger if text feels small.",
+      "lineHeightLabel": "Line height",
+      "letterSpacingLabel": "Letter spacing"
+    },
+    "motion": {
+      "label": "Reduce motion",
+      "optionOs": "Follow system preference",
+      "optionOn": "Always reduce",
+      "optionOff": "Always on",
+      "description": "Disables animations in wrapped cards, maps, and transitions"
+    },
+    "contrast": {
+      "toggle": "High contrast",
+      "description": "AAA 10:1+ palette for better legibility"
+    },
+    "colorBlind": {
+      "label": "Color vision adjustment",
+      "optionNone": "No adjustment",
+      "optionProtanopia": "Protanopia (red-green)",
+      "optionDeuteranopia": "Deuteranopia (red-green, most common)",
+      "optionTritanopia": "Tritanopia (blue-yellow, rare)"
+    },
+    "transcribe": {
+      "toggle": "Voice memory transcription",
+      "description": "Auto-transcribe recorded voice memos to text. First use downloads a ~40 MB model on demand.",
+      "downloading": "Downloading speech model ({percent}%)",
+      "ready": "Model ready",
+      "slowMode": "Running in single-thread mode (hosting limitation)"
+    },
+    "lowBw": {
+      "toggle": "Low-bandwidth mode",
+      "description": "Skips heavy assets (story card, map tiles, voice) for 2G/3G users",
+      "badge": "Light mode active"
+    },
+    "wheelchair": {
+      "toggle": "Step-free metro layer",
+      "description": "Show wheelchair-accessible metro stations on the map"
+    },
+    "demo": {
+      "link": "View accessibility demo",
+      "title": "How our app works with screen readers"
+    }
   }
 }

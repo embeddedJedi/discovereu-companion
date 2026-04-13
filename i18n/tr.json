@@ -1067,5 +1067,68 @@
     },
     "offlineNote": "Bu kalkan tamamen çevrimdışı çalışır — veriler uygulamayla birlikte gelir.",
     "noPII": "Hiçbir kişisel bilgi cihazınızdan çıkmaz."
+  },
+  "a11y": {
+    "panel": {
+      "title": "Erişilebilirlik",
+      "subtitle": "Uygulamayı sana en uygun hale getir",
+      "section": {
+        "reading": "Okuma konforu",
+        "motion": "Hareket ve animasyon",
+        "vision": "Görme ve renk",
+        "audio": "Ses ve konuşma",
+        "bandwidth": "Bağlantı"
+      },
+      "saveHint": "Değişiklikler anında uygulanır"
+    },
+    "dyslexia": {
+      "toggle": "Disleksi dostu yazı tipi",
+      "description": "OpenDyslexic kullanılır; yalnızca etkinleştirildiğinde yüklenir (~80 KB)",
+      "loading": "Yazı tipi yükleniyor…"
+    },
+    "font": {
+      "scaleLabel": "Yazı boyutu",
+      "scaleHint": "1.0× standart boyuttur. Yazı küçük geliyorsa daha büyüğünü seç.",
+      "lineHeightLabel": "Satır yüksekliği",
+      "letterSpacingLabel": "Harf aralığı"
+    },
+    "motion": {
+      "label": "Hareketi azalt",
+      "optionOs": "Sistem tercihini izle",
+      "optionOn": "Her zaman azalt",
+      "optionOff": "Her zaman açık",
+      "description": "Kart geçişleri, harita ve animasyonları devre dışı bırakır"
+    },
+    "contrast": {
+      "toggle": "Yüksek kontrast",
+      "description": "Daha okunaklı görünüm için AAA 10:1+ renk paleti"
+    },
+    "colorBlind": {
+      "label": "Renk görme uyarlaması",
+      "optionNone": "Uyarlama yok",
+      "optionProtanopia": "Protanopi (kırmızı-yeşil)",
+      "optionDeuteranopia": "Döteranopi (kırmızı-yeşil, en yaygın)",
+      "optionTritanopia": "Tritanopi (mavi-sarı, nadir)"
+    },
+    "transcribe": {
+      "toggle": "Sesli anı dökümü",
+      "description": "Kaydettiğin sesli anıları otomatik yazıya çevirir. İlk kullanımda ~40 MB'lık bir model indirilir.",
+      "downloading": "Konuşma modeli indiriliyor (%{percent})",
+      "ready": "Model hazır",
+      "slowMode": "Tek iş parçacığı modunda çalışıyor (barındırma kısıtlaması)"
+    },
+    "lowBw": {
+      "toggle": "Düşük bant genişliği modu",
+      "description": "2G/3G kullanıcıları için ağır içerikleri (hikâye kartı, harita döşemeleri, ses) atlar",
+      "badge": "Hafif mod etkin"
+    },
+    "wheelchair": {
+      "toggle": "Basamaksız metro katmanı",
+      "description": "Haritada tekerlekli sandalyeyle erişilebilir metro istasyonlarını göster"
+    },
+    "demo": {
+      "link": "Erişilebilirlik demosunu aç",
+      "title": "Uygulamamız ekran okuyucularla nasıl çalışıyor"
+    }
   }
 }
