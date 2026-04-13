@@ -82,8 +82,8 @@ export const cache = {
 // (`discovereu`) so future stores can be added without new wiring.
 
 const IDB_NAME = 'discovereu';
-const IDB_VERSION = 5;
-const IDB_STORES = ['bingoPhotos', 'journalEntries', 'voiceMemories', 'buddyCache', 'coachLessons', 'coachBadges'];
+const IDB_VERSION = 6;
+const IDB_STORES = ['bingoPhotos', 'journalEntries', 'voiceMemories', 'buddyCache', 'coachLessons', 'coachBadges', 'phrasebookDeck'];
 
 let _dbPromise = null;
 
@@ -203,5 +203,29 @@ export async function getCoachBadge(badgeId) {
 /** Return all coach badges as an array of values. */
 export async function getAllCoachBadges() {
   const rows = await idbGetAll('coachBadges');
+  return rows.map(r => r.value);
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Language Bridge — typed helpers for phrasebookDeck
+// ─────────────────────────────────────────────────────────────────────────────
+// Keyed by compound `${countryId}-${phraseId}` string.
+
+/** Persist a bookmarked phrase. */
+export async function putPhrasebookBookmark(entry) {
+  if (!entry || !entry.id) {
+    throw new Error('[phrasebook] putPhrasebookBookmark requires { id }');
+  }
+  return idbPut('phrasebookDeck', entry.id, entry);
+}
+
+/** Delete a bookmarked phrase by compound id. */
+export async function deletePhrasebookBookmark(id) {
+  return idbDelete('phrasebookDeck', id);
+}
+
+/** Return all bookmarked phrases as an array of values. */
+export async function getAllPhrasebookBookmarks() {
+  const rows = await idbGetAll('phrasebookDeck');
   return rows.map(r => r.value);
 }
