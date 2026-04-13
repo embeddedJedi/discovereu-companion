@@ -29,5 +29,167 @@
       "accept": "Usar este regreso",
       "reject": "Mantener el regreso actual"
     }
+  },
+  "crisis": {
+    "title": "Crisis Shield",
+    "subtitle": "Ayuda de emergencia sin conexión para cada país de tu ruta.",
+    "open": "Abrir escudo completo",
+    "close": "Cerrar Crisis Shield",
+    "compact": {
+      "title": "¿Necesitas ayuda ahora mismo?",
+      "subtitle": "Toca un número para llamar. Funciona sin conexión."
+    },
+    "tab": {
+      "numbers": "Números de emergencia",
+      "embassy": "Embajada y consulado",
+      "flows": "Guías paso a paso"
+    },
+    "dial": {
+      "general": "Todas las emergencias (UE 112)",
+      "police": "Policía",
+      "ambulance": "Ambulancia",
+      "fire": "Bomberos",
+      "touristPolice": "Policía turística",
+      "women": "Línea de atención a mujeres",
+      "lgbtqi": "Línea LGBTQI+",
+      "poison": "Toxicología",
+      "mental": "Línea de salud mental",
+      "child": "Teléfono del menor",
+      "callAria": "Llamar a {label} al {number}"
+    },
+    "dialQuirk": "Nota sobre marcación local",
+    "call112": "Llama al 112 — gratuito en toda la UE",
+    "embassy": {
+      "tr": {
+        "title": "Representaciones turcas en {country}",
+        "empty": "No hay representación turca residente en este país — revisa los países vecinos abajo.",
+        "phone24h": "Línea consular 24 horas",
+        "email": "Correo de emergencia",
+        "mapsLink": "Abrir en mapas"
+      },
+      "other": {
+        "title": "Encuentra la embajada de tu país",
+        "guidance": "Elige tu país de origen y abriremos una búsqueda de su embajada en {destCountry}. Nunca guardamos tu nacionalidad.",
+        "lookup": "Buscar mi embajada",
+        "homeLabel": "Tu país de origen"
+      }
+    },
+    "ownEmbassy": "Encontrar mi embajada",
+    "ownEmbassyHint": "Solo creamos un enlace de búsqueda — no se envía ni se guarda nada.",
+    "share": {
+      "button": "Compartir mi ubicación",
+      "message": "Necesito ayuda — estoy aquí:",
+      "success": "Ubicación compartida",
+      "copied": "Enlace copiado al portapapeles",
+      "failed": "No se pudo compartir — el enlace está listo para copiar manualmente.",
+      "permissionDenied": "Permiso de ubicación denegado. Actívalo en los ajustes del navegador.",
+      "timeout": "La solicitud de ubicación ha caducado. Inténtalo de nuevo."
+    },
+    "flow": {
+      "back": "Atrás",
+      "restart": "Empezar de nuevo",
+      "source": "Fuente oficial",
+      "done": "Listo",
+      "lostPassport": {
+        "title": "Pasaporte perdido",
+        "desc": "Pasos a seguir si pierdes o te roban el pasaporte.",
+        "n1": {
+          "text": "¿Estás en un lugar seguro ahora mismo?",
+          "opt1": "Sí, estoy a salvo",
+          "opt2": "No, no me siento seguro"
+        },
+        "n2": {
+          "text": "Pon una denuncia en la policía. Guarda el número de expediente — la embajada te lo pedirá.",
+          "filingLink": "https://e-devlet.gov.tr/"
+        },
+        "n3": {
+          "text": "Contacta con la representación turca más cercana. Lleva una copia del DNI, dos fotos y la denuncia policial.",
+          "checklist": "Lleva: denuncia policial, copia del DNI, dos fotos biométricas, itinerario, tarjeta de pago."
+        },
+        "n4": {
+          "text": "Pide a la representación un Documento de Viaje de Emergencia (ETD) si tienes que viajar antes de que emitan el nuevo pasaporte.",
+          "etdInfo": "https://www.mfa.gov.tr/consular-info.en.mfa"
+        },
+        "n5": {
+          "text": "Avisa a tu familia y guarda tu número de expediente en un sitio seguro.",
+          "notifyFamily": "Perdí el pasaporte pero estoy bien. Número de expediente: {caseNumber}. La embajada está informada.",
+          "caseNumber": "Número de expediente:"
+        },
+        "n6": {
+          "text": "Mantén el contacto con la representación hasta tener tu documento nuevo. Guarda los recibos originales para el seguro."
+        },
+        "n7": {
+          "text": "Primero ve a un lugar seguro — una zona pública iluminada, una estación, el vestíbulo de un hotel — o llama al número de emergencia local."
+        }
+      },
+      "lostCard": {
+        "title": "Tarjeta o pase perdido",
+        "desc": "Bloquea, notifica y reemplaza una tarjeta bancaria, pase Interrail o billete DiscoverEU perdido.",
+        "n1": {
+          "text": "¿Qué has perdido?",
+          "optBank": "Tarjeta bancaria",
+          "optInterrail": "Pase Interrail / Eurail",
+          "optDeuTicket": "Pase de viaje DiscoverEU"
+        },
+        "n2": {
+          "text": "Bloquea primero la tarjeta desde tu app bancaria, luego pon una denuncia policial.",
+          "freezeAppLink": "https://europa.eu/youreurope/citizens/consumers/financial-products-and-services/payments-transfers-cheques/index_en.htm",
+          "reportTemplate": "Mi tarjeta bancaria fue perdida/robada el {date} en {city}. Por favor, bloqueen la tarjeta y confírmenlo por escrito."
+        },
+        "n3": {
+          "text": "Solicita una tarjeta de reemplazo y pide un adelanto de efectivo de emergencia si te has quedado tirado."
+        },
+        "n4": {
+          "text": "Notifica el pase perdido al servicio de atención de Interrail/Eurail con tu número de pase.",
+          "interrailFaq": "https://www.interrail.eu/en/support/customer-service/faqs",
+          "passNumber": "Número de pase:"
+        },
+        "n5": {
+          "text": "Interrail suele emitir un reemplazo en pocos días laborables — sigue viajando con el número de referencia."
+        },
+        "n6": {
+          "text": "Entra en tu panel de DiscoverEU y abre un ticket de soporte.",
+          "deuDashboard": "https://youth.europa.eu/discovereu_en"
+        },
+        "n7": {
+          "text": "El soporte de EACEA te guiará para reemitir tu pase — ten a mano el número de billete."
+        }
+      },
+      "medical": {
+        "title": "Emergencia médica",
+        "desc": "Decide a quién llamar y qué documentos tener listos.",
+        "n1": {
+          "text": "¿Qué tan grave es?",
+          "optLifeThreat": "Riesgo vital",
+          "optUrgent": "Urgente pero estable",
+          "optMinor": "Leve, auto-cuidado"
+        },
+        "n2": {
+          "text": "Llama al 112 ahora. Comparte tu ubicación exacta con el operador.",
+          "locationShare": "Necesito ayuda médica. Mi ubicación:"
+        },
+        "n3": {
+          "text": "No cuelgues hasta que llegue la ayuda. Ten listos tus datos de TSE / seguro privado."
+        },
+        "n4": {
+          "text": "Usa tu TSE en un centro público o busca una clínica 24 horas cerca.",
+          "ehicInfo": "https://ec.europa.eu/social/main.jsp?catId=559",
+          "clinicFinder": "https://www.google.com/maps/search/24h+clinic+near+me",
+          "insuranceDetails": "Aseguradora, número de póliza, número de TSE, alergias, medicación actual."
+        },
+        "n5": {
+          "text": "Guarda todos los recibos — la TSE cubre la sanidad pública; el seguro privado reembolsa el resto."
+        },
+        "n6": {
+          "text": "Ve a una farmacia. Los farmacéuticos europeos pueden aconsejar gratis sobre problemas comunes.",
+          "pharmacyFinder": "https://www.google.com/maps/search/pharmacy+near+me"
+        },
+        "n7": {
+          "text": "Si los síntomas empeoran en 24 horas, llama al 112 o ve a una clínica."
+        }
+      }
+    },
+    "offlineNote": "Este escudo funciona totalmente sin conexión — los datos vienen incluidos en la app.",
+    "noPII": "Ningún dato personal sale de tu dispositivo."
   }
 }

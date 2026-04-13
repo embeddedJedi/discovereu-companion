@@ -29,5 +29,167 @@
       "accept": "Utiliser ce retour",
       "reject": "Garder le retour actuel"
     }
+  },
+  "crisis": {
+    "title": "Crisis Shield",
+    "subtitle": "Aide d'urgence hors-ligne pour chaque pays de ton itinéraire.",
+    "open": "Ouvrir le bouclier complet",
+    "close": "Fermer Crisis Shield",
+    "compact": {
+      "title": "Besoin d'aide tout de suite ?",
+      "subtitle": "Touche un numéro pour appeler. Fonctionne hors-ligne."
+    },
+    "tab": {
+      "numbers": "Numéros d'urgence",
+      "embassy": "Ambassade et mission",
+      "flows": "Guides étape par étape"
+    },
+    "dial": {
+      "general": "Toutes urgences (UE 112)",
+      "police": "Police",
+      "ambulance": "Ambulance",
+      "fire": "Pompiers",
+      "touristPolice": "Police touristique",
+      "women": "Ligne d'aide aux femmes",
+      "lgbtqi": "Ligne d'aide LGBTQI+",
+      "poison": "Centre antipoison",
+      "mental": "Ligne d'aide en santé mentale",
+      "child": "Ligne d'aide enfance",
+      "callAria": "Appeler {label} au {number}"
+    },
+    "dialQuirk": "Remarque sur la numérotation locale",
+    "call112": "Appelle le 112 — gratuit dans toute l'UE",
+    "embassy": {
+      "tr": {
+        "title": "Missions turques en {country}",
+        "empty": "Pas de mission turque résidente dans ce pays — consulte les pays voisins ci-dessous.",
+        "phone24h": "Ligne consulaire 24 h/24",
+        "email": "E-mail d'urgence",
+        "mapsLink": "Ouvrir dans les cartes"
+      },
+      "other": {
+        "title": "Trouver l'ambassade de ton pays",
+        "guidance": "Choisis ton pays d'origine et nous ouvrirons une recherche pour son ambassade en {destCountry}. Ta nationalité n'est jamais enregistrée.",
+        "lookup": "Chercher mon ambassade",
+        "homeLabel": "Ton pays d'origine"
+      }
+    },
+    "ownEmbassy": "Trouver mon ambassade",
+    "ownEmbassyHint": "Nous préparons uniquement un lien de recherche — rien n'est envoyé ni enregistré.",
+    "share": {
+      "button": "Partager ma position",
+      "message": "J'ai besoin d'aide — je suis ici :",
+      "success": "Position partagée",
+      "copied": "Lien copié dans le presse-papiers",
+      "failed": "Partage impossible — le lien est prêt à être copié manuellement.",
+      "permissionDenied": "Autorisation de localisation refusée. Active-la dans les paramètres du navigateur.",
+      "timeout": "La demande de localisation a expiré. Réessaie."
+    },
+    "flow": {
+      "back": "Retour",
+      "restart": "Recommencer",
+      "source": "Source officielle",
+      "done": "Terminé",
+      "lostPassport": {
+        "title": "Passeport perdu",
+        "desc": "Procédure étape par étape si ton passeport est perdu ou volé.",
+        "n1": {
+          "text": "Es-tu dans un endroit sûr en ce moment ?",
+          "opt1": "Oui, je suis en sécurité",
+          "opt2": "Non, je ne me sens pas en sécurité"
+        },
+        "n2": {
+          "text": "Dépose une plainte à la police. Garde le numéro de dossier — l'ambassade te le demandera.",
+          "filingLink": "https://e-devlet.gov.tr/"
+        },
+        "n3": {
+          "text": "Contacte la mission turque la plus proche. Apporte une copie de pièce d'identité, deux photos et le procès-verbal.",
+          "checklist": "À apporter : procès-verbal de police, copie de pièce d'identité, deux photos biométriques, itinéraire, carte de paiement."
+        },
+        "n4": {
+          "text": "Demande à la mission un Document de voyage d'urgence (ETD) si tu dois voyager avant qu'un nouveau passeport soit émis.",
+          "etdInfo": "https://www.mfa.gov.tr/consular-info.en.mfa"
+        },
+        "n5": {
+          "text": "Préviens ta famille et note ton numéro de dossier en lieu sûr.",
+          "notifyFamily": "J'ai perdu mon passeport mais je suis en sécurité. Numéro de dossier : {caseNumber}. L'ambassade est au courant.",
+          "caseNumber": "Numéro de dossier :"
+        },
+        "n6": {
+          "text": "Reste en contact avec la mission jusqu'à ce que ton nouveau document soit prêt. Conserve tous les reçus originaux pour l'assurance."
+        },
+        "n7": {
+          "text": "Va d'abord dans un endroit sûr — une zone publique éclairée, une gare, un hall d'hôtel — ou appelle le numéro d'urgence local."
+        }
+      },
+      "lostCard": {
+        "title": "Carte ou pass perdu",
+        "desc": "Bloquer, signaler et remplacer une carte bancaire, un pass Interrail ou un billet DiscoverEU perdu.",
+        "n1": {
+          "text": "Qu'as-tu perdu ?",
+          "optBank": "Carte bancaire",
+          "optInterrail": "Pass Interrail / Eurail",
+          "optDeuTicket": "Pass de voyage DiscoverEU"
+        },
+        "n2": {
+          "text": "Bloque d'abord la carte dans ton appli bancaire, puis dépose une plainte à la police.",
+          "freezeAppLink": "https://europa.eu/youreurope/citizens/consumers/financial-products-and-services/payments-transfers-cheques/index_en.htm",
+          "reportTemplate": "Ma carte bancaire a été perdue/volée le {date} à {city}. Merci de bloquer la carte et de me confirmer par écrit."
+        },
+        "n3": {
+          "text": "Commande une carte de remplacement et demande une avance d'urgence en espèces si tu es bloqué."
+        },
+        "n4": {
+          "text": "Signale le pass perdu au service client Interrail/Eurail avec ton numéro de pass.",
+          "interrailFaq": "https://www.interrail.eu/en/support/customer-service/faqs",
+          "passNumber": "Numéro de pass :"
+        },
+        "n5": {
+          "text": "Interrail émet généralement un remplacement en quelques jours ouvrés — continue de voyager avec le numéro de référence."
+        },
+        "n6": {
+          "text": "Connecte-toi à ton tableau de bord DiscoverEU et ouvre un ticket d'assistance.",
+          "deuDashboard": "https://youth.europa.eu/discovereu_en"
+        },
+        "n7": {
+          "text": "Le support EACEA te guidera pour réémettre ton pass — garde le numéro de billet à portée de main."
+        }
+      },
+      "medical": {
+        "title": "Urgence médicale",
+        "desc": "Décide qui appeler et quels documents avoir sous la main.",
+        "n1": {
+          "text": "C'est grave à quel point ?",
+          "optLifeThreat": "Pronostic vital engagé",
+          "optUrgent": "Urgent mais stable",
+          "optMinor": "Léger, auto-soin"
+        },
+        "n2": {
+          "text": "Appelle le 112 maintenant. Indique ta position exacte au régulateur.",
+          "locationShare": "J'ai besoin d'aide médicale. Ma position :"
+        },
+        "n3": {
+          "text": "Reste en ligne jusqu'à l'arrivée des secours. Prépare ta CEAM / infos d'assurance privée."
+        },
+        "n4": {
+          "text": "Utilise ta CEAM dans une clinique publique, ou trouve une clinique ouverte 24 h/24 à proximité.",
+          "ehicInfo": "https://ec.europa.eu/social/main.jsp?catId=559",
+          "clinicFinder": "https://www.google.com/maps/search/24h+clinic+near+me",
+          "insuranceDetails": "Assureur, numéro de police, numéro CEAM, allergies, traitement en cours."
+        },
+        "n5": {
+          "text": "Garde chaque reçu — la CEAM couvre le public ; l'assurance privée rembourse le reste."
+        },
+        "n6": {
+          "text": "Va à la pharmacie. Les pharmaciens européens peuvent conseiller gratuitement sur les maux courants.",
+          "pharmacyFinder": "https://www.google.com/maps/search/pharmacy+near+me"
+        },
+        "n7": {
+          "text": "Si les symptômes s'aggravent en 24 heures, appelle le 112 ou va en clinique."
+        }
+      }
+    },
+    "offlineNote": "Ce bouclier fonctionne entièrement hors-ligne — les données sont embarquées avec l'application.",
+    "noPII": "Aucune donnée personnelle ne quitte ton appareil."
   }
 }

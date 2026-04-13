@@ -29,5 +29,167 @@
       "accept": "Diese Rückreise nutzen",
       "reject": "Aktuelle Rückreise behalten"
     }
+  },
+  "crisis": {
+    "title": "Crisis Shield",
+    "subtitle": "Offline-fähige Notfallhilfe für jedes Land auf deiner Route.",
+    "open": "Vollen Schutzschild öffnen",
+    "close": "Crisis Shield schließen",
+    "compact": {
+      "title": "Brauchst du jetzt Hilfe?",
+      "subtitle": "Tippe auf eine Nummer, um anzurufen. Funktioniert offline."
+    },
+    "tab": {
+      "numbers": "Notrufnummern",
+      "embassy": "Botschaft & Vertretung",
+      "flows": "Schritt-für-Schritt-Anleitungen"
+    },
+    "dial": {
+      "general": "Alle Notfälle (EU 112)",
+      "police": "Polizei",
+      "ambulance": "Rettungsdienst",
+      "fire": "Feuerwehr",
+      "touristPolice": "Touristenpolizei",
+      "women": "Frauen-Notruf",
+      "lgbtqi": "LGBTQI+-Helpline",
+      "poison": "Giftnotruf",
+      "mental": "Seelsorge-Helpline",
+      "child": "Kinder- und Jugendtelefon",
+      "callAria": "{label} unter {number} anrufen"
+    },
+    "dialQuirk": "Hinweis zur lokalen Wahl",
+    "call112": "112 anrufen — EU-weit kostenlos",
+    "embassy": {
+      "tr": {
+        "title": "Türkische Vertretungen in {country}",
+        "empty": "In diesem Land gibt es keine türkische Vertretung — prüfe die Nachbarländer unten.",
+        "phone24h": "24-Stunden-Konsularleitung",
+        "email": "Notfall-E-Mail",
+        "mapsLink": "In Karten öffnen"
+      },
+      "other": {
+        "title": "Finde die Botschaft deines Landes",
+        "guidance": "Wähle dein Heimatland, und wir öffnen eine Suche für dessen Botschaft in {destCountry}. Deine Staatsangehörigkeit wird nicht gespeichert.",
+        "lookup": "Meine Botschaft suchen",
+        "homeLabel": "Dein Heimatland"
+      }
+    },
+    "ownEmbassy": "Meine Botschaft finden",
+    "ownEmbassyHint": "Wir erstellen nur einen Suchlink — nichts wird gesendet oder gespeichert.",
+    "share": {
+      "button": "Meinen Standort teilen",
+      "message": "Ich brauche Hilfe — ich bin hier:",
+      "success": "Standort geteilt",
+      "copied": "Link in die Zwischenablage kopiert",
+      "failed": "Teilen fehlgeschlagen — der Link ist bereit zum manuellen Kopieren.",
+      "permissionDenied": "Standortzugriff verweigert. Aktiviere ihn in den Browser-Einstellungen.",
+      "timeout": "Die Standortabfrage hat zu lange gedauert. Bitte erneut versuchen."
+    },
+    "flow": {
+      "back": "Zurück",
+      "restart": "Neu starten",
+      "source": "Offizielle Quelle",
+      "done": "Fertig",
+      "lostPassport": {
+        "title": "Reisepass verloren",
+        "desc": "Schritt-für-Schritt-Hilfe, wenn dein Pass verloren oder gestohlen wurde.",
+        "n1": {
+          "text": "Bist du gerade an einem sicheren Ort?",
+          "opt1": "Ja, ich bin sicher",
+          "opt2": "Nein, ich fühle mich unsicher"
+        },
+        "n2": {
+          "text": "Erstatte Anzeige bei der Polizei. Bewahre die Aktenzeichen auf — die Botschaft wird danach fragen.",
+          "filingLink": "https://e-devlet.gov.tr/"
+        },
+        "n3": {
+          "text": "Wende dich an die nächste türkische Vertretung. Bring Ausweiskopie, zwei Passfotos und die polizeiliche Anzeige mit.",
+          "checklist": "Mitbringen: Polizeianzeige, Ausweiskopie, zwei biometrische Fotos, Reiseunterlagen, Zahlungskarte."
+        },
+        "n4": {
+          "text": "Bitte die Vertretung um ein Notreisedokument (ETD), falls du reisen musst, bevor ein neuer Pass ausgestellt werden kann.",
+          "etdInfo": "https://www.mfa.gov.tr/consular-info.en.mfa"
+        },
+        "n5": {
+          "text": "Informiere deine Familie und bewahre die Aktenzeichen sicher auf.",
+          "notifyFamily": "Ich habe meinen Pass verloren, bin aber in Sicherheit. Aktenzeichen: {caseNumber}. Botschaft ist informiert.",
+          "caseNumber": "Aktenzeichen:"
+        },
+        "n6": {
+          "text": "Bleib mit der Vertretung in Kontakt, bis dein neues Dokument bereit ist. Hebe alle Originalbelege für die Versicherung auf."
+        },
+        "n7": {
+          "text": "Geh zuerst an einen sicheren Ort — ein beleuchteter öffentlicher Bereich, ein Bahnhof, eine Hotellobby — oder rufe die lokale Notrufnummer an."
+        }
+      },
+      "lostCard": {
+        "title": "Karte oder Ticket verloren",
+        "desc": "Sperre, melde und ersetze verlorene Bankkarte, Interrail-Pass oder DiscoverEU-Ticket.",
+        "n1": {
+          "text": "Was hast du verloren?",
+          "optBank": "Bankkarte",
+          "optInterrail": "Interrail-/Eurail-Pass",
+          "optDeuTicket": "DiscoverEU-Reisepass"
+        },
+        "n2": {
+          "text": "Sperre die Karte zuerst in deiner Banking-App, danach erstatte Anzeige bei der Polizei.",
+          "freezeAppLink": "https://europa.eu/youreurope/citizens/consumers/financial-products-and-services/payments-transfers-cheques/index_en.htm",
+          "reportTemplate": "Meine Bankkarte ist am {date} in {city} verloren/gestohlen worden. Bitte sperren Sie die Karte und bestätigen Sie dies schriftlich."
+        },
+        "n3": {
+          "text": "Bestelle eine Ersatzkarte und frage nach einem Notfall-Bargeldvorschuss, falls du gestrandet bist."
+        },
+        "n4": {
+          "text": "Melde den verlorenen Pass mit deiner Passnummer dem Interrail-/Eurail-Kundenservice.",
+          "interrailFaq": "https://www.interrail.eu/en/support/customer-service/faqs",
+          "passNumber": "Passnummer:"
+        },
+        "n5": {
+          "text": "Interrail stellt den Ersatz meist innerhalb weniger Werktage aus — reise mit der Referenznummer weiter."
+        },
+        "n6": {
+          "text": "Melde dich in deinem DiscoverEU-Dashboard an und öffne ein Support-Ticket.",
+          "deuDashboard": "https://youth.europa.eu/discovereu_en"
+        },
+        "n7": {
+          "text": "Der EACEA-Support begleitet dich bei der Neuausstellung — halte die Ticketnummer bereit."
+        }
+      },
+      "medical": {
+        "title": "Medizinischer Notfall",
+        "desc": "Entscheide, wen du anrufst und welche Unterlagen du bereithältst.",
+        "n1": {
+          "text": "Wie ernst ist es?",
+          "optLifeThreat": "Lebensbedrohlich",
+          "optUrgent": "Dringend, aber stabil",
+          "optMinor": "Leicht, Selbstversorgung"
+        },
+        "n2": {
+          "text": "Ruf jetzt 112 an. Teile dem Dispatcher deinen genauen Standort mit.",
+          "locationShare": "Ich brauche medizinische Hilfe. Mein Standort:"
+        },
+        "n3": {
+          "text": "Bleib in der Leitung, bis Hilfe eintrifft. Halte EHIC- / private Versicherungsdaten bereit."
+        },
+        "n4": {
+          "text": "Nutze deine EHIC in einer öffentlichen Klinik oder finde eine 24-Stunden-Notfallpraxis in der Nähe.",
+          "ehicInfo": "https://ec.europa.eu/social/main.jsp?catId=559",
+          "clinicFinder": "https://www.google.com/maps/search/24h+clinic+near+me",
+          "insuranceDetails": "Versicherer, Policennummer, EHIC-Nummer, Allergien, aktuelle Medikamente."
+        },
+        "n5": {
+          "text": "Bewahre alle Belege auf — EHIC deckt die öffentliche Versorgung; die private Versicherung erstattet den Rest."
+        },
+        "n6": {
+          "text": "Geh in eine Apotheke. Europäische Apotheker beraten kostenlos zu häufigen Beschwerden.",
+          "pharmacyFinder": "https://www.google.com/maps/search/pharmacy+near+me"
+        },
+        "n7": {
+          "text": "Verschlechtern sich die Symptome innerhalb von 24 Stunden, ruf 112 an oder suche eine Klinik auf."
+        }
+      }
+    },
+    "offlineNote": "Dieser Schutzschild arbeitet vollständig offline — die Daten sind in der App enthalten.",
+    "noPII": "Keine persönlichen Daten verlassen dein Gerät."
   }
 }
