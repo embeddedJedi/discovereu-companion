@@ -447,19 +447,34 @@ All loaded with SRI hashes (to add in Phase 1).
   - 11/12 tasks shipped; final Playwright smoke deferred to launch-eve manual pass
   - Spec: `docs/superpowers/specs/2026-04-13-buddy-matching-design.md` · Plan: `docs/superpowers/plans/2026-04-13-buddy-matching.md`
 
+- **v1.6 AI Intercultural Coach — LLM-composed lessons + OpenBadge 2.0 hosted verification** (2026-04-13):
+  - New `state.coach` slice: `lessonsCompleted`, `quizScores`, `badgesEarned` — 50-cap FIFO ring to prevent unbounded localStorage growth
+  - IndexedDB bumped v4 → v5 with 2 new stores: `coachLessons` (generated lesson cache) + `coachBadges` (signed assertion records)
+  - `js/features/coach-prompt.js` — pure LLM prompt builder + JSON schema validator; composes the prompt from 5 factual data sources (`countries.json` / `phrases.json` / `guides.json` / `soundtracks.json` / `pickpocket-zones.json`) injected as a `PROVIDED CONTEXT` block so the LLM never researches — only composes
+  - `js/features/coach.js` — main API: `generate()` / `get()` / `markCompleted()` / `claimBadge()`, 30-day lesson cache, 4 typed error classes (`NoKeyError`, `NetworkError`, `ValidationError`, `QuotaError`)
+  - `js/features/quiz-runner.js` — thin adapter over `flowchart-runner.js` (shipped in v1.3 Crisis Shield); single DAG engine now powers both Crisis flowcharts and Coach quizzes
+  - `js/features/coach-badge.js` — OpenBadge 2.0 Assertion builder: SHA-256 salted email hashing (`identity.type=email`, `hashed=true`, `salt` per-badge), canonicalized JSON-LD, hosted-verification pointer to `embeddedjedi.github.io/discovereu-companion/badges/issuer.json`
+  - `js/ui/coach-panel.js` + `css/coach.css` — lesson UI with inline quiz runner, claim-badge flow, already-earned guard (idempotent on re-claim), AAA-contrast badges, design-system tokens only
+  - New data: `data/coach-badge-issuer.json` + `badges/issuer.json` (identical mirrors — one for app loader, one for OpenBadge hosted URL)
+  - `scripts/gen-badge-classes.mjs` — deterministic generator; reads `countries.json` + writes 33 BadgeClass JSONs under `badges/` (one per DiscoverEU country). Re-runnable, no per-country prose drift.
+  - Integration points: country-detail panel gets a Coach CTA, new `/coach` route + page wrapper in the 9-tab bottom nav
+  - PWA cache v9 → v10 — top 5 BadgeClass JSONs precached (DE / FR / IT / ES / TR — highest-traffic destinations), remaining 28 BadgeClass files fetched stale-while-revalidate on demand so the offline shell stays light
+  - 60 new i18n leaves under `coach.*` in en + tr (de/fr/es/it deferred to full-surface backfill)
+  - 13/13 tasks shipped
+  - Spec: `docs/superpowers/specs/2026-04-13-ai-intercultural-coach-design.md` · Plan: `docs/superpowers/plans/2026-04-13-ai-intercultural-coach.md`
+
 ### 🚧 In progress
-- **v1.6 AI Intercultural Coach** — 13-task plan in-flight (6/13 committed); OpenBadge 2.0 hosted-verification path chosen
-- *(Playwright smoke pass for v1.2-v1.6 deferred to manual launch-eve verification)*
+- *(Manual Playwright smoke pass for v1.2-v1.6 deferred to launch-eve verification)*
 
 ### ⏭ Next up (in order)
 1. **Send outreach package** (launch-critical, deadline 2026-04-22) — EACEA one-pager, Turkish UA email, LinkedIn DG EAC
 2. **ESC Host Quality Label application submit** — materials drafted (`docs/outreach/esc-quality-label-application-tr.md`), partner dernek search open
 3. **KA154 Round 2 submission** (deadline 2026-10-01) — draft ready (`docs/outreach/ka154-r2-application-tr.md`): 9-section narrative, 12-month timeline, €45k budget
-4. **Consortium outreach for KA220 2027-03-05 deadline** — 15-org longlist ready in `docs/outreach/consortium-shortlist.md`, outreach in progress
-5. v1.6 AI Intercultural Coach — finish remaining 7/13 tasks
-6. DE / FR / ES / IT full app-surface i18n backfill — new buddy + a11y + impact keys plus v1.0/v1.1 app surface still missing in those 4 locales
-7. Manual Playwright smoke pass for v1.2 + v1.3 + v1.4 + v1.5 + v1.6
-8. Custom domain (post-launch)
+4. **KA220 Tier-A LinkedIn outreach** — 5 personalised messages ready in `docs/outreach/ka220-tier-a-linkedin-messages.md` for the 2027-03-05 consortium deadline
+5. DE / FR / ES / IT full app-surface i18n backfill — new buddy + a11y + impact + coach keys plus v1.0/v1.1 app surface still missing in those 4 locales
+6. Manual Playwright smoke pass for v1.2 + v1.3 + v1.4 + v1.5 + v1.6
+7. Custom domain (post-launch)
+8. v1.7 roadmap — Language Bridge (OCR menu translator + Whisper offline interpreter) + Multi-origin group planner (from pivot strategy doc)
 
 ---
 
@@ -514,6 +529,10 @@ All loaded with SRI hashes (to add in Phase 1).
 | 2026-04-13 | Buddy matching = GitHub Issues as backplane (no custom DB) | Auditable by EACEA, no account sprawl, no backend to host, Trust & Safety policy inherited from GitHub; every buddy post is a public issue with a moderation trail |
 | 2026-04-13 | Consent gate mandatory before any buddy feature can be used | 18-year-old audience safety is the highest priority; the gate makes the "meet in public / tell a trusted person / never share payment details" contract explicit and logged in `state.buddy.consented` before any post or message can be composed |
 | 2026-04-13 | AI Coach badges use OpenBadge 2.0 hosted-verification at `embeddedjedi.github.io/discovereu-companion/badges/*` | No backend signing keys required, Europass-compatible, auditable via the OpenBadge `hosted` verification type; reviewers can fetch + validate any issued badge URL directly |
+| 2026-04-13 | AI Coach LLM acts as composer only, NOT researcher | Prevents hallucination on country-specific facts; the LLM receives a pre-loaded `PROVIDED CONTEXT` block built from `data/*.json` (countries / phrases / guides / soundtracks / pickpocket) and is instructed to compose a lesson from that data only — never to invent facts |
+| 2026-04-13 | Quiz engine = `flowchart-runner` adapter, not a parallel engine | Single DAG engine across the app; v1.3 Crisis Shield flowcharts and v1.6 Coach quizzes both reuse `flowchart-runner.js`, eliminating a second walker + validator pair |
+| 2026-04-13 | 33 BadgeClass files generated by `scripts/gen-badge-classes.mjs`, not hand-curated | Deterministic + re-generable from `countries.json`; avoids per-country prose drift and keeps every BadgeClass JSON consistent in shape |
+| 2026-04-13 | Top 5 BadgeClass JSONs precached in SW, remaining 28 served stale-while-revalidate | Offline shell stays light — precaching 33 BadgeClass JSONs would bloat the baseline install; SWR gives instant warm fetch once a user views a given country |
 
 ---
 
