@@ -1320,7 +1320,10 @@
         "camera": "Camera",
         "voice": "Voice",
         "phrasebook": "Phrasebook"
-      }
+      },
+      "description": "Camera OCR + voice + offline phrasebook for {country}.",
+      "open": "Open Language Bridge",
+      "close": "Close"
     },
     "ocr": {
       "start": "Point camera at text",
@@ -1365,6 +1368,46 @@
       "llmKey": "Please add your AI API key in Settings for translation",
       "rateLimit": "AI provider rate limit — wait a minute",
       "offlineFallback": "Offline — phrasebook only"
+    }
+  },
+  "group": {
+    "panel": {
+      "title": "Plan as a group",
+      "subtitle": "Up to 5 friends, different home cities",
+      "createBtn": "Create group",
+      "joinBtn": "Join via link",
+      "shareBtn": "Share group link",
+      "linkCopied": "Link copied to clipboard"
+    },
+    "member": {
+      "add": "Add member",
+      "remove": "Remove from group",
+      "namePlaceholder": "Display name",
+      "youAre": "You are {displayName}",
+      "leaderBadge": "Leader",
+      "cap": "Maximum 10 members"
+    },
+    "meeting": {
+      "title": "Suggested meeting point",
+      "optimize": "Compute optimal city",
+      "computing": "Optimizing…",
+      "savedKm": "Saves {km} km vs random meeting",
+      "alternative": "Alternative",
+      "vote": "Vote on meeting point"
+    },
+    "itinerary": {
+      "title": "Integrated itinerary",
+      "member": "{name}'s leg",
+      "shared": "Shared section"
+    },
+    "share": {
+      "urlLong": "Link too long — try fewer members or shorter preferences",
+      "invitedTitle": "You've been invited",
+      "invitedBody": "Add yourself to the group below"
+    },
+    "errors": {
+      "maxMembers": "Group is full (10/10)",
+      "invalidUrl": "Invalid group link"
     }
   }
 }

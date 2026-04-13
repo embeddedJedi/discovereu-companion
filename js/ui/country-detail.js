@@ -114,6 +114,16 @@ function renderInto(root, country, selectedId) {
     renderCoachCta(coachHost, country);
   }
 
+  // Language Bridge CTA — shown for every country. Phrasebook tab is
+  // offline-first; if the country is not in the seeded phrasebook list
+  // the panel gracefully falls back via 404 handling. Panel module is
+  // dynamically imported so tesseract/LLM deps stay out of the initial bundle.
+  if (country.id) {
+    const langHost = h('div', { class: 'country-detail-lang-host' });
+    root.appendChild(langHost);
+    renderLanguageBridgeCta(langHost, country);
+  }
+
   // Country Guide + Top Cities accordions (from guide.js)
   const guideHost  = h('div', { class: 'country-detail-guide-host' });
   const citiesHost = h('div', { class: 'country-detail-cities-host' });
@@ -408,6 +418,69 @@ function openCoachPanelModal(countryId) {
     })
     .catch(err => {
       console.warn('[coach] panel load failed', err);
+    });
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Language Bridge CTA — inline card rendered in the Detail tab.
+// ─────────────────────────────────────────────────────────────────────────────
+
+function renderLanguageBridgeCta(host, country) {
+  if (!country || !country.id) return;
+  const card = h('section', { class: 'lang-cta-card buddy-cta-card' }, [
+    h('div', { class: 'buddy-cta-head' }, [
+      h('span', { class: 'buddy-cta-icon', 'aria-hidden': 'true' }, '🌐'),
+      h('h3', { class: 'buddy-cta-title' }, t('lang.panel.title'))
+    ]),
+    h('p', { class: 'buddy-cta-sub' },
+      t('lang.panel.description', { country: country.name })
+    ),
+    h('button', {
+      class: 'btn btn-primary btn-sm',
+      type: 'button',
+      onclick: () => openLanguageBridgeModal(country.id)
+    }, t('lang.panel.open'))
+  ]);
+  host.appendChild(card);
+}
+
+function openLanguageBridgeModal(countryId) {
+  const backdrop = h('div', {
+    class: 'modal-backdrop',
+    role: 'dialog',
+    'aria-modal': 'true',
+    'aria-label': t('lang.panel.title')
+  });
+  const box = h('div', { class: 'modal-box lang-modal-box' });
+  const closeBtn = h('button', {
+    class: 'btn btn-ghost btn-sm modal-close',
+    type: 'button',
+    'aria-label': t('lang.panel.close'),
+    onclick: () => { try { cleanup?.(); } catch (_) {} backdrop.remove(); }
+  }, '×');
+  const content = h('div', { class: 'lang-modal-content' });
+  box.append(closeBtn, content);
+  backdrop.appendChild(box);
+  let cleanup = null;
+  backdrop.addEventListener('click', (e) => {
+    if (e.target === backdrop) {
+      try { cleanup?.(); } catch (_) {}
+      backdrop.remove();
+    }
+  });
+  document.body.appendChild(backdrop);
+
+  import('./language-bridge-panel.js')
+    .then(mod => {
+      if (typeof mod.renderLanguageBridgePanel === 'function') {
+        cleanup = mod.renderLanguageBridgePanel(content, {
+          countryId,
+          initialTab: 'phrasebook'
+        });
+      }
+    })
+    .catch(err => {
+      console.warn('[lang] panel load failed', err);
     });
 }
 

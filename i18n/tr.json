@@ -1284,7 +1284,10 @@
         "camera": "Kamera",
         "voice": "Ses",
         "phrasebook": "Cümle defteri"
-      }
+      },
+      "description": "{country} için kamera OCR + ses + çevrimdışı cümle defteri.",
+      "open": "Language Bridge'i aç",
+      "close": "Kapat"
     },
     "ocr": {
       "start": "Metne kamerayı doğrult",
