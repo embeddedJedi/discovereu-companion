@@ -291,5 +291,101 @@
     "radar": {
       "alt": "Graphique radar : Vert {green}, Inclusion {inclusion}, Participation {participation}, Numérique {digital}."
     }
+  },
+  "buddy": {
+    "panel": {
+      "title": "Trouver un binôme",
+      "subtitle": "Connecte-toi avec des locaux, des mentors et d'autres voyageurs",
+      "cityLabel": "Ville",
+      "pickCity": "Choisis une ville de ton itinéraire",
+      "noCities": "Ton itinéraire n'a pas encore de ville avec un salon buddy actif",
+      "recentPosts": "Publications récentes",
+      "postButton": "Publier ta demande",
+      "empty": "Aucune publication pour l'instant — sois le·la premier·ère",
+      "rateLimited": "Limite de GitHub atteinte — réessaie dans une minute"
+    },
+    "kind": {
+      "local": "Local·e",
+      "localHint": "Un·e jeune du coin qui t'offre une heure de café et de conseils",
+      "mentor": "Mentor revenant",
+      "mentorHint": "Quelqu'un qui a déjà voyagé dans la région et peut répondre à tes questions",
+      "traveler": "Compagnon de voyage",
+      "travelerHint": "Quelqu'un qui va dans la même ville dans les prochains jours"
+    },
+    "consent": {
+      "title": "Avant de te mettre en contact",
+      "shared": "Ce qui est partagé : ton handle GitHub (si tu publies)",
+      "notShared": "Ce qui N'EST PAS partagé : e-mail, téléphone, position, infos de paiement",
+      "safety1": "Rencontre-toi toujours dans un lieu public",
+      "safety2": "Partage ton itinéraire avec une personne de confiance",
+      "safety3": "Ne partage jamais tes infos de paiement ou d'identité",
+      "crisisLink": "Si quelque chose cloche → ouvre Crisis Shield",
+      "checkbox": "J'ai compris et je veux continuer",
+      "continue": "Continuer",
+      "cancel": "Pas tout de suite"
+    },
+    "post": {
+      "handlePrompt": "Ton handle GitHub (@username)",
+      "pitchPrompt": "Un court pitch (2–3 lignes)",
+      "datesPrompt": "Tes dates à {city}",
+      "openGithub": "Ouvrir GitHub pour publier"
+    },
+    "report": {
+      "button": "Signaler cette publication",
+      "reason": "Motif"
+    },
+    "banner": {
+      "safety": "Rencontre en public · Préviens une personne de confiance · Ouvre Crisis Shield si besoin"
+    }
+  },
+  "coach": {
+    "panel": {
+      "title": "Découvre ce pays en 5 minutes",
+      "subtitle": "Coach interculturel pour {country}",
+      "generating": "Ta leçon est en préparation…",
+      "regenerate": "Regénérer la leçon",
+      "offline": "Tu sembles hors ligne — les leçons enregistrées fonctionnent toujours.",
+      "description": "Une leçon interculturelle de 5 minutes. Apprends les salutations, la bienséance, la cuisine et les astuces d'argent avant de partir.",
+      "start": "Commencer la leçon de 5 min",
+      "close": "Fermer"
+    },
+    "page": {
+      "title": "Coach interculturel",
+      "pickCountry": "Choisis un pays à découvrir",
+      "pickCountryHint": "Chaque leçon est une initiation interculturelle de 5 minutes avec un court quiz et un badge Europass téléchargeable."
+    },
+    "section": {
+      "greetings": "Salutations & expressions",
+      "food": "Cuisine & table",
+      "norms": "Normes sociales",
+      "money": "Notes sur l'argent",
+      "context": "Contexte culturel",
+      "quiz": "Quiz express"
+    },
+    "quiz": {
+      "intro": "Réponds à 5 questions rapides. 4 bonnes réponses suffisent pour gagner un badge.",
+      "question": "Question {n} sur 5",
+      "submit": "Valider la réponse",
+      "correct": "Correct",
+      "incorrect": "Réessaie",
+      "passedTitle": "Bravo, c'est réussi 🎉",
+      "passedBody": "Score : {score}/5",
+      "failedTitle": "Presque",
+      "failedBody": "Réessaie pour gagner ton badge",
+      "retry": "Recommencer"
+    },
+    "badge": {
+      "earned": "Badge gagné !",
+      "download": "Télécharger le badge (OpenBadge JSON)",
+      "europassHint": "Importe ce fichier dans ton profil Europass → Certifications",
+      "europassLink": "Ouvrir Europass",
+      "fileName": "DiscoverEU-Companion-{country}-badge.json",
+      "alreadyEarned": "Tu as déjà gagné ce badge le {date}"
+    },
+    "errors": {
+      "llmKey": "Ajoute ta clé d'API AI dans les Paramètres",
+      "generic": "Un souci est survenu — réessaie s'il te plaît",
+      "rateLimited": "Limite du fournisseur AI atteinte — attends une minute"
+    }
   }
 }

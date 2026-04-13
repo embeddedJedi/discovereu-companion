@@ -291,5 +291,101 @@
     "radar": {
       "alt": "Radar-Diagramm: Grün {green}, Inklusion {inclusion}, Teilhabe {participation}, Digital {digital}."
     }
+  },
+  "buddy": {
+    "panel": {
+      "title": "Kumpel finden",
+      "subtitle": "Vernetze dich mit Einheimischen, Mentor·innen und Mitreisenden",
+      "cityLabel": "Stadt",
+      "pickCity": "Wähle eine Stadt aus deiner Route",
+      "noCities": "Auf deiner Route gibt es noch keine Stadt mit aktiven Buddy-Räumen",
+      "recentPosts": "Neueste Beiträge",
+      "postButton": "Anfrage posten",
+      "empty": "Noch keine Beiträge — sei die·der Erste",
+      "rateLimited": "GitHub-Ratenlimit erreicht — versuch es in einer Minute erneut"
+    },
+    "kind": {
+      "local": "Einheimischer",
+      "localHint": "Jemand vor Ort, der dir eine Stunde Kaffee und Tipps schenkt",
+      "mentor": "Erfahrener Reisender",
+      "mentorHint": "Jemand, der diese Region schon bereist hat und Fragen beantworten kann",
+      "traveler": "Reisepartner·in",
+      "travelerHint": "Jemand, der in den nächsten Tagen in dieselbe Stadt reist"
+    },
+    "consent": {
+      "title": "Bevor wir dich verbinden",
+      "shared": "Was geteilt wird: dein GitHub-Handle (wenn du postest)",
+      "notShared": "Was NICHT geteilt wird: E-Mail, Telefon, Standort, Zahlungsdaten",
+      "safety1": "Triff dich immer an einem öffentlichen Ort",
+      "safety2": "Teile deine Reise mit jemandem, dem du vertraust",
+      "safety3": "Gib niemals Zahlungs- oder Ausweisdaten weiter",
+      "crisisLink": "Fühlt sich etwas falsch an → öffne Crisis Shield",
+      "checkbox": "Ich habe das verstanden und möchte weitermachen",
+      "continue": "Weiter",
+      "cancel": "Noch nicht"
+    },
+    "post": {
+      "handlePrompt": "Dein GitHub-Handle (@username)",
+      "pitchPrompt": "Ein kurzer Pitch (2–3 Zeilen)",
+      "datesPrompt": "Deine Daten in {city}",
+      "openGithub": "GitHub zum Posten öffnen"
+    },
+    "report": {
+      "button": "Diesen Beitrag melden",
+      "reason": "Grund"
+    },
+    "banner": {
+      "safety": "Öffentlich treffen · Vertrauensperson informieren · Bei Bedarf Crisis Shield öffnen"
+    }
+  },
+  "coach": {
+    "panel": {
+      "title": "Lerne dieses Land in 5 Minuten",
+      "subtitle": "Interkultureller Coach für {country}",
+      "generating": "Deine Lektion wird erstellt…",
+      "regenerate": "Lektion neu erstellen",
+      "offline": "Du scheinst offline zu sein — gespeicherte Lektionen funktionieren weiter.",
+      "description": "Eine interkulturelle 5-Minuten-Lektion. Lerne Begrüßungen, Umgangsformen, Essen und Geldtipps, bevor du losziehst.",
+      "start": "5-Minuten-Lektion starten",
+      "close": "Schließen"
+    },
+    "page": {
+      "title": "Interkultureller Coach",
+      "pickCountry": "Wähle ein Land zum Lernen",
+      "pickCountryHint": "Jede Lektion ist eine 5-minütige interkulturelle Einführung mit Kurz-Quiz und herunterladbarem Europass-Badge."
+    },
+    "section": {
+      "greetings": "Begrüßungen & Redewendungen",
+      "food": "Essen & Tischsitten",
+      "norms": "Soziale Normen",
+      "money": "Geld-Tipps",
+      "context": "Kultureller Kontext",
+      "quiz": "Kurzes Quiz"
+    },
+    "quiz": {
+      "intro": "Beantworte 5 kurze Fragen. 4 richtige reichen für den Badge.",
+      "question": "Frage {n} von 5",
+      "submit": "Antwort senden",
+      "correct": "Richtig",
+      "incorrect": "Nochmal versuchen",
+      "passedTitle": "Bestanden 🎉",
+      "passedBody": "Ergebnis: {score}/5",
+      "failedTitle": "Noch nicht ganz",
+      "failedBody": "Versuch es erneut, um deinen Badge zu verdienen",
+      "retry": "Nochmal"
+    },
+    "badge": {
+      "earned": "Badge verdient!",
+      "download": "Badge herunterladen (OpenBadge JSON)",
+      "europassHint": "Lade diese Datei in dein Europass-Profil → Nachweise",
+      "europassLink": "Europass öffnen",
+      "fileName": "DiscoverEU-Companion-{country}-badge.json",
+      "alreadyEarned": "Diesen Badge hast du bereits am {date} verdient"
+    },
+    "errors": {
+      "llmKey": "Bitte trage deinen AI-API-Schlüssel in den Einstellungen ein",
+      "generic": "Etwas ist schiefgelaufen — bitte erneut versuchen",
+      "rateLimited": "AI-Ratenlimit erreicht — warte eine Minute"
+    }
   }
 }

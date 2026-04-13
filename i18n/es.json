@@ -291,5 +291,101 @@
     "radar": {
       "alt": "Gráfico de radar: Verde {green}, Inclusión {inclusion}, Participación {participation}, Digital {digital}."
     }
+  },
+  "buddy": {
+    "panel": {
+      "title": "Busca tu buddy",
+      "subtitle": "Conecta con locales, mentores y otros viajeros",
+      "cityLabel": "Ciudad",
+      "pickCity": "Elige una ciudad de tu ruta",
+      "noCities": "Tu ruta aún no tiene ciudades con salas buddy activas",
+      "recentPosts": "Publicaciones recientes",
+      "postButton": "Publicar tu solicitud",
+      "empty": "Aún no hay publicaciones — sé el/la primero/a",
+      "rateLimited": "Límite de GitHub alcanzado — inténtalo de nuevo en un minuto"
+    },
+    "kind": {
+      "local": "Anfitrión local",
+      "localHint": "Alguien joven del lugar que te invita a un café y te da consejos",
+      "mentor": "Mentor/a veterano/a",
+      "mentorHint": "Alguien que ya viajó por esta región y puede resolver tus dudas",
+      "traveler": "Compañero/a de viaje",
+      "travelerHint": "Alguien que va a la misma ciudad en los próximos días"
+    },
+    "consent": {
+      "title": "Antes de ponerte en contacto",
+      "shared": "Qué se comparte: tu handle de GitHub (si publicas)",
+      "notShared": "Qué NO se comparte: email, teléfono, ubicación, datos de pago",
+      "safety1": "Queda siempre en un lugar público",
+      "safety2": "Comparte tu viaje con alguien de confianza",
+      "safety3": "Nunca compartas datos de pago ni de identidad",
+      "crisisLink": "Si algo no va bien → abre Crisis Shield",
+      "checkbox": "Lo entiendo y quiero continuar",
+      "continue": "Continuar",
+      "cancel": "Ahora no"
+    },
+    "post": {
+      "handlePrompt": "Tu handle de GitHub (@username)",
+      "pitchPrompt": "Una breve presentación (2-3 líneas)",
+      "datesPrompt": "Tus fechas en {city}",
+      "openGithub": "Abrir GitHub para publicar"
+    },
+    "report": {
+      "button": "Reportar esta publicación",
+      "reason": "Motivo"
+    },
+    "banner": {
+      "safety": "Queda en público · Avisa a alguien de confianza · Abre Crisis Shield si lo necesitas"
+    }
+  },
+  "coach": {
+    "panel": {
+      "title": "Conoce este país en 5 minutos",
+      "subtitle": "Entrenador intercultural para {country}",
+      "generating": "Preparando tu lección…",
+      "regenerate": "Regenerar lección",
+      "offline": "Parece que estás sin conexión — las lecciones guardadas siguen funcionando.",
+      "description": "Una lección intercultural de 5 minutos. Aprende saludos, modales, comida y consejos de dinero antes de salir.",
+      "start": "Empezar lección de 5 min",
+      "close": "Cerrar"
+    },
+    "page": {
+      "title": "Entrenador intercultural",
+      "pickCountry": "Elige un país para aprender",
+      "pickCountryHint": "Cada lección es una introducción intercultural de 5 minutos con un quiz rápido y una insignia Europass descargable."
+    },
+    "section": {
+      "greetings": "Saludos y frases",
+      "food": "Comida y mesa",
+      "norms": "Normas sociales",
+      "money": "Notas sobre dinero",
+      "context": "Contexto cultural",
+      "quiz": "Quiz rápido"
+    },
+    "quiz": {
+      "intro": "Responde 5 preguntas rápidas. Acierta 4 para ganar una insignia.",
+      "question": "Pregunta {n} de 5",
+      "submit": "Enviar respuesta",
+      "correct": "Correcto",
+      "incorrect": "Inténtalo de nuevo",
+      "passedTitle": "¡Aprobado! 🎉",
+      "passedBody": "Puntuación: {score}/5",
+      "failedTitle": "Casi lo tienes",
+      "failedBody": "Inténtalo de nuevo para conseguir tu insignia",
+      "retry": "Reintentar"
+    },
+    "badge": {
+      "earned": "¡Insignia conseguida!",
+      "download": "Descargar insignia (OpenBadge JSON)",
+      "europassHint": "Sube este archivo a tu perfil Europass → Credenciales",
+      "europassLink": "Abrir Europass",
+      "fileName": "DiscoverEU-Companion-{country}-badge.json",
+      "alreadyEarned": "Ya ganaste esta insignia el {date}"
+    },
+    "errors": {
+      "llmKey": "Añade tu clave de API de AI en Ajustes",
+      "generic": "Algo salió mal — inténtalo de nuevo",
+      "rateLimited": "Límite del proveedor de AI — espera un minuto"
+    }
   }
 }
