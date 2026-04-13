@@ -102,6 +102,21 @@ Source data for `data/wheelmap-metro-index.json` — step-free metro station see
 - License: ODbL attribution inherited from Wheelmap/OSM; curated per-city summary fields are CC BY-SA 4.0 under this project.
 - Refresh cadence: annually, or when an operator publishes a new accessible-station list. Contributors invited via GitHub issue — curated seed list, not an exhaustive enumeration.
 
+## Green hostels (2026-04-13)
+
+Source data for `data/green-hostels.json` — curated seed of certified-green hostels across DiscoverEU cities. Every non-placeholder entry was cross-checked against a publicly cited source (the hostel operator's own page documenting certification, the certification body's country news feed, or an official national partner directory). Entries flagged `verify: true` are placeholders for cities where no specific hostel could be confirmed from the cert body's public directory at seed time — these must be validated or removed before launch.
+
+- **Green Key International — global directory and country pages** — `https://www.greenkey.global/green-key-sites` — authoritative list of Green Key awarded sites worldwide.
+- **Green Key Denmark directory** — `https://www.greenkey.dk/en/map-details/steel-house-copenhagen` — source for Steel House Copenhagen's Green Key status.
+- **Green Key France (La Clef Verte)** — `https://www.laclefverte.org/` — national equivalent in France; cross-referenced via `https://www.mije.com/en/youth-hostel-in-paris/the-green-key-label-of-the-mije-fauconnier-hostel` and `https://www.hifrance.org/en/about-us/the-labels/green-key/`.
+- **EU Ecolabel — Tourist accommodation product group** — `https://environment.ec.europa.eu/topics/circular-economy/eu-ecolabel_en` — official EU Ecolabel hotel/hostel registry.
+- **USGBC LEED project directory** — `https://www.usgbc.org/projects` — authoritative LEED-certified project registry.
+- **Biosphere Sustainable (Responsible Tourism Institute)** — `https://www.biospheretourism.com/` — certified sustainable destinations and establishments. Used for Kabul Party Hostel Barcelona via `https://www.kabul.es/2025-biosphere-certification-of-sustainability/`.
+- **Nordic Swan Ecolabel directory** — `https://www.nordic-ecolabel.org/product-groups/group/?productGroupCode=055` — hotels, restaurants and conference facilities certified under Nordic Swan.
+- **Destinet / Tourism2030 — Green Key STF listing** — `https://destinet.eu/who-who/market-place/certifiers-section/international-green-key/stf-af-chapman-skeppsholmen-hostel` — cross-reference for STF af Chapman & Skeppsholmen, Stockholm.
+
+**Refresh cadence:** `verifiedAt` must be refreshed quarterly. Every certification is valid for 12 months and must be renewed by the property annually; a quarterly curator pass catches lapses. Contributors invited via GitHub issue to flag stale entries or propose new verified hostels (PR must include a sourceUrl pointing to the issuing body's public record).
+
 ## Buddy-matching cities (2026-04-13)
 
 - **`data/buddy-cities.json`** — editorial seed of the 20 highest-traffic DiscoverEU destinations (per European Commission participant statistics) to bootstrap the buddy-matching feature. Cities: Paris, Berlin, Madrid, Rome, Barcelona, Amsterdam, Prague, Vienna, Budapest, Lisbon, Athens, Krakow, Warsaw, Copenhagen, Stockholm, Dublin, Brussels, Munich, Milan, İstanbul.
