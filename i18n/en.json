@@ -1130,5 +1130,41 @@
       "link": "View accessibility demo",
       "title": "How our app works with screen readers"
     }
+  },
+  "impact": {
+    "panel": {
+      "title": "Your impact",
+      "subtitle": "Every trip counts — here's yours"
+    },
+    "axes": {
+      "green": "Green",
+      "inclusion": "Inclusion",
+      "participation": "Participation",
+      "digital": "Digital"
+    },
+    "stat": {
+      "countries": "Countries",
+      "km": "Kilometres",
+      "co2": "kg CO₂ saved",
+      "spend": "€ local spend"
+    },
+    "export": {
+      "card": "Export card (post)",
+      "story": "Export story card",
+      "json": "Export contribution JSON",
+      "jsonUnavailable": "JSON export is not yet available."
+    },
+    "optIn": {
+      "label": "Contribute anonymous aggregate metrics",
+      "what": "Shared: rounded totals (countries, km, CO₂, languages, a11y features).",
+      "notShared": "Not shared: names, photos, messages, exact dates, or locations.",
+      "location": "Goes to the public CC-BY-4.0 dashboard, never to a private server."
+    },
+    "public": {
+      "link": "View public dashboard"
+    },
+    "radar": {
+      "alt": "Radar chart: Green {green}, Inclusion {inclusion}, Participation {participation}, Digital {digital}."
+    }
   }
 }
