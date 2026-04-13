@@ -4,7 +4,16 @@
 
 import { storage } from './utils/storage.js';
 
-const PERSIST_KEYS = ['theme', 'language', 'user', 'route', 'filters', 'prep', 'bingo', 'dares', 'futureMessages', 'impact', 'a11y', 'buddy', 'coach', 'languageBridge'];
+const PERSIST_KEYS = ['theme', 'language', 'user', 'route', 'filters', 'prep', 'bingo', 'dares', 'futureMessages', 'impact', 'a11y', 'buddy', 'coach', 'languageBridge', 'group'];
+
+// v1.7 — Multi-origin Group Planner
+const GROUP_MAX_MEMBERS = 10;
+const GROUP_DEFAULTS = {
+  members: [],          // [{id, displayName, homeCountry, homeCity, preferences:{kindLikes:[], avoidCategories:[]}}]
+  leaderId: null,       // string — id of the user who created the group
+  createdAt: null,      // ISO timestamp
+  groupCode: null       // string — short shareable code (8 chars, base36)
+};
 
 // v1.7 — Language Bridge
 const LANGUAGE_BRIDGE_PHRASES_CAP = 500;
@@ -147,6 +156,12 @@ const initialState = {
     savedPhrases: [],
     ocrLang: null,
     voiceOn: false
+  },
+  group: {                     // persisted — v1.7 Multi-origin Group Planner
+    members: [],
+    leaderId: null,
+    createdAt: null,
+    groupCode: null
   },
   countries: [],               // loaded from data/countries.json
   trains: [],                  // loaded from data/trains.json
@@ -344,6 +359,47 @@ function migrate(persisted) {
     if (typeof lb.voiceOn !== 'boolean') {
       lb.voiceOn = false;
     }
+  }
+  // v1.7 — backfill + sanitize group slice (Multi-origin Group Planner).
+  if (!isPlainObject(persisted.group)) {
+    persisted.group = {
+      members: [],
+      leaderId: null,
+      createdAt: null,
+      groupCode: null
+    };
+  } else {
+    const g = persisted.group;
+    // members — array of { id, displayName, homeCountry, homeCity, preferences:{kindLikes:[], avoidCategories:[]} }
+    if (!Array.isArray(g.members)) {
+      g.members = [];
+    } else {
+      g.members = g.members.filter(m =>
+        isPlainObject(m) &&
+        typeof m.id === 'string' && m.id &&
+        typeof m.displayName === 'string' &&
+        typeof m.homeCountry === 'string' &&
+        typeof m.homeCity === 'string'
+      ).map(m => {
+        const prefs = isPlainObject(m.preferences) ? m.preferences : {};
+        const kindLikes = Array.isArray(prefs.kindLikes) ? prefs.kindLikes : [];
+        const avoidCategories = Array.isArray(prefs.avoidCategories) ? prefs.avoidCategories : [];
+        return {
+          id: m.id,
+          displayName: m.displayName,
+          homeCountry: m.homeCountry,
+          homeCity: m.homeCity,
+          preferences: { kindLikes, avoidCategories }
+        };
+      });
+      // FIFO drop oldest when over cap.
+      if (g.members.length > GROUP_MAX_MEMBERS) {
+        g.members = g.members.slice(g.members.length - GROUP_MAX_MEMBERS);
+      }
+    }
+    if (typeof g.leaderId !== 'string') g.leaderId = null;
+    if (!isIsoString(g.createdAt)) g.createdAt = null;
+    if (typeof g.groupCode !== 'string') g.groupCode = null;
   }
   return persisted;
 }
