@@ -10,6 +10,7 @@ import { hydrateRouteFromHash } from './utils/share.js';
 import { showToast } from './ui/toast.js';
 import { parseHash, onRouteChange } from './router.js';
 import { initBottomNav } from './ui/bottom-nav.js';
+import { initA11y } from './features/a11y-settings.js';
 
 const pageCache = {};
 const PAGE_MODULES = {
@@ -30,6 +31,9 @@ async function boot() {
     // 2. i18n
     const savedLang = state.getSlice('language') || 'en';
     await i18n.load(savedLang);
+
+    // 2b. Accessibility overlay — apply persisted a11y settings before first render.
+    initA11y();
 
     // 3. Wire language switcher
     const langSelect = qs('#langSelect');
