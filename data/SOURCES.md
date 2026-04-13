@@ -87,3 +87,17 @@ Source data for `data/embassy-lookup-pattern.json` — every `mfaUrl`, `embassyL
 - **EC EHIC page** — `https://ec.europa.eu/social/main.jsp?catId=559` — European Health Insurance Card coverage, rights, and use-abroad guidance. Cited from both `medical-emergency` emergency + urgent-care terminals.
 - **Your Europe — Unplanned healthcare** — `https://europa.eu/youreurope/citizens/health/unplanned-healthcare/temporary-stays/index_en.htm` — pharmacy access, reimbursement for temporary stays. Cited from the `medical-emergency` minor branch terminal.
 - Refresh cadence: annually, or on any publicly-announced policy change from MFA, EACEA, or EC DG SANTE.
+
+## Wheelmap metro index (2026-04-13)
+
+Source data for `data/wheelmap-metro-index.json` — step-free metro station seed covering 5 DiscoverEU cities (Paris, Berlin, Madrid, Rome, İstanbul). Coordinates cross-checked against OpenStreetMap node data; accessibility status taken from each operator's official map plus Wheelmap community verification.
+
+- **Wheelmap.org** (ODbL, OSM-derived) — `https://wheelmap.org/` — community-verified wheelchair accessibility flags per station node.
+- **OpenStreetMap** (ODbL) — `https://www.openstreetmap.org/` — latitude/longitude for every listed station.
+- **RATP Accessibility (Paris)** — `https://www.ratp.fr/en/accessibility` — Line 14 full accessibility, RER A/B lift inventory.
+- **BVG Accessibility (Berlin)** — `https://www.bvg.de/en/tickets-fares/all-about-tickets/accessibility` — U-Bahn/S-Bahn step-free station list (~83% coverage reported 2025).
+- **Metro de Madrid — Accessibility** — `https://www.metromadrid.es/en/travel-in-the-metro/accessibility` — line-by-line accessible-station matrix; Lines 6, 8, 11, 12 fully step-free.
+- **ATAC Roma — Accessibilità** — `https://www.atac.roma.it/accessibilita` — Line C full accessibility, Line A/B lift status (frequently updated for outages).
+- **Metro İstanbul** — `https://www.metro.istanbul/en` — operator map confirming lift + platform-screen-door coverage on all post-2000 M-lines (M2, M3, M4, M5, M6, M7, M8, M9, M11) and Marmaray.
+- License: ODbL attribution inherited from Wheelmap/OSM; curated per-city summary fields are CC BY-SA 4.0 under this project.
+- Refresh cadence: annually, or when an operator publishes a new accessible-station list. Contributors invited via GitHub issue — curated seed list, not an exhaustive enumeration.
