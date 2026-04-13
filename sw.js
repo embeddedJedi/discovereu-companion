@@ -7,7 +7,7 @@
 //   • On activate: wipe any older cache buckets so version bumps roll
 //     out cleanly
 
-const CACHE_VERSION = 'discovereu-v9';
+const CACHE_VERSION = 'discovereu-v10';
 const APP_SHELL = [
   './',
   './index.html',
@@ -74,7 +74,20 @@ const APP_SHELL = [
   '/css/buddy.css',
   '/js/features/buddy.js',
   '/js/features/buddy-consent.js',
-  '/js/ui/buddy-panel.js'
+  '/js/ui/buddy-panel.js',
+  '/js/features/coach.js',
+  '/js/features/coach-prompt.js',
+  '/js/features/coach-badge.js',
+  '/js/features/quiz-runner.js',
+  '/js/ui/coach-panel.js',
+  '/css/coach.css',
+  '/data/coach-badge-issuer.json',
+  '/badges/issuer.json',
+  '/badges/classes/at.json',
+  '/badges/classes/de.json',
+  '/badges/classes/fr.json',
+  '/badges/classes/es.json',
+  '/badges/classes/it.json'
 ];
 
 self.addEventListener('install', (event) => {
