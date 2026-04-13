@@ -82,8 +82,8 @@ export const cache = {
 // (`discovereu`) so future stores can be added without new wiring.
 
 const IDB_NAME = 'discovereu';
-const IDB_VERSION = 4;
-const IDB_STORES = ['bingoPhotos', 'journalEntries', 'voiceMemories', 'buddyCache'];
+const IDB_VERSION = 5;
+const IDB_STORES = ['bingoPhotos', 'journalEntries', 'voiceMemories', 'buddyCache', 'coachLessons', 'coachBadges'];
 
 let _dbPromise = null;
 
@@ -157,4 +157,51 @@ export async function idbGetAll(storeName) {
 /** Wipe all entries in a store. */
 export async function idbClear(storeName) {
   return withStore(storeName, 'readwrite', store => { store.clear(); });
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// AI Intercultural Coach — typed helpers for coachLessons + coachBadges
+// ─────────────────────────────────────────────────────────────────────────────
+
+function coachLessonKey(countryId, lang) {
+  return `${countryId}_${lang}`;
+}
+
+/** Persist a coach lesson. Key = `${countryId}_${lang}`. */
+export async function putCoachLesson(lesson) {
+  if (!lesson || !lesson.countryId || !lesson.lang) {
+    throw new Error('[coach] putCoachLesson requires { countryId, lang }');
+  }
+  const key = lesson.id || coachLessonKey(lesson.countryId, lesson.lang);
+  return idbPut('coachLessons', key, { ...lesson, id: key });
+}
+
+/** Fetch a coach lesson by country + language, or null. */
+export async function getCoachLesson(countryId, lang) {
+  return idbGet('coachLessons', coachLessonKey(countryId, lang));
+}
+
+/** Return all coach lessons as an array of values. */
+export async function getAllCoachLessons() {
+  const rows = await idbGetAll('coachLessons');
+  return rows.map(r => r.value);
+}
+
+/** Persist a coach badge. Key = badgeId. */
+export async function putCoachBadge(badge) {
+  if (!badge || !badge.badgeId) {
+    throw new Error('[coach] putCoachBadge requires { badgeId }');
+  }
+  return idbPut('coachBadges', badge.badgeId, badge);
+}
+
+/** Fetch a coach badge by badgeId, or null. */
+export async function getCoachBadge(badgeId) {
+  return idbGet('coachBadges', badgeId);
+}
+
+/** Return all coach badges as an array of values. */
+export async function getAllCoachBadges() {
+  const rows = await idbGetAll('coachBadges');
+  return rows.map(r => r.value);
 }
