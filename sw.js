@@ -7,7 +7,7 @@
 //   • On activate: wipe any older cache buckets so version bumps roll
 //     out cleanly
 
-const CACHE_VERSION = 'discovereu-v8';
+const CACHE_VERSION = 'discovereu-v9';
 const APP_SHELL = [
   './',
   './index.html',
@@ -69,7 +69,12 @@ const APP_SHELL = [
   '/js/features/flowchart-runner.js',
   '/js/features/share-location.js',
   '/js/ui/crisis-shield-panel.js',
-  '/js/ui/emergency-dial-list.js'
+  '/js/ui/emergency-dial-list.js',
+  '/data/buddy-cities.json',
+  '/css/buddy.css',
+  '/js/features/buddy.js',
+  '/js/features/buddy-consent.js',
+  '/js/ui/buddy-panel.js'
 ];
 
 self.addEventListener('install', (event) => {
