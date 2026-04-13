@@ -4,7 +4,7 @@
 
 import { storage } from './utils/storage.js';
 
-const PERSIST_KEYS = ['theme', 'language', 'user', 'route', 'filters', 'prep', 'bingo', 'dares', 'futureMessages'];
+const PERSIST_KEYS = ['theme', 'language', 'user', 'route', 'filters', 'prep', 'bingo', 'dares', 'futureMessages', 'impact'];
 
 const initialState = {
   theme: 'light',
@@ -62,6 +62,11 @@ const initialState = {
     packingDone:   {},         // { itemId: true }
     packingCustom: []          // [{ id, label, category }] — user-added items
   },
+  impact: {                    // persisted — v1.4 Impact Dashboard
+    aggregateOptIn: false,     // user consent to contribute anonymous aggregate metrics
+    badgesEarned: [],          // [badgeId, ...] milestone badges unlocked
+    lastSnapshotHash: null     // hash of last computed impact snapshot for change detection
+  },
   countries: [],               // loaded from data/countries.json
   trains: [],                  // loaded from data/trains.json
   reservations: [],            // loaded from data/reservations.json
@@ -80,6 +85,14 @@ function migrate(persisted) {
   if (persisted?.route) {
     if (!Array.isArray(persisted.route.returnStops)) persisted.route.returnStops = [];
     if (typeof persisted.route.includeReturnInBudget !== 'boolean') persisted.route.includeReturnInBudget = true;
+  }
+  // v1.4 — backfill impact slice for users who persisted state before this release.
+  if (!persisted.impact || typeof persisted.impact !== 'object') {
+    persisted.impact = { aggregateOptIn: false, badgesEarned: [], lastSnapshotHash: null };
+  } else {
+    if (typeof persisted.impact.aggregateOptIn !== 'boolean') persisted.impact.aggregateOptIn = false;
+    if (!Array.isArray(persisted.impact.badgesEarned)) persisted.impact.badgesEarned = [];
+    if (persisted.impact.lastSnapshotHash === undefined) persisted.impact.lastSnapshotHash = null;
   }
   return persisted;
 }
