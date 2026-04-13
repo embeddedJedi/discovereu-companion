@@ -7,6 +7,22 @@
 import { state } from '../state.js';
 import { resolveHomeCoords } from '../ui/home-city-picker.js';
 
+// Capital fallback for the 33 DiscoverEU countries whose countries.json
+// entries don't carry city-level coords (only TR currently has cities[]).
+// Keeps the polyline + arrows working even when the route's stop has no
+// matching inline city record.
+const CAPITAL_LATLNG = {
+  AL: [41.33,  19.82], AT: [48.21,  16.37], BA: [43.87,  18.42], BE: [50.85,   4.35],
+  BG: [42.70,  23.32], CH: [46.95,   7.45], CY: [35.17,  33.37], CZ: [50.08,  14.43],
+  DE: [52.52,  13.40], DK: [55.68,  12.57], EE: [59.44,  24.75], ES: [40.42,  -3.70],
+  FI: [60.17,  24.94], FR: [48.85,   2.35], GR: [37.98,  23.73], HR: [45.81,  15.98],
+  HU: [47.50,  19.04], IE: [53.35,  -6.26], IS: [64.14, -21.94], IT: [41.90,  12.48],
+  LI: [47.14,   9.52], LT: [54.69,  25.28], LU: [49.61,   6.13], LV: [56.95,  24.11],
+  MK: [41.99,  21.43], MT: [35.90,  14.51], NL: [52.37,   4.89], NO: [59.91,  10.75],
+  PL: [52.23,  21.01], PT: [38.72,  -9.14], RO: [44.43,  26.10], RS: [44.79,  20.45],
+  SE: [59.33,  18.07], SI: [46.06,  14.51], SK: [48.15,  17.11], TR: [41.01,  28.98]
+};
+
 let outboundLayer = null;
 let returnLayer = null;
 let markersLayer = null;
@@ -21,11 +37,18 @@ function clearLayers(map) {
 }
 
 function cityCoords(countryId, cityId) {
+  if (!countryId) return null;
   const countries = state.getSlice('countries') || [];
-  const country = countries.find(c => c.id === countryId);
-  if (!country) return null;
-  const city = (country.cities || []).find(c => c.id === cityId) || country.cities?.[0];
-  return city ? [city.lat, city.lng] : null;
+  const country = countries.find(c => c.id === countryId || c.id === String(countryId).toUpperCase());
+  // Prefer inline city record when present (only TR today).
+  if (country && Array.isArray(country.cities)) {
+    const city = country.cities.find(c => c.id === cityId) || country.cities[0];
+    if (city && typeof city.lat === 'number') return [city.lat, city.lng];
+  }
+  // Fallback to capital lookup keyed by uppercase 2-letter ISO.
+  const key = String(countryId).toUpperCase();
+  const cap = CAPITAL_LATLNG[key];
+  return cap ? [cap[0], cap[1]] : null;
 }
 
 function cssVar(name) {
