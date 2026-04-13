@@ -9,6 +9,7 @@ import { getMap } from '../map/map.js';
 import { initRouteLayer } from '../map/route-layer.js';
 import { toggleLayer as togglePickpocketLayer } from '../features/pickpocket.js';
 import { createWheelchairLayer } from '../map/wheelchair-layer.js';
+import { createGreenHostelsLayer } from '../map/green-hostels-layer.js';
 import { shouldDefer } from '../features/low-bw.js';
 
 let overlayEl = null;
@@ -17,6 +18,8 @@ let layerControlsEl = null;
 let pickpocketOn = false;
 let wheelchairApi = null;   // lazy: { enable, disable, isEnabled } from createWheelchairLayer
 let wheelchairOn = false;
+let greenHostelsApi = null; // lazy: createGreenHostelsLayer
+let greenHostelsOn = false;
 let unsubscribers = [];
 
 function routeCountryIds() {
@@ -24,6 +27,14 @@ function routeCountryIds() {
   const ids = new Set();
   (route.stops || []).forEach(s => s.countryId && ids.add(s.countryId));
   (route.returnStops || []).forEach(s => s.countryId && ids.add(s.countryId));
+  return ids;
+}
+
+function routeCityIds() {
+  const route = state.getSlice('route') || {};
+  const ids = new Set();
+  (route.stops || []).forEach(s => s.cityId && ids.add(s.cityId));
+  (route.returnStops || []).forEach(s => s.cityId && ids.add(s.cityId));
   return ids;
 }
 
@@ -59,11 +70,18 @@ export function mount(container) {
 
   // Initial sync: if a11y.wheelchairLayer was persisted as true, enable layer now.
   syncWheelchairFromState();
+  syncGreenHostelsFromState();
 
   unsubscribers.push(
-    state.subscribe('route', () => { renderRouteSummary(); renderChipStrip(); syncWheelchairFromState(); }),
+    state.subscribe('route', () => {
+      renderRouteSummary();
+      renderChipStrip();
+      syncWheelchairFromState();
+      syncGreenHostelsFromState();
+    }),
     state.subscribe('language', () => { renderRouteSummary(); renderChipStrip(); renderLayerToggles(); }),
-    state.subscribe('a11y', () => { syncWheelchairFromState(); })
+    state.subscribe('a11y', () => { syncWheelchairFromState(); }),
+    state.subscribe('filters', () => { syncGreenHostelsFromState(); })
   );
 }
 
@@ -98,6 +116,37 @@ async function syncWheelchairFromState() {
   renderLayerToggles();
 }
 
+/**
+ * State-driven green-hostels layer binding. Reads `filters.greenHostelsOnly`
+ * and enables/disables the Leaflet layer. Also re-runs when `route` changes so
+ * the city filter stays in sync with the user's stops.
+ */
+async function syncGreenHostelsFromState() {
+  const map = getMap();
+  if (!map) return;
+  const want = !!(state.getSlice('filters') || {}).greenHostelsOnly;
+
+  if (want && !greenHostelsApi) {
+    try { greenHostelsApi = createGreenHostelsLayer(map); }
+    catch (err) { console.error('[map] green hostels init failed', err); return; }
+  }
+  if (!greenHostelsApi) return;
+
+  try {
+    if (want) {
+      const ids = routeCityIds();
+      await greenHostelsApi.enable(ids.size ? ids : undefined);
+      greenHostelsOn = true;
+    } else if (greenHostelsOn) {
+      greenHostelsApi.disable();
+      greenHostelsOn = false;
+    }
+  } catch (err) {
+    console.error('[map] green hostels sync failed', err);
+  }
+  renderLayerToggles();
+}
+
 export function unmount() {
   const mapContainer = qs('#mapContainer');
   if (mapContainer) mapContainer.style.display = 'none';
@@ -116,6 +165,12 @@ export function unmount() {
   if (wheelchairApi && wheelchairOn) {
     wheelchairApi.disable();
     wheelchairOn = false;
+  }
+  // Keep filters.greenHostelsOnly state intact across page navigation —
+  // just detach the Leaflet layer so it isn't drawn while the map is hidden.
+  if (greenHostelsApi && greenHostelsOn) {
+    greenHostelsApi.disable();
+    greenHostelsOn = false;
   }
 
   if (overlayEl) { overlayEl.remove(); overlayEl = null; }
@@ -173,6 +228,24 @@ function renderLayerToggles() {
     h('span', null, t('a11y.wheelchair.toggle'))
   ]);
   layerControlsEl.appendChild(wcBtn);
+
+  // Green-certified hostels layer toggle. Flips state.filters.greenHostelsOnly;
+  // syncGreenHostelsFromState() handles the actual Leaflet layer attach.
+  const ghBtn = h('button', {
+    class: 'layer-toggle' + (greenHostelsOn ? ' is-on' : ''),
+    type: 'button',
+    'aria-pressed': greenHostelsOn ? 'true' : 'false',
+    'aria-label': t('green.layer.toggle'),
+    title: t('green.layer.toggle'),
+    onclick: () => {
+      const next = !greenHostelsOn;
+      state.update('filters', f => ({ ...(f || {}), greenHostelsOnly: next }));
+    }
+  }, [
+    h('span', { 'aria-hidden': 'true' }, '\uD83C\uDF31'),
+    h('span', null, t('green.layer.toggle'))
+  ]);
+  layerControlsEl.appendChild(ghBtn);
 }
 
 function renderRouteSummary() {

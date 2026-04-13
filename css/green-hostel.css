@@ -1,0 +1,70 @@
+/* css/green-hostel.css
+ * v1.7 — Certified green hostel map layer.
+ * Fully populated in Task 8; this file currently ships the minimal marker
+ * styling required for green-hostels-layer.js to render recognisably.
+ */
+
+:root {
+  --green-marker-bg: #4ade80;
+}
+
+.green-hostel-marker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--green-marker-bg);
+  color: #0b3d1f;
+  font-size: 16px;
+  line-height: 1;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+  border: 2px solid #ffffff;
+}
+
+.green-hostel-marker:focus-visible {
+  outline: 2px solid var(--focus, #2563eb);
+  outline-offset: 2px;
+}
+
+.green-hostel-popup {
+  min-width: 200px;
+  font: inherit;
+}
+
+.green-hostel-popup__name {
+  font-weight: 700;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.green-hostel-popup__cert {
+  display: inline-block;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: rgba(74, 222, 128, 0.2);
+  font-size: 0.85em;
+  margin-bottom: 4px;
+}
+
+.green-hostel-popup__row {
+  font-size: 0.9em;
+  margin: 2px 0;
+}
+
+.green-hostel-popup__visit {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 4px 8px;
+  background: var(--green-marker-bg);
+  color: #0b3d1f;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.green-hostel-popup__visit:focus-visible {
+  outline: 2px solid var(--focus, #2563eb);
+  outline-offset: 2px;
+}
