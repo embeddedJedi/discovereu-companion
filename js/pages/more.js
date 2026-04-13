@@ -59,6 +59,11 @@ function render() {
     { label: t('more.radarCompare'), icon: '📊', action: openCompare }
   ]));
 
+  // Section: Accessibility (v1.5 Accessibility Overlay)
+  page.appendChild(renderSection(t('a11y.panel.title'), [
+    { label: t('a11y.panel.title'), icon: '♿', action: openA11yPanel }
+  ]));
+
   // Section: Turkish Bonus (conditional)
   const user = state.getSlice('user');
   const lang = state.getSlice('language');
@@ -212,6 +217,24 @@ async function openCompare() {
       containerEl.appendChild(wrapper);
     }
   } catch (err) { console.error('[more] compare failed', err); }
+}
+
+async function openA11yPanel() {
+  try {
+    const { renderA11yPanel } = await import('../ui/a11y-panel.js');
+    if (renderA11yPanel && containerEl) {
+      empty(containerEl);
+      const wrapper = h('div', { class: 'more-page' });
+      wrapper.appendChild(h('button', {
+        class: 'guide-back-btn', type: 'button',
+        onclick: render
+      }, [h('span', null, '←'), h('span', null, ' ' + t('guide.backToList'))]));
+      const area = h('div');
+      renderA11yPanel(area);
+      wrapper.appendChild(area);
+      containerEl.appendChild(wrapper);
+    }
+  } catch (err) { console.error('[more] a11y panel failed', err); }
 }
 
 async function openTurkishBonus() {
