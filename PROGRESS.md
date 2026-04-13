@@ -477,8 +477,24 @@ All loaded with SRI hashes (to add in Phase 1).
   - Plan: `docs/superpowers/plans/2026-04-13-green-hostel-offset.md`
   - Editorial followup: verify Berlin/Amsterdam/Madrid/Vienna/Prague/Lisbon hostels via Green Key / EU Ecolabel / Biosphere directories
   - Followup: wrapped.js canvas-flatten integration deferred (CTA in exported image = affiliate-link-on-PNG risk)
+- **v1.7 Language Bridge** (2026-04-13):
+  - `state.languageBridge` slice — savedPhrases (500-cap FIFO) + ocrLang + voiceOn + migrate
+  - Data: `data/phrasebook/{de,fr,it,es,tr}.json` — 175-176 phrases each across 9 categories (greetings/numbers/food/directions/emergency/everyday/shopping/time/travel); TR L1-authored, DE/FR/IT/ES pending L1 review
+  - `js/features/ocr.js` — tesseract.js@5.0.5 lazy loader, rear-camera capture, 33-country → OCR lang map, slow-mode/data-saver event dispatch
+  - `js/features/translate.js` — LLM-based translation via unified adapter (sendPrompt+jsonMode), 50-entry LRU session cache, detectLanguage helper
+  - `js/features/voice-translator.js` — Whisper STT → translate → Web Speech API TTS chain, 33-country BCP-47 mapping (en→en-GB preference)
+  - `js/features/phrasebook.js` — offline loader + search + bookmark deck; IDB `phrasebookDeck` store (v5→v6)
+  - `js/ui/language-bridge-panel.js` — 3-tab UI (Camera OCR / Voice / Phrasebook) with consent gates, size warnings, slow-mode banner, hold-to-speak MediaRecorder, aria-live polite
+  - `js/ui/phrasebook-deck.js` — saved-phrases review with sticky country filter + TTS playback + clear-all (confirm dialog)
+  - `js/ui/country-detail.js` integration — Language Bridge CTA card after Coach card, dynamic-import modal
+  - 39 `lang.*` i18n leaves en+tr (de/fr/es/it deferred)
+  - PWA cache v11 → v12 with 11 new precache entries (phrasebook JSONs + all Language Bridge JS); tesseract/Whisper explicitly excluded (opt-in lazy-load)
+  - 9 commits; 12/13 tasks shipped, final Playwright smoke deferred to launch-eve
+  - Spec: `docs/superpowers/specs/2026-04-13-language-bridge-design.md`
+  - Plan: `docs/superpowers/plans/2026-04-13-language-bridge.md`
 
 ### 🚧 In progress
+- v1.7 Multi-origin Group Planner (2/12 tasks; state + i18n shipped)
 - *(Manual Playwright smoke pass for v1.2-v1.6 deferred to launch-eve verification)*
 
 ### ⏭ Next up (in order)
@@ -486,10 +502,12 @@ All loaded with SRI hashes (to add in Phase 1).
 2. **ESC Host Quality Label application submit** — materials drafted (`docs/outreach/esc-quality-label-application-tr.md`), partner dernek search open
 3. **KA154 Round 2 submission** (deadline 2026-10-01) — draft ready (`docs/outreach/ka154-r2-application-tr.md`): 9-section narrative, 12-month timeline, €45k budget
 4. **KA220 Tier-A LinkedIn outreach** — 5 personalised messages ready in `docs/outreach/ka220-tier-a-linkedin-messages.md` for the 2027-03-05 consortium deadline
-5. v1.7 Language Bridge (OCR menu translator + Whisper offline interpreter) + Multi-origin group planner (from pivot strategy doc)
-6. DE / FR / ES / IT full app-surface i18n backfill — new buddy + a11y + impact + coach + green/offset keys plus v1.0/v1.1 app surface still missing in those 4 locales
-7. Manual Playwright smoke pass for v1.2 + v1.3 + v1.4 + v1.5 + v1.6 + v1.7
-8. Custom domain (post-launch)
+5. v1.7 Multi-origin Group Planner completion
+6. v1.7 Green Hostel editorial refresh (Berlin/Amsterdam/Madrid/Vienna/Prague/Lisbon verification)
+7. v1.7 DE/FR/ES/IT i18n backfill for lang.* + group.* + green.* + offset.*
+8. Manual Playwright smoke pass v1.2-v1.7
+9. Custom domain (post-launch)
+10. v1.8 candidates from pivot strategy
 
 ---
 
@@ -550,6 +568,9 @@ All loaded with SRI hashes (to add in Phase 1).
 | 2026-04-13 | Top 5 BadgeClass JSONs precached in SW, remaining 28 served stale-while-revalidate | Offline shell stays light — precaching 33 BadgeClass JSONs would bloat the baseline install; SWR gives instant warm fetch once a user views a given country |
 | 2026-04-13 | Green Hostel layer = verified-cert only | Any unverified entry becomes a greenwashing attack surface; placeholder entries carry `verify:true` and are filtered out at render |
 | 2026-04-13 | Offset provider links are non-affiliate, no tracking | Grant-reviewer scrutiny + user trust; revisit only after explicit partnership agreement (documented startup-phase upgrade) |
+| 2026-04-13 | Language Bridge: LLM translate + offline phrasebook hybrid | LLM quality for arbitrary text but requires network + key; phrasebook offline for critical travel scenarios (emergencies, allergies) |
+| 2026-04-13 | Tesseract.js NOT precached in SW | 11 MB core + language packs (~8 MB each) exceeds acceptable shell weight; opt-in lazy-load on first OCR use, cached by browser HTTP cache thereafter |
+| 2026-04-13 | Voice translator = Whisper STT + LLM translate + Web Speech API TTS | Three independent existing technologies; no new service needed; zero-backend |
 
 ---
 
