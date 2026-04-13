@@ -82,8 +82,8 @@ export const cache = {
 // (`discovereu`) so future stores can be added without new wiring.
 
 const IDB_NAME = 'discovereu';
-const IDB_VERSION = 3;
-const IDB_STORES = ['bingoPhotos', 'journalEntries', 'voiceMemories'];
+const IDB_VERSION = 4;
+const IDB_STORES = ['bingoPhotos', 'journalEntries', 'voiceMemories', 'buddyCache'];
 
 let _dbPromise = null;
 
