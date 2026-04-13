@@ -191,5 +191,105 @@
     },
     "offlineNote": "Questo scudo funziona completamente offline — i dati sono inclusi nell'app.",
     "noPII": "Nessun dato personale lascia il tuo dispositivo."
+  },
+  "a11y": {
+    "panel": {
+      "title": "Accessibilità",
+      "subtitle": "Adatta l'app perché funzioni al meglio per te",
+      "section": {
+        "reading": "Comfort di lettura",
+        "motion": "Movimento e animazione",
+        "vision": "Vista e colore",
+        "audio": "Audio e voce",
+        "bandwidth": "Connessione",
+        "mobility": "Mobilità"
+      },
+      "saveHint": "Le modifiche si applicano subito"
+    },
+    "dyslexia": {
+      "toggle": "Font per la dislessia",
+      "description": "Usa OpenDyslexic, caricato solo quando attivato (~80 KB)",
+      "loading": "Caricamento del font…"
+    },
+    "font": {
+      "scaleLabel": "Dimensione del testo",
+      "scaleHint": "1,0× è lo standard. Scegli un valore più grande se il testo ti sembra piccolo.",
+      "lineHeightLabel": "Altezza riga",
+      "letterSpacingLabel": "Spaziatura tra lettere"
+    },
+    "motion": {
+      "label": "Ridurre il movimento",
+      "optionOs": "Segui le preferenze di sistema",
+      "optionOn": "Riduci sempre",
+      "optionOff": "Sempre attivo",
+      "description": "Disattiva le animazioni nelle story card, nelle mappe e nelle transizioni"
+    },
+    "contrast": {
+      "toggle": "Alto contrasto",
+      "description": "Palette AAA 10:1+ per una migliore leggibilità"
+    },
+    "colorBlind": {
+      "label": "Regolazione della visione dei colori",
+      "optionNone": "Nessuna regolazione",
+      "optionProtanopia": "Protanopia (rosso-verde)",
+      "optionDeuteranopia": "Deuteranopia (rosso-verde, la più comune)",
+      "optionTritanopia": "Tritanopia (blu-giallo, rara)"
+    },
+    "transcribe": {
+      "toggle": "Trascrizione delle note vocali",
+      "description": "Trascrive automaticamente le note vocali registrate in testo. Al primo utilizzo scarica un modello di ~40 MB a richiesta.",
+      "downloading": "Download del modello vocale ({percent}%)",
+      "ready": "Modello pronto",
+      "slowMode": "In esecuzione in modalità a thread singolo (limite dell'hosting)"
+    },
+    "lowBw": {
+      "toggle": "Modalità a banda ridotta",
+      "description": "Salta le risorse pesanti (story card, tile delle mappe, voce) per gli utenti 2G/3G",
+      "badge": "Modalità leggera attiva"
+    },
+    "wheelchair": {
+      "toggle": "Livello metro senza gradini",
+      "description": "Mostra sulla mappa le stazioni della metro accessibili in sedia a rotelle"
+    },
+    "demo": {
+      "link": "Guarda la demo di accessibilità",
+      "title": "Come funziona la nostra app con gli screen reader"
+    }
+  },
+  "impact": {
+    "panel": {
+      "title": "Il tuo impatto",
+      "subtitle": "Ogni viaggio conta — ecco il tuo"
+    },
+    "axes": {
+      "green": "Verde",
+      "inclusion": "Inclusione",
+      "participation": "Partecipazione",
+      "digital": "Digitale"
+    },
+    "stat": {
+      "countries": "Paesi",
+      "km": "Chilometri",
+      "co2": "kg di CO₂ risparmiati",
+      "spend": "€ spesi in loco"
+    },
+    "export": {
+      "card": "Esporta card (post)",
+      "story": "Esporta story card",
+      "json": "Esporta JSON del contributo",
+      "jsonUnavailable": "L'esportazione JSON non è ancora disponibile."
+    },
+    "optIn": {
+      "label": "Contribuisci con metriche aggregate anonime",
+      "what": "Condiviso: totali arrotondati (paesi, km, CO₂, lingue, funzioni di accessibilità).",
+      "notShared": "Non condiviso: nomi, foto, messaggi, date esatte o luoghi.",
+      "location": "Va alla dashboard pubblica CC-BY-4.0, mai a un server privato."
+    },
+    "public": {
+      "link": "Vedi la dashboard pubblica"
+    },
+    "radar": {
+      "alt": "Grafico radar: Verde {green}, Inclusione {inclusion}, Partecipazione {participation}, Digitale {digital}."
+    }
   }
 }

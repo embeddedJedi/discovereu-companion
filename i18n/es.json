@@ -191,5 +191,105 @@
     },
     "offlineNote": "Este escudo funciona totalmente sin conexión — los datos vienen incluidos en la app.",
     "noPII": "Ningún dato personal sale de tu dispositivo."
+  },
+  "a11y": {
+    "panel": {
+      "title": "Accesibilidad",
+      "subtitle": "Ajusta la app para que funcione mejor para ti",
+      "section": {
+        "reading": "Comodidad de lectura",
+        "motion": "Movimiento y animación",
+        "vision": "Visión y color",
+        "audio": "Audio y voz",
+        "bandwidth": "Conexión",
+        "mobility": "Movilidad"
+      },
+      "saveHint": "Los cambios se aplican al instante"
+    },
+    "dyslexia": {
+      "toggle": "Fuente apta para dislexia",
+      "description": "Usa OpenDyslexic, se carga solo cuando se activa (~80 KB)",
+      "loading": "Cargando fuente…"
+    },
+    "font": {
+      "scaleLabel": "Tamaño del texto",
+      "scaleHint": "1,0× es el estándar. Elige un tamaño mayor si el texto te parece pequeño.",
+      "lineHeightLabel": "Altura de línea",
+      "letterSpacingLabel": "Espaciado entre letras"
+    },
+    "motion": {
+      "label": "Reducir movimiento",
+      "optionOs": "Seguir preferencia del sistema",
+      "optionOn": "Reducir siempre",
+      "optionOff": "Siempre activado",
+      "description": "Desactiva animaciones en tarjetas resumen, mapas y transiciones"
+    },
+    "contrast": {
+      "toggle": "Alto contraste",
+      "description": "Paleta AAA 10:1+ para mejor legibilidad"
+    },
+    "colorBlind": {
+      "label": "Ajuste de visión del color",
+      "optionNone": "Sin ajuste",
+      "optionProtanopia": "Protanopia (rojo-verde)",
+      "optionDeuteranopia": "Deuteranopia (rojo-verde, la más común)",
+      "optionTritanopia": "Tritanopia (azul-amarillo, poco común)"
+    },
+    "transcribe": {
+      "toggle": "Transcripción de notas de voz",
+      "description": "Transcribe automáticamente las notas de voz grabadas a texto. El primer uso descarga un modelo de ~40 MB bajo demanda.",
+      "downloading": "Descargando modelo de voz ({percent}%)",
+      "ready": "Modelo listo",
+      "slowMode": "Ejecutándose en modo de un solo hilo (limitación del hosting)"
+    },
+    "lowBw": {
+      "toggle": "Modo de bajo ancho de banda",
+      "description": "Omite recursos pesados (tarjeta resumen, teselas de mapa, voz) para usuarios 2G/3G",
+      "badge": "Modo ligero activo"
+    },
+    "wheelchair": {
+      "toggle": "Capa de metro sin escalones",
+      "description": "Muestra las estaciones de metro accesibles en silla de ruedas en el mapa"
+    },
+    "demo": {
+      "link": "Ver demo de accesibilidad",
+      "title": "Cómo funciona nuestra app con lectores de pantalla"
+    }
+  },
+  "impact": {
+    "panel": {
+      "title": "Tu impacto",
+      "subtitle": "Cada viaje cuenta — este es el tuyo"
+    },
+    "axes": {
+      "green": "Verde",
+      "inclusion": "Inclusión",
+      "participation": "Participación",
+      "digital": "Digital"
+    },
+    "stat": {
+      "countries": "Países",
+      "km": "Kilómetros",
+      "co2": "kg de CO₂ ahorrados",
+      "spend": "€ gastados localmente"
+    },
+    "export": {
+      "card": "Exportar tarjeta (post)",
+      "story": "Exportar tarjeta story",
+      "json": "Exportar JSON de contribución",
+      "jsonUnavailable": "La exportación JSON aún no está disponible."
+    },
+    "optIn": {
+      "label": "Contribuir con métricas agregadas anónimas",
+      "what": "Se comparte: totales redondeados (países, km, CO₂, idiomas, funciones de accesibilidad).",
+      "notShared": "No se comparte: nombres, fotos, mensajes, fechas exactas ni ubicaciones.",
+      "location": "Va al panel público CC-BY-4.0, nunca a un servidor privado."
+    },
+    "public": {
+      "link": "Ver panel público"
+    },
+    "radar": {
+      "alt": "Gráfico de radar: Verde {green}, Inclusión {inclusion}, Participación {participation}, Digital {digital}."
+    }
   }
 }

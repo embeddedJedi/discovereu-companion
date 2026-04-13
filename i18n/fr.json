@@ -191,5 +191,105 @@
     },
     "offlineNote": "Ce bouclier fonctionne entièrement hors-ligne — les données sont embarquées avec l'application.",
     "noPII": "Aucune donnée personnelle ne quitte ton appareil."
+  },
+  "a11y": {
+    "panel": {
+      "title": "Accessibilité",
+      "subtitle": "Ajuste l'appli pour qu'elle te convienne au mieux",
+      "section": {
+        "reading": "Confort de lecture",
+        "motion": "Mouvement et animation",
+        "vision": "Vision et couleur",
+        "audio": "Audio et parole",
+        "bandwidth": "Connexion",
+        "mobility": "Mobilité"
+      },
+      "saveHint": "Les changements s'appliquent immédiatement"
+    },
+    "dyslexia": {
+      "toggle": "Police adaptée à la dyslexie",
+      "description": "Utilise OpenDyslexic, chargée uniquement si activée (~80 Ko)",
+      "loading": "Chargement de la police…"
+    },
+    "font": {
+      "scaleLabel": "Taille du texte",
+      "scaleHint": "1,0× est la valeur standard. Choisis plus grand si le texte te semble petit.",
+      "lineHeightLabel": "Hauteur de ligne",
+      "letterSpacingLabel": "Espacement des lettres"
+    },
+    "motion": {
+      "label": "Réduire les animations",
+      "optionOs": "Suivre les préférences système",
+      "optionOn": "Toujours réduire",
+      "optionOff": "Toujours activé",
+      "description": "Désactive les animations dans les cartes récap, les cartes et les transitions"
+    },
+    "contrast": {
+      "toggle": "Contraste élevé",
+      "description": "Palette AAA 10:1+ pour une meilleure lisibilité"
+    },
+    "colorBlind": {
+      "label": "Ajustement de la vision des couleurs",
+      "optionNone": "Aucun ajustement",
+      "optionProtanopia": "Protanopie (rouge-vert)",
+      "optionDeuteranopia": "Deutéranopie (rouge-vert, la plus courante)",
+      "optionTritanopia": "Tritanopie (bleu-jaune, rare)"
+    },
+    "transcribe": {
+      "toggle": "Transcription des notes vocales",
+      "description": "Transcrit automatiquement les notes vocales enregistrées. La première utilisation télécharge un modèle de ~40 Mo à la demande.",
+      "downloading": "Téléchargement du modèle vocal ({percent}%)",
+      "ready": "Modèle prêt",
+      "slowMode": "Fonctionne en mode mono-thread (limitation de l'hébergement)"
+    },
+    "lowBw": {
+      "toggle": "Mode faible bande passante",
+      "description": "Saute les ressources lourdes (carte récap, tuiles de carte, voix) pour les utilisateurs 2G/3G",
+      "badge": "Mode léger actif"
+    },
+    "wheelchair": {
+      "toggle": "Couche métro sans marches",
+      "description": "Affiche les stations de métro accessibles en fauteuil roulant sur la carte"
+    },
+    "demo": {
+      "link": "Voir la démo d'accessibilité",
+      "title": "Comment notre appli fonctionne avec les lecteurs d'écran"
+    }
+  },
+  "impact": {
+    "panel": {
+      "title": "Ton impact",
+      "subtitle": "Chaque voyage compte — voici le tien"
+    },
+    "axes": {
+      "green": "Vert",
+      "inclusion": "Inclusion",
+      "participation": "Participation",
+      "digital": "Numérique"
+    },
+    "stat": {
+      "countries": "Pays",
+      "km": "Kilomètres",
+      "co2": "kg de CO₂ économisés",
+      "spend": "€ dépensés localement"
+    },
+    "export": {
+      "card": "Exporter la carte (post)",
+      "story": "Exporter la carte story",
+      "json": "Exporter le JSON de contribution",
+      "jsonUnavailable": "L'export JSON n'est pas encore disponible."
+    },
+    "optIn": {
+      "label": "Contribuer avec des métriques agrégées anonymes",
+      "what": "Partagé : totaux arrondis (pays, km, CO₂, langues, fonctions d'accessibilité).",
+      "notShared": "Non partagé : noms, photos, messages, dates exactes ou lieux.",
+      "location": "Va au tableau de bord public CC-BY-4.0, jamais vers un serveur privé."
+    },
+    "public": {
+      "link": "Voir le tableau de bord public"
+    },
+    "radar": {
+      "alt": "Graphique radar : Vert {green}, Inclusion {inclusion}, Participation {participation}, Numérique {digital}."
+    }
   }
 }

@@ -191,5 +191,105 @@
     },
     "offlineNote": "Dieser Schutzschild arbeitet vollständig offline — die Daten sind in der App enthalten.",
     "noPII": "Keine persönlichen Daten verlassen dein Gerät."
+  },
+  "a11y": {
+    "panel": {
+      "title": "Barrierefreiheit",
+      "subtitle": "Passe die App so an, dass sie am besten für dich funktioniert",
+      "section": {
+        "reading": "Lesekomfort",
+        "motion": "Bewegung und Animation",
+        "vision": "Sehen und Farbe",
+        "audio": "Audio und Sprache",
+        "bandwidth": "Verbindung",
+        "mobility": "Mobilität"
+      },
+      "saveHint": "Änderungen werden sofort übernommen"
+    },
+    "dyslexia": {
+      "toggle": "Legasthenie-freundliche Schrift",
+      "description": "Verwendet OpenDyslexic, wird nur bei Aktivierung geladen (~80 KB)",
+      "loading": "Schrift wird geladen…"
+    },
+    "font": {
+      "scaleLabel": "Textgröße",
+      "scaleHint": "1,0× ist der Standard. Wähle größer, wenn der Text zu klein wirkt.",
+      "lineHeightLabel": "Zeilenhöhe",
+      "letterSpacingLabel": "Buchstabenabstand"
+    },
+    "motion": {
+      "label": "Bewegung reduzieren",
+      "optionOs": "Systemeinstellung folgen",
+      "optionOn": "Immer reduzieren",
+      "optionOff": "Immer aktiviert",
+      "description": "Deaktiviert Animationen in Story-Karten, Karten und Übergängen"
+    },
+    "contrast": {
+      "toggle": "Hoher Kontrast",
+      "description": "AAA 10:1+ Palette für bessere Lesbarkeit"
+    },
+    "colorBlind": {
+      "label": "Farbsehen-Anpassung",
+      "optionNone": "Keine Anpassung",
+      "optionProtanopia": "Protanopie (Rot-Grün)",
+      "optionDeuteranopia": "Deuteranopie (Rot-Grün, häufigste Form)",
+      "optionTritanopia": "Tritanopie (Blau-Gelb, selten)"
+    },
+    "transcribe": {
+      "toggle": "Sprachnotiz-Transkription",
+      "description": "Transkribiert aufgenommene Sprachnotizen automatisch zu Text. Bei der ersten Nutzung wird ein ~40 MB Modell bei Bedarf heruntergeladen.",
+      "downloading": "Sprachmodell wird heruntergeladen ({percent}%)",
+      "ready": "Modell bereit",
+      "slowMode": "Läuft im Single-Thread-Modus (Hosting-Einschränkung)"
+    },
+    "lowBw": {
+      "toggle": "Modus für schmale Bandbreite",
+      "description": "Überspringt schwere Inhalte (Story-Karte, Karten-Kacheln, Sprache) für 2G/3G-Nutzer",
+      "badge": "Light-Modus aktiv"
+    },
+    "wheelchair": {
+      "toggle": "Stufenfreie Metro-Ebene",
+      "description": "Zeigt rollstuhlgerechte Metro-Stationen auf der Karte an"
+    },
+    "demo": {
+      "link": "Barrierefreiheits-Demo ansehen",
+      "title": "So funktioniert unsere App mit Screenreadern"
+    }
+  },
+  "impact": {
+    "panel": {
+      "title": "Dein Impact",
+      "subtitle": "Jede Reise zählt — hier ist deine"
+    },
+    "axes": {
+      "green": "Grün",
+      "inclusion": "Inklusion",
+      "participation": "Teilhabe",
+      "digital": "Digital"
+    },
+    "stat": {
+      "countries": "Länder",
+      "km": "Kilometer",
+      "co2": "kg CO₂ gespart",
+      "spend": "€ lokal ausgegeben"
+    },
+    "export": {
+      "card": "Karte exportieren (Post)",
+      "story": "Story-Karte exportieren",
+      "json": "Beitrags-JSON exportieren",
+      "jsonUnavailable": "JSON-Export ist noch nicht verfügbar."
+    },
+    "optIn": {
+      "label": "Anonyme aggregierte Metriken beisteuern",
+      "what": "Geteilt: gerundete Gesamtwerte (Länder, km, CO₂, Sprachen, Barrierefreiheits-Funktionen).",
+      "notShared": "Nicht geteilt: Namen, Fotos, Nachrichten, genaue Daten oder Standorte.",
+      "location": "Geht an das öffentliche CC-BY-4.0-Dashboard, niemals an einen privaten Server."
+    },
+    "public": {
+      "link": "Öffentliches Dashboard ansehen"
+    },
+    "radar": {
+      "alt": "Radar-Diagramm: Grün {green}, Inklusion {inclusion}, Teilhabe {participation}, Digital {digital}."
+    }
   }
 }
