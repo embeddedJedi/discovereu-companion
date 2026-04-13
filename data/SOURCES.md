@@ -71,6 +71,13 @@ Source data for `data/embassy-lookup-pattern.json` — every `mfaUrl`, `embassyL
 - **Liechtenstein** — consular representation is provided by Switzerland abroad under the 1919 Liechtenstein-Switzerland Customs and Representation Treaty; both numbers documented.
 - Refresh cadence: annually, or immediately when a user issue reports a dead URL. Contributors invited via GitHub issue.
 
+## Impact public dataset (2026-04-13)
+
+- **Internal aggregation** — no external sources. `data/impact-public.json` is produced by the Node freeze script (`scripts/freeze-impact.mjs`, Task 8) from user-contributed trip summaries merged via GitHub PR. The anonymization pipeline (k-anonymity threshold k=5) is defined in `docs/superpowers/specs/2026-04-13-impact-dashboard-design.md` and implemented in `js/impact-anonymize.js`.
+- **License** — CC-BY-4.0 applies **only** to `data/impact-public.json`; the rest of `/data/` retains upstream licenses documented elsewhere in this file. Full terms: `data/LICENSE-impact-public.md`.
+- **Seed state** — the committed seed file has `inputCount: 0` and zeroed aggregates. It is rewritten in place by the freeze script once contribution PRs are merged.
+- Refresh cadence: on-demand, after each batch of merged contribution PRs.
+
 ## Crisis flowcharts (2026-04-13)
 
 - **Turkish MFA Consular Services** — `https://www.mfa.gov.tr/consular-info.en.mfa` — authoritative guidance on lost/stolen Turkish passport abroad, Emergency Travel Document (ETD) procedure, and nearest mission lookup. Cited from the `lost-passport` flow terminal.

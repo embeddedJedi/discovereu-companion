@@ -1,0 +1,23 @@
+{
+  "version": "impact-public/1.0",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "attribution": "DiscoverEU Companion — https://github.com/embeddedJedi/discovereu-companion",
+  "generatedAt": "2026-04-13T00:00:00Z",
+  "inputCount": 0,
+  "k": 5,
+  "kAnonymitySafe": true,
+  "droppedForKAnonymity": 0,
+  "aggregate": {
+    "totalTrips": 0,
+    "totalCountriesCovered": 0,
+    "totalCo2Saved": 0,
+    "totalKm": 0,
+    "totalEstimatedSpend": 0,
+    "languageDiversity": { "min": 0, "max": 0, "median": 0 },
+    "bingoCompletedHistogram": {},
+    "seatCreditsHistogram": {},
+    "a11yFeatureAdoption": {}
+  },
+  "notes": "Seed dataset. Numbers are zeroed until the first contribution PRs are merged and the freeze script runs. Schema defined at docs/superpowers/specs/2026-04-13-impact-dashboard-design.md."
+}
