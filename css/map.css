@@ -336,3 +336,32 @@
 .stop-marker-outbound-inner { background: var(--accent); }
 .stop-marker-return-inner   { background: var(--accent-2); }
 
+/* Wheelchair / step-free metro layer markers. */
+.wheelchair-marker {
+  background: var(--accent, #2b6cb0);
+  color: #fff;
+  border: 2px solid var(--surface, #fff);
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+.wheelchair-marker__glyph {
+  font-size: 1rem;
+  line-height: 1;
+}
+.wheelchair-marker:focus-visible {
+  outline: 3px solid var(--focus-ring, #ffbf47);
+  outline-offset: 2px;
+}
+.wc-popup__name { display: block; margin-bottom: 0.25rem; }
+.wc-popup__city, .wc-popup__line { font-size: 0.85rem; opacity: 0.8; }
+.wc-popup__flags { margin-top: 0.35rem; font-size: 0.85rem; }
+
+/* Auto-offer visual cue when route has stops with wheelchair data. */
+.layer-toggle.is-offered {
+  box-shadow: 0 0 0 2px var(--accent, #2b6cb0);
+}
+

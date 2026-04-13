@@ -8,12 +8,23 @@ import { h, qs, empty } from '../utils/dom.js';
 import { getMap } from '../map/map.js';
 import { initRouteLayer } from '../map/route-layer.js';
 import { toggleLayer as togglePickpocketLayer } from '../features/pickpocket.js';
+import { createWheelchairLayer } from '../map/wheelchair-layer.js';
 
 let overlayEl = null;
 let chipStripEl = null;
 let layerControlsEl = null;
 let pickpocketOn = false;
+let wheelchairApi = null;   // lazy: { enable, disable, isEnabled } from createWheelchairLayer
+let wheelchairOn = false;
 let unsubscribers = [];
+
+function routeCountryIds() {
+  const route = state.getSlice('route') || {};
+  const ids = new Set();
+  (route.stops || []).forEach(s => s.countryId && ids.add(s.countryId));
+  (route.returnStops || []).forEach(s => s.countryId && ids.add(s.countryId));
+  return ids;
+}
 
 export function mount(container) {
   const mapContainer = qs('#mapContainer');
@@ -55,6 +66,10 @@ export function unmount() {
     togglePickpocketLayer(map, false);
     pickpocketOn = false;
   }
+  if (wheelchairApi && wheelchairOn) {
+    wheelchairApi.disable();
+    wheelchairOn = false;
+  }
 
   if (overlayEl) { overlayEl.remove(); overlayEl = null; }
   chipStripEl = null;
@@ -87,6 +102,47 @@ function renderLayerToggles() {
     h('span', null, t('pickpocket.layerToggle'))
   ]);
   layerControlsEl.appendChild(btn);
+
+  // Wheelchair / step-free metro layer toggle. Shown always; when the
+  // current route includes any city with wheelchair data the button is
+  // visually promoted via .is-offered to surface the auto-offer per spec.
+  const routeIds = routeCountryIds();
+  const offered = routeIds.size > 0; // heuristic: any stops → offer
+  const wcBtn = h('button', {
+    class: 'layer-toggle'
+      + (wheelchairOn ? ' is-on' : '')
+      + (offered && !wheelchairOn ? ' is-offered' : ''),
+    type: 'button',
+    'aria-pressed': wheelchairOn ? 'true' : 'false',
+    'aria-label': t('a11y.wheelchair.toggle'),
+    title: t('a11y.wheelchair.description'),
+    onclick: async () => {
+      const map = getMap();
+      if (!map) return;
+      if (!wheelchairApi) {
+        try { wheelchairApi = createWheelchairLayer(map); }
+        catch (err) { console.error('[map] wheelchair init failed', err); return; }
+      }
+      try {
+        if (wheelchairOn) {
+          wheelchairApi.disable();
+          wheelchairOn = false;
+        } else {
+          const ids = routeCountryIds();
+          // No filter when route empty — show all seed cities.
+          await wheelchairApi.enable(ids.size ? ids : undefined);
+          wheelchairOn = true;
+        }
+      } catch (err) {
+        console.error('[map] wheelchair toggle failed', err);
+      }
+      renderLayerToggles();
+    }
+  }, [
+    h('span', { 'aria-hidden': 'true' }, '\u267F'),
+    h('span', null, t('a11y.wheelchair.toggle'))
+  ]);
+  layerControlsEl.appendChild(wcBtn);
 }
 
 function renderRouteSummary() {
