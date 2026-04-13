@@ -412,17 +412,39 @@ All loaded with SRI hashes (to add in Phase 1).
   - 13/14 tasks shipped; Task 14 (full Playwright smoke) deferred to manual launch-eve pass
   - Spec: `docs/superpowers/specs/2026-04-13-crisis-shield-design.md` · Plan: `docs/superpowers/plans/2026-04-13-crisis-shield.md`
 
+- **v1.4 Impact Dashboard — anonymous aggregation + public CC-BY dataset** (2026-04-13):
+  - 10 commits across spec + plan + state + features + data + scripts + pages + SW
+  - 5 new feature modules: `js/features/impact-compute.js` (pure snapshot builder reusing `co2.js` + `effective-legs.js`), `impact-anonymize.js` (k-anonymity stripper with k≥5 threshold for single + aggregated records), `impact-card.js` (Strava-style 1080×1080 canvas export — 2×2 stat grid + priority glyphs), `impact-export.js` (download JSON + pre-filled GitHub PR deep link for manual-consent contribution), `ui/impact-panel.js` (radar + stats + export + opt-in UI)
+  - New data: `data/impact-public.json` — CC-BY-4.0 aggregate seed dataset (+ per-file LICENSE stamp)
+  - New maintainer script: `scripts/freeze-impact.js` — aggregator with FROZEN block rewriter so `pages/impact.html` shows real numbers with JS disabled
+  - New public page: `pages/impact.html` + public renderer + `css/impact.css` — static-first HTML with progressive JS enhancement (EACEA reviewers can see aggregated impact without executing JS)
+  - New `state.impact` slice: `aggregateOptIn` + `badges` + `snapshotHash` (persisted)
+  - PWA cache v6 → v7; 9th bottom-nav tab added for Impact Dashboard
+  - Manual-PR-as-consent flow chosen (no backend, no secrets, fully auditable)
+  - Spec: `docs/superpowers/specs/2026-04-13-impact-dashboard-design.md` · Plan: `docs/superpowers/plans/2026-04-13-impact-dashboard.md`
+
+- **v1.5 Accessibility Overlay 2.0 — AAA + dyslexia + low-bandwidth + Whisper + wheelchair** (2026-04-13):
+  - 8 commits across spec + plan + state + features + data + CSS + i18n
+  - New `state.a11y` slice: `dyslexia`, `lowBw`, `motion`, `contrast`, `font`, `colorBlind`, `transcribe` — single source of truth for the panel and the map (state-driven, not imperative)
+  - 3 new feature modules: `js/features/a11y-settings.js` (applier + lazy OpenDyslexic cdnjs loader + motion override chain), `voice-transcribe.js` (opt-in Whisper.wasm with lazy load + slow-mode detection, never SW precached), `js/map/wheelchair-layer.js` (Leaflet layer for step-free metro stations driven by state)
+  - New UI module: `js/ui/a11y-panel.js` — full accessibility settings surface mounted under `/more`
+  - New `css/a11y.css` — data-attribute driven AAA overrides + inline SVG colorblind filters (protanopia / deuteranopia / tritanopia)
+  - New data: `data/wheelchair-metro.json` — step-free accessible metro station index for Paris / Berlin / Madrid / Rome / İstanbul
+  - New i18n keys under `a11y.*` in en + tr (de/fr/es/it fall back to key path pending full-surface backfill)
+  - Spec: `docs/superpowers/specs/2026-04-13-accessibility-overlay-design.md` · Plan: `docs/superpowers/plans/2026-04-13-accessibility-overlay.md`
+
 ### 🚧 In progress
-- v1.2 + v1.3 end-to-end Playwright smoke pass — deferred to manual launch-eve verification
+- *(none — v1.4 + v1.5 shipped; end-to-end Playwright smoke pass for v1.2 + v1.3 + v1.4 + v1.5 deferred to manual launch-eve verification)*
 
 ### ⏭ Next up (in order)
 1. **Send outreach package** (launch-critical, deadline 2026-04-22) — EACEA one-pager, Turkish UA email, LinkedIn DG EAC
-2. **ESC Host Quality Label application** (rolling, ~8 weeks eval) — Türkiye UA; unlocks ESC51 volunteer grants, see `docs/grants/erasmus-research-2026-04-13.md`
-3. **KA154 Round 2 submission draft** (deadline 2026-10-01) — €30-50k lump-sum, informal youth group or friendly dernek as applicant; Crisis Shield + Inclusion features are the grant narrative core
-4. **Consortium partner outreach** for KA220 2027-03-05 deadline — use `docs/outreach/consortium-shortlist.md` Tier A longlist + SALTO forum post
-5. DE / FR / ES / IT i18n backfill (full app surface incl. v1.2 round-trip + v1.3 Crisis Shield keys)
-6. v1.4 roadmap: Impact Dashboard + UI design system 2.0 + Buddy matching
-7. Custom domain (post-launch)
+2. **ESC Host Quality Label application submit** — materials drafted (`docs/outreach/esc-quality-label-application-tr.md`), partner dernek search open
+3. **KA154 Round 2 submission** (deadline 2026-10-01) — draft ready (`docs/outreach/ka154-r2-application-tr.md`): 9-section narrative, 12-month timeline, €45k budget
+4. **Consortium outreach for KA220 2027-03-05 deadline** — 15-org longlist ready in `docs/outreach/consortium-shortlist.md`, outreach in progress
+5. DE / FR / ES / IT full app-surface i18n backfill — new a11y + impact keys plus v1.0/v1.1 app surface still missing in those 4 locales
+6. v1.6 roadmap: Buddy matching + AI Intercultural Coach (from pivot analysis)
+7. Manual Playwright smoke pass for v1.2 + v1.3 + v1.4 + v1.5
+8. Custom domain (post-launch)
 
 ---
 
@@ -467,6 +489,13 @@ All loaded with SRI hashes (to add in Phase 1).
 | 2026-04-12 | Spotify iframe embed only, no auth | CORS-safe, 30-sec previews work anonymously |
 | 2026-04-12 | FutureMe localStorage + .ics calendar export, no SMTP | No backend; .ics gives a portable reminder anchor |
 | 2026-04-12 | Shared `utils/ics.js` for FutureMe + consulate | Single module both features depend on; no duplication |
+| 2026-04-13 | Impact aggregation = manual-PR-as-consent (no backend) | Preserves no-backend / no-secrets / auditable-by-EACEA guarantees; the PR itself is the consent record |
+| 2026-04-13 | k-anonymity k≥5 threshold on `impact-anonymize.js` | Drops rare fingerprint combos before any public release so no single user can be re-identified |
+| 2026-04-13 | `data/impact-public.json` licensed CC-BY-4.0 | Researchers + grant reviewers can cite the dataset with attribution; aligns with EU open-data policy |
+| 2026-04-13 | Whisper.wasm opt-in lazy-load only, never SW-precached | 40 MB blob can't ship with the offline shell; user must explicitly consent before the download starts |
+| 2026-04-13 | State-driven a11y toggles (not imperative) | Single source of truth in `state.a11y`; panel + map + CSS overrides stay in sync automatically via subscribers |
+| 2026-04-13 | OpenDyslexic font lazy-loaded via cdnjs | 80 KB font download only when dyslexia mode is enabled, not part of baseline shell |
+| 2026-04-13 | `pages/impact.html` uses FROZEN block strategy for static-HTML-fallback | EACEA reviewers and search crawlers can see real aggregated numbers with JS disabled; `scripts/freeze-impact.js` rewrites the block at maintainer-build time |
 
 ---
 
@@ -495,3 +524,13 @@ All loaded with SRI hashes (to add in Phase 1).
 10. Push to `main` (GitHub Pages auto-deploys)
 
 **When in doubt about scope or approach, ask the user. Never guess.**
+
+---
+
+## 9. Active grant applications
+
+| Programme | Status | Artefact(s) | Next action |
+|---|---|---|---|
+| **ESC Host Quality Label** (Türkiye UA, rolling ~8 weeks eval) | Materials drafted, partner dernek search open | `docs/outreach/esc-quality-label-application-tr.md` — narrative, partner pitch, 6 role descriptions in TR | Identify a Turkish dernek as legal applicant, submit via Türkiye UA portal; unlocks ESC51 volunteer grants |
+| **KA154 Round 2 — Youth Participation Activities** (deadline 2026-10-01) | Application + timeline + budget drafted, awaiting applicant decision | `docs/outreach/ka154-r2-application-tr.md` — 9-section narrative, 12-month timeline, €45k lump-sum budget | Confirm informal youth group vs. friendly dernek as applicant; Crisis Shield + Inclusion + Impact Dashboard are the grant narrative core |
+| **KA220 Cooperation Partnership** (deadline 2027-03-05) | Consortium outreach in progress | `docs/outreach/consortium-shortlist.md` — 15-org Tier A longlist + SALTO forum post | Secure ≥3 confirmed partners across ≥3 EU Member States before Q4 2026 to leave drafting time |
