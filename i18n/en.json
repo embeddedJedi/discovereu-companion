@@ -1214,5 +1214,47 @@
     "banner": {
       "safety": "Meet in public · Tell a trusted person · Open Crisis Shield if needed"
     }
+  },
+  "coach": {
+    "panel": {
+      "title": "Learn this country in 5 minutes",
+      "subtitle": "Intercultural coach for {country}",
+      "generating": "Generating your lesson…",
+      "regenerate": "Regenerate lesson",
+      "offline": "You appear offline — saved lessons still work."
+    },
+    "section": {
+      "greetings": "Greetings & phrases",
+      "food": "Food & dining",
+      "norms": "Social norms",
+      "money": "Money notes",
+      "context": "Cultural context",
+      "quiz": "Quick quiz"
+    },
+    "quiz": {
+      "intro": "Answer 5 quick questions. Get 4 right to earn a badge.",
+      "question": "Question {n} of 5",
+      "submit": "Submit answer",
+      "correct": "Correct",
+      "incorrect": "Try again",
+      "passedTitle": "You passed 🎉",
+      "passedBody": "Score: {score}/5",
+      "failedTitle": "Not quite",
+      "failedBody": "Try again to earn your badge",
+      "retry": "Retry"
+    },
+    "badge": {
+      "earned": "Badge earned!",
+      "download": "Download badge (OpenBadge JSON)",
+      "europassHint": "Upload this file to your Europass profile → Credentials",
+      "europassLink": "Open Europass",
+      "fileName": "DiscoverEU-Companion-{country}-badge.json",
+      "alreadyEarned": "You already earned this badge on {date}"
+    },
+    "errors": {
+      "llmKey": "Please add your AI API key in Settings",
+      "generic": "Something went wrong — please try again",
+      "rateLimited": "AI provider rate limit — wait a minute"
+    }
   }
 }

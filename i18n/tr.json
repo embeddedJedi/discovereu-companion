@@ -1178,5 +1178,47 @@
     "banner": {
       "safety": "Kamuya açık yerde buluş · Güvendiğin birine haber ver · Gerekirse Kriz Kalkanı'nı aç"
     }
+  },
+  "coach": {
+    "panel": {
+      "title": "Bu ülkeyi 5 dakikada öğren",
+      "subtitle": "{country} için kültürlerarası koç",
+      "generating": "Dersin hazırlanıyor…",
+      "regenerate": "Dersi yenile",
+      "offline": "Çevrimdışı görünüyorsun — kayıtlı dersler çalışır."
+    },
+    "section": {
+      "greetings": "Selamlaşma ve günlük ifadeler",
+      "food": "Yemek ve sofra kültürü",
+      "norms": "Sosyal normlar",
+      "money": "Para notları",
+      "context": "Kültürel bağlam",
+      "quiz": "Kısa quiz"
+    },
+    "quiz": {
+      "intro": "5 hızlı soruya cevap ver. Rozet için 4 doğru gerekli.",
+      "question": "{n}. soru / 5",
+      "submit": "Cevabı gönder",
+      "correct": "Doğru",
+      "incorrect": "Tekrar dene",
+      "passedTitle": "Geçtin 🎉",
+      "passedBody": "Puan: {score}/5",
+      "failedTitle": "Yaklaştın",
+      "failedBody": "Rozet kazanmak için tekrar dene",
+      "retry": "Tekrar dene"
+    },
+    "badge": {
+      "earned": "Rozet kazandın!",
+      "download": "Rozeti indir (OpenBadge JSON)",
+      "europassHint": "Bu dosyayı Europass profilinde Credentials bölümüne yükle",
+      "europassLink": "Europass'ı aç",
+      "fileName": "DiscoverEU-Companion-{country}-badge.json",
+      "alreadyEarned": "Bu rozeti {date} tarihinde kazanmıştın"
+    },
+    "errors": {
+      "llmKey": "Lütfen Ayarlar'dan AI API anahtarını ekle",
+      "generic": "Bir şey ters gitti — tekrar dene",
+      "rateLimited": "AI sağlayıcısı limiti doldu — bir dakika bekle"
+    }
   }
 }
