@@ -1,0 +1,266 @@
+/* ============================================================================
+ * DiscoverEU Companion — Coach panel (v1.6)
+ * Minimal styling. Uses design-system tokens; works in light + dark.
+ * ========================================================================= */
+
+.coach-panel {
+  display: block;
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+}
+
+.coach-panel__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+.coach-panel__title {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.coach-panel__subtitle {
+  margin: var(--space-1) 0 0;
+  color: var(--text-secondary, var(--text-primary));
+  opacity: 0.8;
+  font-size: 0.95rem;
+}
+
+.coach-panel__offline {
+  margin-bottom: var(--space-4);
+  padding: var(--space-2) var(--space-3);
+  border-left: 3px solid var(--border-strong);
+  background: var(--bg-muted, transparent);
+  font-size: 0.9rem;
+}
+
+.coach-panel__loading,
+.coach-panel__error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-8) var(--space-4);
+  text-align: center;
+}
+
+.coach-panel__spinner {
+  width: 2rem;
+  height: 2rem;
+  border-radius: var(--radius-full);
+  border: 3px solid var(--border-subtle);
+  border-top-color: var(--eu-blue-500);
+  animation: coach-spin 0.9s linear infinite;
+}
+
+@keyframes coach-spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .coach-panel__spinner { animation: none; }
+}
+
+.coach-panel__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.coach-section {
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+}
+
+.coach-section h3 {
+  margin: 0 0 var(--space-2);
+  font-size: 1rem;
+  color: var(--eu-blue-600);
+}
+
+.coach-section__pre {
+  margin: 0;
+  white-space: pre-wrap;
+  font-family: inherit;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.coach-section__p {
+  margin: 0 0 var(--space-2);
+  line-height: 1.5;
+}
+
+.coach-section__p:last-child { margin-bottom: 0; }
+
+.coach-section__empty {
+  margin: 0;
+  opacity: 0.6;
+  font-style: italic;
+}
+
+/* Quiz ---------------------------------------------------------------- */
+
+.coach-quiz__intro {
+  margin: 0 0 var(--space-3);
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+.coach-quiz__card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.coach-quiz__progress {
+  margin: 0;
+  font-size: 0.85rem;
+  opacity: 0.7;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.coach-quiz__question {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.4;
+}
+
+.coach-quiz__options {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-2);
+}
+
+@media (min-width: 640px) {
+  .coach-quiz__options { grid-template-columns: 1fr 1fr; }
+}
+
+.coach-quiz__option {
+  min-height: 56px;
+  min-width: 56px;
+  padding: var(--space-3) var(--space-4);
+  border: 2px solid var(--border-default);
+  border-radius: var(--radius-md);
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 120ms ease, background-color 120ms ease;
+}
+
+.coach-quiz__option:hover {
+  border-color: var(--eu-blue-500);
+}
+
+.coach-quiz__option:focus-visible {
+  outline: 3px solid var(--eu-blue-400);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .coach-quiz__option { transition: none; }
+}
+
+.coach-quiz__result {
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+}
+
+.coach-quiz__result--pass {
+  border-color: var(--eu-green-500);
+}
+
+.coach-quiz__result--fail {
+  border-color: var(--eu-red-500);
+}
+
+.coach-quiz__result-title {
+  margin: 0 0 var(--space-2);
+}
+
+.coach-quiz__result-score {
+  margin: 0 0 var(--space-3);
+  font-weight: 600;
+}
+
+.coach-quiz__explanations {
+  margin: 0 0 var(--space-3);
+  padding-left: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.coach-quiz__explanations .is-correct strong { color: var(--eu-green-500); }
+.coach-quiz__explanations .is-wrong strong   { color: var(--eu-red-500); }
+
+.coach-quiz__retry { margin-top: var(--space-2); }
+
+/* Badge --------------------------------------------------------------- */
+
+.coach-badge {
+  margin-top: var(--space-4);
+  padding: var(--space-4);
+  border: 2px solid var(--eu-gold-400);
+  border-radius: var(--radius-md);
+  background: var(--bg-surface);
+}
+
+.coach-badge__title {
+  margin: 0 0 var(--space-2);
+  color: var(--eu-gold-600);
+}
+
+.coach-badge__hint {
+  margin: 0 0 var(--space-3);
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+.coach-badge__label {
+  display: block;
+  margin-bottom: var(--space-1);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.coach-badge__email {
+  width: 100%;
+  min-height: 44px;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm);
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  font: inherit;
+  margin-bottom: var(--space-3);
+}
+
+.coach-badge__claim { min-height: 48px; }
+
+.coach-badge__post {
+  margin-top: var(--space-3);
+}
+
+.coach-badge__europass-link {
+  display: inline-block;
+  margin-top: var(--space-2);
+  color: var(--eu-blue-600);
+  text-decoration: underline;
+}
+
+.coach-badge__error {
+  color: var(--eu-red-500);
+  margin: var(--space-2) 0 0;
+}
