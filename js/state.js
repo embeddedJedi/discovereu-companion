@@ -90,7 +90,8 @@ const initialState = {
     accessibility: false,
     lgbtqSafe: false,
     green: false,
-    hideLateArrival: false   // Night Arrival Shield — hide templates/routes with 22:00+ arrivals
+    hideLateArrival: false,  // Night Arrival Shield — hide templates/routes with 22:00+ arrivals
+    greenHostelsOnly: false  // v1.7 — restrict accommodation suggestions to certified green hostels
   },
   selectedCountry: null,
   panelTab: 'detail',
@@ -152,6 +153,12 @@ function migrate(persisted) {
   if (persisted?.route) {
     if (!Array.isArray(persisted.route.returnStops)) persisted.route.returnStops = [];
     if (typeof persisted.route.includeReturnInBudget !== 'boolean') persisted.route.includeReturnInBudget = true;
+  }
+  // v1.7 — sanitize greenHostelsOnly filter (must be boolean; missing is fine — _hydrate merges defaults).
+  if (persisted?.filters && typeof persisted.filters === 'object') {
+    if ('greenHostelsOnly' in persisted.filters && typeof persisted.filters.greenHostelsOnly !== 'boolean') {
+      persisted.filters.greenHostelsOnly = false;
+    }
   }
   // v1.4 — backfill impact slice for users who persisted state before this release.
   if (!persisted.impact || typeof persisted.impact !== 'object') {
