@@ -1,0 +1,198 @@
+/* ═══════════════════════════════════════════════════════════════
+   Public Impact Dashboard — pages/impact.html
+   Tokens from design-system.css only. Mobile-first.
+   ═══════════════════════════════════════════════════════════════ */
+
+body {
+  margin: 0;
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-family: var(--font-sans, system-ui, sans-serif);
+  line-height: var(--a11y-line-height, 1.5);
+}
+
+.impact-header,
+.impact-main,
+.impact-footer {
+  max-width: 72rem;
+  margin-inline: auto;
+  padding: var(--space-6) var(--space-4);
+}
+
+.impact-header {
+  padding-top: var(--space-10);
+  padding-bottom: var(--space-4);
+}
+
+.impact-header h1 {
+  margin: 0 0 var(--space-2) 0;
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  color: var(--text-primary);
+}
+
+.subtitle {
+  margin: 0;
+  color: var(--text-secondary, var(--text-primary));
+  font-size: 0.95rem;
+}
+
+.impact-main {
+  display: grid;
+  gap: var(--space-6);
+  padding-top: var(--space-4);
+}
+
+#frozen-stats,
+#interactive,
+.impact-section {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle, var(--bg-sunken, transparent));
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  box-shadow: var(--shadow-sm);
+}
+
+#frozen-stats h2,
+#interactive h2,
+.impact-section h2 {
+  margin: 0 0 var(--space-4) 0;
+  font-size: 1.25rem;
+}
+
+.stat-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-3);
+  grid-template-columns: 1fr;
+}
+
+.stat-list li {
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  background: var(--bg-elevated, var(--bg-surface));
+  border-inline-start: 4px solid var(--accent-primary);
+  font-size: 1rem;
+}
+
+.stat-list li[data-grant-priority="green"] {
+  border-inline-start-color: var(--eu-green-500, #2f855a);
+}
+.stat-list li[data-grant-priority="digital"] {
+  border-inline-start-color: var(--accent-primary);
+}
+.stat-list li[data-grant-priority="participation"] {
+  border-inline-start-color: var(--accent-gold, #d69e2e);
+}
+
+.stat-list li strong {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: var(--space-1);
+  color: var(--text-primary);
+}
+
+.note {
+  margin: var(--space-4) 0 0 0;
+  font-size: 0.875rem;
+  color: var(--text-secondary, var(--text-primary));
+  font-style: italic;
+}
+
+#interactive {
+  min-height: 4rem;
+}
+
+#interactive[aria-busy="true"]::before {
+  content: "Loading interactive view…";
+  display: block;
+  color: var(--text-secondary, var(--text-primary));
+  font-size: 0.9rem;
+}
+
+.impact-charts {
+  display: grid;
+  gap: var(--space-6);
+  grid-template-columns: 1fr;
+}
+
+.impact-chart-wrap {
+  position: relative;
+  min-height: 16rem;
+}
+
+.impact-chart-wrap h3 {
+  margin: 0 0 var(--space-3) 0;
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+.impact-chart-wrap canvas {
+  max-width: 100%;
+  height: auto !important;
+}
+
+.impact-section ol,
+.impact-section p {
+  margin: 0 0 var(--space-3) 0;
+}
+
+.impact-section ol {
+  padding-inline-start: 1.25rem;
+  display: grid;
+  gap: var(--space-2);
+}
+
+.impact-section a,
+.impact-footer a {
+  color: var(--accent-primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.impact-section a:hover,
+.impact-section a:focus-visible,
+.impact-footer a:hover,
+.impact-footer a:focus-visible {
+  color: var(--accent-hover);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+.impact-footer {
+  padding-top: var(--space-4);
+  padding-bottom: var(--space-10);
+  text-align: center;
+  color: var(--text-secondary, var(--text-primary));
+  font-size: 0.875rem;
+}
+
+/* Tablet */
+@media (min-width: 48rem) {
+  .stat-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .impact-charts {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+/* Desktop */
+@media (min-width: 90rem) {
+  .stat-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

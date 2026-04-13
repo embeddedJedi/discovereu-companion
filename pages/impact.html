@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Open public impact dataset from DiscoverEU Companion users — CC-BY-4.0, no PII, k>=5 anonymised.">
+  <title>Impact Dashboard — DiscoverEU Companion</title>
+  <link rel="stylesheet" href="../css/design-system.css">
+  <link rel="stylesheet" href="../css/a11y.css">
+  <link rel="stylesheet" href="../css/impact.css">
+  <link rel="canonical" href="/impact.html">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4" defer></script>
+</head>
+<body>
+  <header class="impact-header">
+    <h1>Public impact dashboard</h1>
+    <p class="subtitle">Anonymised aggregate from DiscoverEU Companion users. No PII. k&ge;5 anonymity. CC-BY-4.0.</p>
+  </header>
+
+  <main class="impact-main">
+    <!-- BEGIN:FROZEN -->
+    <section id="frozen-stats" data-source="seed" aria-label="Current community totals">
+      <h2>Current totals (seed)</h2>
+      <ul class="stat-list">
+        <li data-grant-priority="green"><strong>0</strong> trips planned</li>
+        <li data-grant-priority="green"><strong>0</strong> countries covered</li>
+        <li data-grant-priority="green"><strong>0 kg</strong> CO&#8322; saved vs flight baseline</li>
+        <li data-grant-priority="digital"><strong>0</strong> accessibility features adopted</li>
+        <li data-grant-priority="participation"><strong>0</strong> public contributions since project start</li>
+      </ul>
+      <p class="note">Numbers update as the maintainer merges new contribution PRs.</p>
+    </section>
+    <!-- END:FROZEN -->
+
+    <section id="interactive" aria-busy="true" aria-live="polite" aria-label="Interactive impact charts"></section>
+
+    <section id="methodology" class="impact-section">
+      <h2>How it works</h2>
+      <ol>
+        <li>Users opt in inside the app — nothing leaves the device without consent.</li>
+        <li>On opt-in, the user downloads a local JSON file (k-anonymised snapshot).</li>
+        <li>To share, they submit it as a GitHub pull request using a pre-filled link.</li>
+        <li>The maintainer runs the freeze script which merges contributions and regenerates this page.</li>
+      </ol>
+    </section>
+
+    <section id="download" class="impact-section">
+      <h2>Open dataset</h2>
+      <p>
+        <a href="../data/impact-public.json" download>Download impact-public.json</a>
+        &middot; <a href="https://github.com/embeddedJedi/discovereu-companion">Repository</a>
+      </p>
+    </section>
+
+    <noscript>
+      <p class="note">Interactive charts require JavaScript. The static totals above are the latest monthly freeze.</p>
+    </noscript>
+  </main>
+
+  <footer class="impact-footer">
+    <p>CC-BY-4.0 &middot; Open source &middot; <a href="/">Back to app</a></p>
+  </footer>
+
+  <script type="module" src="../js/impact-public-renderer.js"></script>
+</body>
+</html>
