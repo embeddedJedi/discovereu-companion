@@ -3,6 +3,14 @@
 // (1080×1920) export cards with a canvas-drawn mini route map, 5-stat
 // grid and (Story only) a QR code linking back to the share URL.
 //
+// TODO(v1.7 offset-cta): The task prompt asked for a penultimate
+// "Your carbon footprint" slide hosting the offset-cta. Deferred —
+// this module renders a single flat card that is flattened to PNG by
+// html2canvas, not an HTML slide sequence. Embedding offset-cta here
+// would bake provider links into the exported image (breaking the
+// "live CTA, not exported" rule from the v1.7 plan). Revisit once
+// Wrapped is refactored into a multi-slide HTML story viewer.
+//
 // The card is rendered as DOM at its true export dimensions, then the
 // viewport preview simply scales it down via a CSS transform. html2canvas
 // flattens the real-size card so the output PNG is always platform-perfect.

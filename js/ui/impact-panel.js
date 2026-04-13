@@ -344,6 +344,20 @@ export function renderImpactPanel(container) {
     // Stats grid
     container.appendChild(buildStatsGrid(snapshot.personal));
 
+    // v1.7 — Offset CTA: only render if the user has any CO2 to balance.
+    // Dynamic import so the module + its i18n strings stay off the initial
+    // load path; it only ships bytes when this panel opens with co2Saved > 0.
+    const co2Kg = Math.max(0, (snapshot.personal && snapshot.personal.co2Saved) || 0);
+    if (co2Kg > 0) {
+      const ctaMount = h('div', { class: 'impact-offset-cta-mount' });
+      container.appendChild(ctaMount);
+      import('./offset-cta.js').then(mod => {
+        if (cancelled) return;
+        try { mod.renderOffsetCta(ctaMount, { co2Kg }); }
+        catch (e) { console.warn('[impact-panel] offset-cta render failed', e); }
+      }).catch(e => console.warn('[impact-panel] offset-cta import failed', e));
+    }
+
     // Exports
     container.appendChild(buildExportSection(
       async () => latestSnapshot || await computeImpact()
