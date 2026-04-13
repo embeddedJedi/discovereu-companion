@@ -4,7 +4,7 @@
 
 import { storage } from './utils/storage.js';
 
-const PERSIST_KEYS = ['theme', 'language', 'user', 'route', 'filters', 'prep', 'bingo', 'dares', 'futureMessages', 'impact', 'a11y', 'buddy'];
+const PERSIST_KEYS = ['theme', 'language', 'user', 'route', 'filters', 'prep', 'bingo', 'dares', 'futureMessages', 'impact', 'a11y', 'buddy', 'coach'];
 
 const BUDDY_VALID_KINDS = ['local', 'mentor', 'traveler'];
 const BUDDY_SEEN_CAP = 200;
@@ -34,6 +34,23 @@ const A11Y_FONT_SCALES = [0.85, 1.0, 1.25, 1.5];
 const A11Y_LINE_HEIGHTS = [1.5, 1.8, 2.0];
 const A11Y_LETTER_SPACINGS = [0, 0.05, 0.1];
 const A11Y_COLOR_BLIND = ['none', 'protanopia', 'deuteranopia', 'tritanopia'];
+
+// v1.6 — Intercultural Coach
+const COACH_BADGES_CAP = 50;
+const COACH_DEFAULTS = {
+  lessonsCompleted: {},   // { [countryId]: { completedAt: ISO, passed: bool, attempts: int } }
+  quizScores: {},         // { [countryId]: 0-5 }
+  badgesEarned: []        // [{ countryId, badgeId, issuedAt, jsonLdHash }]
+};
+
+function isIsoString(v) {
+  if (typeof v !== 'string' || !v) return false;
+  const d = new Date(v);
+  return !isNaN(d.getTime());
+}
+function isPlainObject(v) {
+  return v !== null && typeof v === 'object' && !Array.isArray(v);
+}
 
 function snapNearest(value, allowed) {
   let best = allowed[0];
@@ -111,6 +128,11 @@ const initialState = {
     ...BUDDY_DEFAULTS,
     preferences: { ...BUDDY_DEFAULTS.preferences, kinds: [], citiesOptIn: [] },
     seenIds: []
+  },
+  coach: {                     // persisted — v1.6 Intercultural Coach
+    lessonsCompleted: {},
+    quizScores: {},
+    badgesEarned: []
   },
   countries: [],               // loaded from data/countries.json
   trains: [],                  // loaded from data/trains.json
@@ -200,6 +222,66 @@ function migrate(persisted) {
     // FIFO-drop oldest entries when seenIds exceeds cap.
     if (b.seenIds.length > BUDDY_SEEN_CAP) {
       b.seenIds = b.seenIds.slice(b.seenIds.length - BUDDY_SEEN_CAP);
+    }
+  }
+  // v1.6 — backfill + sanitize coach slice (Intercultural Coach).
+  if (!isPlainObject(persisted.coach)) {
+    persisted.coach = {
+      lessonsCompleted: {},
+      quizScores: {},
+      badgesEarned: []
+    };
+  } else {
+    const c = persisted.coach;
+    // lessonsCompleted — object of { completedAt, passed, attempts }
+    if (!isPlainObject(c.lessonsCompleted)) {
+      c.lessonsCompleted = {};
+    } else {
+      const cleaned = {};
+      for (const [countryId, entry] of Object.entries(c.lessonsCompleted)) {
+        if (!isPlainObject(entry)) continue;
+        if (!isIsoString(entry.completedAt)) continue;
+        if (typeof entry.passed !== 'boolean') continue;
+        if (!Number.isInteger(entry.attempts) || entry.attempts < 0) continue;
+        cleaned[countryId] = {
+          completedAt: entry.completedAt,
+          passed: entry.passed,
+          attempts: entry.attempts
+        };
+      }
+      c.lessonsCompleted = cleaned;
+    }
+    // quizScores — object of integer 0..5
+    if (!isPlainObject(c.quizScores)) {
+      c.quizScores = {};
+    } else {
+      const cleaned = {};
+      for (const [countryId, score] of Object.entries(c.quizScores)) {
+        if (Number.isInteger(score) && score >= 0 && score <= 5) {
+          cleaned[countryId] = score;
+        }
+      }
+      c.quizScores = cleaned;
+    }
+    // badgesEarned — array of { countryId, badgeId, issuedAt, jsonLdHash }
+    if (!Array.isArray(c.badgesEarned)) {
+      c.badgesEarned = [];
+    } else {
+      c.badgesEarned = c.badgesEarned.filter(b =>
+        isPlainObject(b) &&
+        typeof b.countryId === 'string' &&
+        typeof b.badgeId === 'string' &&
+        isIsoString(b.issuedAt) &&
+        typeof b.jsonLdHash === 'string'
+      ).map(b => ({
+        countryId: b.countryId,
+        badgeId: b.badgeId,
+        issuedAt: b.issuedAt,
+        jsonLdHash: b.jsonLdHash
+      }));
+      if (c.badgesEarned.length > COACH_BADGES_CAP) {
+        c.badgesEarned = c.badgesEarned.slice(c.badgesEarned.length - COACH_BADGES_CAP);
+      }
     }
   }
   return persisted;
