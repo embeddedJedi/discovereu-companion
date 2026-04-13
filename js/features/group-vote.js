@@ -235,6 +235,261 @@ export function renderResults(ballot, container) {
   container.appendChild(list);
 }
 
+// ─── Generic options vote API (v1.7) ────────────────────────────────────────
+//
+// In addition to the v1.0 4-voter ballot above, v1.7 needs a generic
+// options-based vote that can be reused across topics ("meeting-point",
+// "next-city", etc.) and optionally scoped to a known group.
+//
+// Storage model: each generic vote is stored under
+//   localStorage["discoveru:votes:<voteId>"] = { topic, options, votes:{memberId:optionId}, createdAt, expiresAt, groupUrl }
+// Ephemeral: entries older than expiresAt are dropped on read.
+
+const GENERIC_PREFIX = 'discoveru:votes:';
+const GENERIC_HASH_KEY = 'gvote';
+
+function nowMs() { return Date.now(); }
+
+function loadGenericVote(voteId) {
+  try {
+    const raw = localStorage.getItem(GENERIC_PREFIX + voteId);
+    if (!raw) return null;
+    const obj = JSON.parse(raw);
+    if (obj?.expiresAt && obj.expiresAt < nowMs()) {
+      localStorage.removeItem(GENERIC_PREFIX + voteId);
+      return null;
+    }
+    return obj;
+  } catch (e) {
+    console.warn('[group-vote] loadGenericVote failed', e);
+    return null;
+  }
+}
+
+function saveGenericVote(voteId, vote) {
+  try {
+    localStorage.setItem(GENERIC_PREFIX + voteId, JSON.stringify(vote));
+  } catch (e) {
+    console.warn('[group-vote] saveGenericVote failed', e);
+  }
+}
+
+function encodeGenericState(vote) {
+  if (typeof LZString === 'undefined') return '';
+  try {
+    const compactState = {
+      i: vote.voteId,
+      k: vote.topic,
+      o: vote.options.map(o => ({ i: o.id, l: o.label, m: o.meta || null })),
+      v: vote.votes || {},
+      g: vote.groupUrl || null,
+      t: vote.createdAt,
+      e: vote.expiresAt
+    };
+    return LZString.compressToEncodedURIComponent(JSON.stringify(compactState));
+  } catch (e) {
+    console.warn('[group-vote] encodeGenericState failed', e);
+    return '';
+  }
+}
+
+function decodeGenericState(encoded) {
+  if (typeof LZString === 'undefined' || !encoded) return null;
+  try {
+    const json = LZString.decompressFromEncodedURIComponent(encoded);
+    if (!json) return null;
+    const c = JSON.parse(json);
+    return {
+      voteId: c.i,
+      topic: c.k,
+      options: (c.o || []).map(o => ({ id: o.i, label: o.l, meta: o.m || null })),
+      votes: c.v || {},
+      groupUrl: c.g || null,
+      createdAt: c.t,
+      expiresAt: c.e
+    };
+  } catch (e) {
+    console.warn('[group-vote] decodeGenericState failed', e);
+    return null;
+  }
+}
+
+/**
+ * Decode a vote share URL hash like `#/vote?v=<base64>` or `#gvote=<base64>`.
+ * Returns the inflated generic-vote object, or null.
+ */
+export function decodeVoteUrl(hash) {
+  if (!hash) return null;
+  const raw = String(hash).replace(/^#\/?/, '');
+  // form A: vote?v=<state>
+  const qIdx = raw.indexOf('?');
+  if (qIdx >= 0) {
+    const params = new URLSearchParams(raw.slice(qIdx + 1));
+    const v = params.get('v');
+    if (v) return decodeGenericState(v);
+  }
+  // form B: gvote=<state> (URLSearchParams-style)
+  const params = new URLSearchParams(raw);
+  const v = params.get(GENERIC_HASH_KEY) || params.get('v');
+  if (v) return decodeGenericState(v);
+  return null;
+}
+
+/**
+ * Create a generic options vote and return helpers.
+ *
+ * @param {object}   args
+ * @param {string}   args.topic         e.g. 'meeting-point', 'next-city'
+ * @param {Array}    args.options       [{ id, label, meta }]
+ * @param {string=}  args.groupUrl      optional — scopes vote to a group
+ * @param {number=}  args.expiryHours   default 48
+ * @returns {{ voteId, shareUrl, cast, tally, getState, close }}
+ */
+export function createGenericVote({ topic, options, groupUrl, expiryHours = 48 } = {}) {
+  if (!topic || typeof topic !== 'string') {
+    throw new Error('[group-vote] createGenericVote: topic required');
+  }
+  if (!Array.isArray(options) || options.length === 0) {
+    throw new Error('[group-vote] createGenericVote: options[] required');
+  }
+
+  const voteId = shortId();
+  const createdAt = nowMs();
+  const expiresAt = createdAt + (expiryHours * 3600 * 1000);
+
+  const vote = {
+    voteId,
+    topic,
+    options: options.map(o => ({
+      id: String(o.id),
+      label: String(o.label ?? o.id),
+      meta: o.meta ?? null
+    })),
+    votes: {},                  // memberId -> optionId
+    groupUrl: groupUrl || null,
+    createdAt,
+    expiresAt,
+    closed: false
+  };
+
+  saveGenericVote(voteId, vote);
+
+  const encoded = encodeGenericState(vote);
+  const shareUrl = `${location.origin}${location.pathname}${location.search}#/vote?v=${encoded}&topic=${encodeURIComponent(topic)}`;
+
+  function cast(memberId, optionId) {
+    if (!memberId) throw new Error('[group-vote] cast: memberId required');
+    const current = loadGenericVote(voteId) || vote;
+    if (current.closed) {
+      const err = new Error('[group-vote] vote closed');
+      err.code = 'VOTE_CLOSED';
+      throw err;
+    }
+    if (!current.options.some(o => o.id === String(optionId))) {
+      const err = new Error('[group-vote] unknown optionId');
+      err.code = 'UNKNOWN_OPTION';
+      throw err;
+    }
+    current.votes[String(memberId)] = String(optionId);
+    saveGenericVote(voteId, current);
+    return current;
+  }
+
+  function tally() {
+    const current = loadGenericVote(voteId) || vote;
+    const counts = {};
+    for (const opt of current.options) counts[opt.id] = 0;
+    let totalVotes = 0;
+    for (const optId of Object.values(current.votes || {})) {
+      if (counts[optId] != null) {
+        counts[optId] += 1;
+        totalVotes += 1;
+      }
+    }
+    return { ...counts, totalVotes };
+  }
+
+  function getResult() {
+    const current = loadGenericVote(voteId) || vote;
+    const counts = {};
+    for (const opt of current.options) counts[opt.id] = 0;
+    for (const optId of Object.values(current.votes || {})) {
+      if (counts[optId] != null) counts[optId] += 1;
+    }
+    let max = -1;
+    let winners = [];
+    for (const [id, c] of Object.entries(counts)) {
+      if (c > max) { max = c; winners = [id]; }
+      else if (c === max) { winners.push(id); }
+    }
+    return {
+      winner: winners.length === 1 ? winners[0] : null,
+      ties: winners.length > 1 ? winners : [],
+      tally: counts
+    };
+  }
+
+  function close() {
+    const current = loadGenericVote(voteId) || vote;
+    current.closed = true;
+    saveGenericVote(voteId, current);
+    return getResult();
+  }
+
+  function getState() {
+    return loadGenericVote(voteId) || vote;
+  }
+
+  return { voteId, shareUrl, cast, tally, getResult, close, getState };
+}
+
+// ─── Plan-aligned imperative API (startVote / castVote / closeVote / getResult)
+// One "active" generic vote at a time per page session. Backed by the same
+// LocalStorage as createGenericVote() so callers can mix and match.
+
+let _activeVoteHandle = null;
+
+/**
+ * Plan-aligned vote starter. Branches on presence of `kind` so legacy
+ * route-template callers (which don't pass `kind`) are unaffected.
+ *
+ * @param {object} args
+ * @param {string} args.kind        'route' | 'meeting-point' | string
+ * @param {Array}  args.options     [{id,label,meta}]
+ * @param {Array}  args.voterIds    member ids allowed to vote (informational)
+ */
+export function startVote(args = {}) {
+  if (!args || !args.kind) {
+    throw new Error('[group-vote] startVote: { kind, options, voterIds } required (legacy callers should use createBallot)');
+  }
+  const handle = createGenericVote({
+    topic: args.kind,
+    options: args.options || [],
+    groupUrl: args.groupUrl || null
+  });
+  // Stash voterIds on the persisted record for downstream UIs.
+  const cur = handle.getState();
+  cur.voterIds = Array.isArray(args.voterIds) ? args.voterIds.map(String) : [];
+  saveGenericVote(handle.voteId, cur);
+  _activeVoteHandle = handle;
+  return handle;
+}
+
+export function castVote(memberId, optionId) {
+  if (!_activeVoteHandle) throw new Error('[group-vote] castVote: no active vote — call startVote() first');
+  return _activeVoteHandle.cast(memberId, optionId);
+}
+
+export function closeVote() {
+  if (!_activeVoteHandle) throw new Error('[group-vote] closeVote: no active vote');
+  return _activeVoteHandle.close();
+}
+
+export function getResult() {
+  if (!_activeVoteHandle) throw new Error('[group-vote] getResult: no active vote');
+  return _activeVoteHandle.getResult();
+}
+
 // ─── Kesfet card integration (renderInto) ───────────────────────────────────
 export function renderInto(container) {
   empty(container);
