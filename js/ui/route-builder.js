@@ -15,6 +15,59 @@ import { computeSeatCredits } from '../features/seat-credits.js';
 import { computeCO2 } from '../features/co2.js';
 import { checkNightArrivals, hasLateArrival } from '../features/night-shield.js';
 import { resolveHomeCoords, renderHomeCityPicker } from './home-city-picker.js';
+import { getCitiesWithBuddies } from '../features/buddy.js';
+
+// Cached buddy cities list — loaded once on first render. While pending,
+// `_buddyCities` stays null and stop cards render without the badge; as
+// soon as the fetch resolves we trigger one state-driven re-render so the
+// badges appear without further user interaction.
+let _buddyCities = null;
+let _buddyLoading = false;
+function ensureBuddyCitiesLoaded() {
+  if (_buddyCities || _buddyLoading) return;
+  _buddyLoading = true;
+  getCitiesWithBuddies()
+    .then(list => {
+      _buddyCities = Array.isArray(list) ? list : [];
+      // Touch the route slice so subscribed render() fires — passes a
+      // shallow copy to guarantee referential change.
+      const r = state.getSlice('route');
+      if (r) state.set('route', { ...r });
+    })
+    .catch(() => { _buddyCities = []; })
+    .finally(() => { _buddyLoading = false; });
+}
+
+function openBuddyPanelForCity(initialCity) {
+  const backdrop = h('div', {
+    class: 'modal-backdrop',
+    role: 'dialog',
+    'aria-modal': 'true',
+    'aria-label': t('buddy.panel.title')
+  });
+  const box = h('div', { class: 'modal-box buddy-modal-box' });
+  const closeBtn = h('button', {
+    class: 'btn btn-ghost btn-sm modal-close',
+    type: 'button',
+    'aria-label': 'Close',
+    onclick: () => backdrop.remove()
+  }, '×');
+  const content = h('div', { class: 'buddy-modal-content' });
+  box.append(closeBtn, content);
+  backdrop.appendChild(box);
+  backdrop.addEventListener('click', (e) => {
+    if (e.target === backdrop) backdrop.remove();
+  });
+  document.body.appendChild(backdrop);
+
+  import('./buddy-panel.js')
+    .then(mod => {
+      if (typeof mod.renderBuddyPanel === 'function') {
+        mod.renderBuddyPanel(content, { initialCity });
+      }
+    })
+    .catch(err => { console.warn('[buddy] panel load failed', err); });
+}
 
 export function initRouteBuilder() {
   const body = qs('#panelBody');
@@ -40,6 +93,7 @@ export function initRouteBuilder() {
 
 function renderInto(root) {
   empty(root);
+  ensureBuddyCitiesLoaded();
   const route = state.getSlice('route') || { stops: [], travelDaysLimit: 7 };
   const templates = state.getSlice('routeTemplates') || [];
 
@@ -169,7 +223,8 @@ function renderStop(stop, index, arrival) {
           : null
       ]),
       h('div', { class: 'route-stop-meta' },
-        t('route.stopNights', { n: nights }))
+        t('route.stopNights', { n: nights })),
+      renderBuddyStopBadge(stop)
     ]),
     h('div', { class: 'route-stop-nights' }, [
       h('button', {
@@ -195,6 +250,27 @@ function renderStop(stop, index, arrival) {
       'data-action': 'remove-stop',
       'data-stop-index': index
     }, '×')
+  ]);
+}
+
+// Small inline badge under a stop's city name when that city has a seeded
+// buddy-matching room. Returns null when there's no match (or the cache
+// hasn't loaded yet) so the caller can drop it into an array safely.
+function renderBuddyStopBadge(stop) {
+  if (!_buddyCities || !stop || !stop.cityId) return null;
+  const hit = _buddyCities.find(c => c && c.cityId === stop.cityId);
+  if (!hit) return null;
+  return h('button', {
+    class: 'buddy-stop-badge',
+    type: 'button',
+    'aria-label': t('buddy.panel.title'),
+    onclick: (ev) => {
+      ev.stopPropagation();
+      openBuddyPanelForCity(stop.cityId);
+    }
+  }, [
+    h('span', { 'aria-hidden': 'true' }, '🤝 '),
+    h('span', null, t('buddy.panel.title'))
   ]);
 }
 

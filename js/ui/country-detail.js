@@ -12,6 +12,7 @@ import { renderCountryGuideAccordion, renderCitiesAccordion, renderSharedMobilit
 import { renderSoundtrackAccordion } from '../features/soundtrack.js';
 import { renderCompactCard, openCrisisShield } from './crisis-shield-panel.js';
 import { load as loadCrisisData } from '../features/crisis-shield.js';
+import { getCitiesWithBuddies } from '../features/buddy.js';
 
 const SCORE_KEYS = ['nature', 'culture', 'nightlife', 'food', 'history', 'safety'];
 
@@ -94,6 +95,15 @@ function renderInto(root, country, selectedId) {
   // Keep openCrisisShield import reachable for tree-shakers; it's the public
   // API that renderCompactCard dispatches into when its trigger is clicked.
   void openCrisisShield;
+
+  // Buddy matching CTA — shown only if this country has at least one city
+  // seeded in data/buddy-cities.json. The panel module is dynamically
+  // imported on click so it stays out of the initial bundle.
+  if (country.id) {
+    const buddyHost = h('div', { class: 'country-detail-buddy-host' });
+    root.appendChild(buddyHost);
+    renderBuddyCta(buddyHost, country);
+  }
 
   // Country Guide + Top Cities accordions (from guide.js)
   const guideHost  = h('div', { class: 'country-detail-guide-host' });
@@ -272,6 +282,66 @@ function toggleCompare(country) {
     return next.length > 4 ? next.slice(next.length - 4) : next;
   });
   state.set('panelTab', 'compare');
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Buddy Matching CTA — inline card rendered in the Detail tab.
+// ─────────────────────────────────────────────────────────────────────────────
+
+function renderBuddyCta(host, country) {
+  getCitiesWithBuddies()
+    .then(cities => {
+      const matched = (cities || []).filter(c => c && c.countryId === country.id);
+      if (!matched.length) return; // no buddy cities for this country — skip
+      const firstCity = matched[0];
+      const card = h('section', { class: 'buddy-cta-card' }, [
+        h('div', { class: 'buddy-cta-head' }, [
+          h('span', { class: 'buddy-cta-icon', 'aria-hidden': 'true' }, '🤝'),
+          h('h3', { class: 'buddy-cta-title' }, t('buddy.panel.title'))
+        ]),
+        h('p', { class: 'buddy-cta-sub' }, t('buddy.panel.subtitle')),
+        h('button', {
+          class: 'btn btn-primary btn-sm',
+          type: 'button',
+          onclick: () => openBuddyPanelModal(firstCity.cityId)
+        }, t('buddy.panel.pickCity'))
+      ]);
+      host.appendChild(card);
+    })
+    .catch(() => { /* non-fatal — skip card if seed fails */ });
+}
+
+function openBuddyPanelModal(initialCity) {
+  const backdrop = h('div', {
+    class: 'modal-backdrop',
+    role: 'dialog',
+    'aria-modal': 'true',
+    'aria-label': t('buddy.panel.title')
+  });
+  const box = h('div', { class: 'modal-box buddy-modal-box' });
+  const closeBtn = h('button', {
+    class: 'btn btn-ghost btn-sm modal-close',
+    type: 'button',
+    'aria-label': 'Close',
+    onclick: () => backdrop.remove()
+  }, '×');
+  const content = h('div', { class: 'buddy-modal-content' });
+  box.append(closeBtn, content);
+  backdrop.appendChild(box);
+  backdrop.addEventListener('click', (e) => {
+    if (e.target === backdrop) backdrop.remove();
+  });
+  document.body.appendChild(backdrop);
+
+  import('./buddy-panel.js')
+    .then(mod => {
+      if (typeof mod.renderBuddyPanel === 'function') {
+        mod.renderBuddyPanel(content, { initialCity });
+      }
+    })
+    .catch(err => {
+      console.warn('[buddy] panel load failed', err);
+    });
 }
 
 // escape is imported above because a future version will accept raw HTML
