@@ -1333,5 +1333,45 @@
       "rateLimit": "AI sağlayıcısı limiti doldu — bir dakika bekle",
       "offlineFallback": "Çevrimdışı — sadece cümle defteri"
     }
+  },
+  "group": {
+    "panel": {
+      "title": "Grup olarak planla",
+      "subtitle": "Farklı evlerden 5 kişiye kadar",
+      "createBtn": "Grup oluştur",
+      "joinBtn": "Linkle katıl",
+      "shareBtn": "Grup linkini paylaş",
+      "linkCopied": "Link panoya kopyalandı"
+    },
+    "member": {
+      "add": "Üye ekle",
+      "remove": "Gruptan çıkar",
+      "namePlaceholder": "Görünen ad",
+      "youAre": "Sen {displayName}'sın",
+      "leaderBadge": "Lider",
+      "cap": "En fazla 10 üye"
+    },
+    "meeting": {
+      "title": "Önerilen buluşma noktası",
+      "optimize": "En uygun şehri hesapla",
+      "computing": "Hesaplanıyor…",
+      "savedKm": "Rastgele buluşmaya göre {km} km tasarruf",
+      "alternative": "Alternatif",
+      "vote": "Buluşma noktasına oy ver"
+    },
+    "itinerary": {
+      "title": "Birleşik rota",
+      "member": "{name}'in ayağı",
+      "shared": "Ortak bölüm"
+    },
+    "share": {
+      "urlLong": "Link çok uzun — daha az üye veya daha kısa tercih dene",
+      "invitedTitle": "Davet edildin",
+      "invitedBody": "Aşağıdan kendini gruba ekle"
+    },
+    "errors": {
+      "maxMembers": "Grup dolu (10/10)",
+      "invalidUrl": "Geçersiz grup linki"
+    }
   }
 }
