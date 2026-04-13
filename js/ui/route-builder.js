@@ -736,7 +736,14 @@ function renderReturnSection(route) {
   const optimizeBtn = h('button', {
     class: 'btn-ai',
     type: 'button',
-    onclick: () => window.dispatchEvent(new CustomEvent('ai:optimize-return'))
+    onclick: async () => {
+      // Ensure ai-assistant.js has registered its window listener before
+      // the event fires — the module is otherwise lazy-loaded only when
+      // the AI trigger button is clicked, so the first optimize-return
+      // click would be swallowed silently.
+      await import('../features/ai-assistant.js');
+      window.dispatchEvent(new CustomEvent('ai:optimize-return'));
+    }
   }, t('route.return.optimizeBtn'));
   section.append(optimizeBtn);
 

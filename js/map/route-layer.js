@@ -71,7 +71,16 @@ export function renderRouteLayer(map) {
   clearLayers(map);
 
   const route = state.getSlice('route');
-  const home = resolveHomeCoords();
+  let home = resolveHomeCoords();
+  // Fallback: when the home country has no inline cities[] (true for 32/33
+  // countries today), resolveHomeCoords returns null. Use the capital lookup
+  // so the polyline + arrows still render.
+  if (!home) {
+    const user = state.getSlice('user') || {};
+    const key = String(user.homeCountry || '').toUpperCase();
+    const cap = CAPITAL_LATLNG[key];
+    if (cap) home = { lat: cap[0], lng: cap[1], name: user.homeCity || key };
+  }
   if (!route?.stops?.length || !home) return;
 
   const homeLatLng = [home.lat, home.lng];
@@ -97,21 +106,26 @@ export function renderRouteLayer(map) {
     color: accent2, weight: 2.5, dashArray: '4,10', opacity: 0.85
   }).addTo(map);
 
-  // Directional arrowheads on each leg. Guarded so offline / CDN-blocked
-  // environments gracefully degrade to plain dashed polylines.
+  // Directional arrowheads — one centered arrow per segment so short legs
+  // still show direction. Guarded so offline / CDN-blocked environments
+  // gracefully degrade to plain dashed polylines.
   if (L.polylineDecorator) {
     const arrowSymbol = (color) => L.Symbol.arrowHead({
-      pixelSize: 12,
-      polygon: false,
-      pathOptions: { stroke: true, color, weight: 2, opacity: 0.9 }
+      pixelSize: 16,
+      polygon: true,
+      pathOptions: { stroke: true, color, fill: true, fillColor: color, fillOpacity: 1, weight: 2, opacity: 1 }
     });
-    const outboundDecorator = L.polylineDecorator(outboundLayer, {
-      patterns: [{ offset: 25, repeat: 80, symbol: arrowSymbol(accent) }]
-    }).addTo(map);
-    const returnDecorator = L.polylineDecorator(returnLayer, {
-      patterns: [{ offset: 25, repeat: 80, symbol: arrowSymbol(accent2) }]
-    }).addTo(map);
-    decorators.push(outboundDecorator, returnDecorator);
+    const decorateSegments = (latlngs, color) => {
+      for (let i = 0; i < latlngs.length - 1; i++) {
+        const seg = L.polyline([latlngs[i], latlngs[i + 1]]);
+        const dec = L.polylineDecorator(seg, {
+          patterns: [{ offset: '50%', repeat: 0, symbol: arrowSymbol(color) }]
+        }).addTo(map);
+        decorators.push(dec);
+      }
+    };
+    decorateSegments(outboundLatLngs, accent);
+    decorateSegments(returnLatLngs, accent2);
   }
 
   markersLayer = L.layerGroup().addTo(map);
