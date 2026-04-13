@@ -101,3 +101,10 @@ Source data for `data/wheelmap-metro-index.json` — step-free metro station see
 - **Metro İstanbul** — `https://www.metro.istanbul/en` — operator map confirming lift + platform-screen-door coverage on all post-2000 M-lines (M2, M3, M4, M5, M6, M7, M8, M9, M11) and Marmaray.
 - License: ODbL attribution inherited from Wheelmap/OSM; curated per-city summary fields are CC BY-SA 4.0 under this project.
 - Refresh cadence: annually, or when an operator publishes a new accessible-station list. Contributors invited via GitHub issue — curated seed list, not an exhaustive enumeration.
+
+## Buddy-matching cities (2026-04-13)
+
+- **`data/buddy-cities.json`** — editorial seed of the 20 highest-traffic DiscoverEU destinations (per European Commission participant statistics) to bootstrap the buddy-matching feature. Cities: Paris, Berlin, Madrid, Rome, Barcelona, Amsterdam, Prague, Vienna, Budapest, Lisbon, Athens, Krakow, Warsaw, Copenhagen, Stockholm, Dublin, Brussels, Munich, Milan, İstanbul.
+- **Coordinates** — İstanbul coordinates cross-referenced with the `cities[]` block in `data/countries.json`. The other 19 cities are not present in `countries.json` cities arrays (only Türkiye lists sub-cities), so lat/lng values were taken from publicly verified Wikipedia / OpenStreetMap canonical city centroids. No coordinates fabricated.
+- **Issue routing** — each city maps to a GitHub label `buddy-{cityId}`. Maintainer curates the sticky issue per city post-launch, then updates the corresponding `issueNumber` and flips `active` to `true` in a follow-up PR (see plan `docs/superpowers/plans/2026-04-13-buddy-matching.md` §Maintainer curation).
+- Refresh cadence: reviewed each time DiscoverEU publishes updated participant travel stats (roughly annually).
