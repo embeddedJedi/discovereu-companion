@@ -1185,7 +1185,15 @@
       "subtitle": "{country} için kültürlerarası koç",
       "generating": "Dersin hazırlanıyor…",
       "regenerate": "Dersi yenile",
-      "offline": "Çevrimdışı görünüyorsun — kayıtlı dersler çalışır."
+      "offline": "Çevrimdışı görünüyorsun — kayıtlı dersler çalışır.",
+      "description": "5 dakikalık kültürlerarası mini ders. Gitmeden önce selamlaşma, görgü, yemek ve para ipuçlarını öğren.",
+      "start": "5 dakikalık derse başla",
+      "close": "Kapat"
+    },
+    "page": {
+      "title": "Kültürlerarası Koç",
+      "pickCountry": "Öğrenmek için bir ülke seç",
+      "pickCountryHint": "Her ders kısa bir quiz ve indirilebilir Europass rozeti içeren 5 dakikalık bir kültürel hazırlıktır."
     },
     "section": {
       "greetings": "Selamlaşma ve günlük ifadeler",

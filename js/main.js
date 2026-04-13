@@ -19,7 +19,8 @@ const PAGE_MODULES = {
   rehber:   () => import('./pages/rehber.js'),
   kesfet:   () => import('./pages/kesfet.js'),
   hazirlik: () => import('./pages/hazirlik.js'),
-  impact:   () => import('./pages/impact.js')
+  impact:   () => import('./pages/impact.js'),
+  coach:    () => import('./pages/coach.js')
 };
 
 let currentPageModule = null;

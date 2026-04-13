@@ -1221,7 +1221,15 @@
       "subtitle": "Intercultural coach for {country}",
       "generating": "Generating your lesson…",
       "regenerate": "Regenerate lesson",
-      "offline": "You appear offline — saved lessons still work."
+      "offline": "You appear offline — saved lessons still work.",
+      "description": "A 5-minute intercultural lesson. Learn greetings, etiquette, food, and money tips before you go.",
+      "start": "Start 5-min lesson",
+      "close": "Close"
+    },
+    "page": {
+      "title": "Intercultural Coach",
+      "pickCountry": "Pick a country to learn",
+      "pickCountryHint": "Each lesson is a 5-minute intercultural primer with a short quiz and a downloadable Europass badge."
     },
     "section": {
       "greetings": "Greetings & phrases",

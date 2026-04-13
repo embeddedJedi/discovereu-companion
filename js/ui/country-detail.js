@@ -105,6 +105,15 @@ function renderInto(root, country, selectedId) {
     renderBuddyCta(buddyHost, country);
   }
 
+  // Intercultural Coach CTA — shown for every country in data/countries.json.
+  // Opens the full coach panel in a modal via dynamic import so coach-panel.js
+  // (plus its LLM + quiz-runner deps) stays out of the initial bundle.
+  if (country.id) {
+    const coachHost = h('div', { class: 'country-detail-coach-host' });
+    root.appendChild(coachHost);
+    renderCoachCta(coachHost, country);
+  }
+
   // Country Guide + Top Cities accordions (from guide.js)
   const guideHost  = h('div', { class: 'country-detail-guide-host' });
   const citiesHost = h('div', { class: 'country-detail-cities-host' });
@@ -341,6 +350,64 @@ function openBuddyPanelModal(initialCity) {
     })
     .catch(err => {
       console.warn('[buddy] panel load failed', err);
+    });
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Intercultural Coach CTA — inline card rendered in the Detail tab.
+// ─────────────────────────────────────────────────────────────────────────────
+
+function renderCoachCta(host, country) {
+  if (!country || !country.id) return;
+  const card = h('section', { class: 'coach-cta-card buddy-cta-card' }, [
+    h('div', { class: 'buddy-cta-head' }, [
+      h('span', { class: 'buddy-cta-icon', 'aria-hidden': 'true' }, '🎓'),
+      h('h3', { class: 'buddy-cta-title' }, t('coach.panel.title'))
+    ]),
+    h('p', { class: 'buddy-cta-sub' }, t('coach.panel.description')),
+    h('button', {
+      class: 'btn btn-primary btn-sm',
+      type: 'button',
+      onclick: () => openCoachPanelModal(country.id)
+    }, t('coach.panel.start'))
+  ]);
+  host.appendChild(card);
+}
+
+function openCoachPanelModal(countryId) {
+  const backdrop = h('div', {
+    class: 'modal-backdrop',
+    role: 'dialog',
+    'aria-modal': 'true',
+    'aria-label': t('coach.panel.title')
+  });
+  const box = h('div', { class: 'modal-box coach-modal-box' });
+  const closeBtn = h('button', {
+    class: 'btn btn-ghost btn-sm modal-close',
+    type: 'button',
+    'aria-label': t('coach.panel.close'),
+    onclick: () => { try { cleanup?.(); } catch (_) {} backdrop.remove(); }
+  }, '×');
+  const content = h('div', { class: 'coach-modal-content' });
+  box.append(closeBtn, content);
+  backdrop.appendChild(box);
+  let cleanup = null;
+  backdrop.addEventListener('click', (e) => {
+    if (e.target === backdrop) {
+      try { cleanup?.(); } catch (_) {}
+      backdrop.remove();
+    }
+  });
+  document.body.appendChild(backdrop);
+
+  import('./coach-panel.js')
+    .then(mod => {
+      if (typeof mod.renderCoachPanel === 'function') {
+        cleanup = mod.renderCoachPanel(content, { countryId });
+      }
+    })
+    .catch(err => {
+      console.warn('[coach] panel load failed', err);
     });
 }
 
