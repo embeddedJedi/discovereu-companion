@@ -4,7 +4,15 @@
 
 import { storage } from './utils/storage.js';
 
-const PERSIST_KEYS = ['theme', 'language', 'user', 'route', 'filters', 'prep', 'bingo', 'dares', 'futureMessages', 'impact', 'a11y', 'buddy', 'coach'];
+const PERSIST_KEYS = ['theme', 'language', 'user', 'route', 'filters', 'prep', 'bingo', 'dares', 'futureMessages', 'impact', 'a11y', 'buddy', 'coach', 'languageBridge'];
+
+// v1.7 — Language Bridge
+const LANGUAGE_BRIDGE_PHRASES_CAP = 500;
+const LANGUAGE_BRIDGE_DEFAULTS = {
+  savedPhrases: [],   // [{ id, countryId, source, target, sourceLang, targetLang, savedAt }]
+  ocrLang: null,      // ISO 639-1 lang code or null
+  voiceOn: false      // boolean — voice playback toggle
+};
 
 const BUDDY_VALID_KINDS = ['local', 'mentor', 'traveler'];
 const BUDDY_SEEN_CAP = 200;
@@ -134,6 +142,11 @@ const initialState = {
     lessonsCompleted: {},
     quizScores: {},
     badgesEarned: []
+  },
+  languageBridge: {            // persisted — v1.7 Language Bridge
+    savedPhrases: [],
+    ocrLang: null,
+    voiceOn: false
   },
   countries: [],               // loaded from data/countries.json
   trains: [],                  // loaded from data/trains.json
@@ -289,6 +302,47 @@ function migrate(persisted) {
       if (c.badgesEarned.length > COACH_BADGES_CAP) {
         c.badgesEarned = c.badgesEarned.slice(c.badgesEarned.length - COACH_BADGES_CAP);
       }
+    }
+  }
+  // v1.7 — backfill + sanitize languageBridge slice (Language Bridge).
+  if (!isPlainObject(persisted.languageBridge)) {
+    persisted.languageBridge = { ...LANGUAGE_BRIDGE_DEFAULTS, savedPhrases: [] };
+  } else {
+    const lb = persisted.languageBridge;
+    // savedPhrases — array of { id, countryId, source, target, sourceLang, targetLang, savedAt }
+    if (!Array.isArray(lb.savedPhrases)) {
+      lb.savedPhrases = [];
+    } else {
+      lb.savedPhrases = lb.savedPhrases.filter(p =>
+        isPlainObject(p) &&
+        typeof p.id === 'string' && p.id &&
+        typeof p.countryId === 'string' &&
+        typeof p.source === 'string' &&
+        typeof p.target === 'string' &&
+        typeof p.sourceLang === 'string' &&
+        typeof p.targetLang === 'string' &&
+        isIsoString(p.savedAt)
+      ).map(p => ({
+        id: p.id,
+        countryId: p.countryId,
+        source: p.source,
+        target: p.target,
+        sourceLang: p.sourceLang,
+        targetLang: p.targetLang,
+        savedAt: p.savedAt
+      }));
+      // FIFO drop oldest entries when over cap.
+      if (lb.savedPhrases.length > LANGUAGE_BRIDGE_PHRASES_CAP) {
+        lb.savedPhrases = lb.savedPhrases.slice(lb.savedPhrases.length - LANGUAGE_BRIDGE_PHRASES_CAP);
+      }
+    }
+    // ocrLang — string or null
+    if (!(lb.ocrLang === null || typeof lb.ocrLang === 'string')) {
+      lb.ocrLang = null;
+    }
+    // voiceOn — boolean
+    if (typeof lb.voiceOn !== 'boolean') {
+      lb.voiceOn = false;
     }
   }
   return persisted;
