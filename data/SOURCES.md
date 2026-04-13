@@ -123,3 +123,28 @@ Source data for `data/green-hostels.json` — curated seed of certified-green ho
 - **Coordinates** — İstanbul coordinates cross-referenced with the `cities[]` block in `data/countries.json`. The other 19 cities are not present in `countries.json` cities arrays (only Türkiye lists sub-cities), so lat/lng values were taken from publicly verified Wikipedia / OpenStreetMap canonical city centroids. No coordinates fabricated.
 - **Issue routing** — each city maps to a GitHub label `buddy-{cityId}`. Maintainer curates the sticky issue per city post-launch, then updates the corresponding `issueNumber` and flips `active` to `true` in a follow-up PR (see plan `docs/superpowers/plans/2026-04-13-buddy-matching.md` §Maintainer curation).
 - Refresh cadence: reviewed each time DiscoverEU publishes updated participant travel stats (roughly annually).
+
+## Phrasebook seed (2026-04-13)
+
+Scope: `data/phrasebook/de.json`, `fr.json`, `it.json`, `es.json`, `tr.json` — seed phrasebook of ~175 travel phrases per country across 9 categories (greetings, numbers, food, directions, emergency, everyday, shopping, time, travel). Source language is English; target is the authentic native phrase with polite register (Sie / vous / Lei / usted / siz) preferred as traveler meets strangers.
+
+**Sources:**
+- **Existing repo SSOT** — the 9 phrases per country in `data/emergency-phrases.json` were reused verbatim for the `emergency` category (entries flagged `"notes": "Source: emergency-phrases.json."`). This keeps the two datasets consistent and avoids drift.
+- **BBC Languages / Memrise-style learner corpora** — structure and register conventions (polite Sie/vous/Lei/usted; natural idiomatic toasts like `Prost!`, `Santé!`, `Salute!`, `¡Salud!`, `Şerefe!` rather than literal translations of "Cheers!").
+- **Wikivoyage phrasebooks** (CC BY-SA) — cross-reference for travel-specific vocabulary (ticket, platform, reservation, validate) and country-specific notes (IT regional trains require `convalido`; FR tap water is free via `une carafe`; TR `üstü kalsın` as standard tip phrasing).
+- **Native/near-native consultation** — TR phrases curated by the maintainer (Emirhan Ekşi, L1 speaker). DE/FR/IT/ES require native-speaker review pass in quarterly refresh cycle.
+
+**Content rules applied:**
+- Every entry has required fields `id`, `category`, `source`, `target`; optional `ipa`, `audioHint`, `notes` filled where informative.
+- Dietary-restriction phrases (vegan / vegetarian / halal / nut allergy / peanut allergy / lactose / gluten / no pork) included in every country's `food` category — high-stakes for inclusion.
+- `audioHint` is English-letter approximation, not IPA. Designed for on-phone read-aloud, not linguistic accuracy.
+- Culturally-specific bonus phrases added where they materially help a traveler: IT `cappuccino` (with note on morning-only convention), TR `Türk kahvesi` / `Afiyet olsun` / `İstanbulkart`.
+
+**Coverage counts:** DE 175, FR 175, IT 175, ES 175, TR 176 (31 food entries — includes bonus `Afiyet olsun` and Turkish-coffee-specific phrasing). Other categories match plan spec exactly (20/20/25/15/25/15/10/15).
+
+**Known limitations to flag in quarterly review:**
+- IPA provided only on tricky/irregular words; most entries carry only `audioHint`.
+- FR / ES polite-form usage was prioritised; informal (tu / tú) variants are NOT included in this seed.
+- No regional variants (e.g., Catalan / Basque / Bavarian / Sicilian / Québecois) — national standard register only.
+
+**Refresh cadence:** quarterly review pass by native speakers; next review due 2026-07-13. Add new countries as demand surfaces.
