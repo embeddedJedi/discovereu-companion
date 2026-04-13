@@ -17,7 +17,8 @@ const PAGE_MODULES = {
   map:      () => import('./pages/map.js'),
   rehber:   () => import('./pages/rehber.js'),
   kesfet:   () => import('./pages/kesfet.js'),
-  hazirlik: () => import('./pages/hazirlik.js')
+  hazirlik: () => import('./pages/hazirlik.js'),
+  impact:   () => import('./pages/impact.js')
 };
 
 let currentPageModule = null;

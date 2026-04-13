@@ -7,7 +7,7 @@
 //   • On activate: wipe any older cache buckets so version bumps roll
 //     out cleanly
 
-const CACHE_VERSION = 'discovereu-v6';
+const CACHE_VERSION = 'discovereu-v7';
 const APP_SHELL = [
   './',
   './index.html',
@@ -15,6 +15,18 @@ const APP_SHELL = [
   './css/main.css',
   './css/components.css',
   './css/map.css',
+  './css/a11y.css',
+  './css/impact.css',
+  '/pages/impact.html',
+  '/data/impact-public.json',
+  '/js/impact-public-renderer.js',
+  '/js/features/impact-compute.js',
+  '/js/features/impact-card.js',
+  '/js/features/impact-anonymize.js',
+  '/js/features/impact-export.js',
+  '/js/features/a11y-settings.js',
+  '/js/ui/impact-panel.js',
+  '/js/ui/a11y-panel.js',
   './assets/icons/favicon.svg',
   './assets/icons/icon.svg',
   './assets/manifest.json',

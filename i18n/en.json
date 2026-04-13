@@ -21,7 +21,8 @@
     "budget": "Budget",
     "filters": "Filters",
     "compare": "Compare",
-    "prep": "Prep"
+    "prep": "Prep",
+    "impact": "Impact"
   },
   "hazirlik": {
     "pageTitle": "Preparation"
