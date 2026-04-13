@@ -189,6 +189,16 @@
   --z-modal:    400;
   --z-toast:    500;
   --z-tooltip:  600;
+
+  /* Accessibility overlay — AAA tokens (v1.5).
+     Used by css/a11y.css when <html data-a11y-*> attributes are set. */
+  --a11y-aaa-bg: #000000;
+  --a11y-aaa-fg: #FFFFFF;         /* 21:1 contrast */
+  --a11y-amber-bg: #FFF3C4;       /* dyslexia-amber, ≥7:1 vs #222 */
+  --a11y-amber-fg: #222222;
+  --a11y-font-scale: 1;
+  --a11y-line-height: 1.5;
+  --a11y-letter-spacing: 0em;
 }
 
 /* Dark theme */
@@ -238,6 +248,12 @@
      Dark: #FCA5A5 on #0B0B0F → ~10.3:1 (WCAG AAA). */
   --cs-critical-bg: #FCA5A5;
   --cs-critical-fg: #0B0B0F;
+
+  /* Accessibility overlay — AAA tokens (v1.5), dark theme mirror. */
+  --a11y-aaa-bg: #000000;
+  --a11y-aaa-fg: #FFFFFF;
+  --a11y-amber-bg: #FFF3C4;
+  --a11y-amber-fg: #222222;
 }
 
 /* Reset + base */

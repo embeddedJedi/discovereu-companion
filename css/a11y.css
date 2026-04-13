@@ -1,0 +1,153 @@
+/* ═══════════════════════════════════════════════════════════════
+   Accessibility Overlay — v1.5
+   Data-attribute driven AAA overrides. Applied by js/features/a11y-settings.js
+   which writes <html data-a11y-*="..."> attributes based on user preferences.
+
+   Cascade: design-system.css → a11y.css → main.css → components.css → map.css
+   All tokens come from design-system.css (--a11y-*).
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Font scale + line-height + letter-spacing — sliders in a11y panel
+   update these custom properties on <html>, everything else cascades. */
+html {
+  --a11y-font-scale: 1;
+  --a11y-line-height: 1.5;
+  --a11y-letter-spacing: 0em;
+  font-size: calc(16px * var(--a11y-font-scale));
+}
+
+body {
+  line-height: var(--a11y-line-height);
+  letter-spacing: var(--a11y-letter-spacing);
+}
+
+/* ─── Contrast — AAA (21:1) ─────────────────────────────────── */
+html[data-a11y-contrast="aaa"] {
+  --bg-base:        var(--a11y-aaa-bg);
+  --bg-surface:     var(--a11y-aaa-bg);
+  --bg-elevated:    #1A1A1A;
+  --bg-sunken:      #000000;
+  --text-primary:   var(--a11y-aaa-fg);
+  --text-secondary: #E5E5E5;
+  --text-tertiary:  #CCCCCC;
+  --border-subtle:  #FFFFFF;
+  --border-default: #FFFFFF;
+  --border-strong:  #FFFFFF;
+  --accent-primary: #FFD700;
+  --accent-hover:   #FFE666;
+  --accent-soft:    rgba(255, 215, 0, 0.2);
+}
+
+html[data-a11y-contrast="aaa"] body {
+  background: var(--a11y-aaa-bg);
+  color: var(--a11y-aaa-fg);
+}
+
+/* Dyslexia-amber low-glare palette — amber bg, near-black text (≥7:1). */
+html[data-a11y-contrast="dyslexia-amber"] {
+  --bg-base:        var(--a11y-amber-bg);
+  --bg-surface:     var(--a11y-amber-bg);
+  --bg-elevated:    #FFE99A;
+  --bg-sunken:      #FFEBA8;
+  --text-primary:   var(--a11y-amber-fg);
+  --text-secondary: #333333;
+  --text-tertiary:  #444444;
+}
+
+html[data-a11y-contrast="dyslexia-amber"] body {
+  background: var(--a11y-amber-bg);
+  color: var(--a11y-amber-fg);
+}
+
+/* ─── Dyslexia-friendly typography ──────────────────────────── */
+html[data-a11y-dyslexia="opendyslexic"] body,
+html[data-a11y-dyslexia="opendyslexic"] input,
+html[data-a11y-dyslexia="opendyslexic"] button,
+html[data-a11y-dyslexia="opendyslexic"] textarea,
+html[data-a11y-dyslexia="opendyslexic"] select {
+  font-family: 'OpenDyslexic', system-ui, sans-serif;
+  letter-spacing: 0.05em;
+}
+
+html[data-a11y-dyslexia="atkinson"] body,
+html[data-a11y-dyslexia="atkinson"] input,
+html[data-a11y-dyslexia="atkinson"] button,
+html[data-a11y-dyslexia="atkinson"] textarea,
+html[data-a11y-dyslexia="atkinson"] select {
+  font-family: 'Atkinson Hyperlegible', system-ui, sans-serif;
+}
+
+/* ─── Motion control — in-app toggle overrides OS pref both ways. ─── */
+html[data-a11y-motion="none"] *,
+html[data-a11y-motion="none"] *::before,
+html[data-a11y-motion="none"] *::after {
+  animation-duration: 0s !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0s !important;
+  transition: none !important;
+  animation: none !important;
+  scroll-behavior: auto !important;
+}
+
+/* ─── Focus ring — AAA always-visible. ─────────────────────── */
+:focus-visible {
+  outline: 3px solid var(--accent-primary, #FFD700);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+html[data-a11y-focus="always"] :focus {
+  outline: 3px solid var(--accent-primary, #FFBF00);
+  outline-offset: 2px;
+}
+
+/* ─── Skip-to-main link for screen readers / keyboard users. ─── */
+.skip-to-main {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: var(--z-tooltip, 600);
+}
+
+.skip-to-main:focus {
+  left: 0;
+  top: 0;
+  padding: 1rem 1.25rem;
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  border: 2px solid var(--accent-primary);
+  border-radius: 0 0 var(--radius-md, 8px) 0;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* ─── Low-bandwidth mode — hide decorative heavy media. ────── */
+.a11y-lowbw-badge {
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.625rem;
+  background: var(--warning-soft, #FFF3C4);
+  color: var(--text-primary);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-full, 999px);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+html[data-a11y-lowbw="on"] .a11y-lowbw-badge {
+  display: inline-flex;
+}
+
+html[data-a11y-lowbw="on"] .hero-video,
+html[data-a11y-lowbw="on"] .map-tile-layer,
+html[data-a11y-lowbw="on"] .wrapped-preview,
+html[data-a11y-lowbw="on"] .decorative-image {
+  display: none !important;
+}
+
+/* ─── Color-blind SVG filters — applied via <html data-a11y-colorblind>.
+   Filter <defs> live inline in index.html as an aria-hidden SVG block. ─── */
+html[data-a11y-colorblind="protanopia"] body  { filter: url('#cs-protanopia'); }
+html[data-a11y-colorblind="deuteranopia"] body { filter: url('#cs-deuteranopia'); }
+html[data-a11y-colorblind="tritanopia"] body  { filter: url('#cs-tritanopia'); }
