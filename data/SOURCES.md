@@ -148,3 +148,30 @@ Scope: `data/phrasebook/de.json`, `fr.json`, `it.json`, `es.json`, `tr.json` —
 - No regional variants (e.g., Catalan / Basque / Bavarian / Sicilian / Québecois) — national standard register only.
 
 **Refresh cadence:** quarterly review pass by native speakers; next review due 2026-07-13. Add new countries as demand surfaces.
+
+---
+
+## Phrasebook videos (Phase C — 2026-04-14)
+
+Curated YouTube video IDs (2–3 per phrase) embedded via `youtube-nocookie.com` in the Language Bridge phrasebook tab. No API key, no quota. Phrases without curated videos render a YouTube-search fallback link.
+
+Core phrase set (20 IDs; `greet-good-morning` absent from fr seed):
+
+- greet-hello, greet-good-morning, greet-goodbye, greet-please, greet-thanks, greet-sorry, greet-excuse-me, greet-yes, greet-no, greet-how-are-you
+- num-1, num-2, num-3, num-5, num-10
+- food-water, food-vegetarian, dir-where-is, shop-how-much, emerg-help
+
+### de (German)
+<!-- filled in by curation task -->
+
+### fr (French)
+<!-- filled in by curation task (greet-good-morning not in seed) -->
+
+### it (Italian)
+<!-- filled in by curation task -->
+
+### es (Spanish)
+<!-- filled in by curation task -->
+
+### tr (Turkish)
+<!-- filled in by curation task -->
