@@ -137,6 +137,11 @@ export function renderCoachPanel(container, { countryId }) {
   }
 
   function renderError(err) {
+    console.error('[coach] lesson failed', err, {
+      message: err?.message,
+      cause: err?.cause,
+      errors: err?.errors
+    });
     const msg = err && typeof err.message === 'string' ? err.message : '';
     const key = ERROR_KEY_MAP[msg] || 'coach.errors.generic';
     const body = h('div', {

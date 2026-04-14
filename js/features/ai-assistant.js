@@ -315,29 +315,50 @@ async function handleOptimizeReturn() {
 
   showToast(t('ai.return.optimizing') || 'Planning your return…', 'info');
 
+  const chosenMode = ['train', 'bus', 'flight'].includes(route.returnTransport)
+    ? route.returnTransport
+    : 'train';
+
+  const MODE_RULES = {
+    train: `The user has chosen TRAIN for the return leg. This is a DiscoverEU rail pass return.
+- Prefer a night-train as the FINAL leg whenever a live corridor exists (ÖBB Nightjet, European Sleeper, Snälltåget, SNCF Intercités de Nuit, Balkan sleepers). Saves a hotel night and a travel day.
+- Flag reservation-mandatory trains (France TGV, Spain AVE, Italy Frecciarossa/Italo, Eurostar, ALL night-trains) as €10-35 extra that must be booked ahead.
+- Every stop must sit on a direct rail corridor toward home. No detours.
+- Keep "transport" field = "train" (use "night-train" on individual stops if that specific leg is a sleeper).`,
+
+    bus: `The user has chosen BUS for the return leg (FlixBus / Eurolines / national coach operators).
+- Plan the return as long-distance coach hops. Typical realistic legs: FlixBus/Eurolines corridors (Paris↔Berlin, Berlin↔Warsaw↔Vilnius, Vienna↔Budapest↔Bucharest, Madrid↔Lisbon, Amsterdam↔London via Eurotunnel bus).
+- Overnight coaches (10-14h) are the bus equivalent of night-trains — prefer them as the final leg to save a hotel night.
+- Bus is slower than rail: if the total journey home is > ~24h of bus time, you MAY suggest 1 overnight stopover at a real coach hub (Frankfurt, Munich, Milan, Lyon, Prague) to break fatigue.
+- Do NOT propose train-only corridors (e.g. no Eurostar). All stops must be reachable by intercity coach.
+- Keep "transport" field = "bus" on every stop and on the leg.`,
+
+    flight: `The user has chosen FLIGHT for the return leg (self-paid budget airline — DiscoverEU does not cover flights).
+- Plan a DIRECT flight home from the last outbound stop whenever a budget carrier serves that airport → home airport (Ryanair, Wizz Air, easyJet, Transavia, Vueling, Pegasus). Return stops=[] in that case.
+- Only add an intermediate stop if the last outbound city has NO direct budget flight home AND a nearby hub (≤4h rail/bus) does — in that case add ONE stop at the hub city with transport="train" or "bus" to position for the flight. Maximum 1 stop.
+- Call out the specific airport pair and a realistic airline in the reasoning.
+- Keep "transport" field = "flight" on the leg itself. Individual positioning stops may use "train" or "bus".`
+  };
+
   const systemPrompt = `You plan ONLY the return leg of a real DiscoverEU round-trip. The outbound is FROZEN — do not modify it.
 Your job: get the traveler from the LAST outbound stop back to ${user.homeCountry || '(home country unknown)'} / ${user.homeCity || '(home city unknown)'} with minimal wasted travel days.
+
+USER-SELECTED RETURN MODE: ${chosenMode.toUpperCase()} — you MUST honor this choice. Do not silently switch modes.
 
 FROZEN OUTBOUND (last stop is the departure point of the return):
 ${JSON.stringify(route.stops || [])}
 
-REAL BACKPACKER RETURN-LEG PATTERNS (Seat61 / Interrail.eu / r/Interrail consensus — follow these):
-- The classic pattern is "open-jaw": fly/train in → travel across one region → exit from the far side. DiscoverEU gives rail-only passes so the return itself MUST be rail (unless the user self-pays a flight).
-- The IDEAL final leg is a night-train: sleep on board, wake up near home, no extra hotel night, no wasted final day. Prefer this whenever the last outbound stop has a live night-train link toward home.
-- Live 2025-26 night-trains you can use as the final leg: ÖBB Nightjet (Vienna↔Paris/Berlin/Hamburg/Rome/Milan/Zurich/Amsterdam), European Sleeper (Prague↔Berlin↔Amsterdam↔Brussels), Snälltåget (Hamburg↔Stockholm), SNCF Intercités de Nuit (Nice/Toulouse/Briançon↔Paris), Balkan routes (Zagreb↔Split, Belgrade↔Bar).
-- Reservation-mandatory trains cost €10-35 extra on top of the pass: France TGV, Spain AVE, Italy Frecciarossa/Italo, Eurostar, ALL night-trains. Flag the specific booking the traveler must do in the reasoning.
-- NEVER backtrack through a city already visited on the outbound leg — that is the #1 rookie mistake on r/Interrail return threads.
-- NEVER add a stop just to "see one more country" on the way home. The traveler is tired. Go home clean.
+MODE-SPECIFIC RULES:
+${MODE_RULES[chosenMode]}
 
-DECISION RULES:
-- If a single direct leg home is feasible (one day-train, one night-train, or one self-paid budget flight if greenPreference is off), return stops=[] and explain which leg to book in the reasoning.
-- Add 1-2 intermediate stops ONLY when they add concrete value: (a) break a >10h daytime journey into a night-train + short morning hop, (b) reach a country only accessible on the return path (e.g. Slovenia on the way Vienna→Italy→home), (c) spend an unused seat-credit day with a meaningful 2-night stop (not a 1-nighter).
-- Every proposed stop must be on a direct rail corridor TOWARD home — no detours that add a travel day without a night-train payoff.
-- Estimate and mention the total rail hours and whether a Nightjet couchette booking is needed TODAY (they sell out weeks ahead).
+UNIVERSAL RULES:
+- NEVER backtrack through a city already visited on the outbound leg — the #1 rookie mistake on return threads.
+- NEVER add a stop just to "see one more country" on the way home. The traveler is tired.
+- If a single direct leg home is feasible, return stops=[] and explain which leg/flight/bus to book in the reasoning.
 - Respect includeReturnInBudget=${route.includeReturnInBudget} (seatCreditsLimit=${route.seatCreditsLimit ?? 4}, travelDaysLimit=${route.travelDaysLimit ?? 7}).
 
-OUTPUT: JSON only, no markdown, no commentary.
-{ "returnLeg": { "stops": [{ "countryId": "<ISO2>", "cityId": "<slug>", "nights": <1..14>, "transport": "<train|bus|flight|night-train>", "note": "<why this stopover>" }], "transport": "<train|bus|flight>", "reasoning": "<one paragraph in 2nd person: which leg to book first, any reservation warning, expected total travel time home>" } }`;
+OUTPUT: JSON only, no markdown, no commentary. The top-level "transport" MUST equal "${chosenMode}".
+{ "returnLeg": { "stops": [{ "countryId": "<ISO2>", "cityId": "<slug>", "nights": <1..14>, "transport": "<train|bus|flight|night-train>", "note": "<why this stopover>" }], "transport": "${chosenMode}", "reasoning": "<one paragraph in 2nd person: which leg/flight/coach to book first, any reservation or booking warning, expected total travel time home>" } }`;
 
   let parsed;
   try {
@@ -362,6 +383,10 @@ OUTPUT: JSON only, no markdown, no commentary.
     returnOptimizeInFlight = false;
     return;
   }
+
+  // Enforce the user's selected mode on the top-level leg even if the model
+  // drifted — the prompt is authoritative, the UI selector is authoritative.
+  proposed.transport = chosenMode;
 
   showReturnDiff(route.returnStops || [], proposed);
   returnOptimizeInFlight = false;
