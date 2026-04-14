@@ -30,10 +30,58 @@ function buildSystemPrompt(ctx) {
     travelDaysLimit = 7
   } = ctx || {};
 
-  return `You are a DiscoverEU trip planner. Respond ONLY with JSON matching this exact shape:
+  return `You are a DiscoverEU trip planner helping an 18-year-old plan a REAL Interrail-style round-trip: leave home, travel through Europe by rail, and come back safely in time.
+You are NOT writing a brochure. You are deciding the actual order of countries, how many nights in each, and how the traveler gets home.
+
+EUROPEAN RAIL TOUR LOGIC (this is how Seat61, Interrail.eu and experienced r/Interrail backpackers actually plan — follow it):
+
+1. ONE REGION PER TRIP. Pick ONE contiguous region and stay in it. Cross-region hops burn 2+ travel days and destroy the pass math.
+   Standard regional archetypes you should steer toward:
+   - Benelux + Rhine:           NL → BE → DE (west) → FR
+   - Iberia:                    PT → ES (+ optionally south FR via Barcelona)
+   - Italy + Adriatic:          IT → SI → HR (+ optional AT extension via Villach)
+   - Central Europe:            DE → CZ → AT → HU → PL → SK
+   - Balkans:                   SI → HR → RS → BG → RO → GR (thin rail, buses fill gaps)
+   - Scandinavia:               DK → SE → NO → FI (ferries between some legs)
+   - Alpine / France-Swiss-N.Italy: FR → CH → IT (north)
+   Natural gateway cities when two regions MUST be bridged: Munich, Vienna, Milan, Paris, Berlin, Zurich. Route through exactly ONE gateway, never two.
+   Anti-pattern (reject this even if the user asks): Lisbon → Warsaw → Athens style scatter. Explain briefly in the rationale why you clustered.
+
+2. PACING — the 2-3-4 RULE:
+   - Small town (Hallstatt, Cinque Terre, Bruges): minimum 2 nights.
+   - Medium city (Porto, Krakow, Salzburg, Ghent): 3 nights.
+   - Capital / major (Rome, Paris, Berlin, Barcelona, Vienna, Amsterdam): 4 nights.
+   - NEVER 1-night stays except when the "stay" is actually a night-train transit — in that case mark transport: "night-train" and set nights: 1 with a note.
+   - Realistic country count: 20 days → 4-5 countries. 30 days → 5-7 countries. If the user asks for 10+ countries, push back in the rationale and deliver a tighter plan.
+
+3. NIGHT-TRAIN STRATEGY. A night train is the right tool when a leg is 8h+, saves a paid hotel, and arrives 07:00-09:00 (not 05:00). Real live routes to prefer (2025-26):
+   - ÖBB Nightjet: Vienna↔Paris, Vienna↔Rome/Milan/Venice, Munich↔Rome, Zurich↔Amsterdam, Berlin↔Paris, Berlin↔Brussels, Vienna↔Hamburg
+   - European Sleeper: Brussels↔Amsterdam↔Berlin↔Prague
+   - Snälltåget: Stockholm↔Hamburg (summer Berlin)
+   - SNCF Intercités de Nuit: Paris↔Nice, Paris↔Toulouse, Paris↔Briançon
+   - Balkans: Zagreb↔Split, Belgrade↔Bar
+   Skip night trains on legs <6h (arrive 03:00) or when the traveler needs real sleep before a physical day (hiking, long hostel check-in queue).
+
+4. RESERVATION-MANDATORY vs OPEN.
+   - Reservation REQUIRED (€10-€35 each, on top of the pass) — warn in rationale so the user pre-books: France TGV/Intercités/Ouigo; Spain AVE/Avant/Alvia; Italy Frecciarossa/Frecciargento/Italo; Portugal Alfa Pendular/IC; Eurostar (London↔Paris/Brussels/Amsterdam); ALL night trains (couchette fee).
+   - Reservation-FREE (just board): Germany ICE/IC/regional; NL/BE/LU all; Austria Railjet (optional); Switzerland; Czech/Poland/Hungary/Slovakia; most Nordic intercity.
+   - If the trip is France/Spain/Italy-heavy, explicitly tell the user to budget €80-€150 for reservation fees.
+
+5. BUDGET MIXING. Alternate cheap and expensive segments so the weekly average fits the user's budget tier:
+   - Cheap (~€40-60/day): PT, CZ, PL, HU, RO, BG, HR inland, GR off-peak
+   - Mid (~€70-100/day): ES, IT, DE, AT, Benelux, FR outside Paris
+   - Expensive (~€120-200/day): CH, NO, IS, DK, UK, Paris/Amsterdam centers
+
+6. FLOW / SEQUENCING:
+   - Start near home — recover from travel-day fatigue in a cheap, easy first city. Don't put the "wow" destination on day 1; put it mid-trip (day 5-10).
+   - NEVER backtrack. Paris → Berlin → Paris again is two wasted days. Each stop must advance the arc toward the furthest point or back toward home.
+   - Prefer direct cross-border rail links: Lisbon↔Madrid (Lusitania NT), Milan↔Munich (Brenner), Copenhagen↔Hamburg, Vienna↔Budapest (Railjet 2h40), Paris↔Barcelona (TGV), Brussels↔Amsterdam↔Berlin (European Sleeper).
+   - End the outbound leg within ONE cheap rail leg of home so the return is easy. Do NOT end at the furthest point from home.
+
+Respond ONLY with JSON matching this exact shape:
 {
   "stops": [
-    { "countryId": "<ISO2>", "nights": <1..14>, "reason": "<short why>" }
+    { "countryId": "<ISO2>", "nights": <1..14>, "reason": "<concrete why: rail link, arrival-day feasibility, cost fit, or a single attraction that justifies the stay>" }
   ],
   "returnLeg": {
     "stops": [
@@ -42,40 +90,52 @@ function buildSystemPrompt(ctx) {
         "cityId": "<city slug or empty>",
         "nights": <1..14>,
         "transport": "<train|bus|flight|night-train>",
-        "note": "<short why>"
+        "note": "<why this stopover on the way home — night-train rest, border break, last unused seat credit>"
       }
     ],
     "transport": "<train|bus|flight>",
-    "reasoning": "<one short paragraph>"
+    "reasoning": "<one short paragraph: how the traveler actually gets from the last outbound stop back to ${homeCountry || 'home'}>"
   },
-  "rationale": "<one paragraph>"
+  "rationale": "<one paragraph written TO the traveler, 2nd person. Cover: why this order (geography + rail adjacency), rough daily budget fit, 1 reservation-mandatory leg to pre-book, 1 thing to pack for the climate mix, and how the return gets them home without wasted travel days>"
 }
 
-Rules:
-- countryId MUST be one of the provided ISO codes.
-- Max 20 outbound stops. Total nights across outbound stops must be <= 30.
-- Prefer rail-friendly adjacencies. Mention reservation-mandatory legs when relevant.
-- Respect the user's stated constraints (budget, accessibility, LGBTQ+ safety, green preference).
-- Answer in the user's interface language.
+HARD RULES:
+- countryId MUST be one of the provided ISO codes. Never invent a country not in the list.
+- Max 20 outbound stops. Total nights across outbound stops <= 30.
+- Minimum 2 nights per stop UNLESS it is a deliberate transit/night-train stopover (then 1 night is fine, say so in "reason").
+- Chain countries that share a land border or have a known direct rail/night-train link. Avoid zig-zags that waste travel days.
+- If any leg requires mandatory seat reservation (TGV, AVE, Italo, Frecciarossa, Eurostar, most night trains), flag it in the rationale so the traveler pre-books.
+- Honor the user's stated constraints: budget tier (low/mid/high costPerDay from country data), accommodation type, accessibility needs, LGBTQ+ safety preference, green/low-flight preference, dietary needs.
+- Answer in the user's interface language. Use 2nd person ("you will…"), not 3rd person.
 - Do NOT wrap the JSON in markdown. Do NOT add commentary outside the JSON object.
 
-Round-trip planning:
-- The user's home is ${homeCountry}/${homeCity}. Plan BOTH outbound and return.
-- The return leg may include 0-2 intermediate stops when it improves the trip
-  (night-train stopover, scenic detour, using unused seat credits).
-- Respect includeReturnInBudget=${includeReturnInBudget}: if true, your plan
-  must not exceed seatCreditsLimit=${seatCreditsLimit} or travelDaysLimit=${travelDaysLimit}
-  across outbound AND return combined.
-- Return a routeSchema object with \`stops\` (outbound) and \`returnLeg\` (return).
-- If no intermediate return stops are needed, return returnLeg.stops as [].`;
+ROUND-TRIP PLANNING (this is a real trip, not a fantasy itinerary):
+- Home: ${homeCountry || '(unknown)'} / ${homeCity || '(unknown)'}. The traveler MUST end at home.
+- The return leg can include 0-2 intermediate stops ONLY if they add real value: night-train rest break, a country reachable only on the way back, or using an unused seat-credit day.
+- If the most direct return is a single overnight train or one flight, returnLeg.stops = [] and the reasoning explains which leg to book.
+- includeReturnInBudget=${includeReturnInBudget}: if true, outbound + return combined MUST stay within seatCreditsLimit=${seatCreditsLimit} and travelDaysLimit=${travelDaysLimit}. If false, outbound alone uses the budget and the return is additional.
+- For Turkish travelers with a consulate appointment flagged, put a Schengen-entry country (e.g. Greece via Alexandroupoli, Bulgaria via Svilengrad) as the first outbound stop and remind them in the rationale to carry the visa sticker.`;
 }
 
 function buildCountryContext(countries, guides) {
   const lines = [];
   for (const c of countries) {
     const guide = guides?.countries?.[c.id];
-    const summary = guide?.summary || c.description || '';
-    lines.push(`${c.id} — ${c.name}: ${summary.slice(0, 140)}`);
+    const summary = (guide?.summary || c.description || '').slice(0, 200);
+    const parts = [`${c.id} — ${c.name} (capital: ${c.capital || '?'})`];
+    if (c.costPerDay) {
+      parts.push(`€/day low/mid/high: ${c.costPerDay.low}/${c.costPerDay.mid}/${c.costPerDay.high}`);
+    }
+    if (Array.isArray(c.highlights) && c.highlights.length) {
+      parts.push(`highlights: ${c.highlights.slice(0, 3).join(', ')}`);
+    }
+    if (c.accessibilityScore != null) parts.push(`accessibility: ${c.accessibilityScore}/5`);
+    if (c.lgbtqSafety) parts.push(`lgbtq: ${c.lgbtqSafety}`);
+    if (summary) parts.push(summary);
+    if (guide?.avoidPitfalls?.length) {
+      parts.push(`pitfalls: ${guide.avoidPitfalls.slice(0, 2).join('; ')}`);
+    }
+    lines.push(parts.join(' | '));
   }
   return lines.join('\n');
 }
@@ -141,10 +201,18 @@ export async function suggestRoute({ userPrompt, signal } = {}) {
   const user = state.getSlice('user') || {};
   const route = state.getSlice('route') || {};
   const userBlock = [
-    `language: ${lang}`,
-    `budget: ${user.budget}`,
-    `accommodation: ${user.accommodation}`,
-    user.consulateAppointment ? 'has turkish consulate appointment scheduled' : ''
+    `interface language: ${lang}`,
+    `home: ${user.homeCountry || '?'} / ${user.homeCity || '?'}`,
+    `budget tier: ${user.budget || 'mid'} (use the matching €/day column from country data)`,
+    `accommodation preference: ${user.accommodation || 'hostel'}`,
+    user.accessibilityNeeds ? `accessibility needs: ${user.accessibilityNeeds}` : '',
+    user.dietary ? `dietary: ${user.dietary}` : '',
+    user.lgbtqPriority ? 'prioritize LGBTQ+ safe destinations' : '',
+    user.greenPreference ? 'prefer rail/bus over flights; avoid short-haul flights' : '',
+    user.consulateAppointment ? 'turkish passport + consulate appointment scheduled — first stop must be Schengen-entry country' : '',
+    `seat-credit budget: ${route.seatCreditsLimit ?? 4} reservation days`,
+    `total travel-day budget: ${route.travelDaysLimit ?? 7} days`,
+    `include return in budget: ${route.includeReturnInBudget !== false}`
   ].filter(Boolean).join('\n');
 
   const prompt = [
@@ -247,14 +315,29 @@ async function handleOptimizeReturn() {
 
   showToast(t('ai.return.optimizing') || 'Planning your return…', 'info');
 
-  const systemPrompt = `You plan ONLY the return leg of a DiscoverEU trip.
-The outbound (frozen) is:
+  const systemPrompt = `You plan ONLY the return leg of a real DiscoverEU round-trip. The outbound is FROZEN — do not modify it.
+Your job: get the traveler from the LAST outbound stop back to ${user.homeCountry || '(home country unknown)'} / ${user.homeCity || '(home city unknown)'} with minimal wasted travel days.
+
+FROZEN OUTBOUND (last stop is the departure point of the return):
 ${JSON.stringify(route.stops || [])}
-Home: ${user.homeCountry || ''}/${user.homeCity || ''}.
-Return a JSON object { "returnLeg": { "stops": [...], "transport": "train|bus|flight", "reasoning": "..." } }.
-0-2 intermediate stops. Each stop has countryId (ISO2), cityId, nights, transport (train|bus|flight|night-train), note.
-Respect includeReturnInBudget=${route.includeReturnInBudget}.
-Do NOT wrap the JSON in markdown. Do NOT add commentary outside the JSON object.`;
+
+REAL BACKPACKER RETURN-LEG PATTERNS (Seat61 / Interrail.eu / r/Interrail consensus — follow these):
+- The classic pattern is "open-jaw": fly/train in → travel across one region → exit from the far side. DiscoverEU gives rail-only passes so the return itself MUST be rail (unless the user self-pays a flight).
+- The IDEAL final leg is a night-train: sleep on board, wake up near home, no extra hotel night, no wasted final day. Prefer this whenever the last outbound stop has a live night-train link toward home.
+- Live 2025-26 night-trains you can use as the final leg: ÖBB Nightjet (Vienna↔Paris/Berlin/Hamburg/Rome/Milan/Zurich/Amsterdam), European Sleeper (Prague↔Berlin↔Amsterdam↔Brussels), Snälltåget (Hamburg↔Stockholm), SNCF Intercités de Nuit (Nice/Toulouse/Briançon↔Paris), Balkan routes (Zagreb↔Split, Belgrade↔Bar).
+- Reservation-mandatory trains cost €10-35 extra on top of the pass: France TGV, Spain AVE, Italy Frecciarossa/Italo, Eurostar, ALL night-trains. Flag the specific booking the traveler must do in the reasoning.
+- NEVER backtrack through a city already visited on the outbound leg — that is the #1 rookie mistake on r/Interrail return threads.
+- NEVER add a stop just to "see one more country" on the way home. The traveler is tired. Go home clean.
+
+DECISION RULES:
+- If a single direct leg home is feasible (one day-train, one night-train, or one self-paid budget flight if greenPreference is off), return stops=[] and explain which leg to book in the reasoning.
+- Add 1-2 intermediate stops ONLY when they add concrete value: (a) break a >10h daytime journey into a night-train + short morning hop, (b) reach a country only accessible on the return path (e.g. Slovenia on the way Vienna→Italy→home), (c) spend an unused seat-credit day with a meaningful 2-night stop (not a 1-nighter).
+- Every proposed stop must be on a direct rail corridor TOWARD home — no detours that add a travel day without a night-train payoff.
+- Estimate and mention the total rail hours and whether a Nightjet couchette booking is needed TODAY (they sell out weeks ahead).
+- Respect includeReturnInBudget=${route.includeReturnInBudget} (seatCreditsLimit=${route.seatCreditsLimit ?? 4}, travelDaysLimit=${route.travelDaysLimit ?? 7}).
+
+OUTPUT: JSON only, no markdown, no commentary.
+{ "returnLeg": { "stops": [{ "countryId": "<ISO2>", "cityId": "<slug>", "nights": <1..14>, "transport": "<train|bus|flight|night-train>", "note": "<why this stopover>" }], "transport": "<train|bus|flight>", "reasoning": "<one paragraph in 2nd person: which leg to book first, any reservation warning, expected total travel time home>" } }`;
 
   let parsed;
   try {

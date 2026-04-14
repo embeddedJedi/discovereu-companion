@@ -89,6 +89,10 @@
   --accent-gold:    var(--eu-gold-400);
   --accent-gold-hover: var(--eu-gold-500);
 
+  /* Map route accents — outbound (gold) vs return (teal). */
+  --accent-teal:    #0d9488;
+  --accent-teal-hover: #0f766e;
+
   --success:        var(--eu-green-500);
   --success-soft:   #dcfce7;
   --warning:        var(--eu-gold-500);

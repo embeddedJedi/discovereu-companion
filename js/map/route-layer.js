@@ -95,37 +95,75 @@ export function renderRouteLayer(map) {
     homeLatLng
   ];
 
-  const accent  = cssVar('--accent')   || '#3b82f6';
-  const accent2 = cssVar('--accent-2') || '#ef4444';
+  // Return often overlaps the outbound path (e.g. single-stop trips where
+  // home→A outbound and A→home return are the same geodesic). Build a
+  // curved polyline that bulges perpendicular to each segment so the two
+  // directions are always visually separable even when they share a hat.
+  const curveSegment = (a, b, bulge = 0.18, steps = 14) => {
+    const [lat1, lng1] = a, [lat2, lng2] = b;
+    const mx = (lat1 + lat2) / 2, my = (lng1 + lng2) / 2;
+    const dx = lat2 - lat1, dy = lng2 - lng1;
+    const len = Math.hypot(dx, dy) || 1;
+    // Perpendicular offset (rotate 90° clockwise in lat/lng space).
+    const ox = mx + (dy / len) * len * bulge;
+    const oy = my - (dx / len) * len * bulge;
+    const pts = [];
+    for (let t = 0; t <= steps; t++) {
+      const u = t / steps, v = 1 - u;
+      pts.push([
+        v * v * lat1 + 2 * v * u * ox + u * u * lat2,
+        v * v * lng1 + 2 * v * u * oy + u * u * lng2
+      ]);
+    }
+    return pts;
+  };
+  const curvedReturn = [];
+  for (let i = 0; i < returnLatLngs.length - 1; i++) {
+    const arc = curveSegment(returnLatLngs[i], returnLatLngs[i + 1]);
+    if (i === 0) curvedReturn.push(...arc);
+    else curvedReturn.push(...arc.slice(1));
+  }
+
+  // Outbound = warm gold, solid heavy line. Return = cool teal, dashed thinner
+  // line. Distinct hue + line style so colourblind users can also tell them
+  // apart at a glance.
+  const accent  = cssVar('--accent-gold')  || cssVar('--accent') || '#f59e0b';
+  const accent2 = cssVar('--accent-teal')  || '#0d9488';
 
   outboundLayer = L.polyline(outboundLatLngs, {
-    color: accent, weight: 3, dashArray: '8,6', opacity: 0.9
+    color: accent, weight: 4, opacity: 0.95
   }).addTo(map);
 
-  returnLayer = L.polyline(returnLatLngs, {
-    color: accent2, weight: 2.5, dashArray: '4,10', opacity: 0.85
+  returnLayer = L.polyline(curvedReturn, {
+    color: accent2, weight: 3, dashArray: '2,8', opacity: 0.9
   }).addTo(map);
 
   // Directional arrowheads — one centered arrow per segment so short legs
   // still show direction. Guarded so offline / CDN-blocked environments
   // gracefully degrade to plain dashed polylines.
   if (L.polylineDecorator) {
-    const arrowSymbol = (color) => L.Symbol.arrowHead({
-      pixelSize: 16,
-      polygon: true,
-      pathOptions: { stroke: true, color, fill: true, fillColor: color, fillOpacity: 1, weight: 2, opacity: 1 }
+    const arrowSymbol = (color, size, polygon) => L.Symbol.arrowHead({
+      pixelSize: size,
+      polygon,
+      pathOptions: { stroke: true, color, fill: polygon, fillColor: color, fillOpacity: polygon ? 1 : 0, weight: 2, opacity: 1 }
     });
-    const decorateSegments = (latlngs, color) => {
+    const decorateSegments = (latlngs, color, opts) => {
       for (let i = 0; i < latlngs.length - 1; i++) {
         const seg = L.polyline([latlngs[i], latlngs[i + 1]]);
         const dec = L.polylineDecorator(seg, {
-          patterns: [{ offset: '50%', repeat: 0, symbol: arrowSymbol(color) }]
+          patterns: [{ offset: '50%', repeat: 0, symbol: arrowSymbol(color, opts.size, opts.polygon) }]
         }).addTo(map);
         decorators.push(dec);
       }
     };
-    decorateSegments(outboundLatLngs, accent);
-    decorateSegments(returnLatLngs, accent2);
+    // Outbound: solid filled triangle, larger.
+    decorateSegments(outboundLatLngs, accent, { size: 18, polygon: true });
+    // Return: hollow chevron along the curved path so the arrows ride the
+    // bulged polyline instead of the straight chord.
+    const returnArrow = L.polylineDecorator(L.polyline(curvedReturn), {
+      patterns: [{ offset: '25%', repeat: '50%', symbol: arrowSymbol(accent2, 14, false) }]
+    }).addTo(map);
+    decorators.push(returnArrow);
   }
 
   markersLayer = L.layerGroup().addTo(map);

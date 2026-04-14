@@ -48,9 +48,25 @@
 
 .country-polygon.in-route {
   fill: var(--eu-gold-300);
-  fill-opacity: 0.5;
+  fill-opacity: 0.55;
   stroke: var(--eu-gold-500);
   stroke-width: 1.5;
+}
+
+/* Return-only countries: distinct teal tint so the user can see the return
+   leg's countries without confusing them with outbound stops. When a country
+   is in BOTH outbound and return, `in-route` wins (outbound takes priority). */
+.country-polygon.in-return-route {
+  fill: #0d9488;          /* teal-600 */
+  fill-opacity: 0.35;
+  stroke: #0f766e;        /* teal-700 */
+  stroke-width: 1.25;
+  stroke-dasharray: 4 3;
+}
+[data-theme="dark"] .country-polygon.in-return-route {
+  fill: #14b8a6;          /* teal-500 */
+  fill-opacity: 0.4;
+  stroke: #2dd4bf;        /* teal-400 */
 }
 
 [data-theme="dark"] .leaflet-container {

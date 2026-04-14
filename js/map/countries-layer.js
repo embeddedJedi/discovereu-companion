@@ -118,7 +118,7 @@ function featureId(feature) {
 // State classes we toggle on and off as selection / route / filters change.
 // BASE_CLASS is applied once via Leaflet's `className` option and left alone
 // so Leaflet's own `leaflet-interactive` class is preserved.
-const STATE_CLASSES = ['selected', 'in-route', 'filter-match', 'non-participating'];
+const STATE_CLASSES = ['selected', 'in-route', 'in-return-route', 'filter-match', 'non-participating'];
 
 function featureStyle() {
   return {
@@ -140,7 +140,10 @@ function restyleLayer(layer, id) {
   const wanted = new Set();
   if (!country || country.discoverEU === false) wanted.add('non-participating');
   if (sel === id) wanted.add('selected');
-  if (route?.stops?.some(s => s.countryId === id)) wanted.add('in-route');
+  const inOutbound = !!route?.stops?.some(s => s.countryId === id);
+  const inReturn   = !!route?.returnStops?.some(s => s.countryId === id);
+  if (inOutbound)               wanted.add('in-route');
+  else if (inReturn)            wanted.add('in-return-route');
   if (country && filtersActive(filters) && matchesFilters(country, filters)) {
     wanted.add('filter-match');
   }
