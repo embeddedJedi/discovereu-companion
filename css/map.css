@@ -339,18 +339,24 @@
 }
 .stop-marker-outbound-inner,
 .stop-marker-return-inner {
-  color: white;
+  color: #fff;
   border-radius: 50%;
-  width: 28px;
-  height: 28px;
+  width: 34px;
+  height: 34px;
   display: grid;
   place-items: center;
-  font-weight: 600;
-  font-size: 0.85rem;
-  border: 2px solid var(--surface);
+  font-weight: 800;
+  font-size: 1rem;
+  font-family: var(--font-sans, system-ui, sans-serif);
+  line-height: 1;
+  letter-spacing: 0.01em;
+  border: 3px solid var(--surface);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(0, 0, 0, 0.15);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.45);
 }
-.stop-marker-outbound-inner { background: var(--accent); }
-.stop-marker-return-inner   { background: var(--accent-2); }
+.stop-marker-outbound-inner { background: var(--eu-blue-700, #1f35a0); }
+.stop-marker-return-inner   { background: var(--accent-teal, #0d9488); }
+[data-theme="dark"] .stop-marker-outbound-inner { background: var(--eu-gold-500, #e6a300); color: #111; text-shadow: none; }
 
 /* Wheelchair / step-free metro layer markers. */
 .wheelchair-marker {

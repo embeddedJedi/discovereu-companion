@@ -62,7 +62,7 @@ function markerIcon(klass, label) {
   return L.divIcon({
     className: klass,
     html: `<div class="${klass}-inner">${safeLabel}</div>`,
-    iconSize: [28, 28], iconAnchor: [14, 14]
+    iconSize: [34, 34], iconAnchor: [17, 17]
   });
 }
 
@@ -127,8 +127,12 @@ export function renderRouteLayer(map) {
   // Outbound = warm gold, solid heavy line. Return = cool teal, dashed thinner
   // line. Distinct hue + line style so colourblind users can also tell them
   // apart at a glance.
-  const accent  = cssVar('--accent-gold')  || cssVar('--accent') || '#f59e0b';
-  const accent2 = cssVar('--accent-teal')  || '#0d9488';
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  // Light mode: deep EU blue for line + arrows.
+  // Dark mode: warm gold so the outbound path pops against the near-black map.
+  const accent  = isDark ? (cssVar('--eu-gold-400') || '#ffbb00')
+                         : (cssVar('--eu-blue-700') || '#1f35a0');
+  const accent2 = cssVar('--accent-teal') || '#0d9488';
 
   outboundLayer = L.polyline(outboundLatLngs, {
     color: accent, weight: 4, opacity: 0.95
@@ -156,7 +160,8 @@ export function renderRouteLayer(map) {
         decorators.push(dec);
       }
     };
-    // Outbound: solid filled triangle, larger.
+    // Outbound: solid filled triangle, larger. Dark ink colour so the arrow
+    // reads clearly against the gold line instead of blending into it.
     decorateSegments(outboundLatLngs, accent, { size: 18, polygon: true });
     // Return: hollow chevron along the curved path so the arrows ride the
     // bulged polyline instead of the straight chord.
