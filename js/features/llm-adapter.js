@@ -91,10 +91,10 @@ export function setApiKey(providerId, key) {
  *
  * Throws AuthError / RateLimitError / NetworkError / ParseError.
  */
-export async function sendPrompt({ messages, jsonMode = false, providerOverride, signal } = {}) {
+export async function sendPrompt({ messages, jsonMode = false, maxTokens, providerOverride, signal } = {}) {
   const id = providerOverride || getActiveProvider();
   const entry = PROVIDERS[id];
   if (!entry) throw new Error(`[llm-adapter] unknown provider: ${id}`);
   const apiKey = getApiKey(id);
-  return entry.module.send(messages || [], { jsonMode, signal }, apiKey);
+  return entry.module.send(messages || [], { jsonMode, maxTokens, signal }, apiKey);
 }

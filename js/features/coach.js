@@ -51,7 +51,8 @@ async function callAndParse({ system, user }) {
         { role: 'system', content: system },
         { role: 'user',   content: user }
       ],
-      jsonMode: true
+      jsonMode: true,
+      maxTokens: 2500
     });
   } catch (e) {
     if (e instanceof AuthError) {
